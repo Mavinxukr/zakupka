@@ -13,7 +13,7 @@ node_modules
 # Thumbnails
 ._*
 
-db.sqlite3
+./work-project/db.sqlite3
 # Files that might appear on external disk
 .Spotlight-V100
 .Trashes

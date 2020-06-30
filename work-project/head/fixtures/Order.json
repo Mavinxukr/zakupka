@@ -1,0 +1,24 @@
+[
+ {
+        "model": "head.order",
+        "pk": 1,
+        "fields": {
+            "email": "test1@gmail.com",
+            "phone": "+190-999-11-11",
+            "terms": "10 week",
+            "budget": "10000",
+            "detail": "Перевоните по быстрее"
+        }
+    },
+  {
+        "model": "head.order",
+        "pk": 2,
+         "fields": {
+            "email": "test2@gmail.com",
+            "phone": "+390-999-12-33",
+            "terms": "5 week",
+            "budget": "100000",
+            "detail": "Перевоните по быстрее"
+        }
+  }
+]

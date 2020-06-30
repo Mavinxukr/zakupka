@@ -1,0 +1,16 @@
+[
+ {
+        "model": "auth.user",
+        "pk": 1,
+        "fields": {
+            "username": "mavinx",
+            "password": "pbkdf2_sha256$180000$EDZSZYp9uU7c$Cvq0AcNRr2jBOfy56nirfq+LQa8saLMdJF+nEXFRebg=",
+            "first_name": "Mavinx",
+            "last_name": "Office",
+            "email": "mavinx.office@gmail.com",
+            "is_superuser": true,
+            "is_staff": true,
+            "is_active": true
+        }
+    }
+]

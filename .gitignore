@@ -4,6 +4,7 @@
 .LSOverride
 *.env
 ./work-project/media/*
+./work-project/static
 
 # Icon must end with two \r
 Icon

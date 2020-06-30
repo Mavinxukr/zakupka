@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = os.getenv('SECRET_KEY','p!m^3jokr&bebebepi@ssa@ujq8uk&vum@majq-@v&t_01y&%m')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -56,7 +56,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'mavinx.urls'
 
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -79,16 +78,7 @@ WSGI_APPLICATION = 'mavinx.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mavinx_store',
-        'USER': os.getenv('DB_USER'),
-        'PASSWORD': os.getenv('DB_PASS'),
-        'HOST': 'mavinxStoreDB',
-        'PORT': os.getenv('DB_PORT'),
-    }
-}
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -126,14 +116,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = '/static/'
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-LOCALE_PATHS = (os.path.join(BASE_DIR, 'locale'),)
+
 
 ADMIN_SITE_HEADER = "MavinX"
 ADMIN_SITE_TITLE = "Администрирование MavinX"

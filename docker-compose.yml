@@ -10,7 +10,7 @@ services:
     - ./mavinx_db:/var/lib/postgresql/data
   proj:
     container_name: mavinxStoreProject
-    build: ./workProject/
+    build: ./work-project/
     command: python3 manage.py runserver 0.0.0.0:8000
     restart: always
     #volumes:

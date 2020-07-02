@@ -2,7 +2,8 @@
    {% load i18n %}
   <footer>
     <div class="flex between container">
-        <form action="">
+        <form action="{% url 'client-request' %}" method="post">
+            {% csrf_token %}
             <p class="h1 fontMedium">
                 {% trans 'got_proj' %}
             </p>
@@ -28,9 +29,9 @@
                     <label for="test5">UI/UX Design</label>
                 </p>
             </div>
-            <input placeholder="{% trans 'plc_name' %}" class="footerInput fontMedium" type="text">
-            <input placeholder="{% trans 'plc_phone' %}" class="footerInput fontMedium" type="text">
-            <input placeholder="{% trans 'plc_email' %}" class="footerInput fontMedium" type="email">
+            <input required placeholder="{% trans 'plc_name' %}" class="footerInput fontMedium" type="text">
+            <input required  placeholder="{% trans 'plc_phone' %}" class="footerInput fontMedium" type="text">
+            <input required  placeholder="{% trans 'plc_email' %}" class="footerInput fontMedium" type="email">
             <div class="flex">
                 <div class="rangeBlock">
                     <p class="fontMedium">{% trans 'footer_terms' %}<span id="valWeek"> 1 </span>{% trans 'footer_week' %}</p>
@@ -74,7 +75,7 @@
                     {% trans 'footer_location' %}
                 </h3>
                 <span class="fontMedium footerLink">
-                Ukraine, Dnipro
+                    {% trans 'location' %}
             </span>
             </div>
             <div>

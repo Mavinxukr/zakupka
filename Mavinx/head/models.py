@@ -160,6 +160,7 @@ class Order(models.Model):
         ("ЗАВЕРЕШЕННЫЙ", "Завершенный"),
     )
 
+    area = models.ForeignKey(Area, on_delete=models.CASCADE, verbose_name=_('vnm_name_area'), null=True )
     email = models.EmailField(max_length=255, null=True, verbose_name=_('vnm_email_order'))
     phone = models.CharField(max_length=255, null=True, verbose_name=_('vnm_phone_order'))
     terms = models.CharField(max_length=20, verbose_name=_('vnm_terms_order'))

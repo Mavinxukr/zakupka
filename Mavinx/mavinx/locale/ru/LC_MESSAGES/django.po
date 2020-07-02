@@ -428,6 +428,9 @@ msgstr "Расположение офиса"
 msgid "follow_us"
 msgstr "Подписывайтесь на нас"
 
+msgid "location"
+msgstr "Украина, Днепр"
+
 
 
 

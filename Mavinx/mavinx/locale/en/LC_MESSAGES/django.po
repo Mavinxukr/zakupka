@@ -1379,6 +1379,12 @@ msgstr "Office location"
 msgid "follow_us"
 msgstr "Follow us"
 
+msgid "location"
+msgstr "Ukraine, Dnipro"
+
+
+
+
 
 
 

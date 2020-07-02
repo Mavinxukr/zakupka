@@ -1,0 +1,46 @@
+{% load static %}
+ {% load i18n %}
+<h1 class="h1 fontMedium flex">
+            {% trans 'view_blog' %}<span class="blogCount menuItem">34</span>
+        </h1>
+        <a href="#" class="showAll fontMedium">
+            {% trans 'blog_show_all' %}
+        </a>
+        <div class="flex blogItems">
+            <a href="#">
+                <article class="blogItem column">
+                    <img class="blogImage" src="{% static 'site/images/blog.png' %}" alt="">
+                    <p class="fontMedium blogDescription">
+                        How we launched the service for trainers, which a year later went to IPO
+                    </p>
+                    <div class="blogHashtag flex">
+                        <a class="fontMedium" href="#">{% trans 'blog_views' %}</a>
+                        <span class="fontRegular">5m</span>
+                    </div>
+                </article>
+            </a>
+            <a href="#">
+                <article class="blogItem column">
+                    <img class="blogImage" src="{% static 'site/images/blog1.png' %}" alt="">
+                    <p class="fontMedium blogDescription">
+                        How we launched the service for trainers, which a year later went to IPO
+                    </p>
+                    <div class="blogHashtag flex">
+                        <a class="fontMedium" href="#">{% trans 'blog_views' %}</a>
+                        <span class="fontRegular">5m</span>
+                    </div>
+                </article>
+            </a>
+            <a href="#">
+                <article class="blogItem column">
+                    <img class="blogImage" src="{% static 'site/images/blog2.png' %}" alt="">
+                    <p class="fontMedium blogDescription">
+                        How we launched the service for trainers, which a year later went to IPO
+                    </p>
+                    <div class="blogHashtag flex">
+                        <a class="fontMedium" href="#">{% trans 'blog_views' %}</a>
+                        <span class="fontRegular">5m</span>
+                    </div>
+                </article>
+            </a>
+        </div>

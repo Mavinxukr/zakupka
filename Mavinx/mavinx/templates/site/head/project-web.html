@@ -1,0 +1,31 @@
+{% load static %}
+{% load i18n %}
+<div class="row">
+                <div class="fit">
+                    <img class="imgFit" src="{% static 'site/images/fit.jpg' %}" alt="">
+                </div>
+                <div class="blockInfo">
+                    <h2 class="fontMedium">{% trans 'web_site_service' %}</h2>
+                    <p class="fontRegular">
+                        The full cycle of services to create and launch a website from scratch or redesign a live website along with the modern trends and requirements                    </p>
+                    <div class="flex">
+                        <div class="complete">
+                            <p class="num fontMedium">15</p>
+                            <p class="text fontRegular">{% trans 'web_site_complete' %}</p>
+                        </div>
+                        <div class="technology">
+                            <img src="{% static 'site/images/php-99-1175127.png' %}" alt="">
+                            <p class="text fontRegular">Php</p>
+                        </div>
+                        <div class="technology">
+                            <img src="{%  static 'site/images/Python_logo_and_wordmark.svg.png' %}" alt="">
+                            <p class="text fontRegular">Python</p>
+                        </div>
+                        <div class="technology">
+                            <img src="{% static 'site/images/1200px-React-icon.svg.png' %}" alt="">
+                            <p class="text fontRegular">React js</p>
+                        </div>
+                        <a class="readMore fontMedium" href="#"> {% trans 'web_site_read_more' %}</a>
+                    </div>
+                </div>
+            </div>

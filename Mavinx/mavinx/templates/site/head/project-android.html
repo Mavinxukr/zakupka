@@ -1,0 +1,27 @@
+{% load static %}
+{% load i18n %}
+ <div class="row row-reverse">
+                <div>
+                    <img src="{% static 'site/images/a2.png' %}" alt="">
+                </div>
+                <div  class="blockInfo">
+                    <h2 class="fontMedium">{% trans 'android_app' %}</h2>
+                    <p class="fontRegular">
+                        We offer elegant, user-friendly and intuitive Android app development. Our team can help you create an iOS mobile version of your website or launch a new product on the Play Market                    </p>
+                    <div class="flex">
+                        <div class="complete">
+                            <p class="num fontMedium">43</p>
+                            <p class="text fontRegular">{% trans 'android_complite_app' %}</p>
+                        </div>
+                        <div class="technology">
+                            <img src="{% static 'site/images/swift.png' %}" alt="">
+                            <p class="text fontRegular">Kotlin</p>
+                        </div>
+                        <div class="technology">
+                            <img src="{% static 'site/images/java-logo-7F8B35BAB3-seeklogo.com.png' %}" alt="">
+                            <p class="text fontRegular">Java C</p>
+                        </div>
+                        <a class="readMore fontMedium" href="#">{% trans 'read_more_android' %}</a>
+                    </div>
+                </div>
+            </div>

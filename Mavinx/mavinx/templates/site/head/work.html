@@ -1,0 +1,110 @@
+{% load static %}
+{% load i18n %}
+<div class="flex between work">
+            <h1 class="h1 fontMedium">
+                {% trans 'how_work' %}
+            </h1>
+            <div class="column tabsContent">
+                <ul class="flex" data-tabs id="example-tabs">
+                    <li class="tabs-title fontMedium">
+                        <a href="#panel1">{% trans 'work_specification' %}</a>
+                    </li>
+                    <li class="tabs-title is-active fontMedium">
+                        <a href="#panel2" aria-selected="true">{% trans 'work_design' %}</a>
+                    </li>
+                    <li class="tabs-title fontMedium">
+                        <a href="#panel3"> {% trans 'work_development' %}</a>
+                    </li>
+                    <li class="tabs-title fontMedium">
+                        <a href="#panel4">{% trans 'work_testing' %}</a>
+                    </li>
+                    <li class="tabs-title fontMedium">
+                        <a href="#panel5">{% trans 'work_support' %}</a>
+                    </li>
+                </ul>
+                <div class="column">
+                    <div class="tabs-content" data-tabs-content="example-tabs">
+                        <div class="tabs-panel" id="panel1">
+                            <div class="flex between">
+                                <div class="column">
+                                    <p class="tab-time fontMedium">{% trans 'work_time' %}</p>
+                                    <p class="h3 fontMedium">1-4 {% trans 'work_week' %}</p>
+                                    <p class="tab-result fontMedium">
+                                        {% trans 'work_result' %}
+                                    </p>
+                                    <p class="h3 fontMedium">{% trans 'work_full_design' %}</p>
+                                    <p class="h3 fontMedium">{% trans 'work_click_proto' %}</p>
+                                </div>
+                                <p class="fontRegular tab-description">
+                                    {% trans 'work_context' %}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="tabs-panel is-active" id="panel2">
+                            <div class="flex between">
+                                <div class="column">
+                                    <p class="tab-time fontMedium">{% trans 'work_time' %}</p>
+                                    <p class="h3 fontMedium">2-4 {% trans 'work_week' %}</p>
+                                    <p class="tab-result fontMedium">
+                                        {% trans 'work_result' %}
+                                    </p>
+                                    <p class="h3 fontMedium">{% trans 'work_full_design' %}</p>
+                                    <p class="h3 fontMedium">{% trans 'work_click_proto' %}</p>
+                                </div>
+                                <p class="fontRegular tab-description">
+                                  {% trans 'work_context' %}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="tabs-panel" id="panel3">
+                            <div class="flex between">
+                                <div class="column">
+                                    <p class="tab-time fontMedium">{% trans 'work_time' %}</p>
+                                    <p class="h3 fontMedium">4-8 {% trans 'work_week' %}</p>
+                                    <p class="tab-result fontMedium">
+                                        {% trans 'work_result' %}
+                                    </p>
+                                     <p class="h3 fontMedium">{% trans 'work_full_design' %}</p>
+                                    <p class="h3 fontMedium">{% trans 'work_click_proto' %}</p>
+                                </div>
+                                <p class="fontRegular tab-description">
+                                    {% trans 'work_context' %}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="tabs-panel" id="panel4">
+                            <div class="flex between">
+                                <div class="column">
+                                  <p class="tab-time fontMedium">{% trans 'work_time' %}</p>
+                                    <p class="h3 fontMedium">3-8 {% trans 'work_week' %}</p>
+                                    <p class="tab-result fontMedium">
+                                        {% trans 'work_result' %}
+                                    </p>
+                                   <p class="h3 fontMedium">{% trans 'work_full_design' %}</p>
+                                    <p class="h3 fontMedium">{% trans 'work_click_proto' %}</p>
+                                </div>
+                                <p class="fontRegular tab-description">
+                                   {% trans 'work_context' %}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="tabs-panel" id="panel5">
+                            <div class="flex between">
+                                <div class="column">
+                                 <p class="tab-time fontMedium">{% trans 'work_time' %}</p>
+                                    <p class="h3 fontMedium">3-9 {% trans 'work_week' %}</p>
+                                    <p class="tab-result fontMedium">
+                                        {% trans 'work_result' %}
+                                    </p>
+                                    <p class="h3 fontMedium">{% trans 'work_full_design' %}</p>
+                                    <p class="h3 fontMedium">{% trans 'work_click_proto' %}</p>
+                                </div>
+                                <p class="fontRegular tab-description">
+                                  {% trans 'work_context' %}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

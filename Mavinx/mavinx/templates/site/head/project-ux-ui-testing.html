@@ -1,0 +1,36 @@
+{% load static %}
+{% load i18n %}
+ <div class="flex row border">
+                <div class="blockInfo">
+                    <h2 class="fontMedium">UI/UX {% trans 'design' %}</h2>
+                    <p class="fontRegular">The full cycle of services to create and launch a website from scratch or redesign a live website along with the modern trends and requirements</p>
+                    <div class="flex">
+                        <div class="complete">
+                            <p class="num fontMedium">8</p>
+                            <p class="text fontRegular">{% trans 'complete_interface' %}</p>
+                        </div>
+                        <a class="readMore fontMedium" href="#">{% trans 'ux_ui_read_more' %}</a>
+                    </div>
+                </div>
+                <div class="blockInfo">
+                    <h2 class="fontMedium">QA/AB {% trans 'ab_testing' %}</h2>
+                    <p class="fontRegular">The full cycle of services to create and launch a website from scratch or redesign a live website along with the modern trends and requirements</p>
+                    <div class="flex">
+                        <div class="complete">
+                            <p class="num fontMedium">12</p>
+                            <p class="text fontRegular">
+                                {% trans 'qa_ab_complete' %}
+                            </p>
+                        </div>
+                        <div class="technology">
+                            <img src="{% static 'site/images/E2E_consulting-logo-E4736487A7-seeklogo.com.png' %}" alt="">
+                            <p class="text fontRegular">e2e</p>
+                        </div>
+                        <div class="technology">
+                            <img src="{% static 'site/images/jest-logo-F9901EBBF7-seeklogo.com.png' %}" alt="">
+                            <p class="text fontRegular">Unit Test</p>
+                        </div>
+                        <a class="readMore fontMedium" href="#">{% trans 'qa_ab_read_more' %}</a>
+                    </div>
+                </div>
+            </div>

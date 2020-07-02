@@ -1,0 +1,39 @@
+{% load static %}
+{% load i18n %}
+<div class="flex between">
+                <h1 class="h1 fontMedium">
+                    {% trans 'why_us' %}
+                </h1>
+                <a class="aboutUS fontMedium" href="">
+                    {% trans 'more_about_m' %} Mavinx
+                </a>
+</div>
+ <div class="technologyBlock flex between">
+                <div class="stack">
+                    <img class="stackImg" src="{% static 'site/images/stack.png' %}" alt="">
+                    <p class="titleStack fontMedium">
+                        {% trans 'technology_stack' %}
+                    </p>
+                    <p class="descriptionStack fontRegular">
+                        {% trans 'technology_stack_context' %}
+                    </p>
+                </div>
+                <div class="stack">
+                    <img class="stackImg" src="{% static 'site/images/stack.png' %}" alt="">
+                    <p class="titleStack fontMedium">
+                         {% trans 'technology_stack' %}
+                    </p>
+                    <p class="descriptionStack fontRegular">
+                        Transparent price model is quite simple. European cultural heritage of engineering plus Ukrainian rates (18-25 USD per hour) plus ability to scale the team..
+                    </p>
+                </div>
+                <div class="stack">
+                    <img class="stackImg" src="{% static 'site/images/stack.png' %}" alt="">
+                    <p class="titleStack fontMedium">
+                         {% trans 'technology_stack' %}
+                    </p>
+                    <p class="descriptionStack fontRegular">
+                        Transparent price model is quite simple. European cultural heritage of engineering plus Ukrainian rates (18-25 USD per hour) plus ability to scale the team..
+                    </p>
+                </div>
+            </div>

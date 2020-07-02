@@ -1,0 +1,27 @@
+{% load static %}
+{% load i18n %}
+<div class="row">
+                <div>
+                    <img src="{% static 'site/images/a.png' %}" alt="">
+                </div>
+                <div class="blockInfo">
+                    <h2 class="fontMedium">{% trans 'ios_app' %}</h2>
+                    <p class="fontRegular">
+                        We develop native iOS apps with the latest tools and techniques. Our team can help you create an iOS mobile version of your website or launch a new product on the App Store
+                    </p>
+                    <div class="flex">
+                        <div class="complete">
+                            <p class="num fontMedium">31</p>
+                            <p class="text fontRegular">{% trans 'ios_complite_app' %}</p>
+                        </div>
+                        <div class="technology">
+                            <p class="text fontRegular">Swift</p>
+                        </div>
+                        <div class="technology">
+                            <img src="{% static 'site/images/objective-c-logo-81746870EF-seeklogo.com.png' %}" alt="">
+                            <p class="text fontRegular">Objective C</p>
+                        </div>
+                        <a class="readMore fontMedium" href="#">{% trans 'read_more_ios' %}</a>
+                    </div>
+                </div>
+            </div>

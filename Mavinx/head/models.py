@@ -11,7 +11,7 @@ class Company(TranslatableModel):
         verbose_name = _('vb_company')
 
     translations = TranslatedFields(
-        name = models.CharField(max_length=100, verbose_name=_('vnm_company_name'), unique=True)
+        name = models.CharField(max_length=100, verbose_name=_('vnm_company_name'))
     )
     logo = models.ImageField(verbose_name=_('vnm_company_logo'), upload_to=custom_upload_to)
 
@@ -77,7 +77,7 @@ class Project(TranslatableModel):
         verbose_name = _('vn_project')
 
     translations = TranslatedFields(
-        name=models.CharField(max_length=30, verbose_name=_('vnm_name_project'), unique=True),
+        name=models.CharField(max_length=30, verbose_name=_('vnm_name_project')),
         description = models.CharField(max_length=255, verbose_name=_('vnm_desc_project'))
     )
 
@@ -143,6 +143,8 @@ class Contact(models.Model):
     twitter = models.CharField(max_length=100, verbose_name=_('vnm_twitter_contact'))
     teams = models.IntegerField(verbose_name=_('vnm_teams_contact'))
     experience = models.IntegerField(verbose_name=_('vnm_experience_contact'))
+    completed_project = models.IntegerField(verbose_name=_('vnm_completed_project'), null=True)
+
 
     def __str__(self):
         return self.email
@@ -163,10 +165,11 @@ class Order(models.Model):
     area = models.ForeignKey(Area, on_delete=models.CASCADE, verbose_name=_('vnm_name_area'), null=True )
     email = models.EmailField(max_length=255, null=True, verbose_name=_('vnm_email_order'))
     phone = models.CharField(max_length=255, null=True, verbose_name=_('vnm_phone_order'))
+    name = models.CharField(max_length=255, null=True, verbose_name=_('vnm_phone_name'))
     terms = models.CharField(max_length=20, verbose_name=_('vnm_terms_order'))
     budget = models.CharField(max_length=20, verbose_name=_('vnm_budget_order'))
     detail = models.CharField(max_length=255, verbose_name=_('vnm_detail_order'))
-    file = models.FileField(null=True, verbose_name=_('vnm_file_order'))
+    file = models.FileField(null=True, verbose_name=_('vnm_file_order'), upload_to=custom_upload_to)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='НОВЫЙ',
                               verbose_name=_('vnm_status_order'))
 
@@ -201,3 +204,12 @@ class AboutImage(models.Model):
 
     def __str__(self):
         return self.about.name
+
+
+class Subscribers(models.Model):
+    class Meta:
+        verbose_name_plural = _('vmp_subscribe')
+        verbose_name = _('vm_subscribe')
+
+    email = models.EmailField(verbose_name=_('vnm_subc_email'))
+

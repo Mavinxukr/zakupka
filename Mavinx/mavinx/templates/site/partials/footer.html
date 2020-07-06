@@ -2,12 +2,12 @@
    {% load i18n %}
   <footer>
     <div class="flex between container">
-        <form action="{% url 'client-request' %}" method="post">
+        <form id="send_form">
             {% csrf_token %}
             <p class="h1 fontMedium">
                 {% trans 'got_proj' %}
             </p>
-            <div class="flex">
+           <div class="flex">
                 <p>
                     <input type="radio" id="test1" name="radio-group" checked>
                     <label for="test1">Service</label>
@@ -29,15 +29,15 @@
                     <label for="test5">UI/UX Design</label>
                 </p>
             </div>
-            <input required placeholder="{% trans 'plc_name' %}" class="footerInput fontMedium" type="text">
-            <input required  placeholder="{% trans 'plc_phone' %}" class="footerInput fontMedium" type="text">
-            <input required  placeholder="{% trans 'plc_email' %}" class="footerInput fontMedium" type="email">
+            <input id="name" required placeholder="{% trans 'plc_name' %}" class="footerInput fontMedium" type="text">
+            <input id="phone" required  placeholder="{% trans 'plc_phone' %}" class="footerInput fontMedium" type="text">
+            <input id="email" required  placeholder="{% trans 'plc_email' %}" class="footerInput fontMedium" type="email">
             <div class="flex">
                 <div class="rangeBlock">
                     <p class="fontMedium">{% trans 'footer_terms' %}<span id="valWeek"> 1 </span>{% trans 'footer_week' %}</p>
                     <div class="range-container rangeWeek">
                         <span class="bar"><span class="fill"></span></span>
-                        <input class="range" id="rangeWeek" type="range" value="1" min="0" max="100" step="1"/>
+                        <input  class="range" id="rangeWeek" type="range" value="1" min="0" max="100" step="1"/>
                     </div>
                     <p class="fontMedium">{% trans 'footer_week' %}</p>
                 </div>
@@ -50,13 +50,13 @@
                     <p class="fontMedium">USD ($)</p>
                 </div>
             </div>
-            <input placeholder="{% trans 'proj_det' %}" class="footerInput fontMedium" type="text">
+            <input id="detail" placeholder="{% trans 'proj_det' %}" class="footerInput fontMedium" type="text">
             <div class="flex between submit">
                 <div class="form-group">
                     <label for="file" class="sr-only">{% trans 'attach_file' %}</label>
                     <input type="file" id="file">
                 </div>
-                <button type="submit" class="formSubmit fontMedium">
+                <button class="formSubmit fontMedium" id="submit_btn">
                     {% trans 'send_req' %}
                     <img src="{% static 'site/images/arrowSubmit.svg' %}" alt="">
                 </button>
@@ -97,3 +97,5 @@
         </div>
     </div>
 </footer>
+  <script src="{% static 'site/js/jquery.js' %}"></script>
+  <script src="{% static 'site/js/send-data.js' %}"></script>

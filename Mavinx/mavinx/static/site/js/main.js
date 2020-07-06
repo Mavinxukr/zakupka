@@ -1,6 +1,4 @@
 $( document ).ready(function() {
-    var url = "{% static 'site/images/' %}";
-    console.log(url)
     let rangeWeek = $('#rangeWeek');
     let rangeBudget = $('#rangeBudget');
     let rangeWeekFill = $('.rangeWeek .bar .fill');

@@ -1226,6 +1226,9 @@ msgstr "All projects"
 msgid "ios_app"
 msgstr " iOS application"
 
+msgid "ios_app_desc"
+msgstr "We develop native iOS apps with the latest tools and techniques. Our team can help you create an iOS mobile version of your website or launch a new product on the App Store"
+
 msgid "ios_complite_app"
 msgstr "Complete application"
 
@@ -1237,6 +1240,9 @@ msgstr "Android application"
 
 msgid "android_complite_app"
 msgstr "Complete application"
+
+msgid "android_app_desc"
+msgstr "We offer elegant, user-friendly and intuitive Android app development. Our team can help you create an iOS mobile version of your website or launch a new product on the Play Market"
 
 msgid "read_more_android"
 msgstr "Read more"
@@ -1255,6 +1261,9 @@ msgstr "Design"
 
 msgid "complete_interface"
 msgstr "Complete interface"
+
+msgid "web_site_desc"
+msgstr "The full cycle of services to create and launch a website from scratch or redesign a live website along with the modern trends and requirements"
 
 msgid "ux_ui_read_more"
 msgstr "Read more"
@@ -1381,6 +1390,14 @@ msgstr "Follow us"
 
 msgid "location"
 msgstr "Ukraine, Dnipro"
+
+msgid "desing_desc"
+msgstr "The full cycle of services to create and launch a website from scratch or redesign a live website along with the modern trends and requirements"
+
+msgid "ab_test_desc"
+msgstr "The full cycle of services to create and launch a website from scratch or redesign a live website along with the modern trends and requirements"
+
+
 
 
 

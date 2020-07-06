@@ -24,7 +24,7 @@
                 </span>
             </div>
             <div class="timer-block">
-                <p class="timer fontMedium plus" data-to="89" data-speed="2000"></p>
+                <p class="timer fontMedium plus" data-to="90" data-speed="2000"></p>
                 <span class="opacityText fontRegular">
                   {% trans 'project_complete' %}
                 </span>
@@ -44,8 +44,6 @@
             {% include 'site/head/project-android.html' %}
             {% include 'site/head/project-web.html' %}
             {% include 'site/head/project-ux-ui-testing.html' %}
-
-
         </div>
     </div>
     <div class="container visible">
@@ -90,12 +88,13 @@
     <div class="container">
      {% include 'site/head/work.html' %}
         <div class="subscribe">
-            <form action="#">
+            <form >
+                 {% csrf_token %}
                 <p class="fontMedium">
                     {% trans 'subscribe_to_your' %}
                 </p>
-                <input placeholder="E-mail" type="email">
-                <button class="fontMedium" type="submit">
+                <input name="email" type="email" id="sub_email" placeholder="E-mail"  required>
+                <button class="fontMedium" id="send_sub_but">
                    {% trans 'subscribe' %} +
                 </button>
             </form>
@@ -113,5 +112,6 @@
 <script src="{% static 'site/js/slick.js' %}"></script>
 <script src="{% static 'site/js/countTo.js'  %}"></script>
 <script src="{% static 'site/js/main.js'  %}"></script>
+<script src="{% static 'site/js/subscribe.js'  %}"></script>
 </body>
 

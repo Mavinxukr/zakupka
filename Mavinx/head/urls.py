@@ -1,8 +1,9 @@
-from django.urls import path
+from django.urls import path, re_path
 from . import views
 
 
 urlpatterns = [
-    path('<lang>/', views.MainIndex.as_view()),
-    path('client-request/', views.ClientRequest.as_view(), name='client-request')
+    path('client-request/', views.ClientRequest.as_view()),
+    path('client-subscribe/', views.ClientSubscribe.as_view()),
+    re_path(r'^(?P<lang>\w{2})/',views.MainIndex.as_view()),
 ]

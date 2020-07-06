@@ -4,7 +4,7 @@ from parler.admin import TranslatableAdmin
 
 from .models import Company, Customer, \
     Area, Project, Blog, Review, Contact, About, Order, \
-    ProjectImage, AboutImage
+    ProjectImage, AboutImage, Subscribers
 
 
 @admin.register(Blog)
@@ -20,12 +20,6 @@ class BlogAdmin(TranslatableAdmin):
         return mark_safe(
             "<img src='{}' width='40' height='25' alt='img' >".format(image_path)
         )
-
-    #def _area(self, obj):
-     #   link_path = '/admin/head/area/{}/change/'.format(obj.area.id)
-      #  return mark_safe(
-       #     "<a href='{}'>{}</a>".format(link_path, obj.area.name)
-        #)
 
 
 @admin.register(Company)
@@ -91,10 +85,10 @@ class ContactAdmin(admin.ModelAdmin):
 class OrderAdmin(admin.ModelAdmin):
     model = Order
     list_per_page = 10
-    list_display = ('email', 'phone', 'terms', 'budget', 'status')
-    readonly_fields = ('email', 'phone', 'terms', 'budget', 'file', 'detail')
-    list_filter = ('email', 'terms', 'budget', 'phone', 'status')
-    search_fields = ('email', 'terms', 'budget', 'phone')
+    list_display = ('name','email', 'phone', 'terms', 'budget', 'status')
+    readonly_fields = ('name','email', 'phone', 'terms', 'budget', 'file', 'detail')
+    list_filter = ('name' ,'email', 'terms', 'budget', 'phone', 'status')
+    search_fields = ('name','email', 'terms', 'budget', 'phone')
 
     def has_add_permission(self, request, obj=None):
         return False
@@ -111,3 +105,16 @@ class AboutImagesInline(admin.TabularInline):
 class AboutAdmin(TranslatableAdmin):
     list_display = ('name', 'text')
     inlines = (AboutImagesInline,)
+
+
+@admin.register(Subscribers)
+class AboutAdmin(admin.ModelAdmin):
+    list_display = ('email',)
+    readonly_fields = ('email',)
+    list_per_page = 10
+    list_filter = ('email',)
+    search_fields = ('email',)
+
+    def has_add_permission(self, request, obj=None):
+        return False
+

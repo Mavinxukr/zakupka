@@ -3,6 +3,7 @@
         "model": "head.order",
         "pk": 1,
         "fields": {
+            "name": "Denys Back-end ",
             "email": "test1@gmail.com",
             "phone": "+190-999-11-11",
             "terms": "10 week",
@@ -14,6 +15,7 @@
         "model": "head.order",
         "pk": 2,
          "fields": {
+            "name": "Denys Back-end ",
             "email": "test2@gmail.com",
             "phone": "+390-999-12-33",
             "terms": "5 week",

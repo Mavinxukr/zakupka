@@ -446,6 +446,9 @@ msgstr "Подписывайтесь на нас"
 msgid "location"
 msgstr "Украина, Днепр"
 
+msgid "develop_mes"
+msgstr "Извините, эта страница в стадии разработки"
+
 msgid "vnm_completed_project"
 msgstr "Колличество выполненных проектов"
 

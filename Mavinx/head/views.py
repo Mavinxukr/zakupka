@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.utils import translation
 from django.views import View
 
-from .models import Order, Subscribers, Project
+from .models import Order, Subscribers, Area
 
 
 class MainIndex(View):
@@ -11,9 +11,53 @@ class MainIndex(View):
         user_language = kwargs.get('lang')
         translation.activate(user_language)
         context = {
-            'projects': Project.objects.all(),
+            'areas' : Area.objects.all(),
+            'lang': user_language,
+            'endpoint': '/',
         }
         return render(request, 'site/base.html', context)
+
+class Works(View):
+    def get(self, request, *args, **kwargs):
+        user_language = kwargs.get('lang')
+        translation.activate(user_language)
+        context = {
+            'lang': user_language,
+            'endpoint': '/works/'
+        }
+        return render(request,'site/page-header/works.html', context)
+
+
+class Services(View):
+    def get(self, request, *args, **kwargs):
+        user_language = kwargs.get('lang')
+        translation.activate(user_language)
+        context = {
+            'lang': user_language,
+            'endpoint': '/services/'
+        }
+        return render(request,'site/page-header/services.html', context)
+
+class Company(View):
+    def get(self, request, *args, **kwargs):
+        user_language = kwargs.get('lang')
+        translation.activate(user_language)
+        context = {
+            'lang': user_language,
+            'endpoint': '/company/'
+        }
+        return render(request,'site/page-header/company.html', context)
+
+
+class Blog(View):
+    def get(self, request, *args, **kwargs):
+        user_language = kwargs.get('lang')
+        translation.activate(user_language)
+        context = {
+            'lang': user_language,
+            'endpoint': '/blog/'
+        }
+        return render(request,'site/page-header/blog.html', context)
 
 
 class ClientRequest(View):
@@ -33,8 +77,16 @@ class ClientRequest(View):
 
 class ClientSubscribe(View):
     def post(self, request , *args, **kwargs):
-        Subscribers.objects.create(email=request.POST.get('email'))
+        email = request.POST.get('email')
+        client = Subscribers.objects.filter(email=email)
         response = {
-            'message': 'Вы успешно подписались на рассылку',
+            'message': 'Вы уже подписаны на рассылку',
         }
-        return JsonResponse(response, status=201)
+        if not client:
+            Subscribers.objects.create(email=email)
+            response = {
+                'message': 'Вы успешно подписались на рассылку',
+            }
+        return JsonResponse(response, status=200)
+
+

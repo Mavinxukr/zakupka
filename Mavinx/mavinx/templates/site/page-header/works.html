@@ -1,0 +1,24 @@
+{% load static %}
+ {% load i18n %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'site/css/slick.css' %}">
+    <link rel="stylesheet" href=" {% static 'site/css/motion-ui.css'%}">
+    <link rel="stylesheet" href=" {% static 'site/css/main.css' %}">
+    <link rel="stylesheet" href=" {% static 'site/css/media.css' %}">
+    <title>Mavinx</title>
+</head>
+<body>
+<main>
+{% include 'site/partials/header.html' %}
+    <h1 align="center">{% trans 'develop_mes' %}</h1>
+{% include 'site/partials/footer.html' %}
+<script src="{% static 'site/js/jquery.js' %}"></script>
+<script src="{% static 'site/js/foundation.js' %}"></script>
+<script src="{% static 'site/js/what-input.js' %}"></script>
+<script src="{% static 'site/js/slick.js' %}"></script>
+<script src="{% static 'site/js/countTo.js'  %}"></script>
+<script src="{% static 'site/js/main.js'  %}"></script>
+</main>
+</body>

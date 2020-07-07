@@ -8,26 +8,13 @@
                 {% trans 'got_proj' %}
             </p>
            <div class="flex">
+               {% for area in areas %}
                 <p>
-                    <input type="radio" id="test1" name="radio-group" checked>
-                    <label for="test1">Service</label>
+                    <input type="radio" id="test{{ area.id }}" name="radio-group"
+                            {% if area.id == 1  %} checked {% endif %}>
+                    <label for="test{{ area.id }}">{{ area.name }}</label>
                 </p>
-                <p>
-                    <input type="radio" id="test2" name="radio-group">
-                    <label for="test2">IOS</label>
-                </p>
-                <p>
-                    <input type="radio" id="test3" name="radio-group">
-                    <label for="test3">Android</label>
-                </p>
-                <p>
-                    <input type="radio" id="test4" name="radio-group">
-                    <label for="test4">Web</label>
-                </p>
-                <p>
-                    <input type="radio" id="test5" name="radio-group">
-                    <label for="test5">UI/UX Design</label>
-                </p>
+               {% endfor %}
             </div>
             <input id="name" required placeholder="{% trans 'plc_name' %}" class="footerInput fontMedium" type="text">
             <input id="phone" required  placeholder="{% trans 'plc_phone' %}" class="footerInput fontMedium" type="text">

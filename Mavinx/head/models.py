@@ -2,7 +2,7 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from parler.models import TranslatableModel, TranslatedFields
 
-from . utils import *
+from . utils import custom_upload_to
 
 
 class Company(TranslatableModel):
@@ -25,7 +25,7 @@ class Area(TranslatableModel):
         verbose_name = _('vn_area')
 
     translations = TranslatedFields(
-        name=models.CharField(max_length=100, verbose_name=_('vnm_name_area'), unique=True),
+        name=models.CharField(max_length=100, verbose_name=_('vnm_name_area')),
     )
 
     def __str__(self):

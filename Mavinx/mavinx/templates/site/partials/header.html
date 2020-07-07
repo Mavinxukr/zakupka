@@ -1,40 +1,38 @@
   {% load static %}
   {% load i18n %}
-  {% get_current_language as LANGUAGE_CODE %}
 <header class="header">
     <div class="flex w-100">
-        <a class="logo" href="/">
+        <a class="logo" href="/{{lang}}/">
             <svg xmlns="http://www.w3.org/2000/svg" width="88" height="33" viewBox="0 0 88 33"><text class="logo" transform="translate(0 25)"><tspan x="0" y="0">Mavinx</tspan></text></svg>
         </a>
         <div class="langs">
-            <button class="active-lang lang fontMedium">
-                <a href="/en">en</a>
+            <button class="{% if lang == 'en' %} active-lang  {% endif %} lang fontMedium">
+                <a href="/en{{ endpoint }}">en</a>
             </button>
-            <button class="lang fontMedium">
-                <a href="/ru">ru</a>
+            <button class="{% if lang == 'ru' %} active-lang  {% endif %} lang fontMedium">
+                <a  href="/ru{{ endpoint }}">ru</a>
             </button>
         </div>
     </div>
     <nav class="menu">
         <ul class="menuItems">
             <li class="menuItem">
-                <a class="fontMedium" href="#">
+                <a class="fontMedium" href="{{ request.scheme }}://{{ request.META.HTTP_HOST }}/{{ lang }}/works">
                          <p>{% trans 'works' %}</p>
-                    <p class="numberOfWorks fontMedium">{{projects.count }}</p>
                 </a>
             </li>
             <li class="menuItem">
-                <a class="fontMedium" href="#">
+                <a class="fontMedium" href="{{ request.scheme }}://{{ request.META.HTTP_HOST }}/{{ lang }}/services">
                     {% trans 'services' %}
                 </a>
             </li>
             <li class="menuItem">
-                <a class="fontMedium" href="#">
+                <a class="fontMedium" href="{{ request.scheme }}://{{ request.META.HTTP_HOST }}/{{ lang }}/company">
                      {% trans 'company' %}
                 </a>
             </li>
             <li class="menuItem">
-                <a class="fontMedium" href="#">
+                <a class="fontMedium" href="{{ request.scheme }}://{{ request.META.HTTP_HOST }}/{{ lang }}/blog">
                     {% trans 'blog' %}
                 </a>
             </li>

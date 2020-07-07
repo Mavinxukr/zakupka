@@ -18,19 +18,19 @@
         </span></h1>
         <div class="flex timers">
             <div class="timer-block">
-                <p class="timer fontMedium" data-to="17" data-speed="1500"></p>
+                <p class="timer fontMedium" data-to="{{ contact.teams }}" data-speed="1500"></p>
                 <span class="opacityText fontRegular">
                     {% trans 'team' %}
                 </span>
             </div>
             <div class="timer-block">
-                <p class="timer fontMedium plus" data-to="90" data-speed="2000"></p>
+                <p class="timer fontMedium plus" data-to="{{ contact.completed_project }}" data-speed="2000"></p>
                 <span class="opacityText fontRegular">
                   {% trans 'project_complete' %}
                 </span>
             </div>
             <div class="timer-block">
-                <p class="timer fontMedium plus" data-to="7" data-speed="1000"></p>
+                <p class="timer fontMedium plus" data-to="{{ contact.experience }}" data-speed="1000"></p>
                 <span class="opacityText fontRegular">
                     {% trans 'years_of_experience' %}
                 </span>

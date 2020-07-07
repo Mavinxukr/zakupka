@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-    const request =  new SendDataClass();
+    const request =  new SendData();
     let data = new FormData()
     let  area_id =  $('input[name=radio-group]:checked').data('area-id');
     $('#file').on('change',function () {
@@ -25,11 +25,11 @@ $( document ).ready(function() {
 })
 
 
-class SendDataClass {
+class SendData {
 
     url  = 'http://127.0.0.1:8000/client-request/';
 
-    send_data(body){
+    send_data(body)  {
             $.ajax({
             type: "POST",
             enctype: 'multipart/form-data',

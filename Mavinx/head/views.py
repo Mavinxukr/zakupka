@@ -3,7 +3,9 @@ from django.shortcuts import render
 from django.utils import translation
 from django.views import View
 
-from .models import Order, Subscribers, Area
+from .models import Order, Subscribers, Area, Contact
+
+
 
 
 class MainIndex(View):
@@ -13,6 +15,7 @@ class MainIndex(View):
         context = {
             'areas' : Area.objects.all(),
             'lang': user_language,
+            'about': Contact.objects.first(),
             'endpoint': '/',
         }
         return render(request, 'site/base.html', context)
@@ -21,8 +24,11 @@ class Works(View):
     def get(self, request, *args, **kwargs):
         user_language = kwargs.get('lang')
         translation.activate(user_language)
+
         context = {
+             'areas' : Area.objects.all(),
             'lang': user_language,
+            'about': Contact.objects.first(),
             'endpoint': '/works/'
         }
         return render(request,'site/page-header/works.html', context)
@@ -33,7 +39,9 @@ class Services(View):
         user_language = kwargs.get('lang')
         translation.activate(user_language)
         context = {
+            'areas' : Area.objects.all(),
             'lang': user_language,
+            'about': Contact.objects.first(),
             'endpoint': '/services/'
         }
         return render(request,'site/page-header/services.html', context)
@@ -43,7 +51,9 @@ class Company(View):
         user_language = kwargs.get('lang')
         translation.activate(user_language)
         context = {
+            'areas' : Area.objects.all(),
             'lang': user_language,
+            'about': Contact.objects.first(),
             'endpoint': '/company/'
         }
         return render(request,'site/page-header/company.html', context)
@@ -54,7 +64,9 @@ class Blog(View):
         user_language = kwargs.get('lang')
         translation.activate(user_language)
         context = {
+            'areas' : Area.objects.all(),
             'lang': user_language,
+            'about': Contact.objects.first(),
             'endpoint': '/blog/'
         }
         return render(request,'site/page-header/blog.html', context)
@@ -65,9 +77,17 @@ class ClientRequest(View):
         data = request.POST.copy()
         del data['csrfmiddlewaretoken']
         file = request.FILES.get('file')
-        if file:
-            data['file'] = file
-        Order.objects.create(**data)
+
+        Order.objects.create(
+            area_id=data['area_id'],
+            email=data['email'],
+            phone=data['phone'],
+            name=data['name'],
+            terms=data['terms'],
+            budget=data['budget'],
+            detail=data['detail'],
+            file=file
+        )
         response = {
             'message': 'Ваш запрос был отправлен',
             'data': data

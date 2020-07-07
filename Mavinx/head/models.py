@@ -42,8 +42,8 @@ class Blog(TranslatableModel):
         name=models.CharField(max_length=100, verbose_name=_('vnm_name_blog'), unique=True),
         description = models.TextField(verbose_name=_('vnm_desc_blog'))
     )
-
-    date_publish = models.DateTimeField(auto_now_add=True, null=True, verbose_name=_(u'vnm_date_blog'))
+    views = models.IntegerField(default=1, verbose_name=_('vnm_date_views'))
+    date_publish = models.DateTimeField(auto_now_add=True, null=True, verbose_name=_('vnm_date_blog'))
     area = models.ForeignKey(Area, related_name='blog', on_delete=models.CASCADE, null=True,
                              verbose_name=_(u'vnm_area_blog'), default=1)
     image = models.ImageField(verbose_name=_(u'vnm_image_blog'), upload_to=custom_upload_to,
@@ -135,12 +135,8 @@ class Contact(models.Model):
 
     email = models.EmailField(max_length=255, verbose_name=_('vnm_email_contact'))
     phone = models.CharField(max_length=255, verbose_name=_('vnm_phone_contact'))
-    location = models.CharField(max_length=200, verbose_name=_('vnm_location_contact'))
-    instagram = models.CharField(max_length=100, verbose_name=_('vnm_instagram_contact'))
-    facebook = models.CharField(max_length=100, verbose_name=_('vnm_facebook_contact'))
     linkedin = models.CharField(max_length=100, verbose_name=_('vnm_linkedin_contact'))
     clutch = models.CharField(max_length=100, verbose_name=_('vnm_clutch_contact'))
-    twitter = models.CharField(max_length=100, verbose_name=_('vnm_twitter_contact'))
     teams = models.IntegerField(verbose_name=_('vnm_teams_contact'))
     experience = models.IntegerField(verbose_name=_('vnm_experience_contact'))
     completed_project = models.IntegerField(verbose_name=_('vnm_completed_project'), null=True)

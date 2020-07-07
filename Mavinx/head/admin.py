@@ -10,10 +10,10 @@ from .models import Company, Customer, \
 @admin.register(Blog)
 class BlogAdmin(TranslatableAdmin):
     list_per_page = 10
-    list_display = ('name', 'description', 'area', 'date_publish', '_image')
-    list_filter = ('translations__name', 'area', 'date_publish')
-    search_fields = ('translations__name', 'date_publish', 'area__translations__name')
-    readonly_fields = ('date_publish',)
+    list_display = ('name', 'description', 'area', 'date_publish', '_image', 'views')
+    list_filter = ('translations__name', 'area', 'date_publish', 'views')
+    search_fields = ('translations__name', 'date_publish', 'area__translations__name','views')
+    readonly_fields = ('date_publish','views')
 
     def _image(self, obj):
         image_path = 'http://127.0.0.1:8000/media/{}'.format(obj.image)
@@ -78,22 +78,19 @@ class ReviewAdmin(TranslatableAdmin):
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
     model = Contact
-    list_display = ('email', 'phone', 'location')
+    list_display = ('email', 'phone')
 
 
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
     model = Order
     list_per_page = 10
-    list_display = ('name','email', 'phone', 'terms', 'budget', 'status')
+    list_display = ('name','email', 'phone', 'terms', 'budget', 'status',)
     readonly_fields = ('name','email', 'phone', 'terms', 'budget', 'file', 'detail')
     list_filter = ('name' ,'email', 'terms', 'budget', 'phone', 'status')
     search_fields = ('name','email', 'terms', 'budget', 'phone')
 
     def has_add_permission(self, request, obj=None):
-        return False
-
-    def has_delete_permission(self, request, obj=None):
         return False
 
 

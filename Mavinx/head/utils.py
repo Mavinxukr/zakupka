@@ -6,5 +6,3 @@ def custom_upload_to(instance, filename):
         return 'order/{}/{}'.format(instance.name, filename)
     return 'head/{}/{}/{}'.format(folder, instance.name, filename)
 
-
-

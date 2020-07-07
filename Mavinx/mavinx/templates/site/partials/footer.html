@@ -10,7 +10,7 @@
            <div class="flex">
                {% for area in areas %}
                 <p>
-                    <input type="radio" id="test{{ area.id }}" name="radio-group"
+                    <input data-area-id="{{ area.id }}" type="radio" id="test{{ area.id }}" name="radio-group"
                             {% if area.id == 1  %} checked {% endif %}>
                     <label for="test{{ area.id }}">{{ area.name }}</label>
                 </p>
@@ -54,8 +54,8 @@
                {% trans 'footer_cont' %}
            </p>
             <div>
-                <a class="footerLink fontMedium" href="mailto:ruslan@mavinx.com">ruslan@mavinx.com</a>
-                <a class="footerLink fontMedium" href="tel:+38(097)7909021">+38 (097) 790 90 21</a>
+                <a class="footerLink fontMedium" href="mailto:{{ about.email }}">{{ about.email }}</a>
+                <a class="footerLink fontMedium" href="tel:{{ about.phone }}">{{ about.phone }}</a>
             </div>
             <div class="location">
                 <h3 class="fontMedium h3">
@@ -70,11 +70,11 @@
                     {% trans 'follow_us' %}
                 </h3>
                 <div class="footerFollow">
-                    <a class="footerLink fontMedium" href="#">
+                    <a class="footerLink fontMedium" href="{{ about.linkedin }}">
                         <img src="{% static 'site/images/linkedin.svg' %}" alt="">
                         Linkedin
                     </a>
-                    <a class="footerLink fontMedium" href="#">
+                    <a class="footerLink fontMedium" href="{{ about.clutch }}">
                         <img src="{% static 'site/images/c.svg' %}" alt="">
                         Clutch
                     </a>

@@ -88,6 +88,7 @@ class ClientRequest(View):
             detail=data['detail'],
             file=file
         )
+
         response = {
             'message': 'Ваш запрос был отправлен',
             'data': data

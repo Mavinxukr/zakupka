@@ -1,40 +1,37 @@
 $( document ).ready(function() {
-    const request =  new SendData();
     let data = new FormData()
-    let  area_id =  $('input[name=radio-group]:checked').data('area-id');
+    let url = '/api/client-request/'
+    let area_id =  $('input[name=radio-group]:checked').data('area-id');
     $('#file').on('change',function () {
         data.append('file', $('#file')[0].files[0])
     })
     $('input[name=radio-group]').on('click',function () {
         area_id = $(this).data("area-id")
     })
-    $('#submit_btn').on('click',function (e) {
-        e.preventDefault()
 
-        data.append('name', $('#name').val())
+    $('#submit_btn').on('click',function (e) {
+        let name = $('#name').val();
+        let phone = $('#phone').val();
+        let email = $('#email').val();
+        if (!name && !email && !phone){
+             return;
+        }
+
+        e.preventDefault()
+        data.append('name', name )
         data.append('area_id', area_id)
-        data.append('phone', $('#phone').val())
-        data.append('email', $('#email').val())
+        data.append('phone', phone)
+        data.append('email', email)
         data.append('terms', $('#rangeWeek').val())
         data.append('budget', $('#rangeBudget').val())
         data.append('detail', $('#detail').val())
         data.append('csrfmiddlewaretoken', $('input[name=csrfmiddlewaretoken]').val())
 
-        request.send_data(data)
-    })
-})
-
-
-class SendData {
-
-    url  = 'http://127.0.0.1:8000/client-request/';
-
-    send_data(body)  {
-            $.ajax({
+       $.ajax({
             type: "POST",
             enctype: 'multipart/form-data',
-            url: this.url,
-            data: body,
+            url: url,
+            data: data,
             processData: false,
             contentType: false,
             cache: false,
@@ -46,6 +43,5 @@ class SendData {
                 console.log(e)
             }
         });
-    }
-
-}
+    })
+})

@@ -4,22 +4,26 @@ from parler.admin import TranslatableAdmin
 
 from .models import Company, Customer, \
     Area, Project, Blog, Review, Contact, About, Order, \
-    ProjectImage, AboutImage, Subscribers
+    ProjectImage, AboutImage, Subscribers, Topic
 
 
 @admin.register(Blog)
 class BlogAdmin(TranslatableAdmin):
     list_per_page = 10
-    list_display = ('name', 'description', 'area', 'date_publish', '_image', 'views')
-    list_filter = ('translations__name', 'area', 'date_publish', 'views')
-    search_fields = ('translations__name', 'date_publish', 'area__translations__name','views')
-    readonly_fields = ('date_publish','views')
+    list_display = ('name', 'description', 'topic', 'date_publish', '_image', 'views')
+    list_filter = ('translations__name', 'topic', 'date_publish', 'views')
+    search_fields = ('translations__name', 'date_publish', 'topic__translations__name','views')
 
     def _image(self, obj):
         image_path = 'http://127.0.0.1:8000/media/{}'.format(obj.image)
         return mark_safe(
             "<img src='{}' width='40' height='25' alt='img' >".format(image_path)
         )
+
+@admin.register(Topic)
+class TopicAdmin(TranslatableAdmin):
+    list_display = ('name',)
+
 
 
 @admin.register(Company)
@@ -63,9 +67,9 @@ class ProjectAdmin(TranslatableAdmin):
     model = Project
     list_per_page = 10
     inlines = (ProjectImagesInline,)
-    list_display = ('name', 'area', 'priority', 'company')
-    list_filter = ('translations__name', 'area__translations__name', 'priority', 'company__translations__name')
-    search_fields = ('translations__name', 'area__translations__name', 'priority', 'company__translations__name')
+    list_display = ('name',  'priority', 'company')
+    list_filter = ('translations__name', 'priority', 'company__translations__name')
+    search_fields = ('translations__name', 'priority', 'company__translations__name')
 
 
 @admin.register(Review)

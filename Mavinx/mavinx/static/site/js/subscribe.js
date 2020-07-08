@@ -1,18 +1,16 @@
 $( document ).ready(function() {
-    let  button = $('#send_sub_but');
-    let url = "http://127.0.0.1:8000/client-subscribe/";
-    button.on('click', function (e) {
+     let url = "/api/client-subscribe/";
+     let data = new FormData();
+    $('#send_sub_but').on('click', function (e) {
         e.preventDefault();
-        let input = $('#sub_email').val()
-        if (!input){
-            alert('Заполните поле e-mail !')
-            return;
+        let input = $('#sub_email')
+        if (!input.val()){
+            return alert('Заполните поле e-mail !');
         }
-        let data = new FormData();
-        data.append('email', input)
+        data.append('email', input.val())
         data.append('csrfmiddlewaretoken', $('input[name=csrfmiddlewaretoken]').val())
 
-           $.ajax({
+        $.ajax({
             type: "POST",
             enctype: 'multipart/form-data',
             url: url,
@@ -23,10 +21,11 @@ $( document ).ready(function() {
             timeout: 600000,
             success: function (data) {
                 alert(data.message)
+                input.val('')
             },
             error: function (e) {
                 console.log(e)
             }
-        });
+    });
     })
 })

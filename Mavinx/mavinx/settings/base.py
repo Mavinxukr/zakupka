@@ -18,6 +18,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'head',
     'django_cleanup',
+    'request'
 ]
 
 INSTALLED_APPS += (

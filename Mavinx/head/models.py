@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.datetime_safe import datetime
 from django.utils.translation import ugettext_lazy as _
 from parler.models import TranslatableModel, TranslatedFields
 
@@ -32,6 +33,18 @@ class Area(TranslatableModel):
         return self.name
 
 
+class Topic(TranslatableModel):
+    class Meta:
+        verbose_name_plural = _('vnp_topic')
+        verbose_name = _('vn_topic')
+
+    translations = TranslatedFields(
+        name=models.CharField(max_length=100, verbose_name=_('vnm_name_topic')),
+    )
+
+    def __str__(self):
+        return self.name
+
 
 class Blog(TranslatableModel):
     class Meta:
@@ -43,9 +56,9 @@ class Blog(TranslatableModel):
         description = models.TextField(verbose_name=_('vnm_desc_blog'))
     )
     views = models.IntegerField(default=1, verbose_name=_('vnm_date_views'))
-    date_publish = models.DateTimeField(auto_now_add=True, null=True, verbose_name=_('vnm_date_blog'))
-    area = models.ForeignKey(Area, related_name='blog', on_delete=models.CASCADE, null=True,
-                             verbose_name=_(u'vnm_area_blog'), default=1)
+    date_publish = models.DateTimeField(default=datetime.now, verbose_name=_('vnm_date_blog'))
+    topic = models.ForeignKey(Topic, related_name='topic', on_delete=models.CASCADE, null=True,
+                             verbose_name=_(u'vnm_topic_blog'), default=1)
     image = models.ImageField(verbose_name=_(u'vnm_image_blog'), upload_to=custom_upload_to,
                               null=True, blank=True)
 
@@ -81,8 +94,7 @@ class Project(TranslatableModel):
         description = models.CharField(max_length=255, verbose_name=_('vnm_desc_project'))
     )
 
-    area = models.ForeignKey(Area, null=True, on_delete=models.SET_NULL, related_name='project',
-                             verbose_name=_('vnm_area_project'))
+    area = models.ManyToManyField(Area, related_name='project', verbose_name=_('vnm_area_project'))
     priority = models.IntegerField(verbose_name=_('vnm_priority_project'), unique=True)
     company = models.ForeignKey(Company, on_delete=models.CASCADE, related_name='project',
                                 verbose_name=_('vnm_company_project'))

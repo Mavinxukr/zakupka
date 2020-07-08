@@ -472,6 +472,26 @@ msgstr "Полный цикл услуг по созданию и запуску
 msgid "vnm_date_views"
 msgstr "Просмотров"
 
+msgid "vnp_topic"
+msgstr "Тема"
+
+msgid "vn_topic"
+msgstr "Тема"
+
+msgid "vnm_name_topic"
+msgstr "Тема"
+
+msgid "vnm_topic_blog"
+msgstr "Тема статьи"
+
+
+
+
+
+
+
+
+
 
 
 

@@ -10,15 +10,12 @@ services:
     - ./mavinx_db:/var/lib/postgresql/data
   proj:
     container_name: mavinxStoreProject
-    build: ./work-project/
-    command: python3 manage.py runserver 0.0.0.0:8000
+    build: ./Mavinx/
+    command: python3 manage.py runserver --setting=mavinx.settings.local 0.0.0.0:8000
     restart: always
-    #volumes:
-    #- ./static:./work-
     ports:
-    - '80:8000'
+    - '8080:8000'
     depends_on:
       - mavinxStoreDB
     env_file:
       - .env
-

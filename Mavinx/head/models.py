@@ -56,7 +56,7 @@ class Blog(TranslatableModel):
         description = models.TextField(verbose_name=_('vnm_desc_blog'))
     )
     views = models.IntegerField(default=1, verbose_name=_('vnm_date_views'))
-    date_publish = models.DateTimeField(default=datetime.now, verbose_name=_('vnm_date_blog'))
+    date_publish = models.DateTimeField(default=datetime.now, null=True, verbose_name=_('vnm_date_blog'))
     topic = models.ForeignKey(Topic, related_name='topic', on_delete=models.CASCADE, null=True,
                              verbose_name=_(u'vnm_topic_blog'), default=1)
     image = models.ImageField(verbose_name=_(u'vnm_image_blog'), upload_to=custom_upload_to,

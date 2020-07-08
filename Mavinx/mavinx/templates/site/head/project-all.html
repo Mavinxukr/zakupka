@@ -2,10 +2,10 @@
 {% load i18n %}
 <div class="container tabs">
         <ul class="tabs__caption">
-            <li class="fontMedium active">{% trans 'proj_all_tab' %}</li>
-            <li class="fontMedium">IOS</li>
-            <li class="fontMedium">Android</li>
-            <li class="fontMedium">Web</li>
+        <li class="fontMedium active">{% trans 'proj_all_tab' %}</li>
+            {% for area in areas %}
+                <li class="fontMedium">{{ area.name }}</li>
+            {% endfor %}
         </ul>
         <div class="tabs__content active">
             <div class="firstColumn">

@@ -18,6 +18,10 @@ msgstr ""
 msgid "vb_company"
 msgstr "Компании"
 
+msgid "service_footer"
+msgstr "Сервис"
+
+
 msgid "vbp_company"
 msgstr "Компании"
 
@@ -483,20 +487,3 @@ msgstr "Тема"
 
 msgid "vnm_topic_blog"
 msgstr "Тема статьи"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -3,6 +3,7 @@
 .AppleDouble
 .LSOverride
 *.env
+
 ./work-project/media/*
 ./work-project/static
 
@@ -37,6 +38,7 @@ __pycache__/
 # Distribution / packaging
 .Python
 env/
+env37/
 build/
 develop-eggs/
 dist/

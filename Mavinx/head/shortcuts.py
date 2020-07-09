@@ -1,7 +1,7 @@
 from django.shortcuts import render as main_render
 from django.utils import translation
 
-from .models import Area, Contact, Project, Review
+from .models import Area, Contact, Project, Review, Blog
 
 
 def render(request, template, context):
@@ -12,4 +12,5 @@ def render(request, template, context):
     context['lang'] = lang
     context['projects'] = Project.objects.all()
     context['reviews'] = Review.objects.all()
+    context['blogs'] = Blog.objects.all()
     return main_render(request, template, context)

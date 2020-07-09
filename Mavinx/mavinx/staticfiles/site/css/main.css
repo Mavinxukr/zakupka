@@ -423,7 +423,7 @@ main {
 }
 
 .row .blockInfo .technology img {
-    margin: 0;
+    margin: 0 0 10px 0;
 }
 
 .row .blockInfo .complete .num,
@@ -961,13 +961,21 @@ footer [type="checkbox"]:not(:checked) + label,
     transition: all 0.2s ease;
 }
 
-footer [type="checkbox"]:not(:checked) + label{
-    padding: 15px 23px;
+footer [type="checkbox"]:not(:checked) + label {
+    padding: 13px 23px;
     margin-right: 6px;
     border: 1px solid #E4E4E4;
     border-radius: 10px;
 }
-footer [type="checkbox"]:checked + label,
+
+footer [type="checkbox"]:checked + label {
+  background: #f2f2f2;
+  padding: 15px 23px;
+  border: 1px solid #f2f2f2;
+  border-radius: 10px;
+  margin-right: 6px;
+}
+
 .formTitle {
     margin-right: 20px;
     color: #CCCCCC;
@@ -1124,7 +1132,7 @@ footer .h1 {
     border-radius: 50%;
     position: relative;
     box-shadow: 0 0 0 5px #fff;
-    cursor: ew-resize;
+    cursor: pointer;
 }
 
 footer .container {
@@ -1150,14 +1158,20 @@ footer .container {
   color: #B75050;
 }
 
-.showError {
-  display: block;
-}
-
 .flexItems {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
   margin-left: -10px;
   margin-right: -10px;
+}
+
+.errorText {
+  margin: 0;
+  display: none;
+  color: #B75050;
+}
+
+.showError {
+  display: block;
 }

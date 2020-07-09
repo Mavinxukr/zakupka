@@ -57,7 +57,7 @@ class Blog(TranslatableModel):
     )
     views = models.IntegerField(default=1, verbose_name=_('vnm_date_views'))
     date_publish = models.DateTimeField(default=datetime.now, null=True, verbose_name=_('vnm_date_blog'))
-    topic = models.ForeignKey(Topic, related_name='topic', on_delete=models.CASCADE, null=True,
+    topic = models.ForeignKey(Topic, related_name='blog', on_delete=models.CASCADE, null=True,
                              verbose_name=_(u'vnm_topic_blog'), default=1)
     image = models.ImageField(verbose_name=_(u'vnm_image_blog'), upload_to=custom_upload_to,
                               null=True, blank=True)
@@ -131,7 +131,7 @@ class Review(TranslatableModel):
         name=models.CharField(max_length=255, verbose_name=_('vnm_name_review'))
     )
 
-    customer = models.ForeignKey(Customer, related_name='customer', on_delete=models.CASCADE,
+    customer = models.ForeignKey(Customer, related_name='reviews', on_delete=models.CASCADE,
                                  verbose_name=_('vnm_customer_review'))
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='reviews',
                                 verbose_name=_('vnm_project_review'))
@@ -170,7 +170,7 @@ class Order(models.Model):
         ("ЗАВЕРЕШЕННЫЙ", "Завершенный"),
     )
 
-    area = models.ManyToManyField(Area, verbose_name=_('vnm_name_area'),related_name='areas')
+    area = models.ManyToManyField(Area, verbose_name=_('vnm_name_area'),related_name='orders')
     email = models.EmailField(max_length=255, null=True, verbose_name=_('vnm_email_order'))
     phone = models.CharField(max_length=255, null=True, verbose_name=_('vnm_phone_order'))
     name = models.CharField(max_length=255, null=True, verbose_name=_('vnm_phone_name'))

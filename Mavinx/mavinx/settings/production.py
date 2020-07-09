@@ -7,7 +7,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mavinx_store',
+        'NAME': os.getenv('POSTGRES_DB'),
         'USER': os.getenv('DB_USER'),
         'PASSWORD': os.getenv('DB_PASS'),
         'HOST': 'mavinxStoreDB',

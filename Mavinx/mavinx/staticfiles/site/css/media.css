@@ -2,4 +2,26 @@
     .bigImg ~ .tabsItemLink {
         left: 0;
     }
+
+    .secondColumn {
+      margin: 0 20px;
+    }
+
+    .slider-block {
+        flex-wrap: wrap;
+    }
+
+    .container > * {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    .blockInfo {
+      max-width: 590px;
+    }
+}
+@media screen and (max-width: 1550px) {
+    .container {
+        max-width: 100%;
+    }
 }

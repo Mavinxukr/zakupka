@@ -1,13 +1,14 @@
 $( document ).ready(function() {
+     let url = "/api/client-subscribe/";
+     let data = new FormData();
     $('#send_sub_but').on('click', function (e) {
         e.preventDefault();
         let input = $('#sub_email')
-        let url = "/api/client-subscribe/";
-        let data = new FormData();
         if (!input.val()){
-            return alert('Заполните поле e-mail !');
+            $('.subscribeError').addClass('showError');
+            return
         }
-        data.append('email', input)
+        data.append('email', input.val())
         data.append('csrfmiddlewaretoken', $('input[name=csrfmiddlewaretoken]').val())
 
         $.ajax({

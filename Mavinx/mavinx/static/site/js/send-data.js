@@ -10,16 +10,36 @@ $( document ).ready(function() {
     })
 
     $('#submit_btn').on('click',function (e) {
+        e.preventDefault();
         let name = $('#name').val();
         let phone = $('#phone').val();
         let email = $('#email').val();
+        if (!name){
+             $('.errorName').addClass('showError');
+        } else {
+          $('.errorName').removeClass('showError');
+        }
+        if (!email){
+             $('.errorMail').addClass('showError');
+        } else {
+          $('.errorMail').removeClass('showError');
+        }
+        if (!phone){
+             $('.errorPhone').addClass('showError');
+        } else {
+          $('.errorPhone').removeClass('showError');
+        }
         if (!name && !email && !phone){
              return;
         }
 
-        e.preventDefault()
+        let checkedItem = [];
+        $('#send_form input:checkbox:checked').each(function(){
+          checkedItem.push($(this).val());
+        });
+
         data.append('name', name )
-        data.append('areas_id', [1,2])
+        data.append('areas_id', checkedItem)
         data.append('phone', phone)
         data.append('email', email)
         data.append('terms', $('#rangeWeek').val())

@@ -10,7 +10,7 @@
             {% for blog in blogs %}
             <a href="#">
                 <article class="blogItem column">
-                    <img class="blogImage" src="{{  request.META.HTTP_HOST  }}/media/{{ blog.image }}" alt="">
+                    <img class="blogImage" src="{{ request.scheme }}://{{request.META.HTTP_HOST  }}/media/{{ blog.image }}" alt="">
                     <p class="fontMedium blogDescription">
                         {{ blog.name }}
                     </p>

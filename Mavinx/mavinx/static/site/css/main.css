@@ -70,6 +70,7 @@ a:hover{
 }
 
 .tabs__content.active {
+    margin-top: 99px;
     display: flex;
     justify-content: space-between;
 }
@@ -178,7 +179,8 @@ main {
 }
 
 .container {
-    width: 1521px;
+    max-width: 1521px;
+    width: 100%;
     margin: auto;
     overflow: hidden;
 }
@@ -266,14 +268,6 @@ main {
     max-width: 409px;
     height: 520px;
     overflow: hidden;
-}
-
-.firstColumn {
-    margin-top: 99px;
-}
-
-.secondColumn {
-    margin-top: 299px;
 }
 
 .tabsItem:before {
@@ -498,7 +492,7 @@ main {
 
 .row .imgFit {
     position: absolute;
-    max-width: 929px;
+    max-width: 50%;
     left: 16px;
     margin: 0;
     max-height: 499px;
@@ -949,14 +943,15 @@ footer:before {
     z-index: -1;
 }
 
-[type="radio"]:checked,
-[type="radio"]:not(:checked) {
+footer [type="checkbox"]:checked,
+footer [type="checkbox"]:not(:checked) {
     position: absolute;
     left: -9999px;
 }
 
-[type="radio"]:checked + label,
-[type="radio"]:not(:checked) + label {
+footer [type="checkbox"]:checked + label,
+footer [type="checkbox"]:not(:checked) + label,
+.formTitle {
     cursor: pointer;
     font-family: "InterMedium", sans-serif;
     font-size: 16px;
@@ -964,13 +959,14 @@ footer:before {
     transition: all 0.2s ease;
 }
 
-[type="radio"]:not(:checked) + label{
+footer [type="checkbox"]:not(:checked) + label{
     padding: 15px 23px;
     margin-right: 6px;
     border: 1px solid #E4E4E4;
     border-radius: 10px;
 }
-[type="radio"]:checked + label {
+footer [type="checkbox"]:checked + label,
+.formTitle {
     margin-right: 20px;
     color: #CCCCCC;
 }
@@ -1098,7 +1094,7 @@ footer form + div {
     position: absolute;
     z-index: 0;
     left: 0;
-    top: 11px;
+    top: 0;
     height: 3px;
     border-radius: 2px;
     background-color: rgba(14, 14, 14, .1);

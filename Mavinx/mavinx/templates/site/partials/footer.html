@@ -13,14 +13,17 @@
                 </p>
                {% for area in areas %}
                 <p>
-                    <input data-area-id="{{ area.id }}" type="checkbox" id="test{{ area.id }}">
+                    <input data-area-id="{{ area.id }}" value="{{ area.id }}" type="checkbox" id="test{{ area.id }}">
                     <label for="test{{ area.id }}">{{ area.name }}</label>
                 </p>
                {% endfor %}
             </div>
             <input id="name" required placeholder="{% trans 'plc_name' %}" class="footerInput fontMedium" type="text">
+            <p class="errorText errorName fontRegular">You did not fill</p>
             <input id="phone" required  placeholder="{% trans 'plc_phone' %}" class="footerInput fontMedium" type="text">
+            <p class="errorText errorPhone fontRegular">You did not fill</p>
             <input id="email" required  placeholder="{% trans 'plc_email' %}" class="footerInput fontMedium" type="email">
+            <p class="errorText errorMail fontRegular">You did not fill</p>
             <div class="flex">
                 <div class="rangeBlock">
                     <p class="fontMedium">{% trans 'footer_terms' %}<span id="valWeek"> 1 </span>{% trans 'footer_week' %}</p>

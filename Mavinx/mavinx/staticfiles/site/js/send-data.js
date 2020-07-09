@@ -10,14 +10,15 @@ $( document ).ready(function() {
     })
 
     $('#submit_btn').on('click',function (e) {
+        e.preventDefault()
         let name = $('#name').val();
         let phone = $('#phone').val();
         let email = $('#email').val();
         if (!name && !email && !phone){
+            console.log(dsadas);
              return;
         }
 
-        e.preventDefault()
         data.append('name', name )
         data.append('areas_id', [1,2])
         data.append('phone', phone)

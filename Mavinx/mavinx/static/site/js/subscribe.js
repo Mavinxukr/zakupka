@@ -5,7 +5,8 @@ $( document ).ready(function() {
         e.preventDefault();
         let input = $('#sub_email')
         if (!input.val()){
-            return alert('Заполните поле e-mail !');
+            $('.subscribeError').addClass('showError');
+            return
         }
         data.append('email', input.val())
         data.append('csrfmiddlewaretoken', $('input[name=csrfmiddlewaretoken]').val())

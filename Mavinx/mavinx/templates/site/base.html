@@ -93,7 +93,8 @@
                 <p class="fontMedium">
                     {% trans 'subscribe_to_your' %}
                 </p>
-                <input name="email" type="email" id="sub_email" placeholder="E-mail"  required>
+                <input name="email" type="email" id="sub_email" placeholder="E-mail" required>
+                <span class="subscribeError fontMedium">You did not fill</span>
                 <button class="fontMedium" id="send_sub_but">
                    {% trans 'subscribe' %} +
                 </button>
@@ -114,4 +115,3 @@
 <script src="{% static 'site/js/main.js'  %}"></script>
 <script src="{% static 'site/js/subscribe.js'  %}"></script>
 </body>
-

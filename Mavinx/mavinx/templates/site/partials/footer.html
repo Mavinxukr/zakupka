@@ -8,10 +8,12 @@
                 {% trans 'got_proj' %}
             </p>
            <div class="flex">
+                <p class="formTitle">
+                    {% trans 'service_footer' %}:
+                </p>
                {% for area in areas %}
                 <p>
-                    <input data-area-id="{{ area.id }}" type="radio" id="test{{ area.id }}" name="radio-group"
-                            {% if area.id == 1  %} checked {% endif %}>
+                    <input data-area-id="{{ area.id }}" type="checkbox" id="test{{ area.id }}">
                     <label for="test{{ area.id }}">{{ area.name }}</label>
                 </p>
                {% endfor %}

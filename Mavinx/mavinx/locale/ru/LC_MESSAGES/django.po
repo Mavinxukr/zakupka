@@ -18,6 +18,10 @@ msgstr ""
 msgid "vb_company"
 msgstr "Компании"
 
+msgid "service_footer"
+msgstr "Сервис"
+
+
 msgid "vbp_company"
 msgstr "Компании"
 
@@ -266,7 +270,7 @@ msgstr "Блог"
 
 
 msgid "hire_us"
-msgstr "Наймите нас"
+msgstr "Связаться с нами"
 
 msgid "we_are"
 msgstr "Мы веб / мобильные разработчики"
@@ -483,20 +487,3 @@ msgstr "Тема"
 
 msgid "vnm_topic_blog"
 msgstr "Тема статьи"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

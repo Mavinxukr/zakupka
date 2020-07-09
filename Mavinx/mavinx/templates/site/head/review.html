@@ -6,84 +6,31 @@
             </h1>
             <div class="column">
                 <div class="slider-for">
+                    {% for review in reviews %}
                     <div class="slider-flex">
                         <div class="slider-images">
-                            <img class="slider-mainImage" src="{% static 'site/images/face.png' %}" alt="">
-                            <img class="slider-logo" src="{% static 'site/images/ef.png' %}" alt="">
-                            <h3 class="slider-name fontMedium">Ethan Pierce</h3>
-                            <p class="prof fontRegular">CEO EasyFit</p>
+                            <img class="slider-mainImage" src="http://127.0.0.1:8000/media/{{review.customer.image  }}" alt="">
+                            <img class="slider-logo" src="http://127.0.0.1:8000/media/{{ review.customer.company.logo}}" alt="">
+                            <h3 class="slider-name fontMedium">{{ review.customer.name }}</h3>
+                            <p class="prof fontRegular">{{ review.customer.description }}</p>
                         </div>
                         <div class="slider-content">
                             <p class="fontRegular">
-                                They really like to satisfy the client as much as possible I’m a pretty picky IT engineer, so they needed some time get to know what I wanted, but we were successful. they do not ask for any payment until the customer is satisfied. This is a very good point.
+                                {{ review.name }}
                             </p>
                             <a class="fontMedium" href="">
                                  {% trans 'view_case_study' %}
                             </a>
                         </div>
                     </div>
-                    <div class="slider-flex">
-                        <div class="slider-images">
-                            <img class="slider-mainImage" src="{% static 'site/images/face.png' %}" alt="">
-                            <img class="slider-logo" src="{% static 'site/images/pw.png' %}" alt="">
-                            <h3 class="slider-name fontMedium">Ethan Pierce</h3>
-                            <p class="prof fontRegular">CEO EasyFit</p>
-                        </div>
-                        <div class="slider-content">
-                            <p class="fontRegular">
-                                They really like to satisfy the client as much as possible I’m a pretty picky IT engineer, so they needed some time get to know what I wanted, but we were successful. they do not ask for any payment until the customer is satisfied. This is a very good point.
-                            </p>
-                            <a class="fontMedium" href="">
-                                {% trans 'view_case_study' %}
-                            </a>
-                        </div>
-                    </div>
-                    <div class="slider-flex">
-                        <div class="slider-images">
-                            <img class="slider-mainImage" src="{% static 'site/images/face.png' %}" alt="">
-                            <img class="slider-logo" src="{% static 'site/images/mi.png' %}" alt="">
-                            <h3 class="slider-name fontMedium">Ethan Pierce</h3>
-                            <p class="prof fontRegular">CEO EasyFit</p>
-                        </div>
-                        <div class="slider-content">
-                            <p class="fontRegular">
-                                They really like to satisfy the client as much as possible I’m a pretty picky IT engineer, so they needed some time get to know what I wanted, but we were successful. they do not ask for any payment until the customer is satisfied. This is a very good point.
-                            </p>
-                            <a class="fontMedium" href="">
-                               {% trans 'view_case_study' %}
-                            </a>
-                        </div>
-                    </div>
-                    <div class="slider-flex">
-                        <div class="slider-images">
-                            <img class="slider-mainImage" src="{% static 'site/images/face.png' %}" alt="">
-                            <img class="slider-logo" src="{% static 'site/images/mir.png' %}" alt="">
-                            <h3 class="slider-name fontMedium">Ethan Pierce</h3>
-                            <p class="prof fontRegular">CEO EasyFit</p>
-                        </div>
-                        <div class="slider-content">
-                            <p class="fontRegular">
-                                They really like to satisfy the client as much as possible I’m a pretty picky IT engineer, so they needed some time get to know what I wanted, but we were successful. they do not ask for any payment until the customer is satisfied. This is a very good point.
-                            </p>
-                            <a class="fontMedium" href="">
-                              {% trans 'view_case_study' %}
-                            </a>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
                 <div class="slider-nav">
-                    <div>
-                        <img src="{% static 'site/images/ef.png' %}" alt="">
-                    </div>
-                    <div>
-                        <img src="{% static 'site/images/pw.png' %}" alt="">
-                    </div>
-                    <div>
-                        <img src="{% static 'site/images/mi.png' %}" alt="">
-                    </div>
-                    <div>
-                        <img src="{% static 'site/images/mir.png' %}" alt="">
-                    </div>
+                     {% for review in reviews %}
+                        <div>
+                            <img src="http://127.0.0.1:8000/media/{{ review.customer.company.logo}}" alt="">
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>

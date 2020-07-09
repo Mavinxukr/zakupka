@@ -250,10 +250,12 @@ main {
 
 .tabsItem {
     text-align: center;
-    max-width: 487px;
+    max-width: 33%;
     width: 100%;
     margin-bottom: 100px;
-    position: relative;;
+    position: relative;
+    margin-left: 2px;
+    margin-right: 2px;
 }
 
 .bigImg {
@@ -1150,4 +1152,12 @@ footer .container {
 
 .showError {
   display: block;
+}
+
+.flexItems {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-left: -10px;
+  margin-right: -10px;
 }

@@ -72,7 +72,7 @@ class Customer(TranslatableModel):
         verbose_name = _('vn_customer')
 
     translations = TranslatedFields(
-        name=models.CharField(max_length=100, verbose_name=_('vnm_fio_customer'), unique=True),
+        name=models.CharField(max_length=100, verbose_name=_('vnm_fio_customer')),
         description = models.CharField(max_length=256, verbose_name=_('vnm_desc_customer'))
     )
 
@@ -128,7 +128,7 @@ class Review(TranslatableModel):
         verbose_name = _('vn_review')
 
     translations = TranslatedFields(
-        name=models.CharField(max_length=255, verbose_name=_('vnm_name_review'))
+        name=models.TextField(max_length=255, verbose_name=_('vnm_name_review'))
     )
 
     customer = models.ForeignKey(Customer, related_name='reviews', on_delete=models.CASCADE,

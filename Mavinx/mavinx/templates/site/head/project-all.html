@@ -9,66 +9,22 @@
         </ul>
         <div class="tabs__content active">
             <div class="flexItems">
+                {% for project in projects %}
                 <div class="tabsItem">
-                    <img class="bigImg" src="{% static 'site/images/4.png' %}" alt="">
+                    <img class="{% if forloop.counter|divisibleby:2 %}smallImg {% else %} bigImg {% endif %}"
+                         src="http://127.0.0.1:8000/media/{{project.project_images.first.image }}" alt="">
                     <a class= href="#">
                         <div class="tabsItemLink fontMedium column">
-                            FoodDelivery
+                            {{ project.name }}
                             <div class="flex">
-                                <span class="fontRegular">iOS</span>
-                                <span class="fontRegular">Android</span>
+                                {% for area in project.area.all %}
+                                    <span class="fontRegular">{{ area.name }}</span>
+                                {% endfor %}
                             </div>
                         </div>
                     </a>
                 </div>
-                <div class="tabsItem">
-                    <img class="smallImg" src="{% static 'site/images/1.png' %}" alt="">
-                    <a class= href="#">
-                        <div class="tabsItemLink fontMedium column">
-                            FoodDelivery
-                            <div class="flex">
-                                <span class="fontRegular">iOS</span>
-                                <span class="fontRegular">Android</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="tabsItem">
-                    <img class="bigImg" src=" {% static 'site/images/2.png' %}" alt="">
-                    <a class= href="#">
-                        <div class="tabsItemLink fontMedium column">
-                            FoodDelivery
-                            <div class="flex">
-                                <span class="fontRegular">iOS</span>
-                                <span class="fontRegular">Android</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="tabsItem">
-                    <img class="smallImg" src="{% static 'site/images/3.png' %}" alt="">
-                    <a class= href="#">
-                        <div class="tabsItemLink fontMedium column">
-                            FoodDelivery
-                            <div class="flex">
-                                <span class="fontRegular">iOS</span>
-                                <span class="fontRegular">Android</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="tabsItem">
-                    <img class="bigImg" src="{% static 'site/images/5.png' %}" alt="">
-                    <a class= href="#">
-                        <div class="tabsItemLink fontMedium column">
-                            FoodDelivery
-                            <div class="flex">
-                                <span class="fontRegular">iOS</span>
-                                <span class="fontRegular">Android</span>
-                            </div>
-                        </div>
-                    </a>
-                </div
+                {% endfor %}
                 <div class="tabsItem allProjects">
                     <div class="smallImg Project">
                         <div class="column">

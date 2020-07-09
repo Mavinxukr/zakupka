@@ -19,7 +19,7 @@ $( document ).ready(function() {
 
         e.preventDefault()
         data.append('name', name )
-        data.append('area_id', area_id)
+        data.append('areas_id', [1,2])
         data.append('phone', phone)
         data.append('email', email)
         data.append('terms', $('#rangeWeek').val())

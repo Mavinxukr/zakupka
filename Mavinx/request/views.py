@@ -6,21 +6,15 @@ from head.models import Order, Subscribers
 
 class ClientRequest(View):
     def post(self, request , *args, **kwargs):
-        data = request.POST.copy()
+        data = request.POST.dict().copy()
         del data['csrfmiddlewaretoken']
         file = request.FILES.get('file')
-
-        Order.objects.create(
-            area_id=data['area_id'],
-            email=data['email'],
-            phone=data['phone'],
-            name=data['name'],
-            terms=data['terms'],
-            budget=data['budget'],
-            detail=data['detail'],
-            file=file
-        )
-
+        arias_id = data.pop('areas_id')
+        order =  Order.objects.create(**data)
+        for area_id in arias_id.split(','):
+            order.area.add(area_id)
+        order.file = file
+        order.save()
         response = {
             'message': 'Ваш запрос был отправлен',
             'data': data
@@ -42,4 +36,3 @@ class ClientSubscribe(View):
             }
 
         return JsonResponse(response, status=200)
-

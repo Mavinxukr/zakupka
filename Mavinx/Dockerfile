@@ -8,6 +8,5 @@ RUN pip install -r requirements.txt
 COPY . /code/
 RUN django-admin compilemessages
 RUN python manage.py collectstatic --noinput
-RUN python manage.py makemigrations
-RUN python manage.py migrate
+#RUN python manage.py migrate
 RUN /bin/bash load_head_fixtures.sh

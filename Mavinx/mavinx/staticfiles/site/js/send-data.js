@@ -1,10 +1,7 @@
 $( document ).ready(function() {
     let data = new FormData()
     let url = '/api/client-request/'
-    let  area_id =  $('input[name=radio-group]:checked').data('area-id');
-    let name = $('#name').val();
-    let phone = $('#phone').val();
-    let email = $('#email').val();
+    let area_id =  $('input[name=radio-group]:checked').data('area-id');
     $('#file').on('change',function () {
         data.append('file', $('#file')[0].files[0])
     })
@@ -13,12 +10,16 @@ $( document ).ready(function() {
     })
 
     $('#submit_btn').on('click',function (e) {
-        e.preventDefault()
-         if (!name && !phone && !email){
-            return alert('Заполните поля')
+        let name = $('#name').val();
+        let phone = $('#phone').val();
+        let email = $('#email').val();
+        if (!name && !email && !phone){
+             return;
         }
+
+        e.preventDefault()
         data.append('name', name )
-        data.append('area_id', area_id)
+        data.append('areas_id', [1,2])
         data.append('phone', phone)
         data.append('email', email)
         data.append('terms', $('#rangeWeek').val())

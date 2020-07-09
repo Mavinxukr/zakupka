@@ -270,7 +270,7 @@ msgstr "Блог"
 
 
 msgid "hire_us"
-msgstr "Наймите нас"
+msgstr "Связаться с нами"
 
 msgid "we_are"
 msgstr "Мы веб / мобильные разработчики"

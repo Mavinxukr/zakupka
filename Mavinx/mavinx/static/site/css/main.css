@@ -257,14 +257,14 @@ main {
 }
 
 .bigImg {
-    width: 487px;
+    width: 100%;
     max-width: 487px;
     height: 620px;
     overflow: hidden;
 }
 
 .smallImg {
-    width: 409px;
+    width: 100%;
     max-width: 409px;
     height: 520px;
     overflow: hidden;
@@ -694,7 +694,7 @@ main {
 }
 
 .work .flex {
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .work .column {
@@ -1047,10 +1047,6 @@ footer .h1 {
     margin-bottom: 50px;
 }
 
-footer form + div {
-    max-width: 579px;
-}
-
 .footerLink {
     padding: 12px 20px;
     background: #F8F8F8;
@@ -1131,6 +1127,7 @@ footer form + div {
 
 footer .container {
     overflow: visible;
+    align-items: flex-start;
 }
 
 .rangeBlock > p {

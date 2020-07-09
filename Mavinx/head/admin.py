@@ -64,7 +64,6 @@ class ProjectImagesInline(admin.TabularInline):
 
 @admin.register(Project)
 class ProjectAdmin(TranslatableAdmin):
-    model = Project
     list_per_page = 10
     inlines = (ProjectImagesInline,)
     list_display = ('name',  'priority', 'company')
@@ -87,10 +86,9 @@ class ContactAdmin(admin.ModelAdmin):
 
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
-    model = Order
     list_per_page = 10
     list_display = ('name','email', 'phone', 'terms', 'budget', 'status',)
-    readonly_fields = ('name','email', 'phone', 'terms', 'budget', 'file', 'detail')
+    readonly_fields = ('name','email', 'phone', 'terms', 'budget', 'file', 'detail','area')
     list_filter = ('name' ,'email', 'terms', 'budget', 'phone', 'status')
     search_fields = ('name','email', 'terms', 'budget', 'phone')
 

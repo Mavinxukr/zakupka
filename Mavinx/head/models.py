@@ -94,7 +94,7 @@ class Project(TranslatableModel):
         description = models.CharField(max_length=255, verbose_name=_('vnm_desc_project'))
     )
 
-    area = models.ManyToManyField(Area, related_name='project', verbose_name=_('vnm_area_project'))
+    area = models.ManyToManyField(Area, related_name='projects', verbose_name=_('vnm_area_project'))
     priority = models.IntegerField(verbose_name=_('vnm_priority_project'), unique=True)
     company = models.ForeignKey(Company, on_delete=models.CASCADE, related_name='project',
                                 verbose_name=_('vnm_company_project'))
@@ -170,7 +170,7 @@ class Order(models.Model):
         ("ЗАВЕРЕШЕННЫЙ", "Завершенный"),
     )
 
-    area = models.ForeignKey(Area, on_delete=models.CASCADE, verbose_name=_('vnm_name_area'), null=True )
+    area = models.ManyToManyField(Area, verbose_name=_('vnm_name_area'),related_name='areas')
     email = models.EmailField(max_length=255, null=True, verbose_name=_('vnm_email_order'))
     phone = models.CharField(max_length=255, null=True, verbose_name=_('vnm_phone_order'))
     name = models.CharField(max_length=255, null=True, verbose_name=_('vnm_phone_name'))

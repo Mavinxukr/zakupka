@@ -40,5 +40,6 @@ class ClientSubscribe(View):
             response = {
                 'message': 'Вы успешно подписались на рассылку',
             }
+
         return JsonResponse(response, status=200)
 

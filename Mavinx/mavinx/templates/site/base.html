@@ -3,10 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="{% static 'site/css/slick.css' %}">
-    <link rel="stylesheet" href=" {% static 'site/css/motion-ui.css'%}">
-    <link rel="stylesheet" href=" {% static 'site/css/main.css' %}">
-    <link rel="stylesheet" href=" {% static 'site/css/media.css' %}">
+    <link rel="stylesheet" href="{% static 'site/css/slick.css' %}?{% now "U" %}">
+    <link rel="stylesheet" href=" {% static 'site/css/motion-ui.css'%}?{% now "U" %}">
+    <link rel="stylesheet" href=" {% static 'site/css/main.css' %}?{% now "U" %}">
+    <link rel="stylesheet" href=" {% static 'site/css/media.css' %}?{% now "U" %}">
     <title>Mavinx</title>
 </head>
 <body>
@@ -106,12 +106,13 @@
         {% include 'site/head/blog.html' %}
     </div>
 </main>
-{% include 'site/partials/footer.html' %}
 <script src="{% static 'site/js/jquery.js' %}"></script>
-<script src="{% static 'site/js/foundation.js' %}"></script>
-<script src="{% static 'site/js/what-input.js' %}"></script>
-<script src="{% static 'site/js/slick.js' %}"></script>
-<script src="{% static 'site/js/countTo.js'  %}"></script>
-<script src="{% static 'site/js/main.js'  %}"></script>
-<script src="{% static 'site/js/subscribe.js'  %}"></script>
+{% include 'site/partials/footer.html' %}
+  <script src="{% static 'site/js/send-data.js' %}?{% now "U" %}"></script>
+<script src="{% static 'site/js/foundation.js' %}?{% now "U" %}"></script>
+<script src="{% static 'site/js/what-input.js' %}?{% now "U" %}"></script>
+<script src="{% static 'site/js/slick.js' %}?{% now "U" %}"></script>
+<script src="{% static 'site/js/countTo.js'%}?{% now "U" %}"></script>
+<script src="{% static 'site/js/main.js'%}?{% now "U" %}"></script>
+<script src="{% static 'site/js/subscribe.js'%}?{% now "U" %}"></script>
 </body>

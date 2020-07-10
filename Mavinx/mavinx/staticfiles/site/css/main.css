@@ -77,10 +77,23 @@ a:hover{
   opacity: 0;
   height: 0;
   transition: opacity 2s;
+  z-index: -1;
+  position: relative;
+}
+
+.tabs__content .tabsItem {
+  opacity: 0;
+  transition: opacity 2s;
+}
+
+.tabs__content.active .tabsItem {
+  opacity: 1;
+  transition: opacity 2s;
 }
 
 .tabs__content.active {
     opacity: 1;
+    z-index: 0;
     height: auto;
     transition: opacity 2s;
     display: flex;
@@ -434,8 +447,27 @@ main {
     margin-right: 15px;
 }
 
-.row .blockInfo .technology img {
+.row .blockInfo .technology svg {
     margin: 0 0 10px 0;
+    width: 30px;
+    height: 30px;
+}
+
+.row .blockInfo .technology img {
+  margin: 0 0 10px 0;
+  height: 30px;
+}
+
+.row .blockInfo .technology svg.iconPhp {
+  width: 45px;
+  height: 45px;
+  margin-bottom: 5px;
+}
+
+.row .blockInfo .technology svg.iconC {
+  width: 80px;
+  height: 40px;
+  margin-bottom: 5px;
 }
 
 .row .blockInfo .complete .num,
@@ -741,6 +773,11 @@ main {
 .tabsContent {
     padding-top: 292px;
     position: relative;
+    max-width: 965px;
+}
+
+.tabsContent .tabs-panel {
+  min-height: 330px;
 }
 
 .tabs-title:first-child:before {
@@ -894,6 +931,10 @@ main {
     margin-bottom: 200px;
 }
 
+.blog > a {
+  display: block;
+}
+
 .blogCount {
     font-size: 46px;
     margin-left: 20px;
@@ -930,6 +971,10 @@ main {
     margin: 0;
 }
 
+.blogHashtag {
+  align-items: baseline;
+}
+
 .blogHashtag a {
     font-size: 12px;
     color: #F2C81F;
@@ -937,11 +982,16 @@ main {
     margin-bottom: 10px;
 }
 
-.blogHashtag span {
+.blogHashtag a span {
     opacity: .5;
     font-size: 12px;
     margin-right: 10px;
     margin-bottom: 10px;
+}
+
+.blogHashtag span {
+  font-size: 12px;
+  margin-right: 5px;
 }
 
 footer {
@@ -1252,4 +1302,8 @@ footer .container {
   width: 15px;
   height: 15px;
   margin-right: 10px;
+}
+
+.blogItem:hover .blogImage {
+  opacity: .7;
 }

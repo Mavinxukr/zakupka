@@ -7,40 +7,18 @@
             {% trans 'blog_show_all' %}
         </a>
         <div class="flex blogItems">
+            {% for blog in blogs %}
             <a href="#">
                 <article class="blogItem column">
-                    <img class="blogImage" src="{% static 'site/images/blog.png' %}" alt="">
+                    <img class="blogImage" src="{{ request.scheme }}://{{request.META.HTTP_HOST  }}/media/{{ blog.image }}" alt="">
                     <p class="fontMedium blogDescription">
-                        How we launched the service for trainers, which a year later went to IPO
+                        {{ blog.name }}
                     </p>
                     <div class="blogHashtag flex">
                         <a class="fontMedium" href="#">{% trans 'blog_views' %}</a>
-                        <span class="fontRegular">5m</span>
+                        <span class="fontRegular">{{ blog.views }}</span>
                     </div>
                 </article>
             </a>
-            <a href="#">
-                <article class="blogItem column">
-                    <img class="blogImage" src="{% static 'site/images/blog1.png' %}" alt="">
-                    <p class="fontMedium blogDescription">
-                        How we launched the service for trainers, which a year later went to IPO
-                    </p>
-                    <div class="blogHashtag flex">
-                        <a class="fontMedium" href="#">{% trans 'blog_views' %}</a>
-                        <span class="fontRegular">5m</span>
-                    </div>
-                </article>
-            </a>
-            <a href="#">
-                <article class="blogItem column">
-                    <img class="blogImage" src="{% static 'site/images/blog2.png' %}" alt="">
-                    <p class="fontMedium blogDescription">
-                        How we launched the service for trainers, which a year later went to IPO
-                    </p>
-                    <div class="blogHashtag flex">
-                        <a class="fontMedium" href="#">{% trans 'blog_views' %}</a>
-                        <span class="fontRegular">5m</span>
-                    </div>
-                </article>
-            </a>
+            {% endfor %}
         </div>

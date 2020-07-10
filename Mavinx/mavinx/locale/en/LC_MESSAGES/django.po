@@ -1227,7 +1227,7 @@ msgid "ios_app"
 msgstr " iOS application"
 
 msgid "ios_app_desc"
-msgstr "We develop native iOS apps with the latest tools and techniques. Our team can help you create an iOS mobile version of your website or launch a new product on the App Store"
+msgstr "We develop native iOS apps with the latest tools and techniques. Our team can help you create an iOS mobile version of your website or launch a new product on the App Store."
 
 msgid "ios_complite_app"
 msgstr "Complete application"
@@ -1242,7 +1242,7 @@ msgid "android_complite_app"
 msgstr "Complete application"
 
 msgid "android_app_desc"
-msgstr "We offer elegant, user-friendly and intuitive Android app development. Our team can help you create an iOS mobile version of your website or launch a new product on the Play Market"
+msgstr "The diversity of our projects and billion lines of written code give us the highest level in android programming. Each app built by us has a user-friendly interface and logical feature composition. Advanced usability tests make us sure, that we deliver well-designed products, which meet expectations of the most demanding clients."
 
 msgid "read_more_android"
 msgstr "Read more"
@@ -1263,7 +1263,7 @@ msgid "complete_interface"
 msgstr "Complete interface"
 
 msgid "web_site_desc"
-msgstr "The full cycle of services to create and launch a website from scratch or redesign a live website along with the modern trends and requirements"
+msgstr "The full cycle of services to create and launch a website from scratch or redesign a live website along with the modern trends and requirements."
 
 msgid "ux_ui_read_more"
 msgstr "Read more"
@@ -1292,8 +1292,14 @@ msgstr "Why us"
 msgid "more_about_m"
 msgstr "More about"
 
-msgid "technology_stack"
-msgstr "Technology stack"
+msgid "technology_stack_one"
+msgstr "Future Results"
+
+msgid "technology_stack_two"
+msgstr "Transparency"
+
+msgid "technology_stack_three"
+msgstr "Strategic Approach"
 
 msgid "how_work"
 msgstr "How we work"
@@ -1328,11 +1334,20 @@ msgstr " Full design"
 msgid "work_click_proto"
 msgstr "Clickable prototype"
 
-msgid "work_context"
-msgstr "UI design are final application or website screens; we can also provide animated application prototypes upon request to demonstrate some product functionality in action"
+msgid "error_mess"
+msgstr "You did not fill"
 
-msgid "technology_stack_context"
-msgstr "Transparent price model is quite simple. European cultural heritage of engineering plus Ukrainian rates (18-25 USD per hour) plus ability to scale the team.."
+msgid "work_context_spec"
+msgstr " We communicate with you a lot to figure out what you expect from a project. We analyze requirements for preparing a quality solution on time and within budget."
+
+msgid "technology_stack_context_one"
+msgstr "Your application is like a child for Mavinx for whom we are responsible. Therefore, a product that we develop for you makes money, solves your client’s problem, and hits the top ratings"
+
+msgid "technology_stack_context_two"
+msgstr "Our product manager personally leads your project. You control all the tasks via Redmine(Trello) and Scrum. We also provide mandatory weekly reports and hold Skype calls."
+
+msgid "technology_stack_context_three"
+msgstr "Our approach allows you to avoid overspending. Our philosophy is to minimize costs and time through strategy and planning."
 
 msgid "subscribe_to_your"
 msgstr "Subscribe to your newslater"
@@ -1395,10 +1410,44 @@ msgid "develop_mes"
 msgstr "Sorry, this page is under construction"
 
 msgid "desing_desc"
-msgstr "The full cycle of services to create and launch a website from scratch or redesign a live website along with the modern trends and requirements"
+msgstr "We create eye catchy design which simply impossible to ignore. Ease of design, a sense of taste and usability are our foundation."
 
 msgid "ab_test_desc"
-msgstr "The full cycle of services to create and launch a website from scratch or redesign a live website along with the modern trends and requirements"
+msgstr "Testing plays an important role in the development process.  We qualitatively make a test of all the functionality, design and the project as a whole. You can verify this."
 
 msgid "service_footer"
 msgstr "Service"
+
+msgid "work_context_design"
+msgstr " UI design are final application or website screens; we can also provide animated application prototypes upon request to demonstrate some product functionality in action"
+
+msgid "work_context_develop"
+msgstr " During the development stage we develop the frontend and backend, integrate APIs. We work by sprints, for demonstrate the results of development to you each two weeks"
+
+msgid "work_context_testing"
+msgstr " We begin testing right from the blueprinting & designing stages. The QA team responds quickly by reporting all bugs & issues. Thus, testing for us is like a continuous refinement process in our pursuit to perfection. It begins with the project and never really ends until the project goes live."
+
+msgid "work_context_support"
+msgstr " Publication on App Store and Google Play or on devices inside the company. 6 months cost-free guarantee and collecting feedback from users."
+
+msgid "work_context_spec_one"
+msgstr " - Wireframes are low-fidelity application screens(UX)"
+
+msgid "work_context_spec_two"
+msgstr " - List of user stories with scenarios and acceptance criteria."
+
+msgid "work_context_spec_three"
+msgstr " - Detailed estimate"
+
+msgid "work_context_design_one"
+msgstr " - A ready-made design for various platforms"
+
+msgid "work_context_design_two"
+msgstr " - Style Guide for developers"
+
+msgid "work_context_develop_one"
+msgstr " Ready product developed according to its specification and visual designs."
+
+
+
+

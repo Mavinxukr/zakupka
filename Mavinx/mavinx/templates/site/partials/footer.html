@@ -18,15 +18,24 @@
                 </p>
                {% endfor %}
             </div>
+<<<<<<< HEAD
             <input id="name" required value="" placeholder="{% trans 'plc_name' %}" class="footerInput fontMedium" type="text">
             <p class="errorText errorName fontRegular">You did not fill</p>
             <input id="phone" required value="" placeholder="{% trans 'plc_phone' %}" class="footerInput fontMedium" type="text">
             <p class="errorText errorPhone fontRegular">You did not fill</p>
             <input id="email" required value="" placeholder="{% trans 'plc_email' %}" class="footerInput fontMedium" type="email">
             <p class="errorText errorMail fontRegular">You did not fill</p>
+=======
+            <input id="name" required placeholder="{% trans 'plc_name' %}" class="footerInput fontMedium" type="text">
+            <p class="errorText errorName fontRegular">{% trans 'error_mess' %}</p>
+            <input id="phone" required  placeholder="{% trans 'plc_phone' %}" class="footerInput fontMedium" type="text">
+            <p class="errorText errorPhone fontRegular">{% trans 'error_mess' %}</p>
+            <input id="email" required  placeholder="{% trans 'plc_email' %}" class="footerInput fontMedium" type="email">
+            <p class="errorText errorMail fontRegular">{% trans 'error_mess' %}</p>
+>>>>>>> c2483f324391ca19bbb579895d9376a91d3bbf90
             <div class="flex">
                 <div class="rangeBlock">
-                    <p class="fontMedium">{% trans 'footer_terms' %}<span id="valWeek"> 1 </span>{% trans 'footer_week' %}</p>
+                    <p class="fontMedium">{% trans 'footer_terms' %} <span id="valWeek"> 1 </span> {% trans 'footer_week' %} </p>
                     <div class="range-container rangeWeek">
                         <span class="bar"><span class="fill"></span></span>
                         <input  class="range" id="rangeWeek" type="range" value="1" min="0" max="100" step="1"/>
@@ -89,5 +98,3 @@
         </div>
     </div>
 </footer>
-  <script src="{% static 'site/js/jquery.js' %}"></script>
-  <script src="{% static 'site/js/send-data.js' %}"></script>

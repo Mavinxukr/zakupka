@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<<<<<<< HEAD
     <link rel="stylesheet" href="{% static 'site/css/slick.css' %}">
     <link rel="stylesheet" href=" {% static 'site/css/motion-ui.css'%}">
     <link rel="stylesheet" href=" {% static 'site/css/main.css' %}">
@@ -20,6 +21,12 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'site/images/favicon/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="96x96" href="{% static 'site/images/favicon/favicon-96x96.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'site/images/favicon/favicon-16x16.png' %}">
+=======
+    <link rel="stylesheet" href="{% static 'site/css/slick.css' %}?{% now "U" %}">
+    <link rel="stylesheet" href=" {% static 'site/css/motion-ui.css'%}?{% now "U" %}">
+    <link rel="stylesheet" href=" {% static 'site/css/main.css' %}?{% now "U" %}">
+    <link rel="stylesheet" href=" {% static 'site/css/media.css' %}?{% now "U" %}">
+>>>>>>> c2483f324391ca19bbb579895d9376a91d3bbf90
     <title>Mavinx</title>
 </head>
 <body>
@@ -113,7 +120,7 @@
                     {% trans 'subscribe_to_your' %}
                 </p>
                 <input name="email" type="email" id="sub_email" placeholder="E-mail" required>
-                <span class="subscribeError fontMedium">You did not fill</span>
+                <span class="subscribeError fontMedium">{% trans 'error_mess' %}</span>
                 <button class="fontMedium" id="send_sub_but">
                    {% trans 'subscribe' %} +
                 </button>
@@ -125,12 +132,13 @@
         {% include 'site/head/blog.html' %}
     </div>
 </main>
-{% include 'site/partials/footer.html' %}
 <script src="{% static 'site/js/jquery.js' %}"></script>
-<script src="{% static 'site/js/foundation.js' %}"></script>
-<script src="{% static 'site/js/what-input.js' %}"></script>
-<script src="{% static 'site/js/slick.js' %}"></script>
-<script src="{% static 'site/js/countTo.js'  %}"></script>
-<script src="{% static 'site/js/main.js'  %}"></script>
-<script src="{% static 'site/js/subscribe.js'  %}"></script>
+{% include 'site/partials/footer.html' %}
+  <script src="{% static 'site/js/send-data.js' %}?{% now "U" %}"></script>
+<script src="{% static 'site/js/foundation.js' %}?{% now "U" %}"></script>
+<script src="{% static 'site/js/what-input.js' %}?{% now "U" %}"></script>
+<script src="{% static 'site/js/slick.js' %}?{% now "U" %}"></script>
+<script src="{% static 'site/js/countTo.js'%}?{% now "U" %}"></script>
+<script src="{% static 'site/js/main.js'%}?{% now "U" %}"></script>
+<script src="{% static 'site/js/subscribe.js'%}?{% now "U" %}"></script>
 </body>

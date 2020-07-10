@@ -12,7 +12,7 @@
                 {% for project in projects %}
                 <div class="tabsItem">
                     <img class="{% if forloop.counter|divisibleby:2 %}smallImg {% else %} bigImg {% endif %}"
-                         src="http://127.0.0.1:8000/media/{{project.project_images.first.image }}" alt="">
+                         src="{{ request.scheme }}://{{request.META.HTTP_HOST  }}/media/{{project.project_images.first.image }}" alt="">
                     <a class= href="#">
                         <div class="tabsItemLink fontMedium column">
                             {{ project.name }}

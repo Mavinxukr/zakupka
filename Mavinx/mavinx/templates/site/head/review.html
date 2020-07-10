@@ -9,8 +9,8 @@
                     {% for review in reviews %}
                     <div class="slider-flex">
                         <div class="slider-images">
-                            <img class="slider-mainImage" src="http://127.0.0.1:8000/media/{{review.customer.image  }}" alt="">
-                            <img class="slider-logo" src="http://127.0.0.1:8000/media/{{ review.customer.company.logo}}" alt="">
+                            <img class="slider-mainImage" src="{{ request.scheme }}://{{  request.META.HTTP_HOST  }}/media/{{review.customer.image  }}" alt="">
+                            <img class="slider-logo" src="{{ request.scheme }}://{{  request.META.HTTP_HOST  }}/media/{{ review.customer.company.logo}}" alt="">
                             <h3 class="slider-name fontMedium">{{ review.customer.name }}</h3>
                             <p class="prof fontRegular">{{ review.customer.description }}</p>
                         </div>
@@ -28,7 +28,7 @@
                 <div class="slider-nav">
                      {% for review in reviews %}
                         <div>
-                            <img src="http://127.0.0.1:8000/media/{{ review.customer.company.logo}}" alt="">
+                            <img src="{{ request.scheme }}://{{  request.META.HTTP_HOST  }}/media/{{ review.customer.company.logo}}" alt="">
                         </div>
                     {% endfor %}
                 </div>

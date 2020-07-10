@@ -18,13 +18,14 @@ $( document ).ready(function() {
         valBudget.html(rangeBudget.val());
     });
 
-    $(document).foundation();
+    // $(document).foundation();
+    //
+    // $('.timer').each(count);
+    //
+    // $('#example-tabs li.tabs-title').on('mouseenter', function() {
+    //     $(this).find('a').click();
+    // });
 
-    $('.timer').each(count);
-
-    $('#example-tabs li.tabs-title').on('mouseenter', function() {
-        $(this).find('a').click();
-    });
 
     function count(options) {
         let $this = $(this);
@@ -63,8 +64,8 @@ $( document ).ready(function() {
       asNavFor: '.slider-for',
       dots: false,
       focusOnSelect: true,
-      prevArrow:"<button type='button' class='slick-prev customBtn pull-left'><img src='http://127.0.0.1:8000/static/site/images/arrow.svg'></button>",
-      nextArrow:"<button type='button' class='slick-next customBtn pull-right'><img src='http://127.0.0.1:8000/static/site/images/arrow.svg'></button>"
+      prevArrow:"<button type='button' class='slick-prev customBtn pull-left'><img src='/static/site/images/arrow.svg'></button>",
+      nextArrow:"<button type='button' class='slick-next customBtn pull-right'><img src='/static/site/images/arrow.svg'></button>"
     });
 
     $('input[type="file"]').each(function() {
@@ -88,5 +89,11 @@ $( document ).ready(function() {
         $('.fileName').addClass('show');
         $('.form-group').addClass('hide');
         $('.fileName').append('<span class="fontRegular">' + file.name + '</span>')
-    })
+    });
+
+    $('a[href*=\\#]').on('click', function(event){
+        event.preventDefault();
+        $('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
+    });
+
 });

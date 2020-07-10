@@ -1334,6 +1334,16 @@ msgstr " Full design"
 msgid "work_click_proto"
 msgstr "Clickable prototype"
 
+msgid "mess_sub_succ"
+msgstr "  You have successfully subscribed to the newsletter"
+
+msgid "mess_send-request"
+msgstr " Successfully subscribed to our newsletter! Soon you will get a lot of interesting things"
+
+
+msgid "error_mess"
+msgstr "You did not fill"
+
 msgid "work_context_spec"
 msgstr " We communicate with you a lot to figure out what you expect from a project. We analyze requirements for preparing a quality solution on time and within budget."
 
@@ -1359,7 +1369,7 @@ msgid "blog_show_all"
 msgstr "Show all"
 
 msgid "blog_views"
-msgstr "Views"
+msgstr "views"
 
 msgid "got_proj"
 msgstr "Got a project in mind?"
@@ -1402,6 +1412,21 @@ msgstr "Follow us"
 
 msgid "location"
 msgstr "Ukraine, Dnipro"
+
+msgid "title_head_page"
+msgstr "Head page"
+
+msgid "title_service_page"
+msgstr "Services"
+
+msgid "title_company_page"
+msgstr " Company"
+
+msgid "title_blog_page"
+msgstr "Blog"
+
+msgid "title_works_page"
+msgstr "Works"
 
 msgid "develop_mes"
 msgstr "Sorry, this page is under construction"

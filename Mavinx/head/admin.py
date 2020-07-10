@@ -15,7 +15,7 @@ class BlogAdmin(TranslatableAdmin):
     search_fields = ('translations__name', 'date_publish', 'topic__translations__name','views')
 
     def _image(self, obj):
-        image_path = 'http://127.0.0.1:8000/media/{}'.format(obj.image)
+        image_path = '/media/{}'.format(obj.image)
         return mark_safe(
             "<img src='{}' width='40' height='25' alt='img' >".format(image_path)
         )
@@ -33,7 +33,7 @@ class CompanyAdmin(TranslatableAdmin):
     search_fields = ('translations__name',)
 
     def _logo(self, obj):
-        image_path = 'http://127.0.0.1:8000/media/{}'.format(obj.logo)
+        image_path = '/media/{}'.format(obj.logo)
         return mark_safe(
             "<img src='{}' width='40' height='25' alt='img' >".format(image_path)
         )
@@ -53,7 +53,7 @@ class CustomerAdmin(TranslatableAdmin):
     search_fields = ('translations__name','company__translations__name')
 
     def _image(self, obj):
-        image_path = 'http://127.0.0.1:8000/media/{}'.format(obj.image)
+        image_path = '/media/{}'.format(obj.image)
         return mark_safe(
             "<img src='{}' width='40' height='25' alt='img' >".format(image_path)
         )

@@ -152,6 +152,11 @@ class Contact(models.Model):
     teams = models.IntegerField(verbose_name=_('vnm_teams_contact'))
     experience = models.IntegerField(verbose_name=_('vnm_experience_contact'))
     completed_project = models.IntegerField(verbose_name=_('vnm_completed_project'), null=True)
+    ios_count_proj = models.IntegerField(verbose_name=_('vnm_completed_project_ios'), null=True)
+    android_count_proj = models.IntegerField(verbose_name=_('vnm_completed_project_and'), null=True)
+    web_count_proj = models.IntegerField(verbose_name=_('vnm_completed_project_web'), null=True)
+    ux_ui_count_proj = models.IntegerField(verbose_name=_('vnm_completed_project_ux_ui'), null=True)
+    test_count_proj = models.IntegerField(verbose_name=_('vnm_completed_project_test'), null=True)
 
 
     def __str__(self):

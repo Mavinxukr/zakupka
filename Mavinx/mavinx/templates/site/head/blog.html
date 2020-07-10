@@ -1,24 +1,29 @@
 {% load static %}
  {% load i18n %}
-<h1 class="h1 fontMedium flex">
-            {% trans 'view_blog' %}<span class="blogCount menuItem">34</span>
-        </h1>
-        <a href="#" class="showAll fontMedium">
-            {% trans 'blog_show_all' %}
-        </a>
-        <div class="flex blogItems">
-            {% for blog in blogs %}
-            <a href="#">
-                <article class="blogItem column">
-                    <img class="blogImage" src="{{ request.scheme }}://{{request.META.HTTP_HOST  }}/media/{{ blog.image }}" alt="">
-                    <p class="fontMedium blogDescription">
-                        {{ blog.name }}
-                    </p>
-                    <div class="blogHashtag flex">
-                        <a class="fontMedium" href="#">{% trans 'blog_views' %}</a>
-                        <span class="fontRegular">{{ blog.views }}</span>
-                    </div>
-                </article>
-            </a>
-            {% endfor %}
-        </div>
+ <a href="#">
+   <h1 class="h1 fontMedium flex">
+               {% trans 'view_blog' %}<span class="blogCount menuItem">{{ blogs.count }}</span>
+           </h1>
+ </a>
+<!-- <a href="#" class="showAll fontMedium">
+    {% trans 'blog_show_all' %}
+</a> -->
+<div class="flex blogItems">
+    {% for blog in blogs %}
+    <a href="#">
+        <article class="blogItem column">
+            <img class="blogImage" src="{{ request.scheme }}://{{request.META.HTTP_HOST  }}/media/{{ blog.image }}" alt="">
+            <p class="fontMedium blogDescription">
+                {{ blog.name }}
+            </p>
+            <div class="blogHashtag flex">
+                <a href="#">
+                  <span class="fontRegular">#{{ blog.topic.name }}</span>
+                </a>
+                <span style="color: #F2C81F;" class="fontMedium">{% trans 'blog_views' %}</span>
+                <span class="fontRegular">{{ blog.views }}</span>
+            </div>
+        </article>
+    </a>
+  {% endfor %}
+</div>

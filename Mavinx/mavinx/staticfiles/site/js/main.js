@@ -18,13 +18,7 @@ $( document ).ready(function() {
         valBudget.html(rangeBudget.val());
     });
 
-    $(document).foundation();
-
     $('.timer').each(count);
-
-    $('#example-tabs li.tabs-title').on('mouseenter', function() {
-        $(this).find('a').click();
-    });
 
     function count(options) {
         let $this = $(this);
@@ -49,23 +43,22 @@ $( document ).ready(function() {
     })(jQuery);
 
     $('.slider-for').slick({
-        dots: false,
-        infinite: false,
-        speed: 500,
-        autoplay: false,
-        arrows: false,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      infinite: false,
+      arrows: false,
+      fade: true,
+      asNavFor: '.slider-nav'
     });
-
     $('.slider-nav').slick({
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        asNavFor: '.slider-for',
-        dots: false,
-        infinite: false,
-        centerMode: true,
-        focusOnSelect: true,
-        prevArrow:"<button type='button' class='slick-prev customBtn pull-left'><img src='http://127.0.0.1:8000/static/site/images/arrow.svg'></button>",
-        nextArrow:"<button type='button' class='slick-next customBtn pull-right'><img src='http://127.0.0.1:8000/static/site/images/arrow.svg'></button>"
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      infinite: false,
+      asNavFor: '.slider-for',
+      dots: false,
+      focusOnSelect: true,
+      prevArrow:"<button type='button' class='slick-prev customBtn pull-left'><img src='/static/site/images/arrow.svg'></button>",
+      nextArrow:"<button type='button' class='slick-next customBtn pull-right'><img src='/static/site/images/arrow.svg'></button>"
     });
 
     $('input[type="file"]').each(function() {
@@ -77,4 +70,23 @@ $( document ).ready(function() {
     $('.input-file .btn').click(function() {
         $(this).siblings('input[type="file"]').trigger('click');
     });
+
+    $('.deleteFile').click(function() {
+          $('.form-group').removeClass('hide');
+          $('.fileName').removeClass('show');
+          $('#file').val('');
+    });
+
+    $('#file').on('change', function(e){
+        var file = this.files[0]
+        $('.fileName').addClass('show');
+        $('.form-group').addClass('hide');
+        $('.fileName').append('<span class="fontRegular">' + file.name + '</span>')
+    });
+
+    $('a[href*=\\#]').on('click', function(event){
+        event.preventDefault();
+        $('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
+    });
+
 });

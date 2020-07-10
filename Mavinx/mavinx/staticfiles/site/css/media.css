@@ -3,6 +3,39 @@
         left: 0;
     }
 
+    .bannerTitle,
+    .h1,
+    .banner .timer {
+      font-size: 64px;
+    }
+
+    .Project h2 {
+      font-size: 35px;
+    }
+
+    .h2, .row .blockInfo h2 {
+      font-size: 46px;
+    }
+
+    .row .blockInfo p,
+    .blockInfo .readMore,
+    .blog .showAll,
+    .aboutUS,
+    .slider-content p,
+    .slider-content a,
+    .slider-name,
+    .tab-time,
+    .tab-result,
+    .h3,
+    .tab-description,
+    .subscribe form button,
+    .subscribe form input,
+    .subscribe form input::placeholder,
+    .footerInput,
+    .footerLink {
+      font-size: 22px;
+    }
+
     .secondColumn {
       margin: 0 20px;
     }
@@ -24,4 +57,74 @@
     .container {
         max-width: 100%;
     }
+}
+
+@media screen and (max-width: 1440px) {
+  .bannerTitle,
+  .h1,
+  .banner .timer {
+    font-size: 54px;
+  }
+
+  .h2, .row .blockInfo h2 {
+    font-size: 36px;
+  }
+
+  .Project h2 {
+    font-size: 30px;
+  }
+
+  .row .blockInfo p,
+  .blockInfo .readMore,
+  .blog .showAll,
+  .aboutUS,
+  .slider-content p,
+  .slider-content a,
+  .slider-name,
+  .tab-time,
+  .tab-result,
+  .h3,
+  .tab-description,
+  .subscribe form button,
+  .subscribe form input,
+  .subscribe form input::placeholder,
+  .footerInput,
+  .footerLink {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .bannerTitle,
+  .h1,
+  .banner .timer {
+    font-size: 46px;
+  }
+
+  .Project h2 {
+    font-size: 27px;
+  }
+
+  .h2, .row .blockInfo h2 {
+    font-size: 28px;
+  }
+
+  .row .blockInfo p,
+  .blockInfo .readMore,
+  .blog .showAll,
+  .aboutUS,
+  .slider-content p,
+  .slider-content a,
+  .slider-name,
+  .tab-time,
+  .tab-result,
+  .h3,
+  .tab-description,
+  .subscribe form button,
+  .subscribe form input,
+  .subscribe form input::placeholder,
+  .footerInput,
+  .footerLink {
+    font-size: 16px;
+  }
 }

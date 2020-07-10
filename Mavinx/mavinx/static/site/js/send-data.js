@@ -9,11 +9,24 @@ $( document ).ready(function() {
         area_id = $(this).data("area-id")
     })
 
+    $('#name').keyup(function() {
+      $('.errorName').removeClass('showError');
+    });
+
+    $('#phone').keyup(function() {
+      $('.errorName').removeClass('showError');
+    });
+
+    $('#email').keyup(function() {
+      $('.errorName').removeClass('showError');
+    });
+
     $('#submit_btn').on('click',function (e) {
         e.preventDefault();
         let name = $('#name').val();
         let phone = $('#phone').val();
         let email = $('#email').val();
+
         if (!name){
              $('.errorName').addClass('showError');
         } else {
@@ -29,39 +42,44 @@ $( document ).ready(function() {
         } else {
           $('.errorPhone').removeClass('showError');
         }
-        if (!name && !email && !phone){
-             return;
-        }
 
         let checkedItem = [];
         $('#send_form input:checkbox:checked').each(function(){
           checkedItem.push($(this).val());
         });
 
-        data.append('name', name )
-        data.append('areas_id', checkedItem)
-        data.append('phone', phone)
-        data.append('email', email)
-        data.append('terms', $('#rangeWeek').val())
-        data.append('budget', $('#rangeBudget').val())
-        data.append('detail', $('#detail').val())
-        data.append('csrfmiddlewaretoken', $('input[name=csrfmiddlewaretoken]').val())
+        if (name && email && phone){
+          data.append('name', name )
+          data.append('areas_id', checkedItem)
+          data.append('phone', phone)
+          data.append('email', email)
+          data.append('terms', $('#rangeWeek').val())
+          data.append('budget', $('#rangeBudget').val())
+          data.append('detail', $('#detail').val())
+          data.append('csrfmiddlewaretoken', $('input[name=csrfmiddlewaretoken]').val())
 
-       $.ajax({
-            type: "POST",
-            enctype: 'multipart/form-data',
-            url: url,
-            data: data,
-            processData: false,
-            contentType: false,
-            cache: false,
-            timeout: 600000,
-            success: function (data) {
-                alert(data.message)
-            },
-            error: function (e) {
-                console.log(e)
-            }
-        });
+          $.ajax({
+               type: "POST",
+               enctype: 'multipart/form-data',
+               url: url,
+               data: data,
+               processData: false,
+               contentType: false,
+               cache: false,
+               timeout: 600000,
+               success: function (data) {
+                 $('body').addClass("activeShow");
+                 $('.messageBlock').addClass('show');
+                 $("#send_form")[0].reset()
+                 setTimeout(function() {
+                   $('body').removeClass("activeShow");
+                   $('.messageBlock').removeClass('show');
+                 },3000);
+               },
+               error: function (e) {
+                   console.log(e)
+               }
+           });
+        }
     })
 })

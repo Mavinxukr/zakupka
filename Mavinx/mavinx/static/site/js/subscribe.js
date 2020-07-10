@@ -21,8 +21,13 @@ $( document ).ready(function() {
             cache: false,
             timeout: 600000,
             success: function (data) {
-                alert(data.message)
-                input.val('')
+              $('body').addClass("activeShow");
+              $('.messageSubscribed').addClass('show');
+              input.val('')
+              setTimeout(function() {
+                $('body').removeClass("activeShow");
+                $('.messageSubscribed').removeClass('show');
+              },3000);
             },
             error: function (e) {
                 console.log(e)

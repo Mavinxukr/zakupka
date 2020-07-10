@@ -17,8 +17,10 @@
                 {{ blog.name }}
             </p>
             <div class="blogHashtag flex">
-                <span class="fontRegular">#{{ blog.topic.name }}</span>
-                <a class="fontMedium" href="#">{% trans 'blog_views' %}</a>
+                <a href="#">
+                  <span class="fontRegular">#{{ blog.topic.name }}</span>
+                </a>
+                <span style="color: #F2C81F;" class="fontMedium">{% trans 'blog_views' %}</span>
                 <span class="fontRegular">{{ blog.views }}</span>
             </div>
         </article>

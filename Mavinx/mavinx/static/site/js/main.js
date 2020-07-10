@@ -88,5 +88,11 @@ $( document ).ready(function() {
         $('.fileName').addClass('show');
         $('.form-group').addClass('hide');
         $('.fileName').append('<span class="fontRegular">' + file.name + '</span>')
-    })
+    });
+
+    $('a[href*=\\#]').on('click', function(event){
+        event.preventDefault();
+        $('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
+    });
+
 });

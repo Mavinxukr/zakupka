@@ -5,6 +5,7 @@
 *.env
 ./Mavinx/mavinx/media/*
 ./Mavinx/mavinx/staticfiles/*
+mavinx_db
 
 # Icon must end with two \r
 Icon

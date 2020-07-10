@@ -1247,7 +1247,8 @@ footer .container {
 }
 
 .errorText,
-.errorMailFormat {
+.errorMailFormat,
+.errorPhoneFormat {
   margin: 0;
   display: none;
   color: #B75050;

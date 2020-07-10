@@ -23,9 +23,14 @@ $( document ).ready(function() {
     });
 
     function isValidEmailAddress(emailAddress) {
-         var pattern = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+         let pattern = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
          return pattern.test(emailAddress);
      }
+
+     function validatePhone(txtPhone) {
+        let filter = /^((\+[1-9]{1,4}[ \-]*)|(\([0-9]{2,3}\)[ \-]*)|([0-9]{2,4})[ \-]*)*?[0-9]{3,4}?[ \-]*[0-9]{3,4}?$/;
+        return filter.test(txtPhone);
+    }
 
     $('#submit_btn').on('click',function (e) {
         e.preventDefault();
@@ -43,16 +48,25 @@ $( document ).ready(function() {
              $('.errorMailFormat').removeClass('showError');
         } else {
           $('.errorMail').removeClass('showError');
-        }
-        if (!phone){
-             $('.errorPhone').addClass('showError');
-        } else {
-          $('.errorPhone').removeClass('showError');
 
           if(isValidEmailAddress(email) && email){
             $('.errorMailFormat').removeClass('showError');
           } else {
             $('.errorMailFormat').addClass('showError');
+            return
+          }
+        }
+        if (!phone){
+             $('.errorPhone').addClass('showError');
+             $('.errorPhoneFormat').removeClass('showError');
+        } else {
+          $('.errorPhone').removeClass('showError');
+
+          if(validatePhone(phone) && phone){
+            $('.errorPhoneFormat').removeClass('showError');
+          } else {
+            console.log('ada1')
+            $('.errorPhoneFormat').addClass('showError');
             return
           }
         }

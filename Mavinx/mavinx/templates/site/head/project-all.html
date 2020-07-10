@@ -37,18 +37,111 @@
         </div>
         <div class="tabs__content">
             <div class="flexItems">
+                {% for project_ios in projects_ios %}
                 <div class="tabsItem">
-                    <img class="bigImg" src="{% static 'site/images/4.png' %}" alt="">
+                    <img class="{% if forloop.counter|divisibleby:2 %}smallImg {% else %} bigImg {% endif %}"
+                         src="{{ request.scheme }}://{{request.META.HTTP_HOST  }}/media/{{project_ios.project_images.first.image }}" alt="">
                     <a class= href="#">
                         <div class="tabsItemLink fontMedium column">
-                            FoodDelivery
+                             {{ project_ios.name }}
                             <div class="flex">
-                                <span class="fontRegular">iOS</span>
-                                <span class="fontRegular">Android</span>
+                                {% for area in project_ios.area.all %}
+                                    <span class="fontRegular">{{ area.name }}</span>
+                                {% endfor %}
                             </div>
                         </div>
                     </a>
                 </div>
+               {% endfor %}
+
+
+                <div class="tabsItem allProjects">
+                    <div class="smallImg Project">
+                        <div class="column">
+                            <h2 class="fontMedium">{% trans 'proj_all_show' %}</h2>
+                            <img src="{% static 'site/images/arrow.svg' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tabs__content">
+            <div class="flexItems">
+                {% for project_android in projects_android %}
+                <div class="tabsItem">
+                    <img class="{% if forloop.counter|divisibleby:2 %}smallImg {% else %} bigImg {% endif %}"
+                         src="{{ request.scheme }}://{{request.META.HTTP_HOST  }}/media/{{project_android.project_images.first.image }}" alt="">
+                    <a class= href="#">
+                        <div class="tabsItemLink fontMedium column">
+                             {{ project_android.name }}
+                            <div class="flex">
+                                {% for area in project_android.area.all %}
+                                    <span class="fontRegular">{{ area.name }}</span>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </a>
+                </div>
+               {% endfor %}
+
+                <div class="tabsItem allProjects">
+                    <div class="smallImg Project">
+                        <div class="column">
+                            <h2 class="fontMedium">{% trans 'proj_all_show' %}</h2>
+                            <img src="{% static 'site/images/arrow.svg' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tabs__content">
+            <div class="flexItems">
+                {% for project_web in projects_web %}
+                <div class="tabsItem">
+                    <img class="{% if forloop.counter|divisibleby:2 %}smallImg {% else %} bigImg {% endif %}"
+                         src="{{ request.scheme }}://{{request.META.HTTP_HOST  }}/media/{{project_web.project_images.first.image }}" alt="">
+                    <a class= href="#">
+                        <div class="tabsItemLink fontMedium column">
+                             {{ project_web.name }}
+                            <div class="flex">
+                                {% for area in project_web.area.all %}
+                                    <span class="fontRegular">{{ area.name }}</span>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </a>
+                </div>
+               {% endfor %}
+
+                <div class="tabsItem allProjects">
+                    <div class="smallImg Project">
+                        <div class="column">
+                            <h2 class="fontMedium">{% trans 'proj_all_show' %}</h2>
+                            <img src="{% static 'site/images/arrow.svg' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tabs__content">
+            <div class="flexItems">
+                {% for project_ux-ui in projects_ux_ui %}
+                <div class="tabsItem">
+                    <img class="{% if forloop.counter|divisibleby:2 %}smallImg {% else %} bigImg {% endif %}"
+                         src="{{ request.scheme }}://{{request.META.HTTP_HOST  }}/media/{{projects_ux_ui.project_images.first.image }}" alt="">
+                    <a class= href="#">
+                        <div class="tabsItemLink fontMedium column">
+                             {{ projects_ux_ui.name }}
+                            <div class="flex">
+                                {% for area in projects_ux_ui.area.all %}
+                                    <span class="fontRegular">{{ area.name }}</span>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </a>
+                </div>
+               {% endfor %}
+
                 <div class="tabsItem allProjects">
                     <div class="smallImg Project">
                         <div class="column">

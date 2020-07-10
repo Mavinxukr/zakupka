@@ -84,7 +84,9 @@ $( document ).ready(function() {
                success: function (data) {
                  $('body').addClass("activeShow");
                  $('.messageBlock').addClass('show');
-                 $("#send_form")[0].reset()
+                 $("#send_form")[0].reset();
+                 $('.form-group').removeClass('hide');
+                 $('.fileName').removeClass('show');
                  setTimeout(function() {
                    $('body').removeClass("activeShow");
                    $('.messageBlock').removeClass('show');

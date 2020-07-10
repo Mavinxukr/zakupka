@@ -13,4 +13,5 @@ def render(request, template, context):
     context['projects'] = Project.objects.all()
     context['reviews'] = Review.objects.all()
     context['blogs'] = Blog.objects.all()
+    context['projects_ios'] = Project.objects.filter(area__translations__name__contains='iOS')
     return main_render(request, template, context)

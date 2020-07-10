@@ -80,7 +80,7 @@ a:hover{
 
 .tabs__content.active {
     opacity: 1;
-    height: 100%;
+    height: auto;
     transition: opacity 1s;
     display: flex;
     justify-content: space-between;

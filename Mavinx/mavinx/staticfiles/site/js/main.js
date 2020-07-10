@@ -18,14 +18,7 @@ $( document ).ready(function() {
         valBudget.html(rangeBudget.val());
     });
 
-    // $(document).foundation();
-    //
-    // $('.timer').each(count);
-    //
-    // $('#example-tabs li.tabs-title').on('mouseenter', function() {
-    //     $(this).find('a').click();
-    // });
-
+    $('.timer').each(count);
 
     function count(options) {
         let $this = $(this);

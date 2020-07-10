@@ -1200,3 +1200,9 @@ footer .container {
 .activeShow .header {
   top: 39px;
 }
+
+.slider-nav .slick-slide img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}

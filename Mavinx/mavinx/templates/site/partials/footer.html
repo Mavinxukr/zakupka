@@ -49,6 +49,11 @@
                     <label for="file" class="sr-only">{% trans 'attach_file' %}</label>
                     <input type="file" id="file">
                 </div>
+                <div class="fileName">
+                    <button type="button" class="deleteFile" name="button">
+                      <img src="{%  static 'site/images/close.svg' %}" alt="close">
+                    </button>
+                </div>
                 <button class="formSubmit fontMedium" id="submit_btn">
                     {% trans 'send_req' %}
                     <img src="{% static 'site/images/arrowSubmit.svg' %}" alt="">

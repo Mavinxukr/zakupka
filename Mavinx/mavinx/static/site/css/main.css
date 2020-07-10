@@ -64,13 +64,24 @@ a:hover{
     margin-top: 0;
 }
 
-.tabs__content,
 .tabs-panel {
     display: none;
 }
 
+.tabs__caption {
+  margin-bottom: 99px;
+}
+
+.tabs__content {
+  opacity: 0;
+  height: 0;
+  transition: opacity 1s;
+}
+
 .tabs__content.active {
-    margin-top: 99px;
+    opacity: 1;
+    height: 100%;
+    transition: opacity 1s;
     display: flex;
     justify-content: space-between;
 }
@@ -1153,7 +1164,8 @@ footer .container {
     font-size: 12px;
 }
 
-.subscribeError {
+.subscribeError,
+.subscribeErrorFormat {
   display: none;
   color: #B75050;
 }
@@ -1164,9 +1176,15 @@ footer .container {
   align-items: flex-start;
   margin-left: -10px;
   margin-right: -10px;
+  width: 100%;
 }
 
-.errorText {
+.allProjects {
+  margin-left: auto;
+}
+
+.errorText,
+.errorMailFormat {
   margin: 0;
   display: none;
   color: #B75050;

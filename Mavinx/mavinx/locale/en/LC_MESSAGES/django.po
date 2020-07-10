@@ -1413,6 +1413,21 @@ msgstr "Follow us"
 msgid "location"
 msgstr "Ukraine, Dnipro"
 
+msgid "title_head_page"
+msgstr "Head page"
+
+msgid "title_service_page"
+msgstr "Services"
+
+msgid "title_company_page"
+msgstr " Company"
+
+msgid "title_blog_page"
+msgstr "Blog"
+
+msgid "title_works_page"
+msgstr "Works"
+
 msgid "develop_mes"
 msgstr "Sorry, this page is under construction"
 

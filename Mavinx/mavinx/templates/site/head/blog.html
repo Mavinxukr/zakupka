@@ -1,7 +1,7 @@
 {% load static %}
  {% load i18n %}
 <h1 class="h1 fontMedium flex">
-            {% trans 'view_blog' %}<span class="blogCount menuItem">34</span>
+            {% trans 'view_blog' %}<span class="blogCount menuItem">{{ blogs.count }}</span>
         </h1>
         <a href="#" class="showAll fontMedium">
             {% trans 'blog_show_all' %}

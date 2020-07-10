@@ -1,5 +1,5 @@
 {% load static %}
- {% load i18n %}
+{% load i18n %}
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -22,7 +22,7 @@
     <link rel="stylesheet" href=" {% static 'site/css/motion-ui.css'%}?{% now "U" %}">
     <link rel="stylesheet" href=" {% static 'site/css/main.css' %}?{% now "U" %}">
     <link rel="stylesheet" href=" {% static 'site/css/media.css' %}?{% now "U" %}">
-    <title>Mavinx</title>
+    <title> {% block title %}{% endblock %}</title>
 </head>
 <body>
 {% include 'site/partials/header.html' %}
@@ -33,100 +33,7 @@
     {% trans 'mess_sub_succ' %}
 </div>
 <main>
-    <div class="container banner">
-        <h1 class="bannerTitle fontMedium"><span>
-             {% trans 'we_are' %}
-        </span></h1>
-        <div class="flex timers">
-            <div class="timer-block">
-                <p class="timer fontMedium" data-to="{{ contact.teams }}" data-speed="1500"></p>
-                <span class="opacityText fontRegular">
-                    {% trans 'team' %}
-                </span>
-            </div>
-            <div class="timer-block">
-                <p class="timer fontMedium plus" data-to="{{ contact.completed_project }}" data-speed="2000"></p>
-                <span class="opacityText fontRegular">
-                  {% trans 'project_complete' %}
-                </span>
-            </div>
-            <div class="timer-block">
-                <p class="timer fontMedium plus" data-to="{{ contact.experience }}" data-speed="1000"></p>
-                <span class="opacityText fontRegular">
-                    {% trans 'years_of_experience' %}
-                </span>
-            </div>
-        </div>
-    </div>
-    {% include 'site/head/project-all.html' %}
-    <div class="bg">
-        <div class="container">
-            {% include 'site/head/project-ios.html' %}
-            {% include 'site/head/project-android.html' %}
-            {% include 'site/head/project-web.html' %}
-            {% include 'site/head/project-ux-ui-testing.html' %}
-        </div>
-    </div>
-    <div class="container visible">
-        {% include 'site/head/review.html' %}
-    </div>
-    <div class="container review flex between">
-        <h2 class="h2 fontMedium">
-            {% trans 'more_review' %}
-        </h2>
-        <div class="flex reviews">
-            <div>
-                <img src="{% static 'site/images/freelancer-logo.png' %}" alt="">
-                <p class="review-starts fontMedium">
-                    5 (35)
-                </p>
-            </div>
-            <div>
-                <img src="{% static 'site/images/upwork%20(1).png' %}" alt="">
-                <p class="review-starts fontMedium">
-                    5 (35)
-                </p>
-            </div>
-            <div>
-                <img src="{% static 'site/images/2017_We_Deliver_White.png' %}" alt="">
-                <p class="review-starts fontMedium">
-                    5 (35)
-                </p>
-            </div>
-            <div>
-                <img src="{% static 'site/images/image1-984x555.png' %}" alt="">
-                <p class="review-starts fontMedium">
-                    5 (35)
-                </p>
-            </div>
-        </div>
-    </div>
-    <div class="bg">
-        <div class="container">
-            {% include 'site/head/why-us.html' %}
-        </div>
-    </div>
-    <div class="container">
-     {% include 'site/head/work.html' %}
-        <div class="subscribe">
-            <form >
-                 {% csrf_token %}
-                <p class="fontMedium">
-                    {% trans 'subscribe_to_your' %}
-                </p>
-                <input name="email" type="email" id="sub_email" placeholder="E-mail" required>
-                <span class="subscribeError fontMedium">{% trans 'error_mess' %}</span>
-                <span class="subscribeErrorFormat fontMedium">Required format text@text.domen</span>
-                <button class="fontMedium" id="send_sub_but">
-                   {% trans 'subscribe' %} +
-                </button>
-            </form>
-        </div>
-        <div class="border-block"></div>
-    </div>
-    <div class="container blog">
-        {% include 'site/head/blog.html' %}
-    </div>
+    {% block content %}{% endblock %}
 </main>
 <script src="{% static 'site/js/jquery.js' %}"></script>
 {% include 'site/partials/footer.html' %}

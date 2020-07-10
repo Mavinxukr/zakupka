@@ -12,7 +12,7 @@ class MainIndex(View):
         context = {
             'endpoint': '/',
         }
-        return render(request, 'site/base.html', context)
+        return render(request, 'site/head/head-page.html', context)
 
 
 class Works(View):

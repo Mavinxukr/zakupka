@@ -181,6 +181,23 @@ msgstr "Колличество сотрудников компании"
 msgid "vnm_experience_contact"
 msgstr "Опыт компании в годах"
 
+msgid "vnm_completed_project_ios"
+msgstr "iOS выполненных проектов"
+
+msgid "vnm_completed_project_and"
+msgstr "Android выполненных проектов"
+
+msgid "vnm_completed_project_web"
+msgstr "Web выполненных проектов"
+
+msgid "vnm_completed_project_ux_ui"
+msgstr "UX/UI выполненных проектов"
+
+msgid "vnm_completed_project_test"
+msgstr "Тестирование выполненных проектов"
+
+
+
 # head/models.py/:141
 
 msgid "vnp_order"
@@ -517,6 +534,21 @@ msgstr "Успешно подписался на нашу рассылку! Ск
 
 msgid "mess_sub_succ"
 msgstr "Вы успешно подписались на рассылку"
+
+msgid "title_head_page"
+msgstr "Главная страница"
+
+msgid "title_works_page"
+msgstr "Работы"
+
+msgid "title_service_page"
+msgstr "Сервисы"
+
+msgid "title_company_page"
+msgstr " Компания"
+
+msgid "title_blog_page"
+msgstr "Блог"
 
 msgid "work_context_design_one"
 msgstr "- Готовый дизайн для различных платформ"

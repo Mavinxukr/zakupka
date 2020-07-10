@@ -18,13 +18,14 @@ $( document ).ready(function() {
         valBudget.html(rangeBudget.val());
     });
 
-    $(document).foundation();
+    // $(document).foundation();
+    //
+    // $('.timer').each(count);
+    //
+    // $('#example-tabs li.tabs-title').on('mouseenter', function() {
+    //     $(this).find('a').click();
+    // });
 
-    $('.timer').each(count);
-
-    $('#example-tabs li.tabs-title').on('mouseenter', function() {
-        $(this).find('a').click();
-    });
 
     function count(options) {
         let $this = $(this);

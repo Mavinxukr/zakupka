@@ -1334,6 +1334,9 @@ msgstr " Full design"
 msgid "work_click_proto"
 msgstr "Clickable prototype"
 
+msgid "error_mess"
+msgstr "You did not fill"
+
 msgid "work_context_spec"
 msgstr " We communicate with you a lot to figure out what you expect from a project. We analyze requirements for preparing a quality solution on time and within budget."
 

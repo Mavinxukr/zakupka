@@ -19,14 +19,14 @@
                {% endfor %}
             </div>
             <input id="name" required placeholder="{% trans 'plc_name' %}" class="footerInput fontMedium" type="text">
-            <p class="errorText errorName fontRegular">You did not fill</p>
+            <p class="errorText errorName fontRegular">{% trans 'error_mess' %}</p>
             <input id="phone" required  placeholder="{% trans 'plc_phone' %}" class="footerInput fontMedium" type="text">
-            <p class="errorText errorPhone fontRegular">You did not fill</p>
+            <p class="errorText errorPhone fontRegular">{% trans 'error_mess' %}</p>
             <input id="email" required  placeholder="{% trans 'plc_email' %}" class="footerInput fontMedium" type="email">
-            <p class="errorText errorMail fontRegular">You did not fill</p>
+            <p class="errorText errorMail fontRegular">{% trans 'error_mess' %}</p>
             <div class="flex">
                 <div class="rangeBlock">
-                    <p class="fontMedium">{% trans 'footer_terms' %}<span id="valWeek"> 1 </span>{% trans 'footer_week' %}</p>
+                    <p class="fontMedium">{% trans 'footer_terms' %} <span id="valWeek"> 1 </span> {% trans 'footer_week' %} </p>
                     <div class="range-container rangeWeek">
                         <span class="bar"><span class="fill"></span></span>
                         <input  class="range" id="rangeWeek" type="range" value="1" min="0" max="100" step="1"/>

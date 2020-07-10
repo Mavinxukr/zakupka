@@ -509,6 +509,9 @@ msgstr "- Список пользовательских историй со сц
 msgid "work_context_spec_three"
 msgstr "- Детальная оценка"
 
+msgid "error_mess"
+msgstr "Вы не заполнили"
+
 msgid "work_context_design_one"
 msgstr "- Готовый дизайн для различных платформ"
 

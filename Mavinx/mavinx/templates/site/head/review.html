@@ -10,7 +10,7 @@
                     <div class="slider-flex">
                         <div class="slider-images">
                             <img class="slider-mainImage" src="{{ request.scheme }}://{{  request.META.HTTP_HOST  }}/media/{{review.customer.image  }}" alt="">
-                            <img class="slider-logo" src="{{ request.scheme }}://{{  request.META.HTTP_HOST  }}/{{ review.customer.company.logo}}" alt="">
+                            <img class="slider-logo" src="{{ request.scheme }}://{{  request.META.HTTP_HOST  }}/media/{{ review.customer.company.logo}}" alt="">
                             <h3 class="slider-name fontMedium">{{ review.customer.name }}</h3>
                             <p class="prof fontRegular">{{ review.customer.description }}</p>
                         </div>

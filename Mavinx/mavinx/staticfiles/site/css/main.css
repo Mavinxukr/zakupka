@@ -1175,3 +1175,28 @@ footer .container {
 .showError {
   display: block;
 }
+
+.messageBlock,
+.messageSubscribed {
+  display: none;
+  width: 100%;
+  height: 39px;
+  font-size: 15px;
+  background: #F2C81F;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.show {
+  display: flex;
+  z-index: 99;
+}
+
+.activeShow .header {
+  top: 39px;
+}

@@ -19,7 +19,7 @@ class ClientRequest(View):
             'message': 'Ваш запрос был отправлен',
             'data': data
         }
-        return JsonResponse(response, status=201)
+        return JsonResponse(response, status=200)
 
 
 class ClientSubscribe(View):

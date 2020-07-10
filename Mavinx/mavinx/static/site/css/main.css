@@ -931,6 +931,10 @@ main {
     margin-bottom: 200px;
 }
 
+.blog > a {
+  display: block;
+}
+
 .blogCount {
     font-size: 46px;
     margin-left: 20px;

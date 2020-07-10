@@ -1334,6 +1334,13 @@ msgstr " Full design"
 msgid "work_click_proto"
 msgstr "Clickable prototype"
 
+msgid "mess_sub_succ"
+msgstr "  You have successfully subscribed to the newsletter"
+
+msgid "mess_send-request"
+msgstr " Successfully subscribed to our newsletter! Soon you will get a lot of interesting things"
+
+
 msgid "error_mess"
 msgstr "You did not fill"
 

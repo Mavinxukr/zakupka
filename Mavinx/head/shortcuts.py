@@ -10,7 +10,7 @@ def render(request, template, context):
     context['areas'] =  Area.objects.all()
     context['contact'] = Contact.objects.first()
     context['lang'] = lang
-    context['reviews'] = Review.objects.all()
+    context['reviews'] = Review.objects.all().order_by('-id')
     context['blogs'] = Blog.objects.all()
     context['projects'] = Project.objects.all().order_by('-priority')[:5]
     context['projects_ios'] = Project.objects.filter(area__translations__name__contains='iOS').order_by('-priority').distinct()[:5]

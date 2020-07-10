@@ -14,12 +14,18 @@ $( document ).ready(function() {
     });
 
     $('#phone').keyup(function() {
-      $('.errorName').removeClass('showError');
+      $('.errorPhone').removeClass('showError');
     });
 
     $('#email').keyup(function() {
-      $('.errorName').removeClass('showError');
+      $('.errorMail').removeClass('showError');
+      $('.errorMailFormat').removeClass('showError');
     });
+
+    function isValidEmailAddress(emailAddress) {
+         var pattern = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+         return pattern.test(emailAddress);
+     }
 
     $('#submit_btn').on('click',function (e) {
         e.preventDefault();
@@ -34,6 +40,7 @@ $( document ).ready(function() {
         }
         if (!email){
              $('.errorMail').addClass('showError');
+             $('.errorMailFormat').removeClass('showError');
         } else {
           $('.errorMail').removeClass('showError');
         }
@@ -41,6 +48,13 @@ $( document ).ready(function() {
              $('.errorPhone').addClass('showError');
         } else {
           $('.errorPhone').removeClass('showError');
+
+          if(isValidEmailAddress(email) && email){
+            $('.errorMailFormat').removeClass('showError');
+          } else {
+            $('.errorMailFormat').addClass('showError');
+            return
+          }
         }
 
         let checkedItem = [];
@@ -70,7 +84,9 @@ $( document ).ready(function() {
                success: function (data) {
                  $('body').addClass("activeShow");
                  $('.messageBlock').addClass('show');
-                 $("#send_form")[0].reset()
+                 $("#send_form")[0].reset();
+                 $('.form-group').removeClass('hide');
+                 $('.fileName').removeClass('show');
                  setTimeout(function() {
                    $('body').removeClass("activeShow");
                    $('.messageBlock').removeClass('show');

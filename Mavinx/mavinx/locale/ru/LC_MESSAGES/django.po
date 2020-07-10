@@ -435,7 +435,7 @@ msgid "blog_show_all"
 msgstr "Смотреть все"
 
 msgid "blog_views"
-msgstr "Просмотров"
+msgstr "просмотров"
 
 msgid "got_proj"
 msgstr "Есть проект?"

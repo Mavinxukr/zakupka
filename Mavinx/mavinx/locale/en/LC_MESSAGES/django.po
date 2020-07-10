@@ -1369,7 +1369,7 @@ msgid "blog_show_all"
 msgstr "Show all"
 
 msgid "blog_views"
-msgstr "Views"
+msgstr "views"
 
 msgid "got_proj"
 msgstr "Got a project in mind?"

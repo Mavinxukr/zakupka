@@ -11,8 +11,7 @@ services:
 
   proj:
     container_name: mavinxStoreProject
-    build:
-      context: ./Mavinx
+    build: ./Mavinx
     command: python3 manage.py runserver 0.0.0.0:8000
     restart: always
     volumes:

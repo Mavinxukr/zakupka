@@ -11,7 +11,7 @@ DATABASES = {
         'USER': os.getenv('DB_USER'),
         'PASSWORD': os.getenv('DB_PASS'),
         'HOST': 'mavinxStoreDB',
-        'PORT': os.getenv('DB_PORT'),
+        'PORT': 5432,
     }
 }
 

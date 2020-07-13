@@ -14,7 +14,7 @@ services:
     build:
       context: ./Mavinx
     command: python3 manage.py runserver 0.0.0.0:8000 --setting=mavinx.settings.production
-    #restart: always
+    restart: always
     volumes:
       - ./MavinX:/code
       - static:/code/mavinx/staticfiles

@@ -1,39 +1,41 @@
-  {% load static %}
-  {% load i18n %}
+{% load static %}
+{% load i18n %}
+{% get_available_languages as languages %}
+{% get_current_language as current_language %}
 <header class="header">
     <div class="flex w-100">
-        <a class="logo" href="/{{lang}}">
+        <a class="logo" href="{% url 'index' %}">
             <svg xmlns="http://www.w3.org/2000/svg" width="88" height="33" viewBox="0 0 88 33"><text class="logo" transform="translate(0 25)"><tspan x="0" y="0">Mavinx</tspan></text></svg>
         </a>
-        <div class="langs">
-            <button class="{% if lang == 'en' %} active-lang  {% endif %} lang fontMedium">
-                <a href="/en{{ endpoint }}">en</a>
+       <div class="langs">
+            {% for lang_code, lang_name in languages %}
+            <button class="{% if lang_code == current_language %} active-lang  {% endif %} lang fontMedium">
+                {% language lang_code %}
+                    <a href="{% url request.resolver_match.url_name %}">{{lang_code}}</a>
+                {% endlanguage %}
             </button>
-            <button class="{% if lang == 'ru' %} active-lang  {% endif %} lang fontMedium">
-                <a  href="/ru{{ endpoint }}">ru</a>
-            </button>
+            {% endfor %}
         </div>
     </div>
-
     <nav class="menu">
         <ul class="menuItems">
             <li class="menuItem">
-                <a class="fontMedium" href="/{{ lang }}/works">
+                <a class="fontMedium" href="{% url 'works' %}">
                          <p>{% trans 'works' %}</p>
                 </a>
             </li>
             <li class="menuItem">
-                <a class="fontMedium" href="/{{ lang }}/services">
+                <a class="fontMedium" href="{% url 'services' %}">
                     {% trans 'services' %}
                 </a>
             </li>
             <li class="menuItem">
-                <a class="fontMedium" href="/{{ lang }}/company">
+                <a class="fontMedium" href=" {% url 'company' %}">
                      {% trans 'company' %}
                 </a>
             </li>
             <li class="menuItem">
-                <a class="fontMedium" href="/{{ lang }}/blog">
+                <a class="fontMedium" href="{% url 'blog' %}">
                     {% trans 'blog' %}
                 </a>
             </li>

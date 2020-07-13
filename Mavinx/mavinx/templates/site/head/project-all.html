@@ -7,9 +7,10 @@
                 <li class="fontMedium">{{ area.name }}</li>
             {% endfor %}
         </ul>
+
         <div class="tabs__content active">
             <div class="flexItems">
-                {% for project in projects %}
+                {% for project in projects|slice:":5" %}
                 <div class="tabsItem">
                     <img class="{% if forloop.counter|divisibleby:2 %}smallImg {% else %} bigImg {% endif %}"
                          src="{{ request.scheme }}://{{request.META.HTTP_HOST  }}/media/{{project.project_images.first.image }}" alt="">
@@ -37,7 +38,7 @@
         </div>
         <div class="tabs__content">
             <div class="flexItems">
-                {% for project_ios in projects_ios %}
+                {% for project_ios in projects_ios|slice:"5" %}
                 <div class="tabsItem">
                     <img class="{% if forloop.counter|divisibleby:2 %}smallImg {% else %} bigImg {% endif %}"
                          src="{{ request.scheme }}://{{request.META.HTTP_HOST  }}/media/{{project_ios.project_images.first.image }}" alt="">
@@ -67,7 +68,7 @@
         </div>
         <div class="tabs__content">
             <div class="flexItems">
-                {% for project_android in projects_android %}
+                {% for project_android in projects_android|slice:"5" %}
                 <div class="tabsItem">
                     <img class="{% if forloop.counter|divisibleby:2 %}smallImg {% else %} bigImg {% endif %}"
                          src="{{ request.scheme }}://{{request.META.HTTP_HOST  }}/media/{{project_android.project_images.first.image }}" alt="">
@@ -96,7 +97,7 @@
         </div>
         <div class="tabs__content">
             <div class="flexItems">
-                {% for project_web in projects_web %}
+                {% for project_web in projects_web|slice:"5" %}
                 <div class="tabsItem">
                     <img class="{% if forloop.counter|divisibleby:2 %}smallImg {% else %} bigImg {% endif %}"
                          src="{{ request.scheme }}://{{request.META.HTTP_HOST  }}/media/{{project_web.project_images.first.image }}" alt="">
@@ -125,7 +126,7 @@
         </div>
         <div class="tabs__content">
             <div class="flexItems">
-                {% for project_ux-ui in projects_ux_ui %}
+                {% for project_ux-ui in projects_ux_ui|slice:"5" %}
                 <div class="tabsItem">
                     <img class="{% if forloop.counter|divisibleby:2 %}smallImg {% else %} bigImg {% endif %}"
                          src="{{ request.scheme }}://{{request.META.HTTP_HOST  }}/media/{{projects_ux_ui.project_images.first.image }}" alt="">

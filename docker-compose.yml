@@ -13,14 +13,14 @@ services:
     container_name: mavinxStoreProject
     build:
       context: ./Mavinx
-    command: python3 manage.py runserver 0.0.0.0:8000 --setting=mavinx.settings.production
+    command: python3 manage.py runserver 0.0.0.0:8001 --setting=mavinx.settings.production
     restart: always
     volumes:
       - ./MavinX:/code
       - static:/code/mavinx/staticfiles
       - locale:/code/mavinx/locale
     ports:
-      - '8080:8000'
+      - '8080:8001'
     depends_on:
       - mavinxStoreDB
       - django_commands

@@ -3,8 +3,7 @@
 .AppleDouble
 .LSOverride
 *.env
-./Mavinx/mavinx/media/*
-./Mavinx/mavinx/staticfiles/*
+./Mavinx/mavinx/staticfiles/
 
 # Icon must end with two \r
 Icon

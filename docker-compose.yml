@@ -13,10 +13,10 @@ services:
     container_name: mavinxStoreProject
     build:
       context: ./Mavinx
-    command: python3 manage.py runserver 0.0.0.0:8000
+    command: python3 manage.py runserver 0.0.0.0:8000 --setting=mavinx.settings.production
     restart: always
     volumes:
-      - ./MavinX:/code
+      - ./Mavinx:/code
       - static:/code/mavinx/staticfiles
       - locale:/code/mavinx/locale
     ports:

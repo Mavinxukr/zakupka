@@ -1315,3 +1315,7 @@ footer .container {
   text-overflow: ellipsis;
   max-width: 200px;
 }
+
+.noChecked {
+  border-color: #B75050!important;
+}

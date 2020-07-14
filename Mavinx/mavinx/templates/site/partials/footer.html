@@ -14,7 +14,7 @@
                {% for area in areas %}
                 <p>
                     <input data-area-id="{{ area.id }}" value="{{ area.id }}" type="checkbox" id="test{{ area.id }}">
-                    <label for="test{{ area.id }}">{{ area.name }}</label>
+                    <label class="labelCheckbox" for="test{{ area.id }}">{{ area.name }}</label>
                 </p>
                {% endfor %}
             </div>
@@ -31,15 +31,15 @@
                     <p class="fontMedium">{% trans 'footer_terms' %} <span id="valWeek"> 1 </span> {% trans 'footer_week' %} </p>
                     <div class="range-container rangeWeek">
                         <span class="bar"><span class="fill"></span></span>
-                        <input  class="range" id="rangeWeek" type="range" value="1" min="0" max="100" step="1"/>
+                        <input  class="range" id="rangeWeek" type="range" value="1" min="0" max="50" step="1"/>
                     </div>
                     <p class="fontMedium">{% trans 'footer_week' %}</p>
                 </div>
                 <div class="marginRange rangeBlock">
-                    <p class="fontMedium">{% trans 'footer_budget' %} <span id="valBudget">500</span>$</p>
+                    <p class="fontMedium">{% trans 'footer_budget' %} <span id="valBudget">1000</span>$</p>
                     <div class="range-container rangeBudget">
                         <span class="bar"><span class="fill"></span></span>
-                        <input class="range" id="rangeBudget" type="range" value="500" min="0" max="10000" step="100"/>
+                        <input class="range" id="rangeBudget" type="range" value="1000" min="0" max="100000" step="1000"/>
                     </div>
                     <p class="fontMedium">USD ($)</p>
                 </div>

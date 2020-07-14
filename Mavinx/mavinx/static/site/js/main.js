@@ -6,15 +6,15 @@ $( document ).ready(function() {
     let valWeek = $('#valWeek');
     let valBudget = $('#valBudget');
 
-    rangeWeekFill.css("width", rangeWeek.val() + "%");
-    rangeBudgetFill.css("width", rangeBudget.val() / 100 + "%");
+    rangeWeekFill.css("width", rangeWeek.val()*2 + "%");
+    rangeBudgetFill.css("width", rangeBudget.val() / 1000 + "%");
 
     rangeWeek.on('input', function() {
-        rangeWeekFill.css("width", rangeWeek.val() + "%");
+        rangeWeekFill.css("width", rangeWeek.val()*2 + "%");
         valWeek.html(rangeWeek.val());
     });
     rangeBudget.on('input', function() {
-        rangeBudgetFill.css("width", rangeBudget.val() / 100 + "%");
+        rangeBudgetFill.css("width", rangeBudget.val() / 1000 + "%");
         valBudget.html(rangeBudget.val());
     });
 
@@ -87,6 +87,10 @@ $( document ).ready(function() {
     $('a[href*=\\#]').on('click', function(event){
         event.preventDefault();
         $('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
+    });
+
+    $('.labelCheckbox').on('click', function() {
+      $('.labelCheckbox').removeClass('noChecked');
     });
 
 });

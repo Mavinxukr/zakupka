@@ -98,6 +98,8 @@ class Project(TranslatableModel):
     priority = models.IntegerField(verbose_name=_('vnm_priority_project'), unique=True)
     company = models.ForeignKey(Company, on_delete=models.CASCADE, related_name='project',
                                 verbose_name=_('vnm_company_project'))
+    head_image = models.ImageField(null=True, blank=True, upload_to=custom_upload_to,
+                                   verbose_name=_('vnm_company_head_image'))
 
     def __str__(self):
         return self.name
@@ -107,12 +109,15 @@ def custom_upload_to_project_image(instance, filename):
     return 'head/project/{}/{}'.format(instance_id, filename)
 
 
-class ProjectImage(models.Model):
+class ProjectImage(TranslatableModel):
     class Meta:
         db_table = 'head_project_image'
         verbose_name_plural = _('vnp_project_image')
         verbose_name = _('vn_project_image')
 
+    translations = TranslatedFields(
+        description = models.TextField(null=True, verbose_name=_('vnm_projectimage_desc'))
+    )
     image = models.ImageField(verbose_name=_('vnm_projectimage_image'), null=True, upload_to=custom_upload_to_project_image)
     project = models.ForeignKey(Project, related_name='project_images', on_delete=models.CASCADE,
                                 verbose_name=_('vnm_projectimage_project'))

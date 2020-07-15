@@ -5,7 +5,7 @@
                 {% for project in projects %}
                 <div class="tabsItem">
                     <img class="{% if forloop.counter|divisibleby:2 %}smallImg {% else %} bigImg {% endif %}"
-                         src="{{ request.scheme }}://{{request.META.HTTP_HOST  }}/media/{{project.project_images.first.image }}" alt="">
+                         src="/media/{{project.head_image }}" alt="">
                     <a class= href="#">
                         <div class="tabsItemLink fontMedium column">
                             <p>{{ project.name }}</p>
@@ -35,7 +35,7 @@
                 {% for project_ios in projects_ios %}
                 <div class="tabsItem">
                     <img class="{% if forloop.counter|divisibleby:2 %}smallImg {% else %} bigImg {% endif %}"
-                         src="{{ request.scheme }}://{{request.META.HTTP_HOST  }}/media/{{project_ios.project_images.first.image }}" alt="">
+                         src="/media/{{project_ios.head_image }}" alt="">
                     <a class= href="#">
                         <div class="tabsItemLink fontMedium column">
                              <p>{{ project_ios.name }}</p>
@@ -67,7 +67,7 @@
                 {% for project_android in projects_android %}
                 <div class="tabsItem">
                     <img class="{% if forloop.counter|divisibleby:2 %}smallImg {% else %} bigImg {% endif %}"
-                         src="{{ request.scheme }}://{{request.META.HTTP_HOST  }}/media/{{project_android.project_images.first.image }}" alt="">
+                         src="/media/{{project_android.head_image }}" alt="">
                     <a class= href="#">
                         <div class="tabsItemLink fontMedium column">
                              <p>{{ project_android.name }}</p>
@@ -98,7 +98,7 @@
                 {% for project_web in projects_web %}
                 <div class="tabsItem">
                     <img class="{% if forloop.counter|divisibleby:2 %}smallImg {% else %} bigImg {% endif %}"
-                         src="{{ request.scheme }}://{{request.META.HTTP_HOST  }}/media/{{project_web.project_images.first.image }}" alt="">
+                         src="/media/{{project_web.head_image }}" alt="">
                     <a class= href="#">
                         <div class="tabsItemLink fontMedium column">
                              <p>{{ project_web.name }}</p>
@@ -129,7 +129,7 @@
                 {% for project_ux-ui in projects_ux_ui %}
                 <div class="tabsItem">
                     <img class="{% if forloop.counter|divisibleby:2 %}smallImg {% else %} bigImg {% endif %}"
-                         src="{{ request.scheme }}://{{request.META.HTTP_HOST  }}/media/{{projects_ux_ui.project_images.first.image }}" alt="">
+                         src="/media/{{projects_ux_ui.head_image }}" alt="">
                     <a class= href="#">
                         <div class="tabsItemLink fontMedium column">
                              <p>{{ projects_ux_ui.name }}</p>

@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
-from parler.admin import TranslatableAdmin
+from parler.admin import TranslatableAdmin, TranslatableTabularInline
 
 from .models import Company, Customer, \
     Area, Project, Blog, Review, Contact, About, Order, \
@@ -58,7 +58,7 @@ class CustomerAdmin(TranslatableAdmin):
             "<img src='{}' width='40' height='25' alt='img' >".format(image_path)
         )
 
-class ProjectImagesInline(admin.TabularInline):
+class ProjectImagesInline(TranslatableTabularInline):
     model = ProjectImage
 
 
@@ -87,10 +87,10 @@ class ContactAdmin(admin.ModelAdmin):
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
     list_per_page = 10
-    list_display = ('name','email', 'phone', 'terms', 'budget', 'status',)
-    readonly_fields = ('name','email', 'phone', 'terms', 'budget', 'file', 'detail','area')
-    list_filter = ('name' ,'email', 'terms', 'budget', 'phone', 'status')
-    search_fields = ('name','email', 'terms', 'budget', 'phone')
+    list_display = ('name','email', 'phone', 'terms', 'budget', 'status')
+    readonly_fields = ('name','email', 'phone', 'terms', 'budget', 'file', 'detail','area','date')
+    list_filter = ('name' ,'email', 'terms', 'budget', 'phone', 'status','date')
+    search_fields = ('name','email', 'terms', 'budget', 'phone','date')
 
     def has_add_permission(self, request, obj=None):
         return False

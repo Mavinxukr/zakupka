@@ -550,6 +550,12 @@ msgstr " Компания"
 msgid "title_blog_page"
 msgstr "Блог"
 
+msgid "vnm_projectimage_desc"
+msgstr "Текс для картинки проекта"
+
+msgid "vnm_company_head_image"
+msgstr "Изображение на главной странице"
+
 msgid "vnm_date_order"
 msgstr "Время создания заказа"
 

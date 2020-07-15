@@ -2,18 +2,18 @@
  {% load i18n %}
 <div class="container tabs">
   <ul class="tabs__caption">
-    <li class="fontMedium active">
-      <a class="tabs__link" href="{% url 'works' %}">
-        {% trans 'proj_all_tab' %}
-      </a>
-    </li>
+    <a class="tabs__link" href="{% url 'works' %}">
+      <li class="fontMedium">
+          {% trans 'proj_all_tab' %}
+      </li>
+    </a>
     {% for area in areas %}
         {% if area.name != 'UI/UX' %}
-      <li class="fontMedium">
-        <a class="tabs__link" href="?area={{ area.name }}">
-          {{ area.name }}
-        </a>
-      </li>
+          <a class="tabs__link" href="?area={{ area.name }}">
+            <li class="fontMedium">
+                {{ area.name }}
+            </li>
+          </a>
         {% endif %}
     {% endfor %}
   </ul>

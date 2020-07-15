@@ -7,12 +7,22 @@ $( document ).ready(function() {
     let valBudget = $('#valBudget');
 
     let pageUrl = window.location.href;
+    let lastUrl = new URL(pageUrl);
+
+    lastUrl.searchParams.delete('page');
     if (pageUrl.indexOf('/works') != -1) {
-      console.log(pageUrl);
       $('.allProjects').addClass('hide');
+      let tabsUrl = document.querySelectorAll('.tabs__link');
+
+      $.each( tabsUrl, ( key, value ) => {
+        if (lastUrl == tabsUrl[key].href) {
+          $('.tabs__link').removeClass('active');
+          $(`.tabs__link:eq(${key})`).addClass('active');
+        }
+      });
     } else {
+      $(`.tabs__link:eq(0)`).addClass('active');
       $('.tabs__link').click(function(e) {
-        console.log(pageUrl.indexOf('/works') != -1);
         e.preventDefault();
       })
     }
@@ -39,16 +49,16 @@ $( document ).ready(function() {
 
     (function($) {
         $(function() {
-            $("ul.tabs__caption").on("click", "li:not(.active)", function() {
-                $(this)
-                    .addClass("active")
-                    .siblings()
-                    .removeClass("active")
-                    .closest("div.tabs")
-                    .find("div.tabs__content")
-                    .removeClass("active")
-                    .eq($(this).index())
-                    .addClass("active");
+            $("ul.tabs__caption").on("click", "a:not(.active)", function() {
+              $(this)
+                  .addClass("active")
+                  .siblings()
+                  .removeClass("active")
+                  .closest("div.tabs")
+                  .find("div.tabs__content")
+                  .removeClass("active")
+                  .eq($(this).index())
+                  .addClass("active");
             });
         });
     })(jQuery);

@@ -7,6 +7,14 @@
     font-size: 12px;
   }
 
+  .bigImg {
+    height: 441px;
+  }
+
+  .smallImg {
+    height: 369px;
+  }
+
   .subscribe form p {
     font-size: 25px;
   }

@@ -272,7 +272,7 @@ main {
     overflow: visible;
 }
 
-.tabs__caption li {
+.tabs__caption a {
     margin-right: 5px;
     padding: 15px 25px;
     border: 1px solid #E4E4E4;
@@ -281,7 +281,7 @@ main {
 }
 
 .tabs__caption .active,
-.tabs__caption li:hover {
+.tabs__caption a:hover {
     border-color: #fff;
     color: #E4E4E4;
 }

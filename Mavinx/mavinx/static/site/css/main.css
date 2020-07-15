@@ -1353,3 +1353,7 @@ footer .container {
   margin: 0;
   max-width: 80%;
 }
+
+.pagination {
+  display: flex;
+}

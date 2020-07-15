@@ -7,13 +7,15 @@ $( document ).ready(function() {
     let valBudget = $('#valBudget');
 
     let pageUrl = window.location.href;
+    let lastUrl = new URL(pageUrl);
+
+    lastUrl.searchParams.delete('page');
     if (pageUrl.indexOf('/works') != -1) {
       $('.allProjects').addClass('hide');
-
       let tabsUrl = document.querySelectorAll('.tabs__link');
 
       $.each( tabsUrl, ( key, value ) => {
-        if (pageUrl === tabsUrl[key].href) {
+        if (lastUrl == tabsUrl[key].href) {
           $('.tabs__link').removeClass('active');
           $(`.tabs__link:eq(${key})`).addClass('active');
         }

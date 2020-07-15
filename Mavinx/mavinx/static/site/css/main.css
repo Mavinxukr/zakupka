@@ -1348,3 +1348,8 @@ footer .container {
 .menuItem:hover .fontMedium  {
   color: #F2C81F;
 }
+
+.tabsItemLink p {
+  margin: 0;
+  max-width: 80%;
+}

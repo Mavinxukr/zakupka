@@ -8,7 +8,7 @@
                          src="{{ request.scheme }}://{{request.META.HTTP_HOST  }}/media/{{project.project_images.first.image }}" alt="">
                     <a class= href="#">
                         <div class="tabsItemLink fontMedium column">
-                            {{ project.name }}
+                            <p>{{ project.name }}</p>
                             <div class="flex">
                                 {% for area in project.area.all %}
                                     <span class="fontRegular">{{ area.name }}</span>
@@ -38,7 +38,7 @@
                          src="{{ request.scheme }}://{{request.META.HTTP_HOST  }}/media/{{project_ios.project_images.first.image }}" alt="">
                     <a class= href="#">
                         <div class="tabsItemLink fontMedium column">
-                             {{ project_ios.name }}
+                             <p>{{ project_ios.name }}</p>
                             <div class="flex">
                                 {% for area in project_ios.area.all %}
                                     <span class="fontRegular">{{ area.name }}</span>
@@ -70,7 +70,7 @@
                          src="{{ request.scheme }}://{{request.META.HTTP_HOST  }}/media/{{project_android.project_images.first.image }}" alt="">
                     <a class= href="#">
                         <div class="tabsItemLink fontMedium column">
-                             {{ project_android.name }}
+                             <p>{{ project_android.name }}</p>
                             <div class="flex">
                                 {% for area in project_android.area.all %}
                                     <span class="fontRegular">{{ area.name }}</span>
@@ -101,7 +101,7 @@
                          src="{{ request.scheme }}://{{request.META.HTTP_HOST  }}/media/{{project_web.project_images.first.image }}" alt="">
                     <a class= href="#">
                         <div class="tabsItemLink fontMedium column">
-                             {{ project_web.name }}
+                             <p>{{ project_web.name }}</p>
                             <div class="flex">
                                 {% for area in project_web.area.all %}
                                     <span class="fontRegular">{{ area.name }}</span>
@@ -132,7 +132,7 @@
                          src="{{ request.scheme }}://{{request.META.HTTP_HOST  }}/media/{{projects_ux_ui.project_images.first.image }}" alt="">
                     <a class= href="#">
                         <div class="tabsItemLink fontMedium column">
-                             {{ projects_ux_ui.name }}
+                             <p>{{ projects_ux_ui.name }}</p>
                             <div class="flex">
                                 {% for area in projects_ux_ui.area.all %}
                                     <span class="fontRegular">{{ area.name }}</span>

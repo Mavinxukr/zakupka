@@ -1,11 +1,19 @@
 {% load static %}
  {% load i18n %}
 <div class="container tabs">
-        <ul class="tabs__caption">
-        <li class="fontMedium active">{% trans 'proj_all_tab' %}</li>
-            {% for area in areas %}
-                <li class="fontMedium">{{ area.name }}</li>
-            {% endfor %}
-        </ul>
-        {% include 'site/head/only-project.html' %}
-    </div>
+  <ul class="tabs__caption">
+    <li class="fontMedium active">
+      <a class="tabs__link" href="{% url 'works' %}">
+        {% trans 'proj_all_tab' %}
+      </a>
+    </li>
+    {% for area in areas %}
+      <li class="fontMedium">
+        <a class="tabs__link" href="{% url 'works' %}">
+          {{ area.name }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+  {% include 'site/head/only-project.html' %}
+</div>

@@ -10,6 +10,11 @@ $( document ).ready(function() {
     if (pageUrl.indexOf('/works') != -1) {
       console.log(pageUrl);
       $('.allProjects').addClass('hide');
+    } else {
+      $('.tabs__link').click(function(e) {
+        console.log(pageUrl.indexOf('/works') != -1);
+        e.preventDefault();
+      })
     }
 
     rangeWeekFill.css("width", rangeWeek.val()*2 + "%");

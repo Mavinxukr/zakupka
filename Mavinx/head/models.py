@@ -185,6 +185,7 @@ class Order(models.Model):
     file = models.FileField(null=True, verbose_name=_('vnm_file_order'), upload_to=custom_upload_to)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='НОВЫЙ',
                               verbose_name=_('vnm_status_order'))
+    date = models.DateTimeField(default=datetime.now, null=True, verbose_name=_('vnm_date_order'))
 
     def __str__(self):
         return self.email

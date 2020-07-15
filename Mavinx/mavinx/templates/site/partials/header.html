@@ -20,22 +20,22 @@
     <nav class="menu">
         <ul class="menuItems">
             <li class="menuItem">
-                <a class="fontMedium activeItem" href="{% url 'works' %}">
+                <a class="fontMedium {% if 'works' in request.path %}activeItem{% endif %}" href="{% url 'works' %}">
                     {% trans 'works' %}
                 </a>
             </li>
             <li class="menuItem">
-                <a class="fontMedium" href="{% url 'services' %}">
+                <a class="fontMedium {% if 'services' in request.path %}activeItem{% endif %}" href="{% url 'services' %}">
                     {% trans 'services' %}
                 </a>
             </li>
             <li class="menuItem">
-                <a class="fontMedium" href=" {% url 'company' %}">
+                <a class="fontMedium {% if 'company' in request.path %}activeItem{% endif %}" href=" {% url 'company' %}">
                      {% trans 'company' %}
                 </a>
             </li>
             <li class="menuItem">
-                <a class="fontMedium" href="{% url 'blog' %}">
+                <a class="fontMedium {% if 'blog' in request.path %}activeItem{% endif %}" href="{% url 'blog' %}">
                     {% trans 'blog' %}
                 </a>
             </li>

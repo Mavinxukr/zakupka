@@ -67,7 +67,7 @@ class ProjectAdmin(TranslatableAdmin):
     list_per_page = 10
     inlines = (ProjectImagesInline,)
     list_display = ('name',  'priority', 'company')
-    list_filter = ('translations__name', 'priority', 'company__translations__name')
+    list_filter = ('translations__name', 'priority', 'company__translations__name','area')
     search_fields = ('translations__name', 'priority', 'company__translations__name')
 
 

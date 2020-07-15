@@ -6,6 +6,23 @@
 {% endblock %}
 {% block content %}
   {% include 'site/head/project-all.html' %}
+    <div class="pagination">
+    <span class="step-links">
+        {% if projects.has_previous %}
+            <a href="?page=1{% if area %}&area={{ area }} {% endif %} ">&laquo; first</a>
+            <a href="?page={{ projects.previous_page_number }}{% if area %}&area={{ area }} {% endif %} ">previous</a>
+        {% endif %}
+
+        <span class="current">
+            {{ projects.number }} of {{ projects.paginator.num_pages }}.
+        </span>
+
+        {% if projects.has_next %}
+            <a href="?page={{ projects.next_page_number }}{% if area %}&area={{ area }} {% endif %} ">next</a>
+            <a href="?page={{ projects.paginator.num_pages }}{% if area %}&area={{ area }} {% endif %} ">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
   <div class="container">
       {% include 'site/head/work.html' %}
   </div>

@@ -550,6 +550,9 @@ msgstr " Компания"
 msgid "title_blog_page"
 msgstr "Блог"
 
+msgid "vnm_date_order"
+msgstr "Время создания заказа"
+
 msgid "work_context_design_one"
 msgstr "- Готовый дизайн для различных платформ"
 

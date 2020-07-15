@@ -8,11 +8,13 @@
       </a>
     </li>
     {% for area in areas %}
+        {% if area.name != 'UI/UX' %}
       <li class="fontMedium">
-        <a class="tabs__link" href="{% url 'works' %}">
+        <a class="tabs__link" href="?area={{ area.name }}">
           {{ area.name }}
         </a>
       </li>
+        {% endif %}
     {% endfor %}
   </ul>
   {% include 'site/head/only-project.html' %}

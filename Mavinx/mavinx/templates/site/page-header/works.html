@@ -11,7 +11,6 @@
     </h1>
 </div>
   {% include 'site/head/project-all.html' %}
-  {% if projects.has_other_pages %}
     <ul class="pagination">
       {% if projects.has_previous %}
         <li><a href="?page={{ projects.previous_page_number }}{% if area %}&area={{ area }} {% endif %}">&laquo;</a></li>
@@ -31,7 +30,6 @@
         <li class="disabled"><span>&raquo;</span></li>
       {% endif %}
     </ul>
-  {% endif %}
   <div class="container">
       {% include 'site/head/work.html' %}
   </div>

@@ -1141,6 +1141,7 @@ footer .h1 {
     border-radius: 5px;
     font-size: 24px;
     margin-right: 10px;
+    margin-bottom: 10px;
 }
 
 .location {
@@ -1237,6 +1238,10 @@ footer .container {
   color: #B75050;
 }
 
+.wrap {
+  flex-wrap: wrap;;
+}
+
 .flexItems {
   display: flex;
   flex-wrap: wrap;
@@ -1322,4 +1327,9 @@ footer .container {
 
 .noChecked {
   border-color: #B75050!important;
+}
+
+.activeItem,
+.menuItem:hover .fontMedium  {
+  color: #F2C81F;
 }

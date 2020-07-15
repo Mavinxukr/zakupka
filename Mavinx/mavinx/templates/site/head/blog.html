@@ -10,20 +10,20 @@
 </a> -->
 <div class="flex blogItems">
     {% for blog in blogs %}
-    <a href="#">
         <article class="blogItem column">
+          <a href="#">
             <img class="blogImage" src="{{ request.scheme }}://{{request.META.HTTP_HOST  }}/media/{{ blog.image }}" alt="">
             <p class="fontMedium blogDescription">
                 {{ blog.name }}
             </p>
             <div class="blogHashtag flex">
-                <a href="#">
-                  <span class="fontRegular">#{{ blog.topic.name }}</span>
-                </a>
+                  <span class="fontRegular">
+                    <a href="#">#{{ blog.topic.name }}</a>
+                    </span>
                 <span style="color: #F2C81F;" class="fontMedium">{% trans 'blog_views' %}</span>
                 <span class="fontRegular">{{ blog.views }}</span>
             </div>
+          </a>
         </article>
-    </a>
   {% endfor %}
 </div>

@@ -1,3 +1,176 @@
+@media screen and (max-width: 1700px) {
+  .container {
+      max-width: 1080px;
+  }
+
+  .descriptionStack {
+    font-size: 12px;
+  }
+
+  .subscribe form p {
+    font-size: 25px;
+  }
+
+  .stack svg {
+    width: 70px;
+  }
+
+  .titleStack {
+    font-size: 24px;
+  }
+
+  .stack:nth-child(2) {
+    padding: 0 67px;
+  }
+
+  .bg {
+    padding: 80px 0 30px;
+  }
+
+  .customBtn {
+    width: 56px;
+    min-width: 56px;
+    height: 56px;
+    margin: 0 10px;
+  }
+
+  .reviews div {
+    width: 131px;
+    height: 132px;
+  }
+
+  .slider-images .slider-mainImage {
+    width: 157px;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .slider-nav .slick-slide {
+    width: 66px!important;
+  }
+
+  .slider-block .h1 {
+    max-width: 298px;
+    width: 100%;
+    min-width: 298px;
+    font-size: 49px;
+  }
+
+  .slider-images .slider-logo {
+    width: 66px;
+    height: 66px;
+  }
+
+  .slider-nav .slick-slide img {
+    width: 66px;
+    height: 66px;
+  }
+
+  .tabsItem,
+  .imageBlockInfo {
+    width: 30%;
+  }
+
+  .imageBlockInfo img {
+    margin: 0;
+    width: 100%;
+  }
+
+  .row .blockInfo h2,
+  .h2,
+  .row .blockInfo .complete .num, .row .blockInfo .technology .num {
+    font-size: 39px;
+  }
+
+  .row .blockInfo p {
+    font-size: 16px;
+  }
+
+  .flexItems {
+    justify-content: space-between;
+  }
+
+  .h1 {
+    font-size: 49px;
+  }
+
+  .tabsContent {
+    max-width: 686px;
+  }
+
+  .tab-description {
+    min-width: 402px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .tabs-panel .flex.between {
+    align-items: flex-start;
+  }
+
+  .tabs-panel .column {
+    max-width: 230px;
+  }
+
+  .tabs-title:first-child:before {
+    width: 138px;
+    height: 86px;
+    top: -102px
+  }
+
+  .tabs-title:nth-child(2):before {
+    width: 177px;
+    height: 142px;
+    top: -158px;
+  }
+
+  .tabs-title:nth-child(3):before {
+    width: 284px;
+    height: 207px;
+    top: -223px;
+  }
+
+  .tabs-title:nth-child(4):before {
+    width: 150px;
+    height: 163px;
+    top: -179px;
+  }
+
+  .tabs-title:nth-child(5):before {
+    width: 150px;
+    height: 46px;
+    top: -62px;
+  }
+
+  footer form {
+    max-width: 370px;
+  }
+
+  .range-container {
+    width: 165px;
+  }
+
+  .h3 {
+    font-size: 16px;
+  }
+
+  .footerLink {
+    font-size: 16px;
+    padding: 12px 24px 12px 15px;
+    margin-right: 7px;
+  }
+
+  .footerLink img {
+    width: 16px;
+    margin-right: 10px;
+    height: 16px;
+  }
+
+  footer form + div {
+    max-width: 412px;
+  }
+}
+
 @media screen and (max-width: 1600px) {
     .bigImg ~ .tabsItemLink {
         left: 0;
@@ -11,10 +184,6 @@
 
     .Project h2 {
       font-size: 35px;
-    }
-
-    .h2, .row .blockInfo h2 {
-      font-size: 46px;
     }
 
     .row .blockInfo p,
@@ -51,11 +220,6 @@
 
     .blockInfo {
       max-width: 590px;
-    }
-}
-@media screen and (max-width: 1550px) {
-    .container {
-        max-width: 100%;
     }
 }
 

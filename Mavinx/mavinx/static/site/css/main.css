@@ -222,6 +222,15 @@ main {
     position: relative;
 }
 
+.works {
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-bottom: 60px;
+  margin-bottom: 71px;
+}
+
 .bannerTitle {
     font-size: 72px;
     max-width: 671px;
@@ -423,7 +432,7 @@ main {
 }
 
 .blockInfo {
-    max-width: 640px;
+    width: 43%;
 }
 
 .row .blockInfo h2 {
@@ -490,6 +499,7 @@ main {
 .blockInfo .flex {
     position: relative;
     align-items: flex-end;
+    flex-wrap: wrap;
 }
 
 .blockInfo .readMore {
@@ -696,6 +706,13 @@ main {
     border-radius: 10px;
     margin-right: 40px;
     position: relative;
+    border: 1px solid #EEEEEE;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.reviews div img {
+  width: 100%;
 }
 
 .review-starts {
@@ -715,7 +732,7 @@ main {
 }
 
 .stack {
-    width: 356px;
+    width: 23%;
     display: flex;
     flex-direction: column;
 }
@@ -921,8 +938,7 @@ main {
     color: rgba(255, 255, 255, .5);
     font-size: 24px;
     font-family: "InterMedium", sans-serif;
-    max-width: 521px;
-    width: 100%;
+    width: 46%;
 }
 
 .subscribe form input::placeholder {
@@ -948,6 +964,8 @@ main {
 
 .blogItems {
     margin-top: 70px;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .blogItems {
@@ -956,10 +974,7 @@ main {
 }
 
 .blogItem {
-    margin-left: 20px;
-    margin-right: 20px;
-    max-width: 480px;
-    width: 100%;
+    width: 31%;
 }
 
 .blogImage {
@@ -1332,4 +1347,9 @@ footer .container {
 .activeItem,
 .menuItem:hover .fontMedium  {
   color: #F2C81F;
+}
+
+.tabsItemLink p {
+  margin: 0;
+  max-width: 80%;
 }

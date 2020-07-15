@@ -6,6 +6,12 @@ $( document ).ready(function() {
     let valWeek = $('#valWeek');
     let valBudget = $('#valBudget');
 
+    let pageUrl = window.location.href;
+    if (pageUrl.indexOf('/works') != -1) {
+      console.log(pageUrl);
+      $('.allProjects').addClass('hide');
+    }
+
     rangeWeekFill.css("width", rangeWeek.val()*2 + "%");
     rangeBudgetFill.css("width", rangeBudget.val() / 1000 + "%");
 

@@ -11,58 +11,57 @@
     </h1>
 </div>
   {% include 'site/head/project-all.html' %}
-
-<ul>
-    {% if projects.has_previous %}
-          <li>
-              <a href="?page={{ tasks.previous_page_number }}{% if area %}&area={{ area }} {% endif %}">
-              Previous
-            </a>
-          </li>
-    {% endif %}
-    {% if projects.number|add:'-3' > 1 %}
-        <li>
-            <a href="?page=1{% if area %}&area={{ area }} {% endif %}">
-                1
-            </a>
-        </li>
-        <li>
-            <a href="?page={{ projects.number|add:'-4' }}{% if area %}&area={{ area }} {% endif %}">
-            &hellip;
-            </a>
-        </li>
-    {% endif %}
-    {% for i in projects.paginator.page_range %}
-        {% if projects.number == i %}
-            <li class="active"><span>{{ i }}</span></li>
-        {% elif i > projects.number|add:'-2' and i < projects.number|add:'2' %}
+    <ul>
+        {% if projects.has_previous %}
+              <li>
+                  <a href="?page={{ tasks.previous_page_number }}{% if area %}&area={{ area }} {% endif %}">
+                  Previous
+                </a>
+              </li>
+        {% endif %}
+        {% if projects.number|add:'-3' > 1 %}
             <li>
-                <a href="?page={{ i }}{% if area %}&area={{ area }} {% endif %}">
-                    {{ i }}
+                <a href="?page=1{% if area %}&area={{ area }} {% endif %}">
+                    1
                 </a>
             </li>
+            <li>
+                <a href="?page={{ projects.number|add:'-4' }}{% if area %}&area={{ area }} {% endif %}">
+                &hellip;
+                </a>
+            </li>
+        {% endif %}
+        {% for i in projects.paginator.page_range %}
+            {% if projects.number == i %}
+                <li class="active"><span>{{ i }}</span></li>
+            {% elif i > projects.number|add:'-2' and i < projects.number|add:'2' %}
+                <li>
+                    <a href="?page={{ i }}{% if area %}&area={{ area }} {% endif %}">
+                        {{ i }}
+                    </a>
+                </li>
+          {% endif %}
+      {% endfor %}
+      {% if projects.paginator.num_pages > projects.number|add:'3' %}
+        <li>
+            <a href="?page={{ projects.number|add:'4' }}{% if area %}&area={{ area }} {% endif %}">
+                &hellip;
+            </a>
+        </li>
+        <li>
+            <a href="?page={{ projects.paginator.count }}{% if area %}&area={{ area }} {% endif %}">
+                {{ projects.paginator.count }}
+            </a>
+        </li>
       {% endif %}
-  {% endfor %}
-  {% if projects.paginator.num_pages > projects.number|add:'3' %}
-    <li>
-        <a href="?page={{ projects.number|add:'4' }}{% if area %}&area={{ area }} {% endif %}">
-            &hellip;
-        </a>
-    </li>
-    <li>
-        <a href="?page={{ projects.paginator.count }}{% if area %}&area={{ area }} {% endif %}">
-            {{ projects.paginator.count }}
-        </a>
-    </li>
-  {% endif %}
-    {% if projects.has_next %}
-          <li>
-              <a href="?page={{ projects.next_page_number }}{% if area %}&area={{ area }} {% endif %}">
-                  Next
-              </a>
-          </li>
-    {% endif %}
-</ul>
+        {% if projects.has_next %}
+              <li>
+                  <a href="?page={{ projects.next_page_number }}{% if area %}&area={{ area }} {% endif %}">
+                      Next
+                  </a>
+              </li>
+        {% endif %}
+    </ul>
   <div class="container">
       {% include 'site/head/work.html' %}
   </div>

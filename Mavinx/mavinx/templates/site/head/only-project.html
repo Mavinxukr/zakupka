@@ -2,6 +2,7 @@
  {% load i18n %}
 <div class="tabs__content active">
             <div class="flexItems">
+            {% if projects.count > 0 or projects.paginator.count > 0   %}
                 {% for project in projects %}
                 <div class="tabsItem">
                     <img class="{% if forloop.counter|divisibleby:2 %}smallImg {% else %} bigImg {% endif %}"
@@ -18,6 +19,7 @@
                     </a>
                 </div>
                 {% endfor %}
+            {% endif %}
                 <div class="tabsItem allProjects">
                   <a href="{% url 'works' %}">
                     <div class="smallImg Project">

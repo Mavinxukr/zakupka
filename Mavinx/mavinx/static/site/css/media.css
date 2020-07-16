@@ -3,6 +3,10 @@
       max-width: 1080px;
   }
 
+  .row .blockInfo .complete .text, .row .blockInfo .technology .text {
+    font-size: 15px;
+  }
+
   .descriptionStack {
     font-size: 12px;
   }

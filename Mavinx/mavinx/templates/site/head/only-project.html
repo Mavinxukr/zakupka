@@ -2,24 +2,22 @@
  {% load i18n %}
 <div class="tabs__content active">
             <div class="flexItems">
-            {% if projects.count > 0 or projects.paginator.count > 0   %}
                 {% for project in projects %}
-                <div class="tabsItem">
-                    <img class="{% if forloop.counter|divisibleby:2 %}smallImg {% else %} bigImg {% endif %}"
-                         src="/media/{{project.head_image }}" alt="">
-                    <a class= href="#">
-                        <div class="tabsItemLink fontMedium column">
-                            <p>{{ project.name }}</p>
-                            <div class="flex">
-                                {% for area in project.area.all %}
-                                    <span class="fontRegular">{{ area.name }}</span>
-                                {% endfor %}
+                    <div class="tabsItem">
+                        <img class="{% if forloop.counter|divisibleby:2 %}smallImg {% else %} bigImg {% endif %}"
+                             src="/media/{{project.head_image }}" alt="">
+                        <a class= href="#">
+                            <div class="tabsItemLink fontMedium column">
+                                <p>{{ project.name }}</p>
+                                <div class="flex">
+                                    {% for area in project.area.all %}
+                                        <span class="fontRegular">{{ area.name }}</span>
+                                    {% endfor %}
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
+                        </a>
+                    </div>
                 {% endfor %}
-            {% endif %}
                 <div class="tabsItem allProjects">
                   <a href="{% url 'works' %}">
                     <div class="smallImg Project">

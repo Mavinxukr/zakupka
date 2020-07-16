@@ -9,7 +9,14 @@ $( document ).ready(function() {
     let pageUrl = window.location.href;
     let lastUrl = new URL(pageUrl);
 
+    if (lastUrl.searchParams.get("page")) {
+      $('html, body').animate({
+          scrollTop: $(".tabs").offset().top - 80
+      }, 800);
+    }
+
     lastUrl.searchParams.delete('page');
+    console.log('page', lastUrl.searchParams.get("page"))
     if (pageUrl.indexOf('/works') != -1) {
       $('.allProjects').addClass('hide');
       let tabsUrl = document.querySelectorAll('.tabs__link');
@@ -113,5 +120,4 @@ $( document ).ready(function() {
     $('.labelCheckbox').on('click', function() {
       $('.labelCheckbox').removeClass('noChecked');
     });
-
 });

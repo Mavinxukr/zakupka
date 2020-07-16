@@ -56,6 +56,13 @@ a:hover{
     font-style: normal;
 }
 
+@font-face {
+    font-family: "HelveticaNeueCyr";
+    src: url("../fonts/HelveticaNeueCyr-Medium.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
 .overflow {
     overflow: hidden;
 }
@@ -1358,7 +1365,11 @@ footer .container {
   display: flex;
   margin: auto;
   max-width: 320px;
-  width: 100%;
+  width: fit-content;
+  border: 1px solid rgba(0, 0, 0, .1);
+  border-radius: 10px;
+  height: 54px;
+  align-items: center;
 }
 
 .pagination a{
@@ -1367,9 +1378,49 @@ footer .container {
 
 .pagination li {
   color: #F2C81F;
+  font-family: "HelveticaNeueCyr";
+  font-size: 16px;
+  font-weight: 100;
+  margin: 0 6px;
 }
 
-.pagination .active  {
+.pagination .active,
+.pagination .dots  {
   color: #000;
   opacity: .1;
+}
+
+.pagination .page-item.disabled {
+  color: rgba(0, 0, 0, .1);
+}
+
+.pagination .page-item {
+  padding: 26px 20px;
+  margin: 0;
+}
+
+.pagination .page-item.disabled {
+  position: relative;
+  margin-right: 24px;
+}
+
+.pagination .page-item.disabled:last-child {
+  margin-left: 24px;
+  margin-right: 0;
+}
+
+.disabled:after {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 20px;
+  background: #000;
+  opacity: .1;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.pagination .page-item.disabled:last-child::after {
+  right: 100%;
 }

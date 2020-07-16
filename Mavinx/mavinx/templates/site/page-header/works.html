@@ -12,20 +12,16 @@
 </div>
   {% include 'site/head/project-all.html' %}
     <ul class="pagination">
-        {% if projects.has_previous %}
-              <li>
-                  <a href="?page={{ tasks.previous_page_number }}{% if area %}&area={{ area }} {% endif %}">
-                  Previous
-                </a>
-              </li>
-        {% endif %}
+      <li class="page-item {% if not projects.has_previous %} disabled {% endif %}">
+                <a class="page-link" href="{% if projects.has_previous %}?page={{ projects.previous_page_number }}{% endif %} " tabindex="-1">Previous</a>
+            </li>
         {% if projects.number|add:'-3' > 1 %}
             <li>
                 <a href="?page=1{% if area %}&area={{ area }} {% endif %}">
                     1
                 </a>
             </li>
-            <li>
+            <li class="dots">
                 <a href="?page={{ projects.number|add:'-4' }}{% if area %}&area={{ area }} {% endif %}">
                 &hellip;
                 </a>
@@ -43,7 +39,7 @@
           {% endif %}
       {% endfor %}
       {% if projects.paginator.num_pages > projects.number|add:'3' %}
-        <li>
+        <li class="dots">
             <a href="?page={{ projects.number|add:'4' }}{% if area %}&area={{ area }} {% endif %}">
                 &hellip;
             </a>
@@ -54,13 +50,9 @@
             </a>
         </li>
       {% endif %}
-        {% if projects.has_next %}
-              <li>
-                  <a href="?page={{ projects.next_page_number }}{% if area %}&area={{ area }} {% endif %}">
-                      Next
-                  </a>
-              </li>
-        {% endif %}
+   <li class="page-item {% if not projects.has_next %} disabled {% endif %}">
+                <a class="page-link" href="{% if page_obj.has_next %} ?page={{ projects.next_page_number }} {% endif %}">Next</a>
+            </li>
     </ul>
   <div class="container">
       {% include 'site/head/work.html' %}

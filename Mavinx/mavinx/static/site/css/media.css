@@ -7,6 +7,27 @@
     font-size: 15px;
   }
 
+  .subscribe {
+    position: relative;
+  }
+
+  .subscribeError, .subscribeErrorFormat {
+    position: absolute;
+    top: 140px;
+    left: 41%;
+    transform: translateX(-50%);
+  }
+
+  .rangeBlock > p {
+    font-size: 17px;
+  }
+
+  .rangeWeek + p,
+  .rangeBudget + p {
+    margin-top: 7px;
+    font-size: 12px;
+  }
+
   .descriptionStack {
     font-size: 12px;
   }

@@ -9,7 +9,7 @@ $( document ).ready(function() {
     let pageUrl = window.location.href;
     let lastUrl = new URL(pageUrl);
 
-    if (lastUrl.searchParams.get("page")) {
+    if (lastUrl.searchParams.get("page") || lastUrl.searchParams.get("area")) {
       $('html, body').animate({
           scrollTop: $(".tabs").offset().top - 80
       }, 800);

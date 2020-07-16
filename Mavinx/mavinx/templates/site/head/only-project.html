@@ -2,7 +2,7 @@
  {% load i18n %}
 <div class="tabs__content active">
             <div class="flexItems">
-                {% for project in projects %}
+                {% for project in data %}
                     <div class="tabsItem">
                         <img class="{% if forloop.counter|divisibleby:2 %}smallImg {% else %} bigImg {% endif %}"
                              src="/media/{{project.head_image }}" alt="">

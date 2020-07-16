@@ -17,21 +17,21 @@ class Works(View):
         area =  request.GET.get('area') if request.GET.get('area') else None
 
         if 'iOS' == area:
-            projects = Project.objects.filter(area__translations__name__contains='iOS')
+            data = Project.objects.filter(area__translations__name__contains='iOS')
         elif 'Android' == area:
-            projects = Project.objects.filter(area__translations__name__contains='Android')
+            data = Project.objects.filter(area__translations__name__contains='Android')
         elif 'Web' == area:
-            projects = Project.objects.filter(area__translations__name__contains='Web')
+            data = Project.objects.filter(area__translations__name__contains='Web')
         elif 'UI/UX' == area:
-            projects = Project.objects.filter(area__translations__name__contains='UI/UX')
+            data = Project.objects.filter(area__translations__name__contains='UI/UX')
         else:
-            projects = Project.objects.all()
+            data = Project.objects.all()
 
-        paginator = Paginator(projects.order_by('-priority').distinct(), 1)
+        paginator = Paginator(data.order_by('-priority').distinct(), 1)
         page_number = request.GET.get('page')
-        projects = paginator.get_page(page_number)
+        data = paginator.get_page(page_number)
         areas = Area.objects.all()
-        context['projects'] = projects
+        context['data'] = data
         context['areas'] =  areas
         context['area'] = area
 

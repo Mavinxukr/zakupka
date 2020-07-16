@@ -4,7 +4,6 @@ from django.utils.translation import ugettext_lazy as _
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 ALLOWED_HOSTS = ['*']
 
 # Application definition
@@ -61,7 +60,6 @@ WSGI_APPLICATION = 'mavinx.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 
-
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
@@ -85,13 +83,12 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
 LANGUAGE_CODE = 'en'
-LANGUAGES =[
+LANGUAGES = [
     ('en', _('English')),
     ('ru', _('Russian')),
 ]
 
 TIME_ZONE = 'Europe/Kiev'
-
 
 USE_I18N = True
 USE_L10N = True
@@ -110,21 +107,24 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-
-
-
-
 ADMIN_SITE_HEADER = "MavinX"
 ADMIN_SITE_TITLE = "Администрирование MavinX"
 
 PARLER_DEFAULT_LANGUAGE_CODE = 'en'
 PARLER_LANGUAGES = {
     None: (
-        {'code': 'ru',},
-        {'code': 'en',},
+        {'code': 'ru', },
+        {'code': 'en', },
     ),
     'default': {
-        'fallbacks': ['en'],          # defaults to PARLER_DEFAULT_LANGUAGE_CODE
-        'hide_untranslated': False,   # the default; let .active_translations() return fallbacks too.
+        'fallbacks': ['en'],  # defaults to PARLER_DEFAULT_LANGUAGE_CODE
+        'hide_untranslated': False,  # the default; let .active_translations() return fallbacks too.
     }
 }
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'mavinx.office@gmail.com'
+EMAIL_HOST_PASSWORD = 'mavinxmavinx777'

@@ -11,27 +11,27 @@
     </h1>
 </div>
   {% include 'site/head/project-all.html' %}
-    {% if projects.paginator.count > 0  %}
+    {% if data.paginator.count > 0  %}
     <ul class="pagination">
-      <li class="page-item {% if not projects.has_previous %} disabled {% endif %}">
-                <a class="page-link" href="{% if projects.has_previous %}?page={{ projects.previous_page_number }}{% endif %} " tabindex="-1">Previous</a>
+      <li class="page-item {% if not data.has_previous %} disabled {% endif %}">
+                <a class="page-link" href="{% if data.has_previous %}?page={{ data.previous_page_number }}{% endif %}{% if area %}&area={{ area }} {% endif %}" tabindex="-1">Previous</a>
             </li>
-        {% if projects.number|add:'-3' > 1 %}
+        {% if data.number|add:'-3' > 1 %}
             <li>
                 <a href="?page=1{% if area %}&area={{ area }} {% endif %}">
                     1
                 </a>
             </li>
             <li class="dots">
-                <a href="?page={{ projects.number|add:'-4' }}{% if area %}&area={{ area }} {% endif %}">
+                <a href="?page={{ data.number|add:'-4' }}{% if area %}&area={{ area }} {% endif %}">
                 &hellip;
                 </a>
             </li>
         {% endif %}
-        {% for i in projects.paginator.page_range %}
-            {% if projects.number == i %}
+        {% for i in data.paginator.page_range %}
+            {% if data.number == i %}
                 <li class="active"><span>{{ i }}</span></li>
-            {% elif i > projects.number|add:'-2' and i < projects.number|add:'2' %}
+            {% elif i > data.number|add:'-2' and i < data.number|add:'2' %}
                 <li>
                     <a href="?page={{ i }}{% if area %}&area={{ area }} {% endif %}">
                         {{ i }}
@@ -39,20 +39,20 @@
                 </li>
           {% endif %}
       {% endfor %}
-      {% if projects.paginator.num_pages > projects.number|add:'3' %}
+      {% if data.paginator.num_pages > data.number|add:'3' %}
         <li class="dots">
-            <a href="?page={{ projects.number|add:'4' }}{% if area %}&area={{ area }} {% endif %}">
+            <a href="?page={{ data.number|add:'4' }}{% if area %}&area={{ area }} {% endif %}">
                 &hellip;
             </a>
         </li>
         <li>
-            <a href="?page={{ projects.paginator.count }}{% if area %}&area={{ area }} {% endif %}">
-                {{ projects.paginator.count }}
+            <a href="?page={{ data.paginator.count }}{% if area %}&area={{ area }} {% endif %}">
+                {{ data.paginator.count }}
             </a>
         </li>
       {% endif %}
-   <li class="page-item {% if not projects.has_next %} disabled {% endif %}">
-                <a class="page-link" href="{% if projects.has_next %} ?page={{ projects.next_page_number }} {% endif %}">Next</a>
+   <li class="page-item {% if not data.has_next %} disabled {% endif %}">
+                <a class="page-link" href="{% if data.has_next %} ?page={{ data.next_page_number }} {% endif %}{% if area %}&area={{ area }} {% endif %}">Next</a>
             </li>
     </ul>
     {% endif %}

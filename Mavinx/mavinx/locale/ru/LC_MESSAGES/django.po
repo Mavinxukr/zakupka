@@ -296,7 +296,7 @@ msgid "team"
 msgstr "Команда"
 
 msgid "project_complete"
-msgstr "Завершенных проектов"
+msgstr "Выполненных проектов"
 
 msgid "years_of_experience"
 msgstr "Годов опыта"
@@ -311,7 +311,7 @@ msgid "ios_app"
 msgstr " iOS приложения"
 
 msgid "ios_complite_app"
-msgstr "Завершенных проектов"
+msgstr "Выполненных проектов"
 
 msgid "read_more_ios"
 msgstr "Читать далее"
@@ -320,7 +320,7 @@ msgid "android_app"
 msgstr "Android приложения"
 
 msgid "android_complite_app"
-msgstr "Завершенных проектов"
+msgstr "Выполненных проектов"
 
 msgid "read_more_android"
 msgstr "Читать далее"
@@ -329,7 +329,7 @@ msgid "web_site_service"
 msgstr "Веб-сайты/Сервисы"
 
 msgid "web_site_complete"
-msgstr "Завершенных проектов"
+msgstr "Выполненных проектов"
 
 msgid "web_site_read_more"
 msgstr "Читать далее"
@@ -338,7 +338,7 @@ msgid "design"
 msgstr "Дизайн"
 
 msgid "complete_interface"
-msgstr "Завершенных дизайнов"
+msgstr "Выполненных дизайнов"
 
 msgid "ux_ui_read_more"
 msgstr "Читать далее"
@@ -347,7 +347,7 @@ msgid "ab_testing"
 msgstr "Тестирование"
 
 msgid "qa_ab_complete"
-msgstr "Завершенных тестирований"
+msgstr "Выполненных тестирований"
 
 msgid "qa_ab_read_more"
 msgstr "Читать далее"

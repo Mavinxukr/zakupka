@@ -1,5 +1,7 @@
+from django.core.mail import send_mail
 from django.http import JsonResponse
 from django.views import View
+from mavinx.settings import base
 
 from head.models import Order, Subscribers
 
@@ -19,6 +21,13 @@ class ClientRequest(View):
             'message': 'Ваш запрос был отправлен',
             'data': data
         }
+        subject = '⏩📩😳🔥 Поступил новый запрос с вашего сайта 🔥😳📩⏪'
+        message = 'Быстро гони 🚀 в админку 👔, там есть новый заказ 😜 \n' \
+                  'Не забываем 👺 менять статус запроса 😴 в админке 🙏' \
+                  'Твой Django ✊❤😎'
+        email_from = base.EMAIL_HOST_USER
+        recipient_list = [base.EMAIL_HOST_USER, ]
+        send_mail(subject, message, email_from, recipient_list)
         return JsonResponse(response, status=200)
 
 

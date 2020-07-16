@@ -11,7 +11,7 @@
     </h1>
 </div>
   {% include 'site/head/project-all.html' %}
-    <ul>
+    <ul class="pagination">
         {% if projects.has_previous %}
               <li>
                   <a href="?page={{ tasks.previous_page_number }}{% if area %}&area={{ area }} {% endif %}">

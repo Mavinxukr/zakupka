@@ -1356,4 +1356,20 @@ footer .container {
 
 .pagination {
   display: flex;
+  margin: auto;
+  max-width: 320px;
+  width: 100%;
+}
+
+.pagination a{
+  color: inherit;
+}
+
+.pagination li {
+  color: #F2C81F;
+}
+
+.pagination .active  {
+  color: #000;
+  opacity: .1;
 }

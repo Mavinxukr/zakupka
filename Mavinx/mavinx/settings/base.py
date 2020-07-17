@@ -123,8 +123,9 @@ PARLER_LANGUAGES = {
 }
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 's15.webhost1.ru'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'mavinx.office@gmail.com'
-EMAIL_HOST_PASSWORD = 'mavinxmavinx777'
+EMAIL_HOST_USER = 'info@shop.akarumey.ml'
+EMAIL_HOST_PASSWORD = 'tutorials'
+

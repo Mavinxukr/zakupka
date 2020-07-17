@@ -3,6 +3,12 @@
       max-width: 1080px;
   }
 
+  .services-tabs-title img {
+    width: 80%;
+    margin: auto;
+    min-height: 100px;
+  }
+
   .row .blockInfo .complete .text, .row .blockInfo .technology .text {
     font-size: 15px;
   }

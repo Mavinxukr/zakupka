@@ -1470,6 +1470,8 @@ msgstr " - Style Guide for developers"
 msgid "work_context_develop_one"
 msgstr " Ready product developed according to its specification and visual designs."
 
+msgid "work_title"
+msgstr "We are Web/Mobile developers"
 
-
-
+msgid "services_title"
+msgstr "Modern architectural approaches"

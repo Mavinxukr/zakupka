@@ -6,6 +6,11 @@
 {% endblock %}
 {% block content %}
       <!-- Tabs for page Services -->
+    <div class="container works services">
+        <h1 class="bannerTitle fontMedium">
+            <span>{% trans 'services_title' %}</span>
+        </h1>
+    </div>
    <div class="container">
     <div class="servicesTabs">
                 <ul class="flex" data-tabs="" id="example-tabs">
@@ -110,7 +115,7 @@
    {% include 'site/head/project-web.html' %}
    {% include 'site/head/project-ux-ui-testing.html' %}
     {% include 'site/head/subscribe.html' %}
+    <div class="border-block"></div>
     {% include 'site/head/blog.html' %}
   </div>
 {% endblock %}
-

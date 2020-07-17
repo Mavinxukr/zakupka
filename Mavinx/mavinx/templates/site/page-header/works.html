@@ -10,68 +10,8 @@
         <span>We are Web/Mobile developers</span>
     </h1>
 </div>
-  {% include 'site/head/project-all.html' %}
-    {% if data.paginator.count > 0  %}
-    <ul class="pagination">
-<<<<<<< HEAD
-      <li class="page-item {% if not data.has_previous %} disabled {% endif %}">
-                <a class="page-link" href="{% if data.has_previous %}?page={{ data.previous_page_number }}{% endif %}{% if area %}&area={{ area }} {% endif %}" tabindex="-1">Previous</a>
-=======
-      <li class="page-item {% if not projects.has_previous %} disabled {% endif %}">
-                <a class="page-link" href="{% if projects.has_previous %}?page={{ projects.previous_page_number }}{% endif %} " tabindex="-1">
-                  <svg class="first" xmlns="http://www.w3.org/2000/svg" width="20.998" height="10.829" viewBox="0 0 20.998 10.829"><defs><style>.ab,.bb{fill:none;stroke:#f2c82b;stroke-linecap:round;stroke-width:2px;}.ab{stroke-linejoin:round;}</style></defs><g transform="translate(19.998 9.414) rotate(180)"><path class="ab" d="M4,0,0,4,4,8"/><path class="bb" d="M18,0H0" transform="translate(0.998 4)"/></g></svg>
-                  <svg class="second" xmlns="http://www.w3.org/2000/svg" width="20.998" height="10.828" viewBox="0 0 20.998 10.828"><defs><style>.a{opacity:0.1;}.b,.c{fill:none;stroke:#000;stroke-linecap:round;stroke-width:2px;}.b{stroke-linejoin:round;}</style></defs><g class="a" transform="translate(1 1.414)"><path class="b" d="M11561.222,2346.744l-4,4,4,4" transform="translate(-11557.222 -2346.744)"/><path class="c" d="M11583,2350h-18" transform="translate(-11564.002 -2346)"/></g></svg>
-                </a>
->>>>>>> 1f7b4325699b58fb0981e7c99bfdd82e8e017397
-            </li>
-        {% if data.number|add:'-3' > 1 %}
-            <li>
-                <a href="?page=1{% if area %}&area={{ area }} {% endif %}">
-                    1
-                </a>
-            </li>
-            <li class="dots">
-                <a href="?page={{ data.number|add:'-4' }}{% if area %}&area={{ area }} {% endif %}">
-                &hellip;
-                </a>
-            </li>
-        {% endif %}
-        {% for i in data.paginator.page_range %}
-            {% if data.number == i %}
-                <li class="active"><span>{{ i }}</span></li>
-            {% elif i > data.number|add:'-2' and i < data.number|add:'2' %}
-                <li>
-                    <a href="?page={{ i }}{% if area %}&area={{ area }} {% endif %}">
-                        {{ i }}
-                    </a>
-                </li>
-          {% endif %}
-      {% endfor %}
-      {% if data.paginator.num_pages > data.number|add:'3' %}
-        <li class="dots">
-            <a href="?page={{ data.number|add:'4' }}{% if area %}&area={{ area }} {% endif %}">
-                &hellip;
-            </a>
-        </li>
-        <li>
-            <a href="?page={{ data.paginator.count }}{% if area %}&area={{ area }} {% endif %}">
-                {{ data.paginator.count }}
-            </a>
-        </li>
-      {% endif %}
-<<<<<<< HEAD
-   <li class="page-item {% if not data.has_next %} disabled {% endif %}">
-                <a class="page-link" href="{% if data.has_next %} ?page={{ data.next_page_number }} {% endif %}{% if area %}&area={{ area }} {% endif %}">Next</a>
-=======
-   <li class="page-item {% if not projects.has_next %} disabled {% endif %}">
-                <a class="page-link" href="{% if projects.has_next %} ?page={{ projects.next_page_number }} {% endif %}">
-                  <svg class="first" xmlns="http://www.w3.org/2000/svg" width="20.998" height="10.829" viewBox="0 0 20.998 10.829"><defs><style>.ab,.bb{fill:none;stroke:#f2c82b;stroke-linecap:round;stroke-width:2px;}.ab{stroke-linejoin:round;}</style></defs><g transform="translate(19.998 9.414) rotate(180)"><path class="ab" d="M4,0,0,4,4,8"/><path class="bb" d="M18,0H0" transform="translate(0.998 4)"/></g></svg>
-                  <svg class="second" xmlns="http://www.w3.org/2000/svg" width="20.998" height="10.828" viewBox="0 0 20.998 10.828"><defs><style>.a{opacity:0.1;}.b,.c{fill:none;stroke:#000;stroke-linecap:round;stroke-width:2px;}.b{stroke-linejoin:round;}</style></defs><g class="a" transform="translate(1 1.414)"><path class="b" d="M11561.222,2346.744l-4,4,4,4" transform="translate(-11557.222 -2346.744)"/><path class="c" d="M11583,2350h-18" transform="translate(-11564.002 -2346)"/></g></svg>
-              </a>
->>>>>>> 1f7b4325699b58fb0981e7c99bfdd82e8e017397
-            </li>
-    </ul>
-    {% endif %}
+    {% include 'site/head/project-all.html' %}
+    {% include 'site/partials/paginator.html' %}
   <div class="container">
       {% include 'site/head/work.html' %}
   </div>

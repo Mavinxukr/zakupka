@@ -1478,6 +1478,7 @@ footer .container {
 .servicesTabs {
   display: flex;
   flex-direction: column;
+  margin-bottom: 100px;
 }
 
 .servicesTabs #example-tabs {
@@ -1595,4 +1596,16 @@ footer .container {
 
 .scrollToTop:hover {
   background-color: #FBEEBF;
+}
+
+.works .bannerTitle {
+  margin-top:  130px;
+}
+
+.services {
+  border: none;
+}
+
+.services .bannerTitle {
+  max-width: 730px;
 }

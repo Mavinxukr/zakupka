@@ -105,7 +105,7 @@ LOCALE_PATHS = (os.path.join(BASE_DIR, 'locale'),)
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = '/staticfiles/'
 
 ADMIN_SITE_HEADER = "MavinX"
 ADMIN_SITE_TITLE = "Администрирование MavinX"

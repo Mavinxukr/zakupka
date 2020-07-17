@@ -76,7 +76,12 @@ $( document ).ready(function() {
           checkedItem.push($(this).val());
         });
 
-        if (name && email && phone){
+        if (checkedItem.length === 0) {
+          $('.labelCheckbox').addClass('noChecked');
+        }
+
+
+        if (name && email && phone && checkedItem.length > 0){
           data.append('name', name )
           data.append('areas_id', checkedItem)
           data.append('phone', phone)
@@ -101,6 +106,17 @@ $( document ).ready(function() {
                  $("#send_form")[0].reset();
                  $('.form-group').removeClass('hide');
                  $('.fileName').removeClass('show');
+                 let rangeWeek = $('#rangeWeek');
+                 let rangeBudget = $('#rangeBudget');
+                 let rangeWeekFill = $('.rangeWeek .bar .fill');
+                 let rangeBudgetFill = $('.rangeBudget .bar .fill');
+                 let valWeek = $('#valWeek');
+                 let valBudget = $('#valBudget');
+
+                 valWeek.html('1');
+                 valBudget.html('1000');
+                 rangeWeekFill.css("width", rangeWeek.val()*2 + "%");
+                 rangeBudgetFill.css("width", rangeBudget.val() / 1000 + "%");
                  setTimeout(function() {
                    $('body').removeClass("activeShow");
                    $('.messageBlock').removeClass('show');

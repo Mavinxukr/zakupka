@@ -120,4 +120,30 @@ $( document ).ready(function() {
     $('.labelCheckbox').on('click', function() {
       $('.labelCheckbox').removeClass('noChecked');
     });
+
+    $(window).scroll(function() {
+    if ($(document).scrollTop() > 200) {
+      $(".scrollToTop").addClass("showBtn");
+    } else {
+      $(".scrollToTop").removeClass("showBtn");
+    }
+  });
+
+    $('.scrollToTop').click(function() {
+      $('html, body').animate({scrollTop:(0)}, '1000');
+    });
 });
+
+function openTabsServices(evt, idItem) {
+  let i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabs-panel");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("services-tabs-title");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" is-active", "");
+  }
+  document.getElementById(idItem).style.display = "block";
+  evt.currentTarget.className += " is-active";
+}

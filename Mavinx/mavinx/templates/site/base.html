@@ -35,6 +35,7 @@
 <main>
     {% block content %}{% endblock %}
 </main>
+<button class="scrollToTop" type="button" name="button"></button>
 <script src="{% static 'site/js/jquery.js' %}"></script>
 {% include 'site/partials/footer.html' %}
 <script src="{% static 'site/js/send-data.js' %}?{% now "U" %}"></script>

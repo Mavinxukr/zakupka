@@ -535,12 +535,18 @@ main {
     opacity: .6;
 }
 
-.blockInfo .readMore:after,
 .aboutUS:after,
 .blog .showAll:after {
     content: url("../images/readMore.svg");
-    padding-left: 20px;
+    padding-left: 15px;
     transition: all .3s;
+    padding-right: 5px;
+}
+
+.blockInfo .readMore:after {
+  content: url("../images/readMore.svg");
+  padding-left: 20px;
+  transition: all .3s;
 }
 
 .blockInfo .readMore:hover {
@@ -1461,4 +1467,122 @@ footer .container {
 
 .pagination .page-item.disabled:last-child::after {
   right: 100%;
+}
+
+.showAll:hover::after,
+.aboutUS:hover::after {
+  padding-left: 20px;
+  padding-right: 0;
+}
+
+.servicesTabs {
+  display: flex;
+  flex-direction: column;
+}
+
+.servicesTabs #example-tabs {
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.services-tabs-title a {
+  display: flex;
+  flex-direction: column;
+}
+
+.services-tabs-title img {
+  min-height: 180px;
+}
+
+.tabCircle {
+  margin: 18px auto 12px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #FBEEBF;
+  background: #fff;
+}
+
+.is-active .tabCircle {
+  border: 4px solid #F2C82B;
+  margin: 16px auto 10px;
+  background: #fff;
+}
+
+.services-tabs-title .fontMedium {
+  font-size: 20px;
+  margin: 0;
+  text-align: center;
+  color: rgba(0, 0, 0, .3);
+}
+
+.services-tabs-title.is-active .fontMedium {
+  color: #F2C81F;
+}
+
+.services-tabs-title {
+  width: 100%;
+  position: relative;
+}
+
+.services-tabs-title::after{
+  position: absolute;
+  bottom: 45px;
+  content: '';
+  height: 2px;
+  background: #FBEEBF;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.services-tabs-title:first-child::after {
+  left: 50%;
+}
+
+.services-tabs-title:last-child::after {
+  right: 50%;
+}
+
+.services-tabs-title.is-active::after {
+  background: #F2C82B;
+}
+
+.servicesTabs .tabs-panel {
+  margin-top: 70px;
+  padding-bottom: 180px;
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
+}
+
+.servicesTabs .tabs-panel .flex {
+  justify-content: center;
+}
+
+.servicesTabs .tabs-panel p {
+  margin: 0 15px;
+}
+
+.scrollToTop {
+  position: fixed;
+  right: 20px;
+  bottom: 100px;
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  border: 1px solid #F2C81F;
+  background-image: url("../images/readMore.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: rotate(-90deg);
+  background-size: 50%;
+  z-index: 99999;
+  display: none;
+}
+
+.scrollToTop.showBtn {
+  display: block;
+}
+
+.scrollToTop:hover {
+  background-color: #FBEEBF;
 }

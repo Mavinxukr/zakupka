@@ -16,7 +16,6 @@ $( document ).ready(function() {
     }
 
     lastUrl.searchParams.delete('page');
-    console.log('page', lastUrl.searchParams.get("page"))
     if (pageUrl.indexOf('/works') != -1) {
       $('.allProjects').addClass('hide');
       let tabsUrl = document.querySelectorAll('.tabs__link');

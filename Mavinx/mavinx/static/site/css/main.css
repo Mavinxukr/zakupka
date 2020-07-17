@@ -1554,6 +1554,16 @@ footer .container {
   border-bottom: 1px solid rgba(0, 0, 0, .2);
 }
 
+.services-tabs-title .first,
+.services-tabs-title.is-active .second {
+  display: block;
+}
+
+.services-tabs-title .second,
+.services-tabs-title.is-active .first {
+  display: none;
+}
+
 .servicesTabs .tabs-panel .flex {
   justify-content: center;
 }

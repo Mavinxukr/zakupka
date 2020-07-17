@@ -26,7 +26,7 @@ class ClientRequest(View):
                   'Не забываем 👺 менять статус запроса 😴 в админке 🙏' \
                   'Твой Django ✊❤😎'
         email_from = base.EMAIL_HOST_USER
-        recipient_list = [base.EMAIL_HOST_USER, ]
+        recipient_list = ['mavinx.office@gmail.com', ]
         send_mail(subject, message, email_from, recipient_list)
         return JsonResponse(response, status=200)
 

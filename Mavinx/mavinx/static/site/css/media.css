@@ -13,6 +13,10 @@
     font-size: 15px;
   }
 
+  .h3 {
+    font-size: 16px;
+  }
+
   .fit {
       height: 283px;
       max-width: 529px;
@@ -126,7 +130,8 @@
     font-size: 39px;
   }
 
-  .row .blockInfo p {
+  .row .blockInfo p,
+  .tab-description {
     font-size: 16px;
   }
 
@@ -142,8 +147,18 @@
     max-width: 686px;
   }
 
+  .tabs-title {
+    font-size: 13px;
+  }
+
+  .tab-time,
+  .tab-result {
+    font-size: 14px;
+  }
+
   .tab-description {
     min-width: 402px;
+    width: 402px;
     margin-top: 0;
     margin-bottom: 0;
   }

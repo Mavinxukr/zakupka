@@ -907,7 +907,8 @@ main {
     font-size: 24px;
     min-width: 600px;
     width: 603px;
-    margin-right: 38px;
+    margin-right: 0;
+    margin-left: auto;
 }
 
 .subscribe {
@@ -1608,4 +1609,8 @@ footer .container {
 
 .services .bannerTitle {
   max-width: 730px;
+}
+
+.tabs-panel .column {
+  width: 30%;
 }

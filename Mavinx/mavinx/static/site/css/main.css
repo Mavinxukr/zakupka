@@ -535,12 +535,18 @@ main {
     opacity: .6;
 }
 
-.blockInfo .readMore:after,
 .aboutUS:after,
 .blog .showAll:after {
     content: url("../images/readMore.svg");
-    padding-left: 20px;
+    padding-left: 15px;
     transition: all .3s;
+    padding-right: 5px;
+}
+
+.blockInfo .readMore:after {
+  content: url("../images/readMore.svg");
+  padding-left: 20px;
+  transition: all .3s;
 }
 
 .blockInfo .readMore:hover {
@@ -1461,4 +1467,10 @@ footer .container {
 
 .pagination .page-item.disabled:last-child::after {
   right: 100%;
+}
+
+.showAll:hover::after,
+.aboutUS:hover::after {
+  padding-left: 20px;
+  padding-right: 0;
 }

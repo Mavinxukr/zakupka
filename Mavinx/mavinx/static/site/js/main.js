@@ -120,6 +120,18 @@ $( document ).ready(function() {
     $('.labelCheckbox').on('click', function() {
       $('.labelCheckbox').removeClass('noChecked');
     });
+
+    $(window).scroll(function() {
+    if ($(document).scrollTop() > 200) {
+      $(".scrollToTop").addClass("showBtn");
+    } else {
+      $(".scrollToTop").removeClass("showBtn");
+    }
+  });
+
+    $('.scrollToTop').click(function() {
+      $('html, body').animate({scrollTop:(0)}, '1000');
+    });
 });
 
 function openTabsServices(evt, idItem) {

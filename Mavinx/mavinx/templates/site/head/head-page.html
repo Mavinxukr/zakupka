@@ -80,20 +80,8 @@
     </div>
     <div class="container">
      {% include 'site/head/work.html' %}
-        <div class="subscribe">
-            <form >
-                 {% csrf_token %}
-                <p class="fontMedium">
-                    {% trans 'subscribe_to_your' %}
-                </p>
-                <input name="email" type="email" id="sub_email" placeholder="E-mail" required>
-                <span class="subscribeError fontMedium">{% trans 'error_mess' %}</span>
-                <span class="subscribeErrorFormat fontMedium">Required format text@text.domen</span>
-                <button class="fontMedium" id="send_sub_but">
-                   {% trans 'subscribe' %} +
-                </button>
-            </form>
-        </div>
+     {% include 'site/head/subscribe.html' %}
+
         <div class="border-block"></div>
     </div>
     <div class="container blog">

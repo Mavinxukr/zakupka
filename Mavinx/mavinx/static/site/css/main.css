@@ -554,14 +554,13 @@ main {
 
 .fit {
     height: 499px;
+    max-width: 745px;
 }
 
 .row .imgFit {
-    position: absolute;
-    max-width: 50%;
-    left: 16px;
     margin: 0;
     max-height: 499px;
+    width: 100%;
 }
 
 .slider-block .h1 {
@@ -1368,7 +1367,9 @@ footer .container {
   border: 1px solid rgba(0, 0, 0, .1);
   border-radius: 10px;
   height: 54px;
+  overflow: hidden;
   align-items: center;
+  cursor: pointer;
 }
 
 .pagination a{
@@ -1406,6 +1407,44 @@ footer .container {
 .pagination .page-item.disabled:last-child {
   margin-left: 24px;
   margin-right: 0;
+}
+
+.pagination .page-item:first-child  svg {
+  transform: rotate(180deg);
+}
+
+
+.pagination .page-item:first-child  svg + svg {
+  transform: translate(0);
+}
+
+.page-item:first-child.disabled .first,
+.page-item:last-child .second,
+.page-item:first-child .second,
+.page-item:last-child.disabled .first {
+  display: none;
+}
+
+.page-item:hover {
+  background: #E2BA1B;
+}
+
+.page-item:last-child.disabled .second,
+.page-item:first-child.disabled .second  {
+  display: block;
+}
+
+.pagination .page-item:last-child svg + svg {
+  transform: rotate(180deg);
+}
+
+.page-item {
+  background: #FEFAE8;
+}
+
+.page-item.disabled,
+.page-item.disabled:hover {
+  background: transparent;
 }
 
 .disabled:after {

@@ -235,6 +235,41 @@
         left: 0;
     }
 
+    .slider-block {
+      margin-top: 60px;
+      margin-bottom: 60px;
+      padding-bottom: 60px;
+    }
+
+    .row {
+      padding-bottom: 60px;
+      margin-bottom: 60px;
+    }
+
+    .review, .work, .blog {
+      margin-bottom: 60px;
+    }
+
+    .servicesTabs .tabs-panel {
+      padding-bottom: 60px;
+    }
+
+    .border-block {
+      margin: 60px 0;
+    }
+
+    .blockInfo .readMore {
+      top: 75px;
+    }
+
+    .work {
+      margin-top: 60px;
+    }
+
+    .review + .bg {
+      padding-bottom: 60px;
+    }
+
     .bannerTitle,
     .h1,
     .banner .timer {
@@ -254,7 +289,6 @@
     .slider-name,
     .tab-time,
     .tab-result,
-    .h3,
     .tab-description,
     .subscribe form button,
     .subscribe form input,
@@ -306,7 +340,6 @@
   .slider-name,
   .tab-time,
   .tab-result,
-  .h3,
   .tab-description,
   .subscribe form button,
   .subscribe form input,
@@ -341,7 +374,6 @@
   .slider-name,
   .tab-time,
   .tab-result,
-  .h3,
   .tab-description,
   .subscribe form button,
   .subscribe form input,

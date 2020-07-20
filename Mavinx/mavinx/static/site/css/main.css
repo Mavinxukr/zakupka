@@ -573,9 +573,8 @@ main {
     min-width: 450px;
     width: 450px;
     float: left;
-    height: 100%;
     margin-right: 150px;
-
+    height: auto;
 }
 
 .slick-disabled {
@@ -675,7 +674,7 @@ main {
     margin-top: 180px;
     padding-bottom: 120px;
     margin-bottom: 120px;
-    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    /*border-bottom: 1px solid rgba(0, 0, 0, .2);*/
 }
 
 .slider-name {
@@ -1593,7 +1592,8 @@ footer .container {
 
 .servicesTabs .tabs-panel .iconC {
   width: 80px;
-  height: 33px;
+  height: 45px;
+  margin-bottom: 0;
 }
 
 .scrollToTop {

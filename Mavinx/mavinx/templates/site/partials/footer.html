@@ -12,10 +12,12 @@
                     {% trans 'service_footer' %}:
                 </p>
                {% for area in areas %}
-                <p>
-                    <input data-area-id="{{ area.id }}" value="{{ area.id }}" type="checkbox" id="test{{ area.id }}">
-                    <label class="labelCheckbox" for="test{{ area.id }}">{{ area.name }}</label>
-                </p>
+                   {% if area.show_in_footer %}
+                        <p>
+                            <input data-area-id="{{ area.id }}" value="{{ area.id }}" type="checkbox" id="test{{ area.id }}">
+                            <label class="labelCheckbox" for="test{{ area.id }}">{{ area.name }}</label>
+                        </p>
+                   {% endif %}
                {% endfor %}
             </div>
             <input id="name" required placeholder="{% trans 'plc_name' %}" class="footerInput fontMedium" type="text">

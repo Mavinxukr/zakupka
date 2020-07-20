@@ -8,7 +8,7 @@
       </li>
     </a>
     {% for area in areas %}
-        {% if area.name != 'UI/UX' %}
+         {% if area.show_in_block_project %}
           <a class="tabs__link" href="?area={{ area.name }}">
             <li class="fontMedium">
                 {{ area.name }}

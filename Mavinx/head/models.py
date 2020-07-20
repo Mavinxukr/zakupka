@@ -25,6 +25,9 @@ class Area(TranslatableModel):
         verbose_name_plural = _('vnp_area')
         verbose_name = _('vn_area')
 
+    show_in_footer = models.BooleanField(default=False,verbose_name=_('vnm_area_s_i_f'))
+    show_in_block_project = models.BooleanField(default=False,verbose_name=_('vnm_area_s_i_b_p'))
+
     translations = TranslatedFields(
         name=models.CharField(max_length=100, verbose_name=_('vnm_name_area')),
     )

@@ -1552,12 +1552,17 @@ footer .container {
 .servicesTabs .tabs-panel {
   margin-top: 70px;
   padding-bottom: 180px;
+  height: 60px;
   border-bottom: 1px solid rgba(0, 0, 0, .2);
 }
 
 .services-tabs-title .first,
 .services-tabs-title.is-active .second {
   display: block;
+}
+
+.services-tabs-title img {
+    height: 145px;
 }
 
 .services-tabs-title .second,

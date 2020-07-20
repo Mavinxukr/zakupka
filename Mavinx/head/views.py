@@ -27,7 +27,7 @@ class Works(View):
         else:
             data = Project.objects.all()
 
-        paginator = Paginator(data.order_by('-priority').distinct(), 1)
+        paginator = Paginator(data.order_by('-priority').distinct(), 6)
         page_number = request.GET.get('page')
         data = paginator.get_page(page_number)
         areas = Area.objects.all()

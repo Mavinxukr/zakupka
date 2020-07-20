@@ -63,6 +63,12 @@ msgstr "Сферы"
 msgid "vnm_name_area"
 msgstr "Название сферы"
 
+msgid "vnm_area_s_i_f"
+msgstr "Показывать сферу в футере ?"
+
+msgid "vnm_area_s_i_b_p"
+msgstr "Показывать сферу в блоке проектов ?"
+
 # head/models.py/:51
 
 msgid "vnp_project"

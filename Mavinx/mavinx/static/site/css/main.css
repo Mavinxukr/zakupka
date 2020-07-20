@@ -512,9 +512,13 @@ main {
 .blockInfo .readMore {
     color: #F2C81F;
     font-size: 24px;
-    position: absolute;
-    right: 20px;
-    top: 100px;
+    margin-left: auto;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    width: 80%;
+    padding-right: 50px;
+    text-align: right;
+    position: relative;
 }
 
 .blog .showAll {
@@ -545,16 +549,15 @@ main {
 
 .blockInfo .readMore:after {
   content: url("../images/readMore.svg");
-  padding-left: 20px;
+  position: absolute;
+  right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
   transition: all .3s;
 }
 
-.blockInfo .readMore:hover {
-    right: 10px;
-}
-
 .blockInfo .readMore:hover:after {
-    padding-left: 30px;
+    right: 0;
     transition: all .3s;
 }
 
@@ -1640,4 +1643,23 @@ footer .container {
 
 .tabs-panel .column {
   width: 30%;
+}
+
+#submit_btn {
+    font-size: 16px;
+}
+
+#submit_btn svg {
+    margin-left: 5px;
+}
+
+#submit_btn:hover {
+    background-color: #F2C81F;
+    color: #fff;
+}
+
+
+#submit_btn:hover .as,
+#submit_btn:hover .bs{
+    stroke:#fff;
 }

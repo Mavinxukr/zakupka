@@ -16,7 +16,6 @@ $( document ).ready(function() {
     }
 
     lastUrl.searchParams.delete('page');
-    console.log('page', lastUrl.searchParams.get("page"))
     if (pageUrl.indexOf('/works') != -1) {
       $('.allProjects').addClass('hide');
       let tabsUrl = document.querySelectorAll('.tabs__link');
@@ -33,6 +32,9 @@ $( document ).ready(function() {
         e.preventDefault();
       })
     }
+
+    $( ".servicesTabs .services-tabs-title.hide" ).remove();
+    $( ".servicesTabs .tabs-panel .fontRegular.hide" ).remove();
 
     rangeWeekFill.css("width", rangeWeek.val()*2 + "%");
     rangeBudgetFill.css("width", rangeBudget.val() / 1000 + "%");
@@ -120,4 +122,30 @@ $( document ).ready(function() {
     $('.labelCheckbox').on('click', function() {
       $('.labelCheckbox').removeClass('noChecked');
     });
+
+    $(window).scroll(function() {
+    if ($(document).scrollTop() > 200) {
+      $(".scrollToTop").addClass("showBtn");
+    } else {
+      $(".scrollToTop").removeClass("showBtn");
+    }
+  });
+
+    $('.scrollToTop').click(function() {
+      $('html, body').animate({scrollTop:(0)}, '1000');
+    });
 });
+
+function openTabsServices(evt, idItem) {
+  let i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabs-panel");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("services-tabs-title");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" is-active", "");
+  }
+  document.getElementById(idItem).style.display = "block";
+  evt.currentTarget.className += " is-active";
+}

@@ -3,8 +3,18 @@
       max-width: 1080px;
   }
 
+  .services-tabs-title img {
+    width: 70%;
+    margin: auto;
+    min-height: 100px;
+  }
+
   .row .blockInfo .complete .text, .row .blockInfo .technology .text {
     font-size: 15px;
+  }
+
+  .h3 {
+    font-size: 16px;
   }
 
   .fit {
@@ -120,7 +130,8 @@
     font-size: 39px;
   }
 
-  .row .blockInfo p {
+  .row .blockInfo p,
+  .tab-description {
     font-size: 16px;
   }
 
@@ -136,8 +147,18 @@
     max-width: 686px;
   }
 
+  .tabs-title {
+    font-size: 13px;
+  }
+
+  .tab-time,
+  .tab-result {
+    font-size: 14px;
+  }
+
   .tab-description {
     min-width: 402px;
+    width: 402px;
     margin-top: 0;
     margin-bottom: 0;
   }
@@ -214,6 +235,41 @@
         left: 0;
     }
 
+    .slider-block {
+      margin-top: 60px;
+      margin-bottom: 60px;
+      padding-bottom: 60px;
+    }
+
+    .row {
+      padding-bottom: 60px;
+      margin-bottom: 60px;
+    }
+
+    .review, .work, .blog {
+      margin-bottom: 60px;
+    }
+
+    .servicesTabs .tabs-panel {
+      padding-bottom: 60px;
+    }
+
+    .border-block {
+      margin: 60px 0;
+    }
+
+    .blockInfo .readMore {
+      top: 80px;
+    }
+
+    .work {
+      margin-top: 60px;
+    }
+
+    .review + .bg {
+      padding-bottom: 60px;
+    }
+
     .bannerTitle,
     .h1,
     .banner .timer {
@@ -233,7 +289,6 @@
     .slider-name,
     .tab-time,
     .tab-result,
-    .h3,
     .tab-description,
     .subscribe form button,
     .subscribe form input,
@@ -285,7 +340,6 @@
   .slider-name,
   .tab-time,
   .tab-result,
-  .h3,
   .tab-description,
   .subscribe form button,
   .subscribe form input,
@@ -320,7 +374,6 @@
   .slider-name,
   .tab-time,
   .tab-result,
-  .h3,
   .tab-description,
   .subscribe form button,
   .subscribe form input,

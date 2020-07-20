@@ -33,6 +33,9 @@ $( document ).ready(function() {
       })
     }
 
+    $( ".servicesTabs .services-tabs-title.hide" ).remove();
+    $( ".servicesTabs .tabs-panel .fontRegular.hide" ).remove();
+
     rangeWeekFill.css("width", rangeWeek.val()*2 + "%");
     rangeBudgetFill.css("width", rangeBudget.val() / 1000 + "%");
 

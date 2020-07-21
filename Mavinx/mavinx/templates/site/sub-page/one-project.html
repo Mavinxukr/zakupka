@@ -1,0 +1,12 @@
+{% extends 'site/base.html' %}
+{% load static %}
+ {% load i18n %}
+{% block title %}
+    Mavinx - {{ project.name }}
+{% endblock %}
+{% block content %}
+    <div class="container">
+        {% include 'site/head/infrastructure.html' %}
+
+    </div>
+{% endblock %}

@@ -13,6 +13,4 @@ def render(request, template, context):
     context['projects_ios'] = Project.objects.filter(area__translations__name__contains='iOS').order_by('priority').distinct()[:5]
     context['projects_android'] = Project.objects.filter(area__translations__name__contains='Android').order_by('priority').distinct()[:5]
     context['projects_web'] = Project.objects.filter(area__translations__name__contains='Web').order_by('priority').distinct()[:5]
-    context['projects_ux_ui'] = Project.objects.filter(area__translations__name__contains='UI/UX').order_by('priority').distinct()[:5]
-    print(context['areas'])
     return main_render(request, template, context)

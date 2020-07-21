@@ -551,10 +551,16 @@ msgid "error_mess"
 msgstr "Вы не заполнили"
 
 msgid "mess_send-request"
-msgstr "Успешно подписался на нашу рассылку! Скоро вы получите много интересного"
+msgstr "Спасибо за заявку, мы скоро с вами свяжемся"
+
+msgid "vnm_image_tech"
+msgstr "Картинка технологии"
+
+msgid "vnm_image_tech_child"
+msgstr "Картинка языка-технологии"
 
 msgid "mess_sub_succ"
-msgstr "Вы успешно подписались на рассылку"
+msgstr "Успешно подписался на нашу рассылку! Скоро вы получите много интересного"
 
 msgid "title_head_page"
 msgstr "Главная страница"

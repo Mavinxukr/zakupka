@@ -51,3 +51,13 @@ class Blog(View):
     def get(self, request):
         return custom_render(request,'site/page-header/blog.html', context={})
 
+
+class OneProject(View):
+    def get(self, request, project_id):
+        context = {}
+        project = Project.objects.filter(id=project_id).first()
+        context['project'] = project
+        return render(request, 'site/sub-page/one-project.html', context=context)
+
+
+

@@ -4,7 +4,7 @@ from .models import Area, Contact, Project, Review, Blog
 
 
 def render(request, template, context):
-    context['areas'] =  Area.objects.all()
+    context['areas'] =  Area.objects.all().order_by('-translations__name').distinct()
     context['contact'] = Contact.objects.first()
     context['reviews'] = Review.objects.all().order_by('-id')
     context['blogs'] = Blog.objects.all()

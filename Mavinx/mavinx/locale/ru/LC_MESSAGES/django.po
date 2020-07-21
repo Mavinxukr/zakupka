@@ -92,6 +92,12 @@ msgstr "Приоритет показа на сайте"
 msgid "vnm_company_project"
 msgstr "Выберите компанию"
 
+msgid "vnm_name_technology"
+msgstr "Технолония в проекте"
+
+msgid "vnm_technology_project"
+msgstr "Выберите технологию"
+
 # head/models.py/:73
 
 msgid "vnp_project_image"

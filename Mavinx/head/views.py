@@ -57,6 +57,8 @@ class OneProject(View):
         context = {}
         project = Project.objects.filter(id=project_id).first()
         context['project'] = project
+        context['technology_parent'] = [str(tech.technology) for tech in project.technology_use.all()]
+        context['technology'] = [str(name) for name in project.technology_use.all()]
         return render(request, 'site/sub-page/one-project.html', context=context)
 
 

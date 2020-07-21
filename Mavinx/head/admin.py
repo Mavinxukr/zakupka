@@ -4,7 +4,7 @@ from parler.admin import TranslatableAdmin, TranslatableTabularInline
 
 from .models import Company, Customer, \
     Area, Project, Blog, Review, Contact, About, Order, \
-    ProjectImage, AboutImage, Subscribers, Topic, Technology
+    ProjectImage, AboutImage, Subscribers, Topic, Technology, TechnologyUsing
 
 
 @admin.register(Blog)
@@ -50,6 +50,12 @@ class TechnologyAdmin(admin.ModelAdmin):
     list_display = ('id', 'name')
     list_filter = ('name', )
     search_fields = ('name',)
+
+@admin.register(TechnologyUsing)
+class TechnologyUsingAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name', 'technology')
+    list_filter = ('name', 'technology' )
+    search_fields = ('name', 'technology')
 
 
 @admin.register(Customer)

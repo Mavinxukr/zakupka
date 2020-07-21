@@ -98,6 +98,15 @@ msgstr "Технолония в проекте"
 msgid "vnm_technology_project"
 msgstr "Выберите технологию"
 
+msgid "vnm_name_technology_use"
+msgstr "Использованная технолония в проекте"
+
+msgid "vnm_name_technology_using"
+msgstr "Название технолонии"
+
+msgid "vnm_name_technology_using_parent"
+msgstr "К чему относится данная категория"
+
 # head/models.py/:73
 
 msgid "vnp_project_image"

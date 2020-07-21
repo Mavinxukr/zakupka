@@ -46,6 +46,17 @@ class Technology(models.Model):
     def __str__(self):
         return self.name
 
+class TechnologyUsing(models.Model):
+    class Meta:
+        verbose_name_plural = _('vnm_name_technology_use')
+        verbose_name = _('vnm_name_technology_use')
+
+    name = models.CharField(max_length=30, verbose_name=_('vnm_name_technology_using'))
+    technology = models.ForeignKey(Technology, verbose_name=_('vnm_name_technology_using_parent'), on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
+
 
 class Topic(TranslatableModel):
     class Meta:
@@ -114,7 +125,7 @@ class Project(TranslatableModel):
                                 verbose_name=_('vnm_company_project'))
     head_image = models.ImageField(null=True, blank=True, upload_to=custom_upload_to,
                                    verbose_name=_('vnm_company_head_image'))
-    technology = models.ManyToManyField(Technology,related_name='projects',verbose_name=_('vnm_technology_project'))
+    technology_use = models.ManyToManyField(TechnologyUsing,related_name='projects',verbose_name=_('vnm_technology_project'))
 
     def __str__(self):
         return self.name

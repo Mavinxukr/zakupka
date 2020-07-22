@@ -1,4 +1,5 @@
 from django.core.paginator import Paginator
+from django.db.models.functions import Lower
 from django.views import View
 from django.shortcuts import render
 
@@ -30,9 +31,9 @@ class Works(View):
         paginator = Paginator(data.order_by('-priority').distinct(), 6)
         page_number = request.GET.get('page')
         data = paginator.get_page(page_number)
-        areas = Area.objects.all()
+        areas = Area.objects.order_by(Lower('translations__name')).distinct()
         context['data'] = data
-        context['areas'] =  areas
+        context['areas'] = areas
         context['area'] = area
 
         return render(request,'site/page-header/works.html', context)
@@ -50,4 +51,16 @@ class Company(View):
 class Blog(View):
     def get(self, request):
         return custom_render(request,'site/page-header/blog.html', context={})
+
+
+class OneProject(View):
+    def get(self, request, project_id):
+        context = {}
+        project = Project.objects.filter(id=project_id).first()
+        context['project'] = project
+        context['technology_parent'] = [str(tech.technology) for tech in project.technology_use.all()]
+        context['technology'] = [str(name) for name in project.technology_use.all()]
+        return render(request, 'site/sub-page/one-project.html', context=context)
+
+
 

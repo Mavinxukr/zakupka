@@ -1335,11 +1335,10 @@ msgid "work_click_proto"
 msgstr "Clickable prototype"
 
 msgid "mess_sub_succ"
-msgstr "  You have successfully subscribed to the newsletter"
+msgstr "Successfully subscribed to our newsletter! Soon you will get a lot of interesting things"
 
 msgid "mess_send-request"
-msgstr " Successfully subscribed to our newsletter! Soon you will get a lot of interesting things"
-
+msgstr "We will reach out to you shortly"
 
 msgid "error_mess"
 msgstr "You did not fill"

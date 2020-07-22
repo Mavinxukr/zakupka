@@ -92,6 +92,21 @@ msgstr "Приоритет показа на сайте"
 msgid "vnm_company_project"
 msgstr "Выберите компанию"
 
+msgid "vnm_name_technology"
+msgstr "Технолония в проекте"
+
+msgid "vnm_technology_project"
+msgstr "Выберите технологию"
+
+msgid "vnm_name_technology_use"
+msgstr "Использованная технолония в проекте"
+
+msgid "vnm_name_technology_using"
+msgstr "Название технолонии"
+
+msgid "vnm_name_technology_using_parent"
+msgstr "К чему относится данная категория"
+
 # head/models.py/:73
 
 msgid "vnp_project_image"
@@ -536,10 +551,37 @@ msgid "error_mess"
 msgstr "Вы не заполнили"
 
 msgid "mess_send-request"
-msgstr "Успешно подписался на нашу рассылку! Скоро вы получите много интересного"
+msgstr "Спасибо за заявку, мы скоро с вами свяжемся"
+
+msgid "vnm_image_tech"
+msgstr "Картинка технологии"
+
+msgid "vnm_image_tech_child"
+msgstr "Картинка языка-технологии"
+
+msgid "vnm_time_project"
+msgstr "Время выполнения проекта"
+
+msgid "vnm_location_project"
+msgstr "Для какой страны был выполнен проект"
+
+msgid "vnm_teems_project"
+msgstr "Колличесво чел принимающих участие"
+
+msgid "vnm_name_sector"
+msgstr "Название сектора"
+
+msgid "vnp_project_sector"
+msgstr "Название сектора"
+
+msgid "vn_project_sector"
+msgstr "Название сектора"
+
+msgid "vnm_sector_project"
+msgstr " Выберите сектор"
 
 msgid "mess_sub_succ"
-msgstr "Вы успешно подписались на рассылку"
+msgstr "Успешно подписался на нашу рассылку! Скоро вы получите много интересного"
 
 msgid "title_head_page"
 msgstr "Главная страница"

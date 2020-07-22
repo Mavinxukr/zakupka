@@ -7,5 +7,6 @@ urlpatterns = [
     path('services', views.Services.as_view(),name='services'),
     path('company', views.Company.as_view(), name='company'),
     path('blog', views.Blog.as_view(),name='blog'),
+    re_path('works/(?P<project_id>\d+)?', views.OneProject.as_view(), name='one_project'),
     path('', views.Index.as_view(), name='index'),
 ]

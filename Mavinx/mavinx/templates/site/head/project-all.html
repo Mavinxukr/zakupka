@@ -9,7 +9,7 @@
     </a>
     {% for area in areas %}
          {% if area.show_in_block_project %}
-          <a class="tabs__link" href="?area={{ area.name }}">
+          <a class="tabs__link" href="{% if request.resolver_match.url_name == 'works' %}?area={{ area.name }}{% endif %}">
             <li class="fontMedium">
                 {{ area.name }}
             </li>

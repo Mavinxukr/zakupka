@@ -1690,3 +1690,158 @@ footer .container {
 .breadcrumb-item:last-child:after{
     content: '';
 }
+
+.projectBanner:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .4);
+}
+
+.projectBanner img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+.bannerContainer {
+    margin: 200px auto 0;
+    max-width: 1420px;
+    width: 100%;
+    position: relative;
+}
+
+.bannerContainer .h1 {
+    color: #fff;
+    margin: 0 0 50px;
+}
+
+.projectBannerText {
+    color: #fff;
+    font-size: 20px;
+    margin: 0;
+    max-width: 633px;
+}
+
+.projectBannerInfo {
+    width: auto;
+    height: 200px;
+    background: #F8F8F8;
+    position: absolute;
+    right: 14%;
+    bottom: -40px;
+    min-width: 200px;
+    max-width: 444px;
+    padding: 50px;
+}
+
+.bannerInfoItem {
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.bannerInfoItem p {
+    margin: 0;
+}
+
+.projectBannerInfo .flex {
+    flex-wrap: wrap;
+}
+
+.bannerInfoItem .fontRegular {
+    font-size: 16px;
+    color: rgba(0, 0, 0, .5);
+}
+
+.bannerInfoItem .fontMedium {
+    font-size: 20px;
+}
+
+.projectDesc {
+    margin: 170px auto 120px;
+    max-width: 1420px;
+    font-size: 30px;
+}
+
+.video {
+    max-width: 1620px;
+    height: 800px;
+    margin: auto;
+    position: relative;
+}
+
+.play {
+    position: absolute;
+    z-index: 9;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgb(178, 178, 178);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('../images/bgVideo.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.play-btn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+}
+
+.play.hide {
+    display: none;
+}
+
+.projectBG {
+    margin-bottom: 180px;
+    padding-top: 150px;
+    padding-bottom: 0;
+    position: relative;
+}
+
+.projectBG .textDesc {
+    margin: 30px 0 70px;
+    font-size: 20px;
+}
+
+.infoProject {
+    max-width: 633px;
+}
+
+.projectBG .flex {
+    align-items: flex-start;
+}
+
+.projectBG .flex .textDesc {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.projectBG .textDesc.fontMedium {
+    max-width: 70px;
+    margin-right: 70px;
+}
+
+.infoProject .flex + .flex {
+    margin-top: 30px;
+    margin-bottom: 150px;
+}
+
+.blackBG {
+    position: absolute;
+    background: #000;
+    padding: 50px;
+}

@@ -142,6 +142,21 @@ $( document ).ready(function() {
     $('.scrollToTop').click(function() {
       $('html, body').animate({scrollTop:(0)}, '1000');
     });
+
+    $(".projectBannerText").text(function(i, text) {
+        if (text.length >= 200) {
+            text = text.substring(0, 200);
+        }
+        $(this).text(text);
+    });
+
+    $(document).on('click', '.play-btn', function() {
+        $(".play").addClass('hide')
+        let $video = $('#video'),
+            src = $video.attr('src');
+
+        $video.attr('src', src + '&autoplay=1');
+    });
 });
 
 function openTabsServices(evt, idItem) {

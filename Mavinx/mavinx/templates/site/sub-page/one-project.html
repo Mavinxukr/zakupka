@@ -6,16 +6,88 @@
 {% endblock %}
 {% block content %}
     <div class="projectBanner">
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item fontRegular"><a href="#">Home</a></li>
-            <li class="breadcrumb-item fontRegular"><a href="#">Library</a></li>
-            <li class="breadcrumb-item fontRegular active" aria-current="page">Data</li>
-        </ol>
-    </nav>
-    <img src="{% static 'site/images/carl-barcelo-hHzzdVQnkn0-unsplash.png' %}" alt="">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item fontRegular"><a href="/">Home</a></li>
+                <li class="breadcrumb-item fontRegular"><a href="{% url 'works' %}">Projects</a></li>
+                <li class="breadcrumb-item fontRegular active" aria-current="page">EasyFit</li>
+            </ol>
+        </nav>
+        <div class="bannerContainer">
+            <h1 class="h1 fontMedium">
+                EasyFit — Service for trainers
+            </h1>
+            <p class="projectBannerText fontRegular">
+                Advertising companies say advertising is necessary and important. Our environment colourful. And adverts on TV are often funny. Sometimes they are mini-dramas and we wait for the next
+            </p>
+        </div>
+        <img src="{% static 'site/images/carl-barcelo-hHzzdVQnkn0-unsplash.png' %}" alt="">
+        <div class="projectBannerInfo">
+            <div class="flex">
+                <div class="bannerInfoItem">
+                    <p class="fontRegular">Time</p>
+                    <p class="fontMedium">3 weeks</p>
+                </div>
+                <div class="bannerInfoItem">
+                    <p class="fontRegular">Team</p>
+                    <p class="fontMedium">15 members</p>
+                </div>
+                <div class="bannerInfoItem">
+                    <p class="fontRegular">Platform</p>
+                    <p class="fontMedium">iOS, Android, Web</p>
+                </div>
+                <div class="bannerInfoItem">
+                    <p class="fontRegular">Sector</p>
+                    <p class="fontMedium">Web-service, Training</p>
+                </div>
+                <div class="bannerInfoItem">
+                    <p class="fontRegular">Location</p>
+                    <p class="fontMedium">Europe, Ukraine</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <p class="projectDesc fontRegular">
+            Advertising companies say advertising is necessary and important. It informs people about new products. Advertising hoardings in the street make our environment colourful. And adverts on TV are often funny. Sometimes they are mini-dramas and we wait for the next programme in the mini-drama. Advertising can educate, too. Adverts tell us about new, healthy products. And adverts in magazines give us ideas for how to look prettier, be fashionable and be successful. Without advertising life is boring and colourless.
+        </p>
+    </div>
+    <div class="video">
+        <div class="play">
+            <button class="play-btn">
+                <img src="{% static 'site/images/play.png' %}" alt="">
+            </button>
+        </div>
+        <iframe id="video" width="99.7%" height="99.7%" src="https://www.youtube.com/embed/tgbNymZ7vqY?rel=0&showinfo=0"></iframe>
     </div>
     <div class="container">
         {% include 'site/head/infrastructure.html' %}
+    </div>
+    <div class="bg projectBG">
+        <div class="container">
+            <h2 class="h2 fontMedium">
+                EasyFit
+            </h2>
+            <div class="infoProject">
+                <p class="textDesc fontRegular">
+                    Advertising companies say advertising is necessary and important. It informs people about new products. Advertising hoardings
+                </p>
+                <div class="flex">
+                    <p class="textDesc fontMedium">Project idea</p>
+                    <p class="textDesc fontRegular">
+                        Advertising companies say advertising is necessary and important. It informs people about new products. Advertising hoardings
+                    </p>
+                </div>
+                <div class="flex">
+                    <p class="textDesc fontMedium">Target audience</p>
+                    <p class="textDesc fontRegular">
+                        Advertising companies say advertising is necessary and important. It informs people about new products. Advertising hoardings
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="blackBG">
+
+        </div>
     </div>
 {% endblock %}

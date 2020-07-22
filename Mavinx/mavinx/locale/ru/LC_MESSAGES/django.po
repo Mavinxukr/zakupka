@@ -559,6 +559,27 @@ msgstr "Картинка технологии"
 msgid "vnm_image_tech_child"
 msgstr "Картинка языка-технологии"
 
+msgid "vnm_time_project"
+msgstr "Время выполнения проекта"
+
+msgid "vnm_location_project"
+msgstr "Для какой страны был выполнен проект"
+
+msgid "vnm_teems_project"
+msgstr "Колличесво чел принимающих участие"
+
+msgid "vnm_name_sector"
+msgstr "Название сектора"
+
+msgid "vnp_project_sector"
+msgstr "Название сектора"
+
+msgid "vn_project_sector"
+msgstr "Название сектора"
+
+msgid "vnm_sector_project"
+msgstr " Выберите сектор"
+
 msgid "mess_sub_succ"
 msgstr "Успешно подписался на нашу рассылку! Скоро вы получите много интересного"
 

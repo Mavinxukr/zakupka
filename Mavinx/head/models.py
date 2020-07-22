@@ -109,6 +109,19 @@ class Customer(TranslatableModel):
         return self.name
 
 
+class ProjectSector(TranslatableModel):
+    class Meta:
+        verbose_name_plural = _('vnp_project_sector')
+        verbose_name = _('vn_project_sector')
+
+    translations = TranslatedFields(
+        name=models.CharField(max_length=30, verbose_name=_('vnm_name_sector')),
+    )
+
+    def __str__(self):
+        return self.name
+
+
 class Project(TranslatableModel):
     class Meta:
         verbose_name_plural = _('vnp_project')
@@ -116,7 +129,10 @@ class Project(TranslatableModel):
 
     translations = TranslatedFields(
         name=models.CharField(max_length=30, verbose_name=_('vnm_name_project')),
-        description = models.CharField(max_length=255, verbose_name=_('vnm_desc_project'))
+        description = models.CharField(max_length=255, verbose_name=_('vnm_desc_project')),
+        dev_time = models.CharField(max_length=50, verbose_name=_('vnm_time_project',),null=True),
+        location = models.CharField(max_length=100, verbose_name=_('vnm_location_project',),null=True),
+
     )
 
     area = models.ManyToManyField(Area, related_name='projects', verbose_name=_('vnm_area_project'))
@@ -126,6 +142,9 @@ class Project(TranslatableModel):
     head_image = models.ImageField(null=True, blank=True, upload_to=custom_upload_to,
                                    verbose_name=_('vnm_company_head_image'))
     technology_use = models.ManyToManyField(TechnologyUsing,related_name='projects',verbose_name=_('vnm_technology_project'))
+    teems = models.IntegerField(verbose_name=_('vnm_teems_project'), null=True)
+    sector = models.ManyToManyField(ProjectSector, related_name='projects', verbose_name=_('vnm_sector_project'))
+
 
     def __str__(self):
         return self.name
@@ -147,7 +166,6 @@ class ProjectImage(TranslatableModel):
     image = models.ImageField(verbose_name=_('vnm_projectimage_image'), null=True, upload_to=custom_upload_to_project_image)
     project = models.ForeignKey(Project, related_name='project_images', on_delete=models.CASCADE,
                                 verbose_name=_('vnm_projectimage_project'))
-    position = models.IntegerField(null=True, verbose_name=_('vnm_projectimage_position'))
 
     def __str__(self):
         return self.project.name

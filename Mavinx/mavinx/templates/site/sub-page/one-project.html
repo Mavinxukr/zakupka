@@ -5,6 +5,16 @@
     Mavinx - {{ project.name }}
 {% endblock %}
 {% block content %}
+    <div class="projectBanner">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item fontRegular"><a href="#">Home</a></li>
+            <li class="breadcrumb-item fontRegular"><a href="#">Library</a></li>
+            <li class="breadcrumb-item fontRegular active" aria-current="page">Data</li>
+        </ol>
+    </nav>
+    <img src="{% static 'site/images/carl-barcelo-hHzzdVQnkn0-unsplash.png' %}" alt="">
+    </div>
     <div class="container">
         {% include 'site/head/infrastructure.html' %}
 

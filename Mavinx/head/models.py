@@ -109,13 +109,14 @@ class Customer(TranslatableModel):
         return self.name
 
 
-class ProjectSectors(TranslatableModel):
+class ProjectSector(TranslatableModel):
     class Meta:
+        db_table = 'head_project_sector'
         verbose_name_plural = _('vnp_project_sector')
         verbose_name = _('vn_project_sector')
 
     translations = TranslatedFields(
-        names=models.CharField(max_length=30, verbose_name=_('vnm_name_sector')),
+        name=models.CharField(max_length=30, verbose_name=_('vnm_name_sector')),
     )
 
     def __str__(self):
@@ -131,7 +132,7 @@ class Project(TranslatableModel):
         name=models.CharField(max_length=30, verbose_name=_('vnm_name_project')),
         description = models.CharField(max_length=255, verbose_name=_('vnm_desc_project')),
         dev_time = models.CharField(max_length=50, verbose_name=_('vnm_time_project',),null=True),
-        locations = models.CharField(max_length=100, verbose_name=_('vnm_location_project',),null=True),
+        location = models.CharField(max_length=100, verbose_name=_('vnm_location_project',),null=True),
 
     )
 
@@ -142,8 +143,8 @@ class Project(TranslatableModel):
     head_image = models.ImageField(null=True, blank=True, upload_to=custom_upload_to,
                                    verbose_name=_('vnm_company_head_image'))
     technology_use = models.ManyToManyField(TechnologyUsing,related_name='projects',verbose_name=_('vnm_technology_project'))
-    teemss = models.IntegerField(verbose_name=_('vnm_teems_project'), null=True)
-    sector = models.ManyToManyField(ProjectSectors, related_name='projects', verbose_name=_('vnm_sector_project'))
+    teems = models.IntegerField(verbose_name=_('vnm_teems_project'), null=True)
+    sectors = models.ManyToManyField(ProjectSector, related_name='projects', verbose_name=_('vnm_sector_project'))
 
 
     def __str__(self):

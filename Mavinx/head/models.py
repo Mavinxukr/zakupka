@@ -117,8 +117,6 @@ class Project(TranslatableModel):
     translations = TranslatedFields(
         name=models.CharField(max_length=30, verbose_name=_('vnm_name_project')),
         description = models.CharField(max_length=255, verbose_name=_('vnm_desc_project')),
-        dev_time = models.CharField(max_length=50, verbose_name=_('vnm_time_project',),null=True),
-        location = models.CharField(max_length=100, verbose_name=_('vnm_location_project',),null=True),
 
     )
 

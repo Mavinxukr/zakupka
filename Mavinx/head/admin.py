@@ -46,9 +46,9 @@ class AreaAdmin(TranslatableAdmin):
 
 @admin.register(ProjectSectors)
 class ProjectSectorsAdmin(TranslatableAdmin):
-    list_display = ('id', 'name')
-    list_filter = ('translations__name', )
-    search_fields = ('translations__name',)
+    list_display = ('id', 'names')
+    list_filter = ('translations__names', )
+    search_fields = ('translations__names',)
 
 
 @admin.register(Technology)

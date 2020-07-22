@@ -48,6 +48,7 @@ class Technology(models.Model):
 
 class TechnologyUsing(models.Model):
     class Meta:
+        db_table = 'head_project_tech_using'
         verbose_name_plural = _('vnm_name_technology_use')
         verbose_name = _('vnm_name_technology_use')
 

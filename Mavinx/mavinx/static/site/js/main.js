@@ -38,8 +38,11 @@ $( document ).ready(function() {
 
     $('.servicesTabs .services-tabs-title:first-child').addClass('is-active');
 
-    let firstChild = $('.servicesTabs .services-tabs-title:first-child a').attr('href').substring(1);
-    $(`#${firstChild}`).css('display','block');
+    if ($( ".servicesTabs .services-tabs-title").length){
+        let firstChild = $('.servicesTabs .services-tabs-title:first-child a').attr('href').substring(1);
+        $(`#${firstChild}`).css('display','block');
+    }
+
 
     rangeWeekFill.css("width", rangeWeek.val()*2 + "%");
     rangeBudgetFill.css("width", rangeBudget.val() / 1000 + "%");

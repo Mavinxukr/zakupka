@@ -1,10 +1,12 @@
 from django.contrib import admin
+from django.contrib.admin import TabularInline
 from django.utils.safestring import mark_safe
 from parler.admin import TranslatableAdmin, TranslatableTabularInline
 
 from .models import Company, Customer, \
     Area, Project, Blog, Review, Contact, About, Order, \
-    ProjectImage, AboutImage, Subscribers, Topic, Technology, TechnologyUsing, ProjectSector
+    ProjectNumberImages, AboutImage, Subscribers, Topic, \
+    Technology, TechnologyUsing, ProjectSector, ProjectChallenges, ProjectSliderImages
 
 
 @admin.register(Blog)
@@ -44,11 +46,13 @@ class AreaAdmin(TranslatableAdmin):
     list_filter = ('translations__name', )
     search_fields = ('translations__name',)
 
+class ProjectChallengesInline(TranslatableTabularInline):
+    model = ProjectChallenges
+
+
 @admin.register(ProjectSector)
 class ProjectSectorAdmin(TranslatableAdmin):
     list_display = ('id', 'name')
-    list_filter = ('translations__name', )
-    search_fields = ('translations__name',)
 
 
 @admin.register(Technology)
@@ -77,14 +81,18 @@ class CustomerAdmin(TranslatableAdmin):
             "<img src='{}' width='40' height='25' alt='img' >".format(image_path)
         )
 
-class ProjectImagesInline(TranslatableTabularInline):
-    model = ProjectImage
+class ProjectNumberImagesInline(TranslatableTabularInline):
+    model = ProjectNumberImages
+
+
+class ProjectSliderImagesInline(TabularInline):
+    model = ProjectSliderImages
 
 
 @admin.register(Project)
 class ProjectAdmin(TranslatableAdmin):
     list_per_page = 10
-    inlines = (ProjectImagesInline,)
+    inlines = (ProjectNumberImagesInline, ProjectChallengesInline, ProjectSliderImagesInline)
     list_display = ('name',  'priority', 'company')
     list_filter = ('translations__name', 'priority', 'company__translations__name','area')
     search_fields = ('translations__name', 'priority', 'company__translations__name')

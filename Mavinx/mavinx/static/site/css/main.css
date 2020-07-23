@@ -1674,6 +1674,7 @@ footer .container {
     padding-top: 30px;
     padding-left: 50px;
     display: flex;
+    opacity: 0;
 }
 
 .breadcrumb-item:after {
@@ -1910,7 +1911,7 @@ footer .container {
 
 .infrastructure {
     border-top: 1px solid rgba(0, 0, 0, .1);
-    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    /*border-bottom: 1px solid rgba(0, 0, 0, .1);*/
     padding: 180px 0;
     margin-bottom: 180px;
 }

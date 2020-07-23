@@ -57,6 +57,7 @@ class Blog(View):
 
 class OneProject(View):
     def get(self, request, project_id):
+        print(request.path)
         context = {}
         project = Project.objects.filter(id=project_id).first()
         context['project'] = project
@@ -64,7 +65,6 @@ class OneProject(View):
         context['technology'] = [str(name) for name in project.technology_use.all()]
         count = Project.objects.count()
         context['next_project'] = Project.objects.all()[randint(0, count - 1)]
-        print(context['next_project'])
         return render(request, 'site/sub-page/one-project.html', context=context)
 
 

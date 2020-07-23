@@ -1334,6 +1334,9 @@ msgstr " Full design"
 msgid "work_click_proto"
 msgstr "Clickable prototype"
 
+msgid "next_project"
+msgstr "Next projects"
+
 msgid "mess_sub_succ"
 msgstr "Successfully subscribed to our newsletter! Soon you will get a lot of interesting things"
 

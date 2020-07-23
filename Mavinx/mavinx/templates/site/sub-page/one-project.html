@@ -16,10 +16,10 @@
         </nav>
         <div class="bannerContainer">
             <h1 class="h1 fontMedium">
-                EasyFit — Service for trainers
+                {{ project.name }}
             </h1>
             <p class="projectBannerText fontRegular">
-                Advertising companies say advertising is necessary and important. Our environment colourful. And adverts on TV are often funny. Sometimes they are mini-dramas and we wait for the next
+                {{ project.description }}
             </p>
         </div>
         <img src="{% static 'site/images/carl-barcelo-hHzzdVQnkn0-unsplash.png' %}" alt="">
@@ -27,59 +27,77 @@
             <div class="flex">
                 <div class="bannerInfoItem">
                     <p class="fontRegular">Time</p>
-                    <p class="fontMedium">3 weeks</p>
+                    <p class="fontMedium">{{ project.dev_time }}</p>
                 </div>
                 <div class="bannerInfoItem">
                     <p class="fontRegular">Team</p>
-                    <p class="fontMedium">15 members</p>
+                    <p class="fontMedium">{{ project.teems }} members</p>
                 </div>
                 <div class="bannerInfoItem">
                     <p class="fontRegular">Platform</p>
-                    <p class="fontMedium">iOS, Android, Web</p>
+                    <p class="fontMedium">
+                        {% for area in project.area.all %}
+                            {% if forloop.last %}
+                                {{ area }}
+                            {% else %}
+                                {{ area }},
+                            {% endif %}
+                        {% endfor %}
+                    </p>
                 </div>
                 <div class="bannerInfoItem">
                     <p class="fontRegular">Sector</p>
-                    <p class="fontMedium">Web-service, Training</p>
+                    <p class="fontMedium">
+                        {% for sector in project.sectors.all %}
+                            {% if forloop.last %}
+                                {{ sector }}
+                            {% else %}
+                                {{ sector }},
+                            {% endif %}
+                        {% endfor %}
+                    </p>
                 </div>
                 <div class="bannerInfoItem">
                     <p class="fontRegular">Location</p>
-                    <p class="fontMedium">Europe, Ukraine</p>
+                    <p class="fontMedium">{{ project.location }}</p>
                 </div>
             </div>
         </div>
     </div>
     <div class="container">
         <p class="projectDesc fontRegular">
-            Advertising companies say advertising is necessary and important. It informs people about new products. Advertising hoardings in the street make our environment colourful. And adverts on TV are often funny. Sometimes they are mini-dramas and we wait for the next programme in the mini-drama. Advertising can educate, too. Adverts tell us about new, healthy products. And adverts in magazines give us ideas for how to look prettier, be fashionable and be successful. Without advertising life is boring and colourless.
+            {{ project.description }}
         </p>
     </div>
+{% if project.head_video  %}
     <div class="video">
         <div class="play">
             <button class="play-btn">
                 <img src="{% static 'site/images/play.svg' %}" alt="">
             </button>
         </div>
-        <iframe id="video" width="99.7%" height="99.7%" src="https://www.youtube.com/embed/tgbNymZ7vqY?rel=0&showinfo=0"></iframe>
+        <iframe id="video" width="99.7%" height="99.7%" src="media/{{ project.head_video }}"></iframe>
     </div>
+{% endif %}
     <div class="bg projectBG">
         <div class="container">
             <h2 class="h2 fontMedium">
-                EasyFit
+                {{ project.name }}
             </h2>
             <div class="infoProject">
                 <p class="textDesc fontRegular">
-                    Advertising companies say advertising is necessary and important. It informs people about new products. Advertising hoardings
+                    {{ project.description }}
                 </p>
                 <div class="flex">
                     <p class="textDesc fontMedium">Project idea</p>
                     <p class="textDesc fontRegular">
-                        Advertising companies say advertising is necessary and important. It informs people about new products. Advertising hoardings
+                        {{ project.project_idea }}
                     </p>
                 </div>
                 <div class="flex">
                     <p class="textDesc fontMedium">Target audience</p>
                     <p class="textDesc fontRegular">
-                        Advertising companies say advertising is necessary and important. It informs people about new products. Advertising hoardings
+                      {{ project.project_audience }}
                     </p>
                 </div>
             </div>
@@ -88,26 +106,26 @@
                     Project challenges
                 </h4>
                 <ul>
-                    <li class="fontRegular">Advertising companies say advertising is necessary and important. It informs people</li>
-                    <li class="fontRegular">Advertising companies say advertising is necessary and important. It informs people</li>
-                    <li class="fontRegular">Advertising companies say advertising is necessary and important. It informs people</li>
+                    {% for challenge in project.project_challenges.all %}
+                    <li class="fontRegular">{{ challenge.description }}</li>
+                    {% endfor %}
                 </ul>
                 <h4 class="fontMedium">
                     Result
                 </h4>
                 <p class="fontRegular">
-                    Advertising companies say advertising is necessary and important. It informs people about new products. Advertising hoardings
+                   {{ project.result }}
                 </p>
                 <div class="flex">
-                    <a class="fontMedium" href="">
+                    <a class="fontMedium" href="{{ project.link_ios_store }}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24.607" height="30" viewBox="0 0 24.607 30"><defs><style>.aa{fill:#fff;}</style></defs><g transform="translate(-2309 -2708)"><path class="aa" d="M54.18,141.046c-4.465-.026-8.158-9.14-8.158-13.782,0-7.582,5.688-9.242,7.88-9.242a9.067,9.067,0,0,1,2.973.731,6.647,6.647,0,0,0,1.7.487,5.283,5.283,0,0,0,1.218-.395,9.761,9.761,0,0,1,3.671-.887h.009a7.524,7.524,0,0,1,6.3,3.18l.459.69-.661.5a5.561,5.561,0,0,0-2.667,4.586,5.176,5.176,0,0,0,2.888,4.785c.414.249.842.506.842,1.067,0,.367-2.925,8.236-7.173,8.236a5.768,5.768,0,0,1-2.422-.588,4.912,4.912,0,0,0-2.156-.519,5.545,5.545,0,0,0-1.707.462,8.362,8.362,0,0,1-2.961.691Z" transform="translate(2262.978 2596.954)"/><path class="aa" d="M260.79,0c.111,3.989-2.742,6.756-5.591,6.583C254.73,3.4,258.048,0,260.79,0Z" transform="translate(2066.1 2708)"/></g></svg>
                         App Store
                     </a>
-                    <a class="fontMedium" href="">
+                    <a class="fontMedium" href="{{ project.link_android_store }}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="24" viewBox="0 0 22 24"><defs><style>.ag{fill:#fff;}</style></defs><g transform="translate(-1)"><path class="ag" d="M18.168,15.838,15.3,13.02,4.781,23.4Z"/><path class="ag" d="M18.168,8.167,4.781.61,15.3,10.985Z"/><path class="ag" d="M22.363,13.427a1.86,1.86,0,0,0-.057-2.85L19.5,8.979,16.365,12,19.5,15.027Z"/><path class="ag" d="M2.034,24,14.268,12,2.034,0h0A1.821,1.821,0,0,0,1,1.655v20.69A1.821,1.821,0,0,0,2.034,24Z"/></g></svg>
                         Google Play
                     </a>
-                    <a class="fontMedium" href="">
+                    <a class="fontMedium" href="{{project.link_web_store  }}">
                         Visit website
                     </a>
                 </div>
@@ -119,31 +137,25 @@
     </div>
     <div class="container single-slider">
         <div class="single-item">
-            <div class="single-item-image">
-                <img src="{% static 'site/images/slider.png' %}" alt="">
-            </div>
-            <div class="single-item-image">
-                <img src="{% static 'site/images/slider.png' %}" alt="">
-            </div>
-            <div class="single-item-image">
-                <img src="{% static 'site/images/slider.png' %}" alt="">
-            </div>
-            <div class="single-item-image">
-                <img src="{% static 'site/images/slider.png' %}" alt="">
+            {% for link in project.project_slider_images.all %}
+                <div class="single-item-image">
+                    <img src="/media/{{ link.image }}" alt="">
+                </div>
+            {% endfor %}
             </div>
         </div>
     </div>
     <div class="container single-review">
         <div class="slider-flex">
             <div class="slider-images">
-                <img class="slider-mainImage" src="{% static 'site/images/slider.png' %}" alt="">
-                <img class="slider-logo" src="{% static 'site/images/slider.png' %}" alt="">
-                <h3 class="slider-name fontMedium">Ethan Pierce</h3>
-                <p class="prof fontRegular">CEO EasyFit</p>
+                <img class="slider-mainImage" src="/media/{{ project.reviews.first.customer.image  }}" alt="">
+                <img class="slider-logo" src="/media/{{ project.head_image }}" alt="">
+                <h3 class="slider-name fontMedium">{{ project.reviews.first.customer.name }}</h3>
+                <p class="prof fontRegular">{{ project.reviews.first.customer.description }}</p>
             </div>
             <div class="slider-content">
                 <p class="fontRegular">
-                    They really like to satisfy the client as much as possible I’m a pretty picky IT engineer, so they needed some time get to know what I wanted, but we were successful. they do not ask for any payment until the customer is satisfied. This is a very good point.
+                    {{ project.reviews.first.name }}
                 </p>
             </div>
         </div>
@@ -152,43 +164,33 @@
         {% include 'site/head/work.html' %}
     </div>
     <div class="container">
-        <div class="flex projectBlock">
+    {% for link in project.project_images.all %}
+        <div class="flex projectBlock {% if forloop.counter|divisibleby:2 %} row-reverse  {% endif %} ">
             <div class="imageSize">
-                <img class="slider-mainImage" src="{% static 'site/images/image_pro.png' %}" alt="">
+                <img class="slider-mainImage" src="/media/{{ link.image }}" alt="">
             </div>
             <div class="single-info">
                 <p class="h1 fontMedium">
-                    01
+                    {{ forloop.counter }}
                 </p>
                 <p class="fontRegular">
-                    They really like to satisfy the client as much as possible I’m a pretty picky IT engineer, so they needed some time get to know what I wanted, but we were successful. they do not ask for any payment until the customer is satisfied. This is a very good point.
+                    {{ link.description }}
                 </p>
             </div>
         </div>
-        <div class="flex projectBlock row-reverse">
-            <div class="imageSize">
-                <img class="slider-mainImage" src="{% static 'site/images/image_pro.png' %}" alt="">
-            </div>
-            <div class="single-info">
-                <p class="h1 fontMedium">
-                    01
-                </p>
-                <p class="fontRegular">
-                    They really like to satisfy the client as much as possible I’m a pretty picky IT engineer, so they needed some time get to know what I wanted, but we were successful. they do not ask for any payment until the customer is satisfied. This is a very good point.
-                </p>
-            </div>
-        </div>
+    {% endfor %}
     </div>
     <div class="container next-project">
-        <a href="#">
+        <a href="{% url 'one_project' next_project.id %}">
             <div class="bg-project">
-                <p class="fontMedium text-next">Next projects</p>
-                <p class="h1 fontMedium title-project">FoodDelivery</p>
+                <p class="fontMedium text-next">{% trans 'next_project' %}</p>
+                <p class="h1 fontMedium title-project">{{ next_project.name }}</p>
                 <div class="flex">
-                    <span class="fontRegular">iOS</span>
-                    <span class="fontRegular">Android</span>
+                    {% for area in next_project.area.all  %}
+                    <span class="fontRegular">{{ area }}</span>
+                    {% endfor %}
                 </div>
-                <img class="next-project-img" src="{% static 'site/images/image_pro.png' %}" alt="">
+                <img class="next-project-img" src="/media/{{ next_project.head_image }}" alt="">
                 <svg class="next-arrow" xmlns="http://www.w3.org/2000/svg" width="100" height="48" viewBox="0 0 42 18.828"><defs><style>.ar,.br{fill:none;stroke:#fff;stroke-linecap:round;stroke-width:2px;}.br{stroke-linejoin:round;}</style></defs><g transform="translate(1 1.414)"><line class="ar" x1="40" transform="translate(0 8)"/><path class="br" d="M0,0,8,8,0,16" transform="translate(32 0)"/></g></svg>
             </div>
         </a>

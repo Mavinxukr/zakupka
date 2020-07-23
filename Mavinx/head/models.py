@@ -134,7 +134,9 @@ class Project(TranslatableModel):
         description = models.CharField(max_length=255, verbose_name=_('vnm_desc_project')),
         dev_time = models.CharField(max_length=50, verbose_name=_('vnm_time_project',),null=True),
         location = models.CharField(max_length=100, verbose_name=_('vnm_location_project'),null=True),
-        result = models.TextField(null=True, verbose_name=_('vnm_result_project'))
+        result = models.TextField(null=True, verbose_name=_('vnm_result_project')),
+        project_idea = models.CharField(max_length=100, verbose_name=_('vnm_project_idea'), null=True),
+        project_audience = models.CharField(max_length=100, verbose_name=_('vnm_project_audience'), null=True)
 
     )
 
@@ -151,8 +153,6 @@ class Project(TranslatableModel):
     link_ios_store = models.CharField(max_length=100,verbose_name=_('vnm_ios_link_project'),null=True)
     link_android_store = models.CharField(max_length=100,verbose_name=_('vnm_android_link_project'), null=True)
     link_web_store = models.CharField(max_length=100,verbose_name=_('vnm_web_link_project'), null=True)
-    project_idea = models.CharField(max_length=100,verbose_name=_('vnm_project_idea'), null=True)
-    project_audience = models.CharField(max_length=100,verbose_name=_('vnm_project_audience'), null=True)
 
 
     def __str__(self):
@@ -171,7 +171,7 @@ class ProjectChallenges(TranslatableModel):
                                 on_delete=models.CASCADE, null=True)
 
     def __str__(self):
-        return self.project.name
+        return self.project.description
 
 def custom_upload_to_project_image(instance, filename):
     instance_id = Project.objects.last().id

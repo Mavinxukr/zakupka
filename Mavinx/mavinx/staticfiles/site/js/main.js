@@ -38,8 +38,11 @@ $( document ).ready(function() {
 
     $('.servicesTabs .services-tabs-title:first-child').addClass('is-active');
 
-    let firstChild = $('.servicesTabs .services-tabs-title:first-child a').attr('href').substring(1);
-    $(`#${firstChild}`).css('display','block');
+    if ($( ".servicesTabs .services-tabs-title").length){
+        let firstChild = $('.servicesTabs .services-tabs-title:first-child a').attr('href').substring(1);
+        $(`#${firstChild}`).css('display','block');
+    }
+
 
     rangeWeekFill.css("width", rangeWeek.val()*2 + "%");
     rangeBudgetFill.css("width", rangeBudget.val() / 1000 + "%");
@@ -76,6 +79,16 @@ $( document ).ready(function() {
             });
         });
     })(jQuery);
+
+    $('.single-item').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: false,
+        arrows: true,
+        dots: true,
+        prevArrow:"<button type='button' class='slick-prev customBtn pull-left'><img src='/static/site/images/blackArrow.svg'></button>",
+        nextArrow:"<button type='button' class='slick-next customBtn pull-right'><img src='/static/site/images/blackArrow.svg'></button>"
+    });
 
     $('.slider-for').slick({
       slidesToShow: 1,
@@ -138,6 +151,21 @@ $( document ).ready(function() {
 
     $('.scrollToTop').click(function() {
       $('html, body').animate({scrollTop:(0)}, '1000');
+    });
+
+    $(".projectBannerText").text(function(i, text) {
+        if (text.length >= 200) {
+            text = text.substring(0, 200);
+        }
+        $(this).text(text);
+    });
+
+    $(document).on('click', '.play-btn', function() {
+        $(".play").addClass('hide')
+        let $video = $('#video'),
+            src = $video.attr('src');
+
+        $video.attr('src', src + '&autoplay=1');
     });
 });
 

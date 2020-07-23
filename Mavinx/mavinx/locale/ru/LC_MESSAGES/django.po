@@ -634,6 +634,9 @@ msgstr "Успешно подписался на нашу рассылку! Ск
 msgid "title_head_page"
 msgstr "Главная страница"
 
+msgid "next_project"
+msgstr "Следующий проект"
+
 msgid "title_works_page"
 msgstr "Работы"
 

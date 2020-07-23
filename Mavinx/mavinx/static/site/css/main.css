@@ -649,7 +649,7 @@ main {
 .slider-images .slider-logo {
     position: absolute;
     top: 150px;
-    right: -40px;
+    right: -30px;
     width: 100px;
     height: 100px;
     border-radius: 10px;
@@ -1837,11 +1837,235 @@ footer .container {
 
 .infoProject .flex + .flex {
     margin-top: 30px;
-    margin-bottom: 150px;
+    padding-bottom: 150px;
+}
+
+.projectBG .container {
+    position: relative;
+    overflow: visible;
 }
 
 .blackBG {
     position: absolute;
     background: #000;
-    padding: 50px;
+    padding: 50px 50px 52px;
+    max-width: 523px;
+    top: 100px;
+    right: 0;
+}
+
+.blackBG h4 {
+    margin: 0 0 23px;
+    color: #fff;
+    font-size: 20px;
+}
+
+.blackBG li {
+    color: #fff;
+    font-size: 20px;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    max-width: 410px;
+    position: relative;
+}
+
+.blackBG p {
+    color: #fff;
+    font-size: 20px;
+    margin-top: 0;
+    padding-bottom: 50px;
+    margin-bottom: 30px;
+    border-bottom: 3px solid rgba(255, 255,255, .3);
+}
+
+.blackBG li:before {
+    position: absolute;
+    content: '';
+    top: 12px;
+    left: 0;
+    width: 20px;
+    height: 2px;
+    background: #fff;
+}
+
+.blackBG .flex {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.blackBG .flex svg {
+    margin-right: 15px;
+}
+
+.blackBG .flex a {
+    color: #fff;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.blackBG UL {
+    margin-bottom: 25px;
+}
+
+.infrastructure {
+    border-top: 1px solid rgba(0, 0, 0, .1);
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    padding: 180px 0;
+    margin-bottom: 180px;
+}
+
+.single-slider {
+    overflow: visible;
+}
+
+.single-item {
+    position: relative;
+}
+
+.single-item .customBtn {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: none;
+    background: #F8F8F8;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9;
+}
+
+.single-item .customBtn.pull-left {
+    left: -60px;
+    transform: translateY(-50%) rotate(-180deg);
+}
+
+.single-item .customBtn.pull-right {
+    right: -60px;
+}
+
+.single-slider .slick-dots{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.single-slider {
+    padding-bottom: 180px;
+}
+.single-slider .slick-dots li button {
+    font-size: 0;
+}
+
+.single-slider .slick-dots li {
+    width: 6px;
+    height: 6px;
+    margin: 1px 1.5px;
+    border: 1px solid #F2C82B;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+}
+
+.single-slider .slick-dots li.slick-active {
+    padding: 0;
+    width: 8px;
+    height: 8px;
+    margin: 0 1.5px;
+    background: #F2C82B;
+}
+
+.single-review {
+    border-top: 1px solid rgba(0, 0, 0, .1);
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    padding: 100px 0 100px 100px;
+    margin-bottom: 180px;
+}
+
+.single-review .slider-content {
+    max-width: 810px;
+}
+
+.single-review .slider-content p {
+    font-size: 30px;
+}
+
+.imageSize {
+    max-width: 785px;
+    height: 500px;
+}
+
+.imageSize img {
+    width: 100%;
+    height: 100%;
+}
+
+.projectBlock {
+    justify-content: space-between;
+    margin-bottom: 180px;
+}
+
+.single-info {
+    max-width: 660px;
+}
+
+.single-info .h1 {
+    text-decoration: none;
+    font-style: italic;
+    padding-left: 30px;
+    border-left: 5px solid #F2C81F;
+    margin-bottom: 25px;
+}
+
+.single-info .fontRegular {
+    font-size: 30px;
+}
+
+.oneProject .container {
+    max-width: 1620px;
+}
+
+.next-project {
+    overflow: visible;
+    margin-top: 200px;
+    margin-bottom: 180px;
+}
+
+.bg-project {
+    background: #F2C81F;
+    padding: 84px 120px 133px;
+    position: relative;
+}
+
+.text-next {
+    font-size: 36px;
+    margin: 0;
+    color: #fff;
+    opacity: .5;
+}
+
+.title-project {
+    color: #fff;
+    margin: 5px 0 0;
+}
+
+.bg-project span {
+    font-size: 16px;
+    color: #fff;
+    margin-right: 10px;
+}
+
+.next-project-img {
+    width: 640px;
+    height: 420px;
+    position: absolute;
+    right: 50px;
+    top: -100px;
+}
+
+.next-arrow {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

@@ -80,6 +80,16 @@ $( document ).ready(function() {
         });
     })(jQuery);
 
+    $('.single-item').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: false,
+        arrows: true,
+        dots: true,
+        prevArrow:"<button type='button' class='slick-prev customBtn pull-left'><img src='/static/site/images/blackArrow.svg'></button>",
+        nextArrow:"<button type='button' class='slick-next customBtn pull-right'><img src='/static/site/images/blackArrow.svg'></button>"
+    });
+
     $('.slider-for').slick({
       slidesToShow: 1,
       slidesToScroll: 1,

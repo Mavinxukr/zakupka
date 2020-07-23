@@ -5,6 +5,7 @@
     Mavinx - {{ project.name }}
 {% endblock %}
 {% block content %}
+<div class="oneProject">
     <div class="projectBanner">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -55,13 +56,10 @@
     <div class="video">
         <div class="play">
             <button class="play-btn">
-                <img src="{% static 'site/images/play.png' %}" alt="">
+                <img src="{% static 'site/images/play.svg' %}" alt="">
             </button>
         </div>
         <iframe id="video" width="99.7%" height="99.7%" src="https://www.youtube.com/embed/tgbNymZ7vqY?rel=0&showinfo=0"></iframe>
-    </div>
-    <div class="container">
-        {% include 'site/head/infrastructure.html' %}
     </div>
     <div class="bg projectBG">
         <div class="container">
@@ -85,9 +83,112 @@
                     </p>
                 </div>
             </div>
-        </div>
-        <div class="blackBG">
-
+            <div class="blackBG">
+                <h4 class="fontMedium">
+                    Project challenges
+                </h4>
+                <ul>
+                    <li class="fontRegular">Advertising companies say advertising is necessary and important. It informs people</li>
+                    <li class="fontRegular">Advertising companies say advertising is necessary and important. It informs people</li>
+                    <li class="fontRegular">Advertising companies say advertising is necessary and important. It informs people</li>
+                </ul>
+                <h4 class="fontMedium">
+                    Result
+                </h4>
+                <p class="fontRegular">
+                    Advertising companies say advertising is necessary and important. It informs people about new products. Advertising hoardings
+                </p>
+                <div class="flex">
+                    <a class="fontMedium" href="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24.607" height="30" viewBox="0 0 24.607 30"><defs><style>.aa{fill:#fff;}</style></defs><g transform="translate(-2309 -2708)"><path class="aa" d="M54.18,141.046c-4.465-.026-8.158-9.14-8.158-13.782,0-7.582,5.688-9.242,7.88-9.242a9.067,9.067,0,0,1,2.973.731,6.647,6.647,0,0,0,1.7.487,5.283,5.283,0,0,0,1.218-.395,9.761,9.761,0,0,1,3.671-.887h.009a7.524,7.524,0,0,1,6.3,3.18l.459.69-.661.5a5.561,5.561,0,0,0-2.667,4.586,5.176,5.176,0,0,0,2.888,4.785c.414.249.842.506.842,1.067,0,.367-2.925,8.236-7.173,8.236a5.768,5.768,0,0,1-2.422-.588,4.912,4.912,0,0,0-2.156-.519,5.545,5.545,0,0,0-1.707.462,8.362,8.362,0,0,1-2.961.691Z" transform="translate(2262.978 2596.954)"/><path class="aa" d="M260.79,0c.111,3.989-2.742,6.756-5.591,6.583C254.73,3.4,258.048,0,260.79,0Z" transform="translate(2066.1 2708)"/></g></svg>
+                        App Store
+                    </a>
+                    <a class="fontMedium" href="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="24" viewBox="0 0 22 24"><defs><style>.ag{fill:#fff;}</style></defs><g transform="translate(-1)"><path class="ag" d="M18.168,15.838,15.3,13.02,4.781,23.4Z"/><path class="ag" d="M18.168,8.167,4.781.61,15.3,10.985Z"/><path class="ag" d="M22.363,13.427a1.86,1.86,0,0,0-.057-2.85L19.5,8.979,16.365,12,19.5,15.027Z"/><path class="ag" d="M2.034,24,14.268,12,2.034,0h0A1.821,1.821,0,0,0,1,1.655v20.69A1.821,1.821,0,0,0,2.034,24Z"/></g></svg>
+                        Google Play
+                    </a>
+                    <a class="fontMedium" href="">
+                        Visit website
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
+    <div class="container infrastructure">
+        {% include 'site/head/infrastructure.html' %}
+    </div>
+    <div class="container single-slider">
+        <div class="single-item">
+            <div class="single-item-image">
+                <img src="{% static 'site/images/slider.png' %}" alt="">
+            </div>
+            <div class="single-item-image">
+                <img src="{% static 'site/images/slider.png' %}" alt="">
+            </div>
+            <div class="single-item-image">
+                <img src="{% static 'site/images/slider.png' %}" alt="">
+            </div>
+            <div class="single-item-image">
+                <img src="{% static 'site/images/slider.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="container single-review">
+        <div class="slider-flex">
+            <div class="slider-images">
+                <img class="slider-mainImage" src="{% static 'site/images/slider.png' %}" alt="">
+                <img class="slider-logo" src="{% static 'site/images/slider.png' %}" alt="">
+                <h3 class="slider-name fontMedium">Ethan Pierce</h3>
+                <p class="prof fontRegular">CEO EasyFit</p>
+            </div>
+            <div class="slider-content">
+                <p class="fontRegular">
+                    They really like to satisfy the client as much as possible I’m a pretty picky IT engineer, so they needed some time get to know what I wanted, but we were successful. they do not ask for any payment until the customer is satisfied. This is a very good point.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="flex projectBlock">
+            <div class="imageSize">
+                <img class="slider-mainImage" src="{% static 'site/images/image_pro.png' %}" alt="">
+            </div>
+            <div class="single-info">
+                <p class="h1 fontMedium">
+                    01
+                </p>
+                <p class="fontRegular">
+                    They really like to satisfy the client as much as possible I’m a pretty picky IT engineer, so they needed some time get to know what I wanted, but we were successful. they do not ask for any payment until the customer is satisfied. This is a very good point.
+                </p>
+            </div>
+        </div>
+        <div class="flex projectBlock row-reverse">
+            <div class="imageSize">
+                <img class="slider-mainImage" src="{% static 'site/images/image_pro.png' %}" alt="">
+            </div>
+            <div class="single-info">
+                <p class="h1 fontMedium">
+                    01
+                </p>
+                <p class="fontRegular">
+                    They really like to satisfy the client as much as possible I’m a pretty picky IT engineer, so they needed some time get to know what I wanted, but we were successful. they do not ask for any payment until the customer is satisfied. This is a very good point.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container next-project">
+        <a href="#">
+            <div class="bg-project">
+                <p class="fontMedium text-next">Next projects</p>
+                <p class="h1 fontMedium title-project">FoodDelivery</p>
+                <div class="flex">
+                    <span class="fontRegular">iOS</span>
+                    <span class="fontRegular">Android</span>
+                </div>
+                <img class="next-project-img" src="{% static 'site/images/image_pro.png' %}" alt="">
+                <svg class="next-arrow" xmlns="http://www.w3.org/2000/svg" width="100" height="48" viewBox="0 0 42 18.828"><defs><style>.ar,.br{fill:none;stroke:#fff;stroke-linecap:round;stroke-width:2px;}.br{stroke-linejoin:round;}</style></defs><g transform="translate(1 1.414)"><line class="ar" x1="40" transform="translate(0 8)"/><path class="br" d="M0,0,8,8,0,16" transform="translate(32 0)"/></g></svg>
+            </div>
+        </a>
+    </div>
+</div>
 {% endblock %}

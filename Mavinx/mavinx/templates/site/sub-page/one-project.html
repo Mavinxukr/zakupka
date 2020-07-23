@@ -7,13 +7,13 @@
 {% block content %}
 <div class="oneProject">
     <div class="projectBanner">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item fontRegular"><a href="/">Home</a></li>
-                <li class="breadcrumb-item fontRegular"><a href="{% url 'works' %}">Projects</a></li>
-                <li class="breadcrumb-item fontRegular active" aria-current="page">EasyFit</li>
-            </ol>
-        </nav>
+<!--        <nav aria-label="breadcrumb">-->
+<!--            <ol class="breadcrumb">-->
+<!--                <li class="breadcrumb-item fontRegular"><a href="/">Home</a></li>-->
+<!--                <li class="breadcrumb-item fontRegular"><a href="{% url 'works' %}">Projects</a></li>-->
+<!--                <li class="breadcrumb-item fontRegular active" aria-current="page">EasyFit</li>-->
+<!--            </ol>-->
+<!--        </nav>-->
         <div class="bannerContainer">
             <h1 class="h1 fontMedium">
                 EasyFit — Service for trainers
@@ -147,6 +147,9 @@
                 </p>
             </div>
         </div>
+    </div>
+    <div class="container">
+        {% include 'site/head/work.html' %}
     </div>
     <div class="container">
         <div class="flex projectBlock">

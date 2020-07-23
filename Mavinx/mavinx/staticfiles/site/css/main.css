@@ -1663,3 +1663,30 @@ footer .container {
 #submit_btn:hover .bs{
     stroke:#fff;
 }
+
+.projectBanner {
+    height: 670px;
+    position: relative;
+}
+
+.breadcrumb {
+    margin: 0;
+    padding-top: 30px;
+    padding-left: 50px;
+    display: flex;
+}
+
+.breadcrumb-item:after {
+    content: ' / ';
+}
+
+.breadcrumb-item {
+    margin-right: 5px;
+    font-size: 16px;
+    color: #fff;
+    opacity: .5;
+}
+
+.breadcrumb-item:last-child:after{
+    content: '';
+}

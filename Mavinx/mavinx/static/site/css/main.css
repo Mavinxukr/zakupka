@@ -1922,8 +1922,17 @@ services-tabs-title
     overflow: visible;
 }
 
+.single-item .customBtn {
+    width: 92px;
+    height: 92px;
+}
+
 .single-item {
     position: relative;
+}
+
+.single-item .slick-list {
+    max-height: 800px;
 }
 
 .single-item .customBtn {

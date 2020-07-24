@@ -182,6 +182,24 @@ $( document ).ready(function() {
         $('#video').removeAttr("controls");
         $(this).children(".play").css('display','flex');
     });
+
+    $(".blackBG li").text(function(i, text) {
+        if (text.length >= 80) {
+            text = text.substring(0, 80);
+            let lastIndex = text.lastIndexOf(" ");
+            text = text.substring(0, lastIndex) + '...';
+        }
+        $(this).text(text);
+    });
+
+    $('.blackBG p').text(function(i, text) {
+        if (text.length >= 120) {
+            text = text.substring(0, 120);
+            let lastIndex = text.lastIndexOf(" ");
+            text = text.substring(0, lastIndex) + '...';
+        }
+        $(this).text(text);
+    });
 });
 
 function openTabsServices(evt, idItem) {

@@ -12,6 +12,10 @@
     height: 477px;
   }
 
+  .single-item .slick-list {
+    max-height: 569px;
+  }
+
   .container.single-review .slider-flex {
     margin-left: 70px;
     margin-right: 70px;
@@ -46,17 +50,40 @@
     margin-right: auto!important;
   }
 
+  .single-review .slider-content p {
+    font-size: 21px;
+    max-width: 70%;
+  }
+
+  .single-info .fontRegular {
+    font-size: 21px;
+  }
+
+  .imageSize {
+    height: 413px;
+    max-width: 558px;
+  }
+
+  .single-info {
+    width: 44%;
+  }
+
   .projectBannerText,
   .bannerInfoItem .fontMedium,
   .projectBG .textDesc,
   .blackBG h4,
   .blackBG .flex a,
-  .blackBG li {
+  .blackBG li,
+  .blackBG p {
     font-size: 14px;
   }
 
   .text-next {
     font-size: 25px;
+  }
+
+  .infoProject .flex + .flex {
+    padding-bottom: 70px;
   }
 
   .blackBG {

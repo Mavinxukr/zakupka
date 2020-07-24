@@ -1732,13 +1732,12 @@ footer .container {
 }
 
 .projectBannerInfo {
-    width: auto;
     height: 200px;
     background: #F8F8F8;
     position: absolute;
     right: 14%;
     bottom: -40px;
-    min-width: 200px;
+    width: 100%;
     max-width: 444px;
     padding: 50px;
 }
@@ -1854,6 +1853,7 @@ footer .container {
     max-width: 523px;
     top: 100px;
     right: 0;
+    width: 100%;
 }
 
 .blackBG h4 {

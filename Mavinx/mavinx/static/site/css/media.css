@@ -33,6 +33,11 @@
 
   .video {
     max-width: 1152px;
+    height: 570px;
+  }
+
+  .video video {
+    height: 570px;
   }
 
   .projectDesc {

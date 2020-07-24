@@ -71,18 +71,17 @@
     </div>
 {% if project.head_video  %}
     <div class="video">
-<!--        <div class="play">-->
-<!--            <button class="play-btn">-->
-<!--                <img src="{% static 'site/images/play.svg' %}" alt="">-->
-<!--            </button>-->
-<!--        </div>-->
-<!--        <iframe id="video" width="99.7%" height="99.7%" src="/media/{{ project.head_video }}"></iframe>-->
-        <video width="100%" controls poster="{% static 'site/images/bgVideo.png' %}" >
+        <video id="video" width="100%">
             <source src="/media/{{ project.head_video }}" type="video/mp4">
             <source src="/media/{{ project.head_video }}" type="video/ogg">
             <source src="/media/{{ project.head_video }}" type="video/webm">
             Your browser doesn't support HTML5 video tag.
         </video>
+        <div class="play">
+            <button class="play-btn">
+                <img src="{% static 'site/images/play.svg' %}" alt="">
+            </button>
+        </div>
     </div>
 {% endif %}
     <div class="bg projectBG">

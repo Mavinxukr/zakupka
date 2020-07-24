@@ -160,12 +160,23 @@ $( document ).ready(function() {
         $(this).text(text);
     });
 
-    $(document).on('click', '.play-btn', function() {
-        $(".play").addClass('hide')
-        let $video = $('#video'),
-            src = $video.attr('src');
+    $('#video').parent().click(function () {
+        if($(this).children("#video").get(0).paused) {
+            $(this).children("#video").get(0).play();
+            $(this).children(".play").css('display','none');
+        } else {
+            $(this).children("#video").get(0).pause();
+            $(this).children(".play").css('display','flex');
+        }
+    });
 
-        $video.attr('src', src + '&autoplay=1');
+    $('#video').on('ended',function(){
+        $(".play").css('display','flex');
+    });
+
+    $('#video').parent().mouseleave(function(){
+        $(this).children("#video").get(0).pause();
+        $(this).children(".play").css('display','flex');
     });
 });
 

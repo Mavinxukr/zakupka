@@ -1485,7 +1485,7 @@ footer .container {
 }
 
 .servicesTabs #example-tabs {
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-end;
 }
 
@@ -1527,6 +1527,7 @@ footer .container {
 .services-tabs-title {
   width: 100%;
   position: relative;
+    max-width: 255px;
 }
 
 .services-tabs-title::after{
@@ -1731,13 +1732,12 @@ footer .container {
 }
 
 .projectBannerInfo {
-    width: auto;
     height: 200px;
     background: #F8F8F8;
     position: absolute;
     right: 14%;
     bottom: -40px;
-    min-width: 200px;
+    width: 100%;
     max-width: 444px;
     padding: 50px;
 }
@@ -1777,6 +1777,10 @@ footer .container {
     position: relative;
 }
 
+.video video {
+    height: 800px;
+}
+
 .play {
     position: absolute;
     z-index: 9;
@@ -1784,13 +1788,10 @@ footer .container {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgb(178, 178, 178);
+    background: rgba(0, 0, 0 , .3);
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('../images/bgVideo.png');
-    background-repeat: no-repeat;
-    background-position: center;
     background-size: cover;
 }
 
@@ -1853,6 +1854,7 @@ footer .container {
     max-width: 523px;
     top: 100px;
     right: 0;
+    width: 100%;
 }
 
 .blackBG h4 {
@@ -1908,7 +1910,7 @@ footer .container {
 .blackBG UL {
     margin-bottom: 25px;
 }
-
+services-tabs-title
 .infrastructure {
     border-top: 1px solid rgba(0, 0, 0, .1);
     /*border-bottom: 1px solid rgba(0, 0, 0, .1);*/

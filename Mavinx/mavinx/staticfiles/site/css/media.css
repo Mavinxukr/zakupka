@@ -3,6 +3,92 @@
       max-width: 1080px;
   }
 
+  .oneProject .container,
+  .container.next-project {
+    max-width: 1152px;
+  }
+
+  .projectBanner {
+    height: 477px;
+  }
+
+  .container.single-review .slider-flex {
+    margin-left: 70px;
+    margin-right: 70px;
+  }
+
+  .single-review {
+    padding: 71px 0;
+  }
+
+  .projectBannerInfo {
+    height: 152px;
+    max-width: 314px;
+  }
+
+  .bannerContainer {
+    max-width: 1010px;
+    margin-top: 100px;
+  }
+
+  .video {
+    max-width: 1152px;
+    height: 570px;
+  }
+
+  .video video {
+    height: 570px;
+  }
+
+  .projectDesc {
+    max-width: 1010px;
+    margin-left: auto!important;
+    margin-right: auto!important;
+  }
+
+  .projectBannerText,
+  .bannerInfoItem .fontMedium,
+  .projectBG .textDesc,
+  .blackBG h4,
+  .blackBG .flex a,
+  .blackBG li {
+    font-size: 14px;
+  }
+
+  .text-next {
+    font-size: 25px;
+  }
+
+  .blackBG {
+    padding: 35px;
+    top: 0;
+    max-width: 373px;
+  }
+
+  .bg-project {
+    padding: 60px 85px 94px;
+  }
+
+  .next-arrow {
+    width: 71px;
+    height: 34px;
+  }
+
+  .bannerInfoItem .fontRegular,
+  .bg-project span {
+    font-size: 11px;
+  }
+
+  .projectBannerInfo {
+    padding: 36px;
+  }
+
+  .next-project-img {
+    width: 456px;
+    height: 299px;
+    right: 40px;
+  }
+
   .services-tabs-title img {
     width: 70%;
     margin: auto;

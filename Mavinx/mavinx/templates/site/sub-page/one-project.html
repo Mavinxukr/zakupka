@@ -22,7 +22,7 @@
                 {{ project.description }}
             </p>
         </div>
-        <img src="{% static 'site/images/carl-barcelo-hHzzdVQnkn0-unsplash.png' %}" alt="">
+        <img src="/media/{{ project.head_image }}" alt="{{ project.name }}">
         <div class="projectBannerInfo">
             <div class="flex">
                 <div class="bannerInfoItem">
@@ -79,7 +79,7 @@
         </video>
         <div class="play">
             <button class="play-btn">
-                <img src="{% static 'site/images/play.svg' %}" alt="">
+                <img src="{% static 'site/images/play.svg' %}" alt="{{ project.name }}">
             </button>
         </div>
     </div>
@@ -144,7 +144,7 @@
         <div class="single-item">
             {% for link in project.project_slider_images.all %}
                 <div class="single-item-image">
-                    <img src="/media/{{ link.image }}" alt="">
+                    <img src="/media/{{ link.image }}" alt="{{ project.name }}">
                 </div>
             {% endfor %}
             </div>
@@ -152,8 +152,8 @@
     <div class="container single-review">
         <div class="slider-flex">
             <div class="slider-images">
-                <img class="slider-mainImage" src="/media/{{ project.reviews.first.customer.image  }}" alt="">
-                <img class="slider-logo" src="/media/{{ project.head_image }}" alt="">
+                <img class="slider-mainImage" src="/media/{{ project.reviews.first.customer.image  }}" alt="{{ project.name }}">
+                <img class="slider-logo" src="/media/{{ project.head_image }}" alt="{{ project.name }}">
                 <h3 class="slider-name fontMedium">{{ project.reviews.first.customer.name }}</h3>
                 <p class="prof fontRegular">{{ project.reviews.first.customer.description }}</p>
             </div>
@@ -171,7 +171,7 @@
     {% for link in project.project_images.all %}
         <div class="flex projectBlock {% if forloop.counter|divisibleby:2 %} row-reverse  {% endif %} ">
             <div class="imageSize">
-                <img class="slider-mainImage" src="/media/{{ link.image }}" alt="">
+                <img class="slider-mainImage" src="/media/{{ link.image }}" alt="{{ project.name }}">
             </div>
             <div class="single-info">
                 <p class="h1 fontMedium">
@@ -194,7 +194,7 @@
                     <span class="fontRegular">{{ area }}</span>
                     {% endfor %}
                 </div>
-                <img class="next-project-img" src="/media/{{ next_project.head_image }}" alt="">
+                <img class="next-project-img" src="/media/{{ next_project.head_image }}" alt="{{ project.name }}">
                 <svg class="next-arrow" xmlns="http://www.w3.org/2000/svg" width="100" height="48" viewBox="0 0 42 18.828"><defs><style>.ar,.br{fill:none;stroke:#fff;stroke-linecap:round;stroke-width:2px;}.br{stroke-linejoin:round;}</style></defs><g transform="translate(1 1.414)"><line class="ar" x1="40" transform="translate(0 8)"/><path class="br" d="M0,0,8,8,0,16" transform="translate(32 0)"/></g></svg>
             </div>
         </a>

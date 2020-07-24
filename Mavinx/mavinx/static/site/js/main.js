@@ -163,8 +163,10 @@ $( document ).ready(function() {
     $('#video').parent().click(function () {
         if($(this).children("#video").get(0).paused) {
             $(this).children("#video").get(0).play();
+            $("#video").attr("controls", "controls");
             $(this).children(".play").css('display','none');
         } else {
+            $('#video').removeAttr("controls");
             $(this).children("#video").get(0).pause();
             $(this).children(".play").css('display','flex');
         }
@@ -172,10 +174,12 @@ $( document ).ready(function() {
 
     $('#video').on('ended',function(){
         $(".play").css('display','flex');
+        $('#video').removeAttr("controls");
     });
 
     $('#video').parent().mouseleave(function(){
         $(this).children("#video").get(0).pause();
+        $('#video').removeAttr("controls");
         $(this).children(".play").css('display','flex');
     });
 });

@@ -5,7 +5,7 @@ from django.db.models.functions import Lower
 from django.views import View
 from django.shortcuts import render
 
-from .models import Project, Area, About
+from .models import Project, Area, About, Topic
 from . shortcuts import render as custom_render
 
 
@@ -55,7 +55,9 @@ class Company(View):
 
 class Blog(View):
     def get(self, request):
-        return custom_render(request,'site/page-header/blog.html', context={})
+        context = {}
+        context['topics'] = Topic.objects.order_by(Lower('translations__name')).distinct()
+        return custom_render(request,'site/page-header/blog.html', context=context)
 
 
 class OneProject(View):

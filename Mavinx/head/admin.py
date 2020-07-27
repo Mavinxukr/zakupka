@@ -5,8 +5,8 @@ from parler.admin import TranslatableAdmin, TranslatableTabularInline
 
 from .models import Company, Customer, \
     Area, Project, Blog, Review, Contact, About, Order, \
-    ProjectNumberImages, AboutImage, Subscribers, Topic, \
-    Technology, TechnologyUsing, ProjectSector, ProjectChallenges, ProjectSliderImages
+    ProjectNumberImages, Subscribers, Topic, Technology, TechnologyUsing,\
+    ProjectSector, ProjectChallenges, ProjectSliderImages
 
 
 @admin.register(Blog)
@@ -123,18 +123,19 @@ class OrderAdmin(admin.ModelAdmin):
         return False
 
 
-class AboutImagesInline(admin.TabularInline):
-    model = AboutImage
-
-
 @admin.register(About)
 class AboutAdmin(TranslatableAdmin):
-    list_display = ('name', 'text')
-    inlines = (AboutImagesInline,)
+    list_display = ('text','_image')
+
+    def _image(self, obj):
+        image_path = '/media/{}'.format(obj.image)
+        return mark_safe(
+            "<img src='{}' width='40' height='25' alt='img' >".format(image_path)
+        )
 
 
 @admin.register(Subscribers)
-class AboutAdmin(admin.ModelAdmin):
+class SubscribersAdmin(admin.ModelAdmin):
     list_display = ('email',)
     readonly_fields = ('email',)
     list_per_page = 10

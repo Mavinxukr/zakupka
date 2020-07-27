@@ -282,27 +282,14 @@ class About(TranslatableModel):
         verbose_name = _('vn_about')
 
     translations = TranslatedFields(
-        name=models.CharField(max_length=100, verbose_name=_('vnm_name_about'), null=True, blank=True),
         text = models.CharField(max_length=200, verbose_name=_('vnm_text_about'), null=True, blank=True),
         description = models.TextField(verbose_name=_('vnm_desc_about'), null=True, blank=True)
     )
+    image = models.ImageField(null=True, blank=True, verbose_name=_('vnm_image'),
+                              upload_to=custom_upload_to)
 
     def __str__(self):
         return self.name
-
-
-class AboutImage(models.Model):
-    class Meta:
-        db_table = 'head_about_image'
-        verbose_name_plural = _('vmp_aboutimage')
-        verbose_name = _('vm_aboutimage')
-
-    image = models.ImageField(verbose_name=_('vnm_image_aboutimage'), upload_to=custom_upload_to)
-    about = models.ForeignKey(About, related_name='about_images', on_delete=models.CASCADE,
-                              verbose_name=_('vnm_about_aboutimage'))
-
-    def __str__(self):
-        return self.about.name
 
 
 class Subscribers(models.Model):

@@ -279,9 +279,7 @@ main {
     overflow: visible;
 }
 
-.tabs__caption a,
-.tabs-select-item,
-.checked-select {
+.tabs__caption a {
     margin-right: 5px;
     padding: 15px 25px;
     border: 1px solid #E4E4E4;
@@ -2320,7 +2318,7 @@ services-tabs-title
 
 .page-blog h1 {
     position: absolute;
-    top: 120px;
+    top: 98px;
     left: 0;
     margin: 0;
 }
@@ -2399,50 +2397,4 @@ services-tabs-title
 .page-blog .tabs__caption{
     padding-left: 300px;
     flex-wrap: wrap;
-}
-
-.tabs-select {
-    display: none;
-    margin-top: 20px;
-}
-
-.page-blog .tabs-select {
-    display: flex;
-    align-items: center;
-    width: 100%;
-}
-
-.select-label {
-    display: none;
-}
-
-.page-blog .select-label {
-    display: block;
-    white-space: nowrap;
-}
-
-.page-blog .select-label {
-    margin: 0 10px;
-}
-
-.tabs-select .current {
-    font-family: "InterMedium", sans-serif;
-    margin: 0 auto;
-}
-
-.tabs-select .nice-select {
-    min-width: 150px;
-    max-width: 150px;
-    font-size: 16px;
-    background: white;
-    font-family: "InterMedium", sans-serif;
-}
-
-.checked-select {
-    opacity: 0;
-    margin: 0;
-}
-
-.checked-select.show {
-    opacity: 1;
 }

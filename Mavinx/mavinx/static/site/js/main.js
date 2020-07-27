@@ -247,19 +247,6 @@ $( document ).ready(function() {
         return this;
     };
 
-    $('select').niceSelect();
-
-    $('.option').click(function() {
-        let checked = $('.checked-select');
-        setTimeout(function() {
-            if ($('.current').text() !== 'Not chosen') {
-                checked.addClass('show');
-                checked.text($('.current').text());
-            } else {
-                checked.removeClass('show');
-            }
-        }, 200)
-    })
 });
 
 function openTabsServices(evt, idItem) {

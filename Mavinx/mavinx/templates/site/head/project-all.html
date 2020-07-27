@@ -2,7 +2,6 @@
 {% load i18n %}
 <div class="container tabs">
     <ul class="tabs__caption">
-        <p class="fontMedium select-label">by area: </p>
         <a class="tabs__link" href="{% url 'works' %}">
             <li class="fontMedium">
                 {% trans 'proj_all_tab' %}
@@ -18,15 +17,6 @@
         </a>
         {% endif %}
         {% endfor %}
-        <div class="tabs-select">
-            <p class="fontMedium select-label">or by technology: </p>
-            <select class="tabs-select-item fontMedium" id="select" name="">
-                <option class="fontMedium">Not chosen</option>
-                <option class="fontMedium">1</option>
-                <option class="fontMedium">2</option>
-            </select>
-            <p class="checked-select fontMedium"></p>
-        </div>
     </ul>
     {% include 'site/head/only-project.html' %}
 </div>

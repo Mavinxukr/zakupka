@@ -1,9 +1,110 @@
 {% extends 'site/base.html' %}
 {% load static %}
- {% load i18n %}
+{% load i18n %}
 {% block title %}
-    Mavinx - {% trans 'title_blog_page' %}
+Mavinx - {% trans 'title_blog_page' %}
 {% endblock %}
 {% block content %}
-    <h1 align="center">Coming soon</h1>
+<div class="container page-blog">
+    <h1 class="h1 fontMedium flex">
+        {% trans 'view_blog' %}<span class="blogCount menuItem">{{ blogs.count }}</span>
+    </h1>
+    <div class="tabs">
+        <ul class="tabs__caption">
+            <a class="tabs__link" href="{% url 'works' %}">
+                <li class="fontMedium">
+                    all
+                </li>
+            </a>
+            <a class="tabs__link" href="#">
+                <li class="fontMedium">
+                    sdas
+                </li>
+            </a>
+            <a class="tabs__link" href="#">
+                <li class="fontMedium">
+                    sdas2
+                </li>
+            </a>
+        </ul>
+        <div class="tabs__content active">
+            <article class="blogItem column">
+                <a href="#">
+                    <img class="blogImage" src="{% static 'site/images/company.png' %}" alt="">
+                    <p class="fontMedium blogDescription">
+                        dfsdffcsfsd fsd f sdf sd fsd
+                    </p>
+                    <div class="blogHashtag flex">
+                        <span>
+                            <a class="fontMedium" href="#">#sdasd</a>
+                        </span>
+                        <span class="fontRegular blogTime">5m</span>
+                    </div>
+                </a>
+            </article>
+            <article class="blogItem column">
+                <a href="#">
+                    <img class="blogImage" src="{% static 'site/images/company.png' %}" alt="">
+                    <p class="fontMedium blogDescription">
+                        dfsdffcsfsd fsd f sdf sd fsd
+                    </p>
+                    <div class="blogHashtag flex">
+                        <span>
+                            <a class="fontMedium" href="#">#sdasd</a>
+                        </span>
+                        <span class="fontRegular blogTime">5m</span>
+                    </div>
+                </a>
+            </article>
+            <article class="blogItem column">
+                <a href="#">
+                    <img class="blogImage" src="{% static 'site/images/company.png' %}" alt="">
+                    <p class="fontMedium blogDescription">
+                        dfsdffcsfsd fsd f sdf sd fsd
+                    </p>
+                    <div class="blogHashtag flex">
+                        <span>
+                            <a class="fontMedium" href="#">#sdasd</a>
+                        </span>
+                        <span class="fontRegular blogTime">5m</span>
+                    </div>
+                </a>
+            </article>
+            <article class="blogItem column">
+                <a href="#">
+                    <img class="blogImage" src="{% static 'site/images/company.png' %}" alt="">
+                    <p class="fontMedium blogDescription">
+                        dfsdffcsfsd fsd f sdf sd fsd
+                    </p>
+                    <div class="blogHashtag flex">
+                        <span>
+                            <a class="fontMedium" href="#">#sdasd</a>
+                        </span>
+                        <span class="fontRegular blogTime">5m</span>
+                    </div>
+                </a>
+            </article>
+            <article class="blogItem column">
+                <a href="#">
+                    <img class="blogImage" src="{% static 'site/images/company.png' %}" alt="">
+                    <p class="fontMedium blogDescription">
+                        dfsdffcsfsd fsd f sdf sd fsd
+                    </p>
+                    <div class="blogHashtag flex">
+                        <span>
+                            <a class="fontMedium" href="#">#sdasd</a>
+                        </span>
+                        <span class="fontRegular blogTime">5m</span>
+                    </div>
+                </a>
+            </article>
+        </div>
+        <div class="tabs__content">
+            12
+        </div>
+        <div class="tabs__content">
+            1 3
+        </div>
+    </div>
+</div>
 {% endblock %}

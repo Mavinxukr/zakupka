@@ -201,6 +201,15 @@ $( document ).ready(function() {
         $(this).text(text);
     });
 
+    $('.tabsItemLink .fontRegular').text(function(i, text) {
+        if (text.length >= 50) {
+            text = text.substring(0, 50);
+            let lastIndex = text.lastIndexOf(" ");
+            text = text.substring(0, lastIndex) + '...';
+        }
+        $(this).text(text);
+    });
+
     $('.center').slick({
         centerMode: true,
         slidesToShow: 3,

@@ -2117,6 +2117,12 @@ services-tabs-title
     max-width: 1620px;
 }
 
+.company-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .company .bg {
     padding: 180px 0;
 }
@@ -2159,6 +2165,12 @@ services-tabs-title
     position: relative;
     bottom: 0;
     opacity: 1;
+    margin-top: 40px;
+}
+
+.bigImg,
+.smallImg {
+    object-fit: cover;
 }
 
 .center-slider .tabsItemLink:after {

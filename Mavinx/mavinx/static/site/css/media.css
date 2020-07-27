@@ -8,6 +8,39 @@
     max-width: 1152px;
   }
 
+  .company-info p {
+    font-size: 16px;
+    margin-top: 50px;
+  }
+
+  .page {
+    width: 230px;
+  }
+
+  .top-block .banner {
+    padding: 20px;
+  }
+
+  .company-image {
+    height: 500px;
+  }
+
+  .company-desc {
+    max-width: 55%;
+  }
+
+  .company .bg {
+    padding: 90px 0;
+  }
+
+  .company .bg.bg-block {
+    padding: 0 0 90px;
+  }
+
+  .company-image {
+    margin-bottom: 100px;
+  }
+
   .projectBanner {
     height: 477px;
   }

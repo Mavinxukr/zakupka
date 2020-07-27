@@ -2323,6 +2323,65 @@ services-tabs-title
 .page-blog .bigBlog {
     width: 64.3%;
     background: #F8F8F8;
+    position: relative;
+    height: 316px;
+}
+
+.page-blog .bigBlog .blogImage {
+    width: 409px;
+    height: 260px;
+    margin: 28px 30px 28px 36px;
+}
+
+.blogItem .blogMore {
+    display: none;
+}
+
+.blogItem .blogDescription + .fontRegular {
+    display: none;
+}
+
+.page-blog .bigBlog .blogMore {
+    display: flex;
+    align-items: center;
+    color: #F2C82B;
+    position: absolute;
+    right: 80px;
+    bottom: 28px;
+}
+
+.page-blog .bigBlog .blogMore svg {
+    margin-left: 10px;
+}
+
+.bigBlog a{
+    display: flex;
+}
+
+.bigBlog .blogTime {
+    position: absolute;
+    left: 475px;
+    bottom: 28px;
+}
+
+.bigBlog .blogHashtag a.fontMedium {
+    position: absolute;
+    top: 40px;
+    left: 475px;
+}
+
+.bigBlog .blogDescription + .fontRegular {
+    color: #000;
+    display: block;
+    font-size: 14px;
+    max-width: 480px;
+    margin: 15px 0;
+}
+
+.bigBlog .blogDescription {
+    padding: 73px 0 0;
+    max-width: 360px;
+    width: 100%;
 }
 
 .page-blog .tabs__caption{

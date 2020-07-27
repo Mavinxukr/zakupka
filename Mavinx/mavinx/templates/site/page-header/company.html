@@ -5,5 +5,254 @@
     Mavinx - {% trans 'title_company_page' %}
 {% endblock %}
 {% block content %}
-    <h1 align="center">Coming soon</h1>
+<div class="company">
+    <div class="container flex top-block">
+        <div class="company-info">
+            <h1 class="h1 fontMedium">
+                About Mavinx
+            </h1>
+            <p class="fontRegular">
+                The diversity of our projects and billion lines of written code give us the highest level in android programming. Each app built by us has a user-friendly interface and logical feature composition. Advanced usability tests make us sure, that we deliver well-designed products, which meet expectations of the most demanding clients.
+            </p>
+        </div>
+        <div class="flex banner">
+            <div class="timer-block">
+                <p class="timer fontMedium" data-to="{{ contact.teams }}" data-speed="1500"></p>
+                <span class="opacityText fontRegular">
+                    {% trans 'team' %}
+                </span>
+            </div>
+            <div class="timer-block">
+                <p class="timer fontMedium plus" data-to="{{ contact.completed_project }}" data-speed="2000"></p>
+                <span class="opacityText fontRegular">
+                  {% trans 'project_complete' %}
+                </span>
+            </div>
+            <div class="timer-block">
+                <p class="timer fontMedium plus" data-to="{{ contact.experience }}" data-speed="1000"></p>
+                <span class="opacityText fontRegular">
+                    {% trans 'years_of_experience' %}
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="company-image">
+        <img src="{% static 'site/images/company.png' %}" alt="">
+    </div>
+    <div class="bg">
+        <div class="container flex between">
+            <svg xmlns="http://www.w3.org/2000/svg" width="289" height="111" viewBox="0 0 289 111"><defs><style>.am{font-size:79px;font-family:Poppins-SemiBold, Poppins;font-weight:600;}</style></defs><text class="am" transform="translate(0 83)"><tspan x="0" y="0">Mavinx</tspan></text></svg>
+            <div class="company-desc">
+                <p class="fontMedium ">[Mavinx] — Ma-Vi-NX </p>
+                <p class="fontRegular">The diversity of our projects and billion lines of written code give us the highest level in android programming. Each app built by us has a user-friendly interface and logical feature composition. Advanced usability tests make us sure, that we deliver well-designed products, which meet expectations of the most demanding clients.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h2 class="h1 fontMedium">
+            Our projects
+        </h2>
+
+        <div class="center">
+            <div class="center-slider">
+                <img class="bigImg"
+                     src="{% static 'site/images/company.png' %}" alt="">
+                <a href="#">
+                    <div class="tabsItemLink fontMedium column">
+                        <p>asdasdsad</p>
+                        <div class="flex">
+                            <span class="fontRegular">csdfsdfsdf</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="center-slider">
+                <img class="smallImg"
+                     src="{% static 'site/images/company.png' %}" alt="">
+                <a href="#">
+                    <div class="tabsItemLink fontMedium column">
+                        <p>asdasdsad</p>
+                        <div class="flex">
+                            <span class="fontRegular">csdfsdfsdf</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="center-slider">
+                <img class="bigImg"
+                     src="{% static 'site/images/company.png' %}" alt="">
+                <a href="#">
+                    <div class="tabsItemLink fontMedium column">
+                        <p>asdasdsad</p>
+                        <div class="flex">
+                            <span class="fontRegular">csdfsdfsdf</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="center-slider">
+                <img class="smallImg"
+                     src="{% static 'site/images/company.png' %}" alt="">
+                <a href="#">
+                    <div class="tabsItemLink fontMedium column">
+                        <p>asdasdsad</p>
+                        <div class="flex">
+                            <span class="fontRegular">csdfsdfsdf</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="center-slider">
+                <img class="bigImg"
+                     src="{% static 'site/images/company.png' %}" alt="">
+                <a href="#">
+                    <div class="tabsItemLink fontMedium column">
+                        <p>asdasdsad</p>
+                        <div class="flex">
+                            <span class="fontRegular">csdfsdfsdf</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="center-slider">
+                <img class="smallImg"
+                     src="{% static 'site/images/company.png' %}" alt="">
+                <a href="#">
+                    <div class="tabsItemLink fontMedium column">
+                        <p>asdasdsad</p>
+                        <div class="flex">
+                            <span class="fontRegular">csdfsdfsdf</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="center-slider">
+                <img class="bigImg"
+                     src="{% static 'site/images/company.png' %}" alt="">
+                <a href="#">
+                    <div class="tabsItemLink fontMedium column">
+                        <p>asdasdsad</p>
+                        <div class="flex">
+                            <span class="fontRegular">csdfsdfsdf</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="bg bg-block">
+        <div class="container">
+            {% include 'site/head/review.html' %}
+        </div>
+        <div class="container review flex between">
+            <h2 class="h2 fontMedium">
+                {% trans 'more_review' %}
+            </h2>
+            <div class="flex reviews">
+                <div>
+                    <img src="{% static 'site/images/freelancer-logo.png' %}" alt="">
+                    <p class="review-starts fontMedium">
+                        5 (35)
+                    </p>
+                </div>
+                <div>
+                    <img src="{% static 'site/images/upwork.png' %}" alt="">
+                    <p class="review-starts fontMedium">
+                        5 (35)
+                    </p>
+                </div>
+                <div>
+                    <img src="{% static 'site/images/2017_We_Deliver_White.png' %}" alt="">
+                    <p class="review-starts fontMedium">
+                        5 (35)
+                    </p>
+                </div>
+                <div>
+                    <img src="{% static 'site/images/image1-984x555.png' %}" alt="">
+                    <p class="review-starts fontMedium">
+                        5 (35)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container story">
+        <h2 class="h1 fontMedium">
+            Our story
+        </h2>
+        <div id="viewContainer">
+            <div class="page active" id="viewLeft2">
+                <p class="story-year fontMedium">
+                    2017
+                </p>
+                <p class="page-line"></p>
+                <p class="fontRegular">Team +3</p>
+                <p class="fontRegular">Client + 25</p>
+            </div>
+            <div class="page">
+                <p class="story-year fontMedium">
+                    2018
+                </p>
+                <p class="page-line"></p>
+                <p class="fontRegular">Team +3</p>
+                <p class="fontRegular">Client + 25</p>
+            </div>
+            <div class="page">
+                <p class="story-year fontMedium">
+                    2019
+                </p>
+                <p class="page-line"></p>
+                <p class="fontRegular">Team +3</p>
+                <p class="fontRegular">Client + 25</p>
+            </div>
+            <div class="page">
+                <p class="story-year fontMedium">
+                    2020
+                </p>
+                <p class="page-line"></p>
+                <p class="fontRegular">Team +3</p>
+                <p class="fontRegular">Client + 25</p>
+            </div>
+            <div class="page">
+                <p class="story-year fontMedium">
+                    2020
+                </p>
+                <p class="page-line"></p>
+                <p class="fontRegular">Team +3</p>
+                <p class="fontRegular">Client + 25</p>
+            </div>
+            <div class="page">
+                <p class="story-year fontMedium">
+                    2020
+                </p>
+                <p class="page-line"></p>
+                <p class="fontRegular">Team +3</p>
+                <p class="fontRegular">Client + 25</p>
+            </div>
+            <div class="page">
+                <p class="story-year fontMedium">
+                    2020
+                </p>
+                <p class="page-line"></p>
+                <p class="fontRegular">Team +3</p>
+                <p class="fontRegular">Client + 25</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        {% include 'site/head/subscribe.html' %}
+    </div>
+    <div class="container company-links">
+        <div class="flex">
+            <a class="company-link h1 fontMedium" href="">
+                Out projects
+                <svg xmlns="http://www.w3.org/2000/svg" width="36.067" height="19.863" viewBox="0 0 36.067 19.863"><defs><style>.ag,.bg{fill:none;stroke:#f2c82b;stroke-linecap:round;stroke-width:2px;}.b{stroke-linejoin:round;}</style></defs><g transform="translate(1 1.414)"><line class="ag" x1="34" transform="translate(0 8.033)"/><path class="bg" d="M0,0,8.517,8.516,0,17.034" transform="translate(25.55)"/></g></svg>
+            </a>
+            <a class="company-link h1 fontMedium" href="">
+                Our specialization
+                <svg xmlns="http://www.w3.org/2000/svg" width="36.067" height="19.863" viewBox="0 0 36.067 19.863"><defs><style>.ag,.bg{fill:none;stroke:#f2c82b;stroke-linecap:round;stroke-width:2px;}.b{stroke-linejoin:round;}</style></defs><g transform="translate(1 1.414)"><line class="ag" x1="34" transform="translate(0 8.033)"/><path class="bg" d="M0,0,8.517,8.516,0,17.034" transform="translate(25.55)"/></g></svg>
+            </a>
+        </div>
+    </div>
+</div>
 {% endblock %}

@@ -2398,3 +2398,6 @@ services-tabs-title
     padding-left: 250px;
     flex-wrap: wrap;
 }
+.flex-reverse{
+    flex-direction: row-reverse;
+}

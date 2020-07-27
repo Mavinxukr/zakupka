@@ -18,10 +18,11 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'site/images/favicon/favicon-16x16.png' %}">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href="{% static 'site/css/slick.css' %}?{% now "U" %}">
-    <link rel="stylesheet" href=" {% static 'site/css/motion-ui.css'%}?{% now "U" %}">
-    <link rel="stylesheet" href=" {% static 'site/css/main.css' %}?{% now "U" %}">
-    <link rel="stylesheet" href=" {% static 'site/css/media.css' %}?{% now "U" %}">
+    <link rel="stylesheet" href="{% static 'site/css/slick.css' %}?{% now 'U' %}">
+    <link rel="stylesheet" href=" {% static 'site/css/motion-ui.css'%}?{% now 'U' %}">
+    <link rel="stylesheet" href=" {% static 'site/css/select.css'%}?{% now 'U' %}">
+    <link rel="stylesheet" href=" {% static 'site/css/main.css' %}?{% now 'U' %}">
+    <link rel="stylesheet" href=" {% static 'site/css/media.css' %}?{% now 'U' %}">
     <title> {% block title %}{% endblock %}</title>
 </head>
 <body>
@@ -41,6 +42,7 @@
     <script src="{% static 'site/js/send-data.js' %}?{% now 'U' %}"></script>
     <script src="{% static 'site/js/slick.js' %}?{% now 'U' %}"></script>
     <script src="{% static 'site/js/countTo.js'%}?{% now 'U' %}"></script>
+    <script src="{% static 'site/js/select.js'%}?{% now 'U' %}"></script>
     <script src="{% static 'site/js/main.js'%}?{% now 'U' %}"></script>
     <script src="{% static 'site/js/subscribe.js'%}?{% now 'U' %}"></script>
 </body>

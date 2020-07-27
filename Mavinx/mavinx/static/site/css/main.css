@@ -279,7 +279,9 @@ main {
     overflow: visible;
 }
 
-.tabs__caption a {
+.tabs__caption a,
+.tabs-select-item,
+.checked-select {
     margin-right: 5px;
     padding: 15px 25px;
     border: 1px solid #E4E4E4;
@@ -2288,7 +2290,8 @@ services-tabs-title
 }
 
 .page-blog {
-    margin-top: 180px;
+    margin-top: 60px;
+    position: relative;
 }
 
 .page-blog .blogCount{
@@ -2303,9 +2306,72 @@ services-tabs-title
     margin-bottom: 50px;
 }
 
+.page-blog h1 {
+    position: absolute;
+    top: 120px;
+    left: 0;
+    margin: 0;
+}
+
 .page-blog .tabs__content {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     margin: 0 -20px;
+}
+
+.page-blog .bigBlog {
+    width: 64.3%;
+    background: #F8F8F8;
+}
+
+.page-blog .tabs__caption{
+    padding-left: 300px;
+    flex-wrap: wrap;
+}
+
+.tabs-select {
+    display: none;
+    margin-top: 20px;
+}
+
+.page-blog .tabs-select {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.select-label {
+    display: none;
+}
+
+.page-blog .select-label {
+    display: block;
+    white-space: nowrap;
+}
+
+.page-blog .select-label {
+    margin: 0 10px;
+}
+
+.tabs-select .current {
+    font-family: "InterMedium", sans-serif;
+    margin: 0 auto;
+}
+
+.tabs-select .nice-select {
+    min-width: 150px;
+    max-width: 150px;
+    font-size: 16px;
+    background: white;
+    font-family: "InterMedium", sans-serif;
+}
+
+.checked-select {
+    opacity: 0;
+    margin: 0;
+}
+
+.checked-select.show {
+    opacity: 1;
 }

@@ -237,6 +237,20 @@ $( document ).ready(function() {
         }, speed == undefined ? 1000 : speed);
         return this;
     };
+
+    $('select').niceSelect();
+
+    $('.option').click(function() {
+        let checked = $('.checked-select');
+        setTimeout(function() {
+            if ($('.current').text() !== 'Not chosen') {
+                checked.addClass('show');
+                checked.text($('.current').text());
+            } else {
+                checked.removeClass('show');
+            }
+        }, 200)
+    })
 });
 
 function openTabsServices(evt, idItem) {

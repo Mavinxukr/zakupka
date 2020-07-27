@@ -26,30 +26,102 @@ Mavinx - {% trans 'title_blog_page' %}
         </ul>
         <div class="tabs__content active">
             {% for blog in blogs %}
-            <article class="blogItem
-                {% if forloop.counter|divisibleby:3  %}bigBlog {% endif %}column">
-                <a href="#">
-                    <img class="blogImage" src="/media/{{ blog.image }}" alt="">
-                    <div>
-                        <p  class="fontMedium blogDescription">
-                            {{ blog.name }}
-                        </p>
-                        <p class="fontRegular">
-                        {{ blog.description }}
-                        </p>
-                    </div>
-                    <div class="blogHashtag flex">
+            <div class="flex">
+                <article class="blogItem column">
+                    <a href="#">
+                        <img class="blogImage" src="/media/{{ blog.image }}" alt="">
+                        <div>
+                            <p  class="fontMedium blogDescription">
+                                {{ blog.name }}
+                            </p>
+                            <p class="fontRegular">
+                                {{ blog.description }}
+                            </p>
+                        </div>
+                        <div class="blogHashtag flex">
                         <span>
                             <a class="fontMedium" href="#">#{{ blog.topic.name }}</a>
                         </span>
-                        <span class="fontRegular blogTime">{{ blog.views }}</span>
-                    </div>
-                    <a class="blogMore fontMedium" href="">
-                        Read more
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16.5" height="8.121" viewBox="0 0 16.5 8.121"><defs><style>.as,.bs{fill:none;stroke:#f2c82b;stroke-linecap:round;stroke-width:1.5px;}.b{stroke-linejoin:round;}</style></defs><g transform="translate(-1032.643 -6943.636)"><line class="as" x1="15" transform="translate(1033.393 6947.697)"/><path class="bs" d="M-3482.156,6958l3,3-3,3" transform="translate(4527.549 -13.307)"/></g></svg>
+                            <span class="fontRegular blogTime">{{ blog.views }}</span>
+                        </div>
+                        <a class="blogMore fontMedium" href="">
+                            Read more
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16.5" height="8.121" viewBox="0 0 16.5 8.121"><defs><style>.as,.bs{fill:none;stroke:#f2c82b;stroke-linecap:round;stroke-width:1.5px;}.b{stroke-linejoin:round;}</style></defs><g transform="translate(-1032.643 -6943.636)"><line class="as" x1="15" transform="translate(1033.393 6947.697)"/><path class="bs" d="M-3482.156,6958l3,3-3,3" transform="translate(4527.549 -13.307)"/></g></svg>
+                        </a>
                     </a>
-                </a>
-            </article>
+                </article>
+                <article class="blogItem bigBlog column">
+                    <a href="#">
+                        <img class="blogImage" src="/media/{{ blog.image }}" alt="">
+                        <div>
+                            <p  class="fontMedium blogDescription">
+                                {{ blog.name }}
+                            </p>
+                            <p class="fontRegular">
+                                {{ blog.description }}
+                            </p>
+                        </div>
+                        <div class="blogHashtag flex">
+                        <span>
+                            <a class="fontMedium" href="#">#{{ blog.topic.name }}</a>
+                        </span>
+                            <span class="fontRegular blogTime">{{ blog.views }}</span>
+                        </div>
+                        <a class="blogMore fontMedium" href="">
+                            Read more
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16.5" height="8.121" viewBox="0 0 16.5 8.121"><defs><style>.as,.bs{fill:none;stroke:#f2c82b;stroke-linecap:round;stroke-width:1.5px;}.b{stroke-linejoin:round;}</style></defs><g transform="translate(-1032.643 -6943.636)"><line class="as" x1="15" transform="translate(1033.393 6947.697)"/><path class="bs" d="M-3482.156,6958l3,3-3,3" transform="translate(4527.549 -13.307)"/></g></svg>
+                        </a>
+                    </a>
+                </article>
+            </div>
+            <div class="flex flex-reverse">
+                <article class="blogItem column">
+                    <a href="#">
+                        <img class="blogImage" src="/media/{{ blog.image }}" alt="">
+                        <div>
+                            <p  class="fontMedium blogDescription">
+                                {{ blog.name }}
+                            </p>
+                            <p class="fontRegular">
+                                {{ blog.description }}
+                            </p>
+                        </div>
+                        <div class="blogHashtag flex">
+                        <span>
+                            <a class="fontMedium" href="#">#{{ blog.topic.name }}</a>
+                        </span>
+                            <span class="fontRegular blogTime">{{ blog.views }}</span>
+                        </div>
+                        <a class="blogMore fontMedium" href="">
+                            Read more
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16.5" height="8.121" viewBox="0 0 16.5 8.121"><defs><style>.as,.bs{fill:none;stroke:#f2c82b;stroke-linecap:round;stroke-width:1.5px;}.b{stroke-linejoin:round;}</style></defs><g transform="translate(-1032.643 -6943.636)"><line class="as" x1="15" transform="translate(1033.393 6947.697)"/><path class="bs" d="M-3482.156,6958l3,3-3,3" transform="translate(4527.549 -13.307)"/></g></svg>
+                        </a>
+                    </a>
+                </article>
+                <article class="blogItem bigBlog column">
+                    <a href="#">
+                        <img class="blogImage" src="/media/{{ blog.image }}" alt="">
+                        <div>
+                            <p  class="fontMedium blogDescription">
+                                {{ blog.name }}
+                            </p>
+                            <p class="fontRegular">
+                                {{ blog.description }}
+                            </p>
+                        </div>
+                        <div class="blogHashtag flex">
+                        <span>
+                            <a class="fontMedium" href="#">#{{ blog.topic.name }}</a>
+                        </span>
+                            <span class="fontRegular blogTime">{{ blog.views }}</span>
+                        </div>
+                        <a class="blogMore fontMedium" href="">
+                            Read more
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16.5" height="8.121" viewBox="0 0 16.5 8.121"><defs><style>.as,.bs{fill:none;stroke:#f2c82b;stroke-linecap:round;stroke-width:1.5px;}.b{stroke-linejoin:round;}</style></defs><g transform="translate(-1032.643 -6943.636)"><line class="as" x1="15" transform="translate(1033.393 6947.697)"/><path class="bs" d="M-3482.156,6958l3,3-3,3" transform="translate(4527.549 -13.307)"/></g></svg>
+                        </a>
+                    </a>
+                </article>
+            </div>
             {% endfor %}
         </div>
         <div class="tabs__content">

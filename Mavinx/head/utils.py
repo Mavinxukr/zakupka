@@ -8,5 +8,7 @@ def custom_upload_to(instance, filename):
         return 'technology_parent/{}/{}'.format(instance.name, filename)
     elif instance._meta.model.__name__ == 'TechnologyUsing':
         return 'technology_child/{}/{}'.format(instance.name, filename)
+    elif instance._meta.model.__name__ == 'About':
+        return 'about/{}'.format(filename)
     return 'head/{}/{}/{}'.format(folder, instance.name, filename)
 

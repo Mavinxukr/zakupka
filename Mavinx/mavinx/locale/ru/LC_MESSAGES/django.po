@@ -93,13 +93,13 @@ msgid "vnm_company_project"
 msgstr "Выберите компанию"
 
 msgid "vnm_name_technology"
-msgstr "Технолония в проекте"
+msgstr "Технолония в проекте (родительская)"
 
 msgid "vnm_technology_project"
 msgstr "Выберите технологию"
 
 msgid "vnm_name_technology_use"
-msgstr "Использованная технолония в проекте"
+msgstr "Технолония в проекте (дочерняя)"
 
 msgid "vnm_name_technology_using"
 msgstr "Название технолонии"
@@ -636,6 +636,9 @@ msgstr "Главная страница"
 
 msgid "next_project"
 msgstr "Следующий проект"
+
+msgid "vnm_image"
+msgstr "Корпоративная картинка"
 
 msgid "title_works_page"
 msgstr "Работы"

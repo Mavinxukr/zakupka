@@ -182,6 +182,71 @@ $( document ).ready(function() {
         $('#video').removeAttr("controls");
         $(this).children(".play").css('display','flex');
     });
+
+    $(".blackBG li").text(function(i, text) {
+        if (text.length >= 80) {
+            text = text.substring(0, 80);
+            let lastIndex = text.lastIndexOf(" ");
+            text = text.substring(0, lastIndex) + '...';
+        }
+        $(this).text(text);
+    });
+
+    $('.blackBG p').text(function(i, text) {
+        if (text.length >= 120) {
+            text = text.substring(0, 120);
+            let lastIndex = text.lastIndexOf(" ");
+            text = text.substring(0, lastIndex) + '...';
+        }
+        $(this).text(text);
+    });
+
+    $('.tabsItemLink .fontRegular').text(function(i, text) {
+        if (text.length >= 50) {
+            text = text.substring(0, 50);
+            let lastIndex = text.lastIndexOf(" ");
+            text = text.substring(0, lastIndex) + '...';
+        }
+        $(this).text(text);
+    });
+
+    $('.center').slick({
+        centerMode: true,
+        slidesToShow: 3,
+        dots: false,
+        arrows: false,
+    });
+
+    $("#viewContainer div").on("click", function() {
+        $("#viewContainer div").removeClass("active");
+        $(this).addClass("active");
+        // CALL scrollCenter PLUSGIN
+        $("#viewContainer").scrollCenter(".active", 300);
+    });
+
+    jQuery.fn.scrollCenter = function(elem, speed) {
+
+        let active = $(this).find(elem);
+        let activeWidth = active.width() / 2;
+
+        let pos = active.position().left + activeWidth;
+        let elpos = $(this).scrollLeft();
+        let elW = $(this).width();
+        pos = pos + elpos - elW / 2;
+
+        $(this).animate({
+            scrollLeft: pos
+        }, speed == undefined ? 1000 : speed);
+        return this;
+    };
+
+    jQuery.fn.scrollCenterORI = function(elem, speed) {
+        $(this).animate({
+            scrollLeft: $(this).scrollLeft() - $(this).offset().left + $(elem).offset().left
+        }, speed == undefined ? 1000 : speed);
+        return this;
+    };
+
 });
 
 function openTabsServices(evt, idItem) {

@@ -5,7 +5,7 @@ from django.db.models.functions import Lower
 from django.views import View
 from django.shortcuts import render
 
-from .models import Project, Area
+from .models import Project, Area, About
 from . shortcuts import render as custom_render
 
 
@@ -47,7 +47,10 @@ class Services(View):
 
 class Company(View):
     def get(self, request):
-        return custom_render(request,'site/page-header/company.html', context={})
+        context={}
+        context['about'] = About.objects.first()
+        context['all_projects'] = Project.objects.all()
+        return custom_render(request,'site/page-header/company.html', context=context)
 
 
 class Blog(View):

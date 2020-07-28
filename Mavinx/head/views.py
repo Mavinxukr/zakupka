@@ -5,7 +5,7 @@ from django.db.models.functions import Lower
 from django.views import View
 from django.shortcuts import render
 
-from .models import Project, Area, About, Topic
+from .models import Project, Area, About, Topic, Blog as ModelBlog
 from . shortcuts import render as custom_render
 
 
@@ -17,26 +17,16 @@ class Index(View):
 class Works(View):
     def get(self, request):
         context = {}
-        area =  request.GET.get('area') if request.GET.get('area') else None
-
-        if 'iOS' == area:
-            data = Project.objects.filter(area__translations__name__contains='iOS')
-        elif 'Android' == area:
-            data = Project.objects.filter(area__translations__name__contains='Android')
-        elif 'Web' == area:
-            data = Project.objects.filter(area__translations__name__contains='Web')
-        elif 'UI/UX' == area:
-            data = Project.objects.filter(area__translations__name__contains='UI/UX')
-        else:
-            data = Project.objects.all()
-
-        paginator = Paginator(data.order_by('-priority').distinct(), 6)
+        area =  request.GET.get('entity') if request.GET.get('entity') else None
+        data = Project.objects.filter(area__translations__name__contains=area) if area else \
+            Project.objects.all()
+        paginator = Paginator(data.order_by('-priority').distinct(), 1)
         page_number = request.GET.get('page')
         data = paginator.get_page(page_number)
         areas = Area.objects.order_by(Lower('translations__name')).distinct()
         context['data'] = data
         context['areas'] = areas
-        context['area'] = area
+        context['entity'] = area
 
         return render(request,'site/page-header/works.html', context)
 
@@ -56,8 +46,16 @@ class Company(View):
 class Blog(View):
     def get(self, request):
         context = {}
+        topic = request.GET.get('entity') if request.GET.get('entity') else None
+        data = ModelBlog.objects.filter(topic__translations__name__contains=topic) if topic \
+                else ModelBlog.objects.all()
+        paginator = Paginator(data.order_by('-id').distinct(), 5)
+        page_number = request.GET.get('page')
+        data = paginator.get_page(page_number)
         context['topics'] = Topic.objects.order_by(Lower('translations__name')).distinct()
-        return custom_render(request,'site/page-header/blog.html', context=context)
+        context['data'] = data
+        context['entity'] = topic
+        return render(request,'site/page-header/blog.html', context=context)
 
 
 class OneProject(View):

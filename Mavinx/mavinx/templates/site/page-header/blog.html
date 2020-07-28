@@ -17,7 +17,7 @@ Mavinx - {% trans 'title_blog_page' %}
                 </li>
             </a>
             {% for topic  in topics %}
-            <a class="tabs__link" href="#">
+            <a class="tabs__link" href="{% if request.resolver_match.url_name == 'blog' %}?topic={{ topic.name }}{% endif %}">
                 <li class="fontMedium">
                     {{ topic.name }}
                 </li>
@@ -25,9 +25,9 @@ Mavinx - {% trans 'title_blog_page' %}
             {% endfor %}
         </ul>
         <div class="tabs__content active">
-            {% for blog in blogs %}
+            {% for blog in data %}
 
-                <article class="blogItem {% if forloop.counter|divisibleby:2 %} bigBlog {% endif %} column">
+                <article class="blogItem {% if forloop.counter|divisibleby:5 or forloop.counter|divisibleby:9  %} bigBlog {% endif %} column">
                     <a href="#">
                         <img class="blogImage" src="/media/{{ blog.image }}" alt="">
                         <div>
@@ -60,5 +60,6 @@ Mavinx - {% trans 'title_blog_page' %}
             1 3
         </div>
     </div>
+    {% include 'site/partials/paginator.html' %}
 </div>
 {% endblock %}

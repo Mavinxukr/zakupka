@@ -1,6 +1,8 @@
+import datetime
 from random import randint
 
 from django.core.paginator import Paginator
+from django.http import HttpResponse
 from django.db.models.functions import Lower
 from django.views import View
 from django.shortcuts import render
@@ -35,6 +37,7 @@ class Services(View):
     def get(self, request):
         return custom_render(request,'site/page-header/services.html', context={})
 
+
 class Company(View):
     def get(self, request):
         context={}
@@ -68,3 +71,8 @@ class OneProject(View):
         context['technology'] = [str(name) for name in project.technology_use.all()]
         context['next_project'] = Project.objects.all()[randint(0, Project.objects.count() - 1)]
         return render(request, 'site/sub-page/one-project.html', context=context)
+
+
+class ErrorHandler():
+    def handler404(request, exception):
+        return HttpResponse('<h1>Page was found</h1>', status=404)

@@ -10,3 +10,4 @@ urlpatterns = [
     re_path('works/(?P<project_id>\d+)?', views.OneProject.as_view(), name='one_project'),
     path('', views.Index.as_view(), name='index'),
 ]
+

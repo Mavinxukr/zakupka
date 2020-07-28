@@ -1,5 +1,3 @@
-from random import randint
-
 from django.db.models.functions import Lower
 from django.shortcuts import render as main_render
 

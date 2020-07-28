@@ -17,7 +17,7 @@ Mavinx - {% trans 'title_blog_page' %}
                 </li>
             </a>
             {% for topic  in topics %}
-            <a class="tabs__link" href="{% if request.resolver_match.url_name == 'blog' %}?topic={{ topic.name }}{% endif %}">
+            <a class="tabs__link" href="{% if request.resolver_match.url_name == 'blog' %}?entity={{ topic.name }}{% endif %}">
                 <li class="fontMedium">
                     {{ topic.name }}
                 </li>

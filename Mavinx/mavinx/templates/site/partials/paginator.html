@@ -1,4 +1,4 @@
-    {% if data.paginator.count > 1  %}
+    {% if data.has_next  %}
     <ul class="pagination">
       <li class="page-item {% if not data.has_previous %} disabled {% endif %}">
                 <a class="page-link" href="{% if data.has_previous %}?page={{ data.previous_page_number }}{% endif %} " tabindex="-1">

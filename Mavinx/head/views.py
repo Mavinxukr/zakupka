@@ -20,7 +20,7 @@ class Works(View):
         area =  request.GET.get('entity') if request.GET.get('entity') else None
         data = Project.objects.filter(area__translations__name__contains=area) if area else \
             Project.objects.all()
-        paginator = Paginator(data.order_by('-priority').distinct(), 1)
+        paginator = Paginator(data.order_by('-priority').distinct(), 6)
         page_number = request.GET.get('page')
         data = paginator.get_page(page_number)
         areas = Area.objects.order_by(Lower('translations__name')).distinct()
@@ -49,7 +49,7 @@ class Blog(View):
         topic = request.GET.get('entity') if request.GET.get('entity') else None
         data = ModelBlog.objects.filter(topic__translations__name__contains=topic) if topic \
                 else ModelBlog.objects.all()
-        paginator = Paginator(data.order_by('-id').distinct(), 5)
+        paginator = Paginator(data.order_by('-id').distinct(), 8)
         page_number = request.GET.get('page')
         data = paginator.get_page(page_number)
         context['topics'] = Topic.objects.order_by(Lower('translations__name')).distinct()

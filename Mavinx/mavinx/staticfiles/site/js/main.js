@@ -16,7 +16,7 @@ $( document ).ready(function() {
     }
 
     lastUrl.searchParams.delete('page');
-    if (pageUrl.indexOf('/works') != -1) {
+    if (pageUrl.indexOf('/works' != -1) || pageUrl.indexOf('/blog' != -1)) {
       $('.allProjects').addClass('hide');
       let tabsUrl = document.querySelectorAll('.tabs__link');
 

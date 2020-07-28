@@ -13,6 +13,18 @@ class BlogCaseImagesInline(TranslatableTabularInline):
     model = BlogCaseImages
 
 
+class ProjectChallengesInline(TranslatableTabularInline):
+    model = ProjectChallenges
+
+
+class ProjectNumberImagesInline(TranslatableTabularInline):
+    model = ProjectNumberImages
+
+
+class ProjectSliderImagesInline(TabularInline):
+    model = ProjectSliderImages
+
+
 @admin.register(Blog)
 class BlogAdmin(TranslatableAdmin):
     list_per_page = 10
@@ -53,8 +65,6 @@ class AreaAdmin(TranslatableAdmin):
     search_fields = ('translations__name',)
 
 
-class ProjectChallengesInline(TranslatableTabularInline):
-    model = ProjectChallenges
 
 
 @admin.register(ProjectSector)
@@ -88,14 +98,6 @@ class CustomerAdmin(TranslatableAdmin):
         return mark_safe(
             "<img src='{}' width='40' height='25' alt='img' >".format(image_path)
         )
-
-
-class ProjectNumberImagesInline(TranslatableTabularInline):
-    model = ProjectNumberImages
-
-
-class ProjectSliderImagesInline(TabularInline):
-    model = ProjectSliderImages
 
 
 @admin.register(Project)

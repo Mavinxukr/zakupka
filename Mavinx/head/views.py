@@ -1,4 +1,3 @@
-import datetime
 from random import randint
 
 from django.core.paginator import Paginator
@@ -8,7 +7,7 @@ from django.views import View
 from django.shortcuts import render
 
 from .models import Project, Area, About, Topic, Blog as ModelBlog
-from . shortcuts import render as custom_render
+from .shortcuts import render as custom_render
 
 
 class Index(View):
@@ -19,7 +18,7 @@ class Index(View):
 class Works(View):
     def get(self, request):
         context = {}
-        area =  request.GET.get('entity') if request.GET.get('entity') else None
+        area = request.GET.get('entity') if request.GET.get('entity') else None
         data = Project.objects.filter(area__translations__name__contains=area) if area else \
             Project.objects.all()
         paginator = Paginator(data.order_by('-priority').distinct(), 6)
@@ -30,20 +29,20 @@ class Works(View):
         context['areas'] = areas
         context['entity'] = area
 
-        return render(request,'site/page-header/works.html', context)
+        return render(request, 'site/page-header/works.html', context)
 
 
 class Services(View):
     def get(self, request):
-        return custom_render(request,'site/page-header/services.html', context={})
+        return custom_render(request, 'site/page-header/services.html', context={})
 
 
 class Company(View):
     def get(self, request):
-        context={}
+        context = {}
         context['about'] = About.objects.first()
         context['all_projects'] = Project.objects.all()
-        return custom_render(request,'site/page-header/company.html', context=context)
+        return custom_render(request, 'site/page-header/company.html', context=context)
 
 
 class Blog(View):
@@ -51,19 +50,18 @@ class Blog(View):
         context = {}
         topic = request.GET.get('entity') if request.GET.get('entity') else None
         data = ModelBlog.objects.filter(topic__translations__name__contains=topic) if topic \
-                else ModelBlog.objects.all()
+            else ModelBlog.objects.all()
         paginator = Paginator(data.order_by('-id').distinct(), 8)
         page_number = request.GET.get('page')
         data = paginator.get_page(page_number)
         context['topics'] = Topic.objects.order_by(Lower('translations__name')).distinct()
         context['data'] = data
         context['entity'] = topic
-        return render(request,'site/page-header/blog.html', context=context)
+        return render(request, 'site/page-header/blog.html', context=context)
 
 
 class OneProject(View):
     def get(self, request, project_id):
-        print(request.path)
         context = {}
         project = Project.objects.filter(id=project_id).first()
         context['project'] = project
@@ -75,4 +73,5 @@ class OneProject(View):
 
 class ErrorHandler():
     def handler404(request, exception):
-        return HttpResponse('<h1>Page was found</h1>', status=404)
+        return render(request, "site/partials/404.html", status=404)
+

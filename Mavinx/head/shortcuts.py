@@ -1,3 +1,5 @@
+from random import randint
+
 from django.db.models.functions import Lower
 from django.shortcuts import render as main_render
 
@@ -8,7 +10,7 @@ def render(request, template, context):
     context['areas'] =  Area.objects.order_by(Lower('translations__name')).distinct()
     context['contact'] = Contact.objects.first()
     context['reviews'] = Review.objects.all().order_by('-id')
-    context['blogs'] = Blog.objects.all()
+    context['blogs'] = Blog.objects.all().order_by('?')[:6]
     context['data'] = Project.objects.all().order_by('priority')[:5]
     context['projects_ios'] = Project.objects.filter(area__translations__name__contains='iOS').order_by('priority').distinct()[:5]
     context['projects_android'] = Project.objects.filter(area__translations__name__contains='Android').order_by('priority').distinct()[:5]

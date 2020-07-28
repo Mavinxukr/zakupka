@@ -12,13 +12,13 @@
     {% for blog in blogs %}
         <article class="blogItem column">
           <a href="#">
-            <img class="blogImage" src="{{ request.scheme }}://{{request.META.HTTP_HOST  }}/media/{{ blog.image }}" alt="">
+            <img class="blogImage" src="/media/{{ blog.image }}" alt="{{ blog.name }}">
             <p class="fontMedium blogDescription">
                 {{ blog.name }}
             </p>
             <div class="blogHashtag flex">
                   <span class="fontRegular">
-                    <a href="#">#{{ blog.topic.name }}</a>
+                    <a href="{% url 'blog' %}?entity={{blog.topic.name}}">#{{ blog.topic.name }}</a>
                     </span>
                 <span style="color: #F2C81F;" class="fontMedium">{% trans 'blog_views' %}</span>
                 <span class="fontRegular">{{ blog.views }}</span>

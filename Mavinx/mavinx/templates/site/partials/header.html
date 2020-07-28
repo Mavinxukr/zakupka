@@ -11,7 +11,12 @@
             {% for lang_code, lang_name in languages %}
             <button class="{% if lang_code == current_language %} active-lang  {% endif %} lang fontMedium">
                 {% language lang_code %}
-                    <a href=" {% url request.resolver_match.url_name %}{% if request.GET.urlencode  %}?{{ request.GET.urlencode }}{% endif %}">{{lang_code}}</a>
+                    <a href=" {% url request.resolver_match.url_name %}
+{% if project %}{{ project.id }}
+{% endif %}{% if request.GET.urlencode  %}?
+{{ request.GET.urlencode }}{% endif %}">
+                        {{lang_code}}
+                    </a>
                 {% endlanguage %}
             </button>
             {% endfor %}

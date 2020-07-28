@@ -1,9 +1,65 @@
 {% extends 'site/base.html' %}
 {% load static %}
- {% load i18n %}
+{% load i18n %}
 {% block title %}
-    Mavinx - {% trans 'title_blog_page' %}
+Mavinx - {% trans 'title_blog_page' %}
 {% endblock %}
 {% block content %}
-    <h1 align="center">Coming soon</h1>
+<div class="container page-blog">
+    <h1 class="h1 fontMedium flex">
+        {% trans 'view_blog' %}<span class="blogCount menuItem">{{ blogs.count }}</span>
+    </h1>
+    <div class="tabs">
+        <ul class="tabs__caption">
+            <a class="tabs__link" href="{% url 'blog' %}">
+                <li class="fontMedium">
+                    all
+                </li>
+            </a>
+            {% for topic  in topics %}
+            <a class="tabs__link" href="{% if request.resolver_match.url_name == 'blog' %}?entity={{ topic.name }}{% endif %}">
+                <li class="fontMedium">
+                    {{ topic.name }}
+                </li>
+            </a>
+            {% endfor %}
+        </ul>
+        <div class="tabs__content active">
+            {% for blog in data %}
+
+                <article class="blogItem {% if forloop.counter|divisibleby:5 or forloop.counter|divisibleby:9  %} bigBlog {% endif %} column">
+                    <a href="#">
+                        <img class="blogImage" src="/media/{{ blog.image }}" alt="">
+                        <div>
+                            <p  class="fontMedium blogDescription">
+                                {{ blog.name }}
+                            </p>
+                            <p class="fontRegular">
+                                {{ blog.description }}
+                            </p>
+                        </div>
+                        <div class="blogHashtag flex">
+                        <span>
+                            <a class="fontMedium" href="#">#{{ blog.topic.name }}</a>
+                        </span>
+                            <span class="fontRegular blogTime">{{ blog.views }}</span>
+                        </div>
+                        <a class="blogMore fontMedium" href="">
+                            Read more
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16.5" height="8.121" viewBox="0 0 16.5 8.121"><defs><style>.as,.bs{fill:none;stroke:#f2c82b;stroke-linecap:round;stroke-width:1.5px;}.b{stroke-linejoin:round;}</style></defs><g transform="translate(-1032.643 -6943.636)"><line class="as" x1="15" transform="translate(1033.393 6947.697)"/><path class="bs" d="M-3482.156,6958l3,3-3,3" transform="translate(4527.549 -13.307)"/></g></svg>
+                        </a>
+                    </a>
+                </article>
+
+            {% endfor %}
+        </div>
+        <div class="tabs__content">
+            12
+        </div>
+        <div class="tabs__content">
+            1 3
+        </div>
+    </div>
+    {% include 'site/partials/paginator.html' %}
+</div>
 {% endblock %}

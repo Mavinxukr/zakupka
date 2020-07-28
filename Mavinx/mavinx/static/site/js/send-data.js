@@ -17,6 +17,10 @@ $( document ).ready(function() {
       $('.errorPhone').removeClass('showError');
     });
 
+    $('.labelCheckbox').click(function() {
+        $('.errorCheckbox').removeClass('showError');
+    });
+
     $('#email').keyup(function() {
       $('.errorMail').removeClass('showError');
       $('.errorMailFormat').removeClass('showError');
@@ -78,8 +82,11 @@ $( document ).ready(function() {
 
         if (checkedItem.length === 0) {
           $('.labelCheckbox').addClass('noChecked');
+          $('.errorCheckbox').addClass('showError');
+        } else {
+            $('.labelCheckbox').removeClass('noChecked');
+            $('.errorCheckbox').removeClass('showError');
         }
-
 
         if (name && email && phone && checkedItem.length > 0){
           data.append('name', name )

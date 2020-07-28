@@ -93,13 +93,13 @@ msgid "vnm_company_project"
 msgstr "Выберите компанию"
 
 msgid "vnm_name_technology"
-msgstr "Технолония в проекте"
+msgstr "Технолония в проекте (родительская)"
 
 msgid "vnm_technology_project"
 msgstr "Выберите технологию"
 
 msgid "vnm_name_technology_use"
-msgstr "Использованная технолония в проекте"
+msgstr "Технолония в проекте (дочерняя)"
 
 msgid "vnm_name_technology_using"
 msgstr "Название технолонии"
@@ -577,6 +577,54 @@ msgstr "Название сектора"
 msgid "vn_project_sector"
 msgstr "Название сектора"
 
+msgid "vnm_ios_link_project"
+msgstr "Ссылка на проект в Apple Store"
+
+msgid "vnm_android_link_project"
+msgstr "Ссылка на проект в Play Market"
+
+msgid "vnm_web_link_project"
+msgstr "Ссылка на проект в Network"
+
+msgid "vnm_video_project"
+msgstr "Видео к проекту"
+
+msgid "vnm_project_idea"
+msgstr "Идея проекта"
+
+msgid "vnm_project_audience"
+msgstr "Целевая аудитория"
+
+msgid "vnp_project_challenge"
+msgstr "Челендж"
+
+msgid "vn_project_challenge"
+msgstr "Челендж"
+
+msgid "vnm_project_chel_name"
+msgstr "Выберите название челенджа"
+
+msgid "vnm_project_chel"
+msgstr "Челенджи"
+
+msgid "vnm_result_project"
+msgstr "Результат выполнения проекта"
+
+msgid "vnp_project_slider_images"
+msgstr "Картинки для слайдера проекта"
+
+msgid "vn_project_slider_images"
+msgstr "Картинки для слайдера проекта"
+
+msgid "vnm_project_chel_desc"
+msgstr "Пишите описание челенджа"
+
+msgid "vnm_projectimage_slider"
+msgstr "Загрузите картинки"
+
+msgid "vnm_projectimageslider_project"
+msgstr "Выберите проект"
+
 msgid "vnm_sector_project"
 msgstr " Выберите сектор"
 
@@ -585,6 +633,12 @@ msgstr "Успешно подписался на нашу рассылку! Ск
 
 msgid "title_head_page"
 msgstr "Главная страница"
+
+msgid "next_project"
+msgstr "Следующий проект"
+
+msgid "vnm_image"
+msgstr "Корпоративная картинка"
 
 msgid "title_works_page"
 msgstr "Работы"

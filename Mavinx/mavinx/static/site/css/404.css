@@ -43,8 +43,8 @@ li a.fontRegular {
     text-align: center;
 }
 .image404 {
-    max-width: 500px;
-    max-height: 500px;
+    max-width: 450px;
+    max-height: 450px;
     width: 100%;
     height: 100%;
     margin-top: 20px;
@@ -62,4 +62,11 @@ li a.fontRegular {
 
 .fontRegular {
     font-family: "InterRegular", sans-serif;
+}
+
+@media screen and (max-width: 1550px) {
+    .image404 {
+        max-width: 400px;
+        max-height: 400px;
+    }
 }

@@ -80,5 +80,9 @@ class OneBlog(View):
 
 class ErrorHandler():
     def handler404(request, exception):
-        return render(request, "site/partials/404.html", status=404)
+        return render(request, "site/partials/404.html")
 
+
+class Page404(View):
+    def get(self, request):
+        return render(request, 'site/partials/404.html',context={})

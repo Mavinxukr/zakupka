@@ -106,6 +106,8 @@ STATICFILES_DIRS = [
 ]
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#STATIC_ROOT = '/root/mavinx_project/Mavinx/static/'
+#MEDIA_ROOT = '/root/mavinx_project/Mavinx/mavinx/media/'
 
 ADMIN_SITE_HEADER = "MavinX"
 ADMIN_SITE_TITLE = "Администрирование MavinX"

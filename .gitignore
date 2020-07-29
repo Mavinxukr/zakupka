@@ -6,6 +6,7 @@
 ./Mavinx/mavinx/staticfiles/
 Mavinx/mavinx/settings/production.py
 Mavinx/mavinx/settings/local.py
+Mavinx/static/
 
 # Icon must end with two \r
 Icon

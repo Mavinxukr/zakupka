@@ -53,6 +53,29 @@ Mavinx - {{ blog.name }}
     </div>
 </div>
 <div class="container one-blog">
-
+    <a href="#">
+        <h1 class="h1 fontMedium flex">
+            More #Delivery
+        </h1>
+    </a>
+    <div class="flex blogItems">
+        {% for blog in blogs %}
+        <article class="blogItem column">
+            <a href="#">
+                <img class="blogImage" src="" alt="">
+                <p class="fontMedium blogDescription">
+                    {{ blog.name }}
+                </p>
+                <div class="blogHashtag flex">
+                  <span class="fontRegular">
+                    <a href="#">#fsdfsdf</a>
+                    </span>
+                    <span style="color: #F2C81F;" class="fontMedium">adasd</span>
+                    <span class="fontRegular">czxczx</span>
+                </div>
+            </a>
+        </article>
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}

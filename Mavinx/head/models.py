@@ -185,9 +185,9 @@ class Project(TranslatableModel):
     teems = models.IntegerField(verbose_name=_('vnm_teems_project'), null=True)
     sectors = models.ManyToManyField(ProjectSector, related_name='projects', verbose_name=_('vnm_sector_project'))
     head_video = models.FileField(null=True,blank=True,upload_to=custom_upload_to, verbose_name=_('vnm_video_project'))
-    link_ios_store = models.CharField(max_length=100,verbose_name=_('vnm_ios_link_project'),null=True)
-    link_android_store = models.CharField(max_length=100,verbose_name=_('vnm_android_link_project'), null=True)
-    link_web_store = models.CharField(max_length=100,verbose_name=_('vnm_web_link_project'), null=True)
+    link_ios_store = models.CharField(max_length=100,verbose_name=_('vnm_ios_link_project'),null=True,blank=True)
+    link_android_store = models.CharField(max_length=100,verbose_name=_('vnm_android_link_project'), null=True,blank=True)
+    link_web_store = models.CharField(max_length=100,verbose_name=_('vnm_web_link_project'), null=True,blank=True)
 
 
     def __str__(self):

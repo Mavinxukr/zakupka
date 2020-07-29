@@ -109,6 +109,21 @@ class Customer(TranslatableModel):
     def __str__(self):
         return self.name
 
+
+class ProjectSector(TranslatableModel):
+    class Meta:
+        db_table = 'head_project_sector'
+        verbose_name_plural = _('vnp_project_sector')
+        verbose_name = _('vn_project_sector')
+
+    translations = TranslatedFields(
+        name=models.CharField(max_length=30, verbose_name=_('vnm_name_sector')),
+    )
+
+    def __str__(self):
+        return self.name
+
+
 class Project(TranslatableModel):
     class Meta:
         verbose_name_plural = _('vnp_project')
@@ -117,6 +132,11 @@ class Project(TranslatableModel):
     translations = TranslatedFields(
         name=models.CharField(max_length=30, verbose_name=_('vnm_name_project')),
         description = models.CharField(max_length=255, verbose_name=_('vnm_desc_project')),
+        dev_time = models.CharField(max_length=50, verbose_name=_('vnm_time_project',),null=True),
+        location = models.CharField(max_length=100, verbose_name=_('vnm_location_project'),null=True),
+        result = models.TextField(null=True, verbose_name=_('vnm_result_project')),
+        project_idea = models.CharField(max_length=100, verbose_name=_('vnm_project_idea'), null=True),
+        project_audience = models.CharField(max_length=100, verbose_name=_('vnm_project_audience'), null=True)
 
     )
 
@@ -127,19 +147,40 @@ class Project(TranslatableModel):
     head_image = models.ImageField(null=True, blank=True, upload_to=custom_upload_to,
                                    verbose_name=_('vnm_company_head_image'))
     technology_use = models.ManyToManyField(TechnologyUsing,related_name='projects',verbose_name=_('vnm_technology_project'))
+    teems = models.IntegerField(verbose_name=_('vnm_teems_project'), null=True)
+    sectors = models.ManyToManyField(ProjectSector, related_name='projects', verbose_name=_('vnm_sector_project'))
+    head_video = models.FileField(null=True,blank=True,upload_to=custom_upload_to, verbose_name=_('vnm_video_project'))
+    link_ios_store = models.CharField(max_length=100,verbose_name=_('vnm_ios_link_project'),null=True)
+    link_android_store = models.CharField(max_length=100,verbose_name=_('vnm_android_link_project'), null=True)
+    link_web_store = models.CharField(max_length=100,verbose_name=_('vnm_web_link_project'), null=True)
 
 
     def __str__(self):
         return self.name
+
+class ProjectChallenges(TranslatableModel):
+    class Meta:
+        db_table = 'head_project_challenge'
+        verbose_name_plural = _('vnp_project_challenge')
+        verbose_name = _('vn_project_challenge')
+
+    translations = TranslatedFields(
+        description=models.TextField(null=True, verbose_name=_('vnm_project_chel_desc'))
+    )
+    project = models.ForeignKey(Project, related_name='project_challenges', verbose_name=_('vnm_project_chel'),
+                                on_delete=models.CASCADE, null=True)
+
+    def __str__(self):
+        return self.project.description
 
 def custom_upload_to_project_image(instance, filename):
     instance_id = Project.objects.last().id
     return 'head/project/{}/{}'.format(instance_id, filename)
 
 
-class ProjectImage(TranslatableModel):
+class ProjectNumberImages(TranslatableModel):
     class Meta:
-        db_table = 'head_project_image'
+        db_table = 'head_project_number_images'
         verbose_name_plural = _('vnp_project_image')
         verbose_name = _('vn_project_image')
 
@@ -152,6 +193,18 @@ class ProjectImage(TranslatableModel):
 
     def __str__(self):
         return self.project.name
+
+class ProjectSliderImages(models.Model):
+    class Meta:
+        db_table = 'head_project_slider_images'
+        verbose_name_plural = _('vnp_project_slider_images')
+        verbose_name = _('vn_project_slider_images')
+
+    image = models.ImageField(null=True, verbose_name=_('vnm_projectimage_slider'),
+                              upload_to=custom_upload_to_project_image)
+    project = models.ForeignKey(Project, related_name='project_slider_images', on_delete=models.CASCADE,
+                                verbose_name=_('vnm_projectimageslider_project'))
+
 
 
 class Review(TranslatableModel):
@@ -229,27 +282,14 @@ class About(TranslatableModel):
         verbose_name = _('vn_about')
 
     translations = TranslatedFields(
-        name=models.CharField(max_length=100, verbose_name=_('vnm_name_about'), null=True, blank=True),
         text = models.CharField(max_length=200, verbose_name=_('vnm_text_about'), null=True, blank=True),
         description = models.TextField(verbose_name=_('vnm_desc_about'), null=True, blank=True)
     )
+    image = models.ImageField(null=True, blank=True, verbose_name=_('vnm_image'),
+                              upload_to=custom_upload_to)
 
     def __str__(self):
         return self.name
-
-
-class AboutImage(models.Model):
-    class Meta:
-        db_table = 'head_about_image'
-        verbose_name_plural = _('vmp_aboutimage')
-        verbose_name = _('vm_aboutimage')
-
-    image = models.ImageField(verbose_name=_('vnm_image_aboutimage'), upload_to=custom_upload_to)
-    about = models.ForeignKey(About, related_name='about_images', on_delete=models.CASCADE,
-                              verbose_name=_('vnm_about_aboutimage'))
-
-    def __str__(self):
-        return self.about.name
 
 
 class Subscribers(models.Model):

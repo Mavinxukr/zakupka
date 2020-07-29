@@ -9,8 +9,6 @@ $( document ).ready(function() {
     let pageUrl = window.location.href;
     let lastUrl = new URL(pageUrl);
 
-    console.log(lastUrl);
-
     if (lastUrl.searchParams.get("page") || lastUrl.searchParams.get("area") || lastUrl.searchParams.get("entity")) {
       $('html, body').animate({
           scrollTop: $(".tabs").offset().top - 80
@@ -30,6 +28,7 @@ $( document ).ready(function() {
       });
     }
     if ($('.homeTabs').length) {
+        $(`.tabs__link`).removeClass('active');
         $(`.tabs__link:eq(0)`).addClass('active');
         $('.tabs__link').click(function(e) {
             e.preventDefault();

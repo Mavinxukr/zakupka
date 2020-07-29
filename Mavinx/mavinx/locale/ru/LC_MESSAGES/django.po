@@ -171,6 +171,9 @@ msgstr "Выберите создателя статьи"
 msgid "vnm_blog_case_desc"
 msgstr "Описание для картинок блога"
 
+msgid "writer"
+msgstr "Копирайтер"
+
 msgid "vnm_blog_case_name"
 msgstr "Заголовок для картинок блога"
 

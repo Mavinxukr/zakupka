@@ -1331,6 +1331,9 @@ msgstr "Result"
 msgid "work_full_design"
 msgstr " Full design"
 
+msgid "writer"
+msgstr " Writer"
+
 msgid "work_click_proto"
 msgstr "Clickable prototype"
 

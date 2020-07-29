@@ -80,7 +80,7 @@ class OneBlog(View):
 
 class ErrorHandler():
     def handler404(request, exception):
-        return render(request, "site/partials/404.html")
+        return render(request, "site/partials/404.html", status=404)
 
 
 class Page404(View):

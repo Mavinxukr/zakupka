@@ -6,32 +6,32 @@ Mavinx - {{ blog.name }}
 {% endblock %}
 {% block content %}
 <div class="blog-banner">
-    <img class="blog-banner-img" src="{% static 'site/images/carl-barcelo-hHzzdVQnkn0-unsplash.png' %}" alt="">
+    <img class="blog-banner-img" src="/media/{{ blog.image }}" alt="blog.name">
     <h1 class="h1 fontMedium">
-        EasyFit — Service for trainers
+        {{ blog.name }}
     </h1>
     <div class="blog-banner-avatar">
+        {% for writer in blog.writers.all %}
         <div>
-            <img class="avatar" src="{% static 'site/images/face.png' %}" alt="">
+            <img class="avatar" src="/media/{{writer.image  }}" alt="">
             <p class="fontRegular name">
-                ssda
+                {{ writer.name }}
             </p>
             <p class="fontRegular writer">
-                ssda
+                {% trans 'writer' %}
             </p>
         </div>
+        {% endfor %}
+
     </div>
+
 </div>
 <div class="container blog-info">
-    <h3 class="h3 fontMedium">dasdasdasdasd</h3>
-    <p class="fontRegular"> sf sdf sd fsd f sdf sd f sdf s df sd fsd fs df sd fsd f sdf sd fs</p>
-    <img src="{% static 'site/images/carl-barcelo-hHzzdVQnkn0-unsplash.png' %}" alt="">
-    <h3 class="h3 fontMedium">dasdasdasdasd</h3>
-    <p class="fontRegular"> sf sdf sd fsd f sdf sd f sdf s df sd fsd fs df sd fsd f sdf sd fs</p>
-    <img src="{% static 'site/images/carl-barcelo-hHzzdVQnkn0-unsplash.png' %}" alt="">
-    <h3 class="h3 fontMedium">dasdasdasdasd</h3>
-    <p class="fontRegular"> sf sdf sd fsd f sdf sd f sdf s df sd fsd fs df sd fsd f sdf sd fs</p>
-    <img src="{% static 'site/images/carl-barcelo-hHzzdVQnkn0-unsplash.png' %}" alt="">
+{% for case in blog.blog_case_images.all %}
+    <h3 class="h3 fontMedium">{{ case.name }}</h3>
+    <p class="fontRegular">{{ case.description }}</p>
+    <img src="/media/{{ case.image }}" alt="">
+{% endfor %}
 </div>
 <div class="container share-block">
     <div class="share">
@@ -53,6 +53,6 @@ Mavinx - {{ blog.name }}
     </div>
 </div>
 <div class="container one-blog">
-    {% include 'site/head/blog.html' %}
+
 </div>
 {% endblock %}

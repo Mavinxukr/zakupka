@@ -1,3 +1,5 @@
+from random import randint
+
 from django.core.paginator import Paginator
 from django.db.models.functions import Lower
 from django.views import View

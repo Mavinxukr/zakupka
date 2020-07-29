@@ -222,6 +222,7 @@ class ProjectNumberImages(TranslatableModel):
     project = models.ForeignKey(Project, related_name='project_images', on_delete=models.CASCADE,
                                 verbose_name=_('vnm_projectimage_project'))
 
+
     def __str__(self):
         return self.project.name
 
@@ -235,6 +236,9 @@ class ProjectSliderImages(models.Model):
                               upload_to=custom_upload_to)
     project = models.ForeignKey(Project, related_name='project_slider_images', on_delete=models.CASCADE,
                                 verbose_name=_('vnm_projectimageslider_project'))
+
+    def __str__(self):
+        return self.project.name
 
 
 class Review(TranslatableModel):

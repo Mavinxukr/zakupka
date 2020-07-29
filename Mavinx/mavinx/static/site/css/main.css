@@ -2327,6 +2327,8 @@ services-tabs-title
 
 .page-blog .blogItem {
     margin-bottom: 50px;
+    margin-right: 20px;
+    width: 32%;
 }
 
 .page-blog h1 {
@@ -2339,12 +2341,12 @@ services-tabs-title
 .page-blog .tabs__content {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: flex-start;
     margin: 0 -20px;
 }
 
 .page-blog .bigBlog {
-    width: 64.3%;
+    width: 65.3%;
     background: #F8F8F8;
     position: relative;
     height: 316px;

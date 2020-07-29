@@ -122,6 +122,7 @@ Mavinx - {{ project.name }}
                     {{ project.result }}
                 </p>
                 <div class="flex">
+                    {% if project.link_ios_store  %}
                     <a class="fontMedium" href="{{ project.link_ios_store }}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24.607" height="30" viewBox="0 0 24.607 30">
                             <defs>
@@ -140,6 +141,8 @@ Mavinx - {{ project.name }}
                         </svg>
                         App Store
                     </a>
+                    {% endif %}
+                    {% if project.link_android_store  %}
                     <a class="fontMedium" href="{{ project.link_android_store }}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="24" viewBox="0 0 22 24">
                             <defs>
@@ -158,6 +161,8 @@ Mavinx - {{ project.name }}
                         </svg>
                         Google Play
                     </a>
+                    {% endif %}
+                    {% if project.link_web_store  %}
                     <a class="fontMedium" href="{{project.link_web_store  }}">
                         <svg width="26" height="26" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
                              id="Capa_1" x="0px" y="0px" viewBox="0 0 476.16 476.16"
@@ -224,6 +229,7 @@ Mavinx - {{ project.name }}
 </g></g> </svg>
                         Visit website
                     </a>
+                    {% endif %}
                 </div>
             </div>
         </div>

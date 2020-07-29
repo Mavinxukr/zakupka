@@ -2,6 +2,8 @@ from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
+from head.views import ErrorHandler
+
 
 from .settings import base as setting
 
@@ -16,6 +18,7 @@ urlpatterns += i18n_patterns(
 
 urlpatterns += static(setting.MEDIA_URL, document_root=setting.MEDIA_ROOT)
 urlpatterns += static(setting.STATIC_URL, document_root=setting.STATIC_ROOT)
+handler404 = ErrorHandler.handler404
 
 admin.site.site_header = setting.ADMIN_SITE_HEADER
 admin.site.index_title = setting.ADMIN_SITE_TITLE

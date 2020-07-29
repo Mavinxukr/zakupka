@@ -13,6 +13,7 @@
                 {% language lang_code %}
                     <a href=" {% url request.resolver_match.url_name %}
 {% if project %}{{ project.id }}
+{% elif blog %}{{ blog.id }}
 {% endif %}{% if request.GET.urlencode  %}?
 {{ request.GET.urlencode }}{% endif %}">
                         {{lang_code}}

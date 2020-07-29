@@ -11,7 +11,7 @@
 <div class="flex blogItems">
     {% for blog in blogs %}
         <article class="blogItem column">
-          <a href="#">
+          <a href="{% url 'one_blog' blog.id %}">
             <img class="blogImage" src="/media/{{ blog.image }}" alt="{{ blog.name }}">
             <p class="fontMedium blogDescription">
                 {{ blog.name }}

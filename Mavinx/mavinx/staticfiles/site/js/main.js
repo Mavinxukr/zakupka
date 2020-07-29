@@ -9,7 +9,7 @@ $( document ).ready(function() {
     let pageUrl = window.location.href;
     let lastUrl = new URL(pageUrl);
 
-    if (lastUrl.searchParams.get("page") || lastUrl.searchParams.get("area")) {
+    if (lastUrl.searchParams.get("page") || lastUrl.searchParams.get("area") || lastUrl.searchParams.get("entity")) {
       $('html, body').animate({
           scrollTop: $(".tabs").offset().top - 80
       }, 800);
@@ -26,16 +26,17 @@ $( document ).ready(function() {
           $(`.tabs__link:eq(${key})`).addClass('active');
         }
       });
-    } else {
-      $(`.tabs__link:eq(0)`).addClass('active');
-      $('.tabs__link').click(function(e) {
-        e.preventDefault();
-      })
+    }
+    if ($('.homeTabs').length) {
+        $(`.tabs__link`).removeClass('active');
+        $(`.tabs__link:eq(0)`).addClass('active');
+        $('.tabs__link').click(function(e) {
+            e.preventDefault();
+        })
     }
 
     $( ".servicesTabs .services-tabs-title.hide" ).remove();
     $( ".servicesTabs .tabs-panel .fontRegular.hide" ).remove();
-
     $('.servicesTabs .services-tabs-title:first-child').addClass('is-active');
 
     if ($( ".servicesTabs .services-tabs-title").length){

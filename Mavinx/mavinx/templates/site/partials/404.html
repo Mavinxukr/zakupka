@@ -1,0 +1,47 @@
+{% load static %}
+<link rel="stylesheet" href=" {% static 'site/css/404.css' %}?{% now 'U' %}">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="apple-touch-icon" sizes="57x57" href="{% static 'site/images/favicon/apple-icon-57x57.png' %}">
+<link rel="apple-touch-icon" sizes="60x60" href="{% static 'site/images/favicon/apple-icon-60x60.png' %}">
+<link rel="apple-touch-icon" sizes="72x72" href="{% static 'site/images/favicon/apple-icon-72x72.png' %}">
+<link rel="apple-touch-icon" sizes="76x76" href="{% static 'site/images/favicon/apple-icon-76x76.png' %}">
+<link rel="apple-touch-icon" sizes="114x114" href="{% static 'site/images/favicon/apple-icon-114x114.png' %}">
+<link rel="apple-touch-icon" sizes="120x120" href="{% static 'site/images/favicon/apple-icon-120x120.png' %}">
+<link rel="apple-touch-icon" sizes="144x144" href="{% static 'site/images/favicon/apple-icon-144x144.png' %}">
+<link rel="apple-touch-icon" sizes="152x152" href="{% static 'site/images/favicon/apple-icon-152x152.png' %}">
+<link rel="apple-touch-icon" sizes="180x180" href="{% static 'site/images/favicon/apple-icon-180x180.png' %}">
+<link rel="icon" type="image/png" sizes="192x192"  href="{% static 'site/images/favicon/android-icon-192x192.png' %}">
+<link rel="icon" type="image/png" sizes="32x32" href="{% static 'site/images/favicon/favicon-32x32.png' %}">
+<link rel="icon" type="image/png" sizes="96x96" href="{% static 'site/images/favicon/favicon-96x96.png' %}">
+<link rel="icon" type="image/png" sizes="16x16" href="{% static 'site/images/favicon/favicon-16x16.png' %}">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+<title>Mavinx - 404 Page not found</title>
+<section>
+    <div class="container">
+        <h1 class="fontMedium">404</h1>
+        <img class="image404" src="{% static 'site/images/404.gif' %}" alt="">
+        <h1 class="fontMedium">Page not found</h1>
+        <div class="menu">
+            <p class="fontRegular">You can try using the menu:</p>
+            <ul>
+                <li>
+                    <a class="fontRegular" href="/">HOME</a>
+                </li>
+                <li>
+                    <a class="fontRegular" href="{% url 'works' %}">Works</a>
+                </li>
+                <li>
+                    <a class="fontRegular" href="{% url 'services' %}">Services</a>
+                </li>
+                <li>
+                    <a class="fontRegular" href="{% url 'company' %}">Company</a>
+                </li>
+                <li>
+                    <a class=" fontRegular" href="{% url 'blog' %}">Blog</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>

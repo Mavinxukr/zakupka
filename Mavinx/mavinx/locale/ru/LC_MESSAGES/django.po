@@ -139,13 +139,46 @@ msgid "vnm_desc_blog"
 msgstr "Описание статьи"
 
 msgid "vnm_image_blog"
-msgstr "Картинка статьи"
+msgstr "Картинка статьи (главная)"
 
 msgid "vnm_date_blog"
 msgstr "Дата создания"
 
 msgid "vnm_area_blog"
 msgstr "Сфера статьи"
+
+msgid "vnp_blog_case_images"
+msgstr "Картинки для кейсов блога"
+
+msgid "vn_blog_case_images"
+msgstr "Картинки для кейсов блога"
+
+msgid "vnp_blog_writ"
+msgstr "Копирайтер блога"
+
+msgid "vn_blog_writ"
+msgstr "Копирайтер блога"
+
+msgid "vnm_name_blog_writ"
+msgstr "Создатель статьи"
+
+msgid "vn_blog_writ_image"
+msgstr "Аватар создателя статьи"
+
+msgid "vnm_writ_blog"
+msgstr "Выберите создателя статьи"
+
+msgid "vnm_blog_case_desc"
+msgstr "Описание для картинок блога"
+
+msgid "vnm_blog_case_name"
+msgstr "Заголовок для картинок блога"
+
+msgid "vnm_case_images"
+msgstr "Картика для кейса блога"
+
+msgid "vnm_case_blog"
+msgstr "Блог"
 
 # head/models.py/:106
 

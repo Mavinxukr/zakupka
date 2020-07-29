@@ -5,8 +5,24 @@ from parler.admin import TranslatableAdmin, TranslatableTabularInline
 
 from .models import Company, Customer, \
     Area, Project, Blog, Review, Contact, About, Order, \
-    ProjectNumberImages, Subscribers, Topic, Technology, TechnologyUsing,\
-    ProjectSector, ProjectChallenges, ProjectSliderImages
+    ProjectNumberImages, Subscribers, Topic, Technology, TechnologyUsing, \
+    ProjectSector, ProjectChallenges, ProjectSliderImages, BlogCaseImages, BlogWriter
+
+
+class BlogCaseImagesInline(TranslatableTabularInline):
+    model = BlogCaseImages
+
+
+class ProjectChallengesInline(TranslatableTabularInline):
+    model = ProjectChallenges
+
+
+class ProjectNumberImagesInline(TranslatableTabularInline):
+    model = ProjectNumberImages
+
+
+class ProjectSliderImagesInline(TabularInline):
+    model = ProjectSliderImages
 
 
 @admin.register(Blog)
@@ -14,7 +30,8 @@ class BlogAdmin(TranslatableAdmin):
     list_per_page = 10
     list_display = ('name', 'description', 'topic', 'date_publish', '_image', 'views')
     list_filter = ('translations__name', 'topic', 'date_publish', 'views')
-    search_fields = ('translations__name', 'date_publish', 'topic__translations__name','views')
+    search_fields = ('translations__name', 'date_publish', 'topic__translations__name', 'views')
+    inlines = (BlogCaseImagesInline,)
 
     def _image(self, obj):
         image_path = '/media/{}'.format(obj.image)
@@ -22,10 +39,21 @@ class BlogAdmin(TranslatableAdmin):
             "<img src='{}' width='40' height='25' alt='img' >".format(image_path)
         )
 
+
 @admin.register(Topic)
 class TopicAdmin(TranslatableAdmin):
     list_display = ('name',)
 
+
+@admin.register(BlogWriter)
+class BlogWriterAdmin(TranslatableAdmin):
+    list_display = ('name','_image')
+
+    def _image(self, obj):
+        image_path = '/media/{}'.format(obj.image)
+        return mark_safe(
+            "<img src='{}' width='40' height='25' alt='img' >".format(image_path)
+        )
 
 
 @admin.register(Company)
@@ -40,14 +68,14 @@ class CompanyAdmin(TranslatableAdmin):
             "<img src='{}' width='40' height='25' alt='img' >".format(image_path)
         )
 
+
 @admin.register(Area)
 class AreaAdmin(TranslatableAdmin):
     list_display = ('id', 'name')
-    list_filter = ('translations__name', )
+    list_filter = ('translations__name',)
     search_fields = ('translations__name',)
 
-class ProjectChallengesInline(TranslatableTabularInline):
-    model = ProjectChallenges
+
 
 
 @admin.register(ProjectSector)
@@ -58,13 +86,14 @@ class ProjectSectorAdmin(TranslatableAdmin):
 @admin.register(Technology)
 class TechnologyAdmin(admin.ModelAdmin):
     list_display = ('id', 'name')
-    list_filter = ('name', )
+    list_filter = ('name',)
     search_fields = ('name',)
+
 
 @admin.register(TechnologyUsing)
 class TechnologyUsingAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'technology')
-    list_filter = ('name', 'technology' )
+    list_filter = ('name', 'technology')
     search_fields = ('name', 'technology')
 
 
@@ -73,7 +102,7 @@ class CustomerAdmin(TranslatableAdmin):
     model = Customer
     list_display = ('id', 'name', 'description', 'company', '_image')
     list_filter = ('translations__name', 'company__translations__name')
-    search_fields = ('translations__name','company__translations__name')
+    search_fields = ('translations__name', 'company__translations__name')
 
     def _image(self, obj):
         image_path = '/media/{}'.format(obj.image)
@@ -81,28 +110,21 @@ class CustomerAdmin(TranslatableAdmin):
             "<img src='{}' width='40' height='25' alt='img' >".format(image_path)
         )
 
-class ProjectNumberImagesInline(TranslatableTabularInline):
-    model = ProjectNumberImages
-
-
-class ProjectSliderImagesInline(TabularInline):
-    model = ProjectSliderImages
-
 
 @admin.register(Project)
 class ProjectAdmin(TranslatableAdmin):
     list_per_page = 10
     inlines = (ProjectNumberImagesInline, ProjectChallengesInline, ProjectSliderImagesInline)
-    list_display = ('name',  'priority', 'company')
-    list_filter = ('translations__name', 'priority', 'company__translations__name','area')
+    list_display = ('name', 'priority', 'company')
+    list_filter = ('translations__name', 'priority', 'company__translations__name', 'area')
     search_fields = ('translations__name', 'priority', 'company__translations__name')
 
 
 @admin.register(Review)
 class ReviewAdmin(TranslatableAdmin):
     list_display = ('name', 'customer', 'project')
-    list_filter = ('translations__name','project__translations__name','customer__translations__name')
-    search_fields = ('translations__name', 'project__translations__name','customer__translations__name')
+    list_filter = ('translations__name', 'project__translations__name', 'customer__translations__name')
+    search_fields = ('translations__name', 'project__translations__name', 'customer__translations__name')
 
 
 @admin.register(Contact)
@@ -114,10 +136,10 @@ class ContactAdmin(admin.ModelAdmin):
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
     list_per_page = 10
-    list_display = ('name','email', 'phone', 'terms', 'budget', 'status')
-    readonly_fields = ('name','email', 'phone', 'terms', 'budget', 'file', 'detail','area','date')
-    list_filter = ('name' ,'email', 'terms', 'budget', 'phone', 'status','date')
-    search_fields = ('name','email', 'terms', 'budget', 'phone','date')
+    list_display = ('name', 'email', 'phone', 'terms', 'budget', 'status')
+    readonly_fields = ('name', 'email', 'phone', 'terms', 'budget', 'file', 'detail', 'area', 'date')
+    list_filter = ('name', 'email', 'terms', 'budget', 'phone', 'status', 'date')
+    search_fields = ('name', 'email', 'terms', 'budget', 'phone', 'date')
 
     def has_add_permission(self, request, obj=None):
         return False
@@ -125,7 +147,7 @@ class OrderAdmin(admin.ModelAdmin):
 
 @admin.register(About)
 class AboutAdmin(TranslatableAdmin):
-    list_display = ('text','_image')
+    list_display = ('text', '_image')
 
     def _image(self, obj):
         image_path = '/media/{}'.format(obj.image)
@@ -144,4 +166,5 @@ class SubscribersAdmin(admin.ModelAdmin):
 
     def has_add_permission(self, request, obj=None):
         return False
+
 

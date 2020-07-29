@@ -28,7 +28,7 @@ Mavinx - {% trans 'title_blog_page' %}
             {% for blog in data %}
 
                 <article class="blogItem {% if forloop.counter|divisibleby:5 or forloop.counter|divisibleby:9  %} bigBlog {% endif %} column">
-                    <a href="#">
+                    <a href="{% url 'one_blog' blog.id %}">
                         <img class="blogImage" src="/media/{{ blog.image }}" alt="">
                         <div>
                             <p  class="fontMedium blogDescription">
@@ -50,16 +50,11 @@ Mavinx - {% trans 'title_blog_page' %}
                         </a>
                     </a>
                 </article>
-
             {% endfor %}
         </div>
-        <div class="tabs__content">
-            12
-        </div>
-        <div class="tabs__content">
-            1 3
-        </div>
     </div>
-    {% include 'site/partials/paginator.html' %}
+    <div class="container pagination-container">
+        {% include 'site/partials/paginator.html' %}
+    </div>
 </div>
 {% endblock %}

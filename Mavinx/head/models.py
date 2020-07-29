@@ -53,7 +53,8 @@ class TechnologyUsing(models.Model):
         verbose_name = _('vnm_name_technology_use')
 
     name = models.CharField(max_length=30, verbose_name=_('vnm_name_technology_using'))
-    technology = models.ForeignKey(Technology, verbose_name=_('vnm_name_technology_using_parent'), on_delete=models.CASCADE)
+    technology = models.ForeignKey(Technology, verbose_name=_('vnm_name_technology_using_parent'),
+                                   on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
@@ -67,6 +68,20 @@ class Topic(TranslatableModel):
     translations = TranslatedFields(
         name=models.CharField(max_length=100, verbose_name=_('vnm_name_topic')),
     )
+
+    def __str__(self):
+        return self.name
+
+
+class BlogWriter(TranslatableModel):
+    class Meta:
+        verbose_name_plural = _('vnp_blog_writ')
+        verbose_name = _('vn_blog_writ')
+
+    translations = TranslatedFields(
+        name=models.CharField(max_length=100, verbose_name=_('vnm_name_blog_writ'), unique=True),
+    )
+    image = models.ImageField(verbose_name=_('vn_blog_writ_image'), upload_to=custom_upload_to)
 
     def __str__(self):
         return self.name
@@ -87,9 +102,29 @@ class Blog(TranslatableModel):
                              verbose_name=_(u'vnm_topic_blog'), default=1)
     image = models.ImageField(verbose_name=_(u'vnm_image_blog'), upload_to=custom_upload_to,
                               null=True, blank=True)
+    writers = models.ManyToManyField(BlogWriter, related_name='blogs',verbose_name=_('vnm_writ_blog'))
 
     def __str__(self):
         return self.name
+
+
+class BlogCaseImages(TranslatableModel):
+        class Meta:
+            verbose_name_plural = _('vnp_blog_case_images')
+            verbose_name = _('vn_blog_case_images')
+
+        translations = TranslatedFields(
+            name=models.CharField(max_length=100, verbose_name=_('vnm_blog_case_name')),
+            description=models.CharField(max_length=256, verbose_name=_('vnm_blog_case_desc'))
+        )
+
+        image = models.ImageField(verbose_name=_('vnm_case_images'), null=True,
+                                  upload_to=custom_upload_to)
+        blog = models.ForeignKey(Blog, related_name='blog_case_images', on_delete=models.CASCADE,
+                                    verbose_name=_('vnm_case_blog'))
+
+        def __str__(self):
+            return self.name
 
 
 class Customer(TranslatableModel):
@@ -173,10 +208,6 @@ class ProjectChallenges(TranslatableModel):
     def __str__(self):
         return self.project.description
 
-def custom_upload_to_project_image(instance, filename):
-    instance_id = Project.objects.last().id
-    return 'head/project/{}/{}'.format(instance_id, filename)
-
 
 class ProjectNumberImages(TranslatableModel):
     class Meta:
@@ -187,7 +218,7 @@ class ProjectNumberImages(TranslatableModel):
     translations = TranslatedFields(
         description = models.TextField(null=True, verbose_name=_('vnm_projectimage_desc'))
     )
-    image = models.ImageField(verbose_name=_('vnm_projectimage_image'), null=True, upload_to=custom_upload_to_project_image)
+    image = models.ImageField(verbose_name=_('vnm_projectimage_image'), null=True, upload_to=custom_upload_to)
     project = models.ForeignKey(Project, related_name='project_images', on_delete=models.CASCADE,
                                 verbose_name=_('vnm_projectimage_project'))
 
@@ -201,10 +232,9 @@ class ProjectSliderImages(models.Model):
         verbose_name = _('vn_project_slider_images')
 
     image = models.ImageField(null=True, verbose_name=_('vnm_projectimage_slider'),
-                              upload_to=custom_upload_to_project_image)
+                              upload_to=custom_upload_to)
     project = models.ForeignKey(Project, related_name='project_slider_images', on_delete=models.CASCADE,
                                 verbose_name=_('vnm_projectimageslider_project'))
-
 
 
 class Review(TranslatableModel):

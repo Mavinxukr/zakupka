@@ -28,7 +28,7 @@ Mavinx - {% trans 'title_blog_page' %}
             {% for blog in data %}
 
                 <article class="blogItem {% if forloop.counter|divisibleby:5 or forloop.counter|divisibleby:9  %} bigBlog {% endif %} column">
-                    <a href="#">
+                    <a href="{% url 'one_blog' blog.id %}">
                         <img class="blogImage" src="/media/{{ blog.image }}" alt="">
                         <div>
                             <p  class="fontMedium blogDescription">

@@ -73,6 +73,20 @@ class Topic(TranslatableModel):
         return self.name
 
 
+class BlogWriter(TranslatableModel):
+    class Meta:
+        verbose_name_plural = _('vnp_blog_writ')
+        verbose_name = _('vn_blog_writ')
+
+    translations = TranslatedFields(
+        name=models.CharField(max_length=100, verbose_name=_('vnm_name_blog_writ'), unique=True),
+    )
+    image = models.ImageField(verbose_name=_('vn_blog_writ_image'), upload_to=custom_upload_to)
+
+    def __str__(self):
+        return self.name
+
+
 class Blog(TranslatableModel):
     class Meta:
         verbose_name_plural = _('vnp_blog')
@@ -88,6 +102,7 @@ class Blog(TranslatableModel):
                              verbose_name=_(u'vnm_topic_blog'), default=1)
     image = models.ImageField(verbose_name=_(u'vnm_image_blog'), upload_to=custom_upload_to,
                               null=True, blank=True)
+    writers = models.ManyToManyField(BlogWriter, related_name='blogs',verbose_name=_('vnm_writ_blog'))
 
     def __str__(self):
         return self.name

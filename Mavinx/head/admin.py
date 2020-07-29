@@ -6,7 +6,7 @@ from parler.admin import TranslatableAdmin, TranslatableTabularInline
 from .models import Company, Customer, \
     Area, Project, Blog, Review, Contact, About, Order, \
     ProjectNumberImages, Subscribers, Topic, Technology, TechnologyUsing, \
-    ProjectSector, ProjectChallenges, ProjectSliderImages, BlogCaseImages
+    ProjectSector, ProjectChallenges, ProjectSliderImages, BlogCaseImages, BlogWriter
 
 
 class BlogCaseImagesInline(TranslatableTabularInline):
@@ -43,6 +43,17 @@ class BlogAdmin(TranslatableAdmin):
 @admin.register(Topic)
 class TopicAdmin(TranslatableAdmin):
     list_display = ('name',)
+
+
+@admin.register(BlogWriter)
+class BlogWriterAdmin(TranslatableAdmin):
+    list_display = ('name','_image')
+
+    def _image(self, obj):
+        image_path = '/media/{}'.format(obj.image)
+        return mark_safe(
+            "<img src='{}' width='40' height='25' alt='img' >".format(image_path)
+        )
 
 
 @admin.register(Company)
@@ -155,3 +166,5 @@ class SubscribersAdmin(admin.ModelAdmin):
 
     def has_add_permission(self, request, obj=None):
         return False
+
+

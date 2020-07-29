@@ -153,6 +153,21 @@ msgstr "Картинки для кейсов блога"
 msgid "vn_blog_case_images"
 msgstr "Картинки для кейсов блога"
 
+msgid "vnp_blog_writ"
+msgstr "Копирайтер блога"
+
+msgid "vn_blog_writ"
+msgstr "Копирайтер блога"
+
+msgid "vnm_name_blog_writ"
+msgstr "Создатель статьи"
+
+msgid "vn_blog_writ_image"
+msgstr "Аватар создателя статьи"
+
+msgid "vnm_writ_blog"
+msgstr "Выберите создателя статьи"
+
 msgid "vnm_blog_case_desc"
 msgstr "Описание для картинок блога"
 

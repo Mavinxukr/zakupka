@@ -16,4 +16,6 @@ def custom_upload_to(instance, filename):
         return 'head/project/{}/{}'.format(instance.project.id, filename)
     elif instance._meta.model.__name__ == 'ProjectSliderImages':
         return 'head/project/{}/{}'.format(instance.project.id, filename)
+    elif instance._meta.model.__name__ == 'BlogWriter':
+        return 'head/blog_writer/{}/{}'.format(instance.name, filename)
     return 'head/{}/{}/{}'.format(folder, instance.name, filename)

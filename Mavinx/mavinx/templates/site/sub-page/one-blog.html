@@ -5,6 +5,54 @@
 Mavinx - {{ blog.name }}
 {% endblock %}
 {% block content %}
-    <h1>hello blog</h1>
+<div class="blog-banner">
+    <img class="blog-banner-img" src="{% static 'site/images/carl-barcelo-hHzzdVQnkn0-unsplash.png' %}" alt="">
+    <h1 class="h1 fontMedium">
+        EasyFit — Service for trainers
+    </h1>
+    <div class="blog-banner-avatar">
+        <div>
+            <img class="avatar" src="{% static 'site/images/face.png' %}" alt="">
+            <p class="fontRegular name">
+                ssda
+            </p>
+            <p class="fontRegular writer">
+                ssda
+            </p>
+        </div>
+    </div>
+</div>
+<div class="container blog-info">
+    <h3 class="h3 fontMedium">dasdasdasdasd</h3>
+    <p class="fontRegular"> sf sdf sd fsd f sdf sd f sdf s df sd fsd fs df sd fsd f sdf sd fs</p>
+    <img src="{% static 'site/images/carl-barcelo-hHzzdVQnkn0-unsplash.png' %}" alt="">
+    <h3 class="h3 fontMedium">dasdasdasdasd</h3>
+    <p class="fontRegular"> sf sdf sd fsd f sdf sd f sdf s df sd fsd fs df sd fsd f sdf sd fs</p>
+    <img src="{% static 'site/images/carl-barcelo-hHzzdVQnkn0-unsplash.png' %}" alt="">
+    <h3 class="h3 fontMedium">dasdasdasdasd</h3>
+    <p class="fontRegular"> sf sdf sd fsd f sdf sd f sdf s df sd fsd fs df sd fsd f sdf sd fs</p>
+    <img src="{% static 'site/images/carl-barcelo-hHzzdVQnkn0-unsplash.png' %}" alt="">
+</div>
+<div class="container share-block">
+    <div class="share">
+        <h2 class="h2 fontMedium">
+            Like the article? Share it
+        </h2>
+        <div class="share-links">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=#url" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="37.846" height="70" viewBox="0 0 37.846 70"><path d="M58.5.015,49.42,0c-10.2,0-16.789,6.762-16.789,17.227V25.17H23.5A1.427,1.427,0,0,0,22.077,26.6V38.106A1.427,1.427,0,0,0,23.5,39.534h9.127V68.573A1.427,1.427,0,0,0,34.059,70H45.967a1.427,1.427,0,0,0,1.427-1.427V39.534H58.066a1.427,1.427,0,0,0,1.427-1.427l0-11.508a1.428,1.428,0,0,0-1.428-1.428H47.394V18.437c0-3.236.771-4.879,4.987-4.879l6.115,0a1.427,1.427,0,0,0,1.427-1.427V1.442A1.428,1.428,0,0,0,58.5.015Z" transform="translate(-22.077)"/></svg>
+            </a>
+            <a href="https://twitter.com/intent/tweet?text=[MESSAGE]&url=[URL]" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="73.846" height="60" viewBox="0 0 73.846 60"><g transform="translate(0 -48)"><g transform="translate(0 48)"><path d="M73.846,55.1a31.563,31.563,0,0,1-8.723,2.391,15.054,15.054,0,0,0,6.66-8.368,30.256,30.256,0,0,1-9.6,3.665A15.138,15.138,0,0,0,36,63.143a15.588,15.588,0,0,0,.351,3.452A42.851,42.851,0,0,1,5.142,50.76,15.143,15.143,0,0,0,9.794,70.994a14.951,14.951,0,0,1-6.84-1.865V69.3A15.209,15.209,0,0,0,15.083,84.171a15.11,15.11,0,0,1-3.969.5,13.387,13.387,0,0,1-2.866-.258A15.283,15.283,0,0,0,22.394,94.957a30.419,30.419,0,0,1-18.771,6.457A28.358,28.358,0,0,1,0,101.206,42.621,42.621,0,0,0,23.225,108c27.858,0,43.089-23.077,43.089-43.08,0-.669-.023-1.315-.055-1.957A30.2,30.2,0,0,0,73.846,55.1Z" transform="translate(0 -48)"/></g></g></svg>
+            </a>
+            <a href="https://www.instagram.com/?url=#url" target="_blank" >
 
+                <svg xmlns="http://www.w3.org/2000/svg" width="65" height="65" viewBox="0 0 65 65"><path d="M45.636,0H19.364A19.386,19.386,0,0,0,0,19.364V45.636A19.386,19.386,0,0,0,19.364,65H45.636A19.386,19.386,0,0,0,65,45.636V19.364A19.386,19.386,0,0,0,45.636,0ZM58.461,45.636A12.825,12.825,0,0,1,45.636,58.461H19.364A12.825,12.825,0,0,1,6.539,45.636V19.364A12.825,12.825,0,0,1,19.364,6.539H45.636A12.825,12.825,0,0,1,58.461,19.364V45.636Z"/><path d="M149.811,133a16.811,16.811,0,1,0,16.811,16.811A16.83,16.83,0,0,0,149.811,133Zm0,27.084a10.272,10.272,0,1,1,10.272-10.272A10.272,10.272,0,0,1,149.811,160.084Z" transform="translate(-117.311 -117.311)"/><circle cx="4.028" cy="4.028" r="4.028" transform="translate(45.316 11.787)"/></svg>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="container one-blog">
+    {% include 'site/head/blog.html' %}
+</div>
 {% endblock %}

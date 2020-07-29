@@ -8,6 +8,10 @@
     max-width: 1152px;
   }
 
+  .share-links svg {
+    margin-left: 30px;
+  }
+
   .company-info p {
     font-size: 16px;
     margin-top: 50px;
@@ -111,7 +115,8 @@
     font-size: 14px;
   }
 
-  .text-next {
+  .text-next,
+  .share h2{
     font-size: 25px;
   }
 

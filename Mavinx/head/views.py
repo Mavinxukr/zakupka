@@ -74,6 +74,7 @@ class OneBlog(View):
         context = {}
         blog = ModelBlog.objects.filter(id=blog_id).first()
         context['blog'] = blog
+
         return render(request, 'site/sub-page/one-blog.html', context=context)
 
 

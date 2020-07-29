@@ -74,7 +74,7 @@ class OneBlog(View):
         context = {}
         blog = ModelBlog.objects.filter(id=blog_id).first()
         context['blog'] = blog
-
+        context['rand_blogs'] = ModelBlog.objects.exclude(id=blog_id).order_by('?')[:3]
         return render(request, 'site/sub-page/one-blog.html', context=context)
 
 

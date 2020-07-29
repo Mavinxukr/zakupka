@@ -53,25 +53,24 @@ Mavinx - {{ blog.name }}
     </div>
 </div>
 <div class="container one-blog">
-    <a href="#">
+    <a href="{% url 'blog' %}?entity={{blog.topic.name}}">
         <h1 class="h1 fontMedium flex">
-            More #Delivery
+            More #{{ blog.topic.name }}
         </h1>
     </a>
     <div class="flex blogItems">
-        {% for blog in blogs %}
+        {% for item in rand_blogs %}
         <article class="blogItem column">
-            <a href="#">
-                <img class="blogImage" src="" alt="">
+            <a href="{% url 'one_blog' item.id %}">
+                <img class="blogImage" src="/media/{{item.image  }}" alt="item.name">
                 <p class="fontMedium blogDescription">
-                    {{ blog.name }}
+                   {{ item.name }}
                 </p>
                 <div class="blogHashtag flex">
                   <span class="fontRegular">
-                    <a href="#">#fsdfsdf</a>
+                    <a href="{% url 'blog' %}?entity={{item.topic.name}}">{{ item.name }}</a>
                     </span>
-                    <span style="color: #F2C81F;" class="fontMedium">adasd</span>
-                    <span class="fontRegular">czxczx</span>
+                    <span class="fontRegular">{{ item.views }}</span>
                 </div>
             </a>
         </article>

@@ -2500,7 +2500,8 @@ services-tabs-title
 }
 
 .blog-info img {
-    margin: 10px 0 100px;
+    margin: 10px auto 100px;
+    max-width: 1000px;
 }
 
 .blog-info {

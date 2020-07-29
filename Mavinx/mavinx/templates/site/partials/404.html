@@ -1,6 +1,29 @@
 {% load static %}
+<link rel="stylesheet" href=" {% static 'site/css/404.css' %}?{% now 'U' %}">
 <section>
     <div class="container">
-        <img src="{% static 'site/images/dribbble_1.gif' %}" alt="">
+        <h1 class="fontMedium">404</h1>
+        <img class="image404" src="{% static 'site/images/404.gif' %}" alt="">
+        <h1 class="fontMedium">Page not found</h1>
+        <div class="menu">
+            <p class="fontRegular">You can try using the menu:</p>
+            <ul>
+                <li>
+                    <a class="fontRegular" href="/">HOME</a>
+                </li>
+                <li>
+                    <a class="fontRegular" href="{% url 'works' %}">Works</a>
+                </li>
+                <li>
+                    <a class="fontRegular" href="{% url 'services' %}">Services</a>
+                </li>
+                <li>
+                    <a class="fontRegular" href="{% url 'company' %}">Company</a>
+                </li>
+                <li>
+                    <a class=" fontRegular" href="{% url 'blog' %}">Blog</a>
+                </li>
+            </ul>
+        </div>
     </div>
 </section>

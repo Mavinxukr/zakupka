@@ -124,7 +124,7 @@ class BlogCaseImages(TranslatableModel):
                                     verbose_name=_('vnm_case_blog'))
 
         def __str__(self):
-            return self.name
+            return self.blog.name
 
 
 class Customer(TranslatableModel):

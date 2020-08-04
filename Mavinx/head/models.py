@@ -181,6 +181,8 @@ class Project(TranslatableModel):
                                 verbose_name=_('vnm_company_project'))
     head_image = models.ImageField(null=True, blank=True, upload_to=custom_upload_to,
                                    verbose_name=_('vnm_company_head_image'))
+    one_project_image = models.ImageField(null=True, blank=True, upload_to=custom_upload_to,
+                                   verbose_name=_('vnm_company_one_project_image'))
     technology_use = models.ManyToManyField(TechnologyUsing,related_name='projects',verbose_name=_('vnm_technology_project'))
     teems = models.IntegerField(verbose_name=_('vnm_teems_project'), null=True)
     sectors = models.ManyToManyField(ProjectSector, related_name='projects', verbose_name=_('vnm_sector_project'))

@@ -141,6 +141,9 @@ msgstr "Описание статьи"
 msgid "vnm_image_blog"
 msgstr "Картинка статьи (главная)"
 
+msgid "vnm_company_one_project_image"
+msgstr "Картинка на странице одного проекта"
+
 msgid "vnm_date_blog"
 msgstr "Дата создания"
 

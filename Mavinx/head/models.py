@@ -46,6 +46,7 @@ class Technology(models.Model):
     def __str__(self):
         return self.name
 
+
 class TechnologyUsing(models.Model):
     class Meta:
         db_table = 'head_project_tech_using'
@@ -195,6 +196,7 @@ class Project(TranslatableModel):
     def __str__(self):
         return self.name
 
+
 class ProjectChallenges(TranslatableModel):
     class Meta:
         db_table = 'head_project_challenge'
@@ -227,6 +229,7 @@ class ProjectNumberImages(TranslatableModel):
 
     def __str__(self):
         return self.project.name
+
 
 class ProjectSliderImages(models.Model):
     class Meta:

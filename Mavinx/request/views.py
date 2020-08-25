@@ -23,7 +23,7 @@ class ClientRequest(View):
         }
         subject = '⏩📩😳🔥 Поступил новый запрос с вашего сайта 🔥😳📩⏪'
         message = 'Быстро гони 🚀 в админку 👔, там есть новый заказ 😜 \n' \
-                  'Не забываем 👺 менять статус запроса 😴 в админке 🙏' \
+                  'Не забываем 👺 менять статус запроса 😴 в админке 🙏\n ' \
                   'Твой Django ✊❤😎'
         email_from = base.EMAIL_HOST_USER
         recipient_list = ['mavinx.office@gmail.com', 'ruslan.yalansky@gmail.com']

@@ -1,11 +1,14 @@
 import React from 'react';
 import styles from './Footer.scss';
+import IconFacebook from '../../../static/svg/facebook.svg';
+import IconYoutube from '../../../static/svg/youtube.svg';
+import IconAppstore from '../../../static/svg/app_store_uk.svg';
 
 const Footer = () => (
   <div className={styles.footer}>
     <div className={styles.footerContainer}>
       <div className={styles.container}>
-        <ul className={styles.footerMenu}>
+        <ul className={styles.menu}>
           <li className={styles.link}>Тарифи</li>
           <li className={styles.link}>Контакти</li>
           <li className={styles.link}>Політика конфіденційності</li>
@@ -20,17 +23,21 @@ const Footer = () => (
       </div>
     </div>
     <div className={styles.container}>
-      <div className={styles.footerBottom}>
-        <span>&copy;zakupi.prom.ua, 2016-2020</span>
+      <div className={styles.bottom}>
+        <span>&copy; zakupi.prom.ua, 2016-2020</span>
         <p>Акредитований учасник електронної системи публічних закупівель України ProZorro</p>
-        <ul className={styles.footerLang}>
+        <ul className={styles.langBlock}>
           <li className={`${styles.social} ${styles.link}`}>Русский</li>
           <li className={`${styles.social} ${styles.link}`}>English</li>
         </ul>
-        <ul className={styles.footerSocial}>
-          <li className={`${styles.facebook} ${styles.link}`}> Facebook</li>
-          <li className={`${styles.youtube} ${styles.link}`}>Youtube</li>
+        <ul className={styles.socialBlock}>
+          <li className={`${styles.icon} ${styles.itemFacebook}`}> <IconFacebook className={styles.itemFacebook} /></li>
+          <li className={`${styles.icon} ${styles.itemYoutube}`}><IconYoutube /></li>
         </ul>
+        <div className={styles.apps}>
+          <IconAppstore className={styles.androidApp} />
+          <div className={styles.androidApp} />
+        </div>
       </div>
     </div>
   </div>

@@ -1,3 +1,5 @@
+@import '../../../styles/core/vars';
+
 .container{
   width: 1200px;
   margin: 0 auto;
@@ -11,31 +13,72 @@
     height: 66px;
     display: flex;
     justify-content: center;
-    background-color: #d3d8de;
+    background-color: $colorGreyHover;
   }
-  &Menu{
+  .menu{
     display: flex;
     height: 100%;
     align-items: center;
   }
-  &Lang{
+  .bottom{
+    span{
+      display: block;
+      margin-top: 20px;
+    }
+    p{
+      margin-bottom: 20px;
+    }
+  }
+  .langBlock{
     display: flex;
     .lang{
       padding: 10px;
     }
   }
-  &Social{
+  .socialBlock{
     display: flex;
-    .social{
-      padding: 10px;
+    .icon{
+      width: 25px;
+      height: 25px;
+      background-color: #fff;
+      cursor: pointer;
     }
   }
   .link{
-    color: #00a1cd;
+    color: $colorLink;
     margin-right: 15px;
+    font-size: $fontSizeLaptopSmall;
     cursor: pointer;
     &:hover{
       text-decoration: underline;
     }
   }
+}
+.socialBlock{
+  margin-top: 10px;
+}
+.itemFacebook{
+  svg path {
+    fill: #3b5998;
+  }
+}
+.itemYoutube{
+  margin-left: 30px;
+}
+.apps{
+  display: flex;
+  margin-top: 20px;
+}
+.androidApp{
+  width: 135px;
+  height: 40px;
+  background: url('../../../static/img/androidApp.png') no-repeat;
+  background-size: 100% 100%;
+  margin-left: 10px;
+}
+.appleApp{
+  width: 135px;
+  height: 40px;
+  background: url('../../../static/img/appleApp.png') no-repeat;
+  background-size: 100% 100%;
 }

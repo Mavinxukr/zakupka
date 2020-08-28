@@ -115,7 +115,7 @@ class BlogCaseImages(TranslatableModel):
 
         translations = TranslatedFields(
             name=models.CharField(max_length=100, verbose_name=_('vnm_blog_case_name')),
-            description=models.CharField(max_length=256, verbose_name=_('vnm_blog_case_desc'))
+            description=models.TextField(verbose_name=_('vnm_blog_case_desc'))
         )
 
         image = models.ImageField(verbose_name=_('vnm_case_images'), null=True,

@@ -29,12 +29,15 @@ position: relative;
     &.active{
         background-color: $colorMain;
         color: $colorWhite;
+        &:hover{
+            background-color: darken($colorMain,10%);
+        }
         .icon{
             color: $colorWhite;
         }
         &:after{
             content: '';
-            width: 0; 
+            width: 0;
             height: 0;
             position: absolute;
             right: -15px;
@@ -42,6 +45,11 @@ position: relative;
             border-top: 15px solid transparent;
             border-left: 15px solid $colorMain;
             border-bottom: 15px solid transparent;
+        }
+
+        &:hover:after{
+            border-left: 15px solid darken($colorMain,10%);
+
         }
         & .title{
             color: $colorWhite;
@@ -53,9 +61,6 @@ position: relative;
         position: relative;
         margin-left: 5px;
         cursor: pointer;
-        &:hover{
-        color: #333;
-        }
     }
     .icon{
         width: 25px;

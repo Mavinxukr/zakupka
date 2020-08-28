@@ -1,84 +1,16 @@
 @import '../../../styles/core/vars';
-
+.footer{
+  width: 100%;
+  height: 100px;
+  background-color: $colorFooter;
+  margin: 0;
+}
 .container{
   width: 90%;
   margin: 0 auto;
-}
-.footer {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  &Container{
-    width: 100%;
-    height: 66px;
-    display: flex;
-    justify-content: center;
-    background-color: $colorGreyHover;
+  padding: 20px;
+  p{
+    font-size: 14px;
+    margin-bottom: 15px;
   }
-  .menu{
-    display: flex;
-    height: 100%;
-    align-items: center;
-  }
-  .bottom{
-    span{
-      display: block;
-      margin-top: 20px;
-    }
-    p{
-      margin-bottom: 20px;
-    }
-  }
-  .langBlock{
-    display: flex;
-    .lang{
-      padding: 10px;
-    }
-  }
-  .socialBlock{
-    display: flex;
-    .icon{
-      width: 25px;
-      height: 25px;
-      background-color: #fff;
-      cursor: pointer;
-    }
-  }
-  .link{
-    color: $colorLink;
-    margin-right: 15px;
-    font-size: $fontSizeLaptopSmall;
-    cursor: pointer;
-    &:hover{
-      text-decoration: underline;
-    }
-  }
-}
-.socialBlock{
-  margin-top: 10px;
-}
-.itemFacebook{
-  svg path {
-    fill: #3b5998;
-  }
-}
-.itemYoutube{
-  margin-left: 30px;
-}
-.apps{
-  display: flex;
-  margin-top: 20px;
-}
-.androidApp{
-  width: 135px;
-  height: 40px;
-  background: url('../../../static/img/androidApp.png') no-repeat;
-  background-size: 100% 100%;
-  margin-left: 10px;
-}
-.appleApp{
-  width: 135px;
-  height: 40px;
-  background: url('../../../static/img/appleApp.png') no-repeat;
-  background-size: 100% 100%;
 }

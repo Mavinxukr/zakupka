@@ -2,7 +2,29 @@
 
 .main {
   width: 100%;
-  padding: 20px;
   background: $colorWhite;
   margin-left: 50px;
+  padding: 20px;
+}
+
+.titleContainer{
+  width: 100%;
+  display: flex;
+  margin: 20px 0 0;
+}
+.leftBlock{
+  display: flex;
+  width: 50%;
+  padding-left: 20px;
+}
+.middleBlock{
+  display: flex;
+  width: 38%;
+  p:first-child{
+    margin-right: 80px;
+  }
+}
+.rightBLock{
+  display: flex;
+  width: 12%;
 }

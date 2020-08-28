@@ -1,191 +1,111 @@
 @import '../../../styles/core/vars';
 
 .container{
-  width: 1200px;
+  width: 90%;
+  height: 100%;
   margin: 0 auto;
-}
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
 
-.header{
-  width: 100%;
-  height: 55px;
-  border-bottom: 1px solid $colorBorder;
-  font-size: $fontSizeLaptopSmall;
-  box-shadow: 0 0 2px rgba(0,0,0,0.3);
-}
-.headerContainer{
-  width: 100%;
-  height: inherit;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-nav{
-  display: flex;
-  height: 55px;
-  border-left: 1px solid $colorBorder;
-}
-.logo{
-  width: 188px;
-  height: inherit;
-}
-.tel{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 65px;
-  height: inherit;
-  border-right: 1px solid $colorBorder;
-  position: relative;
-  cursor: pointer;
-  .showContainer{
-    position: absolute;
-    top: 55px;
-    left: 0px;
-    padding-top: 5px;
-    z-index: 999;
-    background-color: transparent;
-  }
-  .show{
-    display: none;
-    flex-direction: column;
+  .logo{
+    display: flex;
     align-items: center;
-    justify-content: center;
-    width: 150px;
-    background-color: $colorWhite;
-    padding: 10px;
-    span{
-      padding: 5px 0;
-      color: $colorGrey;
-    }
-    a{
-      margin: 5px 0;
-    }
-    .buttonCall{
-      width: 80%;
-      height: 40px;
-      border: 1px solid green;
-      color: green;
-      padding: 5px;
-      border-radius: 5px;
-    }
+    font-size: 38px;
+    color: $colorMain;
+    text-transform: uppercase;
   }
 }
-.tel:hover .show{
-  display: flex;
+.header{
+  height: 65px;
+  background-color: $colorWhite;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  z-index: 999;
 }
-.mail{
+.rightBlock{
   display: flex;
-  justify-content: center;
   align-items: center;
-  width: 64px;
-  height: inherit;
-  border-right: 1px solid $colorBorder;
-  cursor: pointer;
 }
-.searchTrade{
+.phoneBlock{
+  height: 100%;
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  width: 154px;
-  height: inherit;
   border-right: 1px solid $colorBorder;
-  color: $colorGrey;
-  cursor: pointer;
-  p{
-    margin-left: 5px;
+  .mail{
+    margin-right: 20px;
   }
 }
-.otherServices{
-  display: flex;
+.phoneBlockInside{
+  width: 220px;
+  display: none;
   flex-direction: column;
-  align-items: center;
-  width: 64px;
-  height: inherit;
-  border-right: 1px solid $colorBorder;
-  justify-content: center;
-  cursor: pointer;
-}
-.prozorroSales{
-  width: 170px;
-  height: inherit;
-  border-right: 1px solid $colorBorder;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin-left: 10px;
-  position: relative;
-  cursor: pointer;
-  .content{
+  position: absolute;
+  top: 65px;
+  background-color: $colorWhite;
+  border: 1px solid $colorBorder;
+  padding: 5px;
+  .workDays{
+    width: 100%;
     display: flex;
     flex-direction: column;
-    h2{
-      display: inline-block;
-      font-size: $fontSizeContent;
-    }
-    span{
-      font-size: $fontSizeLaptopSmall;
-      color: $colorGrey;
-    }
+    margin-bottom: 5px;
   }
-  .list{
-    display: none;
-    width: 170px;
-    position: absolute;
-    top: 55px;
-    left: -10px;
-    z-index: 999;
-    .item:first-child{
-      margin-top: 5px;
-    }
-    .item{
-      background-color: $colorWhite;
-      padding: 10px;
-      &:hover{
-        transition: .5s;
-        background-color: $colorGreyHover;
-      }
-    }
+  span{
+    color: $colorGrey;
+  }
+}
+.telContainer{
+
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  margin-right: 40px;
+  &:hover .phoneBlockInside{
+    display: inline-flex;
   }
 }
 
-.prozorroSales:hover .iconArrow{
-  transition: .3s;
-  transform: rotate(0deg);
-}
-.prozorroSales:hover .list{
-  display: block;
-}
-.register{
-  height: inherit;
+.exit{
   display: flex;
-  justify-content: center;
   align-items: center;
-  width: 144px;
-  height: inherit;
-  background-color: #22b14c;
+  margin-left: 40px;
+  button{
+    margin-right: 40px;
+    transition: .3s;
+    font-size: 18px;
+  }
+}
+
+.userRoom{
+  background-color: $colorMain;
+  padding: 10px;
+  border-radius: 5px;
   color: $colorWhite;
-  cursor: pointer;
+  &:hover{
+    background-color: darken($colorMain,10%);
+  }
 }
 .enter{
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  height: inherit;
-  margin-left: 20px;
-  color: #00a1cd;
-  cursor: pointer;
+  color: $colorMain;
+  padding: 2px;
 }
 
-.icon {
-  width: 20px;
-  height: 20px;
+.icon{
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
 }
-.iconArrow{
-  width: 10px;
-  height: 10px;
-  margin-right: 15px;
-  transform: rotate(180deg);
+.iconTel{
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
 }
+
+.iconTel path, .icon path{
+  fill: $colorMain;
+}
+

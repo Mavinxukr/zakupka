@@ -17,28 +17,53 @@ const MainMenu = () => (
         activeClassName={styles.active}
       >
         <IconBriefcase className={styles.icon} />
-        <h2 className={styles.title}>Закупки</h2>
+        <p className={styles.title}>Закупки</p>
       </NavLink>
-      <div className={styles.tab}>
+      <NavLink
+        to="/"
+        exact
+        className={styles.tab}
+        activeClassName={styles.active}
+      >
         <IconUser className={styles.icon} />
-        <h2 className={styles.title}>подписки</h2>
-      </div>
-      <div className={styles.tab}>
+        <p className={styles.title}>подписки</p>
+      </NavLink>
+      <NavLink
+        to="/"
+        exact
+        className={styles.tab}
+        activeClassName={styles.active}
+      >
         <IconCar className={styles.icon} />
-        <h2 className={styles.title}>профиль</h2>
-      </div>
-      <div className={styles.tab}>
+        <p className={styles.title}>профиль</p>
+      </NavLink>
+      <NavLink
+        to="/"
+        exact
+        className={styles.tab}
+        activeClassName={styles.active}
+      >
         <IconCog className={styles.icon} />
-        <h2 className={styles.title}>оплаты</h2>
-      </div>
-      <div className={styles.tab}>
+        <p className={styles.title}>оплаты</p>
+      </NavLink>
+      <NavLink
+        to="/"
+        exact
+        className={styles.tab}
+        activeClassName={styles.active}
+      >
         <IconCog className={styles.icon} />
-        <h2 className={styles.title}>Настройки</h2>
-      </div>
-      <div className={styles.tab}>
+        <p className={styles.title}>Настройки</p>
+      </NavLink>
+      <NavLink
+        to="/"
+        exact
+        className={styles.tab}
+        activeClassName={styles.active}
+      >
         <IconInbox className={styles.icon} />
-        <h2 className={styles.title}>уведомление</h2>
-      </div>
+        <p className={styles.title}>уведомление</p>
+      </NavLink>
     </div>
   </div>
 );

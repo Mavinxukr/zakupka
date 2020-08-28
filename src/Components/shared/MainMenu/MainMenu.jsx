@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import styles from './MainMenu.scss';
 import IconCar from '../../../static/svg/car-solid.svg';
 import IconCog from '../../../static/svg/cog-solid.svg';
@@ -9,10 +10,15 @@ import IconBriefcase from '../../../static/svg/briefcase-solid.svg';
 const MainMenu = () => (
   <div className={styles.container}>
     <div className={styles.tabs}>
-      <div className={`${styles.tab} ${styles.active}`}>
+      <NavLink
+        to="/"
+        exact
+        className={styles.tab}
+        activeClassName={styles.active}
+      >
         <IconBriefcase className={styles.icon} />
         <h2 className={styles.title}>Закупки</h2>
-      </div>
+      </NavLink>
       <div className={styles.tab}>
         <IconUser className={styles.icon} />
         <h2 className={styles.title}>подписки</h2>

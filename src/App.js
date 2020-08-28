@@ -1,10 +1,13 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 import Sales from './Pages/Sales/Sales';
 import './index.scss';
 
 const App = () => (
   <div>
-    <Sales />
+    <Switch>
+      <Route path="/" component={Sales} />
+    </Switch>
   </div>
 );
 

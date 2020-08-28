@@ -29,7 +29,7 @@ Mavinx - {{ blog.name }}
 <div class="container blog-info">
 {% for case in blog.blog_case_images.all %}
     <h3 class="h3 fontMedium">{{ case.name }}</h3>
-    <p class="fontRegular">{{ case.description }}</p>
+    <p class="fontRegular">{{ case.description|safe }}</p>
     <img src="/media/{{ case.image }}" alt="">
 {% endfor %}
 </div>

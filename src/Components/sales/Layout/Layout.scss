@@ -1,16 +1,38 @@
 @import '../../../styles/core/vars';
 
+.flexContainer{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+}
+
+//Tabs
+.tabActive{
+  background-color: $colorWhite;
+  height: 50px;
+  border: 1px solid $colorBorder;
+  border-color: $colorBorder $colorBorder $colorWhite;
+  padding: 0 20px 0 20px;
+  border-radius: 5px 5px 0 0;
+}
+
 .main {
   width: 100%;
-  background: $colorWhite;
   margin-left: 50px;
+}
+.bgWhite {
+  background: $colorWhite;
   padding: 20px;
+  border: 1px solid $colorBorder;
+  border-radius: 5px;
 }
 
 .titleContainer{
   width: 100%;
   display: flex;
   margin: 20px 0 0;
+  border: 22px;
 }
 .leftBlock{
   display: flex;
@@ -19,12 +41,13 @@
 }
 .middleBlock{
   display: flex;
-  width: 38%;
+  width: 37%;
   p:first-child{
-    margin-right: 80px;
+    margin-right: 30px;
   }
 }
 .rightBLock{
   display: flex;
   width: 12%;
 }
+

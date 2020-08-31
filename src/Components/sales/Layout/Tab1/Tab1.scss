@@ -1,15 +1,17 @@
-@import "../../../styles/core/vars";
+@import '../../../../styles/core/vars';
 
 .bgWhite {
   background: $colorWhite;
   margin-top: 10px;
   border: 1px solid $colorBorder;
   border-radius: 5px;
+  padding: 20px;
 }
 
 .titleContainer{
   width: 100%;
   display: flex;
+  align-items: flex-start;
   padding: 10px;
   box-sizing: border-box;
 }

@@ -62,7 +62,7 @@ const Header = () => (
         </div>
         <div className={styles.exit}>
           <button className={styles.userRoom} type="button">Кабинет</button>
-          <button className={styles.enter} type="button"> <IconExit className={styles.icon} /> Выйти</button>
+          <button className={styles.enter} type="button"><IconExit className={styles.icon} /> Выйти</button>
         </div>
       </div>
     </div>

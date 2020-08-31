@@ -92,3 +92,18 @@
     fill: #848484;
   }
 }
+.pills{
+  background-color: $colorWhite;
+  width: 100%;
+  border: 1px solid $colorBorder;
+  padding: 20px 0;
+  border-radius: 0 5px 5px 5px;
+  button{
+    height: 30px;
+    padding: 0 10px;
+    margin:0 10px;
+    border: 1px solid $colorMain;
+    background-color: transparent;
+    border-radius: 5px;
+  }
+}

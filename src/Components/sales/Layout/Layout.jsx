@@ -22,15 +22,15 @@ const Panel = ({ children }) => {
 const Layout = () => (
   <div className={styles.flexContainer}>
     <Tabs>
-      <div>
+      <div className={styles.buttonTabs}>
         <Tab>
-          закупки 1
+          <span className={styles.iconBriefcase}>Все закупки</span>
         </Tab>
         <Tab>
-          закупки 2
+          <span className={styles.iconList}>Планы закупок</span>
         </Tab>
         <Tab>
-          закупки 3
+          <span className={styles.iconAllergies}>Жалобы</span>
         </Tab>
       </div>
       <Panel>

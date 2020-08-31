@@ -5,11 +5,16 @@
   display: flex;
   flex-direction: column;
   margin-left: 50px;
+  position: relative;
 }
 
 //Tabs
+.buttonTabs{
+  position: absolute;
+  top: -49px;
+}
 .tab {
-  border: 1px solid;
+  padding: 0 10px;
 }
 
 .tabActive{
@@ -54,4 +59,26 @@
   display: flex;
   width: 12%;
 }
+.iconBriefcase:before{
+  content: url('../../../static/svg/briefcase-solid.svg');
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  margin-right: 5px;
+}
 
+.iconList:before{
+  content: url('../../../static/svg/list.svg');
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.iconAllergies:before{
+  content: url('../../../static/svg/allergies.svg');
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  margin-right: 5px;
+}

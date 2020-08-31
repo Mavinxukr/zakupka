@@ -5,20 +5,30 @@
   display: flex;
   flex-direction: column;
   margin-left: 50px;
+  position: relative;
 }
 
 //Tabs
-.tab {
-  border: 1px solid;
+.buttonTabs{
+  position: absolute;
+  top: -49px;
 }
 
-.tabActive{
+.tab{
+  display: inline-flex;
+  align-items: center;
   background-color: $colorWhite;
   height: 50px;
   border: 1px solid $colorBorder;
   border-color: $colorBorder $colorBorder $colorWhite;
   padding: 0 20px 0 20px;
   border-radius: 5px 5px 0 0;
+  &:hover{
+    background-color: darken($colorWhite,2%);
+  }
+}
+.tabActive {
+  background-color: darken($colorWhite,2%);
 }
 
 .main {
@@ -54,4 +64,11 @@
   display: flex;
   width: 12%;
 }
-
+.icon{
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+.icon path{
+  fill: $colorMain;
+}

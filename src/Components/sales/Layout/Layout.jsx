@@ -1,11 +1,17 @@
 import React from 'react';
+import cx from 'classnames';
 import { Tabs, useTabState, usePanelState } from '@bumaga/tabs';
 import styles from './Layout.scss';
 import Tab1 from './Tab1/Tab1';
 
 const Tab = ({ children }) => {
-  const { onClick } = useTabState();
-  return <button type="button" onClick={onClick}>{children}</button>;
+  const { isActive, onClick } = useTabState();
+
+  return (
+    <button type="button" className={cx(styles.tab, isActive && styles.tabActive)} onClick={onClick}>
+      {children}
+    </button>
+  );
 };
 
 const Panel = ({ children }) => {
@@ -18,7 +24,7 @@ const Layout = () => (
     <Tabs>
       <div>
         <Tab>
-          Закупки
+          закупки 1
         </Tab>
         <Tab>
           закупки 2

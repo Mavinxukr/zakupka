@@ -8,6 +8,10 @@
 }
 
 //Tabs
+.tab {
+  border: 1px solid;
+}
+
 .tabActive{
   background-color: $colorWhite;
   height: 50px;

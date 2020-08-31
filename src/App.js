@@ -6,7 +6,7 @@ import './index.scss';
 const App = () => (
   <div>
     <Switch>
-      <Route path="/" component={Sales} />
+      <Route exact path="/" component={Sales} />
     </Switch>
   </div>
 );

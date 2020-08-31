@@ -29,7 +29,7 @@ const MainMenu = () => (
         <p className={styles.title}>подписки</p>
       </NavLink>
       <NavLink
-        to="/"
+        to="/registration"
         exact
         className={styles.tab}
         activeClassName={styles.active}

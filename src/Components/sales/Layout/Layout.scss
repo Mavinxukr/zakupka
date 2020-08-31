@@ -13,17 +13,22 @@
   position: absolute;
   top: -49px;
 }
-.tab {
-  padding: 0 10px;
-}
 
-.tabActive{
+.tab{
+  display: inline-flex;
+  align-items: center;
   background-color: $colorWhite;
   height: 50px;
   border: 1px solid $colorBorder;
   border-color: $colorBorder $colorBorder $colorWhite;
   padding: 0 20px 0 20px;
   border-radius: 5px 5px 0 0;
+  &:hover{
+    background-color: darken($colorWhite,2%);
+  }
+}
+.tabActive {
+  background-color: darken($colorWhite,2%);
 }
 
 .main {
@@ -59,26 +64,11 @@
   display: flex;
   width: 12%;
 }
-.iconBriefcase:before{
-  content: url('../../../static/svg/briefcase-solid.svg');
-  width: 25px;
-  height: 25px;
-  display: inline-block;
-  margin-right: 5px;
+.icon{
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
 }
-
-.iconList:before{
-  content: url('../../../static/svg/list.svg');
-  width: 25px;
-  height: 25px;
-  display: inline-block;
-  margin-right: 5px;
-}
-
-.iconAllergies:before{
-  content: url('../../../static/svg/allergies.svg');
-  width: 25px;
-  height: 25px;
-  display: inline-block;
-  margin-right: 5px;
+.icon path{
+  fill: $colorMain;
 }

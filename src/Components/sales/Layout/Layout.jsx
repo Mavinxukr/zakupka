@@ -3,6 +3,9 @@ import cx from 'classnames';
 import { Tabs, useTabState, usePanelState } from '@bumaga/tabs';
 import styles from './Layout.scss';
 import Tab1 from './Tab1/Tab1';
+import IconAllergies from '../../../static/svg/briefcase-solid.svg';
+import IconList from '../../../static/svg/list.svg';
+import IconBriefcase from '../../../static/svg/allergies.svg';
 
 const Tab = ({ children }) => {
   const { isActive, onClick } = useTabState();
@@ -24,13 +27,16 @@ const Layout = () => (
     <Tabs>
       <div className={styles.buttonTabs}>
         <Tab>
-          <span className={styles.iconBriefcase}>Все закупки</span>
+          <IconBriefcase className={styles.icon} />
+          <span>Все закупки</span>
         </Tab>
         <Tab>
-          <span className={styles.iconList}>Планы закупок</span>
+          <IconList className={styles.icon} />
+          <span>Планы закупок</span>
         </Tab>
         <Tab>
-          <span className={styles.iconAllergies}>Жалобы</span>
+          <IconAllergies className={styles.icon} />
+          <span>Жалобы</span>
         </Tab>
       </div>
       <Panel>

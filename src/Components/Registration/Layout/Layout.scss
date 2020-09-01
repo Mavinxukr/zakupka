@@ -1,0 +1,30 @@
+@import '../../../styles/core/vars';
+
+.registration {
+  max-width: 400px;
+  width: 100%;
+  margin: 20px auto;
+}
+
+.registrationTitle {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.blockSubmit {
+  text-align: center;
+}
+
+.btnSubmit {
+  padding: 10px 20px;
+  background: $colorMain;
+  margin: 5px auto;
+
+  &:hover {
+    color: $colorWhite;
+  }
+}
+
+.label {
+  margin-bottom: 5px;
+}

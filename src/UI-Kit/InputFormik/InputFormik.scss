@@ -1,0 +1,15 @@
+@import '../../styles/core/vars';
+
+.wrapper {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.label {
+  margin: 0 0 5px;
+}
+
+.errorText {
+  margin-top: 5px;
+  color: $colorError;
+}

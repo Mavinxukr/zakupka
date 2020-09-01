@@ -1,0 +1,14 @@
+@import '../../styles/core/vars';
+
+.inputWrapper {
+  width: 100%;
+}
+
+.errorLine {
+  border-color: $colorError;
+}
+
+.input {
+  width: 94%;
+  padding: 5px 10px;
+}

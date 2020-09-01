@@ -83,6 +83,12 @@ textarea {
   resize: none;
 }
 
+select {
+  padding: 5px 10px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
 @media screen and (max-width: 1600px) {
   body {
     font-size: $fontSizeLaptop;

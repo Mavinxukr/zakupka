@@ -21,9 +21,6 @@ const Input = ({
 
   return (
     <div className={styles.inputWrapper}>
-      {(touched[name] && errors[name]) && (
-        <span className={styles.errorLine} />
-      )}
       <input
         type={type}
         value={values[name]}
@@ -31,7 +28,9 @@ const Input = ({
           handleChange(e);
         }}
         onBlur={handleBlur}
-        className={classNameForInput}
+        className={cx(styles.input, classNameForInput, {
+          [styles.errorLine]: (touched[name] && errors[name]),
+        })}
         id={id}
         name={name}
         placeholder={placeholder}

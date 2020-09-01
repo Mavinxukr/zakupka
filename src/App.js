@@ -5,12 +5,12 @@ import Registration from './Pages/Registration/Registration';
 import './index.scss';
 
 const App = () => (
-  <div>
+  <>
     <Switch>
       <Route exact path="/" component={Sales} />
       <Route exact path="/registration" component={Registration} />
     </Switch>
-  </div>
+  </>
 );
 
 export default App;

@@ -19,7 +19,7 @@ const Tab = ({ children }) => {
 
 const Panel = ({ children }) => {
   const isActive = usePanelState();
-  return isActive ? <p>{children}</p> : null;
+  return isActive ? <div>{children}</div> : null;
 };
 
 const Layout = () => (

@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Formik, Field } from 'formik';
-import { useHistory } from 'react-router-dom';
+import { useHistory, NavLink } from 'react-router-dom';
 import cx from 'classnames';
 import * as Yup from 'yup';
 import { registration } from '../../../services/user';
@@ -8,6 +8,7 @@ import InputFormik from '../../../UI-Kit/InputFormik/InputFormik';
 import styles from './Layout.scss';
 
 const Layout = () => {
+  const [error, setError] = useState(false);
   const history = useHistory();
   const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 
@@ -15,8 +16,14 @@ const Layout = () => {
     registration(
       {},
       values,
-    );
-    history.push('/login');
+    )
+      .then((response) => {
+        if (response.errors) {
+          setError(true);
+          return;
+        }
+        history.push('/login');
+      });
   };
 
   return (
@@ -117,6 +124,9 @@ const Layout = () => {
                 placeholder: '*****',
               }}
             />
+            {error && (
+              <p className={styles.errorText}>Користувач з такими даними вже існує</p>
+            )}
             <div className={styles.blockSubmit}>
               <button
                 className={cx(styles.btnSubmit, {
@@ -127,6 +137,7 @@ const Layout = () => {
                 Реєстрація
               </button>
             </div>
+            <p>Або <NavLink className={styles.login} to="/login" exact>Ввійдіть</NavLink>, якщо у вас вже є профіль</p>
           </form>
         )}
       </Formik>

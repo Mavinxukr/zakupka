@@ -1,12 +1,12 @@
 @import '../../../styles/core/vars';
 
-.registration {
+.loginPage {
   max-width: 400px;
   width: 100%;
   margin: 20px auto;
 }
 
-.registrationTitle {
+.loginTitle {
   margin-bottom: 20px;
   text-align: center;
 }
@@ -33,13 +33,4 @@
   &:hover {
     color: $colorWhite;
   }
-}
-
-.errorText {
-  margin: 5px 0;
-  color: $colorError;
-}
-
-.label {
-  margin-bottom: 5px;
 }

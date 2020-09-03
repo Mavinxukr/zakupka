@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import styles from './Header.scss';
 import IconCall from '../../../static/svg/phone.svg';
 import IconExit from '../../../static/svg/exit.svg';
@@ -61,7 +62,13 @@ const Header = () => (
           <a href="email: /" className={styles.mail}>Напишіть нам</a>
         </div>
         <div className={styles.exit}>
-          <button className={styles.userRoom} type="button">Кабінет</button>
+          <NavLink
+            to="/profile"
+            exact
+            className={styles.userRoom}
+          >
+            Кабінет
+          </NavLink>
           <button className={styles.enter} type="button"><IconExit className={styles.icon} /> Вийти</button>
         </div>
       </div>

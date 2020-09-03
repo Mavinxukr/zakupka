@@ -34,27 +34,18 @@
 }
 .middleBlock{
   display: flex;
-  justify-content: flex-start;
   align-items: center;
   p{
-    margin-right: 70px;
+    margin-right: 80px;
   }
   p:last-child{
-    margin: 0;
-  }
-  div{
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    margin-right: 25px;
+    margin-left: 50px;
+    margin-right: 70px;
   }
   .sumBlock{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     margin-right: 80px;
   }
 }
@@ -66,7 +57,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
 }
 .period{
   font-size: 13px;
@@ -78,16 +68,25 @@
   color: #848484;
   margin-bottom: 10px;
 }
-.contentText{
+
+.customer{
+  width: 130px;
   font-size: 13px;
   color: #333;
-  margin-bottom: 10px;
+  text-align: center;
+}
+.provider{
+  width: 100px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 50px;
 }
 .iconBlock{
   display: flex;
   align-items: center;
   position: relative;
-  margin-left: 20px;
 }
 .iconStar{
   width: 20px;

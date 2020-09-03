@@ -7,13 +7,13 @@ const Tab2 = () => (
   <div className={styles.main}>
     <div className={styles.bgWhite}>
       <Filter className={styles.top} />
-      <h1 className={styles.titleFilter}>Державні закупівлі
+      <h1 className={styles.titleFilter}>Плани закупівель
       </h1>
       <div className={styles.titleContainer}>
         <p className={styles.leftBlock}>Предмет закупівлі</p>
         <div className={styles.middleBlock}>
-          <p> Очікувана вартість </p>
-          <p>Важливі дати</p>
+          <p>Планова сума закупівлі</p>
+          <p>Початок процедури</p>
         </div>
         <p>Статус</p>
       </div>
@@ -39,22 +39,7 @@ const Tab2 = () => (
           </div>
           <div>
             <span className={styles.contentText}>
-              Объявлена::
-            </span>
-            <span className={styles.data}>
-              31 серп., 11:19
-            </span>
-            <span className={styles.contentText}>
-              Завершение периода уточнений:
-            </span>
-            <span className={styles.data}>
-              31 серп., 11:45
-            </span>
-            <span className={styles.contentText}>
-              Прием предложений:
-            </span>
-            <span className={styles.data}>
-              31 серп., 11:19 – 31 серп., 11:55
+              вересень, 2020
             </span>
           </div>
         </div>

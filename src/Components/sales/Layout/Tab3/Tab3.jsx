@@ -43,7 +43,16 @@ const Tab3 = () => (
             <span className={styles.sum}>25 000,00 ₴</span>
             <span className={styles.data}>c НДС</span>
           </div>
-          <div>
+          <div className={styles.sumBlock}>
+            <span className={styles.sum}>25 000,00 ₴</span>
+            <span className={styles.data}>c НДС</span>
+          </div>
+          <div className={styles.customer}>
+            <span>
+              Відділ освіти виконавчого комітету Софіївської селищної ради Софіївського району Дніпропетровської області
+            </span>
+          </div>
+          <div className={styles.provider}>
             <span className={styles.contentText}>
               Объявлена::
             </span>

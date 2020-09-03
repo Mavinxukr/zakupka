@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import Sales from './Pages/Sales/Sales';
 import Registration from './Pages/Registration/Registration';
 import Login from './Pages/Login/Login';
+import UserProfile from './Pages/UserProfile/UserProfile';
 import './index.scss';
 
 const App = () => (
@@ -11,6 +12,7 @@ const App = () => (
       <Route exact path="/" component={Sales} />
       <Route exact path="/registration" component={Registration} />
       <Route exact path="/login" component={Login} />
+      <Route exact path="/UserProfile" component={UserProfile} />
     </Switch>
   </>
 );

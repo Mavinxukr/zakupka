@@ -6,8 +6,7 @@
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  font-size: 18px;
-
+  font-size: 16px;
 
   .logo{
     display: flex;
@@ -32,6 +31,7 @@
   display: flex;
   align-items: center;
   border-right: 1px solid $colorBorder;
+  z-index: 999;
   .mail{
     margin-right: 20px;
   }
@@ -56,7 +56,6 @@
   }
 }
 .telContainer{
-
   height: 100%;
   display: flex;
   flex-direction: column;

@@ -17,7 +17,7 @@ const MainMenu = () => (
         activeClassName={styles.active}
       >
         <IconBriefcase className={styles.icon} />
-        <p className={styles.title}>Закупки</p>
+        <p className={styles.title}>Закупівлі</p>
       </NavLink>
       <NavLink
         to="/"
@@ -26,7 +26,7 @@ const MainMenu = () => (
         activeClassName={styles.active}
       >
         <IconUser className={styles.icon} />
-        <p className={styles.title}>подписки</p>
+        <p className={styles.title}>Підписки</p>
       </NavLink>
       <NavLink
         to="/registration"
@@ -35,7 +35,7 @@ const MainMenu = () => (
         activeClassName={styles.active}
       >
         <IconCar className={styles.icon} />
-        <p className={styles.title}>профиль</p>
+        <p className={styles.title}>Профіль</p>
       </NavLink>
       <NavLink
         to="/"
@@ -44,7 +44,7 @@ const MainMenu = () => (
         activeClassName={styles.active}
       >
         <IconCog className={styles.icon} />
-        <p className={styles.title}>оплаты</p>
+        <p className={styles.title}>Оплати</p>
       </NavLink>
       <NavLink
         to="/"
@@ -53,7 +53,7 @@ const MainMenu = () => (
         activeClassName={styles.active}
       >
         <IconCog className={styles.icon} />
-        <p className={styles.title}>Настройки</p>
+        <p className={styles.title}>Налаштування</p>
       </NavLink>
       <NavLink
         to="/"
@@ -62,7 +62,7 @@ const MainMenu = () => (
         activeClassName={styles.active}
       >
         <IconInbox className={styles.icon} />
-        <p className={styles.title}>уведомление</p>
+        <p className={styles.title}>Сповіщення</p>
       </NavLink>
     </div>
   </div>

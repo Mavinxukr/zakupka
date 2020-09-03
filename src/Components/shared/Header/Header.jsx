@@ -58,11 +58,11 @@ const Header = () => (
             </div>
           </div>
           <IconEnvelope className={styles.icon} />
-          <a href="email: /" className={styles.mail}>Напиши нам</a>
+          <a href="email: /" className={styles.mail}>Напишіть нам</a>
         </div>
         <div className={styles.exit}>
-          <button className={styles.userRoom} type="button">Кабинет</button>
-          <button className={styles.enter} type="button"><IconExit className={styles.icon} /> Выйти</button>
+          <button className={styles.userRoom} type="button">Кабінет</button>
+          <button className={styles.enter} type="button"><IconExit className={styles.icon} /> Вийти</button>
         </div>
       </div>
     </div>

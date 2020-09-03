@@ -11,16 +11,18 @@
 .titleContainer{
   width: 100%;
   display: flex;
+  justify-content: space-between;
   align-items: flex-start;
-  padding: 10px;
+  padding: 10px 5px 5px;
   box-sizing: border-box;
+  font-size: 13px;
+  p:last-child{
+    margin-right: 100px;
+  }
 }
 .leftBlock{
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  width: 45%;
-  padding-left: 50px;
   a{
     font-size: 17px;
     color: $colorMain;
@@ -34,10 +36,11 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: 35%;
-  p:first-child{
-    width: 20px;
-    margin-right: 140px;
+  p{
+    margin-right: 70px;
+  }
+  p:last-child{
+    margin: 0;
   }
   div{
     height: 100%;
@@ -113,4 +116,10 @@
     background-color: transparent;
     border-radius: 5px;
   }
+}
+
+.titleFilter{
+  margin: 20px 0;
+  font-weight: 500;
+  font-size: 2rem;
 }

@@ -30,15 +30,15 @@ const Layout = () => (
       <div className={styles.buttonTabs}>
         <Tab>
           <IconBriefcase className={styles.icon} />
-          <span>Все закупки</span>
+          <span>Всі закупівлі</span>
         </Tab>
         <Tab>
           <IconList className={styles.icon} />
-          <span>Планы закупок</span>
+          <span>Плани закупівель</span>
         </Tab>
         <Tab>
           <IconAllergies className={styles.icon} />
-          <span>Жалобы</span>
+          <span>Підписані контракти</span>
         </Tab>
       </div>
       <Panel>

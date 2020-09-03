@@ -20,15 +20,13 @@
   background-color: $colorWhite;
   height: 50px;
   border: 1px solid $colorBorder;
-  border-color: $colorBorder $colorBorder $colorWhite;
   padding: 0 20px 0 20px;
   border-radius: 5px 5px 0 0;
-  &:hover{
-    background-color: darken($colorWhite,2%);
-  }
+  background-color: darken($colorWhite,2%);
 }
 .tabActive {
-  background-color: darken($colorWhite,2%);
+  background-color: $colorWhite;
+  border-bottom: 1px solid $colorWhite;
 }
 
 .main {

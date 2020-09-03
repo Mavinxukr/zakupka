@@ -7,11 +7,13 @@ const Tab2 = () => (
   <div className={styles.main}>
     <div className={styles.bgWhite}>
       <Filter className={styles.top} />
+      <h1 className={styles.titleFilter}>Державні закупівлі
+      </h1>
       <div className={styles.titleContainer}>
-        <p className={styles.leftBlock}>Предмет закупки</p>
+        <p className={styles.leftBlock}>Предмет закупівлі</p>
         <div className={styles.middleBlock}>
-          <p>Ожидаемая стоимость</p>
-          <p>Важные даты</p>
+          <p> Очікувана вартість </p>
+          <p>Важливі дати</p>
         </div>
         <p>Статус</p>
       </div>

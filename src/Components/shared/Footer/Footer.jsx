@@ -5,7 +5,7 @@ const Footer = () => (
   <div className={styles.footer}>
     <div className={styles.container}>
       <p>© company, 2016-2018</p>
-      <p>Аккредитованный участник электронной системы публичных закупок Украины ProZorro</p>
+      <p>Акредитований учасник електронної системи державних закупівель України ProZorroo</p>
     </div>
   </div>
 

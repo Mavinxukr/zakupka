@@ -10,14 +10,18 @@ const Tab3 = () => (
       <button type="button">избранные</button>
     </div>
     <div className={styles.bgWhite}>
-      <Filter className={styles.top} />
+      <Filter />
+      <h1 className={styles.titleFilter}>Підписані контракти
+      </h1>
       <div className={styles.titleContainer}>
-        <p className={styles.leftBlock}>Предмет закупки</p>
+        <p className={styles.leftBlock}>Предмет закупівлі</p>
         <div className={styles.middleBlock}>
-          <p>Ожидаемая стоимость</p>
-          <p>Важные даты</p>
+          <p>Очікувана вартість</p>
+          <p>Сума контракту</p>
+          <p>Замовник</p>
+          <p>Постачальник</p>
+          <p>Статус</p>
         </div>
-        <p>Статус</p>
       </div>
     </div>
     <div className={styles.bgWhite}>

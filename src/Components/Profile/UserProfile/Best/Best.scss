@@ -1,0 +1,102 @@
+@import '../../../../styles/core/vars';
+
+.container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  max-width: 1400px;
+  min-height: 64vh;
+  margin: 100px auto 100px;
+}
+
+.flexContainer{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+  position: relative;
+}
+
+//Tabs
+.buttonTabs{
+  position: absolute;
+  top: -49px;
+}
+
+.tab{
+  display: inline-flex;
+  align-items: center;
+  background-color: $colorWhite;
+  height: 50px;
+  border: 1px solid $colorBorder;
+  padding: 0 20px 0 20px;
+  border-radius: 5px 5px 0 0;
+  background-color: darken($colorWhite,2%);
+}
+.tabActive {
+  background-color: $colorWhite;
+  border-bottom: 1px solid $colorWhite;
+  .icon path{
+    fill: $colorMain;
+  }
+}
+
+.main {
+  width: 100%;
+  margin-left: 50px;
+}
+.bgWhite {
+  background: $colorWhite;
+  padding: 20px;
+  border: 1px solid $colorBorder;
+  border-radius: 5px;
+}
+
+.titleContainer{
+  width: 100%;
+  display: flex;
+  margin: 20px 0 0;
+  border: 22px;
+}
+.leftBlock{
+  display: flex;
+  width: 50%;
+  padding-left: 20px;
+}
+.middleBlock{
+  display: flex;
+  width: 37%;
+  p:first-child{
+    margin-right: 30px;
+  }
+}
+.rightBLock{
+  display: flex;
+  width: 12%;
+}
+.icon{
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+.icon path{
+  fill: $colorBorder;
+}
+
+// Menu
+
+.menu{
+  display: flex;
+  width: 100%;
+  padding: 0 5px;
+}
+.menuItem{
+  width: calc(100%/3);
+  text-align: center;
+  padding: 20px;
+  border-bottom: 1px solid $colorBorder;
+}
+.menuItemActive{
+  color: $colorMain;
+  border-bottom: 2px solid $colorMain;
+}

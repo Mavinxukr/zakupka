@@ -1,4 +1,4 @@
-@import '../../styles/core/vars';
+@import '../../../../styles/core/vars';
 
 .container {
   display: flex;
@@ -81,4 +81,22 @@
 }
 .icon path{
   fill: $colorBorder;
+}
+
+// Menu
+
+.menu{
+  display: flex;
+  width: 100%;
+  padding: 0 5px;
+}
+.menuItem{
+  width: calc(100%/3);
+  text-align: center;
+  padding: 20px;
+  border-bottom: 1px solid $colorBorder;
+}
+.menuItemActive{
+  color: $colorMain;
+  border-bottom: 2px solid $colorMain;
 }

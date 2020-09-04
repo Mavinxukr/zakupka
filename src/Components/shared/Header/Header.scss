@@ -83,6 +83,7 @@
   padding: 10px;
   border-radius: 5px;
   color: $colorWhite;
+  margin-right: 25px;
   &:hover{
     background-color: darken($colorMain,10%);
   }

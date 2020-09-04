@@ -63,7 +63,7 @@ const Header = () => (
         </div>
         <div className={styles.exit}>
           <NavLink
-            to="/profile"
+            to="/profile-purchases"
             exact
             className={styles.userRoom}
           >

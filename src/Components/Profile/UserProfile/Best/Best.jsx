@@ -1,17 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import Header from '../../Components/shared/Header/Header';
-import Footer from '../../Components/shared/Footer/Footer';
-import styles from './UserProfile.scss';
-import IconBriefcase from '../../static/svg/briefcase-solid.svg';
-import IconStar from '../../static/svg/star.svg';
-// import IconClock from '../../static/svg/clock.svg';
-// import IconAward from '../../static/svg/award.svg';
-// import IconCup from '../../static/svg/cup.svg';
+import styles from './Best.scss';
+import IconBriefcase from '../../../../static/svg/briefcase-solid.svg';
+import IconStar from '../../../../static/svg/star.svg';
 
-const UserProfile = () => (
+const Best = () => (
   <div>
-    <Header />
     <div className={styles.container}>
       <div className={styles.flexContainer}>
         <div className={styles.buttonTabs}>
@@ -25,7 +19,7 @@ const UserProfile = () => (
             <span>Всі закупівлі</span>
           </NavLink>
           <NavLink
-            to="/profile1"
+            to="/profile-favorite"
             exact
             className={styles.tab}
             activeClassName={styles.tabActive}
@@ -46,11 +40,16 @@ const UserProfile = () => (
           {/*  <span>Підписані контракти</span> */}
           {/* </NavLink> */}
         </div>
-        <div>1</div>
+        <div>
+          <ul className={styles.menu}>
+            <li className={`${styles.menuItem} ${styles.menuItemActive}`}>Оголошені</li>
+            <li className={styles.menuItem}>Рекомендуємо</li>
+            <li className={styles.menuItem}>Кращі</li>
+          </ul>
+        </div>
       </div>
     </div>
-    <Footer />
   </div>
 );
 
-export default UserProfile;
+export default Best;

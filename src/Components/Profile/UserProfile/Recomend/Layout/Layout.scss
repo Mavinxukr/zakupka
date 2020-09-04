@@ -15,12 +15,14 @@
   flex-direction: column;
   margin-left: 50px;
   position: relative;
+  background-color: $colorWhite;
 }
 
 //Tabs
 .buttonTabs{
   position: absolute;
-  top: -49px;
+  top: -51px;
+  z-index: 999;
 }
 
 .tab{
@@ -49,31 +51,9 @@
   background: $colorWhite;
   padding: 20px;
   border: 1px solid $colorBorder;
-  border-radius: 5px;
+  border-radius: 0 5px 5px 5px;
 }
 
-.titleContainer{
-  width: 100%;
-  display: flex;
-  margin: 20px 0 0;
-  border: 22px;
-}
-.leftBlock{
-  display: flex;
-  width: 50%;
-  padding-left: 20px;
-}
-.middleBlock{
-  display: flex;
-  width: 37%;
-  p:first-child{
-    margin-right: 30px;
-  }
-}
-.rightBLock{
-  display: flex;
-  width: 12%;
-}
 .icon{
   width: 20px;
   height: 20px;
@@ -87,8 +67,9 @@
 
 .menu{
   display: flex;
-  width: 100%;
-  padding: 0 5px;
+  width: 90%;
+  padding: 20px 5px;
+  margin: 0 auto;
 }
 .menuItem{
   width: calc(100%/3);
@@ -99,4 +80,50 @@
 .menuItemActive{
   color: $colorMain;
   border-bottom: 2px solid $colorMain;
+}
+
+// sort
+.sortBlock{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 20px 0 20px;
+}
+.sort{
+  display: flex;
+  b{
+    margin-right: 20px;
+  }
+}
+.titleContainer{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px 5px 5px;
+  box-sizing: border-box;
+  font-size: 13px;
+  margin-top: 30px;
+  p:last-child{
+    margin-right: 140px;
+  }
+}
+
+.middleBlock {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-left: 400px;
+  p:first-child {
+    margin-right: 80px;
+  }
+
+  p:last-child {
+    margin-right: 20px;
+  }
+}
+
+.textLow{
+  font-size: 11px;
+  color: #848484;
+  margin-bottom: 10px;
 }

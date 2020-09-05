@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import cookies from 'js-cookie';
 import styles from './Header.scss';
 import IconCall from '../../../static/svg/phone.svg';
 import IconExit from '../../../static/svg/exit.svg';
@@ -63,7 +64,7 @@ const Header = () => (
         </div>
         <div className={styles.exit}>
           <NavLink
-            to="/profile-purchases"
+            to={cookies.get('tokenProzorro') ? 'profile-purchases' : 'registration'}
             exact
             className={styles.userRoom}
           >

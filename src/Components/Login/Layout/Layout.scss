@@ -16,6 +16,12 @@
   margin-bottom: 15px;
 }
 
+
+.errorText {
+  margin: 5px 0;
+  color: $colorError;
+}
+
 .login {
   color: $colorMain;
   cursor: pointer;

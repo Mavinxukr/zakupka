@@ -1,18 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Formik } from 'formik';
-import { NavLink } from 'react-router-dom';
+import cookies from 'js-cookie';
+import { NavLink, useHistory } from 'react-router-dom';
 import cx from 'classnames';
 import * as Yup from 'yup';
-import { registration } from '../../../services/user';
+import { login } from '../../../services/user';
 import InputFormik from '../../../UI-Kit/InputFormik/InputFormik';
 import styles from './Layout.scss';
 
 const Layout = () => {
+  const [error, setError] = useState(false);
+  const history = useHistory();
+
   const onSubmit = (values) => {
-    registration(
+    login(
       {},
       values,
-    );
+    ).then((response) => {
+      if (!response.status) {
+        setError(true);
+        return;
+      }
+      cookies.set('tokenProzorro', response.token);
+      history.push('/');
+    });
   };
 
   return (
@@ -49,6 +60,9 @@ const Layout = () => {
                 placeholder: '*****',
               }}
             />
+            {error && (
+              <p className={styles.errorText}>Email або пароль введені невірно</p>
+            )}
             <div className={styles.blockSubmit}>
               <button
                 className={cx(styles.btnSubmit, {

@@ -14,7 +14,12 @@ export const registration = async (params, body) => {
   return serverData;
 };
 
-export const getCurrentUserRequest = async (params) => {
-  const serverData = await Fetch.get('get-profile', params, {});
+export const getCurrentUserRequest = async (params, cookies) => {
+  const serverData = await Fetch.get('get-user', params, {}, cookies);
+  return serverData;
+};
+
+export const logoutRequest = async (params, cookies) => {
+  const serverData = await Fetch.post('logout', params, {}, cookies);
   return serverData;
 };

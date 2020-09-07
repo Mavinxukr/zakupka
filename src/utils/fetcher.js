@@ -1,22 +1,17 @@
 import qs from 'query-string';
 import _ from 'lodash';
-import { cookies } from 'js-cookie';
 import { API_DOMAIN } from '../enums/api';
 
-export const generalOptions = (co) => ({
-  mode: 'cors',
-  headers: {
-    Accept: 'application/json',
-    'Content-Type': 'application/json',
-    Authorization: co ? co.get('tokenProzorro') : '',
-  },
-});
-
-const Fetcher = (method) => async (url, params, options) => {
+const Fetcher = (method) => async (url, params, options, cookies) => {
   const paramsString = !_.isEmpty(params) ? `?${qs.stringify(params)}` : '';
   const body = await fetch(`${API_DOMAIN}${url}${paramsString}`, {
     method,
-    ...generalOptions(cookies),
+    mode: 'cors',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      Authorization: cookies,
+    },
     ...options,
     redirect: 'follow',
   });

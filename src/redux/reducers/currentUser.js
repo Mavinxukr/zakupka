@@ -3,7 +3,7 @@ import * as actionTypes from '../actions/actionTypes';
 const initialState = {
   isFetch: false,
   currentUser: null,
-  isAuth: false,
+  isDataReceived: false,
   error: null,
 };
 
@@ -11,6 +11,7 @@ export const currentUser = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.currentUser.request:
     case actionTypes.currentUser.update:
+    case actionTypes.currentUser.delete:
       return {
         ...state,
         isFetch: true,
@@ -20,7 +21,7 @@ export const currentUser = (state = initialState, action) => {
       return {
         ...state,
         isFetch: false,
-        isAuth: true,
+        isDataReceived: true,
         currentUser: action.body,
       };
 
@@ -28,7 +29,7 @@ export const currentUser = (state = initialState, action) => {
       return {
         ...state,
         isFetch: false,
-        isAuth: false,
+        isDataReceived: false,
         error: action.error,
       };
 

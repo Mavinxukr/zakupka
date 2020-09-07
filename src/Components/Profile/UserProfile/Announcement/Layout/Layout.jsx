@@ -1,6 +1,5 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import styles from './Layout.scss';
 import IconBriefcase from '../../../../../static/svg/briefcase-solid.svg';
 import IconStar from '../../../../../static/svg/star.svg';
 import IconClock from '../../../../../static/svg/clock.svg';
@@ -8,6 +7,7 @@ import IconAward from '../../../../../static/svg/award.svg';
 import IconCup from '../../../../../static/svg/cup.svg';
 import Filter from '../../../../sales/Layout/Filters/Filters';
 import Card from '../../../../shared/Card/Card';
+import styles from './Layout.scss';
 
 const Layout = () => (
   <div className={styles.container}>

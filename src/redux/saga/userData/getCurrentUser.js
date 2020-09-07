@@ -6,10 +6,10 @@ import {
 import { getCurrentUserRequest } from '../../../services/user';
 import * as actionTypes from '../../actions/actionTypes';
 
-function* getCurrentUser({ params }) {
-  const response = yield call(getCurrentUserRequest, params);
+function* getCurrentUser({ params, cookies }) {
+  const response = yield call(getCurrentUserRequest, params, cookies);
   if (response.status) {
-    yield put(getCurrentUserSuccess(response.data.data));
+    yield put(getCurrentUserSuccess(response));
   } else {
     yield put(getCurrentUserError('error'));
   }

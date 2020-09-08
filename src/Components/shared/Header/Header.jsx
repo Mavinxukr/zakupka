@@ -76,12 +76,7 @@ const Header = () => {
           </div>
           {userData && (
           <div className={styles.user}>
-            {!userData.company[0].name ? (
-              <>
-                <p className={styles.companyName}>Назва моєї компанії</p>
-                <p className={styles.userName}>{userData.company[0].name }</p>
-              </>
-            ) : (<p>{userData.user.name}</p>)}
+            <p>{userData?.user?.name}</p>
           </div>
           )}
           <div className={styles.exit}>

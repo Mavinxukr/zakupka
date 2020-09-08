@@ -67,6 +67,9 @@
   font-size: 11px;
   color: #848484;
   margin-bottom: 10px;
+  &:hover{
+    color: darken(#848484,20%);
+  }
 }
 .contentText{
   font-size: 13px;
@@ -77,16 +80,16 @@
   display: flex;
   align-items: center;
   position: relative;
-  margin-left: 20px;
+  margin-bottom: 10px;
 }
 .iconStar{
   width: 20px;
   height: 20px;
   margin-right: 5px;
-  position: absolute;
-  left: -25px;
-  bottom: 5px;
   & path{
     fill: #848484;
   }
+}
+.active path{
+  fill: $colorMain;
 }

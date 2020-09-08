@@ -8,3 +8,4 @@ const generateAction = (namespace) => ({
 });
 
 export const currentUser = generateAction('currentUser');
+export const tenders = generateAction('tenders');

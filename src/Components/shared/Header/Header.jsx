@@ -2,12 +2,12 @@ import React, { useEffect } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import cookies from 'js-cookie';
 import { useDispatch, useSelector } from 'react-redux';
-import styles from './Header.scss';
 import IconCall from '../../../static/svg/phone.svg';
 import IconExit from '../../../static/svg/exit.svg';
 import IconEnvelope from '../../../static/svg/mail.svg';
 import { currentUserDataSelector } from '../../../utils/selectors';
 import { getCurrentUser, logoutCurrentUser } from '../../../redux/actions/currentUser';
+import styles from './Header.scss';
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -17,8 +17,6 @@ const Header = () => {
   useEffect(() => {
     dispatch(getCurrentUser({}, cookies.get('tokenProzorro')));
   }, []);
-
-  console.log(userData);
 
   return (
     <div className={styles.header}>
@@ -76,6 +74,16 @@ const Header = () => {
             <IconEnvelope className={styles.icon} />
             <a href="email: /" className={styles.mail}>Напишіть нам</a>
           </div>
+          {userData && (
+          <div className={styles.user}>
+            {!userData.company[0].name ? (
+              <>
+                <p className={styles.companyName}>Назва моєї компанії</p>
+                <p className={styles.userName}>{userData.company[0].name }</p>
+              </>
+            ) : (<p>{userData.user.name}</p>)}
+          </div>
+          )}
           <div className={styles.exit}>
             <NavLink
               to={cookies.get('tokenProzorro') ? 'profile-purchases' : 'registration'}

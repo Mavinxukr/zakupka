@@ -1,9 +1,9 @@
 import React from 'react';
 import Header from '../../../Components/shared/Header/Header';
 import Footer from '../../../Components/shared/Footer/Footer';
-import Layout from '../../../Components/Profile/UserProfile/Announcement/Layout/Layout';
+import Layout from '../../../Components/Profile/Victories/Layout/Layout';
 
-const UserProfile = () => (
+const Victories = () => (
   <>
     <Header />
     <Layout />
@@ -12,4 +12,4 @@ const UserProfile = () => (
 
 );
 
-export default UserProfile;
+export default Victories;

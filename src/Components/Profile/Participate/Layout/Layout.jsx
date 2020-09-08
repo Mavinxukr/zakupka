@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import styles from '../../Favorit/Layout/Layout.scss';
 import IconBriefcase from '../../../../static/svg/briefcase-solid.svg';
 import IconStar from '../../../../static/svg/star.svg';
 import IconClock from '../../../../static/svg/clock.svg';
@@ -7,7 +8,10 @@ import IconAward from '../../../../static/svg/award.svg';
 import IconCup from '../../../../static/svg/cup.svg';
 import Filter from '../../../sales/Layout/Filters/Filters';
 import Card from '../../../shared/Card/Card';
-import styles from './Layout.scss';
+// import { NavLink } from 'react-router-dom';
+// import styles from './Layout.scss';
+// import IconBriefcase from '../../../../static/svg/briefcase-solid.svg';
+// import IconStar from '../../../../static/svg/star.svg';
 
 const Layout = () => (
   <div className={styles.container}>
@@ -35,6 +39,8 @@ const Layout = () => (
           to="/profile-planing"
           exact
           className={styles.tab}
+          activeClassName={styles.tabActive}
+
         >
           <IconClock className={styles.icon} />
           <span>Планую взяти участь</span>
@@ -43,6 +49,8 @@ const Layout = () => (
           to="/profile-participate"
           exact
           className={styles.tab}
+          activeClassName={styles.tabActive}
+
         >
           <IconAward className={styles.icon} />
           <span>Беру участь</span>
@@ -51,6 +59,8 @@ const Layout = () => (
           to="/profile-victories"
           exact
           className={styles.tab}
+          activeClassName={styles.tabActive}
+
         >
           <IconCup className={styles.icon} />
           <span>Мої перемоги</span>

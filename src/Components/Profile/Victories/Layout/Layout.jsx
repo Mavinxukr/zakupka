@@ -6,7 +6,7 @@ import IconClock from '../../../../static/svg/clock.svg';
 import IconAward from '../../../../static/svg/award.svg';
 import IconCup from '../../../../static/svg/cup.svg';
 import Filter from '../../../sales/Layout/Filters/Filters';
-import Card from '../../../shared/Card/Card';
+// import Card from '../../../shared/Card/Card';
 import styles from './Layout.scss';
 
 const Layout = () => (
@@ -35,6 +35,8 @@ const Layout = () => (
           to="/profile-planing"
           exact
           className={styles.tab}
+          activeClassName={styles.tabActive}
+
         >
           <IconClock className={styles.icon} />
           <span>Планую взяти участь</span>
@@ -43,6 +45,8 @@ const Layout = () => (
           to="/profile-participate"
           exact
           className={styles.tab}
+          activeClassName={styles.tabActive}
+
         >
           <IconAward className={styles.icon} />
           <span>Беру участь</span>
@@ -51,6 +55,8 @@ const Layout = () => (
           to="/profile-victories"
           exact
           className={styles.tab}
+          activeClassName={styles.tabActive}
+
         >
           <IconCup className={styles.icon} />
           <span>Мої перемоги</span>
@@ -59,13 +65,6 @@ const Layout = () => (
       <div>
         <div className={styles.bgWhite}>
           <Filter />
-          <div className={styles.sortBlock}>
-            <span className={styles.textLow}>Знайдено тендерів: 6 006 553</span>
-            <div className={styles.sort}>
-              <b>Сортування за</b>
-              <input type="text" />
-            </div>
-          </div>
           <div className={styles.titleContainer}>
             <p className={styles.leftBlock}>Предмет закупівлі</p>
             <div className={styles.middleBlock}>
@@ -74,7 +73,6 @@ const Layout = () => (
             </div>
             <p>Статус</p>
           </div>
-          <Card />
         </div>
       </div>
     </div>

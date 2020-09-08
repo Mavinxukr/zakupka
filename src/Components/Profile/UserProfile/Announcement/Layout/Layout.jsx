@@ -29,31 +29,31 @@ const Layout = () => (
           activeClassName={styles.tabActive}
         >
           <IconStar className={styles.icon} />
-          <span>Плани закупівель</span>
+          <span>Обране</span>
         </NavLink>
         <NavLink
-          to="/profile-purchases"
+          to="/profile-planing"
           exact
           className={styles.tab}
         >
           <IconClock className={styles.icon} />
-          <span>Підписані контракти</span>
+          <span>Планую взяти участь</span>
         </NavLink>
         <NavLink
-          to="/profile-purchases"
+          to="/profile-participate"
           exact
           className={styles.tab}
         >
           <IconAward className={styles.icon} />
-          <span>Підписані контракти</span>
+          <span>Беру участь</span>
         </NavLink>
         <NavLink
-          to="/profile-purchases"
+          to="/profile-victories"
           exact
           className={styles.tab}
         >
           <IconCup className={styles.icon} />
-          <span>Підписані контракти</span>
+          <span>Мої перемоги</span>
         </NavLink>
       </div>
       <div>
@@ -68,7 +68,7 @@ const Layout = () => (
               Оголошені
             </NavLink>
             <NavLink
-              to="/profile-recomend"
+              to="/profile-purchases/recomend"
               exact
               className={styles.menuItem}
               activeClassName={styles.menuItemActive}
@@ -76,7 +76,7 @@ const Layout = () => (
               Рекоменд
             </NavLink>
             <NavLink
-              to="/profile-best"
+              to="/profile-planing"
               exact
               className={styles.menuItem}
               activeClassName={styles.menuItemActive}

@@ -1,9 +1,9 @@
 import React from 'react';
 import Header from '../../../Components/shared/Header/Header';
 import Footer from '../../../Components/shared/Footer/Footer';
-import Layout from '../../../Components/Profile/UserProfile/Best/Layout/Layout';
+import Layout from '../../../Components/Profile/Participate/Layout/Layout';
 
-const UserProfile = () => (
+const Participate = () => (
   <>
     <Header />
     <Layout />
@@ -12,4 +12,4 @@ const UserProfile = () => (
 
 );
 
-export default UserProfile;
+export default Participate;

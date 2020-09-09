@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import IconStart from '../../../../static/svg/star.svg';
-import styles from './Tab1.scss';
-import Filter from '../Filters/Filters';
 import { tendersDataReceivedSelector, tendersDataSelector } from '../../../../utils/selectors';
 import { getTenders } from '../../../../redux/actions/tenders';
+import IconStart from '../../../../static/svg/star.svg';
+import Filter from '../Filters/Filters';
+import styles from './Tab1.scss';
 
 const Tab1 = () => {
   const dispatch = useDispatch();
@@ -57,7 +57,7 @@ const Tab1 = () => {
               </div>
               <div className={styles.middleBlock}>
                 <div className={styles.sumBlock}>
-                  <span className={styles.sum}>{item.bet_price} ₴</span>
+                  <span className={styles.sum}>{tender?.value?.amount || '0'} ₴</span>
                   <span className={styles.data}>c НДС</span>
                 </div>
                 <div>

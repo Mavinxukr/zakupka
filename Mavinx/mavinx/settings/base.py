@@ -88,7 +88,6 @@ LANGUAGES = [
     ('ru', _('Russian')),
 ]
 
-TIME_ZONE = 'Europe/Kiev'
 
 USE_I18N = True
 USE_L10N = True
@@ -130,4 +129,6 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'info@shop.akarumey.ml'
 EMAIL_HOST_PASSWORD = 'tutorials'
+
+TIME_ZONE = 'Europe/Kiev'
 

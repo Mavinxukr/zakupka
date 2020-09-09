@@ -10,13 +10,15 @@
 .titleContainer{
   width: 100%;
   display: flex;
+  justify-content: space-between;
   padding: 10px;
   box-sizing: border-box;
 }
 .leftBlock{
+  max-width: 400px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: flex-start;
   width: 50%;
   padding-left: 20px;
   a{
@@ -29,34 +31,41 @@
   }
 }
 .middleBlock{
+  width: 300px;
   display: flex;
-  align-items: center;
-  width: 35%;
-  div{
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    margin-left: 15px;
-  }
+  align-items: flex-start;
   .sumBlock{
+    max-width: 75px;
+    min-width: 75px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     margin-right: 80px;
   }
+}
+.middleContentBlock{
+  width: 200px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  margin-left: 15px;
 }
 .sum{
   font-weight: 700;
   margin-bottom: 10px;
+  white-space: nowrap;
 }
 .rightBLock{
+  max-width: 150px;
+  min-width: 150px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-right: 20px;
 }
 .period{
   font-size: 13px;

@@ -6,35 +6,36 @@ import IconClock from '../../../static/svg/clock.svg';
 import IconPen from '../../../static/svg/pen.svg';
 import IconManager from '../../../static/svg/manager.svg';
 import IconChat from '../../../static/svg/chat.svg';
-
 import styles from './Card.scss';
 
-const Card = () => {
+const Card = ({ tender }) => {
   const [buttonActive, isButtonActive] = useState(false);
   const [buttonPlane, isButtonPlane] = useState(false);
   const [buttonManager, isButtonManager] = useState(false);
+
+  console.log(tender);
 
   return (
     <div className={styles.bgWhite}>
       <div className={styles.titleContainer}>
         <div className={styles.leftBlock}>
-          <a href="/">[ТЕСТУВАННЯ] Назва зкупівлі 1 </a>
+          <a href="/">{ tender.title || '' }</a>
           <span className={styles.contentText}>
-            ЗамовникТест
+            {tender.owner || ''}
           </span>
           <span className={styles.contentText}>
             О компании
           </span>
           <span className={styles.contentText}>
-            ID: UA-2020-08-31-000045-a
+            ID: {tender.tenderID || ''}
           </span>
         </div>
         <div className={styles.middleBlock}>
           <div className={styles.sumBlock}>
-            <span className={styles.sum}>25 000,00 ₴</span>
+            <span className={styles.sum}>{tender?.value?.amount || '0'} ₴</span>
             <span className={styles.data}>c НДС</span>
           </div>
-          <div>
+          <div className={styles.middleContentBlock}>
             <span className={styles.contentText}>
               Объявлена::
             </span>

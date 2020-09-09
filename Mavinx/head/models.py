@@ -103,6 +103,8 @@ class Blog(TranslatableModel):
                              verbose_name=_(u'vnm_topic_blog'), default=1)
     image = models.ImageField(verbose_name=_(u'vnm_image_blog'), upload_to=custom_upload_to,
                               null=True, blank=True)
+    one_blog_image = models.ImageField(verbose_name=_(u'vnm_image_blog_one'), upload_to=custom_upload_to,
+                                          null=True, blank=True)
     writers = models.ManyToManyField(BlogWriter, related_name='blogs',verbose_name=_('vnm_writ_blog'))
 
     def __str__(self):

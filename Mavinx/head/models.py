@@ -328,7 +328,7 @@ class About(TranslatableModel):
                               upload_to=custom_upload_to)
 
     def __str__(self):
-        return self.name
+        return self.text
 
 
 class Subscribers(models.Model):

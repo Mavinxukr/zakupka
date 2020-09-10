@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import cookies from 'js-cookie';
 import cx from 'classnames';
+import { useRouteMatch } from 'react-router-dom';
 import IconStart from '../../../static/svg/star.svg';
 import IconClock from '../../../static/svg/clock.svg';
 import IconPen from '../../../static/svg/pen.svg';
@@ -12,22 +13,21 @@ const Card = ({ tender }) => {
   const [buttonActive, isButtonActive] = useState(false);
   const [buttonPlane, isButtonPlane] = useState(false);
   const [buttonManager, isButtonManager] = useState(false);
-
-  console.log(tender);
+  const match = useRouteMatch();
 
   return (
     <div className={styles.bgWhite}>
       <div className={styles.titleContainer}>
         <div className={styles.leftBlock}>
-          <a href="/">{ tender.title || '' }</a>
+          <a href="/">{ tender?.title || '' }</a>
           <span className={styles.contentText}>
-            {tender.owner || ''}
+            {tender?.owner || ''}
           </span>
           <span className={styles.contentText}>
             О компании
           </span>
           <span className={styles.contentText}>
-            ID: {tender.tenderID || ''}
+            ID: {tender?.tenderID || ''}
           </span>
         </div>
         <div className={styles.middleBlock}>
@@ -74,7 +74,7 @@ const Card = ({ tender }) => {
             />
             {buttonActive ? (<p>Видалити</p>) : (<p>Добавить в избранное</p>)}
           </button>
-          {cookies.get('tokenProzorro') && (
+          {cookies.get('tokenProzorro') && match.path !== '/' && (
           <>
             <button
               className={cx(styles.iconBlock, styles.data)}

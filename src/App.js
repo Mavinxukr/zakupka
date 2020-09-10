@@ -10,6 +10,7 @@ import Best from './Pages/Profile/UserProfile/Best/Best';
 import Victories from './Pages/Profile/Victories/Victories';
 import Participate from './Pages/Profile/Participate/Participate';
 import Planing from './Pages/Profile/Planing/Planing';
+import PlaneOfSales from './Pages/PlanOfSales/PlanOfSales';
 
 import './index.scss';
 
@@ -26,6 +27,7 @@ const App = () => (
       <Route exact path="/profile-victories" component={Victories} />
       <Route exact path="/profile-participate" component={Participate} />
       <Route exact path="/profile-planing" component={Planing} />
+      <Route exact path="/plane-of-sales" component={PlaneOfSales} />
     </Switch>
   </>
 );

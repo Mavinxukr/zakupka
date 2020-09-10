@@ -1,0 +1,41 @@
+@import '../../styles/core/vars';
+
+.container{
+  width: 90%;
+  margin: 0 auto;
+}
+
+.menu{
+  display: flex;
+  width: 100%;
+  background-color: lighten($colorMain,60%);
+  border: 1px solid $colorBorder;
+  font-weight: 700;
+  font-size: 16px;
+  li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid $colorBorder;
+    border-right: 1px solid $colorBorder;
+    background-color: lighten($colorMain,30%);
+    padding: 10px;
+    &:hover{
+      background-color: lighten($colorMain,20%);;
+    }
+    span{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 10px;
+      padding: 3px 5px;
+      background-color: #ffffffa4;
+      border-radius: 2px;
+      font-size: 12px;
+    }
+  }
+}
+.icon{
+  width: 25px;
+  height: 25px;
+}

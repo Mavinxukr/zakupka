@@ -15,6 +15,8 @@ const Card = ({ tender }) => {
   const [buttonManager, isButtonManager] = useState(false);
   const match = useRouteMatch();
 
+  console.log(tender);
+
   return (
     <div className={styles.bgWhite}>
       <div className={styles.titleContainer}>

@@ -1,4 +1,4 @@
-@import '../../styles/core/vars';
+@import '../../../styles/core/vars';
 
 .container{
   width: 90%;
@@ -12,16 +12,21 @@
   border: 1px solid $colorBorder;
   font-weight: 700;
   font-size: 16px;
-  li{
+  position: relative;
+  div{
     display: flex;
     justify-content: center;
     align-items: center;
     border-left: 1px solid $colorBorder;
     border-right: 1px solid $colorBorder;
-    background-color: lighten($colorMain,30%);
+    background: rgb(56,167,197);
+    background: linear-gradient(3deg, rgba(56,167,197,1) 0%, rgba(56,167,197,0.4542191876750701) 100%);
     padding: 10px;
     &:hover{
-      background-color: lighten($colorMain,20%);;
+      background-color: lighten($colorGrey,35%);;
+    }
+    &:hover .showBlock{
+      display: block;
     }
     span{
       display: flex;
@@ -38,4 +43,21 @@
 .icon{
   width: 25px;
   height: 25px;
+}
+.showBlock{
+  display: none;
+  position: absolute;
+  top: 45px;
+  background: $colorWhite;
+  border: 1px solid $colorBorder;
+  border-radius: 5px;
+  padding: 10px 0;
+  li{
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 300;
+    &:hover{
+      background-color: darken($colorWhite,20%);
+    }
+  }
 }

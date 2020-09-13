@@ -1,14 +1,14 @@
 import React from 'react';
 import Header from '../../Components/shared/Header/Header';
 import Footer from '../../Components/shared/Footer/Footer';
-import PlanOfSales from ''
+import Layout from '../../Components/PlanOfSales/Layout/Layout';
 
-const Login = () => (
+const PlaneOfSales = () => (
   <div>
     <Header />
-    <PlanOfSales />
+    <Layout />
     <Footer />
   </div>
 );
 
-export default Login;
+export default PlaneOfSales;

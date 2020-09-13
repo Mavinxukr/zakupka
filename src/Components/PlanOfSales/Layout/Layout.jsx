@@ -1,9 +1,9 @@
 import React from 'react';
 import IconCog from '../../../static/svg/cog-solid.svg';
 import IconMail from '../../../static/svg/mail.svg';
-import styles from './MenuPurchaser.scss';
+import styles from './Layout.scss';
 
-const MenuPurchaser = () => (
+const Layout = () => (
   <>
     <div className={styles.container}>
       <nav className={styles.menu}>
@@ -61,4 +61,4 @@ const MenuPurchaser = () => (
     </div>
   </>
 );
-export default MenuPurchaser;
+export default Layout;

@@ -10,7 +10,7 @@ import Best from './Pages/Profile/UserProfile/Best/Best';
 import Victories from './Pages/Profile/Victories/Victories';
 import Participate from './Pages/Profile/Participate/Participate';
 import Planing from './Pages/Profile/Planing/Planing';
-import PlaneOfSales from './Pages/PlanOfSales/PlanOfSales';
+import PlaneOfSales from './Pages/PlanOfSales/PlaneOfSales';
 
 import './index.scss';
 

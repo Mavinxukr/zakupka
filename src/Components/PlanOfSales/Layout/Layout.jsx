@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Field, Formik } from 'formik';
-import * as Yup from 'yup';
+// import * as Yup from 'yup';
 import cx from 'classnames';
+import TextField from '@material-ui/core/TextField';
 import InputFormik from '../../../UI-Kit/InputFormik/InputFormik';
 import MenuPurchaser from '../../shared/MenuPurchaser/MenuPurchaser';
 import BlockForm from '../../shared/BlockForm/BlockForm';
 import styles from './Layout.scss';
 
 const Layout = () => {
+  const [startDate, isStartDate] = useState('');
   const onSubmit = (values) => console.log(values);
+
+  console.log(startDate);
 
   return (
     <>
@@ -22,14 +26,14 @@ const Layout = () => {
         </BlockForm>
         <Formik
           initialValues={{ }}
-          validationSchema={Yup.object({
-            email: Yup.string()
-              .email('e-mail не валиден')
-              .required('Вы не ввели e-mail'),
-            password: Yup.string()
-              .min(6, 'Пароль короткий - введіть мінімум 6 символів.')
-              .required('Вы не ввели пароль'),
-          })}
+          // validationSchema={Yup.object({
+          //   email: Yup.string()
+          //     .email('e-mail не валиден')
+          //     .required('Вы не ввели e-mail'),
+          //   password: Yup.string()
+          //     .min(6, 'Пароль короткий - введіть мінімум 6 символів.')
+          //     .required('Вы не ввели пароль'),
+          // })}
           onSubmit={(values) => onSubmit(values)}
         >
           {(formik) => (
@@ -212,6 +216,13 @@ const Layout = () => {
                   </>
                 )}
                 <a className={styles.link} href="/">Детальніше про забезпечення</a>
+                <p>Завершення періоду уточнень</p>
+                <TextField
+                  id="date"
+                  type="datetime-local"
+                  defaultValue={startDate}
+                  onChange={() => isStartDate(document.querySelector('#date').value)}
+                />
               </BlockForm>
               <div className={styles.blockSubmit}>
                 <button

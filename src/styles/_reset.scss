@@ -83,6 +83,13 @@ textarea {
   resize: none;
 }
 
+input,
+button,
+textarea,
+select {
+  cursor: pointer;
+}
+
 select {
   padding: 5px 10px;
   width: 100%;

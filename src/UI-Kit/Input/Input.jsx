@@ -15,6 +15,7 @@ const Input = ({
     placeholder,
     touched,
     errors,
+    disabled,
   },
 }) => {
   const classNameForInput = cx(classNameWrapper);
@@ -34,6 +35,7 @@ const Input = ({
         id={id}
         name={name}
         placeholder={placeholder}
+        disabled={disabled}
       />
     </div>
   );
@@ -47,6 +49,7 @@ Input.propTypes = {
     handleBlur: PropTypes.func,
     id: PropTypes.string,
     name: PropTypes.string,
+    disabled: PropTypes.bool,
     placeholder: PropTypes.string,
     touched: PropTypes.object,
     errors: PropTypes.object,

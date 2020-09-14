@@ -1,0 +1,21 @@
+@import '../../../styles/core/vars';
+
+.section{
+  width: 100%;
+  height: 80vh;
+}
+.container{
+  width: 90%;
+  margin: 0 auto;
+}
+h2{
+  margin: 10px 0;
+}
+.link{
+  background: $colorMain;
+  border: 1px solid $colorBorder;
+  padding: 10px;
+}
+.createButton{
+  margin: 20px 0;
+}

@@ -81,7 +81,7 @@ const Header = () => {
           )}
           <div className={styles.exit}>
             <NavLink
-              to={cookies.get('tokenProzorro') ? 'profile-purchases' : 'registration'}
+              to={cookies.get('tokenProzorro') ? '/profile-purchases' : '/registration'}
               exact
               className={styles.userRoom}
             >

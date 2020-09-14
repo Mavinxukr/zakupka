@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import IconCog from '../../../static/svg/cog-solid.svg';
 import IconMail from '../../../static/svg/mail.svg';
 import styles from './MenuPurchaser.scss';
@@ -7,6 +8,22 @@ const MenuPurchaser = () => (
   <>
     <div className={styles.container}>
       <nav className={styles.menu}>
+        <div>
+          Публічні закупівлі
+          <ul className={styles.showBlock}>
+            <li>Закупівлі</li>
+            <li>
+              <NavLink
+                to="/my-plane-sales"
+                exact
+                className={styles.item}
+              >Мої плани закупівель
+              </NavLink>
+            </li>
+            <li>Скарги</li>
+            <li>Пошук постачальників під covid-19</li>
+          </ul>
+        </div>
         <div>
           Бібліотека специфікацій
           <ul className={styles.showBlock}>

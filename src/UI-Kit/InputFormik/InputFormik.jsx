@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 import Input from '../Input/Input';
 import styles from './InputFormik.scss';
 
-const InputFormik = ({ formikProps, classNameWrapper }) => (
+const InputFormik = ({ formikProps, classNameWrapper, classNameWrapperLabel }) => (
   <div className={cx(styles.wrapper, classNameWrapper)}>
     {formikProps.label && (
     <label
       htmlFor={formikProps.name}
-      className={styles.label}
+      className={cx(styles.label, classNameWrapperLabel)}
     >
       {formikProps.label}
     </label>
@@ -29,6 +29,7 @@ InputFormik.propTypes = {
     name: PropTypes.string,
   }),
   classNameWrapper: PropTypes.string,
+  classNameWrapperLabel: PropTypes.string,
 };
 
 export default InputFormik;

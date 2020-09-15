@@ -44,10 +44,12 @@
 }
 .textLow{
   font-size: 14px;
+  margin-top: 10px;
   color: $colorGrey;
   margin-bottom: 20px;
 }
 .radioButton{
+  display: grid;
   margin: 20px 0;
   span{
     margin-left: 10px;
@@ -165,3 +167,4 @@ button{
   border: none;
   color: #000;
 }
+

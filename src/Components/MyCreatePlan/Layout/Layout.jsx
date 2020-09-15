@@ -159,7 +159,8 @@ const Layout = () => (
             <BlockForm>
               {/* eslint-disable-next-line react/no-unescaped-entities */}
               <h5 className={styles.smallText}>Необов'язково, але в разі потреби тут можна завантажити додаткові файли плану або майбутньої закупівлі</h5>
-              <button type="button" className={styles.buttonPlus}><div className={styles.plus}>+</div>Прикріпити файл</button>
+              <p style={{ margin: '20px 0' }}>Прикріпити файл</p>
+              <input type="file" name="file" />
               <p className={styles.textLow}>Можна завантажити додаткові файли плану або майбутньої закупівлі.
                 Максимум 100 фалів,не більше 49Мб кожен.
               </p>

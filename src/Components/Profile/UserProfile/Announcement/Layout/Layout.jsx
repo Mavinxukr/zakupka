@@ -29,13 +29,15 @@ const Layout = () => {
   return (
     <>
       <MenuPurchaser />
-      <NavLink
-        to="/plane-of-sales"
-        exact
-        className={styles.tab}
-      >
-        Нова закупівля
-      </NavLink>
+      <div className={styles.container}>
+        <NavLink
+          to="/plane-of-sales"
+          exact
+          className={styles.tab}
+        >
+          Нова закупівля
+        </NavLink>
+      </div>
       <div className={styles.container}>
         <div className={styles.flexContainer}>
           <div className={styles.buttonTabs}>

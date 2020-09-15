@@ -5,8 +5,7 @@
   align-items: flex-start;
   justify-content: space-between;
   max-width: 1400px;
-  min-height: 64vh;
-  margin: 100px auto 100px;
+  margin: 0 auto;
 }
 
 .flexContainer{
@@ -32,6 +31,7 @@
   padding: 0 20px 0 20px;
   border-radius: 5px 5px 0 0;
   background-color: darken($colorWhite,2%);
+  margin-bottom: 80px;
 }
 .tabActive {
   background-color: $colorWhite;

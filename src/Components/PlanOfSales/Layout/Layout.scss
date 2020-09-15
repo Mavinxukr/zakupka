@@ -152,3 +152,20 @@
   grid-template-columns: 150px 250px;
   grid-gap: 20px;
 }
+.containerClassifier{
+  display: grid;
+  grid-template-columns: 200px 150px;
+}
+.classifier{
+  display: grid;
+}
+.other{
+  p{
+    margin-bottom: 20px;
+  }
+}
+.formButtons{
+  button{
+    margin-right: 20px;
+  }
+}

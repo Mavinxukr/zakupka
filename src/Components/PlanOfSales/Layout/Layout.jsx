@@ -380,6 +380,58 @@ const Layout = () => {
                     </div>
                   </div>
                 </div>
+                <div className={styles.containerClassifier}>
+                  <p><span className={styles.redStar}>*</span>Класифікатори</p>
+                  <div className={styles.classifier}>
+                    <button type="button">ДК 021:2015</button>
+                    <button type="button">інші ДК</button>
+                  </div>
+                </div>
+                <div className={styles.containerGetDate}>
+                  <div className={styles.other}>
+                    <p><span className={styles.redStar}>*</span>Строк поставки/виконання робіт/надання послуг</p>
+                    {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+                    <label>
+                      <Field type="checkbox" name="toggle" className={styles.toggle} />
+                      <span className={styles.mLeft}>Інші умови постачання</span>
+                    </label>
+                    <p className={styles.textLow}>Наприклад, постачання на декілька адрес</p>
+                  </div>
+                  <div className={styles.getData}>
+                    <TextField
+                      id="date"
+                      type="datetime-local"
+                      defaultValue={startDate}
+                      onChange={() => isStartDate(document.querySelector('#date').value)}
+                    />
+                    <span>до</span>
+                    <TextField
+                      id="date"
+                      type="datetime-local"
+                      defaultValue={startDate}
+                      onChange={() => isStartDate(document.querySelector('#date').value)}
+                    />
+                  </div>
+                </div>
+                <div className={styles.containerStreet}>
+                  <p><span className={styles.redStar}>*</span>Строк поставки/виконання робіт/надання послуг</p>
+                </div>
+                <div className={styles.containerStreet}>
+                  <p><span className={styles.redStar}>*</span>Строк поставки/виконання робіт/надання послуг</p>
+                </div>
+                <div className={styles.containerPopulation}>
+                  <p><span className={styles.redStar}>*</span>Строк поставки/виконання робіт/надання послуг</p>
+                </div>
+                <div className={styles.containerCountry}>
+                  <p><span className={styles.redStar}>*</span>Строк поставки/виконання робіт/надання послуг</p>
+                </div>
+                <div className={styles.containerIndex}>
+                  <p><span className={styles.redStar}>*</span>Строк поставки/виконання робіт/надання послуг</p>
+                </div>
+                <div className={styles.formButtons}>
+                  <button type="button">Додати позицію</button>
+                  <button type="button">Копіювати позицію</button>
+                </div>
               </BlockForm>
               <BlockForm>
                 <button type="button" className={styles.buttonMain}>Оголосоти закупывлю</button>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import cookies from 'js-cookie';
 import cx from 'classnames';
-import { useRouteMatch } from 'react-router-dom';
+import { useRouteMatch, useHistory } from 'react-router-dom';
 import IconStart from '../../../static/svg/star.svg';
 import IconClock from '../../../static/svg/clock.svg';
 import IconPen from '../../../static/svg/pen.svg';
@@ -14,6 +14,7 @@ const Card = ({ tender }) => {
   const [buttonPlane, isButtonPlane] = useState(false);
   const [buttonManager, isButtonManager] = useState(false);
   const match = useRouteMatch();
+  const history = useHistory();
 
   console.log(tender);
 
@@ -39,7 +40,7 @@ const Card = ({ tender }) => {
           </div>
           <div className={styles.middleContentBlock}>
             <span className={styles.contentText}>
-              Объявлена::
+              Оголошено:
             </span>
             <span className={styles.data}>
               31 серп., 11:19
@@ -68,7 +69,13 @@ const Card = ({ tender }) => {
           <button
             type="button"
             className={cx(styles.iconBlock, styles.data)}
-            onClick={() => isButtonActive(!buttonActive)}
+            onClick={() => {
+              if (cookies.get('tokenProzorro')) {
+                isButtonActive(!buttonActive);
+              } else {
+                history.push('/login');
+              }
+            }}
           >
             <IconStart className={cx(styles.iconStar, {
               [styles.active]: buttonActive,

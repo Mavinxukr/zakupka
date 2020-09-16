@@ -11,7 +11,19 @@ const Layout = () => (
     <MenuPurchaser />
     <TabsComponent />
     <div className={styles.container}>
-      <p> Purchases-Claims </p>
+      <div className={styles.leftCard}>
+        <p className={styles.title}>
+          [тестування] ДК 021: 2015 03410000-7 - Деревина
+        </p>
+      </div>
+      <div className={styles.cardProposition}>
+        <p className={styles.header}>
+          Прийом пропозиції
+        </p>
+        <div className={styles.footer}>
+          <button type="button"> Кнопка </button>
+        </div>
+      </div>
     </div>
     <Footer />
   </>

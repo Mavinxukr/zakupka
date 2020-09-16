@@ -1,8 +1,35 @@
+@import "../../../styles/core/vars";
+
 .container {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  max-width: 1400px;
+  width: 90%;
   min-height: 64vh;
-  margin: 100px auto 100px;
+  margin: 20px auto;
+}
+
+.cardProposition{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $colorBorder;
+  border-radius: 5px;
+}
+.header{
+  padding: 20px 40px;
+  border-bottom: 1px solid $colorBorder;
+  background-color: darken($colorWhite,5%);
+  font-weight: 700;
+}
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+.leftCard{
+  .title{
+    font-size: 28px;
+  }
 }

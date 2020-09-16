@@ -3,6 +3,14 @@
 .container{
   width: 90%;
   margin: 0 auto;
+
+  button{
+    font-size: 14px;
+    border: 1px solid $colorMain;
+    border-radius: 5px;
+    padding: 10px;
+    color: #000;
+  }
 }
 .title{
   font-size: 20px;
@@ -116,13 +124,6 @@ label{
   display: grid;
   grid-template-columns: 150px;
   grid-row-gap: 10px;
-}
-button{
-  font-size: 14px;
-  border: 1px solid $colorMain;
-  border-radius: 5px;
-  padding: 10px;
-  color: #000;
 }
 
 .nameSourсe,.description,.sum{

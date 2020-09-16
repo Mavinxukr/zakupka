@@ -414,19 +414,55 @@ const Layout = () => {
                   </div>
                 </div>
                 <div className={styles.containerStreet}>
-                  <p><span className={styles.redStar}>*</span>Строк поставки/виконання робіт/надання послуг</p>
+                  <p><span className={styles.redStar}>*</span>Вулиця та номер будинку</p>
+                  <InputFormik
+                    formikProps={{
+                      ...formik,
+                      name: 'sumSize',
+                      type: 'text',
+                      placeholder: 'Почныть вводити вулицю',
+                    }}
+                  />
                 </div>
-                <div className={styles.containerStreet}>
-                  <p><span className={styles.redStar}>*</span>Строк поставки/виконання робіт/надання послуг</p>
+                <div className={styles.containerLocation}>
+                  <p><span className={styles.redStar}>*</span>Населений пункт</p>
+                  <InputFormik
+                    formikProps={{
+                      ...formik,
+                      name: 'sumSize',
+                      type: 'text',
+                    }}
+                  />
                 </div>
                 <div className={styles.containerPopulation}>
-                  <p><span className={styles.redStar}>*</span>Строк поставки/виконання робіт/надання послуг</p>
+                  <p><span className={styles.redStar}>*</span>Країна</p>
+                  <Field as="select" name="role" id="role">
+                    <option value="1">Україна</option>
+                    <option value="2">американський долар (USD)</option>
+                    <option value="3">євро (EUR)</option>
+                    <option value="4">російський рубль (RUB)</option>
+                    <option value="5">англійський фунт стерлінгів (GBP)</option>
+                  </Field>
                 </div>
                 <div className={styles.containerCountry}>
-                  <p><span className={styles.redStar}>*</span>Строк поставки/виконання робіт/надання послуг</p>
+                  <p><span className={styles.redStar}>*</span>Область</p>
+                  <Field as="select" name="role" id="role">
+                    <option value="1">--Оберіть область--</option>
+                    <option value="2">американський долар (USD)</option>
+                    <option value="3">євро (EUR)</option>
+                    <option value="4">російський рубль (RUB)</option>
+                    <option value="5">англійський фунт стерлінгів (GBP)</option>
+                  </Field>
                 </div>
                 <div className={styles.containerIndex}>
-                  <p><span className={styles.redStar}>*</span>Строк поставки/виконання робіт/надання послуг</p>
+                  <p><span className={styles.redStar}>*</span>Поштовий індекс</p>
+                  <InputFormik
+                    formikProps={{
+                      ...formik,
+                      name: 'sumSize',
+                      type: 'text',
+                    }}
+                  />
                 </div>
                 <div className={styles.formButtons}>
                   <button type="button">Додати позицію</button>

@@ -13,8 +13,15 @@ import Planing from './Pages/Profile/Planing/Planing';
 import PlaneOfSales from './Pages/PlanOfSales/PlaneOfSales';
 import MyPlanSales from './Pages/MyPlanSales/MyPlanSales';
 import MyCreatePlane from './Pages/MyCreatePlane/MyCreatePlane';
-
+import PurchasesSales from './Pages/Purchases/Purchases-Sales/Purchases-Sales';
 import './index.scss';
+import PurchasesDemands from './Pages/Purchases/Purchases-Demands/Purchases-Demands';
+import PurchasesReport from './Pages/Purchases/Purchases-Report/Purchases-Report';
+import PurchasesQuestions from './Pages/Purchases/Purchases-Quetions/Purchases-Questions';
+import PurchasesMonitoring from './Pages/Purchases/Purchases-Monitoring/Purchases-Monitoring';
+import PurchasesInside from './Pages/Purchases/Purchases-Inside/Purchases-Inside';
+import PurchasesDozorro from './Pages/Purchases/Purchases-Dozorro/Purchases-Dozorro';
+import PurchasesClaims from './Pages/Purchases/Purchases-Сlaims/Purchases-Сlaims';
 
 const App = () => (
   <>
@@ -22,8 +29,8 @@ const App = () => (
       <Route exact path="/" component={Sales} />
       <Route exact path="/registration" component={Registration} />
       <Route exact path="/login" component={Login} />
-      <Route exact path="/profile-purchases" component={Announcement} />
       <Route exact path="/profile-favorite" component={Favorite} />
+      <Route exact path="/profile-purchases" component={Announcement} />
       <Route exact path="/profile-purchases/recomend" component={Recomend} />
       <Route exact path="/profile-purchases/best" component={Best} />
       <Route exact path="/profile-victories" component={Victories} />
@@ -32,6 +39,14 @@ const App = () => (
       <Route exact path="/plane-of-sales" component={PlaneOfSales} />
       <Route exact path="/my-plane-sales" component={MyPlanSales} />
       <Route exact path="/my-plane-sales/my-create-plan" component={MyCreatePlane} />
+      <Route exact path="/purchases/demands" component={PurchasesDemands} />
+      <Route exact path="/purchases/dozorro" component={PurchasesDozorro} />
+      <Route exact path="/purchases/inside" component={PurchasesInside} />
+      <Route exact path="/purchases/monitoring" component={PurchasesMonitoring} />
+      <Route exact path="/purchases/questions" component={PurchasesQuestions} />
+      <Route exact path="/purchases/report" component={PurchasesReport} />
+      <Route exact path="/purchases/sales" component={PurchasesSales} />
+      <Route exact path="/purchases/claims" component={PurchasesClaims} />
     </Switch>
   </>
 );

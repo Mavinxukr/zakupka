@@ -11,7 +11,14 @@ const MenuPurchaser = () => (
         <div>
           Публічні закупівлі
           <ul className={styles.showBlock}>
-            <li>Закупівлі</li>
+            <li>
+              <NavLink
+                to="/purchases/sales"
+                exact
+                className={styles.item}
+              >Закупівлі
+              </NavLink>
+            </li>
             <li>
               <NavLink
                 to="/my-plane-sales"
@@ -20,8 +27,22 @@ const MenuPurchaser = () => (
               >Мої плани закупівель
               </NavLink>
             </li>
-            <li>Скарги</li>
-            <li>Пошук постачальників під covid-19</li>
+            <li>
+              <NavLink
+                to="/my-plane-sales"
+                exact
+                className={styles.item}
+              >Скарги
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/my-plane-sales"
+                exact
+                className={styles.item}
+              >Пошук постачальників під covid-19
+              </NavLink>
+            </li>
           </ul>
         </div>
         <div>

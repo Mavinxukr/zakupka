@@ -1,0 +1,73 @@
+@import '../../../index';
+
+.arrowBlockMain{
+  display: flex;
+}
+.arrowBlock{
+  display: flex;
+  flex-direction: column;
+}
+.arrowHeader{
+  padding: 10px;
+}
+.arrowMain{
+  width: 100%;
+  border: 1px solid $colorBorder;
+  background-color: darken($colorWhite,5%);
+  padding: 10px 0;
+  text-align: center;
+  position: relative;
+  &:after{
+    content:'';
+    width: 0;
+    height: 0;
+    border-top: 19px solid transparent;
+    border-left: 10px solid #D0D4DC;
+    border-bottom: 19px solid transparent;
+    position: absolute;
+    top: 0;
+    right: -10px;
+    z-index: 2;
+  }
+  &:before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 19px solid transparent;
+    border-left: 10px solid darken($colorWhite, 5%);
+    border-bottom: 19px solid transparent;
+    position: absolute;
+    top: 0;
+    right: -9px;
+    z-index: 3;
+  }
+}
+
+.arrowFooter{
+  display: none;
+  p{
+    padding: 5px 10px;
+  }
+}
+.arrowBlock:last-child {
+  .arrowMain:after{
+    content:'';
+    border-left: none;
+  }
+  .arrowMain:before{
+    content:'';
+    border-left: none;
+  }
+}
+
+.arrowBlockActive{
+  background: #000;
+
+  .arrowMain:before {
+    border-right: 10px;
+  }
+
+  .arrowFooter {
+    display: block;
+  }
+}

@@ -1,0 +1,46 @@
+//Container
+.containerGlobal{
+  width: 90%;
+  margin: 0 auto;
+}
+
+//Buttons
+
+.buttonMainGlobal{
+  background-color: $colorMain;
+  color: $colorWhite;
+  border-radius: 5px;
+  padding: 10px;
+  &:hover{
+    background-color: darken($colorMain,5%);
+  }
+}
+.buttonGlobal{
+  background-color: $colorWhite;
+  color: #000;
+  border:1px solid $colorMain;
+  border-radius: 5px;
+  padding: 10px;
+  &:hover{
+    background-color: darken($colorWhite,5%);
+  }
+}
+
+//links
+.linkGlobal{
+  color: blue;
+}
+
+//text
+
+.smallTextGlobal{
+  font-size: 16px;
+}
+.smallBoldTextGlobal{
+  font-size: 16px;
+  font-weight: 700;
+}
+.smallTitleGlobal{
+  font-size: 18px;
+  font-weight: 700;
+}

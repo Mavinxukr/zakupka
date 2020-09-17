@@ -1,4 +1,4 @@
-@import "../../../styles/core/vars";
+@import '../../../index.scss';
 
 .container {
   display: flex;
@@ -30,6 +30,13 @@
 
 .leftCard{
   .title{
+    margin: 20px 0;
     font-size: 28px;
   }
+}
+.link{
+  margin-left: 5px;
+}
+.beforeSales{
+  margin: 20px 0;
 }

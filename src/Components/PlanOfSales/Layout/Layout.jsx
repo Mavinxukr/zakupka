@@ -470,8 +470,8 @@ const Layout = () => {
                 </div>
               </BlockForm>
               <BlockForm>
-                <button type="button" className={styles.buttonMain}>Оголосоти закупывлю</button>
-                <button type="button">Заберегти чернету</button>
+                <button type="button" className={styles.buttonMain}>Оголосоти закупівлю</button>
+                <button type="button">Зберегти чернетку</button>
               </BlockForm>
             </form>
           )}

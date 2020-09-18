@@ -2,6 +2,9 @@
 
 .arrowBlockMain{
   display: flex;
+  border-bottom: 2px solid $colorBorder;
+  padding-bottom: 50px;
+  padding-top: 20px;
 }
 .arrowBlock{
   display: flex;
@@ -62,8 +65,7 @@
 }
 
 .arrowBlockActive{
-  background: $colorWhite;
-
+  background-color: transparent;
   .arrowMain:before {
     border-right: 10px;
   }

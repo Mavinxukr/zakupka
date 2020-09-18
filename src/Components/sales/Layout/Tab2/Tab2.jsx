@@ -53,7 +53,7 @@ const Tab2 = () => (
           <div className={styles.iconBlock}>
             <IconStart className={styles.iconStar} />
             <span className={styles.data}>
-              Добавить в избранное
+              Додати в обране
             </span>
           </div>
         </div>

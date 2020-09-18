@@ -1,0 +1,49 @@
+@import "../../../index";
+
+.card{
+  min-width: 250px;
+  margin: 20px;
+  display: block;
+  border: 1px solid $colorBorder;
+
+}
+.header{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: darken($colorWhite,5%);
+  border-bottom: 1px solid $colorBorder;
+  li{
+    padding: 5px 0;
+  }
+  .sum{
+    padding: 10px 20px;
+  }
+  .status{
+    color: orange;
+    font-weight: 700;
+  }
+}
+.footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 200px;
+  .content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  button{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+  p{
+    text-align: center;
+    padding: 10px;
+  }
+}

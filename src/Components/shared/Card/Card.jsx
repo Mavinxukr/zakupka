@@ -81,7 +81,7 @@ const Card = ({ tender }) => {
               [styles.active]: buttonActive,
             })}
             />
-            {buttonActive ? (<p>Видалити</p>) : (<p>Добавить в избранное</p>)}
+            {buttonActive ? (<p>Видалити</p>) : (<p>Додати в обране</p>)}
           </button>
           {cookies.get('tokenProzorro') && match.path !== '/' && (
           <>

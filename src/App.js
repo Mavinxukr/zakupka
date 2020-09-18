@@ -13,7 +13,6 @@ import Planing from './Pages/Profile/Planing/Planing';
 import PlaneOfSales from './Pages/PlanOfSales/PlaneOfSales';
 import MyPlanSales from './Pages/MyPlanSales/MyPlanSales';
 import MyCreatePlane from './Pages/MyCreatePlane/MyCreatePlane';
-import PurchasesSales from './Pages/Purchases/Purchases-Sales/Purchases-Sales';
 import './index.scss';
 import PurchasesDemands from './Pages/Purchases/Purchases-Demands/Purchases-Demands';
 import PurchasesReport from './Pages/Purchases/Purchases-Report/Purchases-Report';
@@ -22,6 +21,7 @@ import PurchasesMonitoring from './Pages/Purchases/Purchases-Monitoring/Purchase
 import PurchasesInside from './Pages/Purchases/Purchases-Inside/Purchases-Inside';
 import PurchasesDozorro from './Pages/Purchases/Purchases-Dozorro/Purchases-Dozorro';
 import PurchasesClaims from './Pages/Purchases/Purchases-Сlaims/Purchases-Сlaims';
+import PurchasesSales from './Pages/Purchases/Purchases-Sales/PurchasesSales';
 
 const App = () => (
   <>

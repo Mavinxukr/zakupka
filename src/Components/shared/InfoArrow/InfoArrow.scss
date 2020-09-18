@@ -8,7 +8,7 @@
   flex-direction: column;
 }
 .arrowHeader{
-  padding: 10px;
+  padding: 10px 40px;
 }
 .arrowMain{
   width: 100%;
@@ -17,6 +17,7 @@
   padding: 10px 0;
   text-align: center;
   position: relative;
+  color: $colorBorder;
   &:after{
     content:'';
     width: 0;
@@ -61,7 +62,7 @@
 }
 
 .arrowBlockActive{
-  background: #000;
+  background: $colorWhite;
 
   .arrowMain:before {
     border-right: 10px;
@@ -69,5 +70,16 @@
 
   .arrowFooter {
     display: block;
+  }
+  .arrowMain{
+    background-color: $colorWhite;
+    border: 1px solid green;
+    color: #000;
+    &:after{
+      border-left: 10px solid green;
+    }
+    &:before{
+      border-left: 10px solid $colorWhite;
+    }
   }
 }

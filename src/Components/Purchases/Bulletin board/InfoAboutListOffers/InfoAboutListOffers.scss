@@ -1,0 +1,21 @@
+@import "../../../../index";
+
+.infoContainer{
+  border-bottom: 2px solid $colorBorder;
+  h2{
+    padding: 10px 0;
+  }
+}
+.table{
+  display: grid;
+  grid-template-columns: 1fr repeat(3,15%);
+  ul,li{
+    padding: 5px 0;
+  }
+}
+.itemTable{
+}
+.titleTable{
+  padding-bottom: 5px;
+  border-bottom: 1px solid $colorBorder;
+}

@@ -1,0 +1,18 @@
+@import '../../../../index';
+
+.purchaseContainer{
+  padding: 10px 0;
+  border-bottom: 2px solid $colorBorder;
+}
+.title{
+  padding: 10px 0;
+}
+.containerInfo{
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  margin: 20px 0;
+}
+.names,.description{
+  display: grid;
+  grid-gap: 10px;
+}

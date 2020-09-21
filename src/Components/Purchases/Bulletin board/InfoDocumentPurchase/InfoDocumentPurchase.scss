@@ -1,0 +1,47 @@
+@import "../../../../index";
+
+.infoContainer{
+  border-bottom: 2px solid $colorBorder;
+  position: relative;
+  h2{
+    padding: 10px 0;
+  }
+}
+.table{
+  display: grid;
+  grid-template-columns: 1fr repeat(2,25%);
+  ul,li{
+    padding: 5px 0;
+  }
+}
+.titleTable{
+  padding-bottom: 5px;
+  border-bottom: 1px solid $colorBorder;
+}
+
+.buttonsHover{
+  display: none;
+  padding: 10px;
+  background-color: $colorWhite;
+  border: 1px solid $colorBorder;
+  position: absolute;
+  top: 135px;
+  left: 80px;
+  button:first-child{
+    margin-right: 10px;
+  }
+}
+.link{
+  color: blue;
+  &:hover{
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.itemTable {
+  &:hover .buttonsHover{
+    display: inline-flex;
+  }
+}
+

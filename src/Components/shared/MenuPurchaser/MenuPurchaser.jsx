@@ -48,51 +48,174 @@ const MenuPurchaser = () => (
         <div>
           Бібліотека специфікацій
           <ul className={styles.showBlock}>
-            <li>Бібліотека специфікацій</li>
+            <li>
+              <li>
+                <NavLink
+                  to="/my-plane-sales"
+                  exact
+                  className={styles.item}
+                >
+                  Бібліотека специфікацій
+                </NavLink>
+              </li>
+
+            </li>
           </ul>
         </div>
         <div>
           Профіль
           <ul className={styles.showBlock}>
-            <li>Дані про компанію</li>
-            <li>Дані для входу в кабінет</li>
-            <li>Структура компанії</li>
-            <li>Віджет</li>
+            <li>
+              <NavLink
+                to="/my-plane-sales"
+                exact
+                className={styles.item}
+              >
+                Дані про компанію
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/my-plane-sales"
+                exact
+                className={styles.item}
+              >
+                Дані для входу в кабінет
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/my-plane-sales"
+                exact
+                className={styles.item}
+              >
+                Структура компанії
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/my-plane-sales"
+                exact
+                className={styles.item}
+              >
+                Віджет
+              </NavLink>
+            </li>
           </ul>
         </div>
         <div>
           Послуги та аналітика
           <ul className={styles.showBlock}>
-            <li>Аналіз постачальників</li>
-            <li>Аналіз замовників</li>
-            <li>Інтеграція з нами</li>
-            <li>Довідковий центр</li>
+            <li>
+              <NavLink
+                to="/my-plane-sales"
+                exact
+                className={styles.item}
+              >
+                Аналіз постачальників
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/my-plane-sales"
+                exact
+                className={styles.item}
+              >
+                Аналіз замовників
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/my-plane-sales"
+                exact
+                className={styles.item}
+              >
+                Інтеграція з нами
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/my-plane-sales"
+                exact
+                className={styles.item}
+              >
+                Довідковий центр
+              </NavLink>
+            </li>
           </ul>
         </div>
         <div>
           Контакти
           <ul className={styles.showBlock}>
-            <li>Контакти</li>
+            <li>
+              <NavLink
+                to="/my-plane-sales"
+                exact
+                className={styles.item}
+              >
+                Контакти
+              </NavLink>
+            </li>
           </ul>
         </div>
         <div>
           <IconCog className={styles.icon} />
           <ul className={styles.showBlock}>
-            <li>Налаштування</li>
+            <li>
+              <NavLink
+                to="/my-plane-sales"
+                exact
+                className={styles.item}
+              >
+                Налаштування
+              </NavLink>
+            </li>
           </ul>
         </div>
         <div>
           <IconMail className={styles.icon} /><span>0</span>
           <ul className={styles.showBlock}>
-            <li>Повідомлення</li>
+            <li>
+              <NavLink
+                to="/my-plane-sales"
+                exact
+                className={styles.item}
+              >
+                Повідомлення
+              </NavLink>
+            </li>
           </ul>
         </div>
         <div>
           Prozzoro Market
           <ul className={styles.showBlock}>
-            <li>Каталог</li>
-            <li>Кошик</li>
-            <li>Історія замовлень</li>
+            <li>
+              <NavLink
+                to="/my-plane-sales"
+                exact
+                className={styles.item}
+              >
+                Каталог
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/my-plane-sales"
+                exact
+                className={styles.item}
+              >
+                Кошик
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/my-plane-sales"
+                exact
+                className={styles.item}
+              >
+                Історія замовлень
+              </NavLink>
+            </li>
           </ul>
         </div>
       </nav>

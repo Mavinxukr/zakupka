@@ -26,24 +26,12 @@
   }
 }
 .footer{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 50px 1fr;
+}
+.icons{
+  display: grid;
+}
+.content{
   max-width: 200px;
-  .content{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  button{
-    display: flex;
-    align-items: center;
-    padding: 10px;
-  }
-  p{
-    text-align: center;
-    padding: 10px;
-  }
 }

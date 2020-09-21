@@ -28,10 +28,23 @@
 .footer{
   display: grid;
   grid-template-columns: 50px 1fr;
+  .text{
+    padding-top: 10px;
+  }
+  button:hover{
+    text-decoration: underline;
+    color: blue;
+  }
 }
 .icons{
   display: grid;
+  justify-self: center;
+  padding-top: 10px;
 }
 .content{
   max-width: 200px;
+  padding: 10px 0;
+  p{
+    padding-top:10px;
+  }
 }

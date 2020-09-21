@@ -9,7 +9,7 @@ const TabsComponent = () => (
       <div className={styles.flexContainer}>
         <NavLink
           to="/purchases/sales"
-          exat
+          exact
           activeClassName={styles.tabActive}
           className={styles.tab}
         >
@@ -17,7 +17,7 @@ const TabsComponent = () => (
         </NavLink>
         <NavLink
           to="/purchases/questions"
-          exat
+          exact
           activeClassName={styles.tabActive}
           className={styles.tab}
         >
@@ -25,7 +25,7 @@ const TabsComponent = () => (
         </NavLink>
         <NavLink
           to="/purchases/demands"
-          exat
+          exact
           activeClassName={styles.tabActive}
           className={styles.tab}
         >
@@ -33,7 +33,7 @@ const TabsComponent = () => (
         </NavLink>
         <NavLink
           to="/purchases/claims"
-          exat
+          exact
           activeClassName={styles.tabActive}
           className={styles.tab}
         >
@@ -41,7 +41,7 @@ const TabsComponent = () => (
         </NavLink>
         <NavLink
           to="/purchases/dozorro"
-          exat
+          exact
           className={styles.tab}
           activeClassName={styles.tabActive}
         >
@@ -49,7 +49,7 @@ const TabsComponent = () => (
         </NavLink>
         <NavLink
           to="/purchases/report"
-          exat
+          exact
           activeClassName={styles.tabActive}
           className={styles.tab}
         >
@@ -57,7 +57,7 @@ const TabsComponent = () => (
         </NavLink>
         <NavLink
           to="/purchases/monitoring"
-          exat
+          exact
           activeClassName={styles.tabActive}
           className={styles.tab}
         >
@@ -65,7 +65,7 @@ const TabsComponent = () => (
         </NavLink>
         <NavLink
           to="/purchases/inside"
-          exat
+          exact
           activeClassName={styles.tabActive}
           className={styles.tab}
         >

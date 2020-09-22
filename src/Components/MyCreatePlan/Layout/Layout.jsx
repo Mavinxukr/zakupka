@@ -1,5 +1,4 @@
 import React from 'react';
-// import InputFormik from '../../../UI-Kit/InputFormik/InputFormik';
 import { Field, Formik } from 'formik';
 import MenuPurchaser from '../../shared/MenuPurchaser/MenuPurchaser';
 import BlockForm from '../../shared/BlockForm/BlockForm';

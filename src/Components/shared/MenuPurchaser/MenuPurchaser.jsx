@@ -29,7 +29,7 @@ const MenuPurchaser = () => (
             </li>
             <li>
               <NavLink
-                to="/my-plane-sales"
+                to="/complaints"
                 exact
                 className={styles.item}
               >Скарги
@@ -49,16 +49,13 @@ const MenuPurchaser = () => (
           Бібліотека специфікацій
           <ul className={styles.showBlock}>
             <li>
-              <li>
-                <NavLink
-                  to="/my-plane-sales"
-                  exact
-                  className={styles.item}
-                >
-                  Бібліотека специфікацій
-                </NavLink>
-              </li>
-
+              <NavLink
+                to="/my-plane-sales"
+                exact
+                className={styles.item}
+              >
+                Бібліотека специфікацій
+              </NavLink>
             </li>
           </ul>
         </div>

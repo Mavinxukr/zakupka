@@ -22,6 +22,7 @@ import PurchasesInside from './Pages/Purchases/Purchases-Inside/Purchases-Inside
 import PurchasesDozorro from './Pages/Purchases/Purchases-Dozorro/Purchases-Dozorro';
 import PurchasesClaims from './Pages/Purchases/Purchases-Сlaims/Purchases-Сlaims';
 import PurchasesSales from './Pages/Purchases/Purchases-Sales/PurchasesSales';
+import Complaints from './Pages/Complaints/Complaints';
 
 const App = () => (
   <>
@@ -47,6 +48,7 @@ const App = () => (
       <Route exact path="/purchases/report" component={PurchasesReport} />
       <Route exact path="/purchases/sales" component={PurchasesSales} />
       <Route exact path="/purchases/claims" component={PurchasesClaims} />
+      <Route exact path="/complaints" component={Complaints} />
     </Switch>
   </>
 );

@@ -23,6 +23,7 @@ import PurchasesDozorro from './Pages/Purchases/Purchases-Dozorro/Purchases-Dozo
 import PurchasesClaims from './Pages/Purchases/Purchases-Сlaims/Purchases-Сlaims';
 import PurchasesSales from './Pages/Purchases/Purchases-Sales/PurchasesSales';
 import Complaints from './Pages/Complaints/Complaints';
+import Classifier from './Components/Classifier/Layout/Layout';
 
 const App = () => (
   <>
@@ -49,6 +50,7 @@ const App = () => (
       <Route exact path="/purchases/sales" component={PurchasesSales} />
       <Route exact path="/purchases/claims" component={PurchasesClaims} />
       <Route exact path="/complaints" component={Complaints} />
+      <Route exact path="/classifier" component={Classifier} />
     </Switch>
   </>
 );

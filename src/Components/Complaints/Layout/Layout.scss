@@ -34,3 +34,14 @@
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
+.section{
+  padding: 20px;
+}
+.iconActive{
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+  & path{
+    fill: $colorMain;
+  }
+}

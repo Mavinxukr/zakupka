@@ -420,7 +420,7 @@ const Layout = () => {
                       ...formik,
                       name: 'sumSize',
                       type: 'text',
-                      placeholder: 'Почныть вводити вулицю',
+                      placeholder: 'Почніть вводити вулицю',
                     }}
                   />
                 </div>

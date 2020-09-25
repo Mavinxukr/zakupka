@@ -1,0 +1,27 @@
+@import "../../index";
+
+.button{
+  margin: 20px 0 20px 35px;
+}
+.containerMain{
+  width: 100%;
+}
+.input{
+  display: block;
+  border: 1px solid $colorBorder;
+  width: 90%;
+  padding: 10px;
+  margin: 20px auto;
+  border-radius: 5px;
+  &:focus{
+    border:1px solid darken($colorBorder,40%);
+  }
+}
+
+.containerInfo{
+  width: 95%;
+  margin: 0 auto;
+  height: 250px;
+  border: 1px solid $colorBorder;
+  overflow: auto;
+}

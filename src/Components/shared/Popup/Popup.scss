@@ -1,9 +1,12 @@
 .Popup {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
   z-index: 99;
 }
 
@@ -14,16 +17,13 @@
   right: 0;
   bottom: 0;
   background: rgba(0,0,0,.5);
-  z-index: 999;
+  z-index: 998;
 }
 
 .popupContent {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #fff;
-  z-index: 99999;
+  position: relative;
+  background-color: #ffffff;
+  z-index: 999;
 }
 
 .close{

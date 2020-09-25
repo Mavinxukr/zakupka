@@ -1,7 +1,7 @@
 import React from 'react';
 import IconStart from '../../../../static/svg/star.svg';
 import styles from './Tab2.scss';
-import Filter from '../Filters/Filters';
+import Filter from '../../../shared/Filters/Filters';
 
 const Tab2 = () => (
   <div className={styles.main}>

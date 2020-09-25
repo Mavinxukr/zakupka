@@ -1,4 +1,4 @@
-@import '../../../../index';
+@import '../../../index';
 
 .blockOut{
     width: 100%;
@@ -66,9 +66,11 @@
 }
 
 .popupHeader{
-    width: 800px;
+    width: 100%;
     border-bottom: 1px solid $colorBorder;
-    padding: 20px;
+    h3{
+        padding: 20px 0 20px 20px;
+    }
 }
 .treeContainer{
     width: 100%;

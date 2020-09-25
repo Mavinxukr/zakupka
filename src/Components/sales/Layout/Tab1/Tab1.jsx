@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { tendersDataReceivedSelector, tendersDataSelector } from '../../../../utils/selectors';
 import { getTenders } from '../../../../redux/actions/tenders';
 import Card from '../../../shared/Card/Card';
-import Filter from '../Filters/Filters';
+import Filter from '../../../shared/Filters/Filters';
 import styles from './Tab1.scss';
 
 const Tab1 = () => {

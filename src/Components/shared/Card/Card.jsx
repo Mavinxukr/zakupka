@@ -16,7 +16,7 @@ const Card = ({ tender }) => {
   const match = useRouteMatch();
   const history = useHistory();
 
-  console.log(tender);
+  // console.log(tender);
 
   return (
     <div className={styles.bgWhite}>

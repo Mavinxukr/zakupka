@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import Popup from '../../../shared/Popup/Popup';
+import Popup from '../Popup/Popup';
 import styles from './Filters.scss';
-import { data } from './data';
+import Classifier from '../../Classifier/Classifier';
 
 const Text = 'Назва предмету закупівлі, id або номер договору';
 const Filter = () => {
   const [openPopup, isOpenPopup] = useState(false);
-  console.log(data);
   return (
     <div className={styles.blockOut}>
       {openPopup && (
@@ -15,7 +14,7 @@ const Filter = () => {
             <h3>Класифікатор ДК 021:2015 </h3>
           </div>
           <div className={styles.treeContainer}>
-            <p>Our tree</p>
+            <Classifier />
           </div>
         </Popup>
       )}

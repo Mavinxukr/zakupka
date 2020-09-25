@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import IconCase from '../../../static/svg/briefcase-solid.svg';
 import IconStar from '../../../static/svg/star.svg';
 import styles from './Layout.scss';
-import Filter from '../../sales/Layout/Filters/Filters';
+import Filter from '../../shared/Filters/Filters';
 
 const Layout = () => (
   <>

@@ -23,7 +23,7 @@ import PurchasesDozorro from './Pages/Purchases/Purchases-Dozorro/Purchases-Dozo
 import PurchasesClaims from './Pages/Purchases/Purchases-Сlaims/Purchases-Сlaims';
 import PurchasesSales from './Pages/Purchases/Purchases-Sales/PurchasesSales';
 import Complaints from './Pages/Complaints/Complaints';
-import Classifier from './Components/Classifier/Layout/Layout';
+import Classifier from './Components/Classifier/Classifier';
 
 const App = () => (
   <>

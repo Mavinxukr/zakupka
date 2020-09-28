@@ -8,7 +8,7 @@ const Input = ({
     type,
     values,
     handleChange,
-    classNameWrapper,
+    classNameWrapperr,
     handleBlur,
     id,
     name,
@@ -18,7 +18,7 @@ const Input = ({
     disabled,
   },
 }) => {
-  const classNameForInput = cx(classNameWrapper);
+  const classNameForInput = cx(classNameWrapperr);
 
   return (
     <div className={styles.inputWrapper}>
@@ -44,7 +44,7 @@ const Input = ({
 Input.propTypes = {
   formikProps: PropTypes.shape({
     type: PropTypes.string,
-    classNameWrapper: PropTypes.string,
+    classNameWrapperr: PropTypes.string,
     handleChange: PropTypes.func,
     handleBlur: PropTypes.func,
     id: PropTypes.string,

@@ -81,8 +81,8 @@ const Layout = () => {
               </BlockForm>
               <BlockForm>
                 <InputFormik
-                  classNameWrapper={styles.typeSales}
-                  classNameWrapperLabel={styles.labelInput}
+                  classNameWrapperr={styles.typeSales}
+                  classNameWrapperrLabel={styles.labelInput}
                   formikProps={{
                     ...formik,
                     name: 'password',

@@ -5,11 +5,11 @@ import IconPlus from '../../../static/img/expand_plus.gif';
 import IconMinus from '../../../static/img/expand_minus.gif';
 import styles from './Tree.scss';
 
-const Tree = ({ data, classNameWrapper }) => (
+const Tree = ({ data, classNameWrapperr }) => (
   <>
     {data.map((item) => (
       <div key={item.data.code}>
-        <div className={cx(styles.showBlock, classNameWrapper)}>
+        <div className={cx(styles.showBlock, classNameWrapperr)}>
           {item?.children?.length > 0 && (
             <button onClick={(e) => e.target.parentNode.parentNode.classList.toggle(styles.open)} type="button" className={styles.button}>
               <img src={IconPlus} alt="plus" className={styles.img} />
@@ -25,7 +25,7 @@ const Tree = ({ data, classNameWrapper }) => (
           className={styles.sub}
         >
           {item?.children?.length > 0 && (
-            <Tree key={item.children.code} classNameWrapper={styles.children} data={item.children} />
+            <Tree key={item.children.code} classNameWrapperr={styles.children} data={item.children} />
               )}
         </div>
       </div>
@@ -34,7 +34,7 @@ const Tree = ({ data, classNameWrapper }) => (
 );
 
 Tree.propTypes = {
-  classNameWrapper: PropTypes.string,
+  classNameWrapperr: PropTypes.string,
   data: PropTypes.array,
 };
 

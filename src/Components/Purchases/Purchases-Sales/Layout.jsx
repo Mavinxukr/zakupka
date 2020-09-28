@@ -1,7 +1,6 @@
 import React from 'react';
 import InfoArrow from '../../shared/InfoArrow/InfoArrow';
 import Bulletin from '../Bulletin board/Bulletin';
-import styles from './Layout.scss';
 import MenuPurchaser from '../../shared/MenuPurchaser/MenuPurchaser';
 import TabsComponent from '../TabsComponent/TabsComponent';
 import InfoAboutCustomer from '../Bulletin board/InfoAboutCustomer/InfoAboutCustomer';
@@ -10,17 +9,22 @@ import InfoAboutListOffers from '../Bulletin board/InfoAboutListOffers/InfoAbout
 import InfoDocumentPurchase from '../Bulletin board/InfoDocumentPurchase/InfoDocumentPurchase';
 import InfoAboutPayment from '../Bulletin board/infoAboutPayment/infoAboutPayment';
 import InfoAboutMainContact from '../Bulletin board/InfoAboutMainContact/InfoAboutMainContact';
-import CancelButton from '../../CancelButton/CancelButton';
+import CancelButton from '../CancelPurchase/CancelButton/CancelButton';
+import CancelConfirm from '../CancelPurchase/CancelConfirm/CancelConfirm';
+import CancelBlockFinished from '../CancelPurchase/CancelBlockFinished/CancelBlockFinished';
+import styles from './Layout.scss';
 
 const Layout = () => (
   <>
     <MenuPurchaser />
     <TabsComponent />
-    <CancelButton />
     <div className={styles.containerGlobal}>
+      <CancelButton />
+      <CancelConfirm />
+      <CancelBlockFinished />
       <div className={styles.flexContainer}>
         <InfoArrow />
-        <Bulletin />
+        <Bulletin classNameWrapper={styles.bulletin} />
       </div>
       <InfoAboutCustomer />
       <InfoAboutPurchase />

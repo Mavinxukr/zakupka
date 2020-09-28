@@ -3,8 +3,8 @@ import cx from 'classnames';
 import IconClose from '../../../static/svg/close.svg';
 import styles from './Popup.scss';
 
-const Popup = ({ children, isOpenPopup, classNameWrapper }) => (
-  <div className={cx(styles.Popup, classNameWrapper)}>
+const Popup = ({ children, isOpenPopup, classNameWrapperr }) => (
+  <div className={cx(styles.Popup, classNameWrapperr)}>
     <div className={styles.bg} />
     <div className={styles.popupContent}>
       <button type="button" className={styles.close} onClick={() => isOpenPopup(false)}>

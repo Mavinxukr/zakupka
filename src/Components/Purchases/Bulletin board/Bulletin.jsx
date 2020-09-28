@@ -4,7 +4,7 @@ import styles from './Bulletin.scss';
 import IconStar from '../../../static/svg/star.svg';
 import IconEye from '../../../static/svg/eye.svg';
 
-const Bulletin = () => {
+const Bulletin = ({ classNameWrapper }) => {
   const [activeBtn, isActiveBtn] = useState(false);
 
   const classNameButton = cx(styles.iconGlobal, {
@@ -13,7 +13,7 @@ const Bulletin = () => {
 
   return (
     <>
-      <div className={styles.card}>
+      <div className={cx(styles.card, classNameWrapper)}>
         <ul className={styles.header}>
           <li className={cx(styles.smallBoldTextGlobal, styles.sum)}>470 000 з ПДВ</li>
           <li className={styles.status}>Закупівля не відбулась</li>

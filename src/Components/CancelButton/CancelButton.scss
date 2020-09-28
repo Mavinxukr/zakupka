@@ -1,0 +1,23 @@
+@import "../../index";
+
+.containerCancel{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width:50%;
+  margin: 20px 50px;
+  padding: 20px;
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+}
+
+.greenText{
+  color: green;
+}
+.smallBoldTextGlobal,.smallTextGlobal{
+  margin-bottom: 10px;
+}
+.buttonGlobal{
+
+}

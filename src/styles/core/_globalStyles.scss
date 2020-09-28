@@ -26,6 +26,14 @@
   }
 }
 
+.buttonGlobalPassive{
+  background-color: darken($colorWhite,10%);
+  color: $colorGrey;
+  border:1px solid $colorGrey;
+  border-radius: 5px;
+  padding: 10px;
+}
+
 //links
 .linkGlobal{
   color: blue;
@@ -34,10 +42,10 @@
 //text
 
 .smallTextGlobal{
-  font-size: 16px;
+  font-size: 14px;
 }
 .smallBoldTextGlobal{
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
 }
 .smallTitleGlobal{
@@ -50,7 +58,13 @@
   color: $colorGrey;
   margin-bottom: 20px;
 }
-
+.normalTextGlobal{
+  font-size: 16px;
+}
+.normalBoldTextGlobal{
+  font-size: 16px;
+  font-weight: 700;
+}
 //icons
 
 .iconGlobal{

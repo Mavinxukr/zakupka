@@ -2,12 +2,16 @@
 
 .arrowBlockMain{
   display: flex;
+  min-height: 150px;
+  max-height: 200px;
   border-bottom: 2px solid $colorBorder;
-  padding-bottom: 20px;
-  padding-top: 20px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin-top: 20px;
 }
 .arrowBlock{
   display: flex;
+  align-items: center;
   flex-direction: column;
 }
 .arrowHeader{
@@ -49,6 +53,7 @@
 
 .arrowFooter{
   display: none;
+  margin-top: 10px;
   p{
     padding: 5px 10px;
   }

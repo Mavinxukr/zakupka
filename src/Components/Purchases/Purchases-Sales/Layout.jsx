@@ -10,11 +10,13 @@ import InfoAboutListOffers from '../Bulletin board/InfoAboutListOffers/InfoAbout
 import InfoDocumentPurchase from '../Bulletin board/InfoDocumentPurchase/InfoDocumentPurchase';
 import InfoAboutPayment from '../Bulletin board/infoAboutPayment/infoAboutPayment';
 import InfoAboutMainContact from '../Bulletin board/InfoAboutMainContact/InfoAboutMainContact';
+import CancelButton from '../../CancelButton/CancelButton';
 
 const Layout = () => (
   <>
     <MenuPurchaser />
     <TabsComponent />
+    <CancelButton />
     <div className={styles.containerGlobal}>
       <div className={styles.flexContainer}>
         <InfoArrow />

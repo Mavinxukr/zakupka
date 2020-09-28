@@ -17,6 +17,9 @@ const Bulletin = () => {
         <ul className={styles.header}>
           <li className={cx(styles.smallBoldTextGlobal, styles.sum)}>470 000 з ПДВ</li>
           <li className={styles.status}>Закупівля не відбулась</li>
+          <button type="button" className={cx(styles.buttonMainGlobal, styles.button)}>Підписати з ЕЦПКЕП</button>
+          <button type="button" className={cx(styles.buttonGlobal, styles.button)}> Редагувати </button>
+          <button type="button" className={cx(styles.buttonGlobalPassive, styles.button)}> Скасувати закупівлю</button>
         </ul>
         <div className={styles.footer}>
           <div className={styles.icons}>

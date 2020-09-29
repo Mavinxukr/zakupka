@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Field, Formik } from 'formik';
 // import * as Yup from 'yup';
 import TextField from '@material-ui/core/TextField';
+import * as Yup from 'yup';
 import InputFormik from '../../../UI-Kit/InputFormik/InputFormik';
 import MenuPurchaser from '../../shared/MenuPurchaser/MenuPurchaser';
 import BlockForm from '../../shared/BlockForm/BlockForm';
@@ -23,12 +24,36 @@ const Layout = () => {
             <h4 className={styles.title}>Інформація про замовника</h4>
             <div className={styles.customerInfo}>
               <p>Name</p>
-              <p>3434, Україна, Вінницька область, asdads, aasd</p>
+              <p>3434, Україна, Вінницька область</p>
             </div>
           </div>
         </BlockForm>
         <Formik
           initialValues={{ }}
+          validationSchema={Yup.object({
+            step: Yup.string()
+              .required('Введіть крок зниження ставки'),
+            if: Yup.string()
+              .required('Введіть вартість закупівлі'),
+            conditionOne: Yup.string()
+              .required('Введіть період'),
+            conditionTwo: Yup.string()
+              .required('Введіть розмір оплати'),
+            name: Yup.string()
+              .required('Укажіть назву закупівлі'),
+            commonName: Yup.string()
+              .required('Введіть назву предмета закупівлі'),
+            street: Yup.string()
+              .required('Оберіть вулицю'),
+            settlement: Yup.string()
+              .required('Оберіть населений пункт'),
+            country: Yup.string()
+              .required('Оберіть країну'),
+            region: Yup.string()
+              .required('Оберіть область'),
+            index: Yup.string()
+              .required('Оберіть поштовий індекс'),
+          })}
           onSubmit={(values) => onSubmit(values)}
         >
           {(formik) => (
@@ -41,17 +66,17 @@ const Layout = () => {
                     Оберіть тип процедури
                   </p>
                   <div className={styles.changeProcedure}>
-                    <Field as="select" name="role" id="role">
-                      <option value="1">Срощена/допорогова закупівля</option>
-                      <option value="2">Відкриті торги</option>
-                      <option value="3">Відкриті торги з публікацією англійською мовою</option>
-                      <option value="4">Публічні закупівлі енергосервісу</option>
-                      <option value="5">Закупівля без використання електронної системи</option>
-                      <option value="6">Переговорна процедура</option>
-                      <option value="7">Переговорна процедура, скорочена</option>
-                      <option value="8">Конкурентний діалог</option>
-                      <option value="9">Конкурентний діалог з публікацією англійською мовою</option>
-                      <option value="10">Укладення рамкової угоди</option>
+                    <Field as="select" name="procedureType" id="role">
+                      <option value="a1">Срощена/допорогова закупівля</option>
+                      <option value="a2">Відкриті торги</option>
+                      <option value="a3">Відкриті торги з публікацією англійською мовою</option>
+                      <option value="a4">Публічні закупівлі енергосервісу</option>
+                      <option value="a5">Закупівля без використання електронної системи</option>
+                      <option value="a6">Переговорна процедура</option>
+                      <option value="a7">Переговорна процедура, скорочена</option>
+                      <option value="a8">Конкурентний діалог</option>
+                      <option value="a9">Конкурентний діалог з публікацією англійською мовою</option>
+                      <option value="a10">Укладення рамкової угоди</option>
                     </Field>
                     {/* eslint-disable */}
                     <label>
@@ -85,7 +110,7 @@ const Layout = () => {
                   classNameWrapperrLabel={styles.labelInput}
                   formikProps={{
                     ...formik,
-                    name: 'password',
+                    name: 'Ident',
                     label: 'Ідентифікатор плану закупівлі',
                     type: 'text',
                     placeholder: '',
@@ -97,11 +122,11 @@ const Layout = () => {
                   <span className={styles.redStar}>*</span>
                   Вид предмета закупівлі
                 </p>
-                <Field as="select" name="role" id="role" className={styles.typeSales}>
-                  <option value="1">-- можна вибрати --</option>
-                  <option value="2">товари</option>
-                  <option value="3">послуги</option>
-                  <option value="4">роботи</option>
+                <Field as="select" name="type" id="role" className={styles.typeSales}>
+                  <option value="type1">-- можна вибрати --</option>
+                  <option value="type2">товари</option>
+                  <option value="type3">послуги</option>
+                  <option value="type4">роботи</option>
                 </Field>
               </BlockForm>
               <BlockForm>
@@ -116,9 +141,8 @@ const Layout = () => {
                       <InputFormik
                         formikProps={{
                           ...formik,
-                          name: 'name',
+                          name: 'contact',
                           type: 'text',
-                          placeholder: 'dasdasd',
                           disabled: true,
                         }}
                       />
@@ -134,7 +158,7 @@ const Layout = () => {
                       <InputFormik
                         formikProps={{
                           ...formik,
-                          name: 'mail',
+                          name: 'email',
                           type: 'email',
                           placeholder: 'test1888@test.com',
                           disabled: true,
@@ -142,6 +166,9 @@ const Layout = () => {
                       />
                     </div>
                     <a className={styles.link} href="/">Додати новий основний контакт</a>
+                    {formik.errors.contact && formik.touched.contact && (
+                      <p className={styles.error}>{formik.errors.contact}</p>
+                    )}
                   </div>
                 </div>
               </BlockForm>
@@ -149,11 +176,14 @@ const Layout = () => {
                 <h4 className={styles.title}>Інформація про закупівлю</h4>
                 <div className={styles.commonName}>
                   <p><span className={styles.redStar}>*</span>Узагальнена назва закупівлі</p>
-                  <Field className={styles.textarea} name="color" component="textarea" placeholder="" />
+                  <Field className={styles.textarea} name="commonName" component="textarea" />
+                  {formik.errors.commonName && formik.touched.commonName && (
+                    <p className={styles.error}>{formik.errors.commonName}</p>
+                  )}
                 </div>
                 <div className={styles.notes}>
                   <p>Примітки</p>
-                  <Field className={styles.textarea} name="color" component="textarea" placeholder="" />
+                  <Field className={styles.textarea} name="color5" component="textarea" />
                 </div>
                 <div className={styles.containerDocument}>
                   <p>Документація до закупівлі</p>
@@ -169,7 +199,7 @@ const Layout = () => {
                     <InputFormik
                       formikProps={{
                         ...formik,
-                        name: 'name',
+                        name: 'if',
                         type: 'number',
                       }}
                     />
@@ -201,10 +231,11 @@ const Layout = () => {
                     <InputFormik
                       formikProps={{
                         ...formik,
-                        name: 'sumInput',
+                        name: 'step',
                         type: 'number',
                       }}
                     />
+
                     <p className={styles.textLow}>
                       від 0.5 до 3 відсотків від очікуваної вартості закупівлі
                     </p>
@@ -212,7 +243,7 @@ const Layout = () => {
                   <InputFormik
                     formikProps={{
                       ...formik,
-                      name: 'name',
+                      name: 'percent',
                       type: 'number',
                       placeholder: 'У %',
                     }}
@@ -237,7 +268,7 @@ const Layout = () => {
                         <InputFormik
                           formikProps={{
                             ...formik,
-                            name: 'name',
+                            name: 'just',
                             type: 'number',
                             label: 'Сума',
                             value: '0',
@@ -258,7 +289,8 @@ const Layout = () => {
                 </div>
                 <div className={styles.dataFinish}><p><span className={styles.redStar}>*</span>Завершення періоду уточнень</p>
                   <TextField
-                    id="date"
+                    name="startProposition"
+                    id="date1"
                     type="datetime-local"
                     defaultValue={startDate}
                     onChange={() => isStartDate(document.querySelector('#date').value)}
@@ -268,14 +300,14 @@ const Layout = () => {
                   <p><span className={styles.redStar}>*</span>Прийом пропозицій</p>
                   <div className={styles.getData}>
                     <TextField
-                      id="date"
+                      id="date2"
                       type="datetime-local"
                       defaultValue={startDate}
                       onChange={() => isStartDate(document.querySelector('#date').value)}
                     />
                     <span>до</span>
                     <TextField
-                      id="date"
+                      id="date3"
                       type="datetime-local"
                       defaultValue={startDate}
                       onChange={() => isStartDate(document.querySelector('#date').value)}
@@ -296,24 +328,24 @@ const Layout = () => {
                   <div className={styles.rowTerms}>
                     <div className={styles.termsPayment}>
                       <p><span className={styles.redStar}>*</span>Оплата після події</p>
-                      <Field as="select" name="role" id="role">
-                        <option value="1">---</option>
-                        <option value="2">поставка товару</option>
-                        <option value="3">надання послуг</option>
-                        <option value="4">дата виставлення рахунку</option>
-                        <option value="5">дата закінчення звітного періоду</option>
-                        <option value="6">дата подання заявки</option>
-                        <option value="7">інша подія</option>
-                        <option value="8">підписання договору</option>
+                      <Field as="select" name="terms" id="role">
+                        <option value="ter1">---</option>
+                        <option value="ter2">поставка товару</option>
+                        <option value="ter3">надання послуг</option>
+                        <option value="ter4">дата виставлення рахунку</option>
+                        <option value="ter5">дата закінчення звітного періоду</option>
+                        <option value="ter6">дата подання заявки</option>
+                        <option value="ter7">інша подія</option>
+                        <option value="ter8">підписання договору</option>
 
                       </Field>
                     </div>
                     <div className={styles.termsType}>
                       <p><span className={styles.redStar}>*</span>Тип оплати</p>
-                      <Field as="select" name="role" id="role">
-                        <option value="1">---</option>
-                        <option value="2">післяоплата</option>
-                        <option value="3">аванс</option>
+                      <Field as="select" name="typeSales" id="role">
+                        <option value="sal1">---</option>
+                        <option value="sal2">післяоплата</option>
+                        <option value="sal3">аванс</option>
                       </Field>
                     </div>
                     <div className={styles.termsPeriod}>
@@ -321,26 +353,26 @@ const Layout = () => {
                       <InputFormik
                         formikProps={{
                           ...formik,
-                          name: 'sumSize',
+                          name: 'conditionOne',
                           type: 'number',
                         }}
                       />
                     </div>
                     <div className={styles.termsTypeDays}>
                       <p><span className={styles.redStar}>*</span>Тип днів</p>
-                      <Field as="select" name="role" id="role">
-                        <option value="1">---</option>
-                        <option value="2">банківські</option>
-                        <option value="3">календарні</option>
-                        <option value="4">робочі</option>
+                      <Field as="select" name="condition" id="role">
+                        <option value="days1">---</option>
+                        <option value="days2">банківські</option>
+                        <option value="days3">календарні</option>
+                        <option value="days4">робочі</option>
                       </Field>
                     </div>
-                    <div className={styles.termsSize}>
+                    <div>
                       <p><span className={styles.redStar}>*</span>Розмір оплати, %</p>
                       <InputFormik
                         formikProps={{
                           ...formik,
-                          name: 'Period',
+                          name: 'conditionTwo',
                           type: 'number',
                         }}
                       />
@@ -348,25 +380,34 @@ const Layout = () => {
                   </div>
                   <div className={styles.rowTermsFooter}>
                     <p>Опис</p>
-                    <Field className={styles.textarea} name="color" component="textarea" placeholder="" />
+                    <Field className={styles.textarea} name="color8" component="textarea" placeholder="" />
                   </div>
                 </div>
                 <div className={styles.containerGrid}>
                   <a href="/" className={styles.add}>Видалити умову оплати</a>
                   <a href="/" className={styles.link}>+ Додати умови оплати</a>
                 </div>
+                {formik.errors.conditionOne && formik.touched.conditionOne && (
+                  <p className={styles.error}>{formik.errors.conditionOne}</p>
+                )}
+                {formik.errors.conditionTwo && formik.touched.conditionTwo && (
+                  <p className={styles.error}>{formik.errors.conditionTwo}</p>
+                )}
               </BlockForm>
               <BlockForm>
                 <p className={styles.title}>Товари,умови та послуги</p>
                 <div className={styles.specificName}>
                   <p><span className={styles.redStar}>*</span>Узагальнена назва предмета закупівлі</p>
                   <div className={styles.containerQuantity}>
-                    <Field className={styles.textarea} name="color" component="textarea" placeholder="" />
+                    <Field className={styles.textarea} name="name" component="textarea" />
+                    {formik.errors.name && formik.touched.name && (
+                      <p className={styles.error}>{formik.errors.name}</p>
+                    )}
                     <div className={styles.quantity}>
                       <InputFormik
                         formikProps={{
                           ...formik,
-                          name: 'name',
+                          name: 'nameThing',
                           type: 'number',
                         }}
                       />
@@ -383,8 +424,8 @@ const Layout = () => {
                 <div className={styles.containerClassifier}>
                   <p><span className={styles.redStar}>*</span>Класифікатори</p>
                   <div className={styles.classifier}>
-                    <button type="button">ДК 021:2015</button>
-                    <button type="button">інші ДК</button>
+                    <button type="button" className={styles.buttonGlobal}>ДК 021:2015</button>
+                    <button type="button" className={styles.buttonGlobal}>інші ДК</button>
                   </div>
                 </div>
                 <div className={styles.containerGetDate}>
@@ -404,6 +445,9 @@ const Layout = () => {
                       defaultValue={startDate}
                       onChange={() => isStartDate(document.querySelector('#date').value)}
                     />
+                    {formik.errors.firstName && formik.touched.firstName && (
+                      <p>Введіть дату</p>
+                    )}
                     <span>до</span>
                     <TextField
                       id="date"
@@ -418,18 +462,21 @@ const Layout = () => {
                   <InputFormik
                     formikProps={{
                       ...formik,
-                      name: 'sumSize',
+                      name: 'street',
                       type: 'text',
                       placeholder: 'Почніть вводити вулицю',
                     }}
                   />
+                  {formik.errors.firstName && formik.touched.firstName && (
+                    <p>Введіть вулицю та номер будинку</p>
+                  )}
                 </div>
                 <div className={styles.containerLocation}>
                   <p><span className={styles.redStar}>*</span>Населений пункт</p>
                   <InputFormik
                     formikProps={{
                       ...formik,
-                      name: 'sumSize',
+                      name: 'settlement',
                       type: 'text',
                     }}
                   />
@@ -437,21 +484,21 @@ const Layout = () => {
                 <div className={styles.containerPopulation}>
                   <p><span className={styles.redStar}>*</span>Країна</p>
                   <Field as="select" name="role" id="role">
-                    <option value="1">Україна</option>
-                    <option value="2">американський долар (USD)</option>
-                    <option value="3">євро (EUR)</option>
-                    <option value="4">російський рубль (RUB)</option>
-                    <option value="5">англійський фунт стерлінгів (GBP)</option>
+                    <option value="y1">Україна</option>
+                    <option value="y2">американський долар (USD)</option>
+                    <option value="y3">євро (EUR)</option>
+                    <option value="y4">російський рубль (RUB)</option>
+                    <option value="y5">англійський фунт стерлінгів (GBP)</option>
                   </Field>
                 </div>
                 <div className={styles.containerCountry}>
                   <p><span className={styles.redStar}>*</span>Область</p>
                   <Field as="select" name="role" id="role">
-                    <option value="1">--Оберіть область--</option>
-                    <option value="2">американський долар (USD)</option>
-                    <option value="3">євро (EUR)</option>
-                    <option value="4">російський рубль (RUB)</option>
-                    <option value="5">англійський фунт стерлінгів (GBP)</option>
+                    <option value="w1">--Оберіть область--</option>
+                    <option value="w2">американський долар (USD)</option>
+                    <option value="w3">євро (EUR)</option>
+                    <option value="w4">російський рубль (RUB)</option>
+                    <option value="w5">англійський фунт стерлінгів (GBP)</option>
                   </Field>
                 </div>
                 <div className={styles.containerIndex}>
@@ -459,19 +506,19 @@ const Layout = () => {
                   <InputFormik
                     formikProps={{
                       ...formik,
-                      name: 'sumSize',
+                      name: 'index',
                       type: 'text',
                     }}
                   />
                 </div>
-                <div className={styles.formButtons}>
-                  <button type="button">Додати позицію</button>
-                  <button type="button">Копіювати позицію</button>
+                <div>
+                  <button type="button" className={styles.buttonGlobal}>Додати позицію</button>
+                  <button type="button" className={styles.buttonGlobal}>Копіювати позицію</button>
                 </div>
               </BlockForm>
               <BlockForm>
-                <button type="button" className={styles.buttonMain}>Оголосоти закупівлю</button>
-                <button type="button">Зберегти чернетку</button>
+                <button type="button" className={styles.buttonMainGlobal}>Оголосоти закупівлю</button>
+                <button type="button" className={styles.buttonGlobal}>Зберегти чернетку</button>
               </BlockForm>
             </form>
           )}

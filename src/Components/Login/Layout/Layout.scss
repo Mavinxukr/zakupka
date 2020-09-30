@@ -1,9 +1,13 @@
 @import '../../../styles/core/vars';
 
 .loginPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   max-width: 400px;
   width: 100%;
   margin: 20px auto;
+  height: 77.5vh;
 }
 
 .loginTitle {

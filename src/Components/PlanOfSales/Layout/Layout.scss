@@ -70,17 +70,24 @@
   display: grid;
   grid-template-columns: 200px 1fr;
 }
-.commonName,.notes{
+.commonName,.notes,.justification{
   display: grid;
   grid-template-columns: 200px 1fr;
   grid-gap: 20px;
   margin-bottom: 20px;
+  position: relative;
+}
+.justification{
+  margin-bottom: 80px;
+}
+.justificationArea{
+  min-height: 150px;
 }
 .containerDocument,.containerExpectedCost,
 .currency,.containerSupplyProposition,
 .blockCustomerInfo,.dataFinish,.containerStreet,
 .containerLocation,.containerIndex,.containerCountry,
-.containerPopulation{
+.containerPopulation,.conduct{
   display: grid;
   grid-template-columns: 200px 300px;
   grid-gap: 20px;
@@ -188,4 +195,10 @@
 .error{
   color: red;
   margin: 0 auto;
+}
+
+.excel{
+  position: absolute;
+  right: 0;
+  top: -60px;
 }

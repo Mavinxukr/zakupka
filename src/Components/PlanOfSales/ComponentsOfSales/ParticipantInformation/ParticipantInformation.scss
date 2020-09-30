@@ -46,3 +46,8 @@
 .pdv {
   margin-left: 10px;
 }
+.gridContainer{
+  display: grid;
+  grid-template-columns: 200px;
+  gap: 20px;
+}

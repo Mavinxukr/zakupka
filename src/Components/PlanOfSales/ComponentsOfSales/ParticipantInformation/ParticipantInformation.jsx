@@ -107,7 +107,10 @@ const ParticipantInformation = () => (
           <span className={styles.pdv}>Підтверджую відповідність кваліфікаційним вимогам, встановленим замовником у тендерній документац </span>
         </label>
       </div>
-      <button type="button" className={styles.buttonMainGlobal}>Додати постачальника</button>
+      <div className={styles.gridContainer}>
+        <button type="button" className={styles.buttonGlobal}>Видалити постачальника</button>
+        <button type="button" className={styles.buttonMainGlobal}>Додати постачальника</button>
+      </div>
     </BlockForm>
   </>
 );

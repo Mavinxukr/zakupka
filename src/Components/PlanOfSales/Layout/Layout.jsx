@@ -11,6 +11,8 @@ import ProcedureType from '../ComponentsOfSales/ProcedureType/ProcedureType';
 import Products from '../ComponentsOfSales/Products/Products';
 import styles from './Layout.scss';
 import ParticipantInformation from '../ComponentsOfSales/ParticipantInformation/ParticipantInformation';
+import AddNewLot from '../ComponentsOfSales/AddNewLot/AddNewLot';
+import ItemList from '../ComponentsOfSales/ItemList/ItemList';
 
 const Layout = () => {
   const [startDate, isStartDate] = useState('');
@@ -508,7 +510,9 @@ const Layout = () => {
                 <button type="button" className={styles.buttonMainGlobal}>Оголосоти закупівлю</button>
                 <button type="button" className={styles.buttonGlobal}>Зберегти чернетку</button>
               </BlockForm>
+              <ItemList />
               <ParticipantInformation />
+              <AddNewLot />
               <Products isStartDate={isStartDate} formik={formik} />
             </form>
           )}

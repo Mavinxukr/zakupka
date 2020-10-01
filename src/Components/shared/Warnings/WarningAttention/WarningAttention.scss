@@ -1,0 +1,19 @@
+@import "../../../../index";
+
+.blockWarning{
+  width: 100%;
+  display: flex;
+  border: 1px solid darken($colorWarningAttention,20%);
+  border-radius: 5px;
+  background-color: $colorWarningAttention;
+  padding: 10px;
+  color:darken($colorWarningAttention,50%)
+}
+.circle{
+  display: flex;
+  border-radius: 100%;
+  padding: 5px;
+  font-size: 24px;
+  color:darken($colorWarningAttention,50%) ;
+  font-weight: 700;
+}

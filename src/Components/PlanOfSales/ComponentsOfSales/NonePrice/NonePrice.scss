@@ -1,0 +1,15 @@
+@import "./../../../../index";
+
+.nameNonePrice,.descriptionNonePrice{
+  display: grid;
+  grid-template-columns: 200px 600px;
+  grid-column-gap: 20px;
+  margin-bottom: 20px;
+}
+
+.weightNonePrice{
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-column-gap: 20px;
+  margin-bottom: 20px;
+}

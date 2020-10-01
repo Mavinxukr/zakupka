@@ -37,6 +37,9 @@
 //links
 .linkGlobal{
   color: blue;
+  &:hover{
+    text-decoration: underline;
+  }
 }
 
 //text
@@ -46,10 +49,6 @@
 }
 .smallBoldTextGlobal{
   font-size: 14px;
-  font-weight: 700;
-}
-.smallTitleGlobal{
-  font-size: 18px;
   font-weight: 700;
 }
 .smallGrayTextGlobal{
@@ -65,6 +64,17 @@
   font-size: 16px;
   font-weight: 700;
 }
+//titles
+.smallTitleGlobal{
+  font-size: 18px;
+  font-weight: 700;
+}
+.middleTitleGlobal{
+  font-size: 20px;
+  font-weight: 700;
+  margin: 5px 0 20px 0;
+}
+
 //icons
 
 .iconGlobal{
@@ -77,4 +87,36 @@
 }
 .activeIconGlobal path{
   fill: $colorMain;
+}
+
+//red star
+
+.title{
+  font-size: 20px;
+  font-weight: 700;
+  margin: 5px 0 20px 0;
+}
+
+.redStar{
+  color: red;
+  margin-right: 5px;
+}
+
+
+//flex container
+
+.flexColumnGlobal{
+  display: flex;
+  flex-direction: column;
+}
+.flexRowGlobal{
+  display: flex;
+  flex-direction: row;
+}
+
+//input
+
+.inputGlobal{
+  height: 25px;
+  padding-left: 10px;
 }

@@ -13,6 +13,9 @@ import styles from './Layout.scss';
 import ParticipantInformation from '../ComponentsOfSales/ParticipantInformation/ParticipantInformation';
 import AddNewLot from '../ComponentsOfSales/AddNewLot/AddNewLot';
 import ItemList from '../ComponentsOfSales/ItemList/ItemList';
+import NotPrice from '../ComponentsOfSales/NotPrice/NotPrice';
+import NotCritera from '../ComponentsOfSales/NotCriteria/NotCriteria';
+import NonePrice from '../ComponentsOfSales/NonePrice/NonePrice';
 
 const Layout = () => {
   const [startDate, isStartDate] = useState('');
@@ -311,6 +314,7 @@ const Layout = () => {
                   <a href="/" className={styles.link}>Детальніше про нецінові критерії</a>
                   <a href="/" className={styles.add}>+ Додати неціновий критерій</a>
                 </div>
+                <NonePrice />
               </BlockForm>
               <BlockForm>
                 <p className={styles.title}>Умови оплати</p>
@@ -385,7 +389,7 @@ const Layout = () => {
                 )}
               </BlockForm>
               <BlockForm>
-                <p className={styles.title}>Товари, роботи та послуги</p>
+                <p className={styles.title}>Товари,роботи та послуги</p>
                 <div className={styles.specificName}>
                   <p><span className={styles.redStar}>*</span>Конкретна назва предмета закупівлі</p>
                   <div className={styles.containerQuantity}>
@@ -399,10 +403,11 @@ const Layout = () => {
                           ...formik,
                           name: 'nameThing',
                           type: 'number',
+                          placeholder: 'Кількість',
                         }}
                       />
                       <Field as="select" name="role" id="role">
-                        <option value="1">гривня (UAH)</option>
+                        <option value="1">Одиниці виміру</option>
                         <option value="2">американський долар (USD)</option>
                         <option value="3">євро (EUR)</option>
                         <option value="4">російський рубль (RUB)</option>
@@ -501,6 +506,16 @@ const Layout = () => {
                     }}
                   />
                 </div>
+                <div className={styles.documentDownload}>
+                  <p>Документація</p>
+                  <div className={styles.flexColumnGlobal}>
+                    <label htmlFor="downloadButton" className={cx(styles.download, styles.buttonGlobal)}>
+                      Завантажити документ
+                      <input type="file" id="downloadButton" />
+                    </label>
+                    <span className={styles.smallGrayTextGlobal}>Макстмум 100 файлів, не більше 49 MB кожен.</span>
+                  </div>
+                </div>
                 <div>
                   <button type="button" className={styles.buttonGlobal}>Додати позицію</button>
                   <button type="button" className={styles.buttonGlobal}>Копіювати позицію</button>
@@ -510,6 +525,8 @@ const Layout = () => {
                 <button type="button" className={styles.buttonMainGlobal}>Оголосоти закупівлю</button>
                 <button type="button" className={styles.buttonGlobal}>Зберегти чернетку</button>
               </BlockForm>
+              <NotPrice />
+              <NotCritera />
               <ItemList />
               <ParticipantInformation />
               <AddNewLot />

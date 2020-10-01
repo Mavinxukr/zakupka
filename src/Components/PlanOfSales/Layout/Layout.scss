@@ -87,7 +87,7 @@
 .currency,.containerSupplyProposition,
 .blockCustomerInfo,.dataFinish,.containerStreet,
 .containerLocation,.containerIndex,.containerCountry,
-.containerPopulation,.conduct{
+.containerPopulation,.conduct,.documentDownload{
   display: grid;
   grid-template-columns: 200px 300px;
   grid-gap: 20px;
@@ -201,4 +201,12 @@
   position: absolute;
   right: 0;
   top: -60px;
+}
+
+.download{
+  margin: 0;
+  text-align: center;
+  input{
+    display: none;
+  }
 }

@@ -5,7 +5,6 @@ import styles from './InfoAboutListOffers.scss';
 const InfoAboutListOffers = () => (
   <>
     <div className={styles.infoContainer}>
-      <h2>Список позицій</h2>
       <div className={styles.table}>
         <div className={styles.itemTable}>
           <p className={cx(styles.smallTitleGlobal, styles.titleTable)}>Назва</p>

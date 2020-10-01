@@ -28,26 +28,66 @@
   height: 25px;
   padding-left: 10px;
 }
-.lotDescriptor{
+.lotDescriptor,.lotStepAuction{
   display: grid;
   grid-template-columns: 200px 1fr;
   grid-column-gap: 20px;
   margin-bottom: 20px;
 }
-.lotName{
+.lotName,.support{
   display: grid;
   grid-template-columns: 200px 300px;
   grid-column-gap: 20px;
   margin-bottom: 20px;
 }
+.lotWait{
+  display: grid;
+  grid-template-columns: 200px 300px 50px;
+  grid-column-gap: 20px;
+  margin-bottom: 20px;
+}
 .uah{
   position: relative;
-  &:before{
+  &:after{
     content: 'грн';
-    display: inline-block;
     position: absolute;
-    top: 0;
-    right: 0;
+    left: 280px;
+    top: 5px;
+  }
+  input{
+    width: 100%;
+    margin-right: 20px;
+  }
+}
 
+.percent{
+  width: 100%;
+  position: relative;
+  &:after{
+    content: '%';
+    position:absolute;
+    top: 5px;
+    right: -10px;
+  }
+  input{
+    width: 100%;
+    margin-right: 20px;
+  }
+}
+.lotRadio{
+  display: flex;
+  flex-direction: column;
+}
+.linkGlobal{
+  margin-top: 10px;
+}
+
+.buttonDownload{
+  display: none;
+}
+.support{
+  text-align: center;
+  p{
+    text-align: left;
   }
 }

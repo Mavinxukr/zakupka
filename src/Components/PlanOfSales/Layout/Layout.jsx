@@ -9,13 +9,13 @@ import BlockForm from '../../shared/BlockForm/BlockForm';
 import CustomerInformation from '../ComponentsOfSales/CustomerInformation/CustomerInformation';
 import ProcedureType from '../ComponentsOfSales/ProcedureType/ProcedureType';
 import Products from '../ComponentsOfSales/Products/Products';
-import styles from './Layout.scss';
 import ParticipantInformation from '../ComponentsOfSales/ParticipantInformation/ParticipantInformation';
 import AddNewLot from '../ComponentsOfSales/AddNewLot/AddNewLot';
 import ItemList from '../ComponentsOfSales/ItemList/ItemList';
 import NotPrice from '../ComponentsOfSales/NotPrice/NotPrice';
 import NotCritera from '../ComponentsOfSales/NotCriteria/NotCriteria';
 import NonePrice from '../ComponentsOfSales/NonePrice/NonePrice';
+import styles from './Layout.scss';
 
 const Layout = () => {
   const [startDate, isStartDate] = useState('');
@@ -315,6 +315,21 @@ const Layout = () => {
                   <a href="/" className={styles.add}>+ Додати неціновий критерій</a>
                 </div>
                 <NonePrice />
+                <button type="button" className={styles.linkGlobal}>Видалити неціновий критерій</button>
+                <div className={styles.statistics}>
+                  <div className={styles.question}>?</div>
+                  <div className={styles.statisticsHeader}>
+                    <span>Тендер:</span>
+                    <span className={styles.smallBoldTextGlobal}>0%</span>
+                    <span>Товари та послуги:</span>
+                    <span className={styles.smallBoldTextGlobal}>0%</span>
+                  </div>
+                  <div className={styles.statisticsFooter}>
+                    <span>Використано</span>
+                    <span className={styles.smallBoldTextGlobal}>0 из 30</span>
+                  </div>
+                </div>
+                <button type="button" className={styles.linkGlobal}>+ Додати неціновий критерій</button>
               </BlockForm>
               <BlockForm>
                 <p className={styles.title}>Умови оплати</p>

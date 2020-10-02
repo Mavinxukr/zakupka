@@ -210,3 +210,42 @@
     display: none;
   }
 }
+
+.statistics{
+  width: 250px;
+  display: grid;
+  border: 1px solid $colorBorder;
+  background-color: $colorWhite;
+  padding: 10px;
+  margin: 20px 0;
+  position: relative;
+  span{
+    margin: 10px 0;
+  }
+}
+
+.statisticsHeader{
+  display: grid;
+  grid-template-columns: 150px 100px;
+  grid-template-rows: 25px 25px;
+  border-bottom: 1px solid $colorBorder;
+  padding-bottom: 20px;
+}
+.statisticsFooter{
+  display: grid;
+  grid-template-columns: 150px 100px;
+}
+.question{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  color: darken($colorWarningAttention,50%);
+  width: 25px;
+  height: 25px;
+  background-color: $colorWarningAttention;
+  border-radius: 100%;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}

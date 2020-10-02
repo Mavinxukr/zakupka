@@ -1,7 +1,8 @@
 import React from 'react';
-import styles from './NonePrice.scss';
 import BlockForm from '../../../shared/BlockForm/BlockForm';
 import WarningAttention from '../../../shared/Warnings/WarningAttention/WarningAttention';
+import IconDelete from '../../../../static/svg/delete.svg';
+import styles from './NonePrice.scss';
 
 const NonePrice = () => (
   <>
@@ -17,8 +18,16 @@ const NonePrice = () => (
       <div className={styles.weightNonePrice}>
         <p><span className={styles.redStar}>*</span>Вага нецінового критерія</p>
         <div className={styles.weightBlock}>
-          <span>0</span>
+          <span className={styles.smallBoldTextGlobal}>0</span>
           <WarningAttention value="Загальна вага всіх нецінових критеріїв однієї пропозиції не може перевищувати 30" />
+          <div className={styles.calculation}>
+            <span className={styles.text}>Опція:</span>
+            <input type="text" className={styles.inputGlobal} />
+            <span className={styles.text}>Вага опції:</span>
+            <input type="text" className={styles.inputGlobal} />
+            <span className={styles.icon}><IconDelete className={styles.iconGlobal} /></span>
+          </div>
+          <button type="button" className={styles.linkGlobal}>Додати опцію</button>
         </div>
       </div>
     </BlockForm>

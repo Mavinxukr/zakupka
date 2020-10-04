@@ -379,6 +379,9 @@
   footer form + div {
     max-width: 412px;
   }
+  .tabsItemLink:after{
+    right: 20px;
+  }
 }
 
 @media screen and (max-width: 1600px) {
@@ -420,7 +423,7 @@
     .bannerTitle,
     .h1,
     .banner .timer {
-      font-size: 64px;
+      font-size: 50px;
     }
 
     .Project h2 {
@@ -460,6 +463,9 @@
 
     .blockInfo {
       max-width: 590px;
+    }
+    .timer-block{
+      margin: 0 0 0 60px;
     }
 }
 
@@ -528,5 +534,11 @@
   .footerInput,
   .footerLink {
     font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 950px){
+  .blockInfo .flex{
+    flex-wrap: wrap;
   }
 }

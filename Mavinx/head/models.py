@@ -5,6 +5,8 @@ from parler.models import TranslatableModel, TranslatedFields
 
 from . utils import custom_upload_to
 
+from quilljs.fields import RichTextField
+
 
 class Company(TranslatableModel):
     class Meta:
@@ -94,8 +96,9 @@ class Blog(TranslatableModel):
 
     translations = TranslatedFields(
         name=models.CharField(max_length=100, verbose_name=_('vnm_name_blog'), unique=True),
-        description = models.TextField(verbose_name=_('vnm_desc_blog'))
+        #description = models.TextField(verbose_name=_('vnm_desc_blog'), config='basic')
     )
+
     views = models.IntegerField(default=1, verbose_name=_('vnm_date_views'))
     date_publish = models.DateTimeField(default=datetime.now, null=True, verbose_name=_('vnm_date_blog'))
     topic = models.ForeignKey(Topic, related_name='blog', on_delete=models.CASCADE, null=True,
@@ -116,11 +119,11 @@ class BlogCaseImages(TranslatableModel):
             verbose_name = _('vn_blog_case_images')
 
         translations = TranslatedFields(
-            name=models.CharField(max_length=100, verbose_name=_('vnm_blog_case_name')),
-            description=models.TextField(verbose_name=_('vnm_blog_case_desc'))
+            name=models.CharField(max_length=100, verbose_name=_('vnm_blog_case_name'), null=True, blank=True),
+            description=RichTextField(verbose_name=_('vnm_blog_case_desc'), null=True)
         )
 
-        image = models.ImageField(verbose_name=_('vnm_case_images'), null=True,
+        image = models.ImageField(verbose_name=_('vnm_case_images'), null=True,blank=True,
                                   upload_to=custom_upload_to)
         blog = models.ForeignKey(Blog, related_name='blog_case_images', on_delete=models.CASCADE,
                                     verbose_name=_('vnm_case_blog'))

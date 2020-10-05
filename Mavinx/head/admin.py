@@ -31,7 +31,7 @@ class ProjectSliderImagesInline(TabularInline):
 
 
 @admin.register(Blog)
-class BlogAdmin(TranslatableAdmin):
+class BlogAdmin(TranslatableAdmin, QuillAdmin):
 
     list_per_page = 10
     list_display = ('name', 'topic', 'date_publish', '_image', 'views')

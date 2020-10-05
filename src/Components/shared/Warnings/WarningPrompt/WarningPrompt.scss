@@ -1,0 +1,13 @@
+@import "../../../../index";
+
+.blockWarning{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border: 1px solid darken($colorMain,20%);
+  border-radius: 5px;
+  background-color: $colorMain;
+  padding: 10px;
+  color:darken($colorMain,50%);
+  margin: 10px 0;
+}

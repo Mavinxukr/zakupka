@@ -7,9 +7,6 @@ const Layout = () => (
   <>
     <MenuPurchaser />
     <TabsComponent />
-    <div className={styles.container}>
-      {/* <Panel /> */}
-    </div>
   </>
 );
 

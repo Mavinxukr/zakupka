@@ -28,6 +28,7 @@
   height: 25px;
   padding-left: 10px;
 }
+
 .lotDescriptor,.lotStepAuction{
   display: grid;
   grid-template-columns: 200px 1fr;
@@ -48,6 +49,7 @@
 }
 .uah{
   position: relative;
+  margin: 0;
   &:after{
     content: 'грн';
     position: absolute;
@@ -63,6 +65,7 @@
 .percent{
   width: 100%;
   position: relative;
+  margin: 0;
   &:after{
     content: '%';
     position:absolute;

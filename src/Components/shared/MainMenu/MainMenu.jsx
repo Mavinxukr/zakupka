@@ -8,7 +8,7 @@ import IconUser from '../../../static/svg/user-circle-solid.svg';
 import IconBriefcase from '../../../static/svg/briefcase-solid.svg';
 
 const MainMenu = () => (
-  <div className={styles.container}>
+  <div>
     <div className={styles.tabs}>
       <NavLink
         to="/"

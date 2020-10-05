@@ -24,6 +24,7 @@ import PurchasesClaims from './Pages/Purchases/Purchases-Сlaims/Purchases-Сlai
 import PurchasesSales from './Pages/Purchases/Purchases-Sales/PurchasesSales';
 import Complaints from './Pages/Complaints/Complaints';
 import Classifier from './Components/Classifier/Classifier';
+import CancelPurchases from './Pages/Purchases/Purchases-Cancel/Purchases-Cancel';
 
 const App = () => (
   <>
@@ -49,6 +50,7 @@ const App = () => (
       <Route exact path="/purchases/report" component={PurchasesReport} />
       <Route exact path="/purchases/sales" component={PurchasesSales} />
       <Route exact path="/purchases/claims" component={PurchasesClaims} />
+      <Route exact path="/purchases/cancel" component={CancelPurchases} />
       <Route exact path="/complaints" component={Complaints} />
       <Route exact path="/classifier" component={Classifier} />
     </Switch>

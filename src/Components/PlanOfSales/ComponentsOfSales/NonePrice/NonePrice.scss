@@ -13,22 +13,6 @@
   grid-column-gap: 20px;
   margin-bottom: 20px;
 }
-.calculation{
-  display: grid;
-  grid-template-columns: 50px 150px 100px 100px 25px;
-  grid-column-gap: 20px;
-  margin-bottom: 20px;
-}
-.text{
-  align-self: center;
-  justify-self: right;
-}
-.icon{
-  align-self: center;
-  cursor: pointer;
-}
-.iconGlobal path{
-  .icon:hover &{
-    fill: darken(#848484,20%);
-  }
-}
+
+
+

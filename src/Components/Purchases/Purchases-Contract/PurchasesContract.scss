@@ -1,0 +1,27 @@
+@import '../../../index';
+
+.contractBlock{
+  display: grid;
+  border: 1px solid $colorBorder;
+}
+.middleTitleGlobal{
+  padding: 20px;
+  border-bottom: 1px solid $colorBorder;
+}
+
+.nameCell{
+  display: grid;
+  grid-template-columns: 200px;
+}
+.nameCellContent{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.cellDate{
+  display: grid;
+  grid-gap: 0;
+}
+.iconGlobal{
+  width: 50px;
+  height: 50px;
+}

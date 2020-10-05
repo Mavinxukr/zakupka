@@ -4,7 +4,7 @@ import styles from './NotCriteria.scss';
 
 const NotCritera = () => (
   <>
-    <h4 className={styles.middleTitleGlobal}>Нецінові критерії критеріїв або послуг</h4>
+    <h4 className={styles.middleTitleGlobal}>Нецінові критерії товарів або послуг</h4>
     <div className={styles.flexColumnGlobal}>
       <NavLink
         to="/"

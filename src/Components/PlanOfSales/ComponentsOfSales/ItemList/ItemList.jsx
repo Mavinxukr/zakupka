@@ -52,7 +52,7 @@ const ItemList = () => (
           <input
             id="percent"
             type="text"
-            className={styles.input}
+            className={cx(styles.input, styles.inputU)}
             placeholder="У%"
           />
         </label>

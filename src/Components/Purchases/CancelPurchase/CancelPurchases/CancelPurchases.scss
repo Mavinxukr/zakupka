@@ -1,0 +1,21 @@
+@import '../../../../index';
+
+.middleTitleGlobal{
+  margin: 20px 0;
+}
+.gridTable{
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  margin: 20px 0;
+}
+
+.cellTable{
+  margin-bottom: 10px;
+}
+p.cellTable{
+  border-bottom: 1px solid $colorBorder;
+  padding-bottom: 5px;
+}
+.blue{
+  color: blue;
+}

@@ -71,6 +71,14 @@ const TabsComponent = () => (
         >
           <span>Внутрішнє обговореня (0)</span>
         </NavLink>
+        <NavLink
+          to="/purchases/cancel"
+          exact
+          activeClassName={styles.tabActive}
+          className={styles.tab}
+        >
+          <span>Скасування закупівлі</span>
+        </NavLink>
       </div>
     </div>
   </>

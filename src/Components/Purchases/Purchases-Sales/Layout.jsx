@@ -12,6 +12,9 @@ import InfoAboutMainContact from '../Bulletin board/InfoAboutMainContact/InfoAbo
 import CancelButton from '../CancelPurchase/CancelButton/CancelButton';
 import CancelConfirm from '../CancelPurchase/CancelConfirm/CancelConfirm';
 import CancelBlockFinished from '../CancelPurchase/CancelBlockFinished/CancelBlockFinished';
+import SignBlock from '../../PlanOfSales/ComponentsOfSales/SignBlock/SignBlock';
+import ReviewComponent from '../Review/ReviewComponent';
+import PurchasesContract from '../Purchases-Contract/PurchasesContract';
 import styles from './Layout.scss';
 
 const Layout = () => (
@@ -26,12 +29,15 @@ const Layout = () => (
         <InfoArrow />
         <Bulletin classNameWrapper={styles.bulletin} />
       </div>
+      <ReviewComponent />
+      <SignBlock />
       <InfoAboutCustomer />
       <InfoAboutPurchase />
       <InfoAboutListOffers />
       <InfoDocumentPurchase />
       <InfoAboutPayment />
       <InfoAboutMainContact />
+      <PurchasesContract />
     </div>
   </>
 );

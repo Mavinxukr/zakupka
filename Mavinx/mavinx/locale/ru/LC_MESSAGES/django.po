@@ -362,7 +362,7 @@ msgid "project_complete"
 msgstr "Выполненных проектов"
 
 msgid "years_of_experience"
-msgstr "Годов опыта"
+msgstr "Лет опыта"
 
 msgid "proj_all_tab"
 msgstr "Все"
@@ -425,7 +425,7 @@ msgid "more_review"
 msgstr "Больше отзывов"
 
 msgid "why_us"
-msgstr "Почему нас"
+msgstr "Почему мы"
 
 msgid "more_about_m"
 msgstr "Больше о"

@@ -5,7 +5,6 @@ from django.utils.safestring import mark_safe
 from parler.admin import TranslatableAdmin, TranslatableTabularInline
 
 
-from quilljs.widgets import QuillEditorWidget
 from quilljs.admin import QuillAdmin
 
 from .models import Company, Customer, \
@@ -32,7 +31,7 @@ class ProjectSliderImagesInline(TabularInline):
 
 
 @admin.register(Blog)
-class BlogAdmin(TranslatableAdmin, QuillAdmin):
+class BlogAdmin(TranslatableAdmin):
 
     list_per_page = 10
     list_display = ('name', 'topic', 'date_publish', '_image', 'views')

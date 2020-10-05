@@ -18,6 +18,7 @@ INSTALLED_APPS = [
     'head',
     'django_cleanup',
     'request',
+    'quilljs'
 ]
 
 INSTALLED_APPS += (

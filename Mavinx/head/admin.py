@@ -1,12 +1,18 @@
+from django.db import models
 from django.contrib import admin
 from django.contrib.admin import TabularInline
 from django.utils.safestring import mark_safe
 from parler.admin import TranslatableAdmin, TranslatableTabularInline
 
+
+from quilljs.widgets import QuillEditorWidget
+from quilljs.admin import QuillAdmin
+
 from .models import Company, Customer, \
     Area, Project, Blog, Review, Contact, About, Order, \
     ProjectNumberImages, Subscribers, Topic, Technology, TechnologyUsing, \
     ProjectSector, ProjectChallenges, ProjectSliderImages, BlogCaseImages, BlogWriter
+
 
 
 class BlogCaseImagesInline(TranslatableTabularInline):
@@ -26,12 +32,14 @@ class ProjectSliderImagesInline(TabularInline):
 
 
 @admin.register(Blog)
-class BlogAdmin(TranslatableAdmin):
+class BlogAdmin(TranslatableAdmin, QuillAdmin):
+
     list_per_page = 10
-    list_display = ('name', 'description', 'topic', 'date_publish', '_image', 'views')
+    list_display = ('name', 'topic', 'date_publish', '_image', 'views')
     list_filter = ('translations__name', 'topic', 'date_publish', 'views')
     search_fields = ('translations__name', 'date_publish', 'topic__translations__name', 'views')
     inlines = (BlogCaseImagesInline,)
+
 
     def _image(self, obj):
         image_path = '/media/{}'.format(obj.image)

@@ -1,9 +1,8 @@
 {% load static %}
  {% load i18n %}
- <a href="#">
-   <h1 class="h1 fontMedium flex">
-               {% trans 'view_blog' %}<span class="blogCount menuItem">{{ blogs.count }}</span>
-           </h1>
+ <a href="#" class="countFlexBlock">
+   <h1 class="h1 fontMedium flex">{% trans 'view_blog' %}</h1>
+     <span class="blogCount menuItem">{{ blogs.count }}</span>
  </a>
 <a href="#" class="showAll fontMedium">
     {% trans 'blog_show_all' %}

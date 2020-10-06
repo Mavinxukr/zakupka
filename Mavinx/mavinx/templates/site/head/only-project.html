@@ -30,6 +30,39 @@
                 </div>
             </div>
         </div>
+ {% if projects_web.count  %}
+        <div class="tabs__content">
+            <div class="flexItems">
+                {% for project_web in projects_web %}
+                <div class="tabsItem">
+                    <img class="{% if forloop.counter|divisibleby:2 %}smallImg {% else %} bigImg {% endif %}"
+                         src="/media/{{project_web.head_image }}" alt="">
+                    <a  href="{% url 'one_project' project_web.id %}">
+                        <div class="tabsItemLink fontMedium column">
+                             <p>{{ project_web.name }}</p>
+                            <div class="flex">
+                                {% for area in project_web.area.all %}
+                                    <span class="fontRegular">{{ area.name }}</span>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </a>
+                </div>
+               {% endfor %}
+
+                <div class="tabsItem allProjects">
+                  <a href="{% url 'works' %}">
+                    <div class="smallImg Project">
+                        <div class="column">
+                            <h2 class="fontMedium">{% trans 'proj_all_show' %}</h2>
+                            <img src="{% static 'site/images/arrow.svg' %}" alt="">
+                        </div>
+                    </div>
+                  </a>
+                </div>
+            </div>
+        </div>
+    {% endif %}
     {% if projects_android.count  %}
        <div class="tabs__content">
             <div class="flexItems">
@@ -95,37 +128,5 @@
             </div>
         </div>
     {% endif %}
-    {% if projects_web.count  %}
-        <div class="tabs__content">
-            <div class="flexItems">
-                {% for project_web in projects_web %}
-                <div class="tabsItem">
-                    <img class="{% if forloop.counter|divisibleby:2 %}smallImg {% else %} bigImg {% endif %}"
-                         src="/media/{{project_web.head_image }}" alt="">
-                    <a  href="{% url 'one_project' project_web.id %}">
-                        <div class="tabsItemLink fontMedium column">
-                             <p>{{ project_web.name }}</p>
-                            <div class="flex">
-                                {% for area in project_web.area.all %}
-                                    <span class="fontRegular">{{ area.name }}</span>
-                                {% endfor %}
-                            </div>
-                        </div>
-                    </a>
-                </div>
-               {% endfor %}
 
-                <div class="tabsItem allProjects">
-                  <a href="{% url 'works' %}">
-                    <div class="smallImg Project">
-                        <div class="column">
-                            <h2 class="fontMedium">{% trans 'proj_all_show' %}</h2>
-                            <img src="{% static 'site/images/arrow.svg' %}" alt="">
-                        </div>
-                    </div>
-                  </a>
-                </div>
-            </div>
-        </div>
-    {% endif %}
 

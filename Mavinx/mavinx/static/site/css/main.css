@@ -616,7 +616,6 @@ main {
     align-items: center;
     position: absolute;
     right: 0;
-    bottom: 20px;
 }
 
 .slider-nav .slick-slide {
@@ -987,10 +986,6 @@ main {
 
 .blog {
     margin-bottom: 200px;
-}
-
-.blog > a {
-  display: block;
 }
 
 .blogCount {

@@ -987,15 +987,12 @@ main {
     margin-bottom: 200px;
 }
 
-.blog > a {
-  display: block;
-}
-
 .blogCount {
     font-size: 46px;
-    margin-left: 20px;
+    margin-left: 10px;
     text-decoration: none;
     opacity: .1;
+    margin-top: 20px;
 }
 
 .blogItems {

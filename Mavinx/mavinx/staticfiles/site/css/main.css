@@ -806,7 +806,9 @@ main {
 }
 
 .work .column {
-    width: 100%;
+    width: 95%;
+    margin-left: 25px;
+
 }
 
 .tabs-title {
@@ -930,9 +932,11 @@ main {
     margin-right: 0;
     margin-left: auto;
 }
-
+.textRight{
+    text-align: right;
+}
 .subscribe {
-    padding: 70px 120px 70px 100px;
+    padding: 60px 120px 60px 100px;
     background: #F2C81F;
     border-radius: 10px;
 }
@@ -992,6 +996,7 @@ main {
     margin-left: 20px;
     text-decoration: none;
     opacity: .1;
+    text-
 }
 
 .blogItems {

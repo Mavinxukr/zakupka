@@ -8,11 +8,16 @@ const Layout = () => (
     <MenuPurchaser />
     <div className={styles.container}>
       <h2> Плани закупівель </h2>
-      <button type="button" className={styles.createButton}>
+      <button type="button" className={styles.buttonMainGlobal}>
         <NavLink
           to="my-plane-sales/my-create-plan"
-          className={styles.link}
         >Створити план
+        </NavLink>
+      </button>
+      <button type="button" className={styles.buttonGlobal}>
+        <NavLink
+          to="my-plane-sales/cancel-my-plan"
+        >Скасувати процедуру
         </NavLink>
       </button>
     </div>

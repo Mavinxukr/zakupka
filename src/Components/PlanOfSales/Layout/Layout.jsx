@@ -16,6 +16,7 @@ import NotPrice from '../ComponentsOfSales/NotPrice/NotPrice';
 import NotCritera from '../ComponentsOfSales/NotCriteria/NotCriteria';
 import NonePrice from '../ComponentsOfSales/NonePrice/NonePrice';
 import styles from './Layout.scss';
+import QualificationParticipant from '../ComponentsOfSales/QualificationParticipant/QualificationParticipant';
 
 const Layout = () => {
   const [startDate, isStartDate] = useState('');
@@ -68,11 +69,11 @@ const Layout = () => {
                 <div className={styles.containerSales}>
                 <label>
                   <Field type="radio" name="picked" value="One" />
-                  <span className={styles.label}>Допорогова закупівля (згідно Наказу ДП "Прозорро" №10)</span>
+                  <span>Допорогова закупівля (згідно Наказу ДП "Прозорро" №10)</span>
                 </label>
                 <label>
                   <Field type="radio" name="picked" value="Two" />
-                  <span className={styles.label}>Спрощена закупівля (згідно статті 14 Закону України "Про публічні закупівлі")</span>
+                  <span>Спрощена закупівля (згідно статті 14 Закону України "Про публічні закупівлі")</span>
                 </label>
                 {/* eslint-enable */}
                 </div>
@@ -546,6 +547,7 @@ const Layout = () => {
               <ParticipantInformation />
               <AddNewLot />
               <Products isStartDate={isStartDate} formik={formik} />
+              <QualificationParticipant />
             </form>
           )}
         </Formik>

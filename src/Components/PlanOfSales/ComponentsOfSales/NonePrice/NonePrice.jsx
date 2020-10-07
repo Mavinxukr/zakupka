@@ -21,7 +21,9 @@ const NonePrice = () => {
           <p><span className={styles.redStar}>*</span>Вага нецінового критерія</p>
           <div className={styles.weightBlock}>
             <span className={styles.smallBoldTextGlobal}>0</span>
-            <WarningAttention value="Загальна вага всіх нецінових критеріїв однієї пропозиції не може перевищувати 30" />
+            <WarningAttention value="Загальна вага всіх нецінових критеріїв однієї пропозиції не може перевищувати 30">
+              <div className={styles.circle}>!</div>
+            </WarningAttention>
             <Calculation />
             {addBlock && (
               <Calculation />

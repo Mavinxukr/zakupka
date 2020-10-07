@@ -1,4 +1,4 @@
-@import '../../../styles/core/vars';
+@import '../../../index';
 
 .section{
   width: 100%;
@@ -16,6 +16,7 @@ h2{
   border: 1px solid $colorBorder;
   padding: 10px;
 }
-.createButton{
-  margin: 20px 0;
+
+.buttonMainGlobal{
+  margin: 20px 20px 0 0;
 }

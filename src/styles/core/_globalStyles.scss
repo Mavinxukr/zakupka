@@ -92,7 +92,14 @@
 .activeIconGlobal path{
   fill: $colorMain;
 }
-
+.iconGlobalGreen{
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+  & path{
+    fill: green;
+  }
+}
 //red star
 
 .title{
@@ -123,4 +130,21 @@
 .inputGlobal{
   height: 25px;
   padding-left: 10px;
+}
+
+//style for props
+
+.warningGlobal{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  margin-right: 10px;
+  padding: 5px;
+  font-size: 24px;
+  font-weight: 700;
+  color:darken($colorWarningAttention,50%) ;
+  background-color: darken($colorWarningAttention,20%);
 }

@@ -2,6 +2,10 @@
 
 .containerQualification{
   background-color: $colorWhite;
+  padding: 10px;
+  border: 1px solid $colorBorder;
+  border-radius: 5px;
+  margin: 20px 0;
 }
 .icon{
   width: 25px;
@@ -11,8 +15,41 @@
     fill: green;
   }
 }
-.one{
+.wrapper{
+  width: auto;
   color: green;
   border:1px solid darken(#00ff0077,30%);
   background-color: rgba(207, 250, 207, 0.47);
+}
+.wrapperWidth{
+  width: auto;
+}
+.iconGreen{
+  display: inline-flex;
+  width: auto;
+  border: 1px solid $colorGreenBorder;
+  background-color: $colorGreenBackGround;
+  color: green;
+}
+.tableContainer{
+  display: grid;
+  grid-template-columns: 40% 1fr 1fr 1fr;
+}
+.tableColumn{
+  .smallTitleGlobal{
+    min-height: 50px;
+    border-bottom: 1px solid $colorBorder;
+    margin-bottom: 10px;
+  }
+  .upperCase{
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .normalBlueTextGlobal{
+    margin-bottom: 10px;
+  }
+  .iconGlobalGreen{
+    cursor:pointer;
+  }
+
 }

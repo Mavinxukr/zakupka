@@ -53,3 +53,9 @@
   }
 
 }
+.buttons{
+  display: flex;
+  .buttonGlobal,.buttonMainGlobal{
+    margin-right: 10px;
+  }
+}

@@ -55,6 +55,12 @@ const QualificationParticipant = () => (
           <IconClip className={styles.iconGlobalGreen} />
         </div>
       </div>
+      <div className={styles.buttons}>
+        <button type="button" className={styles.buttonGlobal}>Змінити інформцію про договор</button>
+        <button type="button" className={styles.buttonMainGlobal}>Підписати ЕЦПКЕП</button>
+        <button type="button" className={styles.buttonMainGlobal}>Завершити процедуру (без ЕЦПКЕП)</button>
+        <button type="button" className={styles.buttonGlobal}>Повернути на кваліфікацію</button>
+      </div>
     </div>
   </>
 );

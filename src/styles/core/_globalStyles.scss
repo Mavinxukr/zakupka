@@ -11,6 +11,7 @@
   color: $colorWhite;
   border-radius: 5px;
   padding: 10px;
+  cursor: pointer;
   &:hover{
     background-color: darken($colorMain,5%);
   }
@@ -102,17 +103,10 @@
 }
 //red star
 
-.title{
-  font-size: 20px;
-  font-weight: 700;
-  margin: 5px 0 20px 0;
-}
-
 .redStar{
   color: red;
   margin-right: 5px;
 }
-
 
 //flex container
 
@@ -130,6 +124,17 @@
 .inputGlobal{
   height: 25px;
   padding-left: 10px;
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+
+//text area
+.textAreaGlobal{
+  height: 150px;
+  font-family: sans-serif;
+  font-size: 16px;
+  padding: 10px;
 }
 
 //style for props
@@ -147,4 +152,17 @@
   font-weight: 700;
   color:darken($colorWarningAttention,50%) ;
   background-color: darken($colorWarningAttention,20%);
+}
+
+//decoration style for block
+
+.shadowBlock{
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+}
+//footer
+.footerGlobal{
+  position: absolute;
+  bottom: 0;
 }

@@ -15,8 +15,11 @@ import ItemList from '../ComponentsOfSales/ItemList/ItemList';
 import NotPrice from '../ComponentsOfSales/NotPrice/NotPrice';
 import NotCritera from '../ComponentsOfSales/NotCriteria/NotCriteria';
 import NonePrice from '../ComponentsOfSales/NonePrice/NonePrice';
-import styles from './Layout.scss';
 import QualificationParticipant from '../ComponentsOfSales/QualificationParticipant/QualificationParticipant';
+import WorkWithDocuments from '../../WorkWithDocuments/WorkWithDocuments';
+import AccessParticipan from '../../AccessParticipan/AccessParticipan';
+import SignContract from '../../shared/SignContract/SignContract';
+import styles from './Layout.scss';
 
 const Layout = () => {
   const [startDate, isStartDate] = useState('');
@@ -548,6 +551,9 @@ const Layout = () => {
               <AddNewLot />
               <Products isStartDate={isStartDate} formik={formik} />
               <QualificationParticipant />
+              <WorkWithDocuments />
+              <AccessParticipan />
+              <SignContract />
             </form>
           )}
         </Formik>

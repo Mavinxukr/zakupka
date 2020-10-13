@@ -1,14 +1,5 @@
 @import '../../../index.scss';
 
-.container {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  width: 90%;
-  min-height: 64vh;
-  margin: 20px auto;
-}
-
 .cardProposition{
   display: flex;
   flex-direction: column;
@@ -39,4 +30,51 @@
 }
 .beforeSales{
   margin: 20px 0;
+}
+.bulletin{
+  width: 300px;
+  position: absolute;
+  right: 20px;
+  top: 150px;
+}
+.gridAll{
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-column-gap: 20px;
+}
+.blockComplaint{
+  background-color: $colorWhite;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 20px 0;
+}
+.input{
+  display: none;
+}
+.documentDownload{
+  width: 200px;
+}
+.textArea{
+  min-height: 150px;
+  padding: 20px;
+}
+.doc{
+  margin: 10px 0;
+}
+.buttonMainGlobal{
+  display: inline-block;
+  margin: 0 0 20px 0;
+}
+.tableRow{
+  display: grid;
+  grid-template-columns: 250px 300px;
+  grid-column-gap: 50px;
+  margin-bottom: 10px;
+}
+.titleTable{
+  margin-bottom: 20px;
+}
+.flexColumnGlobal{
+  border-bottom: 1px solid $colorBorder;
+  padding-bottom: 20px;
 }

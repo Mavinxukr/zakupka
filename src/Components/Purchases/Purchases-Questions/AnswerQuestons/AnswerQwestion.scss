@@ -1,0 +1,53 @@
+@import '../../../../index';
+
+.questionBlock{
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: $colorWhite;
+  margin: 20px 0;
+}
+.blockState{
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+
+}
+.notAnswer{
+  display: inline-flex;
+  width: auto;
+  background-color: #ffffffff;
+  border: 1px solid $colorBorder;
+  color: $colorBorder;
+  margin-right: 10px;
+
+}
+.isAnswer{
+  display: inline-flex;
+  width: auto;
+  background-color: #ffffffff;
+  border: 1px solid green;
+  color: green;
+  margin-right: 10px;
+}
+.iconGlobal{
+  margin-right: 10px;
+}
+.answerBlock{
+  display: flex;
+  flex-direction: column;
+}
+.textArea{
+  height: 250px;
+  padding: 10px;
+  margin: 10px 0 0;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+.buttonSubmit{
+  display: inline-flex;
+  height: 40px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  align-items: center;
+}

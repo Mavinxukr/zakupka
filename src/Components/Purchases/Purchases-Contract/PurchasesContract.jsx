@@ -1,14 +1,15 @@
 import React from 'react';
+import cx from 'classnames';
 import IconDocument from '../../../static/svg/doc.svg';
 import IconDelete from '../../../static/svg/delete.svg';
 import styles from './PurchasesContract.scss';
 
 const PurchasesContract = () => (
   <>
-    <form className={styles.contractBlock}>
+    <form className={cx(styles.contractBlock, styles.shadowBlock)}>
       <h4 className={styles.middleTitleGlobal}>Завантаження договору</h4>
       <div className={styles.containerGlobal}>
-        <p>Щоб закрити тендер, необхідно щавантажити відканований та підписаний з двох сторін договір.</p>
+        <p>Щоб закрити тендер, необхідно завантажити відканований та підписаний з двох сторін договір.</p>
         <div className={styles.tableBlock}>
           <div className={styles.nameCell}>
             <p className={styles.titleTable}>Назва файлу</p>

@@ -16,7 +16,7 @@ const InfoDocumentPurchase = () => (
                 ПЕЛЕТИ РОЦ КР 2020.doc
               </span>
             </li>
-            <li>Завантажити усі файли одним архівом</li>
+            <li className={styles.buttonMainGlobal}>Завантажити усі файли одним архівом</li>
           </ul>
           <div className={styles.buttonsHover}>
             <button type="button" className={styles.buttonMainGlobal}>Перегляд</button>

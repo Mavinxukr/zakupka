@@ -26,6 +26,8 @@ import Complaints from './Pages/Complaints/Complaints';
 import Classifier from './Components/Classifier/Classifier';
 import CancelPurchases from './Pages/Purchases/Purchases-Cancel/Purchases-Cancel';
 import CancelMyPlan from './Pages/MyCreatePlane/CancelMyPlane';
+import NewComplains from './Pages/Complaints/NewComplains/NewComplains';
+import Ask from './Pages/Purchases/Purchases-Quetions/Ask/Ask';
 
 const App = () => (
   <>
@@ -53,7 +55,9 @@ const App = () => (
       <Route exact path="/purchases/sales" component={PurchasesSales} />
       <Route exact path="/purchases/claims" component={PurchasesClaims} />
       <Route exact path="/purchases/cancel" component={CancelPurchases} />
+      <Route exact path="/purchases/questions/ask" component={Ask} />
       <Route exact path="/complaints" component={Complaints} />
+      <Route exact path="/complaints/newComplains" component={NewComplains} />
       <Route exact path="/classifier" component={Classifier} />
     </Switch>
   </>

@@ -1,0 +1,18 @@
+@import '../../index';
+
+.shadowBlock{
+  background-color: $colorWhite;
+  padding: 20px;
+  margin: 20px 0;
+}
+.sizeBlock{
+  width: 200px;
+  text-align: center;
+  margin: 10px 0;
+}
+.downloadFile{
+  display: none;
+}
+.buttonGlobal{
+  margin-left: 20px;
+}

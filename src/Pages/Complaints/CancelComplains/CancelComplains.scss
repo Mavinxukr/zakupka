@@ -1,0 +1,20 @@
+@import '../../../index';
+
+.shadowBlock{
+  background-color: $colorWhite;
+  width: 600px;
+  min-height: 200px;
+  padding: 20px;
+  margin: 40px auto;
+}
+.middleTitleGlobal{
+  border-bottom: 1px solid $colorBorder;
+}
+
+.textAreaGlobal{
+  margin: 20px 0;
+}
+.buttonMainGlobal{
+  width: 100px;
+  text-align: center;
+}

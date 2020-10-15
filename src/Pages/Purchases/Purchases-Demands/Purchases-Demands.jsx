@@ -22,6 +22,13 @@ const Layout = () => (
       >
         Подати вимогу на умови закупівлі
       </NavLink>
+      <NavLink
+        to="/complaints/cancelComplains"
+        exact
+        className={styles.buttonGlobal}
+      >
+        Відмінити вимогу
+      </NavLink>
     </div>
     <Footer classWrapper={styles.footerGlobal} />
   </>

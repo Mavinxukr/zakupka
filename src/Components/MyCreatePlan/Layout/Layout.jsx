@@ -12,7 +12,7 @@ const Layout = () => (
       <h1>Новий план закупівлі</h1>
       <BlockForm className={styles.sectionCustomer}>
         <div className={styles.blockInfo}>
-          <h4 className={styles.customerInfo}>Інформація про замовника</h4>
+          <h4 className={styles.middleTitleGlobal}>Інформація про замовника</h4>
           <p>Name</p>
         </div>
         <div className={styles.blockContacts}>

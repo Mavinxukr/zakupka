@@ -64,7 +64,6 @@ const Header = () => {
                 </a>
                 <a
                   href="tel: +38 063 827 00 11"
-                  className={styles.tel}
                 >
                   <IconCall className={styles.iconTel} />
                   +38 063 827 00 11
@@ -72,7 +71,7 @@ const Header = () => {
               </div>
             </div>
             <IconEnvelope className={styles.icon} />
-            <a href="email: /" className={styles.mail}>Напишіть нам</a>
+            <a href="/" className={styles.mail}>Напишіть нам</a>
           </div>
           {userData && (
           <div className={styles.user}>

@@ -20,3 +20,49 @@ h2{
 .buttonMainGlobal{
   margin: 20px 20px 0 0;
 }
+
+.attention{
+  background-color: $colorWarningRed;
+  color: darken($colorWarningRed,50%);
+  border: 1px solid darken($colorWarningRed,50%);
+  width: 100px;
+  height: 20px;
+  font-size: 13px;
+}
+.circleWarningGlobal{
+  width: 20px;
+  height: 10px;
+  background-color: darken($colorWarningRed, 5%);
+  color: darken($colorWarningRed,50%);
+  border: 1px solid darken($colorWarningRed,50%);
+  font-size: 15px;
+}
+.titleTable,.rowTable{
+  display: grid;
+  grid-template-columns: 40% repeat(3,1fr);
+  border: 1px solid $colorBorder;
+  padding: 10px;
+  background-color: $colorWhite;
+}
+.card{
+  background-color: $colorWhite;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 5px 0;
+  border: 1px solid $colorBorder;
+  &:last-child{
+    margin-bottom: 100px;
+  }
+}
+.titleTable{
+  margin-top: 20px;
+}
+.normalBlueTextGlobal{
+  margin-bottom: 10px;
+}
+.greenText{
+  color: green;
+}
+.grayText{
+  color: $colorGrey;
+}

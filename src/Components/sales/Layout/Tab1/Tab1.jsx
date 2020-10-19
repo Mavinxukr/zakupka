@@ -18,6 +18,7 @@ const Tab1 = () => {
   if (!isDataReceived) {
     return <div />;
   }
+
   return (
     <div className={styles.main}>
       <div className={styles.pills}>

@@ -4,10 +4,10 @@
   width: 100%;
   display: flex;
   align-items: center;
-  border: 1px solid darken($colorWarningAttention,20%);
+  border: 1px solid darken($colorWarningYellow,20%);
   border-radius: 5px;
-  background-color: $colorWarningAttention;
+  background-color: $colorWarningYellow;
   padding: 10px;
-  color:darken($colorWarningAttention,50%);
+  color:darken($colorWarningYellow,50%);
   margin: 10px 0;
 }

@@ -150,8 +150,8 @@
   padding: 5px;
   font-size: 24px;
   font-weight: 700;
-  color:darken($colorWarningAttention,50%) ;
-  background-color: darken($colorWarningAttention,20%);
+  color:darken($colorWarningYellow,50%) ;
+  background-color: darken($colorWarningYellow,20%);
 }
 
 //decoration style for block
@@ -165,4 +165,21 @@
 .footerGlobal{
   position: absolute;
   bottom: 0;
+}
+
+//Warnings
+
+.circleWarningGlobal{
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  margin-right: 10px;
+  padding: 5px;
+  font-size: 24px;
+  color:darken($colorWarningYellow,50%) ;
+  font-weight: 700;
+  background-color: darken($colorWarningYellow,20%);
 }

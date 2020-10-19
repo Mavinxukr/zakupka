@@ -4,7 +4,7 @@ import styles from './InfoAboutCustomer.scss';
 const InfoAboutCustomer = () => (
   <>
     <div className={styles.infoContainer}>
-      <h2 className={styles.title}>Інформація про замовника</h2>
+      <h2 className={styles.middleTitleGlobal}>Інформація про замовника</h2>
       <div className={styles.containerInfo}>
         <ul className={styles.names}>
           <li className={styles.smallBoldTextGlobal}>Назва:</li>

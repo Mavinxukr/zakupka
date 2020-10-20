@@ -3,6 +3,7 @@ import { watchGetCurrentUser } from './userData/getCurrentUser';
 import { watchLogout } from './userData/logout';
 import { watchGetTenders } from './tenders/getTenders';
 import { watchGetPlans } from './plans/getPlans';
+import { watchGetPlanById } from './onePlan/getOnePlan';
 
 export function* rootSaga() {
   yield all([
@@ -10,5 +11,6 @@ export function* rootSaga() {
     watchLogout(),
     watchGetTenders(),
     watchGetPlans(),
+    watchGetPlanById(),
   ]);
 }

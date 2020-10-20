@@ -10,4 +10,4 @@ const generateAction = (namespace) => ({
 export const currentUser = generateAction('currentUser');
 export const tenders = generateAction('tenders');
 export const plans = generateAction('plans');
-export const plan = generateAction('plan');
+export const onePlan = generateAction('onePlan');

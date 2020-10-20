@@ -2,21 +2,20 @@ import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
   isFetch: false,
-  id: null,
   planData: null,
   isDataReceived: false,
   error: null,
 };
 
-export const plan = (state = initialState, action) => {
+export const onePlan = (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.plan.request:
+    case actionTypes.onePlan.request:
       return {
         ...state,
         isFetch: true,
       };
 
-    case actionTypes.plan.success:
+    case actionTypes.onePlan.success:
       return {
         ...state,
         isFetch: false,
@@ -24,7 +23,7 @@ export const plan = (state = initialState, action) => {
         planData: action.body,
       };
 
-    case actionTypes.plan.error:
+    case actionTypes.onePlan.error:
       return {
         ...state,
         isFetch: false,

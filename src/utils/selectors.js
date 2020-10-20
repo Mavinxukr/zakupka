@@ -29,3 +29,13 @@ export const plansDataReceivedSelector = createSelector(
   (state) => state.plans.isDataReceived,
   (isDataReceived) => isDataReceived,
 );
+
+export const planDataSelector = createSelector(
+  (state) => state.onePlan.planData,
+  (planData) => planData,
+);
+
+export const planDataReceivedSelector = createSelector(
+  (state) => state.onePlan.isDataReceived,
+  (isDataReceived) => isDataReceived,
+);

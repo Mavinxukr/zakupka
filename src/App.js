@@ -29,6 +29,7 @@ import CancelMyPlan from './Pages/MyCreatePlane/CancelMyPlane';
 import NewComplains from './Pages/Complaints/NewComplains/NewComplains';
 import Ask from './Pages/Purchases/Purchases-Quetions/Ask/Ask';
 import CancelComplains from './Pages/Complaints/CancelComplains/CancelComplains';
+import PlanInfo from './Pages/MyPlanSales/PlanInfo/PlanInfo';
 
 const App = () => (
   <>
@@ -45,6 +46,7 @@ const App = () => (
       <Route exact path="/profile-planing" component={Planing} />
       <Route exact path="/plane-of-sales" component={PlaneOfSales} />
       <Route exact path="/my-plane-sales" component={MyPlanSales} />
+      <Route exact path="/my-plane-sales/:id" component={PlanInfo} />
       <Route exact path="/my-plane-sales/my-create-plan" component={MyCreatePlane} />
       <Route exact path="/my-plane-sales/cancel-my-plan" component={CancelMyPlan} />
       <Route exact path="/purchases/demands" component={PurchasesDemands} />

@@ -1,12 +1,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import styles from './AllComplaintsComponent.scss';
 import IconCase from '../../../static/svg/briefcase-solid.svg';
 import IconStar from '../../../static/svg/star.svg';
 import Filter from '../../shared/Filters/Filters';
-import styles from './Layout.scss';
 
-const Layout = () => (
+const AllComplaintsComponent = () => (
   <>
+    <h2 className={styles.middleTitleGlobal}>AllComplaints</h2>
     <div className={styles.container}>
       <div className={styles.flexContainer}>
         <NavLink
@@ -44,4 +45,4 @@ const Layout = () => (
   </>
 );
 
-export default Layout;
+export default AllComplaintsComponent;

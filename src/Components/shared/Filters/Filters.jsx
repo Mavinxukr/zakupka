@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Popup from '../Popup/Popup';
-import styles from './Filters.scss';
 import Classifier from '../../Classifier/Classifier';
+import styles from './Filters.scss';
 
 const Text = 'Назва предмету закупівлі, id або номер договору';
 const Filter = () => {

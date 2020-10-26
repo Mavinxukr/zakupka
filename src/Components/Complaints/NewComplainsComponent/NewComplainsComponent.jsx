@@ -6,7 +6,7 @@ const NewComplainsComponent = () => (
     <div className={styles.shadowBlock}>
       <div>
         <h3 className={styles.middleTitleGlobal}>Подання вимоги/скарги</h3>
-        <form className={styles.flexColumnGlobal}>
+        <div className={styles.flexColumnGlobal}>
           <input
             type="text"
             placeholder="Короткий заголовок"
@@ -21,7 +21,7 @@ const NewComplainsComponent = () => (
           </span>
           <input className={styles.inputGlobal} type="number" />
           <input className={styles.buttonMainGlobal} type="submit" />
-        </form>
+        </div>
       </div>
     </div>
   </>

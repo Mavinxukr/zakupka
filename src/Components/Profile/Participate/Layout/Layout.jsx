@@ -9,7 +9,7 @@ import IconCup from '../../../../static/svg/cup.svg';
 import Filter from '../../../shared/Filters/Filters';
 import Card from '../../../shared/Card/Card';
 // import { NavLink } from 'react-router-dom';
-// import styles from './Layout.scss';
+// import styles from './PreliminaryPurchaseComponent.scss';
 // import IconBriefcase from '../../../../static/svg/briefcase-solid.svg';
 // import IconStar from '../../../../static/svg/star.svg';
 

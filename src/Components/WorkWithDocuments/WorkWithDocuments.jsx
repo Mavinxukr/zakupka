@@ -6,7 +6,7 @@ import styles from './WorkWithDocuments.scss';
 
 const WorkWithDocuments = () => (
   <>
-    <form action="/" className={styles.shadowBlock}>
+    <div action="/" className={styles.shadowBlock}>
       <div className={styles.gridTableTitle}>
         <p className={styles.smallBoldTextGlobal}>Назва файлу</p>
         <p className={styles.smallBoldTextGlobal}>Тип файлу</p>
@@ -103,7 +103,7 @@ const WorkWithDocuments = () => (
         </span>
       </div>
       <button type="submit" className={styles.buttonMainGlobal}>Завантажити</button>
-    </form>
+    </div>
   </>
 );
 

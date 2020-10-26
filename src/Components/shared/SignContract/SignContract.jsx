@@ -7,14 +7,14 @@ const SignContract = () => (
     <div className={styles.shadowBlock}>
       <div className={styles.flexRowGlobal}>
         <IconDoc />
-        <p>
+        <div>
           <span className={styles.middleTitleGlobal}>Підписати договір</span>
           <p className={styles.content}>
             Ви дійсно бажаєте підписати договір?
             Після підписання договору закупівлю буде закрито.
             Цю операцію буде неможливо відмінити.
           </p>
-        </p>
+        </div>
       </div>
       <button type="button" className={styles.buttonMainGlobal}>
         Підписати

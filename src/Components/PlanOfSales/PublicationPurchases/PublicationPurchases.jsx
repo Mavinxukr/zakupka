@@ -1,13 +1,12 @@
+// Публічні закупівлі енергосервісу
+
 import React, { useState } from 'react';
 import { Field, Formik } from 'formik';
 import TextField from '@material-ui/core/TextField';
 import * as Yup from 'yup';
 import cx from 'classnames';
 import InputFormik from '../../../UI-Kit/InputFormik/InputFormik';
-import MenuPurchaser from '../../shared/MenuPurchaser/MenuPurchaser';
 import BlockForm from '../../shared/BlockForm/BlockForm';
-import CustomerInformation from '../ComponentsOfSales/CustomerInformation/CustomerInformation';
-import ProcedureType from '../ComponentsOfSales/ProcedureType/ProcedureType';
 import Products from '../ComponentsOfSales/Products/Products';
 import ParticipantInformation from '../ComponentsOfSales/ParticipantInformation/ParticipantInformation';
 import AddNewLot from '../ComponentsOfSales/AddNewLot/AddNewLot';
@@ -19,21 +18,18 @@ import QualificationParticipant from '../ComponentsOfSales/QualificationParticip
 import WorkWithDocuments from '../../WorkWithDocuments/WorkWithDocuments';
 import AccessParticipan from '../../AccessParticipan/AccessParticipan';
 import SignContract from '../../shared/SignContract/SignContract';
-import styles from './Layout.scss';
+import styles from './PublicationPurchases.scss';
 
-const Layout = () => {
+const PublicationPurchases = () => {
   const [startDate, isStartDate] = useState('');
-  const [onChangeOption, isOnChangeOption] = useState('a1');
   const onSubmit = (values) => console.log(values);
 
   console.log(startDate);
 
   return (
     <>
-      <MenuPurchaser />
       <div className={styles.container}>
-        <h1>Нова публічна закупівля</h1>
-        <CustomerInformation />
+        <h1>Публічні закупівлі енергосервісу</h1>
         <Formik
           initialValues={{ }}
           validationSchema={Yup.object({
@@ -66,19 +62,18 @@ const Layout = () => {
         >
           {(formik) => (
             <form onSubmit={formik.handleSubmit}>
-              <ProcedureType isOnChangeOption={isOnChangeOption} onChangeOption={onChangeOption} />
               <BlockForm>
                 {/* eslint-disable */}
                 <div className={styles.containerSales}>
-                <label>
-                  <Field type="radio" name="picked" value="One" />
-                  <span>Допорогова закупівля (згідно Наказу ДП "Прозорро" №10)</span>
-                </label>
-                <label>
-                  <Field type="radio" name="picked" value="Two" />
-                  <span>Спрощена закупівля (згідно статті 14 Закону України "Про публічні закупівлі")</span>
-                </label>
-                {/* eslint-enable */}
+                  <label>
+                    <Field type="radio" name="picked" value="One" />
+                    <span>Допорогова закупівля (згідно Наказу ДП "Прозорро" №10)</span>
+                  </label>
+                  <label>
+                    <Field type="radio" name="picked" value="Two" />
+                    <span>Спрощена закупівля (згідно статті 14 Закону України "Про публічні закупівлі")</span>
+                  </label>
+                  {/* eslint-enable */}
                 </div>
               </BlockForm>
               <BlockForm>
@@ -261,24 +256,24 @@ const Layout = () => {
                       </label>
                       {/* eslint-enable */}
                       {formik.values.picked1 === 'Two' && (
-                      <>
-                        <InputFormik
-                          formikProps={{
-                            ...formik,
-                            name: 'just',
-                            type: 'number',
-                            label: 'Сума',
-                            value: '0',
-                          }}
-                        />
-                        <Field as="select" name="role" id="role">
-                          <option value="1">гривня (UAH)</option>
-                          <option value="2">американський долар (USD)</option>
-                          <option value="3">євро (EUR)</option>
-                          <option value="4">російський рубль (RUB)</option>
-                          <option value="5">англійський фунт стерлінгів (GBP)</option>
-                        </Field>
-                      </>
+                        <>
+                          <InputFormik
+                            formikProps={{
+                              ...formik,
+                              name: 'just',
+                              type: 'number',
+                              label: 'Сума',
+                              value: '0',
+                            }}
+                          />
+                          <Field as="select" name="role" id="role">
+                            <option value="1">гривня (UAH)</option>
+                            <option value="2">американський долар (USD)</option>
+                            <option value="3">євро (EUR)</option>
+                            <option value="4">російський рубль (RUB)</option>
+                            <option value="5">англійський фунт стерлінгів (GBP)</option>
+                          </Field>
+                        </>
                       )}
                     </div>
                     <a className={styles.link} href="/">Детальніше про забезпечення</a>
@@ -562,4 +557,4 @@ const Layout = () => {
   );
 };
 
-export default Layout;
+export default PublicationPurchases;

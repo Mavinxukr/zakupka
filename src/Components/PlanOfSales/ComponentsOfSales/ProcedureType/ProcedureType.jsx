@@ -2,8 +2,18 @@ import { Field } from 'formik';
 import React from 'react';
 import PropTypes from 'prop-types';
 import BlockForm from '../../../shared/BlockForm/BlockForm';
-import styles from '../../Layout/Layout.scss';
 import Products from '../Products/Products';
+import PreliminaryPurchaseComponent from '../../PreliminaryPurchase/PreliminaryPurchaseComponent';
+import AdditionalPurchase from '../../AdditionalPurchase/AdditionalPurchase';
+import AdditionalPurchaseEn from '../../AdditionalPurchaseEn/AdditionalPurchaseEn';
+import PublicationPurchases from '../../PublicationPurchases/PublicationPurchases';
+import ElectronicSystemsWithout from '../../ElectronicSystemsWithout/ElectronicSystemsWithout';
+import NegotiationProcedure from '../../NegotiationProcedure/NegotiationProcedure';
+import NegotiationProcedureSoon from '../../NegotiationProcedureSoon/NegotiationProcedureSoon';
+import CompetitiveDialog from '../../CompetitiveDialog/CompetitiveDialog';
+import CompetitiveDialogEn from '../../CompetitiveDialogEn/CompetitiveDialogEn';
+import FrameLand from '../../FrameLand/FrameLand';
+import styles from '../../Layout/Layout.scss';
 
 const ProcedureType = ({ isOnChangeOption, onChangeOption }) => (
   <>
@@ -44,10 +54,34 @@ const ProcedureType = ({ isOnChangeOption, onChangeOption }) => (
         </div>
       </div>
       {onChangeOption === 'a1' && (
-      <p>asdasd</p>
+        <PreliminaryPurchaseComponent />
       )}
       {onChangeOption === 'a2' && (
-      <p>fsdfsdfsdfs</p>
+        <AdditionalPurchase />
+      )}
+      {onChangeOption === 'a3' && (
+        <AdditionalPurchaseEn />
+      )}
+      {onChangeOption === 'a4' && (
+        <PublicationPurchases />
+      )}
+      {onChangeOption === 'a5' && (
+        <ElectronicSystemsWithout />
+      )}
+      {onChangeOption === 'a6' && (
+        <NegotiationProcedure />
+      )}
+      {onChangeOption === 'a7' && (
+        <NegotiationProcedureSoon />
+      )}
+      {onChangeOption === 'a8' && (
+        <CompetitiveDialog />
+      )}
+      {onChangeOption === 'a9' && (
+        <CompetitiveDialogEn />
+      )}
+      {onChangeOption === 'a10' && (
+        <FrameLand />
       )}
     </BlockForm>
   </>

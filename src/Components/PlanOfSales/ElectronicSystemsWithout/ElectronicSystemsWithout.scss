@@ -1,0 +1,258 @@
+@import '../../../index';
+
+.container{
+  width: 90%;
+  margin: 0 auto;
+}
+.textarea{
+  padding: 10px;
+  &::selection{
+    border: 1px solid $colorMain;
+  }
+}
+.textLow{
+  font-size: 14px;
+  margin-top: 10px;
+  color: $colorGrey;
+  margin-bottom: 20px;
+}
+.redStar{
+  color: red;
+  margin-right: 5px;
+}
+.mLeft{
+  margin-left: 10px;
+}
+.title{
+  font-size: 20px;
+  font-weight: 700;
+  margin: 5px 0 20px 0;
+}
+.link{
+  color: blue;
+  &:hover{
+    text-decoration: underline;
+  }
+}
+.containerProcedure{
+  display: grid;
+  grid-template-columns: 200px 600px;
+  grid-column-gap: 20px;
+}
+.changeProcedure{
+  display: grid;
+  label{
+    padding: 10px 0;
+  }
+}
+.containerSales{
+  display: grid;
+  grid-row-gap: 10px;
+  span{
+    margin-left: 10px;
+  }
+}
+.containerContacts{
+  display: grid;
+  grid-template-columns: 200px 200px 200px;
+  grid-gap: 40px;
+}
+.labelInput {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.typeSales{
+  width: 400px;
+  margin-top: 10px;
+}
+.sectionContacts{
+  display: grid;
+  grid-template-columns: 200px 1fr;
+}
+.commonName,.notes,.justification{
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-gap: 20px;
+  margin-bottom: 20px;
+  position: relative;
+}
+.justification{
+  margin-bottom: 80px;
+}
+.justificationArea{
+  min-height: 150px;
+}
+.containerDocument,.containerExpectedCost,
+.currency,.containerSupplyProposition,
+.blockCustomerInfo,.dataFinish,.containerStreet,
+.containerLocation,.containerIndex,.containerCountry,
+.containerPopulation,.conduct,.documentDownload{
+  display: grid;
+  grid-template-columns: 200px 300px;
+  grid-gap: 20px;
+  margin-bottom: 20px;
+}
+.customerInfo{
+  p{
+    margin: 10px 0;
+  }
+}
+.stepLess{
+  display: grid;
+  grid-template-columns: 200px 300px 100px;
+  grid-gap: 20px;
+}
+.labesSupply{
+  display: grid;
+  margin-bottom: 20px;
+  label{
+    display: grid;
+    grid-template-columns: 20px 1fr;
+  }
+}
+.containerGetDate{
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-gap: 20px;
+  margin: 30px 0;
+}
+.getData{
+  display: grid;
+  grid-template-columns: 300px 10px 300px;
+  grid-column-gap: 40px;
+}
+.containerGrid{
+  display: grid;
+}
+.add{
+  display: inline;
+  margin-top: 20px;
+  &:hover{
+    border: none;
+  }
+}
+.containerTermsPayment{
+  display: grid;
+  grid-template-rows: 100px 100px;
+  width: 100%;
+  background-color: darken($colorWhite,10%);
+  border: 1px solid $colorBorder;
+  border-radius: 5px;
+  padding: 20px 30px;
+}
+.rowTerms{
+  display: grid;
+  grid-template-columns: 300px repeat(4,200px);
+  grid-gap: 30px;
+}
+.rowTermsFooter{
+  display: grid;
+}
+
+.buttonMain{
+  background-color: $colorMain;
+  color: $colorWhite;
+  margin-right: 20px;
+}
+.specificName{
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-gap: 20px;
+}
+.containerQuantity{
+  .textarea{
+    width: 100%;
+    height: 50px;
+  }
+}
+.quantity{
+  display: grid;
+  grid-template-columns: 150px 250px;
+  grid-gap: 20px;
+}
+.containerClassifier{
+  display: grid;
+  grid-template-columns: 200px 150px;
+  grid-gap: 20px;
+  margin: 20px 0;
+  button{
+    margin-bottom: 10px;
+  }
+}
+.classifier{
+  display: grid;
+}
+.other{
+  p{
+    margin-bottom: 20px;
+  }
+}
+.buttonGlobal{
+  margin-left: 20px;
+}
+
+.error{
+  color: red;
+  margin: 0 auto;
+}
+
+.excel{
+  position: absolute;
+  right: 0;
+  top: -60px;
+}
+
+.download{
+  margin: 0;
+  text-align: center;
+  input{
+    display: none;
+  }
+}
+
+.statistics{
+  width: 250px;
+  display: grid;
+  border: 1px solid $colorBorder;
+  background-color: $colorWhite;
+  padding: 10px;
+  margin: 20px 0;
+  position: relative;
+  span{
+    margin: 10px 0;
+  }
+}
+
+.statisticsHeader{
+  display: grid;
+  grid-template-columns: 150px 100px;
+  grid-template-rows: 25px 25px;
+  border-bottom: 1px solid $colorBorder;
+  padding-bottom: 20px;
+}
+.statisticsFooter{
+  display: grid;
+  grid-template-columns: 150px 100px;
+}
+.question{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  color: darken($colorWarningYellow,50%);
+  width: 25px;
+  height: 25px;
+  background-color: $colorWarningYellow;
+  border-radius: 100%;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.classWrapper{
+  color: green;
+  background-color: green;
+}
+.selectStyle{
+  height: 29px;
+}

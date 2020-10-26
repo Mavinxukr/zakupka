@@ -18,7 +18,7 @@ const Filter = () => {
           </div>
         </Popup>
       )}
-      <form className={styles.searchBlock}>
+      <div className={styles.searchBlock}>
         <div className={styles.inputBlock}>
           <div className={styles.searchInputButton}>
             <input className={styles.search} type={Text} placeholder={Text} />
@@ -37,7 +37,7 @@ const Filter = () => {
           </div>
           <input type="reset" value=" Скинути фільтри " />
         </div>
-      </form>
+      </div>
     </div>
   );
 };

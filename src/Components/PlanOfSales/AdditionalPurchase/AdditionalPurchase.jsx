@@ -1,39 +1,25 @@
+// Відкриті торги
+
 import React, { useState } from 'react';
 import { Field, Formik } from 'formik';
 import TextField from '@material-ui/core/TextField';
 import * as Yup from 'yup';
 import cx from 'classnames';
 import InputFormik from '../../../UI-Kit/InputFormik/InputFormik';
-import MenuPurchaser from '../../shared/MenuPurchaser/MenuPurchaser';
 import BlockForm from '../../shared/BlockForm/BlockForm';
-import CustomerInformation from '../ComponentsOfSales/CustomerInformation/CustomerInformation';
-import ProcedureType from '../ComponentsOfSales/ProcedureType/ProcedureType';
-import Products from '../ComponentsOfSales/Products/Products';
-import ParticipantInformation from '../ComponentsOfSales/ParticipantInformation/ParticipantInformation';
-import AddNewLot from '../ComponentsOfSales/AddNewLot/AddNewLot';
-import ItemList from '../ComponentsOfSales/ItemList/ItemList';
-import NotPrice from '../ComponentsOfSales/NotPrice/NotPrice';
-import NotCritera from '../ComponentsOfSales/NotCriteria/NotCriteria';
 import NonePrice from '../ComponentsOfSales/NonePrice/NonePrice';
-import QualificationParticipant from '../ComponentsOfSales/QualificationParticipant/QualificationParticipant';
-import WorkWithDocuments from '../../WorkWithDocuments/WorkWithDocuments';
-import AccessParticipan from '../../AccessParticipan/AccessParticipan';
-import SignContract from '../../shared/SignContract/SignContract';
-import styles from './Layout.scss';
+import styles from './AdditionalPurchase.scss';
 
-const Layout = () => {
+const AdditionalPurchase = () => {
   const [startDate, isStartDate] = useState('');
-  const [onChangeOption, isOnChangeOption] = useState('a1');
   const onSubmit = (values) => console.log(values);
 
   console.log(startDate);
 
   return (
     <>
-      <MenuPurchaser />
       <div className={styles.container}>
-        <h1>Нова публічна закупівля</h1>
-        <CustomerInformation />
+        <h1>Відкриті торги</h1>
         <Formik
           initialValues={{ }}
           validationSchema={Yup.object({
@@ -66,21 +52,6 @@ const Layout = () => {
         >
           {(formik) => (
             <form onSubmit={formik.handleSubmit}>
-              <ProcedureType isOnChangeOption={isOnChangeOption} onChangeOption={onChangeOption} />
-              <BlockForm>
-                {/* eslint-disable */}
-                <div className={styles.containerSales}>
-                <label>
-                  <Field type="radio" name="picked" value="One" />
-                  <span>Допорогова закупівля (згідно Наказу ДП "Прозорро" №10)</span>
-                </label>
-                <label>
-                  <Field type="radio" name="picked" value="Two" />
-                  <span>Спрощена закупівля (згідно статті 14 Закону України "Про публічні закупівлі")</span>
-                </label>
-                {/* eslint-enable */}
-                </div>
-              </BlockForm>
               <BlockForm>
                 <InputFormik
                   classNameWrapperr={styles.typeSales}
@@ -185,7 +156,10 @@ const Layout = () => {
                 <div className={styles.containerDocument}>
                   <p>Документація до закупівлі</p>
                   <div>
-                    <input type="file" name="file" />
+                    <label htmlFor="downloadButton" className={cx(styles.download, styles.buttonGlobal)}>
+                      Завантажити документ
+                      <input type="file" id="downloadButton" />
+                    </label>
                     <p className={styles.textLow}>
                       Максимум 100 файлів, не більше 49 MB кожен.
                     </p>
@@ -261,30 +235,30 @@ const Layout = () => {
                       </label>
                       {/* eslint-enable */}
                       {formik.values.picked1 === 'Two' && (
-                      <>
-                        <InputFormik
-                          formikProps={{
-                            ...formik,
-                            name: 'just',
-                            type: 'number',
-                            label: 'Сума',
-                            value: '0',
-                          }}
-                        />
-                        <Field as="select" name="role" id="role">
-                          <option value="1">гривня (UAH)</option>
-                          <option value="2">американський долар (USD)</option>
-                          <option value="3">євро (EUR)</option>
-                          <option value="4">російський рубль (RUB)</option>
-                          <option value="5">англійський фунт стерлінгів (GBP)</option>
-                        </Field>
-                      </>
+                        <>
+                          <InputFormik
+                            formikProps={{
+                              ...formik,
+                              name: 'just',
+                              type: 'number',
+                              label: 'Сума',
+                              value: '0',
+                            }}
+                          />
+                          <Field as="select" name="role" id="role">
+                            <option value="1">гривня (UAH)</option>
+                            <option value="2">американський долар (USD)</option>
+                            <option value="3">євро (EUR)</option>
+                            <option value="4">російський рубль (RUB)</option>
+                            <option value="5">англійський фунт стерлінгів (GBP)</option>
+                          </Field>
+                        </>
                       )}
                     </div>
                     <a className={styles.link} href="/">Детальніше про забезпечення</a>
                   </div>
                 </div>
-                <div className={styles.dataFinish}><p><span className={styles.redStar}>*</span>Завершення періоду уточнень</p>
+                <div className={styles.dataFinish}><p><span className={styles.redStar}>*</span>Кінцевий строк подання тендерних пропозицій</p>
                   <TextField
                     name="startProposition"
                     id="date1"
@@ -293,30 +267,10 @@ const Layout = () => {
                     onChange={() => isStartDate(document.querySelector('#date').value)}
                   />
                 </div>
-                <div className={styles.containerGetDate}>
-                  <p><span className={styles.redStar}>*</span>Прийом пропозицій</p>
-                  <div className={styles.getData}>
-                    <TextField
-                      id="date2"
-                      type="datetime-local"
-                      defaultValue={startDate}
-                      onChange={() => isStartDate(document.querySelector('#date').value)}
-                    />
-                    <span>до</span>
-                    <TextField
-                      id="date3"
-                      type="datetime-local"
-                      defaultValue={startDate}
-                      onChange={() => isStartDate(document.querySelector('#date').value)}
-                    />
-                  </div>
-                </div>
               </BlockForm>
               <BlockForm>
                 <div className={styles.containerGrid}>
                   <p className={styles.title}>Нецінові критерії закупівлі</p>
-                  <a href="/" className={styles.link}>Детальніше про нецінові критерії</a>
-                  <a href="/" className={styles.add}>+ Додати неціновий критерій</a>
                 </div>
                 <NonePrice />
                 <button type="button" className={styles.linkGlobal}>Видалити неціновий критерій</button>
@@ -525,16 +479,6 @@ const Layout = () => {
                     }}
                   />
                 </div>
-                <div className={styles.documentDownload}>
-                  <p>Документація</p>
-                  <div className={styles.flexColumnGlobal}>
-                    <label htmlFor="downloadButton" className={cx(styles.download, styles.buttonGlobal)}>
-                      Завантажити документ
-                      <input type="file" id="downloadButton" />
-                    </label>
-                    <span className={styles.smallGrayTextGlobal}>Макстмум 100 файлів, не більше 49 MB кожен.</span>
-                  </div>
-                </div>
                 <div>
                   <button type="button" className={styles.buttonGlobal}>Додати позицію</button>
                   <button type="button" className={styles.buttonGlobal}>Копіювати позицію</button>
@@ -544,16 +488,6 @@ const Layout = () => {
                 <button type="button" className={styles.buttonMainGlobal}>Оголосоти закупівлю</button>
                 <button type="button" className={styles.buttonGlobal}>Зберегти чернетку</button>
               </BlockForm>
-              <NotPrice />
-              <NotCritera />
-              <ItemList />
-              <ParticipantInformation />
-              <AddNewLot />
-              <Products isStartDate={isStartDate} formik={formik} />
-              <QualificationParticipant />
-              <WorkWithDocuments />
-              <AccessParticipan />
-              <SignContract />
             </form>
           )}
         </Formik>
@@ -562,4 +496,4 @@ const Layout = () => {
   );
 };
 
-export default Layout;
+export default AdditionalPurchase;

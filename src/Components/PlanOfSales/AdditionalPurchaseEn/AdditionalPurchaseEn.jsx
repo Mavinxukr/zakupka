@@ -7,17 +7,7 @@ import * as Yup from 'yup';
 import cx from 'classnames';
 import InputFormik from '../../../UI-Kit/InputFormik/InputFormik';
 import BlockForm from '../../shared/BlockForm/BlockForm';
-import Products from '../ComponentsOfSales/Products/Products';
-import ParticipantInformation from '../ComponentsOfSales/ParticipantInformation/ParticipantInformation';
-import AddNewLot from '../ComponentsOfSales/AddNewLot/AddNewLot';
-import ItemList from '../ComponentsOfSales/ItemList/ItemList';
-import NotPrice from '../ComponentsOfSales/NotPrice/NotPrice';
-import NotCritera from '../ComponentsOfSales/NotCriteria/NotCriteria';
 import NonePrice from '../ComponentsOfSales/NonePrice/NonePrice';
-import QualificationParticipant from '../ComponentsOfSales/QualificationParticipant/QualificationParticipant';
-import WorkWithDocuments from '../../WorkWithDocuments/WorkWithDocuments';
-import AccessParticipan from '../../AccessParticipan/AccessParticipan';
-import SignContract from '../../shared/SignContract/SignContract';
 import styles from './AdditionalPurchaseEn.scss';
 
 const AdditionalPurchaseEn = () => {
@@ -181,7 +171,7 @@ const AdditionalPurchaseEn = () => {
                 <h4 className={styles.title}>Інформація про закупівлю</h4>
                 <div className={styles.commonName}>
                   <p><span className={styles.redStar}>*</span>Узагальнена назва закупівлі</p>
-                  <Field className={styles.textarea} name="commonName" component="textarea" />
+                  <Field className={styles.textarea} name="commonName" component="textarea" placeholder="Узагальнена назва закупівлі" />
                   {formik.errors.commonName && formik.touched.commonName && (
                     <p className={styles.error}>{formik.errors.commonName}</p>
                   )}
@@ -189,15 +179,16 @@ const AdditionalPurchaseEn = () => {
                 </div>
                 <div className={styles.notes}>
                   <p>Примітки</p>
-                  <Field className={styles.textarea} name="color5" component="textarea" />
+                  <Field className={styles.textarea} name="color5" component="textarea" placeholder="Примітка" />
                 </div>
                 <div className={styles.containerDocument}>
                   <p>Документація до закупівлі</p>
-                  <div>
-                    <input type="file" name="file" />
-                    <p className={styles.textLow}>
-                      Максимум 100 файлів, не більше 49 MB кожен.
-                    </p>
+                  <div className={styles.blockButton}>
+                    <label htmlFor="downloadButton" className={cx(styles.download, styles.buttonGlobal)}>
+                      Завантажити документ
+                      <input type="file" id="downloadButton" />
+                    </label>
+                    <span>Максимум 100 файлів, не більше 49 MB кожен.</span>
                   </div>
                 </div>
                 <div className={styles.containerExpectedCost}><p><span className={styles.redStar}>*</span>Очікування вартості закупівлі</p>
@@ -513,16 +504,6 @@ const AdditionalPurchaseEn = () => {
                     }}
                   />
                 </div>
-                <div className={styles.documentDownload}>
-                  <p>Документація</p>
-                  <div className={styles.flexColumnGlobal}>
-                    <label htmlFor="downloadButton" className={cx(styles.download, styles.buttonGlobal)}>
-                      Завантажити документ
-                      <input type="file" id="downloadButton" />
-                    </label>
-                    <span className={styles.smallGrayTextGlobal}>Макстмум 100 файлів, не більше 49 MB кожен.</span>
-                  </div>
-                </div>
                 <div>
                   <button type="button" className={styles.buttonGlobal}>Додати позицію</button>
                   <button type="button" className={styles.buttonGlobal}>Копіювати позицію</button>
@@ -532,16 +513,6 @@ const AdditionalPurchaseEn = () => {
                 <button type="button" className={styles.buttonMainGlobal}>Оголосоти закупівлю</button>
                 <button type="button" className={styles.buttonGlobal}>Зберегти чернетку</button>
               </BlockForm>
-              <NotPrice />
-              <NotCritera />
-              <ItemList />
-              <ParticipantInformation />
-              <AddNewLot />
-              <Products isStartDate={isStartDate} formik={formik} />
-              <QualificationParticipant />
-              <WorkWithDocuments />
-              <AccessParticipan />
-              <SignContract />
             </form>
           )}
         </Formik>

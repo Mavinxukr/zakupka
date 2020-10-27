@@ -9,6 +9,10 @@
   &::selection{
     border: 1px solid $colorMain;
   }
+  &::placeholder{
+    font-size: 16px;
+    color: $colorGrey;
+  }
 }
 .textLow{
   font-size: 14px;
@@ -91,6 +95,17 @@
   display: grid;
   grid-template-columns: 200px 300px;
   grid-gap: 20px;
+  margin-bottom: 20px;
+}
+.contactDate{
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  margin-bottom: 20px;
+}
+.containerContacts{
+  display: grid;
+  grid-template-columns: repeat(4,200px);
+  grid-column-gap: 20px;
   margin-bottom: 20px;
 }
 .customerInfo{
@@ -252,4 +267,23 @@
 .classWrapper{
   color: green;
   background-color: green;
+}
+
+.selectStyle{
+  height: 29px;
+}
+
+.blockButton{
+  height: 100px;
+  position: relative;
+  label{
+    position: absolute;
+    top: -48;
+  }
+  span{
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    color: $colorGrey;
+  }
 }

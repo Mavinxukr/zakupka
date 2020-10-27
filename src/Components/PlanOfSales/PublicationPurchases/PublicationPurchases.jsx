@@ -7,20 +7,10 @@ import * as Yup from 'yup';
 import cx from 'classnames';
 import InputFormik from '../../../UI-Kit/InputFormik/InputFormik';
 import BlockForm from '../../shared/BlockForm/BlockForm';
-import Products from '../ComponentsOfSales/Products/Products';
-import ParticipantInformation from '../ComponentsOfSales/ParticipantInformation/ParticipantInformation';
-import AddNewLot from '../ComponentsOfSales/AddNewLot/AddNewLot';
-import ItemList from '../ComponentsOfSales/ItemList/ItemList';
-import NotPrice from '../ComponentsOfSales/NotPrice/NotPrice';
-import NotCritera from '../ComponentsOfSales/NotCriteria/NotCriteria';
 import NonePrice from '../ComponentsOfSales/NonePrice/NonePrice';
-import QualificationParticipant from '../ComponentsOfSales/QualificationParticipant/QualificationParticipant';
-import WorkWithDocuments from '../../WorkWithDocuments/WorkWithDocuments';
-import AccessParticipan from '../../AccessParticipan/AccessParticipan';
-import SignContract from '../../shared/SignContract/SignContract';
 import styles from './PublicationPurchases.scss';
 
-const PublicationPurchases = () => {
+const AdditionalPurchaseEn = () => {
   const [startDate, isStartDate] = useState('');
   const onSubmit = (values) => console.log(values);
 
@@ -63,20 +53,6 @@ const PublicationPurchases = () => {
           {(formik) => (
             <form onSubmit={formik.handleSubmit}>
               <BlockForm>
-                {/* eslint-disable */}
-                <div className={styles.containerSales}>
-                  <label>
-                    <Field type="radio" name="picked" value="One" />
-                    <span>Допорогова закупівля (згідно Наказу ДП "Прозорро" №10)</span>
-                  </label>
-                  <label>
-                    <Field type="radio" name="picked" value="Two" />
-                    <span>Спрощена закупівля (згідно статті 14 Закону України "Про публічні закупівлі")</span>
-                  </label>
-                  {/* eslint-enable */}
-                </div>
-              </BlockForm>
-              <BlockForm>
                 <InputFormik
                   classNameWrapperr={styles.typeSales}
                   classNameWrapperrLabel={styles.labelInput}
@@ -103,6 +79,10 @@ const PublicationPurchases = () => {
               </BlockForm>
               <BlockForm>
                 <h4 className={styles.title}>Контактні дані</h4>
+                <div className={styles.contactDate}>
+                  <p><span className={styles.redStar}>*</span>Назва організації</p>
+                  <input type="text" className={styles.inputGlobal} />
+                </div>
                 <div className={styles.sectionContacts}>
                   <p>
                     <span className={styles.redStar}>*</span>
@@ -110,14 +90,20 @@ const PublicationPurchases = () => {
                   </p>
                   <div>
                     <div className={styles.containerContacts}>
-                      <InputFormik
-                        formikProps={{
-                          ...formik,
-                          name: 'contact',
-                          type: 'text',
-                          disabled: true,
-                        }}
-                      />
+                      <div>
+                        <Field as="select" name="role" id="contacts" className={styles.selectStyle}>
+                          <option value="change contact">--Оберіть конакти--</option>
+                          <option value="contact1">Контакт 1</option>
+                          <option value="contact2">Контакт 2</option>
+                        </Field>
+                        <span className={styles.smallGrayTextGlobal}>усі поля, що мають перемикач у кінці, повинні бути заповнені двома мовами</span>
+                      </div>
+                      <Field as="select" name="role" id="countries" className={styles.selectStyle}>
+                        <option value="main">--Оберіть мову--</option>
+                        <option value="ukraine">Українська</option>
+                        <option value="russian">Русский</option>
+                        <option value="english">English</option>
+                      </Field>
                       <InputFormik
                         formikProps={{
                           ...formik,
@@ -137,7 +123,44 @@ const PublicationPurchases = () => {
                         }}
                       />
                     </div>
-                    <a className={styles.link} href="/">Додати новий основний контакт</a>
+                    <div className={styles.containerContacts}>
+                      <div>
+                        <InputFormik
+                          formikProps={{
+                            ...formik,
+                            name: 'nameContact',
+                            type: 'text',
+                            placeholder: 'Ім\'я контактної особи',
+                            disabled: false,
+                          }}
+                        />
+                        <button type="button" className={styles.buttonMainGlobal}>Додати новий контакт</button>
+                      </div>
+                      <Field as="select" name="role" id="countries" className={styles.selectStyle}>
+                        <option value="main">--Оберіть мову--</option>
+                        <option value="ukraine">Українська</option>
+                        <option value="russian">Русский</option>
+                        <option value="english">English</option>
+                      </Field>
+                      <InputFormik
+                        formikProps={{
+                          ...formik,
+                          name: 'phone',
+                          type: 'text',
+                          placeholder: '+380',
+                          disabled: false,
+                        }}
+                      />
+                      <InputFormik
+                        formikProps={{
+                          ...formik,
+                          name: 'email',
+                          type: 'email',
+                          placeholder: 'E-mail',
+                          disabled: false,
+                        }}
+                      />
+                    </div>
                     {formik.errors.contact && formik.touched.contact && (
                       <p className={styles.error}>{formik.errors.contact}</p>
                     )}
@@ -146,28 +169,9 @@ const PublicationPurchases = () => {
               </BlockForm>
               <BlockForm>
                 <h4 className={styles.title}>Інформація про закупівлю</h4>
-                <div className={styles.conduct}>
-                  <p><span className={styles.redStar}>*</span>Підстави проведення переговорної процедури</p>
-                  <Field as="select" name="role" id="role">
-                    <option value="1">--Оберіть обґрунтування--</option>
-                    <option value="2">обґрунтування 1</option>
-                    <option value="3">обґрунтування 2</option>
-                    <option value="4">обґрунтування 3</option>
-                    <option value="5">обґрунтування 4</option>
-                  </Field>
-                </div>
-                <div className={styles.justification}>
-                  <p><span className={styles.redStar}>*</span>Обґрунтування</p>
-                  <Field className={cx(styles.textarea, styles.justificationArea)} name="justification" component="textarea" />
-                  <div>{formik.errors.justification && formik.touched.justification && (
-                    <p className={styles.error}>{formik.errors.justification}</p>
-                  )}
-                  </div>
-                  <span className={styles.smallGrayTextGlobal}>Залишилось: 15000 символа(ів)</span>
-                </div>
                 <div className={styles.commonName}>
                   <p><span className={styles.redStar}>*</span>Узагальнена назва закупівлі</p>
-                  <Field className={styles.textarea} name="commonName" component="textarea" />
+                  <Field className={styles.textarea} name="commonName" component="textarea" placeholder="Узагальнена назва закупівлі" />
                   {formik.errors.commonName && formik.touched.commonName && (
                     <p className={styles.error}>{formik.errors.commonName}</p>
                   )}
@@ -175,33 +179,23 @@ const PublicationPurchases = () => {
                 </div>
                 <div className={styles.notes}>
                   <p>Примітки</p>
-                  <Field className={styles.textarea} name="color5" component="textarea" />
+                  <Field className={styles.textarea} name="color5" component="textarea" placeholder="Примітка" />
                 </div>
                 <div className={styles.containerDocument}>
                   <p>Документація до закупівлі</p>
-                  <div>
-                    <input type="file" name="file" />
-                    <p className={styles.textLow}>
-                      Максимум 100 файлів, не більше 49 MB кожен.
-                    </p>
+                  <div className={styles.blockButton}>
+                    <label htmlFor="downloadButton" className={cx(styles.download, styles.buttonGlobal)}>
+                      Завантажити документ
+                      <input type="file" id="downloadButton" />
+                    </label>
+                    <span>Максимум 100 файлів, не більше 49 MB кожен.</span>
                   </div>
                 </div>
                 <div className={styles.containerExpectedCost}><p><span className={styles.redStar}>*</span>Очікування вартості закупівлі</p>
                   <div>
-                    <InputFormik
-                      formikProps={{
-                        ...formik,
-                        name: 'if',
-                        type: 'number',
-                      }}
-                    />
-                    <p className={styles.textLow}>
-                      Якщо бюджет закупівлі, включно з лотами, менше 200 000 грн - використовуйте тип процедури:
-                      допорогова закупівля
-                    </p>
                     {/* eslint-disable */}
                     <label>
-                      <Field type="checkbox" name="toggle"/>
+                      <Field type="checkbox" name="toggle" disabled checked/>
                       <span className={styles.mLeft}>Очікувана вартість з ПДВ</span>
                     </label>
                     {/* eslint-enable */}
@@ -209,7 +203,7 @@ const PublicationPurchases = () => {
                 </div>
                 <div className={styles.currency}>
                   <p>Валюта</p>
-                  <Field as="select" name="role" id="role">
+                  <Field as="select" name="role" id="role" disabled>
                     <option value="1">гривня (UAH)</option>
                     <option value="2">американський долар (USD)</option>
                     <option value="3">євро (EUR)</option>
@@ -217,43 +211,46 @@ const PublicationPurchases = () => {
                     <option value="5">англійський фунт стерлінгів (GBP)</option>
                   </Field>
                 </div>
-                <div className={styles.stepLess}>
-                  <p><span className={styles.redStar}>*</span>Крок зниження ставки в аукціоні</p>
-                  <div>
-                    <InputFormik
-                      formikProps={{
-                        ...formik,
-                        name: 'step',
-                        type: 'number',
-                      }}
-                    />
-
-                    <p className={styles.textLow}>
-                      від 0.5 до 3 відсотків від очікуваної вартості закупівлі
-                    </p>
-                  </div>
+                <div className={styles.containerLocation}>
+                  <p><span className={styles.redStar}>*</span>Мінімальний крок підвищення показника ефективності енергосервісного договору під час аукціону, %</p>
                   <InputFormik
                     formikProps={{
                       ...formik,
-                      name: 'percent',
-                      type: 'number',
-                      placeholder: 'У %',
+                      name: 'settlement',
+                      type: 'text',
                     }}
                   />
                 </div>
+                <div className={styles.containerLocation}>
+                  <p><span className={styles.redStar}>*</span>Облікова ставка НБУ, %</p>
+                  <InputFormik
+                    formikProps={{
+                      ...formik,
+                      name: 'settlement',
+                      type: 'text',
+                    }}
+                  />
+                </div>
+                <div className={styles.containerPopulation}>
+                  <p><span className={styles.redStar}>*</span>Джерело фінансування закупівлі</p>
+                  <Field as="select" name="financy" id="role" className={styles.selectStyle}>
+                    <option value="financy1">Фінансування з бюджетних коштів</option>
+                    <option value="financy2">Фінансування виключно за рахунок Учасника</option>
+                  </Field>
+                </div>
                 <div className={styles.containerSupplyProposition}>
-                  <p>Забезпечення тендерних пропозицій</p>
+                  <div className={styles.containerLocation}>
+                    <p><span className={styles.redStar}>*</span>Фіксований відсоток суми скорочення витрат замовника, що підлягає до сплати виконавцю, %</p>
+                    <InputFormik
+                      formikProps={{
+                        ...formik,
+                        name: 'settlement',
+                        type: 'number',
+                      }}
+                    />
+                  </div>
                   <div className={styles.supplyProposition}>
                     <div className={styles.labesSupply}>
-                      {/* eslint-disable */}
-                      <label>
-                        <Field type="radio" name="picked1" value="One"/>
-                        <span className={styles.label}>Забезпечення не передбачено</span>
-                      </label>
-                      <label>
-                        <Field type="radio" name="picked1" value="Two"/>
-                        <span className={styles.label}>Присутнє забезпечення</span>
-                      </label>
                       {/* eslint-enable */}
                       {formik.values.picked1 === 'Two' && (
                         <>
@@ -276,10 +273,9 @@ const PublicationPurchases = () => {
                         </>
                       )}
                     </div>
-                    <a className={styles.link} href="/">Детальніше про забезпечення</a>
                   </div>
                 </div>
-                <div className={styles.dataFinish}><p><span className={styles.redStar}>*</span>Завершення періоду уточнень</p>
+                <div className={styles.dataFinish}><p><span className={styles.redStar}>*</span>Кінцевий строк подання тендерних пропозицій</p>
                   <TextField
                     name="startProposition"
                     id="date1"
@@ -288,30 +284,10 @@ const PublicationPurchases = () => {
                     onChange={() => isStartDate(document.querySelector('#date').value)}
                   />
                 </div>
-                <div className={styles.containerGetDate}>
-                  <p><span className={styles.redStar}>*</span>Прийом пропозицій</p>
-                  <div className={styles.getData}>
-                    <TextField
-                      id="date2"
-                      type="datetime-local"
-                      defaultValue={startDate}
-                      onChange={() => isStartDate(document.querySelector('#date').value)}
-                    />
-                    <span>до</span>
-                    <TextField
-                      id="date3"
-                      type="datetime-local"
-                      defaultValue={startDate}
-                      onChange={() => isStartDate(document.querySelector('#date').value)}
-                    />
-                  </div>
-                </div>
               </BlockForm>
               <BlockForm>
                 <div className={styles.containerGrid}>
                   <p className={styles.title}>Нецінові критерії закупівлі</p>
-                  <a href="/" className={styles.link}>Детальніше про нецінові критерії</a>
-                  <a href="/" className={styles.add}>+ Додати неціновий критерій</a>
                 </div>
                 <NonePrice />
                 <button type="button" className={styles.linkGlobal}>Видалити неціновий критерій</button>
@@ -411,23 +387,6 @@ const PublicationPurchases = () => {
                     {formik.errors.name && formik.touched.name && (
                       <p className={styles.error}>{formik.errors.name}</p>
                     )}
-                    <div className={styles.quantity}>
-                      <InputFormik
-                        formikProps={{
-                          ...formik,
-                          name: 'nameThing',
-                          type: 'number',
-                          placeholder: 'Кількість',
-                        }}
-                      />
-                      <Field as="select" name="role" id="role">
-                        <option value="1">Одиниці виміру</option>
-                        <option value="2">американський долар (USD)</option>
-                        <option value="3">євро (EUR)</option>
-                        <option value="4">російський рубль (RUB)</option>
-                        <option value="5">англійський фунт стерлінгів (GBP)</option>
-                      </Field>
-                    </div>
                   </div>
                 </div>
                 <div className={styles.containerClassifier}>
@@ -439,7 +398,6 @@ const PublicationPurchases = () => {
                 </div>
                 <div className={styles.containerGetDate}>
                   <div className={styles.other}>
-                    <p><span className={styles.redStar}>*</span>Строк поставки/виконання робіт/надання послуг</p>
                     {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
                     <label>
                       <Field type="checkbox" name="toggle" className={styles.toggle} />
@@ -447,27 +405,12 @@ const PublicationPurchases = () => {
                     </label>
                     <p className={styles.textLow}>Наприклад, постачання на декілька адрес</p>
                   </div>
-                  <div className={styles.getData}>
-                    <TextField
-                      id="date"
-                      type="datetime-local"
-                      defaultValue={startDate}
-                      onChange={() => isStartDate(document.querySelector('#date').value)}
-                    />
-                    {formik.errors.firstName && formik.touched.firstName && (
-                      <p>Введіть дату</p>
-                    )}
-                    <span>до</span>
-                    <TextField
-                      id="date"
-                      type="datetime-local"
-                      defaultValue={startDate}
-                      onChange={() => isStartDate(document.querySelector('#date').value)}
-                    />
-                  </div>
                 </div>
                 <div className={styles.containerStreet}>
-                  <p><span className={styles.redStar}>*</span>Вулиця та номер будинку</p>
+                  <p>
+                    <span className={styles.redStar}>*</span>
+                    Вулиця та номер будинку
+                  </p>
                   <InputFormik
                     formikProps={{
                       ...formik,
@@ -492,7 +435,7 @@ const PublicationPurchases = () => {
                 </div>
                 <div className={styles.containerPopulation}>
                   <p><span className={styles.redStar}>*</span>Країна</p>
-                  <Field as="select" name="role" id="role">
+                  <Field as="select" name="role" id="role" className={styles.selectStyle}>
                     <option value="y1">Україна</option>
                     <option value="y2">американський долар (USD)</option>
                     <option value="y3">євро (EUR)</option>
@@ -502,7 +445,7 @@ const PublicationPurchases = () => {
                 </div>
                 <div className={styles.containerCountry}>
                   <p><span className={styles.redStar}>*</span>Область</p>
-                  <Field as="select" name="role" id="role">
+                  <Field as="select" name="role" id="role" className={styles.selectStyle}>
                     <option value="w1">--Оберіть область--</option>
                     <option value="w2">американський долар (USD)</option>
                     <option value="w3">євро (EUR)</option>
@@ -520,16 +463,6 @@ const PublicationPurchases = () => {
                     }}
                   />
                 </div>
-                <div className={styles.documentDownload}>
-                  <p>Документація</p>
-                  <div className={styles.flexColumnGlobal}>
-                    <label htmlFor="downloadButton" className={cx(styles.download, styles.buttonGlobal)}>
-                      Завантажити документ
-                      <input type="file" id="downloadButton" />
-                    </label>
-                    <span className={styles.smallGrayTextGlobal}>Макстмум 100 файлів, не більше 49 MB кожен.</span>
-                  </div>
-                </div>
                 <div>
                   <button type="button" className={styles.buttonGlobal}>Додати позицію</button>
                   <button type="button" className={styles.buttonGlobal}>Копіювати позицію</button>
@@ -539,16 +472,6 @@ const PublicationPurchases = () => {
                 <button type="button" className={styles.buttonMainGlobal}>Оголосоти закупівлю</button>
                 <button type="button" className={styles.buttonGlobal}>Зберегти чернетку</button>
               </BlockForm>
-              <NotPrice />
-              <NotCritera />
-              <ItemList />
-              <ParticipantInformation />
-              <AddNewLot />
-              <Products isStartDate={isStartDate} formik={formik} />
-              <QualificationParticipant />
-              <WorkWithDocuments />
-              <AccessParticipan />
-              <SignContract />
             </form>
           )}
         </Formik>
@@ -557,4 +480,4 @@ const PublicationPurchases = () => {
   );
 };
 
-export default PublicationPurchases;
+export default AdditionalPurchaseEn;

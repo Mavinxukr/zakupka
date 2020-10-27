@@ -9,6 +9,10 @@
   &::selection{
     border: 1px solid $colorMain;
   }
+  &::placeholder{
+    font-size: 16px;
+    color: $colorGrey;
+  }
 }
 .textLow{
   font-size: 14px;
@@ -267,4 +271,19 @@
 
 .selectStyle{
   height: 29px;
+}
+
+.blockButton{
+  height: 100px;
+  position: relative;
+  label{
+    position: absolute;
+    top: -48;
+  }
+  span{
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    color: $colorGrey;
+  }
 }

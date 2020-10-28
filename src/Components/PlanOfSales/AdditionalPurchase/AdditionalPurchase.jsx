@@ -122,25 +122,6 @@ const AdditionalPurchase = () => {
               </BlockForm>
               <BlockForm>
                 <h4 className={styles.title}>Інформація про закупівлю</h4>
-                <div className={styles.conduct}>
-                  <p><span className={styles.redStar}>*</span>Підстави проведення переговорної процедури</p>
-                  <Field as="select" name="role" id="role">
-                    <option value="1">--Оберіть обґрунтування--</option>
-                    <option value="2">обґрунтування 1</option>
-                    <option value="3">обґрунтування 2</option>
-                    <option value="4">обґрунтування 3</option>
-                    <option value="5">обґрунтування 4</option>
-                  </Field>
-                </div>
-                <div className={styles.justification}>
-                  <p><span className={styles.redStar}>*</span>Обґрунтування</p>
-                  <Field className={cx(styles.textarea, styles.justificationArea)} name="justification" component="textarea" />
-                  <div>{formik.errors.justification && formik.touched.justification && (
-                    <p className={styles.error}>{formik.errors.justification}</p>
-                  )}
-                  </div>
-                  <span className={styles.smallGrayTextGlobal}>Залишилось: 15000 символа(ів)</span>
-                </div>
                 <div className={styles.commonName}>
                   <p><span className={styles.redStar}>*</span>Узагальнена назва закупівлі</p>
                   <Field className={styles.textarea} name="commonName" component="textarea" />
@@ -255,7 +236,6 @@ const AdditionalPurchase = () => {
                         </>
                       )}
                     </div>
-                    <a className={styles.link} href="/">Детальніше про забезпечення</a>
                   </div>
                 </div>
                 <div className={styles.dataFinish}><p><span className={styles.redStar}>*</span>Кінцевий строк подання тендерних пропозицій</p>
@@ -488,6 +468,7 @@ const AdditionalPurchase = () => {
                 <button type="button" className={styles.buttonMainGlobal}>Оголосоти закупівлю</button>
                 <button type="button" className={styles.buttonGlobal}>Зберегти чернетку</button>
               </BlockForm>
+              <b>Конец блока Відкриті торги</b>
             </form>
           )}
         </Formik>

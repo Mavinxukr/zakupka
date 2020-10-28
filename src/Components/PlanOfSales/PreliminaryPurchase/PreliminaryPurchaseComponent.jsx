@@ -484,6 +484,7 @@ const PreliminaryPurchaseComponent = () => {
             </form>
           )}
         </Formik>
+        <b>Конец блока Срощена/допорогова закупівля</b>
       </div>
     </>
   );

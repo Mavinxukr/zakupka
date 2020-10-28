@@ -149,7 +149,7 @@ const PreliminaryPurchaseComponent = () => {
                 </div>
                 <div className={styles.containerDocument}>
                   <p>Документація до закупівлі</p>
-                  <div className={styles.documents}>
+                  <div className={styles.flexColumnGlobal}>
                     <label htmlFor="downloadButton" className={cx(styles.downloadFirst, styles.buttonGlobal)}>
                       Завантажити документ
                       <input type="file" id="downloadButton" />

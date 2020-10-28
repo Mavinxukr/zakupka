@@ -36,8 +36,8 @@ const ProcedureType = ({ isOnChangeOption, onChangeOption }) => (
             <option value="a3">Відкриті торги з публікацією англійською мовою</option>
             <option value="a4">Публічні закупівлі енергосервісу</option>
             <option value="a5">Закупівля без використання електронної системи</option>
-            <option value="a6">Переговорна процедура</option>
-            <option value="a7">Переговорна процедура, скорочена</option>
+            <option value="a6">Переговорна процедура (перід оскарження 10 діб)</option>
+            <option value="a7">Переговорна процедура (скорочена, період оскарження 5 діб)</option>
             <option value="a8">Конкурентний діалог</option>
             <option value="a9">Конкурентний діалог з публікацією англійською мовою</option>
             <option value="a10">Укладення рамкової угоди</option>

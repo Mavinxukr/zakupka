@@ -98,12 +98,6 @@ const AdditionalPurchaseEn = () => {
                         </Field>
                         <span className={styles.smallGrayTextGlobal}>усі поля, що мають перемикач у кінці, повинні бути заповнені двома мовами</span>
                       </div>
-                      <Field as="select" name="role" id="countries" className={styles.selectStyle}>
-                        <option value="main">--Оберіть мову--</option>
-                        <option value="ukraine">Українська</option>
-                        <option value="russian">Русский</option>
-                        <option value="english">English</option>
-                      </Field>
                       <InputFormik
                         formikProps={{
                           ...formik,
@@ -136,12 +130,6 @@ const AdditionalPurchaseEn = () => {
                         />
                         <button type="button" className={styles.buttonMainGlobal}>Додати новий контакт</button>
                       </div>
-                      <Field as="select" name="role" id="countries" className={styles.selectStyle}>
-                        <option value="main">--Оберіть мову--</option>
-                        <option value="ukraine">Українська</option>
-                        <option value="russian">Русский</option>
-                        <option value="english">English</option>
-                      </Field>
                       <InputFormik
                         formikProps={{
                           ...formik,
@@ -475,6 +463,7 @@ const AdditionalPurchaseEn = () => {
             </form>
           )}
         </Formik>
+        <b>Конец блока Публічні закупівлі енергосервісу</b>
       </div>
     </>
   );

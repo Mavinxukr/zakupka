@@ -552,6 +552,7 @@ const ElectronicSystemsWithout = () => {
             </form>
           )}
         </Formik>
+        <b>Конец блока Закупівля без використання електронної системи</b>
       </div>
     </>
   );

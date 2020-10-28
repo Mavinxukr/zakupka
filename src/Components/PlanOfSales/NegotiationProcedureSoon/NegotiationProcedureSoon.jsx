@@ -1,4 +1,4 @@
-// Переговорна процедура, скорочена
+// Переговорна процедура (період оскарження 5 діб)
 
 import React, { useState } from 'react';
 import { Field, Formik } from 'formik';
@@ -7,20 +7,10 @@ import * as Yup from 'yup';
 import cx from 'classnames';
 import InputFormik from '../../../UI-Kit/InputFormik/InputFormik';
 import BlockForm from '../../shared/BlockForm/BlockForm';
-import Products from '../ComponentsOfSales/Products/Products';
-import ParticipantInformation from '../ComponentsOfSales/ParticipantInformation/ParticipantInformation';
-import AddNewLot from '../ComponentsOfSales/AddNewLot/AddNewLot';
-import ItemList from '../ComponentsOfSales/ItemList/ItemList';
-import NotPrice from '../ComponentsOfSales/NotPrice/NotPrice';
-import NotCritera from '../ComponentsOfSales/NotCriteria/NotCriteria';
-import NonePrice from '../ComponentsOfSales/NonePrice/NonePrice';
-import QualificationParticipant from '../ComponentsOfSales/QualificationParticipant/QualificationParticipant';
-import WorkWithDocuments from '../../WorkWithDocuments/WorkWithDocuments';
-import AccessParticipan from '../../AccessParticipan/AccessParticipan';
-import SignContract from '../../shared/SignContract/SignContract';
 import styles from './NegotiationProcedureSoon.scss';
+import ParticipantInformation from '../ComponentsOfSales/ParticipantInformation/ParticipantInformation';
 
-const NegotiationProcedureSoon = () => {
+const NegotiationProcedure = () => {
   const [startDate, isStartDate] = useState('');
   const onSubmit = (values) => console.log(values);
 
@@ -29,7 +19,7 @@ const NegotiationProcedureSoon = () => {
   return (
     <>
       <div className={styles.container}>
-        <h1>Переговорна процедура, скорочена</h1>
+        <h1>Переговорна процедура <span className={styles.smallGrayTextGlobal}>період оскарження 5 днів</span> </h1>
         <Formik
           initialValues={{ }}
           validationSchema={Yup.object({
@@ -62,20 +52,6 @@ const NegotiationProcedureSoon = () => {
         >
           {(formik) => (
             <form onSubmit={formik.handleSubmit}>
-              <BlockForm>
-                {/* eslint-disable */}
-                <div className={styles.containerSales}>
-                  <label>
-                    <Field type="radio" name="picked" value="One" />
-                    <span>Допорогова закупівля (згідно Наказу ДП "Прозорро" №10)</span>
-                  </label>
-                  <label>
-                    <Field type="radio" name="picked" value="Two" />
-                    <span>Спрощена закупівля (згідно статті 14 Закону України "Про публічні закупівлі")</span>
-                  </label>
-                  {/* eslint-enable */}
-                </div>
-              </BlockForm>
               <BlockForm>
                 <InputFormik
                   classNameWrapperr={styles.typeSales}
@@ -139,7 +115,7 @@ const NegotiationProcedureSoon = () => {
                     </div>
                     <a className={styles.link} href="/">Додати новий основний контакт</a>
                     {formik.errors.contact && formik.touched.contact && (
-                      <p className={styles.error}>{formik.errors.contact}</p>
+                    <p className={styles.error}>{formik.errors.contact}</p>
                     )}
                   </div>
                 </div>
@@ -165,13 +141,13 @@ const NegotiationProcedureSoon = () => {
                   </div>
                   <span className={styles.smallGrayTextGlobal}>Залишилось: 15000 символа(ів)</span>
                 </div>
+
                 <div className={styles.commonName}>
                   <p><span className={styles.redStar}>*</span>Узагальнена назва закупівлі</p>
                   <Field className={styles.textarea} name="commonName" component="textarea" />
                   {formik.errors.commonName && formik.touched.commonName && (
                     <p className={styles.error}>{formik.errors.commonName}</p>
                   )}
-                  <button type="button" className={cx(styles.buttonMainGlobal, styles.excel)}>Імпорт спеціфікацій з Excel</button>
                 </div>
                 <div className={styles.notes}>
                   <p>Примітки</p>
@@ -179,11 +155,19 @@ const NegotiationProcedureSoon = () => {
                 </div>
                 <div className={styles.containerDocument}>
                   <p>Документація до закупівлі</p>
-                  <div>
-                    <input type="file" name="file" />
-                    <p className={styles.textLow}>
-                      Максимум 100 файлів, не більше 49 MB кожен.
-                    </p>
+                  <div className={cx(styles.flexColumnGlobal, styles.sizeBlock)}>
+                    <label htmlFor="downloadFile" className={styles.buttonMainGlobal}>
+                      Прикріпити файл
+                      {/* eslint-disable-next-line react/button-has-type */}
+                      <input
+                        type="file"
+                        id="downloadFile"
+                        className={styles.downloadFile}
+                      />
+                    </label>
+                    <span className={styles.smallGrayTextGlobal}>
+                      Максимум 100 файлів, не більше 49МВ кожен.
+                    </span>
                   </div>
                 </div>
                 <div className={styles.containerExpectedCost}><p><span className={styles.redStar}>*</span>Очікування вартості закупівлі</p>
@@ -200,11 +184,11 @@ const NegotiationProcedureSoon = () => {
                       допорогова закупівля
                     </p>
                     {/* eslint-disable */}
-                    <label>
-                      <Field type="checkbox" name="toggle"/>
-                      <span className={styles.mLeft}>Очікувана вартість з ПДВ</span>
-                    </label>
-                    {/* eslint-enable */}
+                                        <label>
+                                            <Field type="checkbox" name="toggle"/>
+                                            <span className={styles.mLeft}>Очікувана вартість з ПДВ</span>
+                                        </label>
+                                        {/* eslint-enable */}
                   </div>
                 </div>
                 <div className={styles.currency}>
@@ -217,118 +201,6 @@ const NegotiationProcedureSoon = () => {
                     <option value="5">англійський фунт стерлінгів (GBP)</option>
                   </Field>
                 </div>
-                <div className={styles.stepLess}>
-                  <p><span className={styles.redStar}>*</span>Крок зниження ставки в аукціоні</p>
-                  <div>
-                    <InputFormik
-                      formikProps={{
-                        ...formik,
-                        name: 'step',
-                        type: 'number',
-                      }}
-                    />
-
-                    <p className={styles.textLow}>
-                      від 0.5 до 3 відсотків від очікуваної вартості закупівлі
-                    </p>
-                  </div>
-                  <InputFormik
-                    formikProps={{
-                      ...formik,
-                      name: 'percent',
-                      type: 'number',
-                      placeholder: 'У %',
-                    }}
-                  />
-                </div>
-                <div className={styles.containerSupplyProposition}>
-                  <p>Забезпечення тендерних пропозицій</p>
-                  <div className={styles.supplyProposition}>
-                    <div className={styles.labesSupply}>
-                      {/* eslint-disable */}
-                      <label>
-                        <Field type="radio" name="picked1" value="One"/>
-                        <span className={styles.label}>Забезпечення не передбачено</span>
-                      </label>
-                      <label>
-                        <Field type="radio" name="picked1" value="Two"/>
-                        <span className={styles.label}>Присутнє забезпечення</span>
-                      </label>
-                      {/* eslint-enable */}
-                      {formik.values.picked1 === 'Two' && (
-                        <>
-                          <InputFormik
-                            formikProps={{
-                              ...formik,
-                              name: 'just',
-                              type: 'number',
-                              label: 'Сума',
-                              value: '0',
-                            }}
-                          />
-                          <Field as="select" name="role" id="role">
-                            <option value="1">гривня (UAH)</option>
-                            <option value="2">американський долар (USD)</option>
-                            <option value="3">євро (EUR)</option>
-                            <option value="4">російський рубль (RUB)</option>
-                            <option value="5">англійський фунт стерлінгів (GBP)</option>
-                          </Field>
-                        </>
-                      )}
-                    </div>
-                    <a className={styles.link} href="/">Детальніше про забезпечення</a>
-                  </div>
-                </div>
-                <div className={styles.dataFinish}><p><span className={styles.redStar}>*</span>Завершення періоду уточнень</p>
-                  <TextField
-                    name="startProposition"
-                    id="date1"
-                    type="datetime-local"
-                    defaultValue={startDate}
-                    onChange={() => isStartDate(document.querySelector('#date').value)}
-                  />
-                </div>
-                <div className={styles.containerGetDate}>
-                  <p><span className={styles.redStar}>*</span>Прийом пропозицій</p>
-                  <div className={styles.getData}>
-                    <TextField
-                      id="date2"
-                      type="datetime-local"
-                      defaultValue={startDate}
-                      onChange={() => isStartDate(document.querySelector('#date').value)}
-                    />
-                    <span>до</span>
-                    <TextField
-                      id="date3"
-                      type="datetime-local"
-                      defaultValue={startDate}
-                      onChange={() => isStartDate(document.querySelector('#date').value)}
-                    />
-                  </div>
-                </div>
-              </BlockForm>
-              <BlockForm>
-                <div className={styles.containerGrid}>
-                  <p className={styles.title}>Нецінові критерії закупівлі</p>
-                  <a href="/" className={styles.link}>Детальніше про нецінові критерії</a>
-                  <a href="/" className={styles.add}>+ Додати неціновий критерій</a>
-                </div>
-                <NonePrice />
-                <button type="button" className={styles.linkGlobal}>Видалити неціновий критерій</button>
-                <div className={styles.statistics}>
-                  <div className={styles.question}>?</div>
-                  <div className={styles.statisticsHeader}>
-                    <span>Тендер:</span>
-                    <span className={styles.smallBoldTextGlobal}>0%</span>
-                    <span>Товари та послуги:</span>
-                    <span className={styles.smallBoldTextGlobal}>0%</span>
-                  </div>
-                  <div className={styles.statisticsFooter}>
-                    <span>Використано</span>
-                    <span className={styles.smallBoldTextGlobal}>0 из 30</span>
-                  </div>
-                </div>
-                <button type="button" className={styles.linkGlobal}>+ Додати неціновий критерій</button>
               </BlockForm>
               <BlockForm>
                 <p className={styles.title}>Умови оплати</p>
@@ -396,10 +268,10 @@ const NegotiationProcedureSoon = () => {
                   <a href="/" className={styles.link}>+ Додати умови оплати</a>
                 </div>
                 {formik.errors.conditionOne && formik.touched.conditionOne && (
-                  <p className={styles.error}>{formik.errors.conditionOne}</p>
+                <p className={styles.error}>{formik.errors.conditionOne}</p>
                 )}
                 {formik.errors.conditionTwo && formik.touched.conditionTwo && (
-                  <p className={styles.error}>{formik.errors.conditionTwo}</p>
+                <p className={styles.error}>{formik.errors.conditionTwo}</p>
                 )}
               </BlockForm>
               <BlockForm>
@@ -409,7 +281,7 @@ const NegotiationProcedureSoon = () => {
                   <div className={styles.containerQuantity}>
                     <Field className={styles.textarea} name="name" component="textarea" />
                     {formik.errors.name && formik.touched.name && (
-                      <p className={styles.error}>{formik.errors.name}</p>
+                    <p className={styles.error}>{formik.errors.name}</p>
                     )}
                     <div className={styles.quantity}>
                       <InputFormik
@@ -455,7 +327,7 @@ const NegotiationProcedureSoon = () => {
                       onChange={() => isStartDate(document.querySelector('#date').value)}
                     />
                     {formik.errors.firstName && formik.touched.firstName && (
-                      <p>Введіть дату</p>
+                    <p>Введіть дату</p>
                     )}
                     <span>до</span>
                     <TextField
@@ -523,9 +395,9 @@ const NegotiationProcedureSoon = () => {
                 <div className={styles.documentDownload}>
                   <p>Документація</p>
                   <div className={styles.flexColumnGlobal}>
-                    <label htmlFor="downloadButton" className={cx(styles.download, styles.buttonGlobal)}>
+                    <label htmlFor="downloadButton" className={cx(styles.downloadFirst, styles.buttonGlobal)}>
                       Завантажити документ
-                      <input type="file" id="downloadButton" />
+                      <input type="file" id="downloadButton" className={styles.noneBlock} />
                     </label>
                     <span className={styles.smallGrayTextGlobal}>Макстмум 100 файлів, не більше 49 MB кожен.</span>
                   </div>
@@ -535,26 +407,15 @@ const NegotiationProcedureSoon = () => {
                   <button type="button" className={styles.buttonGlobal}>Копіювати позицію</button>
                 </div>
               </BlockForm>
-              <BlockForm>
-                <button type="button" className={styles.buttonMainGlobal}>Оголосоти закупівлю</button>
-                <button type="button" className={styles.buttonGlobal}>Зберегти чернетку</button>
-              </BlockForm>
-              <NotPrice />
-              <NotCritera />
-              <ItemList />
               <ParticipantInformation />
-              <AddNewLot />
-              <Products isStartDate={isStartDate} formik={formik} />
-              <QualificationParticipant />
-              <WorkWithDocuments />
-              <AccessParticipan />
-              <SignContract />
+              <button type="submit" className={cx(styles.buttonMainGlobal, styles.submit)}>Опублікувати закупівлю</button>
             </form>
           )}
         </Formik>
+        <b>Конец блока Переговорна процедура</b>
       </div>
     </>
   );
 };
 
-export default NegotiationProcedureSoon;
+export default NegotiationProcedure;

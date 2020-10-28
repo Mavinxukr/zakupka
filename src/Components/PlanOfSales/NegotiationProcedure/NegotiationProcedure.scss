@@ -16,6 +16,11 @@
   color: $colorGrey;
   margin-bottom: 20px;
 }
+
+.downloadFile{
+  display: none;
+}
+
 .redStar{
   color: red;
   margin-right: 5px;
@@ -26,7 +31,7 @@
 .title{
   font-size: 20px;
   font-weight: 700;
-  margin: 5px 0 20px 0;
+  margin: 5px 0 100px 0;
 }
 .link{
   color: blue;
@@ -151,9 +156,13 @@
 }
 
 .buttonMain{
+  text-align: center;
   background-color: $colorMain;
   color: $colorWhite;
   margin-right: 20px;
+}
+.buttonMainGlobal{
+  text-align: center;
 }
 .specificName{
   display: grid;
@@ -252,4 +261,15 @@
 .classWrapper{
   color: green;
   background-color: green;
+}
+.sizeBlock{
+  input{
+    text-align: center;
+  }
+}
+.noneBlock{
+  display: none;
+}
+.downloadFirst{
+  text-align: center;
 }

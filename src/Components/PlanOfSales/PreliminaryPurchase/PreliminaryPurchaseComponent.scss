@@ -205,12 +205,23 @@
 
 .download{
   margin: 0;
+  position: relative;
+  top: 0px;
   text-align: center;
   input{
     display: none;
   }
 }
 
+.downloadFirst{
+  margin: 0;
+  position: relative;
+  top: 10px;
+  text-align: center;
+  input{
+    display: none;
+  }
+}
 .statistics{
   width: 250px;
   display: grid;
@@ -252,4 +263,11 @@
 .classWrapper{
   color: green;
   background-color: green;
+}
+.mt{
+  margin-top: 25px;
+}
+
+.buttonSubmit{
+  margin-top: 20px;
 }

@@ -7,20 +7,10 @@ import * as Yup from 'yup';
 import cx from 'classnames';
 import InputFormik from '../../../UI-Kit/InputFormik/InputFormik';
 import BlockForm from '../../shared/BlockForm/BlockForm';
-import Products from '../ComponentsOfSales/Products/Products';
-import ParticipantInformation from '../ComponentsOfSales/ParticipantInformation/ParticipantInformation';
-import AddNewLot from '../ComponentsOfSales/AddNewLot/AddNewLot';
-import ItemList from '../ComponentsOfSales/ItemList/ItemList';
-import NotPrice from '../ComponentsOfSales/NotPrice/NotPrice';
-import NotCritera from '../ComponentsOfSales/NotCriteria/NotCriteria';
 import NonePrice from '../ComponentsOfSales/NonePrice/NonePrice';
-import QualificationParticipant from '../ComponentsOfSales/QualificationParticipant/QualificationParticipant';
-import WorkWithDocuments from '../../WorkWithDocuments/WorkWithDocuments';
-import AccessParticipan from '../../AccessParticipan/AccessParticipan';
-import SignContract from '../../shared/SignContract/SignContract';
 import styles from './CompetitiveDialog.scss';
 
-const CompetitiveDialog = () => {
+const AdditionalPurchase = () => {
   const [startDate, isStartDate] = useState('');
   const onSubmit = (values) => console.log(values);
 
@@ -62,20 +52,6 @@ const CompetitiveDialog = () => {
         >
           {(formik) => (
             <form onSubmit={formik.handleSubmit}>
-              <BlockForm>
-                {/* eslint-disable */}
-                <div className={styles.containerSales}>
-                  <label>
-                    <Field type="radio" name="picked" value="One" />
-                    <span>Допорогова закупівля (згідно Наказу ДП "Прозорро" №10)</span>
-                  </label>
-                  <label>
-                    <Field type="radio" name="picked" value="Two" />
-                    <span>Спрощена закупівля (згідно статті 14 Закону України "Про публічні закупівлі")</span>
-                  </label>
-                  {/* eslint-enable */}
-                </div>
-              </BlockForm>
               <BlockForm>
                 <InputFormik
                   classNameWrapperr={styles.typeSales}
@@ -139,32 +115,13 @@ const CompetitiveDialog = () => {
                     </div>
                     <a className={styles.link} href="/">Додати новий основний контакт</a>
                     {formik.errors.contact && formik.touched.contact && (
-                      <p className={styles.error}>{formik.errors.contact}</p>
+                    <p className={styles.error}>{formik.errors.contact}</p>
                     )}
                   </div>
                 </div>
               </BlockForm>
               <BlockForm>
                 <h4 className={styles.title}>Інформація про закупівлю</h4>
-                <div className={styles.conduct}>
-                  <p><span className={styles.redStar}>*</span>Підстави проведення переговорної процедури</p>
-                  <Field as="select" name="role" id="role">
-                    <option value="1">--Оберіть обґрунтування--</option>
-                    <option value="2">обґрунтування 1</option>
-                    <option value="3">обґрунтування 2</option>
-                    <option value="4">обґрунтування 3</option>
-                    <option value="5">обґрунтування 4</option>
-                  </Field>
-                </div>
-                <div className={styles.justification}>
-                  <p><span className={styles.redStar}>*</span>Обґрунтування</p>
-                  <Field className={cx(styles.textarea, styles.justificationArea)} name="justification" component="textarea" />
-                  <div>{formik.errors.justification && formik.touched.justification && (
-                    <p className={styles.error}>{formik.errors.justification}</p>
-                  )}
-                  </div>
-                  <span className={styles.smallGrayTextGlobal}>Залишилось: 15000 символа(ів)</span>
-                </div>
                 <div className={styles.commonName}>
                   <p><span className={styles.redStar}>*</span>Узагальнена назва закупівлі</p>
                   <Field className={styles.textarea} name="commonName" component="textarea" />
@@ -180,7 +137,10 @@ const CompetitiveDialog = () => {
                 <div className={styles.containerDocument}>
                   <p>Документація до закупівлі</p>
                   <div>
-                    <input type="file" name="file" />
+                    <label htmlFor="downloadButton" className={cx(styles.download, styles.buttonGlobal)}>
+                      Завантажити документ
+                      <input type="file" id="downloadButton" />
+                    </label>
                     <p className={styles.textLow}>
                       Максимум 100 файлів, не більше 49 MB кожен.
                     </p>
@@ -200,11 +160,11 @@ const CompetitiveDialog = () => {
                       допорогова закупівля
                     </p>
                     {/* eslint-disable */}
-                    <label>
-                      <Field type="checkbox" name="toggle"/>
-                      <span className={styles.mLeft}>Очікувана вартість з ПДВ</span>
-                    </label>
-                    {/* eslint-enable */}
+                                        <label>
+                                            <Field type="checkbox" name="toggle"/>
+                                            <span className={styles.mLeft}>Очікувана вартість з ПДВ</span>
+                                        </label>
+                                        {/* eslint-enable */}
                   </div>
                 </div>
                 <div className={styles.currency}>
@@ -246,15 +206,15 @@ const CompetitiveDialog = () => {
                   <div className={styles.supplyProposition}>
                     <div className={styles.labesSupply}>
                       {/* eslint-disable */}
-                      <label>
-                        <Field type="radio" name="picked1" value="One"/>
-                        <span className={styles.label}>Забезпечення не передбачено</span>
-                      </label>
-                      <label>
-                        <Field type="radio" name="picked1" value="Two"/>
-                        <span className={styles.label}>Присутнє забезпечення</span>
-                      </label>
-                      {/* eslint-enable */}
+                        <label>
+                            <Field type="radio" name="picked1" value="One"/>
+                            <span className={styles.label}>Забезпечення не передбачено</span>
+                        </label>
+                        <label>
+                            <Field type="radio" name="picked1" value="Two"/>
+                            <span className={styles.label}>Присутнє забезпечення</span>
+                        </label>
+                        {/* eslint-enable */}
                       {formik.values.picked1 === 'Two' && (
                         <>
                           <InputFormik
@@ -276,10 +236,9 @@ const CompetitiveDialog = () => {
                         </>
                       )}
                     </div>
-                    <a className={styles.link} href="/">Детальніше про забезпечення</a>
                   </div>
                 </div>
-                <div className={styles.dataFinish}><p><span className={styles.redStar}>*</span>Завершення періоду уточнень</p>
+                <div className={styles.dataFinish}><p><span className={styles.redStar}>*</span>Кінцевий строк подання тендерних пропозицій</p>
                   <TextField
                     name="startProposition"
                     id="date1"
@@ -288,30 +247,10 @@ const CompetitiveDialog = () => {
                     onChange={() => isStartDate(document.querySelector('#date').value)}
                   />
                 </div>
-                <div className={styles.containerGetDate}>
-                  <p><span className={styles.redStar}>*</span>Прийом пропозицій</p>
-                  <div className={styles.getData}>
-                    <TextField
-                      id="date2"
-                      type="datetime-local"
-                      defaultValue={startDate}
-                      onChange={() => isStartDate(document.querySelector('#date').value)}
-                    />
-                    <span>до</span>
-                    <TextField
-                      id="date3"
-                      type="datetime-local"
-                      defaultValue={startDate}
-                      onChange={() => isStartDate(document.querySelector('#date').value)}
-                    />
-                  </div>
-                </div>
               </BlockForm>
               <BlockForm>
                 <div className={styles.containerGrid}>
                   <p className={styles.title}>Нецінові критерії закупівлі</p>
-                  <a href="/" className={styles.link}>Детальніше про нецінові критерії</a>
-                  <a href="/" className={styles.add}>+ Додати неціновий критерій</a>
                 </div>
                 <NonePrice />
                 <button type="button" className={styles.linkGlobal}>Видалити неціновий критерій</button>
@@ -396,10 +335,10 @@ const CompetitiveDialog = () => {
                   <a href="/" className={styles.link}>+ Додати умови оплати</a>
                 </div>
                 {formik.errors.conditionOne && formik.touched.conditionOne && (
-                  <p className={styles.error}>{formik.errors.conditionOne}</p>
+                <p className={styles.error}>{formik.errors.conditionOne}</p>
                 )}
                 {formik.errors.conditionTwo && formik.touched.conditionTwo && (
-                  <p className={styles.error}>{formik.errors.conditionTwo}</p>
+                <p className={styles.error}>{formik.errors.conditionTwo}</p>
                 )}
               </BlockForm>
               <BlockForm>
@@ -409,7 +348,7 @@ const CompetitiveDialog = () => {
                   <div className={styles.containerQuantity}>
                     <Field className={styles.textarea} name="name" component="textarea" />
                     {formik.errors.name && formik.touched.name && (
-                      <p className={styles.error}>{formik.errors.name}</p>
+                    <p className={styles.error}>{formik.errors.name}</p>
                     )}
                     <div className={styles.quantity}>
                       <InputFormik
@@ -417,7 +356,7 @@ const CompetitiveDialog = () => {
                           ...formik,
                           name: 'nameThing',
                           type: 'number',
-                          placeholder: 'Кількість',
+                          placeholder: 'Обсяг',
                         }}
                       />
                       <Field as="select" name="role" id="role">
@@ -455,7 +394,7 @@ const CompetitiveDialog = () => {
                       onChange={() => isStartDate(document.querySelector('#date').value)}
                     />
                     {formik.errors.firstName && formik.touched.firstName && (
-                      <p>Введіть дату</p>
+                    <p>Введіть дату</p>
                     )}
                     <span>до</span>
                     <TextField
@@ -520,16 +459,6 @@ const CompetitiveDialog = () => {
                     }}
                   />
                 </div>
-                <div className={styles.documentDownload}>
-                  <p>Документація</p>
-                  <div className={styles.flexColumnGlobal}>
-                    <label htmlFor="downloadButton" className={cx(styles.download, styles.buttonGlobal)}>
-                      Завантажити документ
-                      <input type="file" id="downloadButton" />
-                    </label>
-                    <span className={styles.smallGrayTextGlobal}>Макстмум 100 файлів, не більше 49 MB кожен.</span>
-                  </div>
-                </div>
                 <div>
                   <button type="button" className={styles.buttonGlobal}>Додати позицію</button>
                   <button type="button" className={styles.buttonGlobal}>Копіювати позицію</button>
@@ -537,18 +466,8 @@ const CompetitiveDialog = () => {
               </BlockForm>
               <BlockForm>
                 <button type="button" className={styles.buttonMainGlobal}>Оголосоти закупівлю</button>
-                <button type="button" className={styles.buttonGlobal}>Зберегти чернетку</button>
               </BlockForm>
-              <NotPrice />
-              <NotCritera />
-              <ItemList />
-              <ParticipantInformation />
-              <AddNewLot />
-              <Products isStartDate={isStartDate} formik={formik} />
-              <QualificationParticipant />
-              <WorkWithDocuments />
-              <AccessParticipan />
-              <SignContract />
+              <b>Конец блока Конкурений діалог</b>
             </form>
           )}
         </Formik>
@@ -557,4 +476,4 @@ const CompetitiveDialog = () => {
   );
 };
 
-export default CompetitiveDialog;
+export default AdditionalPurchase;

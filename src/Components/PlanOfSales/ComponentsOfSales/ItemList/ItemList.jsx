@@ -1,7 +1,6 @@
 import React from 'react';
 import { Field } from 'formik';
 import cx from 'classnames';
-import { NavLink } from 'react-router-dom';
 import BlockForm from '../../../shared/BlockForm/BlockForm';
 import styles from './ItemList.scss';
 
@@ -70,14 +69,6 @@ const ItemList = () => (
               <Field type="radio" name="supportNot" value="Two" />
               <span>Присутнє забезпечення закупівлі</span>
             </label>
-            {/* eslint-enable */}
-            <NavLink
-              to="/"
-              exact
-              className={styles.linkGlobal}
-            >
-              Детальніше про забезпечення
-            </NavLink>
           </div>
         </BlockForm>
       </div>

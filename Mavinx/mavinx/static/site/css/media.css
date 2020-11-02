@@ -265,7 +265,6 @@
     height: 66px;
   }
 
-  .tabsItem,
   .imageBlockInfo {
     width: 30%;
   }
@@ -284,10 +283,6 @@
   .row .blockInfo p,
   .tab-description {
     font-size: 16px;
-  }
-
-  .flexItems {
-    justify-content: space-between;
   }
 
   .h1 {
@@ -378,6 +373,7 @@
 
   footer form + div {
     max-width: 412px;
+    width: 100%;
   }
   .tabsItemLink:after{
     right: 20px;
@@ -385,6 +381,22 @@
 }
 
 @media screen and (max-width: 1600px) {
+    .tabs {
+      margin-top: 71px;
+    }
+
+    .tabs__caption {
+
+      margin-bottom: 57px;
+    }
+
+    .tabsItem {
+
+      margin-left: 6px;
+      margin-right: 6px;
+    }
+    
+
     .bigImg ~ .tabsItemLink {
         left: 0;
     }

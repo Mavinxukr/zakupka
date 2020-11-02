@@ -11,8 +11,10 @@ import styles from './PreliminaryPurchaseComponent.scss';
 
 const PreliminaryPurchaseComponent = () => {
   const [startDate, isStartDate] = useState('');
+  // eslint-disable-next-line no-console
   const onSubmit = (values) => console.log(values);
 
+  // eslint-disable-next-line no-console
   console.log(startDate);
 
   return (
@@ -50,7 +52,7 @@ const PreliminaryPurchaseComponent = () => {
           onSubmit={(values) => onSubmit(values)}
         >
           {(formik) => (
-            <form onSubmit={formik.handleSubmit}>
+            <div onSubmit={formik.handleSubmit}>
               <BlockForm>
                 {/* eslint-disable */}
                 <div className={styles.containerSales}>
@@ -481,7 +483,7 @@ const PreliminaryPurchaseComponent = () => {
                 </div>
               </BlockForm>
               <button type="button" className={cx(styles.buttonMainGlobal, styles.buttonSubmit)}> Оголосити закупівлю</button>
-            </form>
+            </div>
           )}
         </Formik>
         <b>Конец блока Срощена/допорогова закупівля</b>

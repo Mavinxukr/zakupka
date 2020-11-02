@@ -187,7 +187,7 @@ const AdditionalPurchaseEn = () => {
                   <div className={styles.blockButton}>
                     <label htmlFor="downloadButton" className={cx(styles.download, styles.buttonGlobal)}>
                       Завантажити документ
-                      <input type="file" id="downloadButton" />
+                      <input type="file" id="downloadButton" className={styles.downloadNone} />
                     </label>
                     <span>Максимум 100 файлів, не більше 49 MB кожен.</span>
                   </div>
@@ -206,11 +206,11 @@ const AdditionalPurchaseEn = () => {
                       допорогова закупівля
                     </p>
                     {/* eslint-disable */}
-                                        <label>
-                                            <Field type="checkbox" name="toggle"/>
-                                            <span className={styles.mLeft}>Очікувана вартість з ПДВ</span>
-                                        </label>
-                                        {/* eslint-enable */}
+                    <label>
+                        <Field type="checkbox" name="toggle"/>
+                        <span className={styles.mLeft}>Очікувана вартість з ПДВ</span>
+                    </label>
+                    {/* eslint-enable */}
                   </div>
                 </div>
                 <div className={styles.currency}>
@@ -260,7 +260,7 @@ const AdditionalPurchaseEn = () => {
                 <p className={styles.title}>Умови оплати</p>
                 <div className={styles.containerTermsPayment}>
                   <div className={styles.rowTerms}>
-                    <div className={styles.termsPayment}>
+                    <div>
                       <p><span className={styles.redStar}>*</span>Оплата після події</p>
                       <Field as="select" name="terms" id="role">
                         <option value="ter1">---</option>
@@ -274,7 +274,7 @@ const AdditionalPurchaseEn = () => {
 
                       </Field>
                     </div>
-                    <div className={styles.termsType}>
+                    <div>
                       <p><span className={styles.redStar}>*</span>Тип оплати</p>
                       <Field as="select" name="typeSales" id="role">
                         <option value="sal1">---</option>
@@ -282,7 +282,7 @@ const AdditionalPurchaseEn = () => {
                         <option value="sal3">аванс</option>
                       </Field>
                     </div>
-                    <div className={styles.termsPeriod}>
+                    <div>
                       <p><span className={styles.redStar}>*</span>Період (днів)</p>
                       <InputFormik
                         formikProps={{
@@ -292,7 +292,7 @@ const AdditionalPurchaseEn = () => {
                         }}
                       />
                     </div>
-                    <div className={styles.termsTypeDays}>
+                    <div>
                       <p><span className={styles.redStar}>*</span>Тип днів</p>
                       <Field as="select" name="condition" id="role">
                         <option value="days1">---</option>
@@ -445,6 +445,16 @@ const AdditionalPurchaseEn = () => {
                       type: 'text',
                     }}
                   />
+                </div>
+                <div className={styles.documentDownload}>
+                  <p>Документація</p>
+                  <div className={styles.flexColumnGlobal}>
+                    <label htmlFor="downloadButton" className={cx(styles.downloadFirst, styles.buttonGlobal)}>
+                      Завантажити документ
+                      <input type="file" id="downloadButton" className={styles.downloadNone} />
+                    </label>
+                    <span className={styles.smallGrayTextGlobal}>Макстмум 100 файлів, не більше 49 MB кожен.</span>
+                  </div>
                 </div>
                 <div>
                   <button type="button" className={styles.buttonGlobal}>Додати позицію</button>

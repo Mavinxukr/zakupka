@@ -12,8 +12,10 @@ import styles from './AdditionalPurchase.scss';
 
 const AdditionalPurchase = () => {
   const [startDate, isStartDate] = useState('');
+  // eslint-disable-next-line no-console
   const onSubmit = (values) => console.log(values);
 
+  // eslint-disable-next-line no-console
   console.log(startDate);
 
   return (

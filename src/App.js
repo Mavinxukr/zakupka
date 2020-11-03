@@ -34,41 +34,39 @@ import Tracking from './Pages/Complaints/Tracking/Tracking';
 import AllComplaints from './Pages/Complaints/AllComplaints/AllComplaints';
 
 const App = () => (
-  <>
-    <Switch>
-      <Route exact path="/" component={Sales} />
-      <Route exact path="/registration" component={Registration} />
-      <Route exact path="/login" component={Login} />
-      <Route exact path="/profile-favorite" component={Favorite} />
-      <Route exact path="/profile-purchases" component={Announcement} />
-      <Route exact path="/profile-purchases/recomend" component={Recomend} />
-      <Route exact path="/profile-purchases/best" component={Best} />
-      <Route exact path="/profile-victories" component={Victories} />
-      <Route exact path="/profile-participate" component={Participate} />
-      <Route exact path="/profile-planing" component={Planing} />
-      <Route exact path="/plane-of-sales" component={PlaneOfSales} />
-      <Route exact path="/my-plane-sales" component={MyPlanSales} />
-      <Route exact path="/my-plane-sales/:id" component={PlanInfo} />
-      <Route exact path="/my-plane-sales/my-create-plan" component={MyCreatePlane} />
-      <Route exact path="/my-plane-sales/cancel-my-plan" component={CancelMyPlan} />
-      <Route exact path="/purchases/demands" component={PurchasesDemands} />
-      <Route exact path="/purchases/dozorro" component={PurchasesDozorro} />
-      <Route exact path="/purchases/inside" component={PurchasesInside} />
-      <Route exact path="/purchases/monitoring" component={PurchasesMonitoring} />
-      <Route exact path="/purchases/questions" component={PurchasesQuestions} />
-      <Route exact path="/purchases/report" component={PurchasesReport} />
-      <Route exact path="/purchases/sales" component={PurchasesSales} />
-      <Route exact path="/purchases/claims" component={PurchasesClaims} />
-      <Route exact path="/purchases/cancel" component={CancelPurchases} />
-      <Route exact path="/purchases/questions/ask" component={Ask} />
-      <Route exact path="/complaints" component={Complaints} />
-      <Route exact path="/complaints/tracking" component={Tracking} />
-      <Route exact path="/complaints/allComplains" component={AllComplaints} />
-      <Route exact path="/complaints/newComplains" component={NewComplains} />
-      <Route exact path="/complaints/cancelComplains" component={CancelComplains} />
-      <Route exact path="/classifier" component={Classifier} />
-    </Switch>
-  </>
+  <Switch>
+    <Route exact path="/" component={Sales} />
+    <Route exact path="/registration" component={Registration} />
+    <Route exact path="/login" component={Login} />
+    <Route exact path="/profile-favorite" component={Favorite} />
+    <Route exact path="/profile-purchases" component={Announcement} />
+    <Route exact path="/profile-purchases/recomend" component={Recomend} />
+    <Route exact path="/profile-purchases/best" component={Best} />
+    <Route exact path="/profile-victories" component={Victories} />
+    <Route exact path="/profile-participate" component={Participate} />
+    <Route exact path="/profile-planing" component={Planing} />
+    <Route exact path="/plane-of-sales" component={PlaneOfSales} />
+    <Route exact path="/my-plane-sales" component={MyPlanSales} />
+    <Route exact path="/my-plane-sales/:id" component={PlanInfo} />
+    <Route exact path="/my-create-plan" component={MyCreatePlane} />
+    <Route exact path="/cancel-my-plan" component={CancelMyPlan} />
+    <Route exact path="/purchases/demands" component={PurchasesDemands} />
+    <Route exact path="/purchases/dozorro" component={PurchasesDozorro} />
+    <Route exact path="/purchases/inside" component={PurchasesInside} />
+    <Route exact path="/purchases/monitoring" component={PurchasesMonitoring} />
+    <Route exact path="/purchases/questions" component={PurchasesQuestions} />
+    <Route exact path="/purchases/report" component={PurchasesReport} />
+    <Route exact path="/purchases/sales" component={PurchasesSales} />
+    <Route exact path="/purchases/claims" component={PurchasesClaims} />
+    <Route exact path="/purchases/cancel" component={CancelPurchases} />
+    <Route exact path="/purchases/questions/ask" component={Ask} />
+    <Route exact path="/complaints" component={Complaints} />
+    <Route exact path="/complaints/tracking" component={Tracking} />
+    <Route exact path="/complaints/allComplains" component={AllComplaints} />
+    <Route exact path="/complaints/newComplains" component={NewComplains} />
+    <Route exact path="/complaints/cancelComplains" component={CancelComplains} />
+    <Route exact path="/classifier" component={Classifier} />
+  </Switch>
 );
 
 export default App;

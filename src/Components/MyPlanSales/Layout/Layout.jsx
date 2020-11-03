@@ -20,7 +20,6 @@ const Layout = () => {
   if (!isDataReceived) {
     return <div />;
   }
-
   return (
     <div className={styles.section}>
       <MenuPurchaser />
@@ -28,13 +27,13 @@ const Layout = () => {
         <h2>Мої плани закупівель </h2>
         <button type="button" className={styles.buttonMainGlobal}>
           <NavLink
-            to="my-plane-sales/my-create-plan"
+            to="my-create-plan"
           >Створити план
           </NavLink>
         </button>
         <button type="button" className={styles.buttonGlobal}>
           <NavLink
-            to="my-plane-sales/cancel-my-plan"
+            to="cancel-my-plan"
           >Скасувати процедуру
           </NavLink>
         </button>

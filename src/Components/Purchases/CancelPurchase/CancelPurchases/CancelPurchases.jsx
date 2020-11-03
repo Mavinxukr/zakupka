@@ -7,7 +7,7 @@ const Layout = () => (
   <>
     <div className={styles.containerGlobal}>
       <h4 className={styles.middleTitleGlobal}>Скасування закупівлі</h4>
-      <h4 className={styles.smallTitleGlobal}>Відмінити хакупівді</h4>
+      <h4 className={styles.smallTitleGlobal}>Відмінити закупівлі</h4>
       <div className={styles.gridTable}>
         <div>
           <p className={cx(styles.smallBoldTextGlobal, styles.cellTable)}>Скасування закупівлі</p>

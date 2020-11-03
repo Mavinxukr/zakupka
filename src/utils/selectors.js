@@ -39,3 +39,8 @@ export const planDataReceivedSelector = createSelector(
   (state) => state.onePlan.isDataReceived,
   (isDataReceived) => isDataReceived,
 );
+
+export const moneyTypeDataReceivedSelector = createSelector(
+  (state) => state.moneyType.isDataReceived,
+  (isMoneyTypeReceived) => isMoneyTypeReceived,
+);

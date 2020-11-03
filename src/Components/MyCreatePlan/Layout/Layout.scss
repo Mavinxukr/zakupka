@@ -25,10 +25,7 @@
 }
 .titleForm{
   display: flex;
-  span{
-    color: red;
-    margin-right: 5px;
-  }
+  margin-left: 12px;
   p{
        font-size: 18px;
      }
@@ -72,10 +69,6 @@ label{
 }
 .infoBlock{
   font-size: 18px;
-  span{
-    color: red;
-    margin-right: 5px;
-  }
   section{
     margin-bottom: 20px;
   }

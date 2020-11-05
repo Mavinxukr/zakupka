@@ -1,0 +1,15 @@
+@import '../../../../index';
+
+.gridTextArea{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 20px;
+}
+.webInput{
+  width: 300px;
+  margin-top: 10px;
+}
+.gridBlockThree{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}

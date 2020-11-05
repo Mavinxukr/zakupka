@@ -4,17 +4,21 @@ import { Field } from 'formik';
 import cookies from 'js-cookie';
 import styles from './MoneyTypeComponent.scss';
 import { getMoneyType } from '../../../redux/actions/moneyType';
-import { moneyTypeDataReceivedSelector } from '../../../utils/selectors';
+import { moneyTypeDataReceivedSelector, moneyTypeDataSelector } from '../../../utils/selectors';
 
 const MoneyTypeComponent = () => {
   const dispatch = useDispatch();
-  const dataMoneyType = useSelector(moneyTypeDataReceivedSelector);
+  const dataMoneyType = useSelector(moneyTypeDataSelector);
+  const isReceived = useSelector(moneyTypeDataReceivedSelector);
 
   useEffect(() => {
     dispatch(getMoneyType({}, cookies.get('tokenProzorro')));
   }, []);
 
-  console.log(dataMoneyType);
+  if (!isReceived) {
+    return <div />;
+  }
+
   return (
     <div className={styles.gridBlockGlobal}>
       <span className={styles.currency}>Валюта</span>
@@ -23,11 +27,16 @@ const MoneyTypeComponent = () => {
         name="currency"
         id="currency"
       >
-        <option value="1">Гривня (UAH)</option>
-        <option value="2">Американський долар (USD)</option>
-        <option value="3">Євро (EUR)</option>
-        <option value="4">Російський рубль (RUB)</option>
-        <option value="5">Англійський фунт стерлінг (GBR)</option>
+        {
+            dataMoneyType.map((item) => (
+              <option
+                key={item.id}
+                value={item.us_name}
+              >
+                {item.ua_name}
+              </option>
+            ))
+          }
       </Field>
     </div>
   );

@@ -1,10 +1,11 @@
 import React from 'react';
 import cx from 'classnames';
+import PropTypes from 'prop-types';
 import Tree from './Tree/Tree';
 import { data } from './data';
 import styles from './Classifier.scss';
 
-const Classifier = () => (
+const Classifier = ({ isDataDK }) => (
   <>
     <div className={styles.containerMain}>
       <input
@@ -13,7 +14,7 @@ const Classifier = () => (
         placeholder="Знайти (наприклад: паливо, продукти)"
       />
       <div className={styles.containerInfo}>
-        <Tree data={data.rootNodes} />
+        <Tree isDataDK={isDataDK} data={data.rootNodes} />
       </div>
       <div>
         <button type="button" className={cx(styles.buttonMainGlobal, styles.button)}>Вибрати</button>
@@ -22,5 +23,9 @@ const Classifier = () => (
     </div>
   </>
 );
+
+Classifier.propTypes = {
+  isDataDK: PropTypes.func,
+};
 
 export default Classifier;

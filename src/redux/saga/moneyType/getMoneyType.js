@@ -6,8 +6,8 @@ import {
 import { getMoneyTypeRequest } from '../../../services/moneyType';
 import * as actionTypes from '../../actions/actionTypes';
 
-function* getMoneyType({ params }) {
-  const response = yield call(getMoneyTypeRequest, params);
+function* getMoneyType({ params, cookies }) {
+  const response = yield call(getMoneyTypeRequest, params, cookies);
   if (response.status) {
     yield put(getMoneyTypeSuccess(response.data));
   } else {

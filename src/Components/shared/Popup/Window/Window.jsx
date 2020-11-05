@@ -9,7 +9,7 @@ const Window = ({ title }) => (
         <h3 className={styles.middleTitleGlobal}>{ title }</h3>
       </div>
       <div>
-        <span>Руквізити для повернення</span>
+        <span>Реквізити для повернення</span>
         <div className={styles.flexColumnGlobal}>
           <p className={styles.smallBoldTextGlobal}><span className={styles.redStar}>*</span> Код ЄДРПОУ/ІПН</p>
           <input type="text" className={styles.inputGlobal} />

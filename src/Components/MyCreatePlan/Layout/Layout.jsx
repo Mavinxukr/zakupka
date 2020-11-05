@@ -1,17 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Field, Formik } from 'formik';
 import MenuPurchaser from '../../shared/MenuPurchaser/MenuPurchaser';
 import BlockForm from '../../shared/BlockForm/BlockForm';
-import styles from './Layout.scss';
 import MoneyTypeComponent from '../../shared/MoneyTypeComponent/MoneyTypeComponent';
+import Popup from '../../shared/Popup/Popup';
+import Classifier from '../../Classifier/Classifier';
+import UserInfo from '../../shared/UserInfo/UserInfo';
+import styles from './Layout.scss';
 
 const Layout = () => {
+  const [openPopup, isOpenPopup] = useState(false);
+  const [dataDK, isDataDK] = useState('');
   const onSubmit = (values) => console.log(values);
+  console.log('dataDK', dataDK);
   return (
     <>
       <MenuPurchaser />
       <div className={styles.container}>
         <h2>Новий план закупівлі</h2>
+        {openPopup && (
+          <Popup isOpenPopup={isOpenPopup}>
+            <div className={styles.popupHeader}>
+              <h3>Класифікатор ДК 021:2015 </h3>
+            </div>
+            <div className={styles.treeContainer}>
+              <Classifier isDataDK={isDataDK} />
+            </div>
+          </Popup>
+        )}
         <Formik
           initialValues={{}}
           onSubmit={(values) => onSubmit(values)}
@@ -21,18 +37,11 @@ const Layout = () => {
               onSubmit={formik.handleSubmit}
             >
               <BlockForm>
-                <div className={styles.blockInfo}>
-                  <h4 className={styles.middleTitleGlobal}>Інформація про замовника</h4>
-                  <p>Name</p>
-                </div>
-                <div className={styles.blockContacts}>
-                  <h4 className={styles.customerContacts}>Контакти</h4>
-                  <p>3434, Україна, Вінницька область, asdads, aasd</p>
-                </div>
+                <UserInfo />
               </BlockForm>
               <BlockForm>
-                <h4 className={styles.title}>Інформація про закупівельника</h4>
-                <span className={styles.textLow}>У разі, якщо за даним планом закупівлю буде проводити інша юридична особа,вкажіть дані цієї орнанізації</span>
+                <h4 className={styles.middleTitleGlobal}>Інформація про закупівельника</h4>
+                <span>У разі, якщо за даним планом закупівлю буде проводити інша юридична особа,вкажіть дані цієї орнанізації</span>
                 <div className={styles.radioButton}>
                   {/* eslint-disable */}
                       <label>
@@ -49,7 +58,7 @@ const Layout = () => {
               <BlockForm>
                 <h4 className={styles.middleTitleGlobal}>Тип процедури</h4>
                 <div className={styles.procedureType}>
-                  <p>Оберіть тип процедури</p>
+                  <span>Оберіть тип процедури</span>
                   <Field as="select" name="TypeOfProcedure" id="role">
                     <option value="Procedure1">Постачальник</option>
                     <option value="Procedure2">Відкриті торги</option>
@@ -101,16 +110,15 @@ const Layout = () => {
                   <section className={styles.annualPlan}>
                     <div className={styles.titleForm}><span className={styles.redStar}>*</span><p>Класифікатор</p></div>
                     <div className={styles.buttons}>
-                      <button type="button">ДК 021:2015</button>
-                      <button type="button">Інші ДК</button>
-                      <button type="button">КЕКВ</button>
+                      <button type="button" className={styles.buttonGlobal} onClick={() => isOpenPopup(true)}>ДК 021:2015</button>
+                      <button type="button" className={styles.buttonGlobal}>КЕКВ</button>
                     </div>
                   </section>
                 </div>
               </BlockForm>
               <BlockForm>
-                <h4 className={styles.title}>Джерело фінансування</h4>
-                <section className={styles.nameSourсe}>
+                <h2 className={styles.middleTitleGlobal}>Джерело фінансування</h2>
+                <section>
                   <div className={styles.titleForm}><span className={styles.redStar}>*</span><p>Назва джерела</p></div>
                   <div>
                     <Field as="select" name="role" id="role">
@@ -137,29 +145,35 @@ const Layout = () => {
                   </div>
                   <Field name="color" component="textarea" />
                 </section>
-                <button type="button">Видалити джерело</button>
+                <button className={styles.buttonGlobal} type="button">Видалити джерело</button>
               </BlockForm>
               <BlockForm>
-                <button className={styles.greenButtonAdd} type="button">+ Додати джерело</button>
+                <button className={styles.buttonMainGlobal} type="button">+ Додати джерело</button>
               </BlockForm>
               <BlockForm>
                 <h4 className={styles.title}>Список товарів та послуг,що закуповують</h4>
-                <button className={styles.greenButtonAdd} type="button">+ Додати товари або послугу</button>
+                <button className={styles.buttonMainGlobal} type="button">+ Додати товари або послугу</button>
               </BlockForm>
               <BlockForm>
                 {/* eslint-disable-next-line react/no-unescaped-entities */}
-                <h5 className={styles.smallText}>Необов'язково, але в разі потреби тут можна завантажити додаткові
+                <h2 className={styles.smallTitleGlobal}>Необов'язково, але в разі потреби тут можна завантажити додаткові
                   файли плану або майбутньої закупівлі
-                </h5>
-                <p style={{ margin: '20px 0' }}>Прикріпити файл</p>
-                <input type="file" name="file" />
-                <p className={styles.textLow}>Можна завантажити додаткові файли плану або майбутньої закупівлі.
+                </h2>
+                <label htmlFor="downloadFile" className={styles.buttonMainGlobal}>
+                  Прикріпити файл
+                  {/* eslint-disable-next-line react/button-has-type */}
+                  <input
+                    type="file"
+                    id="downloadFile"
+                    className={styles.downloadFile}
+                  />
+                </label>
+                <p className={styles.parg}>Можна завантажити додаткові файли плану або майбутньої закупівлі.
                   Максимум 100 фалів,не більше 49Мб кожен.
                 </p>
                 <div className={styles.footerButtons}>
-                  <button className={styles.greenButtonAdd} type="submit">Опублікувати план</button>
-                  <button type="button">Зберегти чернетку</button>
-                  <button className={styles.blueButton} type="button">Скасувати</button>
+                  <button className={styles.buttonMainGlobal} type="submit">Опублікувати план</button>
+                  <button className={styles.buttonMainGlobal} type="button">Скасувати</button>
                 </div>
               </BlockForm>
             </form>

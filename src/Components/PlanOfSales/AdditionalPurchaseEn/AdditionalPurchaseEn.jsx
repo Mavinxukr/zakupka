@@ -420,7 +420,6 @@ const AdditionalPurchaseEn = () => {
                   <p><span className={styles.redStar}>*</span>Класифікатори</p>
                   <div className={styles.classifier}>
                     <button type="button" className={styles.buttonGlobal}>ДК 021:2015</button>
-                    <button type="button" className={styles.buttonGlobal}>інші ДК</button>
                   </div>
                 </div>
                 <div className={styles.containerGetDate}>

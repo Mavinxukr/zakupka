@@ -67,7 +67,7 @@ const Layout = () => (
             </div>
           </div>
           <div className={styles.titleContainer}>
-            <p className={styles.leftBlock}>Предмет закупівлі</p>
+            <p>Предмет закупівлі</p>
             <div className={styles.middleBlock}>
               <p> Очікувана вартість </p>
               <p>Важливі дати</p>

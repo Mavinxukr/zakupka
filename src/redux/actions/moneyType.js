@@ -1,8 +1,8 @@
 import * as actionTypes from './actionTypes';
 
-export const getMoneyType = (params, id) => ({
+export const getMoneyType = (params, cookies) => ({
   type: actionTypes.moneyType.request,
-  id,
+  cookies,
   params,
 });
 

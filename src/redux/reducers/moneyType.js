@@ -2,7 +2,7 @@ import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
   isFetch: false,
-  planData: null,
+  moneyData: null,
   isDataReceived: false,
   error: null,
 };
@@ -20,7 +20,7 @@ export const moneyType = (state = initialState, action) => {
         ...state,
         isFetch: false,
         isDataReceived: true,
-        planData: action.body,
+        moneyData: action.body,
       };
 
     case actionTypes.moneyType.error:

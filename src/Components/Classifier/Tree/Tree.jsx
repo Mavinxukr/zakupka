@@ -5,7 +5,7 @@ import IconPlus from '../../../static/img/expand_plus.gif';
 import IconMinus from '../../../static/img/expand_minus.gif';
 import styles from './Tree.scss';
 
-const Tree = ({ data, classNameWrapperr }) => (
+const Tree = ({ data, classNameWrapperr, isDataDK }) => (
   <>
     {data.map((item) => (
       <div key={item.data.code}>
@@ -17,7 +17,7 @@ const Tree = ({ data, classNameWrapperr }) => (
             </button>
           )}
           <label className={styles.label} htmlFor={item.data.code}>
-            <input id={item.data.code} type="checkbox" />
+            <input id={item.data.code} type="checkbox" value={item.data.name} onClick={(e) => isDataDK(e.target.value)} />
             {' '}{item.data.code} - {item.data.name}
           </label>
         </div>
@@ -25,7 +25,7 @@ const Tree = ({ data, classNameWrapperr }) => (
           className={styles.sub}
         >
           {item?.children?.length > 0 && (
-            <Tree key={item.children.code} classNameWrapperr={styles.children} data={item.children} />
+            <Tree key={item.children.code} classNameWrapperr={styles.children} data={item.children} isDataDK={isDataDK} />
               )}
         </div>
       </div>
@@ -36,6 +36,7 @@ const Tree = ({ data, classNameWrapperr }) => (
 Tree.propTypes = {
   classNameWrapperr: PropTypes.string,
   data: PropTypes.array,
+  isDataDK: PropTypes.func,
 };
 
 export default Tree;

@@ -3,15 +3,8 @@
 .container{
   width: 90%;
   margin: 0 auto;
-
-  button{
-    font-size: 14px;
-    border: 1px solid $colorMain;
-    border-radius: 5px;
-    padding: 10px;
-    color: #000;
-  }
 }
+
 .title{
   font-size: 20px;
   font-weight: 700;
@@ -26,9 +19,6 @@
 .titleForm{
   display: flex;
   margin-left: 12px;
-  p{
-       font-size: 18px;
-     }
 }
 .blockInfo{
   display: grid;
@@ -38,20 +28,6 @@
 .blockContacts{
   display: grid;
   grid-template-columns: 200px 200px;
-}
-.customerInfo{
-  font-size: 18px;
-  font-weight: 700;
-}
-.customerContacts{
-  font-size: 18px;
-  font-weight: 700;
-}
-.textLow{
-  font-size: 14px;
-  margin-top: 10px;
-  color: $colorGrey;
-  margin-bottom: 20px;
 }
 .radioButton{
   display: grid;
@@ -68,7 +44,6 @@ label{
   grid-template-columns: 300px 500px;
 }
 .infoBlock{
-  font-size: 18px;
   section{
     margin-bottom: 20px;
   }
@@ -129,10 +104,6 @@ label{
   background-color: $colorMain;
   color: $colorWhite;
 }
-.smallText{
-  font-size: 14px;
-  font-weight: 700;
-}
 .buttonPlus{
   display: flex;
   align-items: center;
@@ -147,8 +118,6 @@ label{
   height: 100%;
   padding: 10px 0;
   border-right: 1px solid $colorMain;
-  font-weight: 700;
-  font-size: 20px;
   margin-right: 10px;
 }
 .footerButtons{
@@ -162,3 +131,24 @@ label{
   color: #000;
 }
 
+.popupHeader{
+  width: 100%;
+  border-bottom: 1px solid $colorBorder;
+  h3{
+    padding: 20px 0 20px 20px;
+  }
+}
+.treeContainer{
+  width: 100%;
+  height: 400px;
+}
+.downloadFile{
+  display: none;
+}
+.mBot{
+  margin-bottom: 30px;
+}
+.parg{
+  width: 300px;
+  margin-top: 20px;
+}

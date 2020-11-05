@@ -6,7 +6,6 @@ import IconClock from '../../../../static/svg/clock.svg';
 import IconAward from '../../../../static/svg/award.svg';
 import IconCup from '../../../../static/svg/cup.svg';
 import Filter from '../../../shared/Filters/Filters';
-// import Card from '../../../shared/Card/Card';
 import styles from './Layout.scss';
 
 const Layout = () => (

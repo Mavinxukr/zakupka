@@ -28,7 +28,7 @@ const Layout = () => (
           <span>Відстежую (1)</span>
         </NavLink>
         <NavLink
-          to="/complaints/allComplains"
+          to="/complaints/all_complains"
           exact
           activeClassName={styles.tabActive}
           className={styles.tab}

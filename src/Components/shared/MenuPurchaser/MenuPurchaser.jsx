@@ -21,7 +21,7 @@ const MenuPurchaser = () => (
             </li>
             <li>
               <NavLink
-                to="/my-plane-sales"
+                to="//my_plane_sales"
                 exact
                 className={styles.item}
               >Мої плани закупівель
@@ -37,7 +37,7 @@ const MenuPurchaser = () => (
             </li>
             <li>
               <NavLink
-                to="/my-plane-sales"
+                to="//my_plane_sales"
                 exact
                 className={styles.item}
               >Пошук постачальників під covid-19
@@ -50,7 +50,7 @@ const MenuPurchaser = () => (
           <ul className={styles.showBlock}>
             <li>
               <NavLink
-                to="/my-plane-sales"
+                to="//my_plane_sales"
                 exact
                 className={styles.item}
               >
@@ -64,7 +64,7 @@ const MenuPurchaser = () => (
           <ul className={styles.showBlock}>
             <li>
               <NavLink
-                to="/my-plane-sales"
+                to="/user_company_data"
                 exact
                 className={styles.item}
               >
@@ -73,7 +73,7 @@ const MenuPurchaser = () => (
             </li>
             <li>
               <NavLink
-                to="/my-plane-sales"
+                to="/user_company_room"
                 exact
                 className={styles.item}
               >
@@ -82,7 +82,7 @@ const MenuPurchaser = () => (
             </li>
             <li>
               <NavLink
-                to="/my-plane-sales"
+                to="//my_plane_sales"
                 exact
                 className={styles.item}
               >
@@ -91,7 +91,7 @@ const MenuPurchaser = () => (
             </li>
             <li>
               <NavLink
-                to="/my-plane-sales"
+                to="//my_plane_sales"
                 exact
                 className={styles.item}
               >
@@ -105,7 +105,7 @@ const MenuPurchaser = () => (
           <ul className={styles.showBlock}>
             <li>
               <NavLink
-                to="/my-plane-sales"
+                to="//my_plane_sales"
                 exact
                 className={styles.item}
               >
@@ -114,7 +114,7 @@ const MenuPurchaser = () => (
             </li>
             <li>
               <NavLink
-                to="/my-plane-sales"
+                to="//my_plane_sales"
                 exact
                 className={styles.item}
               >
@@ -123,7 +123,7 @@ const MenuPurchaser = () => (
             </li>
             <li>
               <NavLink
-                to="/my-plane-sales"
+                to="//my_plane_sales"
                 exact
                 className={styles.item}
               >
@@ -132,7 +132,7 @@ const MenuPurchaser = () => (
             </li>
             <li>
               <NavLink
-                to="/my-plane-sales"
+                to="//my_plane_sales"
                 exact
                 className={styles.item}
               >
@@ -146,7 +146,7 @@ const MenuPurchaser = () => (
           <ul className={styles.showBlock}>
             <li>
               <NavLink
-                to="/my-plane-sales"
+                to="//my_plane_sales"
                 exact
                 className={styles.item}
               >
@@ -160,7 +160,7 @@ const MenuPurchaser = () => (
           <ul className={styles.showBlock}>
             <li>
               <NavLink
-                to="/my-plane-sales"
+                to="//my_plane_sales"
                 exact
                 className={styles.item}
               >
@@ -174,7 +174,7 @@ const MenuPurchaser = () => (
           <ul className={styles.showBlock}>
             <li>
               <NavLink
-                to="/my-plane-sales"
+                to="//my_plane_sales"
                 exact
                 className={styles.item}
               >
@@ -188,7 +188,7 @@ const MenuPurchaser = () => (
           <ul className={styles.showBlock}>
             <li>
               <NavLink
-                to="/my-plane-sales"
+                to="//my_plane_sales"
                 exact
                 className={styles.item}
               >
@@ -197,7 +197,7 @@ const MenuPurchaser = () => (
             </li>
             <li>
               <NavLink
-                to="/my-plane-sales"
+                to="//my_plane_sales"
                 exact
                 className={styles.item}
               >
@@ -206,7 +206,7 @@ const MenuPurchaser = () => (
             </li>
             <li>
               <NavLink
-                to="/my-plane-sales"
+                to="//my_plane_sales"
                 exact
                 className={styles.item}
               >

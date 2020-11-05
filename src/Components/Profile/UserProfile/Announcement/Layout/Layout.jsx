@@ -31,7 +31,7 @@ const Layout = () => {
       <MenuPurchaser />
       <div className={styles.container}>
         <NavLink
-          to="/plane-of-sales"
+          to="/plane_of_sales"
           exact
           className={styles.tab}
         >
@@ -42,7 +42,7 @@ const Layout = () => {
         <div className={styles.flexContainer}>
           <div className={styles.buttonTabs}>
             <NavLink
-              to="/profile-purchases"
+              to="/profile_purchases"
               exact
               className={styles.tab}
               activeClassName={styles.tabActive}
@@ -51,7 +51,7 @@ const Layout = () => {
               <span>Всі закупівлі</span>
             </NavLink>
             <NavLink
-              to="/profile-favorite"
+              to="/profile_favorite"
               exact
               className={styles.tab}
               activeClassName={styles.tabActive}
@@ -60,7 +60,7 @@ const Layout = () => {
               <span>Обране</span>
             </NavLink>
             <NavLink
-              to="/profile-planing"
+              to="/profile_planing"
               exact
               className={styles.tab}
             >
@@ -68,7 +68,7 @@ const Layout = () => {
               <span>Планую взяти участь</span>
             </NavLink>
             <NavLink
-              to="/profile-participate"
+              to="/profile_participate"
               exact
               className={styles.tab}
             >
@@ -76,7 +76,7 @@ const Layout = () => {
               <span>Беру участь</span>
             </NavLink>
             <NavLink
-              to="/profile-victories"
+              to="/profile_victories"
               exact
               className={styles.tab}
             >
@@ -88,7 +88,7 @@ const Layout = () => {
             <div className={styles.bgWhite}>
               <ul className={styles.menu}>
                 <NavLink
-                  to="/profile-purchases"
+                  to="/profile_purchases"
                   exact
                   className={styles.menuItem}
                   activeClassName={styles.menuItemActive}
@@ -96,7 +96,7 @@ const Layout = () => {
                   Оголошені
                 </NavLink>
                 <NavLink
-                  to="/profile-purchases/recomend"
+                  to="/profile_purchases/recomend"
                   exact
                   className={styles.menuItem}
                   activeClassName={styles.menuItemActive}
@@ -104,7 +104,7 @@ const Layout = () => {
                   Рекоменд
                 </NavLink>
                 <NavLink
-                  to="/profile-planing"
+                  to="/profile_planing"
                   exact
                   className={styles.menuItem}
                   activeClassName={styles.menuItemActive}

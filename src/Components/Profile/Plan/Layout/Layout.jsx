@@ -14,7 +14,7 @@ const Layout = () => (
     <div className={styles.flexContainer}>
       <div className={styles.buttonTabs}>
         <NavLink
-          to="/profile-purchases"
+          to="/profile_purchases"
           exact
           className={styles.tab}
           activeClassName={styles.tabActive}
@@ -23,7 +23,7 @@ const Layout = () => (
           <span>Всі закупівлі</span>
         </NavLink>
         <NavLink
-          to="/profile-favorite"
+          to="/profile_favorite"
           exact
           className={styles.tab}
           activeClassName={styles.tabActive}
@@ -32,7 +32,7 @@ const Layout = () => (
           <span>Обране</span>
         </NavLink>
         <NavLink
-          to="/profile-planing"
+          to="/profile_planing"
           exact
           className={styles.tab}
           activeClassName={styles.tabActive}
@@ -41,7 +41,7 @@ const Layout = () => (
           <span>Планую взяти участь</span>
         </NavLink>
         <NavLink
-          to="/profile-participate"
+          to="/profile_participate"
           exact
           className={styles.tab}
         >
@@ -49,7 +49,7 @@ const Layout = () => (
           <span>Беру участь</span>
         </NavLink>
         <NavLink
-          to="/profile-victories"
+          to="/profile_victories"
           exact
           className={styles.tab}
         >

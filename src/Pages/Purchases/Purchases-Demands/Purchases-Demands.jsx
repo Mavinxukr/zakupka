@@ -16,14 +16,14 @@ const Layout = () => (
     <PurchasesDemandsComponent />
     <div className={styles.containerGlobal}>
       <NavLink
-        to="/complaints/newComplains"
+        to="/complaints/new_complains"
         exact
         className={styles.buttonGlobal}
       >
         Подати вимогу на умови закупівлі
       </NavLink>
       <NavLink
-        to="/complaints/cancelComplains"
+        to="/complaints/cancel_complains"
         exact
         className={styles.buttonGlobal}
       >

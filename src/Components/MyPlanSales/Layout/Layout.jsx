@@ -71,7 +71,7 @@ const Layout = () => {
               <div className={styles.rowTable}>
                 <div className={styles.flexColumnGlobal}>
                   <NavLink
-                    to={`/my-plane-sales/${item.id}`}
+                    to={`//my_plane_sales/${item.id}`}
                     exact
                     className={styles.normalBlueTextGlobal}
                   >

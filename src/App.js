@@ -32,24 +32,26 @@ import CancelComplains from './Pages/Complaints/CancelComplains/CancelComplains'
 import PlanInfo from './Pages/MyPlanSales/PlanInfo/PlanInfo';
 import Tracking from './Pages/Complaints/Tracking/Tracking';
 import AllComplaints from './Pages/Complaints/AllComplaints/AllComplaints';
+import UserCompanyData from './Pages/Profile/UserProfile/UserCompanyData/UserCompanyData';
+import UserCompanyRoom from './Pages/Profile/UserProfile/UserCompanyRoom/UserCompanyRoom';
 
 const App = () => (
   <Switch>
     <Route exact path="/" component={Sales} />
     <Route exact path="/registration" component={Registration} />
     <Route exact path="/login" component={Login} />
-    <Route exact path="/profile-favorite" component={Favorite} />
-    <Route exact path="/profile-purchases" component={Announcement} />
-    <Route exact path="/profile-purchases/recomend" component={Recomend} />
-    <Route exact path="/profile-purchases/best" component={Best} />
-    <Route exact path="/profile-victories" component={Victories} />
-    <Route exact path="/profile-participate" component={Participate} />
-    <Route exact path="/profile-planing" component={Planing} />
-    <Route exact path="/plane-of-sales" component={PlaneOfSales} />
-    <Route exact path="/my-plane-sales" component={MyPlanSales} />
-    <Route exact path="/my-plane-sales/:id" component={PlanInfo} />
-    <Route exact path="/my-create-plan" component={MyCreatePlane} />
-    <Route exact path="/cancel-my-plan" component={CancelMyPlan} />
+    <Route exact path="/profile_favorite" component={Favorite} />
+    <Route exact path="/profile_purchases" component={Announcement} />
+    <Route exact path="/profile_purchases/recomend" component={Recomend} />
+    <Route exact path="/profile_purchases/best" component={Best} />
+    <Route exact path="/profile_victories" component={Victories} />
+    <Route exact path="/profile_participate" component={Participate} />
+    <Route exact path="/profile_planing" component={Planing} />
+    <Route exact path="/plane_of_sales" component={PlaneOfSales} />
+    <Route exact path="/my_plane_sales" component={MyPlanSales} />
+    <Route exact path="/my_plane_sales/:id" component={PlanInfo} />
+    <Route exact path="/my_create_plan" component={MyCreatePlane} />
+    <Route exact path="/cancel_my_plan" component={CancelMyPlan} />
     <Route exact path="/purchases/demands" component={PurchasesDemands} />
     <Route exact path="/purchases/dozorro" component={PurchasesDozorro} />
     <Route exact path="/purchases/inside" component={PurchasesInside} />
@@ -62,10 +64,12 @@ const App = () => (
     <Route exact path="/purchases/questions/ask" component={Ask} />
     <Route exact path="/complaints" component={Complaints} />
     <Route exact path="/complaints/tracking" component={Tracking} />
-    <Route exact path="/complaints/allComplains" component={AllComplaints} />
-    <Route exact path="/complaints/newComplains" component={NewComplains} />
-    <Route exact path="/complaints/cancelComplains" component={CancelComplains} />
+    <Route exact path="/complaints/all_complains" component={AllComplaints} />
+    <Route exact path="/complaints/new_complains" component={NewComplains} />
+    <Route exact path="/complaints/cancel_complains" component={CancelComplains} />
     <Route exact path="/classifier" component={Classifier} />
+    <Route exact path="/user_company_data" component={UserCompanyData} />
+    <Route exact path="/user_company_room" component={UserCompanyRoom} />
   </Switch>
 );
 

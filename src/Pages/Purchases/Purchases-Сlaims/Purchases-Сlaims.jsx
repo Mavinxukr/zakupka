@@ -104,7 +104,7 @@ const Layout = () => (
         </div>
       </div>
       <NavLink
-        to="/complaints/newComplains"
+        to="/complaints/new_complains"
         className={styles.buttonMainGlobal}
       >
         Подати скаргу на умови закупівлі

@@ -1,7 +1,9 @@
 {% load static %}
  {% load i18n %}
  <a href="#" class="countFlexBlock">
-   <h1 class="h1 fontMedium flex">{% trans 'view_blog' %}</h1>
+   <h2 class="h1 fontMedium flex">
+      <span>{% trans 'view_blog' %}</span>
+    </h2>
      <span class="blogCount menuItem">{{ blogs.count }}</span>
  </a>
 <a href="#" class="showAll fontMedium">
@@ -16,11 +18,11 @@
                 {{ blog.name }}
             </p>
             <div class="blogHashtag flex">
-                  <span class="fontRegular">
-                    <a href="{% url 'blog' %}?entity={{blog.topic.name}}">#{{ blog.topic.name }}</a>
-                    </span>
-                <span style="color: #F2C81F;" class="fontMedium">{% trans 'blog_views' %}</span>
+                <span class="fontRegular">
+                  <a href="{% url 'blog' %}?entity={{blog.topic.name}}">#{{ blog.topic.name }}</a>
+                </span>
                 <span class="fontRegular">{{ blog.views }}</span>
+                <span style="color: #F2C81F;" class="fontMedium">{% trans 'blog_views' %}</span>
             </div>
           </a>
         </article>

@@ -19,7 +19,7 @@ Mavinx - {{ project.name }}
                 {{ project.name }}
             </h1>
             <p class="projectBannerText fontRegular">
-                {{ project.description }}
+                <span>{{ project.description }}</span>
             </p>
         </div>
         <img src="/media/{{ project.one_project_image }}" alt="{{ project.name }}">
@@ -27,7 +27,7 @@ Mavinx - {{ project.name }}
             <div class="flex">
                 <div class="bannerInfoItem">
                     <p class="fontRegular">Time</p>
-                    <p class="fontMedium">{{ project.dev_time }}</p>
+                    <p class="fontMedium">{{ project.dev_time }} weeks</p>
                 </div>
                 <div class="bannerInfoItem">
                     <p class="fontRegular">Team</p>

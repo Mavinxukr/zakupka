@@ -113,11 +113,15 @@
   .projectBannerText,
   .bannerInfoItem .fontMedium,
   .projectBG .textDesc,
-  .blackBG h4,
   .blackBG .flex a,
   .blackBG li,
   .blackBG p {
     font-size: 14px;
+  }
+
+  .blackBG h4 {
+    font-size: 16px;
+
   }
 
   .text-next,
@@ -164,8 +168,8 @@
   }
 
   .next-project-img {
-    width: 456px;
-    height: 299px;
+    width: 427px;
+    height: 280px;
     right: 40px;
   }
 
@@ -400,6 +404,14 @@
       margin-top: 71px;
     }
 
+    .oneProject .container {
+      max-width: 70%;
+    }
+
+    .infoProject {
+      max-width: 400px;
+    }
+
     .tabs__caption {
 
       margin-bottom: 57px;
@@ -462,8 +474,6 @@
       font-size: 35px;
     }
 
-    .row .blockInfo p,
-    .blockInfo .readMore,
     .blog .showAll,
     .aboutUS,
     .slider-content p,
@@ -505,9 +515,24 @@
       padding-bottom: 0;
     }
 
+    .next-project {
+
+      margin-bottom: 120px;
+    }
+
+    .location .h3 {
+
+      margin-top: 27px;
+    }
+
     .row {
 
       margin-bottom: 47px;
+    }
+
+    .single-slider {
+
+      padding-bottom: 117px;
     }
 
     .h1 span {
@@ -529,6 +554,56 @@
     }
 }
 
+@media screen and (max-width: 1500px){
+  .logo {
+    margin-left: 36px;
+    margin-right: 49px;
+  }
+
+  .blockInfo .readMore {
+
+    font-size: 16px;
+  }
+
+  .logo svg {
+
+    width: 58px;
+    height: 23px;
+  }
+
+  .lang,
+  .menuItem a,
+  .lastMenuItem a{
+
+    font-size: 10px;
+  }
+
+  .lastMenuItem {
+    width: 152px;
+    height: 50px;
+    margin-left: 39px;
+  }
+
+  .header {
+    height: 50px;
+  }
+
+  .menuItem:first-child {
+
+    padding-right: 0;
+  }
+
+  .row .blockInfo .complete .text,
+  .row .blockInfo .technology .text {
+    font-size: 10px;
+  }
+
+  .subscribe {
+    padding: 50px 65px 51px 70px;
+  }
+
+}
+
 @media screen and (max-width: 1440px) {
   .bannerTitle,
   .h1,
@@ -544,8 +619,6 @@
     font-size: 30px;
   }
 
-  .row .blockInfo p,
-  .blockInfo .readMore,
   .blog .showAll,
   .aboutUS,
   .slider-content p,
@@ -591,9 +664,12 @@
   .subscribe form button,
   .subscribe form input,
   .subscribe form input::placeholder,
-  .footerInput,
-  .footerLink {
+  .footerInput {
     font-size: 16px;
+  }
+
+  .footerLink {
+    font-size: 15px;
   }
 }
 

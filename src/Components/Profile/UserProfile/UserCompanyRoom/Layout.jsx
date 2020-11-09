@@ -1,7 +1,6 @@
 import React from 'react';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
-import cx from 'classnames';
 import BlockForm from '../../../shared/BlockForm/BlockForm';
 import InputFormik from '../../../../UI-Kit/InputFormik/InputFormik';
 import styles from './Layout.scss';
@@ -27,115 +26,149 @@ const Layout = () => {
           <div className={styles.containerGlobal}>
             <h2 className={styles.middleTitleGlobal}>Користувач кабінету</h2>
             <BlockForm>
-              <div className={styles.centerBlock}>
-                <p className={styles.smallTitleGlobal}>
-                  <span className={styles.redStar}>*</span>
-                  <span>{name}</span>
-                </p>
-                <InputFormik
-                  formikProps={{
-                    ...formik,
-                    name: 'companyRegister',
-                    type: 'text',
-                    placeholder: 'ЄДРПОУ',
-                  }}
-                  classNameWrapperr={styles.webInput}
-                />
-              </div>
-              <div className={styles.centerBlock}>
-                <p className={styles.smallTitleGlobal}>
-                  <span className={styles.redStar}>*</span>
-                  <span>{name}</span>
-                </p>
-                <InputFormik
-                  formikProps={{
-                    ...formik,
-                    name: 'companyRegister',
-                    type: 'text',
-                    placeholder: 'ЄДРПОУ',
-                  }}
-                  classNameWrapperr={styles.webInput}
-                />
-              </div>
-              <div className={styles.centerBlock}>
-                <p className={styles.smallTitleGlobal}>
-                  <span className={styles.redStar}>*</span>
-                  <span>{name}</span>
-                </p>
-                <InputFormik
-                  formikProps={{
-                    ...formik,
-                    name: 'companyRegister',
-                    type: 'text',
-                    placeholder: 'ЄДРПОУ',
-                  }}
-                  classNameWrapperr={styles.webInput}
-                />
-              </div>
-              <div className={styles.centerBlock}>
-                <p className={styles.smallTitleGlobal}>
-                  <span className={styles.redStar}>*</span>
-                  <span>{name}</span>
-                </p>
-                <InputFormik
-                  formikProps={{
-                    ...formik,
-                    name: 'companyRegister',
-                    type: 'text',
-                    placeholder: 'ЄДРПОУ',
-                  }}
-                  classNameWrapperr={styles.webInput}
-                />
-              </div>
-              <div className={styles.centerBlock}>
-                <p className={styles.smallTitleGlobal}>
-                  <span className={styles.redStar}>*</span>
-                  <span>{name}</span>
-                </p>
-                <InputFormik
-                  formikProps={{
-                    ...formik,
-                    name: 'companyRegister',
-                    type: 'text',
-                    placeholder: 'ЄДРПОУ',
-                  }}
-                  classNameWrapperr={styles.webInput}
-                />
+              <div className={styles.shadowBlock}>
+                <div className={styles.centerBlock}>
+                  <p className={styles.smallTitleGlobal}>
+                    <span className={styles.redStar}>*</span>
+                    <span>{name}</span>
+                  </p>
+                  <InputFormik
+                    formikProps={{
+                      ...formik,
+                      name: 'companyName',
+                      type: 'text',
+                      placeholder: 'Введіть ім\'я',
+                    }}
+                  />
+                </div>
+                <div className={styles.centerBlock}>
+                  <p className={styles.smallTitleGlobal}>
+                    <span className={styles.redStar}>*</span>
+                    <span>Призвіще</span>
+                  </p>
+                  <InputFormik
+                    formikProps={{
+                      ...formik,
+                      name: 'companySarname',
+                      type: 'text',
+                      placeholder: 'Введіть призвіще',
+                    }}
+                  />
+                </div>
+                <div className={styles.centerBlock}>
+                  <p className={styles.smallTitleGlobal}>
+                    <span className={styles.margn}>Посада</span>
+                  </p>
+                  <InputFormik
+                    formikProps={{
+                      ...formik,
+                      name: 'companyRegister',
+                      type: 'text',
+                      placeholder: 'Введіть посаду',
+                    }}
+                  />
+                </div>
+                <div className={styles.centerBlock}>
+                  <p className={styles.smallTitleGlobal}>
+                    <span className={styles.redStar}>*</span>
+                    <span>Телефон</span>
+                  </p>
+                  <InputFormik
+                    formikProps={{
+                      ...formik,
+                      name: 'companyRegister',
+                      type: 'text',
+                      placeholder: 'Номер телефону',
+                    }}
+                  />
+                </div>
+                <button type="button" className={styles.buttonMainGlobal}>Зберегти</button>
               </div>
             </BlockForm>
             <h2 className={styles.middleTitleGlobal}>Зміна пароля</h2>
             <BlockForm>
-              <div className={cx(styles.centerBlock, styles.flexRowGlobal)}>
-                <p className={styles.smallTitleGlobal}>
-                  <span className={styles.redStar}>*</span>
-                  <span>Поточний пароль</span>
-                </p>
-                <InputFormik
-                  formikProps={{
-                    ...formik,
-                    name: 'companyRegister',
-                    type: 'text',
-                    placeholder: 'ЄДРПОУ',
-                  }}
-                  classNameWrapperr={styles.webInput}
-                />
+              <div className={styles.shadowBlock}>
+                <div>
+                  <p className={styles.smallTitleGlobal}>
+                    <span className={styles.redStar}>*</span>
+                    <span>Поточний пароль</span>
+                  </p>
+                  <InputFormik
+                    formikProps={{
+                      ...formik,
+                      name: 'companyRegister',
+                      type: 'text',
+                      placeholder: 'Введіть поточний пароль',
+                    }}
+                  />
+                </div>
+                <div>
+                  <p className={styles.smallTitleGlobal}>
+                    <span className={styles.redStar}>*</span>
+                    <span>Новий пароль</span>
+                  </p>
+                  <InputFormik
+                    formikProps={{
+                      ...formik,
+                      name: 'companyRegister',
+                      type: 'text',
+                      placeholder: 'Введіть новий пароль',
+                    }}
+                  />
+                  <span className={styles.smallGrayTextGlobal}>Не менше 6 символів</span>
+                </div>
+                <button type="button" className={styles.buttonMainGlobal}>Змінити пароль</button>
               </div>
-              <div className={cx(styles.centerBlock, styles.flexRowGlobal)}>
-                <p className={styles.smallTitleGlobal}>
-                  <span className={styles.redStar}>*</span>
-                  <span>Новий пароль</span>
-                </p>
-                <InputFormik
-                  formikProps={{
-                    ...formik,
-                    name: 'companyRegister',
-                    type: 'text',
-                    placeholder: 'ЄДРПОУ',
-                  }}
-                  classNameWrapperr={styles.webInput}
-                />
+            </BlockForm>
+            <h2 className={styles.middleTitleGlobal}>Зміна E-mail</h2>
+            <BlockForm>
+              <div className={styles.shadowBlock}>
+                <div>
+                  <p className={styles.smallTitleGlobal}>
+                    <span className={styles.redStar}>*</span>
+                    <span>Поточний E-mail</span>
+                  </p>
+                  <InputFormik
+                    formikProps={{
+                      ...formik,
+                      name: 'companyRegister',
+                      type: 'text',
+                      placeholder: 'cdenis@gmail.com',
+                      disabled: 'disabled',
+                    }}
+                    classNameWrapperr={styles.inputInvisible}
+                  />
+                </div>
+                <div>
+                  <p className={styles.smallTitleGlobal}>
+                    <span className={styles.redStar}>*</span>
+                    <span>Поточний пароль</span>
+                  </p>
+                  <InputFormik
+                    formikProps={{
+                      ...formik,
+                      name: 'companyRegister',
+                      type: 'text',
+                      placeholder: 'Введіть поточний пароль',
+                    }}
+                  />
+                </div>
+                <div>
+                  <p className={styles.smallTitleGlobal}>
+                    <span className={styles.redStar}>*</span>
+                    <span>Новий E-mail</span>
+                  </p>
+                  <InputFormik
+                    formikProps={{
+                      ...formik,
+                      name: 'companyRegister',
+                      type: 'text',
+                      placeholder: 'example@mail.com',
+                    }}
+                  />
+                </div>
+                <button type="button" className={styles.buttonMainGlobal}>Змінити E-mail</button>
               </div>
-              <button type="button" className={styles.buttonMainGlobal}>Змінити пароль</button>
             </BlockForm>
             <BlockForm>
               {formik.errors.conditionOne && formik.touched.conditionOne && (
@@ -144,7 +177,6 @@ const Layout = () => {
               {formik.errors.conditionTwo && formik.touched.conditionTwo && (
               <p className={styles.error}>{formik.errors.conditionTwo}</p>
               )}
-              <button type="submit" className={styles.buttonMainGlobal}>Зберегти</button>
             </BlockForm>
           </div>
         </form>

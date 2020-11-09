@@ -34,6 +34,7 @@ import Tracking from './Pages/Complaints/Tracking/Tracking';
 import AllComplaints from './Pages/Complaints/AllComplaints/AllComplaints';
 import UserCompanyData from './Pages/Profile/UserProfile/UserCompanyData/UserCompanyData';
 import UserCompanyRoom from './Pages/Profile/UserProfile/UserCompanyRoom/UserCompanyRoom';
+import CompanyStructure from './Pages/Profile/UserProfile/CompanyStructure/CompanyStructure';
 
 const App = () => (
   <Switch>
@@ -70,6 +71,7 @@ const App = () => (
     <Route exact path="/classifier" component={Classifier} />
     <Route exact path="/user_company_data" component={UserCompanyData} />
     <Route exact path="/user_company_room" component={UserCompanyRoom} />
+    <Route exact path="/user_company_structure" component={CompanyStructure} />
   </Switch>
 );
 

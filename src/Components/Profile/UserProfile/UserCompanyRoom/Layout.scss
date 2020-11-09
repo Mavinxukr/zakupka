@@ -7,3 +7,27 @@
 .smallTitleGlobal{
   margin-right: 20px;
 }
+.containerGlobal{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.middleTitleGlobal{
+  margin: 10px auto;
+}
+.blockForm{
+  border-left: 1px solid #000000;
+  border-right: 1px solid #000000;
+}
+.margn{
+  margin-left: 12px;
+}
+.shadowBlock{
+  min-width: 400px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+}
+.buttonMainGlobal{
+  margin-top: 20px;
+}

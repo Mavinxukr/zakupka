@@ -82,20 +82,11 @@ const MenuPurchaser = () => (
             </li>
             <li>
               <NavLink
-                to="//my_plane_sales"
+                to="/user_company_structure"
                 exact
                 className={styles.item}
               >
                 Структура компанії
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="//my_plane_sales"
-                exact
-                className={styles.item}
-              >
-                Віджет
               </NavLink>
             </li>
           </ul>
@@ -128,15 +119,6 @@ const MenuPurchaser = () => (
                 className={styles.item}
               >
                 Інтеграція з нами
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="//my_plane_sales"
-                exact
-                className={styles.item}
-              >
-                Довідковий центр
               </NavLink>
             </li>
           </ul>

@@ -5,8 +5,8 @@ import { getPlans } from '../../../redux/actions/plans';
 import { plansDataSelector, plansDataReceivedSelector } from '../../../utils/selectors';
 import MenuPurchaser from '../../shared/MenuPurchaser/MenuPurchaser';
 import WarningAttention from '../../shared/Warnings/WarningAttention/WarningAttention';
-import styles from './Layout.scss';
 import Footer from '../../shared/Footer/Footer';
+import styles from './Layout.scss';
 
 const Layout = () => {
   const dispatch = useDispatch();
@@ -27,13 +27,13 @@ const Layout = () => {
         <h2>Мої плани закупівель </h2>
         <button type="button" className={styles.buttonMainGlobal}>
           <NavLink
-            to="my-create-plan"
+            to="my_create_plan"
           >Створити план
           </NavLink>
         </button>
         <button type="button" className={styles.buttonGlobal}>
           <NavLink
-            to="cancel-my-plan"
+            to="cancel_my_plan"
           >Скасувати процедуру
           </NavLink>
         </button>
@@ -71,7 +71,7 @@ const Layout = () => {
               <div className={styles.rowTable}>
                 <div className={styles.flexColumnGlobal}>
                   <NavLink
-                    to={`//my_plane_sales/${item.id}`}
+                    to={`/my_plane_sales/${item.id}`}
                     exact
                     className={styles.normalBlueTextGlobal}
                   >

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Field, Formik } from 'formik';
+import cx from 'classnames';
 import MenuPurchaser from '../../shared/MenuPurchaser/MenuPurchaser';
 import BlockForm from '../../shared/BlockForm/BlockForm';
 import MoneyTypeComponent from '../../shared/MoneyTypeComponent/MoneyTypeComponent';
@@ -7,9 +8,11 @@ import Popup from '../../shared/Popup/Popup';
 import Classifier from '../../Classifier/Classifier';
 import UserInfo from '../../shared/UserInfo/UserInfo';
 import styles from './Layout.scss';
+import ClassifierKEKV from '../../ClassifierKEKV/ClassifierKEKV';
 
 const Layout = () => {
   const [openPopup, isOpenPopup] = useState(false);
+  const [openPopupKEKV, isOpenPopupKEKV] = useState(false);
   const [dataDK, isDataDK] = useState('');
   const onSubmit = (values) => console.log(values);
   console.log('dataDK', dataDK);
@@ -25,6 +28,16 @@ const Layout = () => {
             </div>
             <div className={styles.treeContainer}>
               <Classifier isDataDK={isDataDK} />
+            </div>
+          </Popup>
+        )}
+        {openPopupKEKV && (
+          <Popup isOpenPopup={isOpenPopupKEKV}>
+            <div className={styles.popupHeader}>
+              <h3>Класифікатор КЕКВ</h3>
+            </div>
+            <div className={styles.treeContainer}>
+              <ClassifierKEKV />
             </div>
           </Popup>
         )}
@@ -57,7 +70,7 @@ const Layout = () => {
               </BlockForm>
               <BlockForm>
                 <h4 className={styles.middleTitleGlobal}>Тип процедури</h4>
-                <div className={styles.procedureType}>
+                <div className={styles.gridBlockGlobal}>
                   <span>Оберіть тип процедури</span>
                   <Field as="select" name="TypeOfProcedure" id="role">
                     <option value="Procedure1">Постачальник</option>
@@ -95,30 +108,30 @@ const Layout = () => {
                       <p className={styles.textLow}>Залишилось: 10000 символа(їв).</p>
                     </div>
                   </section>
-                  <section className={styles.expectedCost}>
-                    <p><span className={styles.redStar}>*</span>Очікувана вартість</p>
+                  <section className={styles.gridBlockGlobal}>
+                    <p style={{ paddingLeft: '10px' }}><span className={styles.redStar}>*</span>Очікувана вартість</p>
                     <Field className={styles.textarea} name="color" component="textarea" />
                   </section>
                   <MoneyTypeComponent />
-                  <section className={styles.annualPlan}>
+                  <section className={styles.gridBlockGlobal}>
                     <div className={styles.titleForm}><span className={styles.redStar}>*</span><p>Орієнтовний початок проведення процедури закупівлі</p>
                     </div>
                     <div className={styles.startSales}>
                       <Field className={styles.textarea} name="color" value="2020" />
                     </div>
                   </section>
-                  <section className={styles.annualPlan}>
+                  <section className={styles.gridBlockGlobal}>
                     <div className={styles.titleForm}><span className={styles.redStar}>*</span><p>Класифікатор</p></div>
                     <div className={styles.buttons}>
                       <button type="button" className={styles.buttonGlobal} onClick={() => isOpenPopup(true)}>ДК 021:2015</button>
-                      <button type="button" className={styles.buttonGlobal}>КЕКВ</button>
+                      <button type="button" className={styles.buttonGlobal} onClick={() => isOpenPopupKEKV(true)}>КЕКВ</button>
                     </div>
                   </section>
                 </div>
               </BlockForm>
               <BlockForm>
                 <h2 className={styles.middleTitleGlobal}>Джерело фінансування</h2>
-                <section>
+                <section className={styles.gridBlockGlobal}>
                   <div className={styles.titleForm}><span className={styles.redStar}>*</span><p>Назва джерела</p></div>
                   <div>
                     <Field as="select" name="role" id="role">
@@ -135,11 +148,11 @@ const Layout = () => {
                     </Field>
                   </div>
                 </section>
-                <section className={styles.sum}>
+                <section className={styles.gridBlockGlobal}>
                   <div className={styles.titleForm}><span className={styles.redStar}>*</span><p>Сума</p></div>
                   <Field name="color" component="textarea" />
                 </section>
-                <section className={styles.description}>
+                <section className={styles.gridBlockGlobal}>
                   <div className={styles.titleForm}>
                     <p style={{ marginLeft: '12px' }}>Опис</p>
                   </div>
@@ -159,7 +172,7 @@ const Layout = () => {
                 <h2 className={styles.smallTitleGlobal}>Необов'язково, але в разі потреби тут можна завантажити додаткові
                   файли плану або майбутньої закупівлі
                 </h2>
-                <label htmlFor="downloadFile" className={styles.buttonMainGlobal}>
+                <label htmlFor="downloadFile" className={cx(styles.buttonMainGlobal, styles.downloadFiles)}>
                   Прикріпити файл
                   {/* eslint-disable-next-line react/button-has-type */}
                   <input
@@ -168,7 +181,8 @@ const Layout = () => {
                     className={styles.downloadFile}
                   />
                 </label>
-                <p className={styles.parg}>Можна завантажити додаткові файли плану або майбутньої закупівлі.
+                <p className={styles.smallGrayTextGlobal}>
+                  Можна завантажити додаткові файли плану або майбутньої закупівлі.
                   Максимум 100 фалів,не більше 49Мб кожен.
                 </p>
                 <div className={styles.footerButtons}>

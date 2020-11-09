@@ -21,7 +21,7 @@ const MenuPurchaser = () => (
             </li>
             <li>
               <NavLink
-                to="//my_plane_sales"
+                to="/my_plane_sales"
                 exact
                 className={styles.item}
               >Мої плани закупівель
@@ -80,15 +80,15 @@ const MenuPurchaser = () => (
                 Дані для входу в кабінет
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                to="/user_company_structure"
-                exact
-                className={styles.item}
-              >
-                Структура компанії
-              </NavLink>
-            </li>
+            {/* <li> */}
+            {/*  <NavLink */}
+            {/*    to="/user_company_structure" */}
+            {/*    exact */}
+            {/*    className={styles.item} */}
+            {/*  > */}
+            {/*    Структура компанії */}
+            {/*  </NavLink> */}
+            {/* </li> */}
           </ul>
         </div>
         <div>

@@ -44,13 +44,9 @@ const Layout = () => {
           <span>Icon</span>
         </div>
       </div>
-      <div className={cx(styles.smallTitleGlobal, styles.addBlock)}>
-        <h2 className={styles.smallTitleGlobal}>Дочірні компанії</h2>
-        <span className={styles.smallGrayTextGlobal}>Ви не маєте дочірніх копаній.</span>
-        <div className={styles.buttons}>
-          <button type="button" className={styles.buttonGlobal}>Додати компанію із існуючих</button>
-          <button type="button" className={styles.buttonGlobal}>Додати нову компанію</button>
-        </div>
+      <div className={styles.buttons}>
+        <button type="button" className={styles.buttonGlobal}>Додати компанію із існуючих</button>
+        <button type="button" className={styles.buttonGlobal}>Додати нову компанію</button>
       </div>
     </div>
   );

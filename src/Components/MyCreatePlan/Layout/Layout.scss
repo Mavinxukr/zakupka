@@ -50,12 +50,12 @@ label{
 }
 .annualPlan{
   display: grid;
-  grid-template-columns: 200px 150px;
+  grid-template-columns: 300px 150px;
   grid-column-gap: 20px;
 }
 .specialName{
   display: grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: 300px 1fr;
   grid-column-gap: 20px;
   .textarea{
     width: 80%;
@@ -65,7 +65,7 @@ label{
 }
 .notes{
   display: grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: 300px 1fr;
   grid-column-gap: 20px;
   .textarea{
     width: 80%;
@@ -140,6 +140,7 @@ label{
 }
 .treeContainer{
   width: 100%;
+  min-width: 800px;
   height: 400px;
 }
 .downloadFile{
@@ -148,7 +149,6 @@ label{
 .mBot{
   margin-bottom: 30px;
 }
-.parg{
-  width: 300px;
-  margin-top: 20px;
+.gridBlockGlobal{
+  margin-bottom: 20px;
 }

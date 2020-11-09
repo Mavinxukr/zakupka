@@ -4,6 +4,7 @@ import { watchLogout } from './userData/logout';
 import { watchGetTenders } from './tenders/getTenders';
 import { watchGetPlans } from './plans/getPlans';
 import { watchMoneyType } from './moneyType/getMoneyType';
+import { watchKEKVType } from './kekv/kekv';
 
 export function* rootSaga() {
   yield all([
@@ -12,5 +13,6 @@ export function* rootSaga() {
     watchGetTenders(),
     watchGetPlans(),
     watchMoneyType(),
+    watchKEKVType(),
   ]);
 }

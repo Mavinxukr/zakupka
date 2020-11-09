@@ -49,3 +49,13 @@ export const moneyTypeDataReceivedSelector = createSelector(
   (state) => state.moneyType.isDataReceived,
   (isDataReceived) => isDataReceived,
 );
+
+export const KEKVtypeDataSelector = createSelector(
+  (state) => state.kekv.KEKVData,
+  (KEKVData) => KEKVData,
+);
+
+export const KEKVtypeDataReceivedSelector = createSelector(
+  (state) => state.kekv.isDataReceived,
+  (isDataReceived) => isDataReceived,
+);

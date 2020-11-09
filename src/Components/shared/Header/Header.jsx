@@ -21,7 +21,7 @@ const Header = () => {
   return (
     <div className={styles.header}>
       <div className={styles.container}>
-        <a className={styles.logo} href="/">logo</a>
+        <a className={styles.logo} href="/">UKRTENDERS</a>
         <div className={styles.rightBlock}>
           <div className={styles.phoneBlock}>
             <IconCall className={styles.icon} />

@@ -8,11 +8,6 @@ import styles from './Classifier.scss';
 const Classifier = ({ isDataDK }) => (
   <>
     <div className={styles.containerMain}>
-      <input
-        type="text"
-        className={styles.input}
-        placeholder="Знайти (наприклад: паливо, продукти)"
-      />
       <div className={styles.containerInfo}>
         <Tree isDataDK={isDataDK} data={data.rootNodes} />
       </div>

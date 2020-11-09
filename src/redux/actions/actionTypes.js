@@ -12,3 +12,4 @@ export const tenders = generateAction('tenders');
 export const plans = generateAction('plans');
 export const onePlan = generateAction('onePlan');
 export const moneyType = generateAction('moneyType');
+export const kekv = generateAction('kekv');

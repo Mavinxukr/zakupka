@@ -4,6 +4,7 @@ import { tenders } from './tenders';
 import { plans } from './plans';
 import { onePlan } from './onePlan';
 import { moneyType } from './moneyType';
+import { kekv } from './kekv';
 
 export default combineReducers({
   currentUser,
@@ -11,4 +12,5 @@ export default combineReducers({
   plans,
   onePlan,
   moneyType,
+  kekv,
 });

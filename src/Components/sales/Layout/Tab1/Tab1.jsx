@@ -23,7 +23,7 @@ const Tab1 = () => {
     <div className={styles.main}>
       <div className={styles.pills}>
         <button type="button">все</button>
-        <button type="button">избранные</button>
+        <button type="button">обране</button>
       </div>
       <div className={styles.bgWhite}>
         <Filter className={styles.top} />

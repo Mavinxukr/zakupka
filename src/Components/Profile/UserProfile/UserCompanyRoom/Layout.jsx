@@ -6,7 +6,7 @@ import InputFormik from '../../../../UI-Kit/InputFormik/InputFormik';
 import styles from './Layout.scss';
 
 const Layout = () => {
-  const onSubmit = (values) => console.log(values);
+  // const onSubmit = (values) => console.log(values);
   const name = "Ім'я";
   return (
     <Formik
@@ -19,7 +19,7 @@ const Layout = () => {
         conditionOne: Yup.string()
           .required('Введіть період'),
       })}
-      onSubmit={(values) => onSubmit(values)}
+      // onSubmit={(values) => onSubmit(values)}
     >
       {(formik) => (
         <form onSubmit={formik.handleSubmit}>

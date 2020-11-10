@@ -7,15 +7,14 @@ import MoneyTypeComponent from '../../shared/MoneyTypeComponent/MoneyTypeCompone
 import Popup from '../../shared/Popup/Popup';
 import Classifier from '../../Classifier/Classifier';
 import UserInfo from '../../shared/UserInfo/UserInfo';
+import ClassifierCode from '../../ClassifierCode/ClassifierCode';
 import styles from './Layout.scss';
-import ClassifierKEKV from '../../ClassifierKEKV/ClassifierKEKV';
 
 const Layout = () => {
   const [openPopup, isOpenPopup] = useState(false);
   const [openPopupKEKV, isOpenPopupKEKV] = useState(false);
-  const [dataDK, isDataDK] = useState('');
-  const onSubmit = (values) => console.log(values);
-  console.log('dataDK', dataDK);
+  // const onSubmit = (values) => console.log(values);
+
   return (
     <>
       <MenuPurchaser />
@@ -27,7 +26,7 @@ const Layout = () => {
               <h3>Класифікатор ДК 021:2015 </h3>
             </div>
             <div className={styles.treeContainer}>
-              <Classifier isDataDK={isDataDK} />
+              <Classifier />
             </div>
           </Popup>
         )}
@@ -37,13 +36,13 @@ const Layout = () => {
               <h3>Класифікатор КЕКВ</h3>
             </div>
             <div className={styles.treeContainer}>
-              <ClassifierKEKV />
+              <ClassifierCode />
             </div>
           </Popup>
         )}
         <Formik
           initialValues={{}}
-          onSubmit={(values) => onSubmit(values)}
+          // onSubmit={(values) => onSubmit(values)}
         >
           {(formik) => (
             <form

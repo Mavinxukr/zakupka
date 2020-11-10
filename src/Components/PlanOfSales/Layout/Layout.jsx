@@ -24,9 +24,9 @@ import styles from './Layout.scss';
 const Layout = () => {
   const [startDate, isStartDate] = useState('');
   const [onChangeOption, isOnChangeOption] = useState('a1');
-  const onSubmit = (values) => console.log(values);
+  // const onSubmit = (values) => console.log(values);
 
-  console.log(startDate);
+  // console.log(startDate);
 
   return (
     <>
@@ -62,9 +62,9 @@ const Layout = () => {
             justification: Yup.string()
               .required('Заповніть обґрунтування'),
           })}
-          onSubmit={(values) => onSubmit(values)}
         >
           {(formik) => (
+            // onSubmit={(values) => onSubmit(values)}
             <form onSubmit={formik.handleSubmit}>
               <ProcedureType isOnChangeOption={isOnChangeOption} onChangeOption={onChangeOption} />
               <BlockForm>
@@ -144,7 +144,7 @@ const Layout = () => {
                     </div>
                     <a className={styles.link} href="/">Додати новий основний контакт</a>
                     {formik.errors.contact && formik.touched.contact && (
-                      <p className={styles.error}>{formik.errors.contact}</p>
+                    <p className={styles.error}>{formik.errors.contact}</p>
                     )}
                   </div>
                 </div>
@@ -165,7 +165,7 @@ const Layout = () => {
                   <p><span className={styles.redStar}>*</span>Обґрунтування</p>
                   <Field className={cx(styles.textarea, styles.justificationArea)} name="justification" component="textarea" />
                   <div>{formik.errors.justification && formik.touched.justification && (
-                    <p className={styles.error}>{formik.errors.justification}</p>
+                  <p className={styles.error}>{formik.errors.justification}</p>
                   )}
                   </div>
                   <span className={styles.smallGrayTextGlobal}>Залишилось: 15000 символа(ів)</span>
@@ -174,7 +174,7 @@ const Layout = () => {
                   <p><span className={styles.redStar}>*</span>Узагальнена назва закупівлі</p>
                   <Field className={styles.textarea} name="commonName" component="textarea" />
                   {formik.errors.commonName && formik.touched.commonName && (
-                    <p className={styles.error}>{formik.errors.commonName}</p>
+                  <p className={styles.error}>{formik.errors.commonName}</p>
                   )}
                   <button type="button" className={cx(styles.buttonMainGlobal, styles.excel)}>Імпорт спеціфікацій з Excel</button>
                 </div>
@@ -401,10 +401,10 @@ const Layout = () => {
                   <a href="/" className={styles.link}>+ Додати умови оплати</a>
                 </div>
                 {formik.errors.conditionOne && formik.touched.conditionOne && (
-                  <p className={styles.error}>{formik.errors.conditionOne}</p>
+                <p className={styles.error}>{formik.errors.conditionOne}</p>
                 )}
                 {formik.errors.conditionTwo && formik.touched.conditionTwo && (
-                  <p className={styles.error}>{formik.errors.conditionTwo}</p>
+                <p className={styles.error}>{formik.errors.conditionTwo}</p>
                 )}
               </BlockForm>
               <BlockForm>
@@ -414,7 +414,7 @@ const Layout = () => {
                   <div className={styles.containerQuantity}>
                     <Field className={styles.textarea} name="name" component="textarea" />
                     {formik.errors.name && formik.touched.name && (
-                      <p className={styles.error}>{formik.errors.name}</p>
+                    <p className={styles.error}>{formik.errors.name}</p>
                     )}
                     <div className={styles.quantity}>
                       <InputFormik
@@ -459,7 +459,7 @@ const Layout = () => {
                       onChange={() => isStartDate(document.querySelector('#date').value)}
                     />
                     {formik.errors.firstName && formik.touched.firstName && (
-                      <p>Введіть дату</p>
+                    <p>Введіть дату</p>
                     )}
                     <span>до</span>
                     <TextField
@@ -481,7 +481,7 @@ const Layout = () => {
                     }}
                   />
                   {formik.errors.firstName && formik.touched.firstName && (
-                    <p>Введіть вулицю та номер будинку</p>
+                  <p>Введіть вулицю та номер будинку</p>
                   )}
                 </div>
                 <div className={styles.containerLocation}>

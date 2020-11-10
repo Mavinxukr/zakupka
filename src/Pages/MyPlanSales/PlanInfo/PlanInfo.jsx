@@ -22,9 +22,9 @@ const PlanInfo = () => {
     return <div />;
   }
 
-  console.log('plan', plan);
+  // console.log('plan', plan);
   const obj = JSON.parse(plan.plans);
-  console.log('obj', obj);
+  // console.log('obj', obj);
   return (
     <>
       <Header />

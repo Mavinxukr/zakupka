@@ -13,7 +13,6 @@ const UserInfo = () => {
     dispatch(getCurrentUser({}, cookies.get('tokenProzorro')));
   }, []);
 
-  console.log(userData);
   return (
     <>
       <div className={styles.gridBlockGlobal}>

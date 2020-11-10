@@ -22,9 +22,9 @@ import styles from './ElectronicSystemsWithout.scss';
 
 const ElectronicSystemsWithout = () => {
   const [startDate, isStartDate] = useState('');
-  const onSubmit = (values) => console.log(values);
+  // const onSubmit = (values) => console.log(values);
 
-  console.log(startDate);
+  // console.log(startDate);
 
   return (
     <>
@@ -58,7 +58,7 @@ const ElectronicSystemsWithout = () => {
             justification: Yup.string()
               .required('Заповніть обґрунтування'),
           })}
-          onSubmit={(values) => onSubmit(values)}
+          // onSubmit={(values) => onSubmit(values)}
         >
           {(formik) => (
             <form onSubmit={formik.handleSubmit}>

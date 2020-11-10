@@ -45,10 +45,10 @@ const Layout = () => {
         </div>
         {plans.data.map((item) => {
           const d = new Date(item.start_tenderPeriod);
-          console.log(item.id);
+          // console.log(item.id);
           const itemPlans = JSON.parse(item.plans);
 
-          console.log('itemPlans', itemPlans);
+          // console.log('itemPlans', itemPlans);
 
           const options = {
             month: 'long',

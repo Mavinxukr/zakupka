@@ -12,9 +12,9 @@ import styles from './CompetitiveDialog.scss';
 
 const AdditionalPurchase = () => {
   const [startDate, isStartDate] = useState('');
-  const onSubmit = (values) => console.log(values);
+  // const onSubmit = (values) => console.log(values);
 
-  console.log(startDate);
+  // console.log(startDate);
 
   return (
     <>
@@ -48,7 +48,7 @@ const AdditionalPurchase = () => {
             justification: Yup.string()
               .required('Заповніть обґрунтування'),
           })}
-          onSubmit={(values) => onSubmit(values)}
+          // onSubmit={(values) => onSubmit(values)}
         >
           {(formik) => (
             <form onSubmit={formik.handleSubmit}>

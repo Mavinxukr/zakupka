@@ -50,12 +50,12 @@ export const moneyTypeDataReceivedSelector = createSelector(
   (isDataReceived) => isDataReceived,
 );
 
-export const KEKVtypeDataSelector = createSelector(
-  (state) => state.kekv.KEKVData,
-  (KEKVData) => KEKVData,
+export const classifierCodeDataSelector = createSelector(
+  (state) => state.classifierCode.classifierData,
+  (classifierCodeData) => classifierCodeData,
 );
 
-export const KEKVtypeDataReceivedSelector = createSelector(
-  (state) => state.kekv.isDataReceived,
+export const classifierCodeDataReceivedSelector = createSelector(
+  (state) => state.classifierCode.isDataReceived,
   (isDataReceived) => isDataReceived,
 );

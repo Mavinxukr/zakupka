@@ -8,6 +8,7 @@ import Popup from '../../shared/Popup/Popup';
 import Classifier from '../../Classifier/Classifier';
 import UserInfo from '../../shared/UserInfo/UserInfo';
 import ClassifierCode from '../../ClassifierCode/ClassifierCode';
+import AnotherLegalEntity from '../../AnotherLegalEntity/AnotherLegalEntity';
 import styles from './Layout.scss';
 
 const Layout = () => {
@@ -57,16 +58,17 @@ const Layout = () => {
                 <div className={styles.radioButton}>
                   {/* eslint-disable */}
                       <label>
-                        <Field type="radio" name="picked" value="One"/>
+                        <Field type="radio" name="infoShopper" value="One" checked/>
                         <span>Самостійно проводимо закупівлю за даним планом.</span>
                       </label>
                       <label>
-                        <Field type="radio" name="picked" value="Two"/>
+                        <Field type="radio" name="infoShopper" value="Two"/>
                         <span>Закупівлю за даним планом буде проводити інща юридична особа, вказати дані цієї організації.</span>
                       </label>
                       {/* eslint-enable */}
                 </div>
               </BlockForm>
+              <AnotherLegalEntity />
               <BlockForm>
                 <h4 className={styles.middleTitleGlobal}>Тип процедури</h4>
                 <div className={styles.gridBlockGlobal}>

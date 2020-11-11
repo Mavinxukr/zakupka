@@ -1,1 +1,12 @@
 @import '../../index';
+
+.tableClassifier{
+  height: 80%;
+  border: 1px solid $colorBorder;
+  margin: 20px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+.itemClassifier{
+  padding: 5px;
+}

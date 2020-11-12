@@ -5,7 +5,7 @@
         <form id="send_form">
             {% csrf_token %}
             <p class="h1 fontMedium">
-                {% trans 'got_proj' %}
+                <span>{% trans 'got_proj' %}</span>
             </p>
            <div class="flex">
                 <p class="formTitle">
@@ -36,7 +36,7 @@
                         <span class="bar"><span class="fill"></span></span>
                         <input  class="range" id="rangeWeek" type="range" value="1" min="0" max="50" step="1"/>
                     </div>
-                    <p class="fontMedium">{% trans 'footer_week' %}</p>
+                    <!-- <p class="fontMedium">{% trans 'footer_week' %}</p> -->
                 </div>
                 <div class="marginRange rangeBlock">
                     <p class="fontMedium">{% trans 'footer_budget' %} <span id="valBudget">1000</span>$</p>
@@ -44,7 +44,7 @@
                         <span class="bar"><span class="fill"></span></span>
                         <input class="range" id="rangeBudget" type="range" value="1000" min="0" max="100000" step="1000"/>
                     </div>
-                    <p class="fontMedium">USD ($)</p>
+                    <!-- <p class="fontMedium">USD ($)</p> -->
                 </div>
             </div>
             <input id="detail" placeholder="{% trans 'proj_det' %}" class="footerInput fontMedium" type="text">
@@ -66,7 +66,7 @@
         </form>
         <div>
            <p class="h1 fontMedium">
-               {% trans 'footer_cont' %}
+               <span>{% trans 'footer_cont' %}</span>
            </p>
             <div class="flex wrap">
                 <a class="footerLink fontMedium" href="mailto:{{ contact.email }}">{{ contact.email }}</a>

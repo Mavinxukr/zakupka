@@ -1362,7 +1362,7 @@ msgid "technology_stack_context_three"
 msgstr "Our approach allows you to avoid overspending. Our philosophy is to minimize costs and time through strategy and planning."
 
 msgid "subscribe_to_your"
-msgstr "Subscribe to your newslater"
+msgstr "Subscribe to your newsletter"
 
 msgid "subscribe"
 msgstr "Subscribe"

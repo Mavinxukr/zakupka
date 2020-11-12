@@ -67,8 +67,8 @@ Mavinx - {{ blog.name }}
                    {{ item.name }}
                 </p>
                 <div class="blogHashtag flex">
-                  <span class="fontRegular">
-                    <a href="{% url 'blog' %}?entity={{item.topic.name}}">{{ item.name }}</a>
+                    <span class="fontRegular">
+                        <a href="{% url 'blog' %}?entity={{item.topic.name}}">{{ item.name }}</a>
                     </span>
                     <span class="fontRegular">{{ item.views }}</span>
                 </div>

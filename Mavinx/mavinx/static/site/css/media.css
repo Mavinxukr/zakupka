@@ -68,8 +68,8 @@
   }
 
   .bannerContainer {
-    max-width: 1010px;
-    margin-top: 100px;
+    max-width: 100%;
+    margin: 100px 16% 0;
   }
 
   .video {
@@ -105,14 +105,23 @@
     width: 44%;
   }
 
+  .projectBannerText {
+
+    max-width: 443px;
+  }
+
   .projectBannerText,
   .bannerInfoItem .fontMedium,
   .projectBG .textDesc,
-  .blackBG h4,
   .blackBG .flex a,
   .blackBG li,
   .blackBG p {
     font-size: 14px;
+  }
+
+  .blackBG h4 {
+    font-size: 16px;
+
   }
 
   .text-next,
@@ -145,12 +154,22 @@
   }
 
   .projectBannerInfo {
-    padding: 36px;
+    padding: 34px 36px;
+  }
+
+  .projectBG .textDesc {
+    margin-bottom: 30px;
+  }
+
+  .projectDesc {
+
+    font-size: 20px;
+    line-height: 28px;
   }
 
   .next-project-img {
-    width: 456px;
-    height: 299px;
+    width: 427px;
+    height: 280px;
     right: 40px;
   }
 
@@ -265,7 +284,6 @@
     height: 66px;
   }
 
-  .tabsItem,
   .imageBlockInfo {
     width: 30%;
   }
@@ -284,10 +302,6 @@
   .row .blockInfo p,
   .tab-description {
     font-size: 16px;
-  }
-
-  .flexItems {
-    justify-content: space-between;
   }
 
   .h1 {
@@ -378,6 +392,7 @@
 
   footer form + div {
     max-width: 412px;
+    width: 100%;
   }
   .tabsItemLink:after{
     right: 20px;
@@ -385,6 +400,30 @@
 }
 
 @media screen and (max-width: 1600px) {
+    .tabs {
+      margin-top: 71px;
+    }
+
+    .oneProject .container {
+      max-width: 70%;
+    }
+
+    .infoProject {
+      max-width: 400px;
+    }
+
+    .tabs__caption {
+
+      margin-bottom: 57px;
+    }
+
+    .tabsItem {
+
+      margin-left: 6px;
+      margin-right: 6px;
+    }
+    
+
     .bigImg ~ .tabsItemLink {
         left: 0;
     }
@@ -393,6 +432,11 @@
       margin-top: 60px;
       margin-bottom: 60px;
       padding-bottom: 60px;
+    }
+
+    .bannerContainer .h1 {
+
+      margin-bottom: 33px;
     }
 
     .row {
@@ -430,8 +474,6 @@
       font-size: 35px;
     }
 
-    .row .blockInfo p,
-    .blockInfo .readMore,
     .blog .showAll,
     .aboutUS,
     .slider-content p,
@@ -467,6 +509,99 @@
     .timer-block{
       margin: 0 0 0 60px;
     }
+
+    .bg {
+
+      padding-bottom: 0;
+    }
+
+    .next-project {
+
+      margin-bottom: 120px;
+    }
+
+    .location .h3 {
+
+      margin-top: 27px;
+    }
+
+    .row {
+
+      margin-bottom: 47px;
+    }
+
+    .single-slider {
+
+      padding-bottom: 117px;
+    }
+
+    .h1 span {
+      border-bottom: 3px solid #F2C81F;
+    }
+
+    .row .blockInfo h2 {
+      border-bottom: 4px solid #F2C81F;
+    }
+
+    .blog .blogItems {
+
+      margin-top: 0;
+    }
+
+    .blogHashtag a,
+    .blogHashtag span {
+      font-size: 8px;
+    }
+}
+
+@media screen and (max-width: 1500px){
+  .logo {
+    margin-left: 36px;
+    margin-right: 49px;
+  }
+
+  .blockInfo .readMore {
+
+    font-size: 16px;
+  }
+
+  .logo svg {
+
+    width: 58px;
+    height: 23px;
+  }
+
+  .lang,
+  .menuItem a,
+  .lastMenuItem a{
+
+    font-size: 10px;
+  }
+
+  .lastMenuItem {
+    width: 152px;
+    height: 50px;
+    margin-left: 39px;
+  }
+
+  .header {
+    height: 50px;
+  }
+
+  .menuItem:first-child {
+
+    padding-right: 0;
+  }
+
+  .row .blockInfo .complete .text,
+  .row .blockInfo .technology .text {
+    font-size: 10px;
+  }
+
+  .subscribe {
+    padding: 50px 65px 51px 70px;
+  }
+
 }
 
 @media screen and (max-width: 1440px) {
@@ -484,8 +619,6 @@
     font-size: 30px;
   }
 
-  .row .blockInfo p,
-  .blockInfo .readMore,
   .blog .showAll,
   .aboutUS,
   .slider-content p,
@@ -531,9 +664,12 @@
   .subscribe form button,
   .subscribe form input,
   .subscribe form input::placeholder,
-  .footerInput,
-  .footerLink {
+  .footerInput {
     font-size: 16px;
+  }
+
+  .footerLink {
+    font-size: 15px;
   }
 }
 

@@ -251,6 +251,7 @@ $( document ).ready(function() {
 });
 
 function openTabsServices(evt, idItem) {
+    evt.preventDefault();
   let i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabs-panel");
   for (i = 0; i < tabcontent.length; i++) {

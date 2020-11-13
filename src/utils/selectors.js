@@ -59,3 +59,23 @@ export const classifierCodeDataReceivedSelector = createSelector(
   (state) => state.classifierCode.isDataReceived,
   (isDataReceived) => isDataReceived,
 );
+
+export const tendersTypeDataSelector = createSelector(
+  (state) => state.tendersType.tendersData,
+  (tendersData) => tendersData,
+);
+
+export const tendersTypeDataReceivedSelector = createSelector(
+  (state) => state.tendersType.isDataReceived,
+  (isDataReceived) => isDataReceived,
+);
+
+export const companyTypeDataSelector = createSelector(
+  (state) => state.companyType.companyData,
+  (companyData) => companyData,
+);
+
+export const companyTypeDataReceivedSelector = createSelector(
+  (state) => state.companyType.isDataReceived,
+  (isDataReceived) => isDataReceived,
+);

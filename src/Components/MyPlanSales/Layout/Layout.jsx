@@ -25,12 +25,16 @@ const Layout = () => {
       <MenuPurchaser />
       <div className={styles.container}>
         <h2>Мої плани закупівель </h2>
-        <button type="button" className={styles.buttonMainGlobal}>
-          <NavLink
-            to="my_create_plan"
-          >Створити план
-          </NavLink>
-        </button>
+        <NavLink
+          to="my_create_plan"
+        >
+          <button
+            type="button"
+            className={styles.buttonMainGlobal}
+          >
+            Створити план
+          </button>
+        </NavLink>
         <button type="button" className={styles.buttonGlobal}>
           <NavLink
             to="cancel_my_plan"

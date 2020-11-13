@@ -13,3 +13,5 @@ export const plans = generateAction('plans');
 export const onePlan = generateAction('onePlan');
 export const moneyType = generateAction('moneyType');
 export const classifierCode = generateAction('classifierCode');
+export const tendersType = generateAction('tendersType');
+export const companyType = generateAction('companyType');

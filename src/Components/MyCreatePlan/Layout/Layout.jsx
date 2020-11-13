@@ -8,8 +8,8 @@ import Popup from '../../shared/Popup/Popup';
 import Classifier from '../../Classifier/Classifier';
 import UserInfo from '../../shared/UserInfo/UserInfo';
 import ClassifierCode from '../../ClassifierCode/ClassifierCode';
-import AnotherLegalEntity from '../../AnotherLegalEntity/AnotherLegalEntity';
 import styles from './Layout.scss';
+import TypeOfProcedure from '../../TypeOfProcedure/TypeOfProcedure';
 
 const Layout = () => {
   const [openPopup, isOpenPopup] = useState(false);
@@ -52,61 +52,43 @@ const Layout = () => {
               <BlockForm>
                 <UserInfo />
               </BlockForm>
+              {/* <BlockForm> */}
+              {/*  <h4 className={styles.middleTitleGlobal}>Інформація про закупівельника</h4> */}
+              {/*  <span>У разі, якщо за даним планом закупівлю буде проводити інша юридична особа,вкажіть дані цієї орнанізації</span> */}
+              {/*  <div className={styles.radioButton}> */}
+              {/*    /!* eslint-disable *!/ */}
+              {/*        <label> */}
+              {/*          <Field type="radio" name="infoShopper" value="One" checked/> */}
+              {/*          <span>Самостійно проводимо закупівлю за даним планом.</span> */}
+              {/*        </label> */}
+              {/*        <label> */}
+              {/*          <Field type="radio" name="infoShopper" value="Two"/> */}
+              {/*          <span>Закупівлю за даним планом буде проводити інща юридична особа, вказати дані цієї організації.</span> */}
+              {/*        </label> */}
+              {/*        /!* eslint-enable *!/ */}
+              {/*  </div> */}
+              {/* </BlockForm> */}
+              {/* <AnotherLegalEntity /> */}
+              <TypeOfProcedure />
               <BlockForm>
-                <h4 className={styles.middleTitleGlobal}>Інформація про закупівельника</h4>
-                <span>У разі, якщо за даним планом закупівлю буде проводити інша юридична особа,вкажіть дані цієї орнанізації</span>
-                <div className={styles.radioButton}>
-                  {/* eslint-disable */}
-                      <label>
-                        <Field type="radio" name="infoShopper" value="One" checked/>
-                        <span>Самостійно проводимо закупівлю за даним планом.</span>
-                      </label>
-                      <label>
-                        <Field type="radio" name="infoShopper" value="Two"/>
-                        <span>Закупівлю за даним планом буде проводити інща юридична особа, вказати дані цієї організації.</span>
-                      </label>
-                      {/* eslint-enable */}
-                </div>
-              </BlockForm>
-              <AnotherLegalEntity />
-              <BlockForm>
-                <h4 className={styles.middleTitleGlobal}>Тип процедури</h4>
-                <div className={styles.gridBlockGlobal}>
-                  <span>Оберіть тип процедури</span>
-                  <Field as="select" name="TypeOfProcedure" id="role">
-                    <option value="Procedure1">Постачальник</option>
-                    <option value="Procedure2">Відкриті торги</option>
-                    <option value="Procedure3">Відкриті торги з публікацією англлійською мовою</option>
-                    <option value="Procedure4">Закупівля без використання електронної системи</option>
-                    <option value="Procedure5">Переговорна процедура</option>
-                    <option value="Procedure6">Переговорна процедура,скорочена</option>
-                    <option value="Procedure7">Конкурентний діалог</option>
-                    <option value="Procedure8">Конкурентний діалог з публікацією англійською мовою</option>
-                    <option value="Procedure9">Публічні закупівлі енергосервісу</option>
-                    <option value="Procedure10">Укладення рамкової угоди</option>
-                    <option value="Procedure11">Закупівля через централізавану закупівельну організацію</option>
-                  </Field>
-                </div>
-              </BlockForm>
-              <BlockForm>
-                <h4 className={styles.title}>Інформація про закупівлю</h4>
+                <h2 className={styles.title}>Інформація про закупівлю</h2>
                 <div className={styles.infoBlock}>
                   <section className={styles.annualPlan}>
-                    <div className={styles.titleForm}><span>*</span><p className={styles.normalTextGlobal}>Річний план закупівлі на</p></div>
-                    <Field className={styles.textarea} name="color" value="2020" />
+                    <div className={styles.titleForm}><span className={styles.redStar}>*</span><p className={styles.normalTextGlobal}>Річний план закупівлі на</p></div>
+                    <input className={styles.inputGlobal} type="text" name="color" value="2020" />
                   </section>
                   <section className={styles.specialName}>
-                    <div className={styles.titleForm}><span>*</span><p className={styles.normalTextGlobal}>Конкретна назва предмета закупівлі</p></div>
+                    <div className={styles.titleForm}><span className={styles.redStar}>*</span><p className={styles.normalTextGlobal}>Конкретна назва предмета закупівлі</p></div>
                     <div>
-                      <Field className={styles.textarea} name="area" component="textarea" />
-                      <p className={styles.textLow}>Залишилось: 20000 символа(їв).</p>
+                      <Field className={styles.textarea} name="notes" component="textarea" />
+                      <p>Залишилось: 20000 символа(їв).</p>
                     </div>
                   </section>
                   <section className={styles.notes}>
                     <div className={styles.titleForm}><p style={{ marginLeft: '12px' }}>Примітки</p></div>
                     <div>
                       <Field className={styles.textarea} name="area" component="textarea" />
-                      <p className={styles.textLow}>Залишилось: 10000 символа(їв).</p>
+                      <p>Залишилось: 10000 символа(їв).</p>
                     </div>
                   </section>
                   <section className={styles.gridBlockGlobal}>
@@ -115,14 +97,19 @@ const Layout = () => {
                   </section>
                   <MoneyTypeComponent />
                   <section className={styles.gridBlockGlobal}>
-                    <div className={styles.titleForm}><span className={styles.redStar}>*</span><p>Орієнтовний початок проведення процедури закупівлі</p>
+                    <div className={styles.titleForm}>
+                      <span className={styles.redStar}>*</span>
+                      <p>Орієнтовний початок проведення процедури закупівлі</p>
                     </div>
                     <div className={styles.startSales}>
-                      <Field className={styles.textarea} name="color" value="2020" />
+                      <input className={styles.inputGlobal} name="color" value="2020" />
                     </div>
                   </section>
                   <section className={styles.gridBlockGlobal}>
-                    <div className={styles.titleForm}><span className={styles.redStar}>*</span><p>Класифікатор</p></div>
+                    <div className={styles.titleForm}>
+                      <span className={styles.redStar}>*</span>
+                      <p>Класифікатор</p>
+                    </div>
                     <div className={styles.buttons}>
                       <button type="button" className={styles.buttonGlobal} onClick={() => isOpenPopup(true)}>ДК 021:2015</button>
                       <button type="button" className={styles.buttonGlobal} onClick={() => isOpenPopupKEKV(true)}>КЕКВ</button>

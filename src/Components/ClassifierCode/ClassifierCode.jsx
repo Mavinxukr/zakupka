@@ -7,13 +7,13 @@ import styles from './ClassifierCode.scss';
 const ClassifierCode = () => {
   const dispatch = useDispatch();
   const data = useSelector(classifierCodeDataSelector);
-  const isDataRecived = useSelector(classifierCodeDataReceivedSelector);
+  const isReceived = useSelector(classifierCodeDataReceivedSelector);
 
   useEffect(() => {
     dispatch(getClassifierCode({}));
   }, []);
 
-  if (!isDataRecived) {
+  if (!isReceived) {
     return <div />;
   }
   const dataParse = JSON.parse(data[0].get_data.data);

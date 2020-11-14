@@ -1013,6 +1013,17 @@ border-bottom: 7px solid #F2C81F;
     text-decoration: none;
     opacity: .1;
 }
+.labelCheckbox{
+
+    transition: .5s;
+}
+
+.labelCheckbox:hover {
+
+    background: #fff;
+}
+
+
 
 .blogItems {
     margin-top: 70px;

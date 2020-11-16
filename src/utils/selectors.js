@@ -79,3 +79,13 @@ export const companyTypeDataReceivedSelector = createSelector(
   (state) => state.companyType.isDataReceived,
   (isDataReceived) => isDataReceived,
 );
+
+export const regionsDataSelector = createSelector(
+  (state) => state.regions.regionsData,
+  (regionsData) => regionsData,
+);
+
+export const regionsDataReceivedSelector = createSelector(
+  (state) => state.regions.isDataReceived,
+  (isDataReceived) => isDataReceived,
+);

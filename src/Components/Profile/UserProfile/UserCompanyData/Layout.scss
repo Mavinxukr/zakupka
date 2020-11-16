@@ -16,3 +16,18 @@
 .flexColumnGlobal{
   margin-bottom: 10px;
 }
+.gridTypeCompanies{
+  display: grid;
+  grid-template-columns: 100px 250px;
+
+}
+
+.companyType{
+  height: 29px;
+  align-self: center;
+}
+.regions{
+  width: 306px;
+  height: 29px;
+  align-self: center;
+}

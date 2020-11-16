@@ -15,3 +15,4 @@ export const moneyType = generateAction('moneyType');
 export const classifierCode = generateAction('classifierCode');
 export const tendersType = generateAction('tendersType');
 export const companyType = generateAction('companyType');
+export const regions = generateAction('regions');

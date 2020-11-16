@@ -5,24 +5,33 @@ import { useDispatch, useSelector } from 'react-redux';
 import cookies from 'js-cookie';
 import BlockForm from '../../../shared/BlockForm/BlockForm';
 import InputFormik from '../../../../UI-Kit/InputFormik/InputFormik';
-import styles from './Layout.scss';
-import { companyTypeDataReceivedSelector, companyTypeDataSelector } from '../../../../utils/selectors';
+import {
+  companyTypeDataReceivedSelector,
+  companyTypeDataSelector, regionsDataReceivedSelector,
+  regionsDataSelector,
+} from '../../../../utils/selectors';
 import { getCompanyType } from '../../../../redux/actions/getCompanyType';
+import { getRegions } from '../../../../redux/actions/getRegions';
+import styles from './Layout.scss';
 
 const Layout = () => {
   const dispatch = useDispatch();
   const companyTypeData = useSelector(companyTypeDataSelector);
   const isReceived = useSelector(companyTypeDataReceivedSelector);
+  const regionsData = useSelector(regionsDataSelector);
+  const isReceivedRegions = useSelector(regionsDataReceivedSelector);
 
   useEffect(() => {
     dispatch(getCompanyType({}, cookies.get('tokenProzorro')));
+    dispatch(getRegions({}));
   }, []);
 
-  if (!isReceived) {
+  if (!isReceived || !isReceivedRegions) {
     return <div />;
   }
 
   console.log('companyType -> ', companyTypeData);
+  console.log('regions -> ', regionsData);
 
   return (
     <Formik
@@ -45,21 +54,20 @@ const Layout = () => {
                 <span className={styles.redStar}>*</span>
                 <span>Тип компанії</span>
               </span>
-              <InputFormik
-                formikProps={{
-                  ...formik,
-                  name: 'companyRegister',
-                  type: 'text',
-                  placeholder: 'ЄДРПОУ',
-                }}
-                classNameWrapperr={styles.webInput}
-              />
-              <Field as="select" name="kategory" id="role" className={styles.companyType}>
-                <option value="type1">-- можна вибрати --</option>
-                <option value="type2">товари</option>
-                <option value="type3">послуги</option>
-                <option value="type4">роботи</option>
-              </Field>
+              <div className={styles.gridTypeCompanies}>
+                <Field as="select" name="kategory" id="role" className={styles.companyType}>
+                  { companyTypeData.map((item) => (<option key={item.id}> {item.ua_name} </option>))}
+                </Field>
+                <InputFormik
+                  formikProps={{
+                    ...formik,
+                    name: 'companyRegister',
+                    type: 'text',
+                    placeholder: 'ЄДРПОУ',
+                  }}
+                  classNameWrapperr={styles.inputGlobal}
+                />
+              </div>
               <div className={styles.gridTextArea}>
                 <div className={styles.flexColumnGlobal}>
                   <p className={styles.smallTitleGlobal}>
@@ -99,16 +107,16 @@ const Layout = () => {
                 />
               </div>
               <div className={styles.flexColumnGlobal}>
-                <p className={styles.smallTitleGlobal}>
-                  <span className={styles.redStar}>*</span>
-                  <span>Категорії замовника</span>
-                </p>
-                <Field as="select" name="kategory" id="role" className={styles.webInput}>
-                  <option value="type1">-- можна вибрати --</option>
-                  <option value="type2">товари</option>
-                  <option value="type3">послуги</option>
-                  <option value="type4">роботи</option>
-                </Field>
+                <span className={styles.smallTitleGlobal}>Fax</span>
+                <InputFormik
+                  formikProps={{
+                    ...formik,
+                    name: 'fax',
+                    type: 'number',
+                    placeholder: 'номер fax',
+                  }}
+                  classNameWrapperr={styles.webInput}
+                />
               </div>
             </BlockForm>
             <h2 className={styles.middleTitleGlobal}>Юридична адреса</h2>
@@ -120,23 +128,24 @@ const Layout = () => {
                     <span>Країна</span>
                   </p>
                   <div className={styles.flexColumnGlobal}>
-                    <Field as="select" name="kategory" id="role" className={styles.webInput}>
-                      <option value="type1">-- можна вибрати --</option>
-                      <option value="type2">товари</option>
-                      <option value="type3">послуги</option>
-                      <option value="type4">роботи</option>
-                    </Field>
+                    <InputFormik
+                      formikProps={{
+                        ...formik,
+                        name: 'website',
+                        type: 'text',
+                        placeholder: 'назва країни',
+                        value: 'Україна (UA-EDR)',
+                      }}
+                      classNameWrapperr={styles.webInput}
+                    />
                   </div>
                   <div>
                     <p className={styles.smallTitleGlobal}>
                       <span className={styles.redStar}>*</span>
                       <span>Область</span>
                     </p>
-                    <Field as="select" name="kategory" id="role" className={styles.webInput}>
-                      <option value="type1">-- можна вибрати --</option>
-                      <option value="type2">товари</option>
-                      <option value="type3">послуги</option>
-                      <option value="type4">роботи</option>
+                    <Field as="select" name="region" id="regions" className={styles.regions}>
+                      { regionsData.map((region) => (<option key={`region${region.id}`}> {region.name} </option>))}
                     </Field>
                   </div>
                 </div>
@@ -148,9 +157,9 @@ const Layout = () => {
                   <InputFormik
                     formikProps={{
                       ...formik,
-                      name: 'website',
+                      name: 'city',
                       type: 'text',
-                      placeholder: 'http://www.mysite.com/',
+                      placeholder: 'місто або селище',
                     }}
                     classNameWrapperr={styles.webInput}
                   />
@@ -163,9 +172,9 @@ const Layout = () => {
                   <InputFormik
                     formikProps={{
                       ...formik,
-                      name: 'website',
+                      name: 'zip',
                       type: 'text',
-                      placeholder: 'http://www.mysite.com/',
+                      placeholder: 'поштовий індекс',
                     }}
                     classNameWrapperr={styles.webInput}
                   />
@@ -178,9 +187,9 @@ const Layout = () => {
                   <InputFormik
                     formikProps={{
                       ...formik,
-                      name: 'website',
+                      name: 'address',
                       type: 'text',
-                      placeholder: 'http://www.mysite.com/',
+                      placeholder: 'адреса компанії',
                     }}
                     classNameWrapperr={styles.webInput}
                   />

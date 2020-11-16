@@ -54,6 +54,12 @@ const Layout = () => {
                 }}
                 classNameWrapperr={styles.webInput}
               />
+              <Field as="select" name="kategory" id="role" className={styles.companyType}>
+                <option value="type1">-- можна вибрати --</option>
+                <option value="type2">товари</option>
+                <option value="type3">послуги</option>
+                <option value="type4">роботи</option>
+              </Field>
               <div className={styles.gridTextArea}>
                 <div className={styles.flexColumnGlobal}>
                   <p className={styles.smallTitleGlobal}>
@@ -196,4 +202,5 @@ const Layout = () => {
     </Formik>
   );
 };
+
 export default Layout;

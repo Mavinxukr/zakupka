@@ -404,6 +404,16 @@
       margin-top: 71px;
     }
 
+    .blogCount {
+
+      font-size: 32px;
+      margin-left: 14px;
+    }
+
+    .blogImage {
+      height: 204px;
+    }
+
     .oneProject .container {
       max-width: 70%;
     }
@@ -444,8 +454,17 @@
       margin-bottom: 60px;
     }
 
-    .review, .work, .blog {
+    .review, .work {
       margin-bottom: 60px;
+    }
+
+    .blog {
+      margin-bottom: 134px;
+    }
+
+    footer {
+
+      padding-top: 85px;
     }
 
     .servicesTabs .tabs-panel {
@@ -522,7 +541,14 @@
 
     .location .h3 {
 
-      margin-top: 27px;
+      margin-top: 17px;
+      margin-bottom: 24x;
+    }
+
+    .location {
+
+      padding-bottom: 25px;
+      margin-bottom: 21px;
     }
 
     .row {
@@ -630,11 +656,16 @@
   .subscribe form button,
   .subscribe form input,
   .subscribe form input::placeholder,
-  .footerInput,
-  .footerLink {
+  .footerInput {
     font-size: 18px;
   }
-}
+
+  .footerLink {
+    font-size: 16px;
+    padding: 7px 22px 8px 13px;
+    margin-right: 7px;
+
+  }
 
 @media screen and (max-width: 1280px) {
   .bannerTitle,

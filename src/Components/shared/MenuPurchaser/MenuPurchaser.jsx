@@ -35,28 +35,6 @@ const MenuPurchaser = () => (
               >Скарги
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                to="//my_plane_sales"
-                exact
-                className={styles.item}
-              >Пошук постачальників під covid-19
-              </NavLink>
-            </li>
-          </ul>
-        </div>
-        <div>
-          Бібліотека специфікацій
-          <ul className={styles.showBlock}>
-            <li>
-              <NavLink
-                to="//my_plane_sales"
-                exact
-                className={styles.item}
-              >
-                Бібліотека специфікацій
-              </NavLink>
-            </li>
           </ul>
         </div>
         <div>
@@ -89,38 +67,6 @@ const MenuPurchaser = () => (
             {/*    Структура компанії */}
             {/*  </NavLink> */}
             {/* </li> */}
-          </ul>
-        </div>
-        <div>
-          Послуги та аналітика
-          <ul className={styles.showBlock}>
-            <li>
-              <NavLink
-                to="//my_plane_sales"
-                exact
-                className={styles.item}
-              >
-                Аналіз постачальників
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="//my_plane_sales"
-                exact
-                className={styles.item}
-              >
-                Аналіз замовників
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="//my_plane_sales"
-                exact
-                className={styles.item}
-              >
-                Інтеграція з нами
-              </NavLink>
-            </li>
           </ul>
         </div>
         <div>
@@ -161,38 +107,6 @@ const MenuPurchaser = () => (
                 className={styles.item}
               >
                 Повідомлення
-              </NavLink>
-            </li>
-          </ul>
-        </div>
-        <div>
-          Prozzoro Market
-          <ul className={styles.showBlock}>
-            <li>
-              <NavLink
-                to="//my_plane_sales"
-                exact
-                className={styles.item}
-              >
-                Каталог
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="//my_plane_sales"
-                exact
-                className={styles.item}
-              >
-                Кошик
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="//my_plane_sales"
-                exact
-                className={styles.item}
-              >
-                Історія замовлень
               </NavLink>
             </li>
           </ul>

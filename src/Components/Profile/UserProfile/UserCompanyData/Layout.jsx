@@ -20,6 +20,13 @@ const Layout = () => {
   const isReceived = useSelector(companyTypeDataReceivedSelector);
   const regionsData = useSelector(regionsDataSelector);
   const isReceivedRegions = useSelector(regionsDataReceivedSelector);
+  const onSubmit = (values) => {
+    console.log({
+      ...values,
+      type_id: +values.type_id,
+      region: +values.region,
+    });
+  };
 
   useEffect(() => {
     dispatch(getCompanyType({}, cookies.get('tokenProzorro')));
@@ -30,21 +37,26 @@ const Layout = () => {
     return <div />;
   }
 
-  console.log('companyType -> ', companyTypeData);
-  console.log('regions -> ', regionsData);
-
   return (
     <Formik
       initialValues={{}}
       validationSchema={Yup.object({
-        step: Yup.string()
-          .required('Введіть крок зниження ставки'),
-        if: Yup.string()
-          .required('Введіть вартість закупівлі'),
-        conditionOne: Yup.string()
-          .required('Введіть період'),
+        name: Yup.string()
+          .required('Поле обов`язкове'),
+        name_en: Yup.string()
+          .required('Поле обов`язкове'),
+        code_edrpo: Yup.string()
+          .required('Поле обов`язкове'),
+        post_code: Yup.string()
+          .required('Поле обов`язкове'),
+        address: Yup.string()
+          .required('Поле обов`язкове'),
+        city: Yup.string()
+          .required('Поле обов`язкове'),
       })}
+      onSubmit={(values) => onSubmit(values)}
     >
+
       {(formik) => (
         <form onSubmit={formik.handleSubmit}>
           <div className={styles.containerGlobal}>
@@ -55,14 +67,14 @@ const Layout = () => {
                 <span>Тип компанії</span>
               </span>
               <div className={styles.gridTypeCompanies}>
-                <Field as="select" name="kategory" id="role" className={styles.companyType}>
-                  { companyTypeData.map((item) => (<option key={item.id}> {item.ua_name} </option>))}
+                <Field as="select" name="type_id" id="role" className={styles.companyType}>
+                  { companyTypeData.map((item) => (<option value={item.id} key={item.id}> {item.ua_name} </option>))}
                 </Field>
                 <InputFormik
                   formikProps={{
                     ...formik,
-                    name: 'companyRegister',
-                    type: 'text',
+                    name: 'code_edrpo',
+                    component: 'text',
                     placeholder: 'ЄДРПОУ',
                   }}
                   classNameWrapperr={styles.inputGlobal}
@@ -74,11 +86,15 @@ const Layout = () => {
                     <span className={styles.redStar}>*</span>
                     <span>Назва</span>
                   </p>
-                  <textarea
-                    type="textarea"
+                  <Field
+                    name="name"
+                    component="textarea"
                     className={styles.textAreaGlobal}
                     placeholder="Введіть назву компанії"
                   />
+                  {formik.errors.name && formik.touched.name && (
+                    <p className={styles.warning}>Поле обов`язкове</p>
+                  )}
                   <span className={styles.smallGrayTextGlobal}>Залишилось: 1024 символа(їв).</span>
                 </div>
                 <div className={styles.flexColumnGlobal}>
@@ -86,11 +102,15 @@ const Layout = () => {
                     <span className={styles.redStar}>*</span>
                     <span>Назва англійською мовою</span>
                   </p>
-                  <textarea
-                    type="textarea"
+                  <Field
+                    name="name_en"
+                    component="textarea"
                     className={styles.textAreaGlobal}
                     placeholder="Введіть назву компанії (англійською мовою)"
                   />
+                  {formik.errors.name_en && formik.touched.name_en && (
+                    <p className={styles.warning}>Поле обов`язкове</p>
+                  )}
                   <span className={styles.smallGrayTextGlobal}>Залишилось: 1024 символа(їв).</span>
                 </div>
               </div>
@@ -99,7 +119,7 @@ const Layout = () => {
                 <InputFormik
                   formikProps={{
                     ...formik,
-                    name: 'website',
+                    name: 'site',
                     type: 'text',
                     placeholder: 'http://www.mysite.com/',
                   }}
@@ -112,7 +132,7 @@ const Layout = () => {
                   formikProps={{
                     ...formik,
                     name: 'fax',
-                    type: 'number',
+                    type: 'text',
                     placeholder: 'номер fax',
                   }}
                   classNameWrapperr={styles.webInput}
@@ -145,7 +165,7 @@ const Layout = () => {
                       <span>Область</span>
                     </p>
                     <Field as="select" name="region" id="regions" className={styles.regions}>
-                      { regionsData.map((region) => (<option key={`region${region.id}`}> {region.name} </option>))}
+                      { regionsData.map((region) => (<option value={region.id} key={`region${region.id}`}> {region.name} </option>))}
                     </Field>
                   </div>
                 </div>
@@ -159,10 +179,11 @@ const Layout = () => {
                       ...formik,
                       name: 'city',
                       type: 'text',
-                      placeholder: 'місто або селище',
+                      placeholder: 'Місто або селище',
                     }}
                     classNameWrapperr={styles.webInput}
                   />
+                  {formik.errors.city && formik.touched.city}
                 </div>
                 <div>
                   <p className={styles.smallTitleGlobal}>
@@ -172,12 +193,13 @@ const Layout = () => {
                   <InputFormik
                     formikProps={{
                       ...formik,
-                      name: 'zip',
+                      name: 'post_code',
                       type: 'text',
-                      placeholder: 'поштовий індекс',
+                      placeholder: 'Поштовий індекс',
                     }}
                     classNameWrapperr={styles.webInput}
                   />
+                  {formik.errors.post_code && formik.touched.post_code }
                 </div>
                 <div>
                   <p className={styles.smallTitleGlobal}>
@@ -189,20 +211,15 @@ const Layout = () => {
                       ...formik,
                       name: 'address',
                       type: 'text',
-                      placeholder: 'адреса компанії',
+                      placeholder: 'Адреса компанії',
                     }}
                     classNameWrapperr={styles.webInput}
                   />
+                  {formik.errors.address && formik.touched.address }
                 </div>
               </div>
             </BlockForm>
             <BlockForm>
-              {formik.errors.conditionOne && formik.touched.conditionOne && (
-                <p className={styles.error}>{formik.errors.conditionOne}</p>
-              )}
-              {formik.errors.conditionTwo && formik.touched.conditionTwo && (
-                <p className={styles.error}>{formik.errors.conditionTwo}</p>
-              )}
               <button type="submit" className={styles.buttonMainGlobal}>Зберегти</button>
             </BlockForm>
           </div>

@@ -15,6 +15,7 @@
 }
 .flexColumnGlobal{
   margin-bottom: 10px;
+  position: relative;
 }
 .gridTypeCompanies{
   display: grid;
@@ -30,4 +31,14 @@
   width: 306px;
   height: 29px;
   align-self: center;
+}
+
+.warning{
+  position: absolute;
+  color: red;
+  top: 170px;
+  right: 10px;
+}
+.inputGlobal{
+  position: relative;
 }

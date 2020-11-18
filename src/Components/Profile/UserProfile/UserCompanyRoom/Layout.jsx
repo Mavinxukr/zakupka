@@ -6,7 +6,7 @@ import InputFormik from '../../../../UI-Kit/InputFormik/InputFormik';
 import styles from './Layout.scss';
 
 const Layout = () => {
-  // const onSubmit = (values) => console.log(values);
+  const onSubmit = (values) => console.log(values);
   const name = "Ім'я";
   return (
     <Formik
@@ -19,7 +19,7 @@ const Layout = () => {
         conditionOne: Yup.string()
           .required('Введіть період'),
       })}
-      // onSubmit={(values) => onSubmit(values)}
+      onSubmit={(values) => onSubmit(values)}
     >
       {(formik) => (
         <form onSubmit={formik.handleSubmit}>
@@ -35,7 +35,7 @@ const Layout = () => {
                   <InputFormik
                     formikProps={{
                       ...formik,
-                      name: 'companyName',
+                      name: 'name',
                       type: 'text',
                       placeholder: 'Введіть ім\'я',
                     }}
@@ -49,7 +49,7 @@ const Layout = () => {
                   <InputFormik
                     formikProps={{
                       ...formik,
-                      name: 'companySarname',
+                      name: 'surname',
                       type: 'text',
                       placeholder: 'Введіть призвіще',
                     }}
@@ -62,27 +62,13 @@ const Layout = () => {
                   <InputFormik
                     formikProps={{
                       ...formik,
-                      name: 'companyRegister',
+                      name: 'name_customer',
                       type: 'text',
                       placeholder: 'Введіть посаду',
                     }}
                   />
                 </div>
-                <div className={styles.centerBlock}>
-                  <p className={styles.smallTitleGlobal}>
-                    <span className={styles.redStar}>*</span>
-                    <span>Телефон</span>
-                  </p>
-                  <InputFormik
-                    formikProps={{
-                      ...formik,
-                      name: 'companyRegister',
-                      type: 'text',
-                      placeholder: 'Номер телефону',
-                    }}
-                  />
-                </div>
-                <button type="button" className={styles.buttonMainGlobal}>Зберегти</button>
+                <button type="submit" className={styles.buttonMainGlobal}>Зберегти</button>
               </div>
             </BlockForm>
             <h2 className={styles.middleTitleGlobal}>Зміна пароля</h2>
@@ -117,7 +103,7 @@ const Layout = () => {
                   />
                   <span className={styles.smallGrayTextGlobal}>Не менше 6 символів</span>
                 </div>
-                <button type="button" className={styles.buttonMainGlobal}>Змінити пароль</button>
+                <button type="submit" className={styles.buttonMainGlobal}>Змінити пароль</button>
               </div>
             </BlockForm>
             <h2 className={styles.middleTitleGlobal}>Зміна E-mail</h2>
@@ -134,7 +120,7 @@ const Layout = () => {
                       name: 'companyRegister',
                       type: 'text',
                       placeholder: 'cdenis@gmail.com',
-                      disabled: 'disabled',
+                      disabled: true,
                     }}
                     classNameWrapperr={styles.inputInvisible}
                   />
@@ -167,7 +153,7 @@ const Layout = () => {
                     }}
                   />
                 </div>
-                <button type="button" className={styles.buttonMainGlobal}>Змінити E-mail</button>
+                <button type="submit" className={styles.buttonMainGlobal}>Змінити E-mail</button>
               </div>
             </BlockForm>
             <BlockForm>

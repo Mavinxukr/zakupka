@@ -83,7 +83,10 @@ const AdditionalPurchaseEn = () => {
                 <h4 className={styles.title}>Контактні дані</h4>
                 <div className={styles.contactDate}>
                   <p><span className={styles.redStar}>*</span>Назва організації</p>
-                  <input type="text" className={styles.inputGlobal} />
+                  <InputFormik
+                    type="text"
+                    className={styles.inputGlobal}
+                  />
                 </div>
                 <div className={styles.sectionContacts}>
                   <p>

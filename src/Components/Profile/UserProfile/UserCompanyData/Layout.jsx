@@ -12,6 +12,7 @@ import {
 } from '../../../../utils/selectors';
 import { getCompanyType } from '../../../../redux/actions/getCompanyType';
 import { getRegions } from '../../../../redux/actions/getRegions';
+import { userCompanyPost } from '../../../../services/userCompanyPost';
 import styles from './Layout.scss';
 
 const Layout = () => {
@@ -20,12 +21,15 @@ const Layout = () => {
   const isReceived = useSelector(companyTypeDataReceivedSelector);
   const regionsData = useSelector(regionsDataSelector);
   const isReceivedRegions = useSelector(regionsDataReceivedSelector);
+
   const onSubmit = (values) => {
-    console.log({
+    userCompanyPost({}, cookies.get('tokenProzorro'), {
       ...values,
       type_id: +values.type_id,
       region: +values.region,
-    });
+    })
+      .then((res) => console.log(res))
+      .catch((res) => console.log('Запит false', res));
   };
 
   useEffect(() => {
@@ -93,7 +97,9 @@ const Layout = () => {
                     placeholder="Введіть назву компанії"
                   />
                   {formik.errors.name && formik.touched.name && (
-                    <p className={styles.warning}>Поле обов`язкове</p>
+                    <p className={styles.warning}>
+                      {formik.errors.name}
+                    </p>
                   )}
                   <span className={styles.smallGrayTextGlobal}>Залишилось: 1024 символа(їв).</span>
                 </div>
@@ -143,28 +149,12 @@ const Layout = () => {
             <BlockForm>
               <div className={styles.gridBlockThree}>
                 <div>
-                  <p className={styles.smallTitleGlobal}>
-                    <span className={styles.redStar}>*</span>
-                    <span>Країна</span>
-                  </p>
-                  <div className={styles.flexColumnGlobal}>
-                    <InputFormik
-                      formikProps={{
-                        ...formik,
-                        name: 'website',
-                        type: 'text',
-                        placeholder: 'назва країни',
-                        value: 'Україна (UA-EDR)',
-                      }}
-                      classNameWrapperr={styles.webInput}
-                    />
-                  </div>
                   <div>
                     <p className={styles.smallTitleGlobal}>
                       <span className={styles.redStar}>*</span>
                       <span>Область</span>
                     </p>
-                    <Field as="select" name="region" id="regions" className={styles.regions}>
+                    <Field as="select" name="region_id" id="regions" className={styles.regions}>
                       { regionsData.map((region) => (<option value={region.id} key={`region${region.id}`}> {region.name} </option>))}
                     </Field>
                   </div>

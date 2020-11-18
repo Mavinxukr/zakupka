@@ -2,9 +2,9 @@ import { call, put, takeLatest } from 'redux-saga/effects';
 import {
   getMoneyTypeSuccess,
   getMoneyTypeError,
-} from '../../actions/moneyType';
-import { getMoneyTypeRequest } from '../../../services/moneyType';
-import * as actionTypes from '../../actions/actionTypes';
+} from '../actions/moneyType';
+import { getMoneyTypeRequest } from '../../services/moneyType';
+import * as actionTypes from '../actions/actionTypes';
 
 function* getMoneyType({ params, cookies }) {
   const response = yield call(getMoneyTypeRequest, params, cookies);

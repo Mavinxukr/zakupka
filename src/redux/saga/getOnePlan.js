@@ -2,9 +2,9 @@ import { call, put, takeLatest } from 'redux-saga/effects';
 import {
   getOnePlanSuccess,
   getOnePlanError,
-} from '../../actions/onePlan';
-import { getOnePlanRequest } from '../../../services/onePlan';
-import * as actionTypes from '../../actions/actionTypes';
+} from '../actions/onePlan';
+import { getOnePlanRequest } from '../../services/onePlan';
+import * as actionTypes from '../actions/actionTypes';
 
 function* getOnePlan({ params, id }) {
   const response = yield call(getOnePlanRequest, params, id);

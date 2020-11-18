@@ -2,9 +2,9 @@ import { call, put, takeLatest } from 'redux-saga/effects';
 import {
   getTendersSuccess,
   getTendersError,
-} from '../../actions/tenders';
-import { getTendersRequest } from '../../../services/tenders';
-import * as actionTypes from '../../actions/actionTypes';
+} from '../actions/tenders';
+import { getTendersRequest } from '../../services/tenders';
+import * as actionTypes from '../actions/actionTypes';
 
 function* getTenders({ params }) {
   const response = yield call(getTendersRequest, params);

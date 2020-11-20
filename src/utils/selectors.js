@@ -89,3 +89,13 @@ export const regionsDataReceivedSelector = createSelector(
   (state) => state.regions.isDataReceived,
   (isDataReceived) => isDataReceived,
 );
+
+export const countryDataSelector = createSelector(
+  (state) => state.getIdentifier.countryData,
+  (countryData) => countryData,
+);
+
+export const countryDataReceivedSelector = createSelector(
+  (state) => state.getIdentifier.isCountyDataReceived,
+  (isDataReceived) => isDataReceived,
+);

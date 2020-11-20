@@ -1,14 +1,14 @@
 import React from 'react';
 import Header from '../../Components/shared/Header/Header';
 import Footer from '../../Components/shared/Footer/Footer';
-import Layout from '../../Components/PlanOfSales/Layout/Layout';
+import Layout from '../../Components/MyCreatePlan/Layout/Layout';
 
-const PlaneOfSales = () => (
-  <div>
+const CreatePlan = () => (
+  <>
     <Header />
     <Layout />
     <Footer />
-  </div>
+  </>
 );
 
-export default PlaneOfSales;
+export default CreatePlan;

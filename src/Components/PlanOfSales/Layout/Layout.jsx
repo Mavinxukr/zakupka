@@ -25,14 +25,13 @@ const Layout = () => {
   const [startDate, isStartDate] = useState('');
   const [onChangeOption, isOnChangeOption] = useState('a1');
   // const onSubmit = (values) => console.log(values);
-
   // console.log(startDate);
 
   return (
     <>
       <MenuPurchaser />
       <div className={styles.container}>
-        <h1>Нова публічна закупівля</h1>
+        <h2 className={styles.middleTitleGlobal}>Нова публічна закупівля</h2>
         <CustomerInformation />
         <Formik
           initialValues={{ }}

@@ -8,6 +8,7 @@ import { classifierCode } from './classifierCode';
 import { tendersType } from './getTendersType';
 import { companyType } from './getCompanyType';
 import { regions } from './getRegions';
+import { getIdentifier } from './getIdentifier';
 
 export default combineReducers({
   currentUser,
@@ -19,4 +20,5 @@ export default combineReducers({
   tendersType,
   companyType,
   regions,
+  getIdentifier,
 });

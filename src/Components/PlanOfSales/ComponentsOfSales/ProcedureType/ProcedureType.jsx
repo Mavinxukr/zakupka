@@ -18,7 +18,7 @@ import styles from '../../Layout/Layout.scss';
 const ProcedureType = ({ isOnChangeOption, onChangeOption }) => (
   <>
     <BlockForm>
-      <h4 className={styles.title}>Тип процедури</h4>
+      <span>Тип процедури</span>
       <div className={styles.containerProcedure}>
         <p>
           <span className={styles.redStar}>*</span>

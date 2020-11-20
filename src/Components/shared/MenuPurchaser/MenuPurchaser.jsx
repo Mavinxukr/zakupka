@@ -9,6 +9,22 @@ const MenuPurchaser = () => (
     <div className={styles.container}>
       <nav className={styles.menu}>
         <div>
+          <NavLink
+            to="/create_tender"
+            exact
+          >
+            Створити закупівлю
+          </NavLink>
+        </div>
+        <div>
+          <NavLink
+            to="/create_plan"
+            exact
+          >
+            Створити план
+          </NavLink>
+        </div>
+        <div>
           Публічні закупівлі
           <ul className={styles.showBlock}>
             <li>
@@ -58,15 +74,6 @@ const MenuPurchaser = () => (
                 Дані для входу в кабінет
               </NavLink>
             </li>
-            {/* <li> */}
-            {/*  <NavLink */}
-            {/*    to="/user_company_structure" */}
-            {/*    exact */}
-            {/*    className={styles.item} */}
-            {/*  > */}
-            {/*    Структура компанії */}
-            {/*  </NavLink> */}
-            {/* </li> */}
           </ul>
         </div>
         <div>

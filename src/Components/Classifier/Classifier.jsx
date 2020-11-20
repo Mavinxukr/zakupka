@@ -5,11 +5,11 @@ import Tree from './Tree/Tree';
 import { data } from './data';
 import styles from './Classifier.scss';
 
-const Classifier = ({ isDataDK }) => (
+const Classifier = ({ isDataDK, radio }) => (
   <>
     <div className={styles.containerMain}>
       <div className={styles.containerInfo}>
-        <Tree isDataDK={isDataDK} data={data.rootNodes} />
+        <Tree isDataDK={isDataDK} radio={radio} data={data.rootNodes} />
       </div>
       <div>
         <button type="button" className={cx(styles.buttonMainGlobal, styles.button)}>Вибрати</button>
@@ -21,6 +21,7 @@ const Classifier = ({ isDataDK }) => (
 
 Classifier.propTypes = {
   isDataDK: PropTypes.func,
+  radio: PropTypes.bool,
 };
 
 export default Classifier;

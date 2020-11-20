@@ -6,7 +6,6 @@ import BlockForm from '../../shared/BlockForm/BlockForm';
 import MoneyTypeComponent from '../../shared/MoneyTypeComponent/MoneyTypeComponent';
 import Popup from '../../shared/Popup/Popup';
 import Classifier from '../../Classifier/Classifier';
-import UserInfo from '../../shared/UserInfo/UserInfo';
 import ClassifierCode from '../../ClassifierCode/ClassifierCode';
 import styles from './Layout.scss';
 import TypeOfProcedure from '../../TypeOfProcedure/TypeOfProcedure';
@@ -14,8 +13,9 @@ import TypeOfProcedure from '../../TypeOfProcedure/TypeOfProcedure';
 const Layout = () => {
   const [openPopup, isOpenPopup] = useState(false);
   const [openPopupKEKV, isOpenPopupKEKV] = useState(false);
+  const [dataDK, isDataDK] = useState('');
   // const onSubmit = (values) => console.log(values);
-
+  console.log(dataDK);
   return (
     <>
       <MenuPurchaser />
@@ -27,7 +27,7 @@ const Layout = () => {
               <h3>Класифікатор ДК 021:2015 </h3>
             </div>
             <div className={styles.treeContainer}>
-              <Classifier />
+              <Classifier radio isDataDK={isDataDK} />
             </div>
           </Popup>
         )}
@@ -49,26 +49,6 @@ const Layout = () => {
             <form
               onSubmit={formik.handleSubmit}
             >
-              <BlockForm>
-                <UserInfo />
-              </BlockForm>
-              {/* <BlockForm> */}
-              {/*  <h4 className={styles.middleTitleGlobal}>Інформація про закупівельника</h4> */}
-              {/*  <span>У разі, якщо за даним планом закупівлю буде проводити інша юридична особа,вкажіть дані цієї орнанізації</span> */}
-              {/*  <div className={styles.radioButton}> */}
-              {/*    /!* eslint-disable *!/ */}
-              {/*        <label> */}
-              {/*          <Field type="radio" name="infoShopper" value="One" checked/> */}
-              {/*          <span>Самостійно проводимо закупівлю за даним планом.</span> */}
-              {/*        </label> */}
-              {/*        <label> */}
-              {/*          <Field type="radio" name="infoShopper" value="Two"/> */}
-              {/*          <span>Закупівлю за даним планом буде проводити інща юридична особа, вказати дані цієї організації.</span> */}
-              {/*        </label> */}
-              {/*        /!* eslint-enable *!/ */}
-              {/*  </div> */}
-              {/* </BlockForm> */}
-              {/* <AnotherLegalEntity /> */}
               <TypeOfProcedure />
               <BlockForm>
                 <h2 className={styles.title}>Інформація про закупівлю</h2>

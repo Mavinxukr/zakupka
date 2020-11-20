@@ -30,15 +30,6 @@ const Layout = () => {
     <>
       <MenuPurchaser />
       <div className={styles.container}>
-        <NavLink
-          to="/plane_of_sales"
-          exact
-          className={styles.tab}
-        >
-          Нова закупівля
-        </NavLink>
-      </div>
-      <div className={styles.container}>
         <div className={styles.flexContainer}>
           <div className={styles.buttonTabs}>
             <NavLink

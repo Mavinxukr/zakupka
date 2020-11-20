@@ -16,7 +16,7 @@ const UserInfo = () => {
   return (
     <>
       <div className={styles.gridBlockGlobal}>
-        <span className={styles.normalBoldTextGlobal}>Інформація про замовника</span>
+        <span>Інформація про замовника</span>
         <div className={styles.userInfo}>
           <p>{userData?.user?.name || "Ім'я"} {userData?.user?.surname || 'Призвіще'}</p>
           <p>{userData?.user?.email || 'Email'}</p>
@@ -24,7 +24,7 @@ const UserInfo = () => {
         </div>
       </div>
       <div className={styles.gridBlockGlobal}>
-        <span className={styles.normalBoldTextGlobal}>Контакти</span>
+        <span>Контакти</span>
         <span>{userData?.company?.country || ' держава'},{userData?.company?.address || ' адреса'},{userData?.company?.post_code || ' поштовий код'}</span>
       </div>
     </>

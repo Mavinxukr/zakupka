@@ -10,9 +10,9 @@ import Best from './Pages/Profile/UserProfile/Best/Best';
 import Victories from './Pages/Profile/Victories/Victories';
 import Participate from './Pages/Profile/Participate/Participate';
 import Planing from './Pages/Profile/Planing/Planing';
-import PlaneOfSales from './Pages/PlanOfSales/PlaneOfSales';
+import CreateTender from './Pages/Tender/CreateTender';
 import MyPlanSales from './Pages/MyPlanSales/MyPlanSales';
-import MyCreatePlane from './Pages/MyCreatePlane/MyCreatePlane';
+import CreatePlan from './Pages/Plan/CreatePlan';
 import './index.scss';
 import PurchasesDemands from './Pages/Purchases/Purchases-Demands/Purchases-Demands';
 import PurchasesReport from './Pages/Purchases/Purchases-Report/Purchases-Report';
@@ -25,7 +25,7 @@ import PurchasesSales from './Pages/Purchases/Purchases-Sales/PurchasesSales';
 import Complaints from './Pages/Complaints/Complaints';
 import Classifier from './Components/Classifier/Classifier';
 import CancelPurchases from './Pages/Purchases/Purchases-Cancel/Purchases-Cancel';
-import CancelMyPlan from './Pages/MyCreatePlane/CancelMyPlane';
+import CancelMyPlan from './Pages/Plan/CancelMyPlane';
 import NewComplains from './Pages/Complaints/NewComplains/NewComplains';
 import Ask from './Pages/Purchases/Purchases-Quetions/Ask/Ask';
 import CancelComplains from './Pages/Complaints/CancelComplains/CancelComplains';
@@ -47,10 +47,11 @@ const App = () => (
     <Route exact path="/profile_victories" component={Victories} />
     <Route exact path="/profile_participate" component={Participate} />
     <Route exact path="/profile_planing" component={Planing} />
-    <Route exact path="/plane_of_sales" component={PlaneOfSales} />
+    <Route exact path="/plane_of_sales" component={CreateTender} />
     <Route exact path="/my_plane_sales" component={MyPlanSales} />
     <Route exact path="/my_plane_sales/:id" component={PlanInfo} />
-    <Route exact path="/my_create_plan" component={MyCreatePlane} />
+    <Route exact path="/create_plan" component={CreatePlan} />
+    <Route exact path="/create_tender" component={CreateTender} />
     <Route exact path="/cancel_my_plan" component={CancelMyPlan} />
     <Route exact path="/purchases/demands" component={PurchasesDemands} />
     <Route exact path="/purchases/dozorro" component={PurchasesDozorro} />

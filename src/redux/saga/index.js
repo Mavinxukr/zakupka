@@ -8,6 +8,7 @@ import { watchClassifierCodeData } from './classifierCode';
 import { watchGetTendersType } from './tendersType';
 import { watchGetCompanyType } from './companyType';
 import { watchGetRegions } from './getRegions';
+import { watchGetIdentifier } from './getIdentifier';
 
 export function* rootSaga() {
   yield all([
@@ -20,5 +21,6 @@ export function* rootSaga() {
     watchGetTendersType(),
     watchGetCompanyType(),
     watchGetRegions(),
+    watchGetIdentifier(),
   ]);
 }

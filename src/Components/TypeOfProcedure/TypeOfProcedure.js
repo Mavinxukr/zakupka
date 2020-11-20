@@ -19,8 +19,6 @@ const TypeOfProcedure = () => {
     return <div />;
   }
 
-  console.log(data);
-
   return (
     <BlockForm>
       <h2 className={styles.middleTitleGlobal}>Тип процедури </h2>

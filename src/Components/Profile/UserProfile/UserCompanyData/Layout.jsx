@@ -7,39 +7,46 @@ import BlockForm from '../../../shared/BlockForm/BlockForm';
 import InputFormik from '../../../../UI-Kit/InputFormik/InputFormik';
 import {
   companyTypeDataReceivedSelector,
-  companyTypeDataSelector, regionsDataReceivedSelector,
+  companyTypeDataSelector, countryDataReceivedSelector, countryDataSelector, regionsDataReceivedSelector,
   regionsDataSelector,
 } from '../../../../utils/selectors';
 import { getCompanyType } from '../../../../redux/actions/getCompanyType';
 import { getRegions } from '../../../../redux/actions/getRegions';
 import { userCompanyPost } from '../../../../services/userCompanyPost';
+import { getIdentifier } from '../../../../redux/actions/getIdentifier';
 import styles from './Layout.scss';
 
 const Layout = () => {
   const dispatch = useDispatch();
   const companyTypeData = useSelector(companyTypeDataSelector);
-  const isReceived = useSelector(companyTypeDataReceivedSelector);
   const regionsData = useSelector(regionsDataSelector);
+  const countryData = useSelector(countryDataSelector);
   const isReceivedRegions = useSelector(regionsDataReceivedSelector);
+  const isReceivedCountry = useSelector(countryDataReceivedSelector);
+  const isReceivedCompanyType = useSelector(companyTypeDataReceivedSelector);
+  const token = cookies.get('tokenProzorro');
 
   const onSubmit = (values) => {
-    userCompanyPost({}, cookies.get('tokenProzorro'), {
+    userCompanyPost({}, token, {
       ...values,
       type_id: +values.type_id,
       region: +values.region,
     })
-      .then((res) => console.log(res))
-      .catch((res) => console.log('Запит false', res));
+      .then((res) => res)
+      .catch((error) => error);
   };
 
   useEffect(() => {
-    dispatch(getCompanyType({}, cookies.get('tokenProzorro')));
+    dispatch(getCompanyType({}, token));
     dispatch(getRegions({}));
+    dispatch(getIdentifier({}, token));
   }, []);
 
-  if (!isReceived || !isReceivedRegions) {
+  if (!isReceivedCompanyType || !isReceivedRegions || !isReceivedCountry) {
     return <div />;
   }
+
+  console.log(countryData);
 
   return (
     <Formik
@@ -148,16 +155,25 @@ const Layout = () => {
             <h2 className={styles.middleTitleGlobal}>Юридична адреса</h2>
             <BlockForm>
               <div className={styles.gridBlockThree}>
+                {/* <div> */}
+                {/*  <p className={styles.smallTitleGlobal}> */}
+                {/*    <span className={styles.redStar}>*</span> */}
+                {/*    <span>Код країна</span> */}
+                {/*  </p> */}
+                {/*  <Field as="select" name="region_id" id="regions" className={styles.regions}> */}
+                {/*    { */}
+                {/*      countryData.map((item) => (<option key={item.id}>{item.code}</option>)) */}
+                {/*    } */}
+                {/*  </Field> */}
+                {/* </div> */}
                 <div>
-                  <div>
-                    <p className={styles.smallTitleGlobal}>
-                      <span className={styles.redStar}>*</span>
-                      <span>Область</span>
-                    </p>
-                    <Field as="select" name="region_id" id="regions" className={styles.regions}>
-                      { regionsData.map((region) => (<option value={region.id} key={`region${region.id}`}> {region.name} </option>))}
-                    </Field>
-                  </div>
+                  <p className={styles.smallTitleGlobal}>
+                    <span className={styles.redStar}>*</span>
+                    <span>Область</span>
+                  </p>
+                  <Field as="select" name="region_id" id="regions" className={styles.regions}>
+                    { regionsData.map((region) => (<option value={region.id} key={`region${region.id}`}> {region.name} </option>))}
+                  </Field>
                 </div>
                 <div>
                   <p className={styles.smallTitleGlobal}>

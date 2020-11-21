@@ -76,7 +76,7 @@ a:hover{
 }
 
 .h1 span {
-    border-bottom: 7px solid #F2C81F;
+    border-bottom: 4px solid #F2C81F;
 }
 
 .tabs-panel,
@@ -466,9 +466,10 @@ main {
 .row .blockInfo h2 {
     font-size: 56px;
     margin-bottom: 40px;
-    border-bottom: 5px solid #F2C81F;
+    border-bottom: 4px solid #F2C81F;
     width: max-content;
     line-height: 47px;
+    padding-bottom: 2px;
 }
 
 .row .blockInfo p {
@@ -523,6 +524,7 @@ main {
     margin: 0;
     font-size: 16px;
     opacity: .5;
+    white-space: nowrap;
 }
 
 .blockInfo .flex {

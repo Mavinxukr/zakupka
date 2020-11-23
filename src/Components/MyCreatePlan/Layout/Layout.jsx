@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Field, Formik } from 'formik';
-import cx from 'classnames';
 import MenuPurchaser from '../../shared/MenuPurchaser/MenuPurchaser';
 import BlockForm from '../../shared/BlockForm/BlockForm';
 import MoneyTypeComponent from '../../shared/MoneyTypeComponent/MoneyTypeComponent';
@@ -127,35 +126,12 @@ const Layout = () => {
                   <Field name="color" component="textarea" />
                 </section>
                 <button className={styles.buttonGlobal} type="button">Видалити джерело</button>
+                <button className={styles.buttonMainGlobal} style={{ marginLeft: '40px' }} type="button">+ Додати джерело</button>
               </BlockForm>
               <BlockForm>
-                <button className={styles.buttonMainGlobal} type="button">+ Додати джерело</button>
-              </BlockForm>
-              <BlockForm>
-                <h4 className={styles.title}>Список товарів та послуг,що закуповують</h4>
-                <button className={styles.buttonMainGlobal} type="button">+ Додати товари або послугу</button>
-              </BlockForm>
-              <BlockForm>
-                {/* eslint-disable-next-line react/no-unescaped-entities */}
-                <h2 className={styles.smallTitleGlobal}>Необов'язково, але в разі потреби тут можна завантажити додаткові
-                  файли плану або майбутньої закупівлі
-                </h2>
-                <label htmlFor="downloadFile" className={cx(styles.buttonMainGlobal, styles.downloadFiles)}>
-                  Прикріпити файл
-                  {/* eslint-disable-next-line react/button-has-type */}
-                  <input
-                    type="file"
-                    id="downloadFile"
-                    className={styles.downloadFile}
-                  />
-                </label>
-                <p className={styles.smallGrayTextGlobal}>
-                  Можна завантажити додаткові файли плану або майбутньої закупівлі.
-                  Максимум 100 фалів,не більше 49Мб кожен.
-                </p>
                 <div className={styles.footerButtons}>
                   <button className={styles.buttonMainGlobal} type="submit">Опублікувати план</button>
-                  <button className={styles.buttonMainGlobal} type="button">Скасувати</button>
+                  <button className={styles.buttonMainGlobal} type="button">Скасувати план</button>
                 </div>
               </BlockForm>
             </form>

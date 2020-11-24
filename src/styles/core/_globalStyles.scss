@@ -199,3 +199,10 @@
   grid-template-columns: 300px 300px;
   grid-gap: 20px;
 }
+
+.gridWidthGlobal{
+  display: grid;
+  width: 95%;
+  grid-template-columns: 300px 1fr;
+  grid-gap: 20px;
+}

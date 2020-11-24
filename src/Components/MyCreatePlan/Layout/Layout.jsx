@@ -8,6 +8,7 @@ import Classifier from '../../Classifier/Classifier';
 import ClassifierCode from '../../ClassifierCode/ClassifierCode';
 import styles from './Layout.scss';
 import TypeOfProcedure from '../../TypeOfProcedure/TypeOfProcedure';
+import ListItems from '../../create-plan';
 
 const Layout = () => {
   const [openPopup, isOpenPopup] = useState(false);
@@ -123,11 +124,12 @@ const Layout = () => {
                   <div className={styles.titleForm}>
                     <p style={{ marginLeft: '12px' }}>Опис</p>
                   </div>
-                  <Field name="color" component="textarea" />
+                  <Field name="description" component="input" className={styles.inputGlobal} />
                 </section>
                 <button className={styles.buttonGlobal} type="button">Видалити джерело</button>
                 <button className={styles.buttonMainGlobal} style={{ marginLeft: '40px' }} type="button">+ Додати джерело</button>
               </BlockForm>
+              <ListItems />
               <BlockForm>
                 <div className={styles.footerButtons}>
                   <button className={styles.buttonMainGlobal} type="submit">Опублікувати план</button>

@@ -76,7 +76,7 @@ a:hover{
 }
 
 .h1 span {
-    border-bottom: 7px solid #F2C81F;
+    border-bottom: 4px solid #F2C81F;
 }
 
 .tabs-panel,
@@ -295,7 +295,7 @@ main {
 }
 
 .tabs {
-    margin-top: 120px;
+    margin-top: 100px;
     overflow: visible;
     border-bottom: 1px solid rgba(0, 0, 0, .2);
 }
@@ -466,9 +466,10 @@ main {
 .row .blockInfo h2 {
     font-size: 56px;
     margin-bottom: 40px;
-    border-bottom: 5px solid #F2C81F;
+    border-bottom: 4px solid #F2C81F;
     width: max-content;
     line-height: 47px;
+    padding-bottom: 2px;
 }
 
 .row .blockInfo p {
@@ -523,6 +524,7 @@ main {
     margin: 0;
     font-size: 16px;
     opacity: .5;
+    white-space: nowrap;
 }
 
 .blockInfo .flex {
@@ -1047,15 +1049,23 @@ border-bottom: 7px solid #F2C81F;
     margin-bottom: 25px;
 }
 
+.blog > .blog {
+    margin-bottom: 0;
+}
+
 .blogDescription {
     font-size: 18px;
-    padding: 0 20px 13px;
+    padding: 0 20px;
     margin: 0;
-    min-height: 39px;
+    max-height: 21px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .blogHashtag {
   align-items: baseline;
+  margin-top: 13px;
 }
 
 .blogHashtag a {
@@ -1788,14 +1798,14 @@ footer .container {
 }
 
 .projectBannerInfo {
-    height: 200px;
+    height: 180px;
     background: #F8F8F8;
     position: absolute;
     right: 14%;
-    bottom: -40px;
+    bottom: -30px;
     width: 100%;
     max-width: 444px;
-    padding: 50px;
+    padding: 40px;
 }
 
 .bannerInfoItem {
@@ -1823,7 +1833,7 @@ footer .container {
 .projectDesc {
     margin: 170px auto 120px;
     max-width: 1420px;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .video {
@@ -1909,7 +1919,7 @@ footer .container {
     background: #000;
     padding: 50px 50px 52px;
     max-width: 523px;
-    top: 100px;
+    top: 0;
     right: 0;
     width: 100%;
 }
@@ -1941,7 +1951,7 @@ footer .container {
 .blackBG li:before {
     position: absolute;
     content: '';
-    top: 7px;
+    top: 11px;
     left: 0;
     width: 20px;
     height: 2px;
@@ -2641,4 +2651,21 @@ services-tabs-title
 .single-slider .slick-slide img {
 
     width: 100%;
+}
+
+.homeTabs + .bg .border {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.homeTabs .tabs {
+    border-bottom: none;
+}
+
+.countFlexBlock h2 {
+    margin-bottom: 0;
+}
+
+.oneProject .projectBG > .container {
+    max-width: 1500px;
 }

@@ -176,8 +176,8 @@ class Project(TranslatableModel):
         dev_time = models.CharField(max_length=50, verbose_name=_('vnm_time_project',),null=True),
         location = models.CharField(max_length=100, verbose_name=_('vnm_location_project'),null=True),
         result = models.TextField(null=True, verbose_name=_('vnm_result_project')),
-        project_idea = models.CharField(max_length=100, verbose_name=_('vnm_project_idea'), null=True),
-        project_audience = models.CharField(max_length=100, verbose_name=_('vnm_project_audience'), null=True)
+        project_idea = models.CharField(max_length=150, verbose_name=_('vnm_project_idea'), null=True),
+        project_audience = models.CharField(max_length=150, verbose_name=_('vnm_project_audience'), null=True)
 
     )
 

@@ -1,13 +1,13 @@
 {% load static %}
  {% load i18n %}
  <div class="container blog">    
- <a href="#" class="countFlexBlock">
+ <a href="{% url 'blog' %}" class="countFlexBlock">
    <h2 class="h1 fontMedium flex">
       <span>{% trans 'view_blog' %}</span>
     </h2>
-     <span class="blogCount menuItem">{{ blogs.count }}</span>
+     <span class="blogCount menuItem">{{ blogs_count }}</span>
  </a>
-<a href="#" class="showAll fontMedium">
+<a href="{% url 'blog' %}" class="showAll fontMedium">
     {% trans 'blog_show_all' %}
 </a>
 <div class="flex blogItems">

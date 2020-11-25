@@ -9,6 +9,7 @@ def render(request, template, context):
     context['contact'] = Contact.objects.first()
     context['reviews'] = Review.objects.all().order_by('-id')
     context['blogs'] = Blog.objects.all().order_by('?')[:6]
+    context['blogs_count'] = Blog.objects.all().count()
     context['data'] = Project.objects.all().order_by('priority')[:5]
     context['projects_ios'] = Project.objects.filter(area__translations__name__contains='iOS').order_by('-priority').distinct()[:5]
     context['projects_android'] = Project.objects.filter(area__translations__name__contains='Android').order_by('priority').distinct()[:5]

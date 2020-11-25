@@ -70,6 +70,7 @@ class OneProject(View):
         context['areas'] = Area.objects.order_by(Lower('translations__name')).distinct()
         return render(request, 'site/sub-page/one-project.html', context=context)
 
+
 class OneBlog(View):
     def get(self, request, blog_id):
         context = {}

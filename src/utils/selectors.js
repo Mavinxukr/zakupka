@@ -99,3 +99,13 @@ export const countryDataReceivedSelector = createSelector(
   (state) => state.getIdentifier.isCountyDataReceived,
   (isDataReceived) => isDataReceived,
 );
+
+export const createPlanSelector = createSelector(
+  (state) => state.createPlan.createdPlan,
+  (createdPlan) => createdPlan,
+);
+
+export const createPlanReceivedSelector = createSelector(
+  (state) => state.createPlan.isDataReceived,
+  (isDataReceived) => isDataReceived,
+);

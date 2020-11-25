@@ -132,8 +132,7 @@
 
 .inputGlobal{
   padding: 5px 10px;
-  width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 
 
@@ -205,4 +204,11 @@
   width: 95%;
   grid-template-columns: 300px 1fr;
   grid-gap: 20px;
+}
+
+//Error
+
+.errorGlobal{
+  color: red;
+  margin-bottom: 5px;
 }

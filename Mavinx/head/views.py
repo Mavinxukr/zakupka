@@ -28,7 +28,7 @@ class Works(View):
         context['areas'] = areas
         context['entity'] = area
 
-        return render(request, 'site/page-header/works.html', context)
+        return custom_render(request, 'site/page-header/works.html', context)
 
 
 class Services(View):
@@ -56,7 +56,7 @@ class Blog(View):
         context['topics'] = Topic.objects.order_by(Lower('translations__name')).distinct()
         context['data'] = data
         context['entity'] = topic
-        return render(request, 'site/page-header/blog.html', context=context)
+        return custom_render(request, 'site/page-header/blog.html', context=context)
 
 
 class OneProject(View):
@@ -68,7 +68,7 @@ class OneProject(View):
         context['technology'] = [str(name) for name in project.technology_use.all()]
         context['next_project'] = Project.objects.all()[randint(0, Project.objects.count() - 1)]
         context['areas'] = Area.objects.order_by(Lower('translations__name')).distinct()
-        return render(request, 'site/sub-page/one-project.html', context=context)
+        return custom_render(request, 'site/sub-page/one-project.html', context=context)
 
 
 class OneBlog(View):
@@ -77,7 +77,7 @@ class OneBlog(View):
         blog = ModelBlog.objects.filter(id=blog_id).first()
         context['blog'] = blog
         context['rand_blogs'] = ModelBlog.objects.exclude(id=blog_id).order_by('?')[:3]
-        return render(request, 'site/sub-page/one-blog.html', context=context)
+        return custom_render(request, 'site/sub-page/one-blog.html', context=context)
 
 
 class ErrorHandler():

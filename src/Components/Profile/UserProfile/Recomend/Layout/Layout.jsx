@@ -8,10 +8,12 @@ import IconAward from '../../../../../static/svg/award.svg';
 import IconCup from '../../../../../static/svg/cup.svg';
 import Filter from '../../../../shared/Filters/Filters';
 import Card from '../../../../shared/Card/Card';
+import MenuPurchaser from '../../../../shared/MenuPurchaser/MenuPurchaser';
 
 const Layout = () => (
   <div className={styles.container}>
     <div className={styles.flexContainer}>
+      <MenuPurchaser />
       <div className={styles.buttonTabs}>
         <NavLink
           to="/profile_purchases"

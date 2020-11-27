@@ -1,4 +1,4 @@
-@import '../../../../styles/core/vars';
+@import '../../../../index';
 
 .container {
   display: flex;
@@ -8,16 +8,15 @@
   min-height: 64vh;
   margin: 100px auto 100px;
   position: relative;
-  top: 110px;
 }
 
 .flexContainer{
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin-left: 50px;
   position: relative;
   background-color: $colorWhite;
+  top: 20px;
 }
 
 //Tabs

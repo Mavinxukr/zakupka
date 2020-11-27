@@ -7,75 +7,76 @@ import IconAward from '../../../../static/svg/award.svg';
 import IconCup from '../../../../static/svg/cup.svg';
 import Filter from '../../../shared/Filters/Filters';
 import styles from './Layout.scss';
+import MenuPurchaser from '../../../shared/MenuPurchaser/MenuPurchaser';
 
 const Layout = () => (
-  <div className={styles.container}>
-    <div className={styles.flexContainer}>
-      <div className={styles.buttonTabs}>
-        <NavLink
-          to="/profile_purchases"
-          exact
-          className={styles.tab}
-          activeClassName={styles.tabActive}
-        >
-          <IconBriefcase className={styles.icon} />
-          <span>Всі закупівлі</span>
-        </NavLink>
-        <NavLink
-          to="/profile_favorite"
-          exact
-          className={styles.tab}
-          activeClassName={styles.tabActive}
-        >
-          <IconStar className={styles.icon} />
-          <span>Обране</span>
-        </NavLink>
-        <NavLink
-          to="/profile_planing"
-          exact
-          className={styles.tab}
-          activeClassName={styles.tabActive}
-
-        >
-          <IconClock className={styles.icon} />
-          <span>Планую взяти участь</span>
-        </NavLink>
-        <NavLink
-          to="/profile_participate"
-          exact
-          className={styles.tab}
-          activeClassName={styles.tabActive}
-
-        >
-          <IconAward className={styles.icon} />
-          <span>Беру участь</span>
-        </NavLink>
-        <NavLink
-          to="/profile_victories"
-          exact
-          className={styles.tab}
-          activeClassName={styles.tabActive}
-
-        >
-          <IconCup className={styles.icon} />
-          <span>Мої перемоги</span>
-        </NavLink>
-      </div>
-      <div>
-        <div className={styles.bgWhite}>
-          <Filter />
-          <div className={styles.titleContainer}>
-            <p className={styles.leftBlock}>Предмет закупівлі</p>
-            <div className={styles.middleBlock}>
-              <p> Очікувана вартість </p>
-              <p>Важливі дати</p>
+  <>
+    <MenuPurchaser />
+    <div className={styles.container}>
+      <div className={styles.flexContainer}>
+        <div className={styles.buttonTabs}>
+          <NavLink
+            to="/profile_purchases"
+            exact
+            className={styles.tab}
+            activeClassName={styles.tabActive}
+          >
+            <IconBriefcase className={styles.icon} />
+            <span>Всі закупівлі</span>
+          </NavLink>
+          <NavLink
+            to="/profile_favorite"
+            exact
+            className={styles.tab}
+            activeClassName={styles.tabActive}
+          >
+            <IconStar className={styles.icon} />
+            <span>Обране</span>
+          </NavLink>
+          <NavLink
+            to="/profile_planing"
+            exact
+            className={styles.tab}
+            activeClassName={styles.tabActive}
+          >
+            <IconClock className={styles.icon} />
+            <span>Планую взяти участь</span>
+          </NavLink>
+          <NavLink
+            to="/profile_participate"
+            exact
+            className={styles.tab}
+            activeClassName={styles.tabActive}
+          >
+            <IconAward className={styles.icon} />
+            <span>Беру участь</span>
+          </NavLink>
+          <NavLink
+            to="/profile_victories"
+            exact
+            className={styles.tab}
+            activeClassName={styles.tabActive}
+          >
+            <IconCup className={styles.icon} />
+            <span>Мої перемоги</span>
+          </NavLink>
+        </div>
+        <div>
+          <div className={styles.bgWhite}>
+            <Filter />
+            <div className={styles.titleContainer}>
+              <p className={styles.leftBlock}>Предмет закупівлі</p>
+              <div className={styles.middleBlock}>
+                <p> Очікувана вартість </p>
+                <p>Важливі дати</p>
+              </div>
+              <p>Статус</p>
             </div>
-            <p>Статус</p>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </>
 );
 
 export default Layout;

@@ -34,6 +34,7 @@ import Tracking from './Pages/Complaints/Tracking/Tracking';
 import AllComplaints from './Pages/Complaints/AllComplaints/AllComplaints';
 import UserCompanyData from './Pages/Profile/UserProfile/UserCompanyData/UserCompanyData';
 import UserCompanyRoom from './Pages/Profile/UserProfile/UserCompanyRoom/UserCompanyRoom';
+import CreateTenderProto from './Components/PlanOfSales/create-tender-proto/CreateTenderProto';
 
 const App = () => (
   <Switch>
@@ -52,6 +53,7 @@ const App = () => (
     <Route exact path="/my_plane_sales/:id" component={PlanInfo} />
     <Route exact path="/create_plan" component={CreatePlan} />
     <Route exact path="/create_tender" component={CreateTender} />
+    <Route exact path="/create_tender_proto" component={CreateTenderProto} />
     <Route exact path="/cancel_my_plan" component={CancelMyPlan} />
     <Route exact path="/purchases/demands" component={PurchasesDemands} />
     <Route exact path="/purchases/dozorro" component={PurchasesDozorro} />

@@ -13,7 +13,15 @@ const MenuPurchaser = () => (
             to="/create_tender"
             exact
           >
-            Створити закупівлю
+            Створити закупівлю (Оригінал що має вигляд)
+          </NavLink>
+        </div>
+        <div>
+          <NavLink
+            to="/create_tender_proto"
+            exact
+          >
+            Створити закупівлю (прототип який працює)
           </NavLink>
         </div>
         <div>

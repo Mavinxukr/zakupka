@@ -18,3 +18,4 @@ export const companyType = generateAction('companyType');
 export const regions = generateAction('regions');
 export const country = generateAction('country');
 export const createPlan = generateAction('createPlan');
+export const createTender = generateAction('createTender');

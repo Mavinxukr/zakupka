@@ -1,33 +1,13 @@
 @import '../../../../index';
 
-.centerBlock{
-  width: 400px;
-  margin: 0 auto;
-}
-.smallTitleGlobal{
-  margin-right: 20px;
-}
 .containerGlobal{
   display: flex;
   flex-direction: column;
-  align-items: center;
+  width: 400px;
+  justify-content: flex-start;
+  h1{
+    margin: 0 auto 20px;
+  }
+  min-height: 70vh;
 }
-.middleTitleGlobal{
-  margin: 10px auto;
-}
-.blockForm{
-  border-left: 1px solid #000000;
-  border-right: 1px solid #000000;
-}
-.margn{
-  margin-left: 12px;
-}
-.shadowBlock{
-  min-width: 400px;
-  padding: 50px;
-  display: flex;
-  flex-direction: column;
-}
-.buttonMainGlobal{
-  margin-top: 20px;
-}
+

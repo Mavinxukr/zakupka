@@ -10,6 +10,7 @@ import { watchGetCompanyType } from './companyType';
 import { watchGetRegions } from './getRegions';
 import { watchGetIdentifier } from './getIdentifier';
 import { watchCreatePlan } from './plans/createPlan';
+import { watchCreateTender } from './tenders/createTender';
 
 export function* rootSaga() {
   yield all([
@@ -24,5 +25,6 @@ export function* rootSaga() {
     watchGetRegions(),
     watchGetIdentifier(),
     watchCreatePlan(),
+    watchCreateTender(),
   ]);
 }

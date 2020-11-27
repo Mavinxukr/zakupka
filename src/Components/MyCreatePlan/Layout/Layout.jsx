@@ -14,17 +14,18 @@ const Layout = () => {
   const dispatch = useDispatch();
   const planData = useSelector(createPlanSelector);
   const isPlanData = useSelector(createPlanReceivedSelector);
-  const buyers = [{
+  const buyers = JSON.stringify([{
     kind: 'general',
     identifier: { scheme: 'UA-EDR', id: '33455365', legalName: 'КП Ромашка тест' },
     name: 'КП Ромашка тест',
     address: {
       postalCode: '04074', countryName: 'Україна', streetAddress: 'вул. Горького, 2', region: 'м. Київ', locality: 'Київ',
     },
-  }];
-  const items = [{
+  }]);
+  const items = JSON.stringify([{
     description: 'Насіння гірчиці', classification: { scheme: 'ДК021', description: 'Mustard seeds', id: '44617100-9' }, additionalClassifications: [{ scheme: 'ДКПП', id: '01.11.92', description: 'Насіння гірчиці' }], deliveryDate: { endDate: '2019-04-12T06:47:09.005262' }, unit: { code: 'KGM', name: 'кг' }, quantity: 1000,
-  }];
+  }]);
+  console.log(buyers, items);
   console.log(planData, isPlanData);
 
   const SignupSchema = Yup.object().shape({
@@ -66,20 +67,20 @@ const Layout = () => {
         <Formik
           initialValues={
             {
-              classification_scheme: '',
-              classification_description: '',
-              classification_id: '',
-              budget_amountNet: '',
-              budget_description: '',
-              budget_period_startDate: '',
-              budget_period_endDate: '',
-              project_name: '',
-              project_id: '',
-              currency: '',
-              amount: '',
-              budget_id: '',
-              tender_procurementMethodType: '',
-              tenderPeriod_startDate: '',
+              classification_scheme: 'ДК021',
+              classification_description: 'футляри до державних нагород',
+              classification_id: '44617100-9',
+              budget_amountNet: '80000',
+              budget_description: '123',
+              budget_period_startDate: '2020',
+              budget_period_endDate: '2020',
+              project_name: '123',
+              project_id: '123',
+              currency: 'UAH',
+              amount: '60000',
+              budget_id: '12303111000-2',
+              tender_procurementMethodType: 'belowThreshold',
+              tenderPeriod_startDate: '2020',
               buyers,
               items,
             }
@@ -104,23 +105,23 @@ const Layout = () => {
                 <Field type="text" name="classification_id" className={styles.inputGlobal} />
                 <ErrorMessage name="classification_id" component="span" className={styles.errorGlobal} />
 
-                <p>Бюджет плана с НДС</p>
+                <p>Бюджет плана с НДС ( 500 )</p>
                 <Field type="number" name="budget_amountNet" className={styles.inputGlobal} />
                 <ErrorMessage name="budget_amountNet" component="span" className={styles.errorGlobal} />
 
-                <p>Описание к бюджету</p>
+                <p>Описание к бюджету ( патроны )</p>
                 <Field type="text" name="budget_description" className={styles.inputGlobal} />
                 <ErrorMessage name="budget_description" component="span" className={styles.errorGlobal} />
 
-                <p>Старт</p>
+                <p>Старт ( 2020 )</p>
                 <Field type="text" name="budget_period_startDate" className={styles.inputGlobal} />
                 <ErrorMessage name="budget_period_startDate" component="span" className={styles.errorGlobal} />
 
-                <p>Конец плата</p>
+                <p>Конец плата ( 2020 )</p>
                 <Field type="text" name="budget_period_endDate" className={styles.inputGlobal} />
                 <ErrorMessage name="budget_period_endDate" component="span" className={styles.errorGlobal} />
 
-                <p>название плана</p>
+                <p>название плана ( мой план )</p>
                 <Field type="text" name="project_name" className={styles.inputGlobal} />
                 <ErrorMessage name="project_name" component="span" className={styles.errorGlobal} />
 
@@ -128,27 +129,27 @@ const Layout = () => {
                 <Field type="text" name="project_id" className={styles.inputGlobal} />
                 <ErrorMessage name="project_id" component="span" className={styles.errorGlobal} />
 
-                <p>Валюта UAH из запроса Get Tender money type</p>
+                <p>Валюта UAH из запроса Get Tender money type ( UAH ) </p>
                 <Field type="text" name="currency" className={styles.inputGlobal} />
                 <ErrorMessage name="currency" component="span" className={styles.errorGlobal} />
 
-                <p>Бюджет плана</p>
+                <p>Бюджет плана ( 500 )</p>
                 <Field type="number" name="amount" className={styles.inputGlobal} />
                 <ErrorMessage name="amount" component="span" className={styles.errorGlobal} />
 
-                <p>(12303111000-2)</p>
+                <p>( 12303111000-2 )</p>
                 <Field type="text" name="budget_id" className={styles.inputGlobal} />
                 <ErrorMessage name="budget_id" component="span" className={styles.errorGlobal} />
 
-                <p>Тип тендера из зарпоса Get Tender type</p>
+                <p>Тип тендера из зарпоса Get Tender type ( aboveThresholdUA )</p>
                 <Field type="text" name="tender_procurementMethodType" className={styles.inputGlobal} />
                 <ErrorMessage name="tender_procurementMethodType" component="span" className={styles.errorGlobal} />
 
-                <p>Старт</p>
+                <p>Старт ( 2020 )</p>
                 <Field type="text" name="tenderPeriod_startDate" className={styles.inputGlobal} />
                 <ErrorMessage name="tenderPeriod_startDate" component="span" className={styles.errorGlobal} />
 
-                <button type="submit" disabled={isSubmitting} className={styles.buttonGlobal}>Submit</button>
+                <button type="submit" disabled={isSubmitting} className={styles.buttonMainGlobal}>Submit</button>
               </div>
             </Form>
           )}

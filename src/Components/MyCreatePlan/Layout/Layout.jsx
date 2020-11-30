@@ -25,7 +25,6 @@ const Layout = () => {
   const items = JSON.stringify([{
     description: 'Насіння гірчиці', classification: { scheme: 'ДК021', description: 'Mustard seeds', id: '44617100-9' }, additionalClassifications: [{ scheme: 'ДКПП', id: '01.11.92', description: 'Насіння гірчиці' }], deliveryDate: { endDate: '2019-04-12T06:47:09.005262' }, unit: { code: 'KGM', name: 'кг' }, quantity: 1000,
   }]);
-  console.log(buyers, items);
   console.log(planData, isPlanData);
 
   const SignupSchema = Yup.object().shape({

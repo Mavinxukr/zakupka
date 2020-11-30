@@ -11,6 +11,7 @@ import { regions } from './getRegions';
 import { getIdentifier } from './getIdentifier';
 import { createPlan } from './createPlan';
 import { createTender } from './createTender';
+import { getPlansByCompanyReducer } from './getPlansByCompanyReducer';
 
 export default combineReducers({
   currentUser,
@@ -25,4 +26,5 @@ export default combineReducers({
   getIdentifier,
   createPlan,
   createTender,
+  getPlansByCompanyReducer,
 });

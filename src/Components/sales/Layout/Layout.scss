@@ -11,13 +11,12 @@
 //Tabs
 .buttonTabs{
   position: absolute;
-  top: -49px;
+  top: -48px;
 }
 
 .tab{
   display: inline-flex;
   align-items: center;
-  background-color: $colorWhite;
   height: 50px;
   border: 1px solid $colorBorder;
   padding: 0 20px 0 20px;

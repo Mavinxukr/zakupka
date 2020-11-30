@@ -21,16 +21,47 @@ const MenuPurchaser = () => (
             to="/create_tender_proto"
             exact
           >
-            Створити закупівлю (прототип який працює)
+            Створити закупівлю (Прототип який працює)
           </NavLink>
         </div>
         <div>
-          <NavLink
-            to="/create_plan"
-            exact
-          >
-            Створити план
-          </NavLink>
+          Плани закупівель
+          <ul className={styles.showBlock}>
+            <li>
+              <NavLink
+                to="/create_plan"
+                exact
+                className={styles.item}
+              >
+                Створити план
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/create_plan_old"
+                exact
+                className={styles.item}
+              >
+                Створити план (Оригінал що має вигляд)
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/procurement_plans"
+                exact
+                className={styles.item}
+              >Плани закупівель
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/my_procurement_plans"
+                exact
+                className={styles.item}
+              >Мої плани закупівель
+              </NavLink>
+            </li>
+          </ul>
         </div>
         <div>
           Публічні закупівлі
@@ -41,14 +72,6 @@ const MenuPurchaser = () => (
                 exact
                 className={styles.item}
               >Закупівлі
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/my_plane_sales"
-                exact
-                className={styles.item}
-              >Мої плани закупівель
               </NavLink>
             </li>
             <li>

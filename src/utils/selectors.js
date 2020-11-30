@@ -119,3 +119,13 @@ export const createTenderReceivedSelector = createSelector(
   (state) => state.createTender.isDataReceived,
   (isDataReceived) => isDataReceived,
 );
+
+export const plansByCompanySelector = createSelector(
+  (state) => state.getPlansByCompanyReducer.myPlansData,
+  (myPlansData) => myPlansData,
+);
+
+export const plansByCompanyReceivedSelector = createSelector(
+  (state) => state.getPlansByCompanyReducer.isDataReceived,
+  (isDataReceived) => isDataReceived,
+);

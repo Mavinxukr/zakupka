@@ -7,7 +7,7 @@ import { plansByCompanyReceivedSelector, plansByCompanySelector } from '../../ut
 import { plansByCompany } from '../../redux/actions/plansByCompany';
 import Spinner from '../shared/Spinner';
 import WarningAttention from '../shared/Warnings/WarningAttention/WarningAttention';
-import Paginate from '../shared/Paginate/Paginate';
+import Paginate from '../shared/Paginate/Paginate/Paginate';
 
 const PlansByCompany = () => {
   const dispatch = useDispatch();

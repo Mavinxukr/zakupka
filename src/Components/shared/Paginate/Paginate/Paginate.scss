@@ -1,0 +1,68 @@
+@import '../../../../index';
+
+.paginateBlock{
+  width: 100%;
+  display: flex;
+  margin: 20px auto;
+}
+.paginateActive{
+  background-color: $colorMain;
+}
+.nextButton path{
+  fill: $colorMain;
+}
+.previousButton path{
+  fill: $colorMain;
+}
+.mainBlock{
+  display: flex;
+  width: 100%;
+}
+.pageClassName{
+  background-color: #00a1cdaa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 600;
+  width: 100%;
+  height: 100%;
+  border: 1px solid $colorBorder;
+  &:hover{
+    background-color: #00a1cd;
+    cursor: pointer;
+  }
+
+}
+.pageLinkClassName{
+  color: #ffffff;
+  text-align: center;
+}
+.activeLinkClassName{
+  background-color: #00a1cd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 600;
+  width: 100%;
+  height: 100%;
+}
+.previousLinkClassName,.nextLinkClassName{
+  display: block;
+  width: 50px;
+  height: 50px;
+  z-index: 100;
+  margin: 0 10px;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  &:focus{
+    border: none;
+  }
+}
+
+.previousLinkClassName:hover .previousButton path{
+  fill: rgba(50, 150, 177, 0.780392);
+}
+

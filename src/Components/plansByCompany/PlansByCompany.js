@@ -2,12 +2,12 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import cookies from 'js-cookie';
 import { NavLink } from 'react-router-dom';
-import ReactPaginate from 'react-paginate';
 import styles from './PlansByCompany.scss';
 import { plansByCompanyReceivedSelector, plansByCompanySelector } from '../../utils/selectors';
 import { plansByCompany } from '../../redux/actions/plansByCompany';
 import Spinner from '../shared/Spinner';
 import WarningAttention from '../shared/Warnings/WarningAttention/WarningAttention';
+import Paginate from '../shared/Paginate/Paginate';
 
 const PlansByCompany = () => {
   const dispatch = useDispatch();
@@ -101,19 +101,7 @@ const PlansByCompany = () => {
             </div>
           );
         })}
-        <div className="commentBox">
-          <ReactPaginate
-            previousLabel="previous"
-            nextLabel="next"
-            breakLabel="..."
-            breakClassName="break-me"
-            marginPagesDisplayed={2}
-            pageRangeDisplayed={5}
-            containerClassName="pagination"
-            subContainerClassName="pages pagination"
-            activeClassName="active"
-          />
-        </div>
+        <Paginate />
       </div>
     </div>
   );

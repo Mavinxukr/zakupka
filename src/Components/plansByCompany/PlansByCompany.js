@@ -1,43 +1,42 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import cookies from 'js-cookie';
 import { NavLink } from 'react-router-dom';
-import { getPlans } from '../../../redux/actions/plans';
-import { plansDataSelector, plansDataReceivedSelector } from '../../../utils/selectors';
-import MenuPurchaser from '../../shared/MenuPurchaser/MenuPurchaser';
-import WarningAttention from '../../shared/Warnings/WarningAttention/WarningAttention';
-import styles from './Layout.scss';
-import Spinner from '../../shared/Spinner';
+import ReactPaginate from 'react-paginate';
+import styles from './PlansByCompany.scss';
+import { plansByCompanyReceivedSelector, plansByCompanySelector } from '../../utils/selectors';
+import { plansByCompany } from '../../redux/actions/plansByCompany';
+import Spinner from '../shared/Spinner';
+import WarningAttention from '../shared/Warnings/WarningAttention/WarningAttention';
 
-const Layout = () => {
+const PlansByCompany = () => {
   const dispatch = useDispatch();
-  const plans = useSelector(plansDataSelector);
-  const isDataReceived = useSelector(plansDataReceivedSelector);
+  const plansData = useSelector(plansByCompanySelector);
+  const isDataReceived = useSelector(plansByCompanyReceivedSelector);
 
   useEffect(() => {
-    dispatch(getPlans({}));
+    dispatch(plansByCompany({}, cookies.get('tokenProzorro')));
   }, []);
 
   if (!isDataReceived) {
     return <Spinner />;
   }
+
+  console.log(isDataReceived, plansData);
+
   return (
     <div className={styles.section}>
-      <MenuPurchaser />
       <div className={styles.container}>
-        <h2>Плани закупівель </h2>
+        <h2>Мої плани закупівель </h2>
         <div className={styles.titleTable}>
           <h3 className={styles.smallTitleGlobal}>Назва плану</h3>
           <h3 className={styles.smallTitleGlobal}>Планова сума закупівлі</h3>
           <h3 className={styles.smallTitleGlobal}>Початок процедури</h3>
           <h3 className={styles.smallTitleGlobal}>Статус</h3>
         </div>
-        {plans.data.map((item) => {
+        {plansData.data.data.map((item) => {
           const d = new Date(item.start_tenderPeriod);
-          // console.log(item.id);
           const itemPlans = JSON.parse(item.plans);
-
-          // console.log('itemPlans', itemPlans);
-
           const options = {
             month: 'long',
             year: 'numeric',
@@ -67,29 +66,57 @@ const Layout = () => {
                   </NavLink>
                   <div>
                     <span>Про компанію: </span>
-                    <span className={styles.smallBoldTextGlobal}>{itemPlans.procuringEntity.identifier.legalName}</span>
+                    <span
+                      className={styles.smallBoldTextGlobal}
+                    >{itemPlans.procuringEntity.identifier.legalName}
+                    </span>
                   </div>
                 </div>
                 <span className={styles.smallBoldTextGlobal}>{item.expected_cost}грн.</span>
                 <span>{d.toLocaleDateString('uk-UA', options)}</span>
                 <div>
                   {
-                     statusSwitch(itemPlans.status)
-                   }
-                  { itemPlans.status !== 'complete' ? (
+                    statusSwitch(itemPlans.status)
+                  }
+                  {itemPlans.status !== 'complete' ? (
                     <WarningAttention value="необхідний ЕЦП/КЕП" classWrapper={styles.attention}>
                       <div className={styles.circleWarningGlobal}>!</div>
                     </WarningAttention>
-                  ) : null }
+                  ) : null}
 
                 </div>
               </div>
+              <NavLink
+                to="cancel_my_plan"
+                className={styles.buttonMainGlobal}
+              >
+                Змінити план
+              </NavLink>
+              <NavLink
+                to="cancel_my_plan"
+                className={styles.buttonGlobal}
+              >
+                Скасувати процедуру
+              </NavLink>
             </div>
           );
         })}
+        <div className="commentBox">
+          <ReactPaginate
+            previousLabel="previous"
+            nextLabel="next"
+            breakLabel="..."
+            breakClassName="break-me"
+            marginPagesDisplayed={2}
+            pageRangeDisplayed={5}
+            containerClassName="pagination"
+            subContainerClassName="pages pagination"
+            activeClassName="active"
+          />
+        </div>
       </div>
     </div>
   );
 };
 
-export default Layout;
+export default PlansByCompany;

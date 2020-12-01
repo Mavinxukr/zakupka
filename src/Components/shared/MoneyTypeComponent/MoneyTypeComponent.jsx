@@ -5,6 +5,7 @@ import cookies from 'js-cookie';
 import styles from './MoneyTypeComponent.scss';
 import { getMoneyType } from '../../../redux/actions/moneyType';
 import { moneyTypeDataReceivedSelector, moneyTypeDataSelector } from '../../../utils/selectors';
+import Spinner from '../Spinner';
 
 const MoneyTypeComponent = () => {
   const dispatch = useDispatch();
@@ -16,7 +17,7 @@ const MoneyTypeComponent = () => {
   }, []);
 
   if (!isReceived) {
-    return <div />;
+    return <Spinner />;
   }
 
   return (

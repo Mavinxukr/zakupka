@@ -15,6 +15,7 @@ import { getRegions } from '../../../../redux/actions/getRegions';
 import { userCompanyPost } from '../../../../services/userCompanyPost';
 import { getIdentifier } from '../../../../redux/actions/getIdentifier';
 import styles from './Layout.scss';
+import Spinner from '../../../shared/Spinner';
 
 const Layout = () => {
   const dispatch = useDispatch();
@@ -43,7 +44,7 @@ const Layout = () => {
   }, []);
 
   if (!isReceivedCompanyType || !isReceivedRegions || !isReceivedCountry) {
-    return <div />;
+    return <Spinner />;
   }
 
   console.log(countryData);

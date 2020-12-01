@@ -7,7 +7,7 @@ const initialState = {
   error: null,
 };
 
-export const getPlansByCompanyReducer = (state = initialState, action) => {
+export const plansByCompany = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.plansByCompany.request:
       return {

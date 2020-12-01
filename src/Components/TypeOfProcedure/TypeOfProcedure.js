@@ -5,6 +5,7 @@ import BlockForm from '../shared/BlockForm/BlockForm';
 import { getTendersType } from '../../redux/actions/getTendersType';
 import styles from './TypeOfProcedure.scss';
 import { tendersTypeDataReceivedSelector, tendersTypeDataSelector } from '../../utils/selectors';
+import Spinner from '../shared/Spinner';
 
 const TypeOfProcedure = () => {
   const dispatch = useDispatch();
@@ -16,7 +17,7 @@ const TypeOfProcedure = () => {
   }, []);
 
   if (!isReceived) {
-    return <div />;
+    return <Spinner />;
   }
 
   return (

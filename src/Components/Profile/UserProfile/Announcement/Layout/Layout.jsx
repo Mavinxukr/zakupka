@@ -12,6 +12,7 @@ import MenuPurchaser from '../../../../shared/MenuPurchaser/MenuPurchaser';
 import styles from './Layout.scss';
 import { tendersDataReceivedSelector, tendersDataSelector } from '../../../../../utils/selectors';
 import { getTenders } from '../../../../../redux/actions/tenders';
+import Spinner from '../../../../shared/Spinner';
 
 const Layout = () => {
   const dispatch = useDispatch();
@@ -23,7 +24,7 @@ const Layout = () => {
   }, []);
 
   if (!isDataReceived) {
-    return <div />;
+    return <Spinner />;
   }
 
   return (

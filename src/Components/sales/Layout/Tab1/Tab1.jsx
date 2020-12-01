@@ -5,6 +5,7 @@ import { getTenders } from '../../../../redux/actions/tenders';
 import Card from '../../../shared/Card/Card';
 import Filter from '../../../shared/Filters/Filters';
 import styles from './Tab1.scss';
+import Spinner from '../../../shared/Spinner';
 
 const Tab1 = () => {
   const dispatch = useDispatch();
@@ -16,7 +17,7 @@ const Tab1 = () => {
   }, []);
 
   if (!isDataReceived) {
-    return <div />;
+    return <Spinner />;
   }
 
   return (

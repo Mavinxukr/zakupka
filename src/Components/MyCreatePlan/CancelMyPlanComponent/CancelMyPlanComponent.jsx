@@ -1,6 +1,7 @@
 import React from 'react';
 import { Field, Formik } from 'formik';
 import * as Yup from 'yup';
+import { NavLink } from 'react-router-dom';
 import styles from './CancelMyPlanComponent.scss';
 
 const CancelMyPlanComponent = () => (
@@ -28,8 +29,18 @@ const CancelMyPlanComponent = () => (
               <p className={styles.error}>{formik.errors.warning}</p>
             )}
             <div className={styles.buttonBlock}>
-              <button type="button" className={styles.buttonMainGlobal}>Почати процедуру</button>
-              <button type="button" className={styles.buttonGlobal}>Відміна скасування</button>
+              <NavLink
+                to="/my_procurement_plans"
+                className={styles.buttonMainGlobal}
+              >
+                Почати процедуру
+              </NavLink>
+              <NavLink
+                to="/my_procurement_plans"
+                className={styles.buttonGlobal}
+              >
+                Відміна скасування
+              </NavLink>
             </div>
           </form>
         )}

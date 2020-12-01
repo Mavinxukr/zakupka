@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { classifierCodeDataReceivedSelector, classifierCodeDataSelector } from '../../utils/selectors';
 import { getClassifierCode } from '../../redux/actions/classifierCode';
+import Spinner from '../shared/Spinner';
 import styles from './ClassifierCode.scss';
 
 const ClassifierCode = () => {
@@ -14,7 +15,7 @@ const ClassifierCode = () => {
   }, []);
 
   if (!isReceived) {
-    return <div />;
+    return <Spinner />;
   }
   const dataParse = JSON.parse(data[0].get_data.data);
   const arrDataParse = Object.keys(dataParse).map((item) => ({

@@ -1,17 +1,17 @@
 import * as actionTypes from './actionTypes';
 
-export const getPlansByCompany = (params, cookies) => ({
+export const plansByCompany = (params, cookies) => ({
   type: actionTypes.plansByCompany.request,
   cookies,
   params,
 });
 
-export const getPlansByCompanySuccess = (body) => ({
+export const plansByCompanySuccess = (body) => ({
   type: actionTypes.plansByCompany.success,
   body,
 });
 
-export const getPlansByCompanyError = (error) => ({
+export const plansByCompanyError = (error) => ({
   type: actionTypes.plansByCompany.error,
   error,
 });

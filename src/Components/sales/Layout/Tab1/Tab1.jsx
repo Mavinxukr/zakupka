@@ -11,7 +11,6 @@ const Tab1 = () => {
   const dispatch = useDispatch();
   const tenders = useSelector(tendersDataSelector);
   const isDataReceived = useSelector(tendersDataReceivedSelector);
-
   useEffect(() => {
     dispatch(getTenders({}));
   }, []);

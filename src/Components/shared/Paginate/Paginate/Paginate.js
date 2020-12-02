@@ -5,13 +5,23 @@ import IconPrevious from '../../../../static/svg/left.svg';
 import styles from './Paginate.scss';
 import BlockTo from '../BlockTo/BlockTo';
 
-const Paginate = () => (
+const Paginate = ({ pageCount, initialPage, router }) => (
   <div className={styles.paginateBlock}>
     <ReactPaginate
+      onPageChange={(data) => {
+        router.push(
+          {
+            pathname: router.location.pathname,
+            search: `?page=${data.selected + 1}`,
+          },
+        );
+      }}
+      initialPage={initialPage - 1}
+      pageCount={pageCount}
       previousLabel={<IconPrevious />}
       nextLabel={<IconNext />}
       breakLabel={<BlockTo />}
-      marginPagesDisplayed={0}
+      marginPagesDisplayed={7}
       pageRangeDisplayed={10}
       containerClassName={styles.mainBlock}
       activeClassName={styles.paginateActive}
@@ -22,7 +32,6 @@ const Paginate = () => (
       activeLinkClassName={styles.activeLinkClassName}
       previousLinkClassName={styles.previousLinkClassName}
       nextLinkClassName={styles.nextLinkClassName}
-      disabledClassName={styles.disabledClassName}
     />
   </div>
 );

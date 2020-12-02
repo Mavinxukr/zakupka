@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import cookies from 'js-cookie';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import styles from './PlansByCompany.scss';
 import { plansByCompanyReceivedSelector, plansByCompanySelector } from '../../utils/selectors';
 import { plansByCompany } from '../../redux/actions/plansByCompany';
@@ -10,6 +10,7 @@ import WarningAttention from '../shared/Warnings/WarningAttention/WarningAttenti
 import Paginate from '../shared/Paginate/Paginate/Paginate';
 
 const PlansByCompany = () => {
+  const router = useHistory();
   const dispatch = useDispatch();
   const plansData = useSelector(plansByCompanySelector);
   const isDataReceived = useSelector(plansByCompanyReceivedSelector);
@@ -18,11 +19,14 @@ const PlansByCompany = () => {
     dispatch(plansByCompany({}, cookies.get('tokenProzorro')));
   }, []);
 
+  useEffect(() => {
+    const activePage = router.location.search.split('=');
+    dispatch(plansByCompany({ page: activePage[1] }, cookies.get('tokenProzorro')));
+  }, [router.location.search]);
+
   if (!isDataReceived) {
     return <Spinner />;
   }
-
-  console.log(isDataReceived, plansData);
 
   return (
     <div className={styles.section}>
@@ -41,6 +45,7 @@ const PlansByCompany = () => {
             month: 'long',
             year: 'numeric',
           };
+          console.log(itemPlans.budget.project.name);
           const statusSwitch = (status) => {
             switch (status) {
               case 'scheduled':
@@ -62,7 +67,7 @@ const PlansByCompany = () => {
                     exact
                     className={styles.normalBlueTextGlobal}
                   >
-                    {itemPlans.budget.description}
+                    {itemPlans.budget.project.name}
                   </NavLink>
                   <div>
                     <span>Про компанію: </span>
@@ -101,7 +106,12 @@ const PlansByCompany = () => {
             </div>
           );
         })}
-        <Paginate />
+        <Paginate
+          router={router}
+          pageCount={plansData.data.last_page}
+          initialPage={plansData.data.current_page}
+          nextPage={plansData.data.next_page_url}
+        />
       </div>
     </div>
   );

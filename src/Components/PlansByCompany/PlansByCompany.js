@@ -92,7 +92,7 @@ const PlansByCompany = () => {
                 </div>
               </div>
               <NavLink
-                to="cancel_my_plan"
+                to={`update_plan/${item.id}`}
                 className={styles.buttonMainGlobal}
               >
                 Змінити план

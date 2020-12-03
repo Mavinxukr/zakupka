@@ -7,6 +7,7 @@ import MenuPurchaser from '../../shared/MenuPurchaser/MenuPurchaser';
 import WarningAttention from '../../shared/Warnings/WarningAttention/WarningAttention';
 import styles from './Layout.scss';
 import Spinner from '../../shared/Spinner';
+import Footer from '../../shared/Footer/Footer';
 
 const Layout = () => {
   const dispatch = useDispatch();
@@ -88,6 +89,7 @@ const Layout = () => {
           );
         })}
       </div>
+      <Footer />
     </div>
   );
 };

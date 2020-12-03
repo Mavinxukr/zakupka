@@ -29,7 +29,6 @@ import CancelMyPlan from './Pages/Plans/CencelMyPlan/CancelMyPlane';
 import NewComplains from './Pages/Complaints/NewComplains/NewComplains';
 import Ask from './Pages/Purchases/Purchases-Quetions/Ask/Ask';
 import CancelComplains from './Pages/Complaints/CancelComplains/CancelComplains';
-// import PlanInfo from './Pages/Plans/PlanInfo/PlanInfo';
 import Tracking from './Pages/Complaints/Tracking/Tracking';
 import AllComplaints from './Pages/Complaints/AllComplaints/AllComplaints';
 import UserCompanyData from './Pages/Profile/UserProfile/UserCompanyData/UserCompanyData';
@@ -37,6 +36,7 @@ import UserCompanyRoom from './Pages/Profile/UserProfile/UserCompanyRoom/UserCom
 import CreateTenderProto from './Components/PlanOfSales/create-tender-proto/CreateTenderProto';
 import OldCreatePlan from './Components/MyCreatePlan/OldCreatePlane';
 import MyProcurementPlans from './Pages/Plans/MyProcurementPlans/MyProcurementPlans';
+import UpdatePlan from './Pages/Plans/UpdatePlan/UpdatePlan';
 
 const App = () => (
   <Switch>
@@ -51,9 +51,10 @@ const App = () => (
     <Route exact path="/profile_participate" component={Participate} />
     <Route exact path="/profile_planing" component={Planing} />
     <Route exact path="/plane_of_sales" component={CreateTender} />
+    <Route exact path="/update_plan/:id" component={UpdatePlan} />
     <Route exact path="/procurement_plans" component={ProcurementPlans} />
     <Route exact path="/my_procurement_plans" component={MyProcurementPlans} />
-    {/* <Route exact path="/my_procurement_plans/:id" component={PlanInfo} /> */}
+    <Route exact path="/update_plan" component={UpdatePlan} />
     <Route exact path="/create_plan" component={CreatePlan} />
     <Route exact path="/create_plan_old" component={OldCreatePlan} />
     <Route exact path="/create_tender" component={CreateTender} />
@@ -77,7 +78,6 @@ const App = () => (
     <Route exact path="/classifier" component={Classifier} />
     <Route exact path="/user_company_data" component={UserCompanyData} />
     <Route exact path="/user_company_room" component={UserCompanyRoom} />
-    {/* <Route exact path="/user_company_structure" component={CompanyStructure} /> */}
   </Switch>
 );
 

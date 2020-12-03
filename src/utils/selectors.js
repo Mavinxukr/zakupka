@@ -129,3 +129,13 @@ export const plansByCompanyReceivedSelector = createSelector(
   (state) => state.plansByCompany.isDataReceived,
   (isDataReceived) => isDataReceived,
 );
+
+export const getPlanSelector = createSelector(
+  (state) => state.getPlan.planUpdate,
+  (planUpdate) => planUpdate,
+);
+
+export const getPlanReceivedSelector = createSelector(
+  (state) => state.getPlan.isDataReceived,
+  (isDataReceived) => isDataReceived,
+);

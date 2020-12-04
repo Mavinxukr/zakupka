@@ -2,9 +2,9 @@ import { call, put, takeLatest } from 'redux-saga/effects';
 import {
   getPlanSuccess,
   getPlanError,
-} from '../actions/getPlan';
-import { getPlanRequest } from '../../services/getPlan';
-import * as actionTypes from '../actions/actionTypes';
+} from '../../actions/getPlan';
+import { getPlanRequest } from '../../../services/getPlan';
+import * as actionTypes from '../../actions/actionTypes';
 
 function* getPlan({ params, id }) {
   const response = yield call(getPlanRequest, params, id);

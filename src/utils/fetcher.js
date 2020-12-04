@@ -25,4 +25,5 @@ export const Fetch = {
   get: Fetcher('GET'),
   post: Fetcher('POST'),
   delete: Fetcher('DELETE'),
+  patch: Fetcher('PATCH'),
 };

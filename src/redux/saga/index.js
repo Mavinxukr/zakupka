@@ -2,7 +2,7 @@ import { all } from 'redux-saga/effects';
 import { watchGetCurrentUser } from './userData/getCurrentUser';
 import { watchLogout } from './userData/logout';
 import { watchGetTenders } from './getTenders';
-import { watchGetPlans } from './getPlans';
+import { watchGetPlans } from './plans/getPlans';
 import { watchMoneyType } from './getMoneyType';
 import { watchClassifierCodeData } from './classifierCode';
 import { watchGetTendersType } from './tendersType';
@@ -12,7 +12,8 @@ import { watchGetIdentifier } from './getIdentifier';
 import { watchCreatePlan } from './plans/createPlan';
 import { watchCreateTender } from './tenders/createTender';
 import { watchPlansByCompany } from './plansByCompany';
-import { watchGetPlan } from './getPlan';
+import { watchGetPlan } from './plans/getPlan';
+import { watchUpdatePlan } from './plans/updatePlan';
 
 export function* rootSaga() {
   yield all([
@@ -30,5 +31,6 @@ export function* rootSaga() {
     watchCreateTender(),
     watchPlansByCompany(),
     watchGetPlan(),
+    watchUpdatePlan(),
   ]);
 }

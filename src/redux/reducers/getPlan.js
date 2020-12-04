@@ -10,6 +10,7 @@ const initialState = {
 export const getPlan = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.getPlan.request:
+    case actionTypes.getPlan.update:
       return {
         ...state,
         isFetch: true,

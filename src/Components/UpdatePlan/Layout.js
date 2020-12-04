@@ -5,17 +5,19 @@ import {
 import * as Yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useHistory } from 'react-router-dom';
+import Cookies from 'js-cookie';
 import styles from './Layout.scss';
-import { getPlan } from '../../redux/actions/getPlan';
-import { createPlanReceivedSelector, createPlanSelector } from '../../utils/selectors';
+import { getPlan, planUpdate } from '../../redux/actions/getPlan';
+import { getPlanReceivedSelector, getPlanSelector } from '../../utils/selectors';
 import Footer from '../shared/Footer/Footer';
+import Spinner from '../shared/Spinner';
 
 const Layout = () => {
   const router = useHistory();
   const id = router.location.pathname.split('/')[2];
   const dispatch = useDispatch();
-  const planData = useSelector(createPlanSelector);
-  const isPlanData = useSelector(createPlanReceivedSelector);
+  const getPlanData = useSelector(getPlanSelector);
+  const isPlanData = useSelector(getPlanReceivedSelector);
   const buyers = JSON.stringify([{
     kind: 'general',
     identifier: { scheme: 'UA-EDR', id: '33455365', legalName: 'КП Ромашка тест' },
@@ -27,7 +29,6 @@ const Layout = () => {
   const items = JSON.stringify([{
     description: 'Насіння гірчиці', classification: { scheme: 'ДК021', description: 'Mustard seeds', id: '44617100-9' }, additionalClassifications: [{ scheme: 'ДКПП', id: '01.11.92', description: 'Насіння гірчиці' }], deliveryDate: { endDate: '2019-04-12T06:47:09.005262' }, unit: { code: 'KGM', name: 'кг' }, quantity: 1000,
   }]);
-  console.log(planData, isPlanData);
 
   const SignupSchema = Yup.object().shape({
     classification_scheme: Yup.string()
@@ -64,6 +65,12 @@ const Layout = () => {
     dispatch(getPlan({}, id));
   }, []);
 
+  console.log(id);
+  if (!isPlanData) {
+    return <Spinner />;
+  }
+  const dataPlan = JSON.parse(getPlanData.plans);
+
   return (
     <>
       <div className={styles.containerGlobal}>
@@ -71,27 +78,27 @@ const Layout = () => {
         <Formik
           initialValues={
                         {
-                          classification_scheme: 'ДК021',
-                          classification_description: 'футляри до державних нагород',
-                          classification_id: '44617100-9',
-                          budget_amountNet: '80000',
-                          budget_description: '123',
-                          budget_period_startDate: '2020',
-                          budget_period_endDate: '2020',
-                          project_name: '123',
-                          project_id: '123',
-                          currency: 'UAH',
-                          amount: '60000',
-                          budget_id: '12303111000-2',
-                          tender_procurementMethodType: 'belowThreshold',
-                          tenderPeriod_startDate: '2020',
+                          classification_scheme: dataPlan.classification.scheme,
+                          classification_description: dataPlan.classification.description,
+                          classification_id: dataPlan.classification.id,
+                          amount: dataPlan.budget.amount,
+                          budget_amountNet: dataPlan.budget.amountNet,
+                          budget_description: dataPlan.budget.description,
+                          budget_period_startDate: dataPlan.budget.period.startDate,
+                          budget_period_endDate: dataPlan.budget.period.endDate,
+                          project_name: dataPlan.budget.project.name,
+                          project_id: dataPlan.budget.project.id,
+                          currency: dataPlan.budget.currency,
+                          budget_id: dataPlan.budget.id,
+                          tender_procurementMethodType: dataPlan.tender.procurementMethodType,
+                          tenderPeriod_startDate: dataPlan.tender.tenderPeriod.startDate,
                           buyers,
                           items,
                         }
                     }
           validationSchema={SignupSchema}
           onSubmit={(values) => {
-            dispatch(getPlan({}, id, { ...values }));
+            dispatch(planUpdate({}, Cookies.get('tokenProzorro'), id, { ...values }));
           }}
         >
           {({ isSubmitting }) => (
@@ -164,7 +171,7 @@ const Layout = () => {
                     to="/my_procurement_plans?page=1"
                   >
                     <button
-                      type="submit"
+                      type="button"
                       className={styles.buttonMainGlobal}
                     >
                       Відмінити зміни

@@ -6,6 +6,14 @@ export const getPlan = (params, id) => ({
   params,
 });
 
+export const planUpdate = (params, cookies, id, body) => ({
+  type: actionTypes.getPlan.update,
+  id,
+  params,
+  cookies,
+  body,
+});
+
 export const getPlanSuccess = (body) => ({
   type: actionTypes.getPlan.success,
   body,

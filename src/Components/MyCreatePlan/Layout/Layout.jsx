@@ -65,25 +65,25 @@ const Layout = () => {
         <h2>Створити план</h2>
         <Formik
           initialValues={
-            {
-              classification_scheme: 'ДК021',
-              classification_description: 'футляри до державних нагород',
-              classification_id: '44617100-9',
-              budget_amountNet: '80000',
-              budget_description: '123',
-              budget_period_startDate: '2020',
-              budget_period_endDate: '2020',
-              project_name: '123',
-              project_id: '123',
-              currency: 'UAH',
-              amount: '60000',
-              budget_id: '12303111000-2',
-              tender_procurementMethodType: 'belowThreshold',
-              tenderPeriod_startDate: '2020',
-              buyers,
-              items,
-            }
-          }
+                {
+                  classification_scheme: 'ДК021',
+                  classification_description: 'футляри до державних нагород',
+                  classification_id: '44617100-9',
+                  budget_amountNet: '80000',
+                  budget_description: '123',
+                  budget_period_startDate: '2020',
+                  budget_period_endDate: '2020',
+                  project_name: '123',
+                  project_id: '123',
+                  currency: 'UAH',
+                  amount: '60000',
+                  budget_id: '12303111000-2',
+                  tender_procurementMethodType: 'belowThreshold',
+                  tenderPeriod_startDate: '2020',
+                  buyers,
+                  items,
+                }
+              }
           validationSchema={SignupSchema}
           onSubmit={(values) => {
             dispatch(createPlan({}, Cookies.get('tokenProzorro'), { ...values }));
@@ -148,7 +148,13 @@ const Layout = () => {
                 <Field type="text" name="tenderPeriod_startDate" className={styles.inputGlobal} />
                 <ErrorMessage name="tenderPeriod_startDate" component="span" className={styles.errorGlobal} />
 
-                <button type="submit" disabled={isSubmitting} className={styles.buttonMainGlobal}>Submit</button>
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className={styles.buttonMainGlobal}
+                >
+                  Створити план
+                </button>
               </div>
             </Form>
           )}
@@ -157,5 +163,4 @@ const Layout = () => {
     </>
   );
 };
-
 export default Layout;

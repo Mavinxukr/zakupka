@@ -51,8 +51,10 @@ h2{
   border-radius: 5px;
   margin: 5px 0;
   border: 1px solid $colorBorder;
-  &:last-child{
-    margin-bottom: 100px;
+  &:hover{
+    cursor: pointer;
+    -webkit-box-shadow: -1px 3px 18px -3px #000000;
+    box-shadow: -1px 3px 18px -3px #000000;
   }
 }
 .titleTable{

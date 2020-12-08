@@ -65,7 +65,6 @@ const Layout = () => {
     dispatch(getPlan({}, id));
   }, []);
 
-  console.log(id);
   if (!isPlanData) {
     return <Spinner />;
   }

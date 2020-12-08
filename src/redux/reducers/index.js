@@ -13,6 +13,7 @@ import { createPlan } from './createPlan';
 import { createTender } from './createTender';
 import { plansByCompany } from './plansByCompany';
 import { getPlan } from './getPlan';
+import { subsidiaryCompany } from './subsidiaryCompany';
 
 export default combineReducers({
   currentUser,
@@ -29,4 +30,5 @@ export default combineReducers({
   createTender,
   plansByCompany,
   getPlan,
+  subsidiaryCompany,
 });

@@ -22,3 +22,4 @@ export const createTender = generateAction('createTender');
 export const editUser = generateAction('editUser');
 export const plansByCompany = generateAction('plansByCompany');
 export const getPlan = generateAction('getPlan');
+export const subsidiaryCompany = generateAction('subsidiaryCompany');

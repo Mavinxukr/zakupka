@@ -9,7 +9,7 @@
 }
 .containerInfo{
   display: grid;
-  grid-template-columns: 400px 1fr;
+  grid-template-columns: minmax(200px,auto) 1fr;
   margin: 20px 0;
 }
 .names,.description{

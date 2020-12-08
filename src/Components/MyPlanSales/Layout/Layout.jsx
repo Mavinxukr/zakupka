@@ -34,11 +34,7 @@ const Layout = () => {
         </div>
         {plans.data.map((item) => {
           const d = new Date(item.start_tenderPeriod);
-          // console.log(item.id);
           const itemPlans = JSON.parse(item.plans);
-
-          // console.log('itemPlans', itemPlans);
-
           const options = {
             month: 'long',
             year: 'numeric',
@@ -56,36 +52,43 @@ const Layout = () => {
             }
           };
           return (
-            <div key={item.id} className={styles.card}>
-              <div className={styles.rowTable}>
-                <div className={styles.flexColumnGlobal}>
-                  <NavLink
-                    to={`/my_plane_sales/${item.id}`}
-                    exact
-                    className={styles.normalBlueTextGlobal}
-                  >
-                    {itemPlans.budget.description}
-                  </NavLink>
-                  <div>
-                    <span>Про компанію: </span>
-                    <span className={styles.smallBoldTextGlobal}>{itemPlans.procuringEntity.identifier.legalName}</span>
+            <NavLink
+              to={`/info_plan/${item.id}`}
+              exact
+              key={item.id}
+            >
+              <div
+                key={item.id}
+                className={styles.card}
+              >
+                <div className={styles.rowTable}>
+                  <div className={styles.flexColumnGlobal}>
+                    <p
+                      className={styles.normalBlueTextGlobal}
+                    >
+                      {itemPlans.budget.description}
+                    </p>
+                    <div>
+                      <span>Про компанію: </span>
+                      <span className={styles.smallBoldTextGlobal}>{itemPlans.procuringEntity.identifier.legalName}</span>
+                    </div>
                   </div>
-                </div>
-                <span className={styles.smallBoldTextGlobal}>{item.expected_cost}грн.</span>
-                <span>{d.toLocaleDateString('uk-UA', options)}</span>
-                <div>
-                  {
+                  <span className={styles.smallBoldTextGlobal}>{item.expected_cost}грн.</span>
+                  <span>{d.toLocaleDateString('uk-UA', options)}</span>
+                  <div>
+                    {
                      statusSwitch(itemPlans.status)
                    }
-                  { itemPlans.status !== 'complete' ? (
-                    <WarningAttention value="необхідний ЕЦП/КЕП" classWrapper={styles.attention}>
-                      <div className={styles.circleWarningGlobal}>!</div>
-                    </WarningAttention>
-                  ) : null }
+                    { itemPlans.status !== 'complete' ? (
+                      <WarningAttention value="необхідний ЕЦП/КЕП" classWrapper={styles.attention}>
+                        <div className={styles.circleWarningGlobal}>!</div>
+                      </WarningAttention>
+                    ) : null }
 
+                  </div>
                 </div>
               </div>
-            </div>
+            </NavLink>
           );
         })}
       </div>

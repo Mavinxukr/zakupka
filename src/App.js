@@ -37,6 +37,7 @@ import CreateTenderProto from './Components/PlanOfSales/create-tender-proto/Crea
 import OldCreatePlan from './Components/MyCreatePlan/OldCreatePlane';
 import MyProcurementPlans from './Pages/Plans/MyProcurementPlans/MyProcurementPlans';
 import UpdatePlan from './Pages/Plans/UpdatePlan/UpdatePlan';
+import PlanInfo from './Pages/Plans/PlanInfo/PlanInfo';
 
 const App = () => (
   <Switch>
@@ -56,6 +57,7 @@ const App = () => (
     <Route exact path="/my_procurement_plans" component={MyProcurementPlans} />
     <Route exact path="/update_plan" component={UpdatePlan} />
     <Route exact path="/create_plan" component={CreatePlan} />
+    <Route exact path="/info_plan/:id" component={PlanInfo} />
     <Route exact path="/create_plan_old" component={OldCreatePlan} />
     <Route exact path="/create_tender" component={CreateTender} />
     <Route exact path="/create_tender_proto" component={CreateTenderProto} />

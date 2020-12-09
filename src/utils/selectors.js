@@ -10,6 +10,11 @@ export const currentUserDataSelector = createSelector(
   (currentUser) => currentUser,
 );
 
+export const currentUserReceivedSelector = createSelector(
+  (state) => state.currentUser.isDataReceived,
+  (isDataReceived) => isDataReceived,
+);
+
 export const tendersDataSelector = createSelector(
   (state) => state.tenders.tendersData,
   (tendersData) => tendersData,

@@ -1,26 +1,36 @@
-import React, { useState } from 'react';
-import { Field, Formik } from 'formik';
+import React from 'react';
+import { ErrorMessage, Field, Formik } from 'formik';
+import { useDispatch } from 'react-redux';
+import cookies from 'js-cookie';
+import * as Yup from 'yup';
 import styles from './Layout.scss';
+import { editCurrentUser } from '../../../../redux/actions/currentUser';
 
 const Layout = () => {
-  const [nameCustomer, newNameCustomer] = useState('');
-  const initialValuesGlobal = {
-    name: 'Den',
-    surname: 'joe',
+  const dispatch = useDispatch();
+  const nameCustomer = {
+    name: '',
+    surname: '',
     role: 1,
-    name_customer: nameCustomer,
-  };
-  const submit = (values) => {
-    if (values.role === 2 || values.role === '2') {
-      newNameCustomer('заказчик');
-    }
+    name_customer: 'поставщик',
   };
 
   return (
     <Formik
-      initialValues={initialValuesGlobal}
+      initialValues={nameCustomer}
+      validationSchema={Yup.object({
+        name: Yup.string()
+          .required('Поле не може бути пустим'),
+        surname: Yup.string()
+          .required('Поле не може бути пустим'),
+      })}
       onSubmit={(values) => {
-        submit(values);
+        dispatch(editCurrentUser({}, cookies.get('tokenProzorro'),
+          {
+            ...values,
+            role: +values.role,
+            name_customer: +values.role === 1 ? 'поставщик' : 'закупщик',
+          }));
       }}
     >
       {(formik) => (
@@ -34,6 +44,7 @@ const Layout = () => {
               className={styles.inputGlobal}
               placeholder="Введіть ім'я"
             />
+            <ErrorMessage name="name" component="span" className={styles.errorGlobal} />
 
             <p className={styles.middleTitleGlobal}>Прізвище</p>
             <Field
@@ -42,14 +53,20 @@ const Layout = () => {
               className={styles.inputGlobal}
               placeholder="Введіть прізвище"
             />
+            <ErrorMessage name="surname" component="span" className={styles.errorGlobal} />
 
             <p className={styles.middleTitleGlobal}>Тип користувача</p>
             <Field as="select" name="role" className={styles.inputGlobal}>
-              <option value="1" name="name_customer">Постачальник</option>
-              <option value="2" name="name_customer">Замовник</option>
+              <option value="1">Постачальник</option>
+              <option value="2">Замовник</option>
             </Field>
 
-            <button type="submit" className={styles.buttonMainGlobal}>Зберегти</button>
+            <button
+              type="submit"
+              className={styles.buttonMainGlobal}
+            >
+              Зберегти
+            </button>
           </div>
         </form>
       )}

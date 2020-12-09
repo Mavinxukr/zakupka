@@ -6,10 +6,11 @@ export const getCurrentUser = (params, cookies) => ({
   cookies,
 });
 
-export const editCurrentUser = (params, body) => ({
+export const editCurrentUser = (params, cookies, body) => ({
   type: actionTypes.currentUser.update,
   params,
   body,
+  cookies,
 });
 
 export const getCurrentUserSuccess = (body) => ({

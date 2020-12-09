@@ -9,6 +9,7 @@ import styles from './Layout.scss';
 import MenuPurchaser from '../../shared/MenuPurchaser/MenuPurchaser';
 import { createPlan } from '../../../redux/actions/createPlane';
 import { createPlanReceivedSelector, createPlanSelector } from '../../../utils/selectors';
+import BlockForm from '../../shared/BlockForm/BlockForm';
 
 const Layout = () => {
   const dispatch = useDispatch();
@@ -86,6 +87,7 @@ const Layout = () => {
               }
           validationSchema={SignupSchema}
           onSubmit={(values) => {
+            console.log(values);
             dispatch(createPlan({}, Cookies.get('tokenProzorro'), { ...values }));
           }}
         >
@@ -93,7 +95,11 @@ const Layout = () => {
             <Form>
               <div className={styles.flexColumnGlobal}>
                 <p>Класификатор - название КЕКВ или ДК021</p>
-                <Field type="text" name="classification_scheme" className={styles.inputGlobal} />
+                <BlockForm
+                  name="classification_scheme"
+                >
+                  <p>nelkjl</p>
+                </BlockForm>
                 <ErrorMessage name="classification_scheme" component="span" className={styles.errorGlobal} />
 
                 <p>(Н-Р футляри до державних нагород)</p>

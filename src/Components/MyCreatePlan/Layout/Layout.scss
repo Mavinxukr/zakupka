@@ -17,6 +17,11 @@
   display: flex;
   margin-left: 12px;
 }
+.titleFormDate{
+  display: flex;
+  margin-left: 12px;
+  align-items: center;
+}
 .blockInfo{
   display: grid;
   grid-template-columns: 200px 200px;
@@ -47,7 +52,7 @@ label{
 }
 .annualPlan{
   display: grid;
-  grid-template-columns: 300px 150px;
+  grid-template-columns: 300px 250px 250px;
   grid-column-gap: 20px;
 }
 .specialName{
@@ -154,4 +159,30 @@ label{
   width: 50%;
   padding: 20px;
 
+}
+
+.buttonsBlock{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  .buttonGlobal{
+    width: 200px;
+    margin-right: 20px;
+  }
+  .buttonMainGlobal{
+    width: 200px;
+    margin-right: 20px;
+  }
+}
+
+.flexStart{
+  padding: 10px 0 0 0;
+  justify-content: flex-start;
+}
+
+.blockForm{
+  padding: 10px;
+}
+.flexRowGlobal{
+  min-width: 600px;
 }

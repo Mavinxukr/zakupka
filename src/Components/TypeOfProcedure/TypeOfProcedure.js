@@ -27,7 +27,7 @@ const TypeOfProcedure = () => {
         <span>Оберіть тип процедури</span>
         <Field
           as="select"
-          name="TypeOfProcedure"
+          name="tender_procurementMethodType"
           id="typeOfProcedure"
         >
           {

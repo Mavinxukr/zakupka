@@ -1,3 +1,6 @@
+
+/* media 1700px */
+
 @media screen and (max-width: 1700px) {
   .container {
       max-width: 1080px;
@@ -399,6 +402,8 @@
   }
 }
 
+/* media 1600px */
+
 @media screen and (max-width: 1600px) {
     .tabs {
       margin-top: 71px;
@@ -580,6 +585,8 @@
     }
 }
 
+/* media 1500px */
+
 @media screen and (max-width: 1500px){
   .logo {
     margin-left: 36px;
@@ -630,6 +637,8 @@
 
 }
 
+/* media 1440px */
+
 @media screen and (max-width: 1440px) {
   .bannerTitle,
   .h1,
@@ -659,6 +668,9 @@
   .footerInput {
     font-size: 18px;
   }
+  .homeTabs + .bg .border{
+    margin-bottom: 200px;
+  }
 
   .footerLink {
     font-size: 16px;
@@ -666,6 +678,9 @@
     margin-right: 7px;
 
   }
+}
+
+/* media 1280px */
 
 @media screen and (max-width: 1280px) {
   .bannerTitle,
@@ -697,6 +712,7 @@
   .subscribe form input::placeholder,
   .footerInput {
     font-size: 16px;
+    font-family: sans-serif;
   }
 
   .footerLink {
@@ -704,7 +720,17 @@
   }
 }
 
+/* media 950px */
+
 @media screen and (max-width: 950px){
+  .blockInfo .flex{
+    flex-wrap: wrap;
+  }
+}
+
+/* media 400px */
+
+@media screen and (max-width: 400px){
   .blockInfo .flex{
     flex-wrap: wrap;
   }

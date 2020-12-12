@@ -658,6 +658,7 @@ main {
     margin-right: 70px;
     display: flex;
     flex-direction: column;
+    font-size: 25px;
 }
 
 .slider-images .slider-mainImage{

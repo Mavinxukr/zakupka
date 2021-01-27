@@ -5,6 +5,7 @@ import { plans } from './plans';
 import { onePlan } from './onePlan';
 import { moneyType } from './moneyType';
 import { classifierCode } from './classifierCode';
+import { classification } from './classification';
 import { tendersType } from './getTendersType';
 import { companyType } from './getCompanyType';
 import { regions } from './getRegions';
@@ -22,6 +23,7 @@ export default combineReducers({
   onePlan,
   moneyType,
   classifierCode,
+  classification,
   tendersType,
   companyType,
   regions,

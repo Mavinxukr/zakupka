@@ -5,6 +5,7 @@ import { watchGetTenders } from './getTenders';
 import { watchGetPlans } from './plans/getPlans';
 import { watchMoneyType } from './getMoneyType';
 import { watchClassifierCodeData } from './classifierCode';
+import { watchClassificationData } from './classification';
 import { watchGetTendersType } from './tendersType';
 import { watchGetCompanyType } from './companyType';
 import { watchGetRegions } from './getRegions';
@@ -24,6 +25,7 @@ export function* rootSaga() {
     watchGetPlans(),
     watchMoneyType(),
     watchClassifierCodeData(),
+    watchClassificationData(),
     watchGetTendersType(),
     watchGetCompanyType(),
     watchGetRegions(),

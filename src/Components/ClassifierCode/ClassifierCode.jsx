@@ -13,7 +13,6 @@ const ClassifierKEKV = ({ listBuilder }) => {
   const dispatch = useDispatch();
   const data = useSelector(classifierCodeDataSelector);
   const isReceived = useSelector(classifierCodeDataReceivedSelector);
-
   useEffect(() => {
     dispatch(getClassifierCode({}));
   }, []);

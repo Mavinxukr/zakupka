@@ -14,25 +14,49 @@ import MenuPurchaser from '../../shared/MenuPurchaser/MenuPurchaser';
 // import MoneyTypeComponent from '../../shared/MoneyTypeComponent/MoneyTypeComponent';
 // import ListItems from '../../CreatePlan';
 import FormCreatPlan from './FormCreatPlan/FormCreatPlan';
+import { CreatPlanContext } from '../../../context/CreatPlanContext';
+import { useCreatPlan } from '../../../hooks/useCreatPlan.hook';
 
-const Layout = () => (
-  // const buyers = JSON.stringify([{
-  //   kind: 'general',
-  //   identifier: { scheme: 'UA-EDR', id: '33455365', legalName: 'КП Ромашка тест' },
-  //   name: 'КП Ромашка тест',
-  //   address: {
-  //     postalCode: '04074', countryName: 'Україна', streetAddress: 'вул. Горького, 2', region: 'м. Київ', locality: 'Київ',
-  //   },
-  // }]);
-  // const items = JSON.stringify([{
-  //   description: 'Насіння гірчиці', classification: { scheme: 'ДК021', description: 'Mustard seeds', id: '44617100-9' }, additionalClassifications: [{ scheme: 'ДКПП', id: '01.11.92', description: 'Насіння гірчиці' }], deliveryDate: { endDate: '2019-04-12T06:47:09.005262' }, unit: { code: 'KGM', name: 'кг' }, quantity: 1000,
-  // }]);
-  <>
-    <MenuPurchaser />
-    <div className={styles.containerGlobal}>
-      <Typography variant="h3" gutterBottom>Створити план</Typography>
-      <FormCreatPlan />
-      {/* <Formik
+const Layout = () => {
+  const {
+    tenderType,
+    selectTenderType,
+    classificatorDK,
+    selectClassificationDK,
+    classificationsKEKV,
+    addKekv,
+    removeKekv,
+  } = useCreatPlan();
+  return (
+    // const buyers = JSON.stringify([{
+    //   kind: 'general',
+    //   identifier: { scheme: 'UA-EDR', id: '33455365', legalName: 'КП Ромашка тест' },
+    //   name: 'КП Ромашка тест',
+    //   address: {
+    //     postalCode: '04074', countryName: 'Україна', streetAddress: 'вул. Горького, 2', region: 'м. Київ', locality: 'Київ',
+    //   },
+    // }]);
+    // const items = JSON.stringify([{
+    //   description: 'Насіння гірчиці', classification: { scheme: 'ДК021', description: 'Mustard seeds', id: '44617100-9' }, additionalClassifications: [{ scheme: 'ДКПП', id: '01.11.92', description: 'Насіння гірчиці' }], deliveryDate: { endDate: '2019-04-12T06:47:09.005262' }, unit: { code: 'KGM', name: 'кг' }, quantity: 1000,
+    // }]);
+    <CreatPlanContext.Provider
+      value={{
+        tenderType,
+        selectTenderType,
+        classificatorDK,
+        selectClassificationDK,
+        classificationsKEKV,
+        addKekv,
+        removeKekv,
+      }}
+    >
+      <MenuPurchaser />
+      <div className={styles.containerGlobal}>
+        <Typography variant="h3" gutterBottom>
+          Створити план
+        </Typography>
+        <FormCreatPlan />
+        {/* <Formik
         onSubmit={(values) => {
           console.log(values);
           dispatch(createPlan({}, Cookies.get('tokenProzorro'), { ...values }));
@@ -154,8 +178,9 @@ const Layout = () => (
           </Form>
         )}
       </Formik> */}
-    </div>
-  </>
-);
+      </div>
+    </CreatPlanContext.Provider>
+  );
+};
 
 export default Layout;

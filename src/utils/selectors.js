@@ -55,6 +55,16 @@ export const moneyTypeDataReceivedSelector = createSelector(
   (isDataReceived) => isDataReceived
 );
 
+export const classificationSelector = createSelector(
+  (state) => state.classification.classification,
+  (classification) => classification
+);
+
+export const classificationDataReceivedSelector = createSelector(
+  (state) => state.classification.isDataReceived,
+  (isDataReceived) => isDataReceived
+);
+
 export const classifierCodeDataSelector = createSelector(
   (state) => state.classifierCode.classifierData,
   (classifierCodeData) => classifierCodeData

@@ -34,7 +34,6 @@ import AllComplaints from './Pages/Complaints/AllComplaints/AllComplaints';
 import UserCompanyData from './Pages/Profile/UserProfile/UserCompanyData/UserCompanyData';
 import UserCompanyRoom from './Pages/Profile/UserProfile/UserCompanyRoom/UserCompanyRoom';
 import CreateTenderProto from './Components/PlanOfSales/create-tender-proto/CreateTenderProto';
-import OldCreatePlan from './Components/MyCreatePlan/OldCreatePlane';
 import MyProcurementPlans from './Pages/Plans/MyProcurementPlans/MyProcurementPlans';
 import UpdatePlan from './Pages/Plans/UpdatePlan/UpdatePlan';
 import PlanInfo from './Pages/Plans/PlanInfo/PlanInfo';
@@ -58,7 +57,6 @@ const App = () => (
     <Route exact path="/update_plan" component={UpdatePlan} />
     <Route exact path="/create_plan" component={CreatePlan} />
     <Route exact path="/info_plan/:id" component={PlanInfo} />
-    <Route exact path="/create_plan_old" component={OldCreatePlan} />
     <Route exact path="/create_tender" component={CreateTender} />
     <Route exact path="/create_tender_proto" component={CreateTenderProto} />
     <Route exact path="/cancel_my_plan" component={CancelMyPlan} />
@@ -76,7 +74,11 @@ const App = () => (
     <Route exact path="/complaints/tracking" component={Tracking} />
     <Route exact path="/complaints/all_complains" component={AllComplaints} />
     <Route exact path="/complaints/new_complains" component={NewComplains} />
-    <Route exact path="/complaints/cancel_complains" component={CancelComplains} />
+    <Route
+      exact
+      path="/complaints/cancel_complains"
+      component={CancelComplains}
+    />
     <Route exact path="/classifier" component={Classifier} />
     <Route exact path="/user_company_data" component={UserCompanyData} />
     <Route exact path="/user_company_room" component={UserCompanyRoom} />

@@ -9,7 +9,7 @@ import * as actionTypes from '../actions/actionTypes';
 function* getClassification({ params }) {
   const response = yield call(getClassificationRequest, params);
   if (response.status) {
-    yield put(classificationSuccess(response.data));
+    yield put(classificationSuccess(response.data[0]));
   } else {
     yield put(classificationError('error'));
   }

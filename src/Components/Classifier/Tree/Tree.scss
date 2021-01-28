@@ -6,11 +6,11 @@
   display: none;
 }
 
-.button{
-  margin-right: 10px;
+.button {
+  margin: 8px 10px 0 0;
 }
 
-.showBlock{
+.showBlock {
   display: flex;
   justify-content: center;
   margin-left: 10px;
@@ -37,11 +37,11 @@
     }
   }
 }
-.img{
+.img {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.label{
+.label {
   width: 95%;
 }

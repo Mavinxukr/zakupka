@@ -5,16 +5,11 @@ import Button from '@material-ui/core/Button';
 import { SignupSchema } from '../../../../validation/formCreatPlan';
 import styles from './FormCreatPlan.scss';
 import TypeOfProcedure from '../../../TypeOfProcedure/TypeOfProcedure';
-import ClassifierBlock from '../ClassifierBlock/ClassifierBlock';
+import ClassificationsBlock from '../ClassificationsBlock/ClassificationsBlock';
+import { CreatPlanContext } from '../../../../context/CreatPlanContext';
 
 const FormCreatPlan = () => {
-  const [tenderType, setTenderType] = React.useState(
-    'Спрощена/Допорогова закупівля'
-  );
-
-  const handleSelectChange = (event) => {
-    setTenderType(event.target.value);
-  };
+  const planContext = React.useContext(CreatPlanContext);
   return (
     <>
       <Formik
@@ -30,7 +25,7 @@ const FormCreatPlan = () => {
           currency: '',
           amount: '',
           budget_id: '',
-          tender_procurementMethodType: tenderType,
+          tender_procurementMethodType: planContext.tenderType,
         }}
         validationSchema={SignupSchema}
         onSubmit={(values, { setSubmitting }) => {
@@ -218,8 +213,11 @@ const FormCreatPlan = () => {
                 margin="normal"
                 variant="outlined"
               />
-              <TypeOfProcedure event={handleSelectChange} value={tenderType} />
-              <ClassifierBlock />
+              <TypeOfProcedure
+                event={planContext.selectTenderType}
+                value={planContext.tenderType}
+              />
+              <ClassificationsBlock />
               <div className={styles.buttonBlock}>
                 <Button
                   variant="contained"

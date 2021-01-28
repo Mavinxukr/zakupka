@@ -1,5 +1,5 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { Suspense } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Chip from '@material-ui/core/Chip';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
@@ -11,28 +11,61 @@ import cx from 'classnames';
 import Popup from '../../../shared/Popup/Popup';
 import ClassifierDK from '../../../Classifier/Classifier';
 import ClassifierKEKV from '../../../ClassifierCode/ClassifierCode';
-import {
-  createPlanReceivedSelector,
-  createPlanSelector,
-} from '../../../../utils/selectors';
-import styles from './ClassifierBlock.scss';
+import { getClassification } from '../../../../redux/actions/classification';
 
-const ClassifierBlock = () => {
+import Backdrop from '@material-ui/core/Backdrop';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import { makeStyles } from '@material-ui/core/styles';
+
+import {
+  // createPlanReceivedSelector,
+  // createPlanSelector,
+  classificationSelector,
+  classificationDataReceivedSelector,
+} from '../../../../utils/selectors';
+import styles from './ClassificationsBlock.scss';
+import { CreatPlanContext } from '../../../../context/CreatPlanContext';
+
+const useStyles = makeStyles((theme) => ({
+  backdrop: {
+    display: 'fixed',
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
+    zIndex: theme.zIndex.drawer + 1,
+    color: '#fff',
+  },
+  progress: {
+    zIndex: 9999,
+  },
+}));
+
+const ClassificationsBlock = () => {
+  const planContext = React.useContext(CreatPlanContext);
   const [value, setValue] = React.useState('dk');
-  const [openPopup, isOpenPopup] = React.useState(false);
+  const [openDK, setOpenDK] = React.useState(false);
   const [openPopupKEKV, isOpenPopupKEKV] = React.useState(false);
-  const [dataDK, isDataDK] = React.useState('');
   const [disabled, setDisabled] = React.useState({
     dk: false,
     kekv: true,
   });
+  const dispatch = useDispatch();
+  const state = useSelector(classificationSelector);
+  const isReceived = useSelector(classificationDataReceivedSelector);
+
+  React.useEffect(() => {
+    dispatch(getClassification({}));
+  }, []);
 
   const handleChange = (event) => {
     setValue(event.target.value);
   };
+  const PopUpClassificationDK = React.lazy(() =>
+    import('./PopUpClassificationDK/PopUpClassificationDK')
+  );
 
   React.useEffect(() => {
-    console.log(value);
     if (value !== 'dk') {
       setDisabled((prev) => ({ ...prev, dk: true, kekv: false }));
     } else {
@@ -40,46 +73,24 @@ const ClassifierBlock = () => {
     }
   }, [value]);
 
-  const [classiferCodeList, setClassiferCodeList] = React.useState([]);
-  const handleDelete = (ev) => console.log(ev.target.parentNode.parentNode);
-  const popupClickHandler = () => {
-    console.log(dataDK);
-  };
-  const planData = useSelector(createPlanSelector);
-  const isPlanData = useSelector(createPlanReceivedSelector);
-  console.log(planData, isPlanData);
-
-  React.useEffect(() => {
-    console.log(classiferCodeList);
-  }, [classiferCodeList]);
+  const classes = useStyles();
 
   return (
     <div className={styles.classifiersBlock}>
-      {openPopup && (
-        <Popup isOpenPopup={isOpenPopup}>
-          <div className={styles.popupHeader}>
-            <h3>Класифікатор ДК 021:2015 </h3>
-          </div>
-          <div className={styles.treeContainer}>
-            <ClassifierDK radio isDataDK={isDataDK} />
-          </div>
-          <div className={styles.buttonsBlock}>
-            <button
-              type="button"
-              onClick={popupClickHandler}
-              className={styles.buttonMainGlobal}
-            >
-              Вибрати
-            </button>
-            <button
-              type="button"
-              onClick={() => isOpenPopup((prev) => !prev)}
-              className={styles.buttonGlobal}
-            >
-              Відмінити
-            </button>
-          </div>
-        </Popup>
+      {openDK && (
+        <Suspense
+          fallback={
+            <Backdrop className={classes.backdrop} open={open}>
+              <CircularProgress className={classes.progress} color="inherit" />
+            </Backdrop>
+          }
+        >
+          <PopUpClassificationDK
+            status={openDK}
+            opening={setOpenDK}
+            data={state}
+          ></PopUpClassificationDK>
+        </Suspense>
       )}
       {openPopupKEKV && (
         <Popup isOpenPopup={isOpenPopupKEKV}>
@@ -119,7 +130,7 @@ const ClassifierBlock = () => {
         <Button
           variant="outlined"
           disabled={disabled.dk}
-          onClick={() => isOpenPopup(true)}
+          onClick={() => setOpenDK(true)}
         >
           ДК 021:2015
         </Button>
@@ -145,4 +156,4 @@ const ClassifierBlock = () => {
   );
 };
 
-export default ClassifierBlock;
+export default ClassificationsBlock;

@@ -1,0 +1,16 @@
+.LayoutSmall {
+  display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+.Сontent {
+	flex: 1 0 auto;
+}
+
+.MenuPurchaser {
+	margin: 40px 0px;
+}
+
+.Footer {
+	flex: 0 0 auto;
+}

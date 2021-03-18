@@ -32,7 +32,7 @@ import CancelComplains from './Pages/Complaints/CancelComplains/CancelComplains'
 import Tracking from './Pages/Complaints/Tracking/Tracking';
 import AllComplaints from './Pages/Complaints/AllComplaints/AllComplaints';
 import UserCompanyData from './Pages/Profile/UserProfile/UserCompanyData/UserCompanyData';
-import UserCompanyRoom from './Pages/Profile/UserProfile/UserCompanyRoom/UserCompanyRoom';
+import UserCompanyRoom from './Components/Profile/UserProfile/UserCompanyRoom/UserCompanyRoom';
 import CreateTenderProto from './Components/PlanOfSales/create-tender-proto/CreateTenderProto';
 import OldCreatePlan from './Components/MyCreatePlan/OldCreatePlane';
 import MyProcurementPlans from './Pages/Plans/MyProcurementPlans/MyProcurementPlans';

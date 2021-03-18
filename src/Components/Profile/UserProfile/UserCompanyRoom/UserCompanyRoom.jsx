@@ -3,19 +3,20 @@ import { ErrorMessage, Field, Formik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
 import cookies from 'js-cookie';
 import * as Yup from 'yup';
-import styles from './Layout.scss';
+import styles from './UserCompanyRoom.scss';
 import { editCurrentUser } from '../../../../redux/actions/currentUser';
 import { currentUserReceivedSelector } from '../../../../utils/selectors';
 import Spinner from '../../../shared/Spinner';
-import Footer from '../../../shared/Footer/Footer';
+import LayoutSmall from '../../../../Layout/LayoutSmall/LayoutSmall';
 
-const Layout = () => {
+const UserCompanyRoom = () => {
   const dispatch = useDispatch();
   const isReserved = useSelector(currentUserReceivedSelector);
 
-  if (!isReserved) {
-    return <Spinner />;
-  }
+  // if (!isReserved) {
+  //   return <Spinner />;
+  // }
+
   const nameCustomer = {
     name: '',
     surname: '',
@@ -24,7 +25,7 @@ const Layout = () => {
   };
 
   return (
-    <>
+    <LayoutSmall>
       <Formik
         initialValues={nameCustomer}
         validationSchema={Yup.object({
@@ -80,9 +81,8 @@ const Layout = () => {
           </form>
         )}
       </Formik>
-      <Footer classWrapper={styles.footerGlobal} />
-    </>
+    </LayoutSmall>
   );
 };
 
-export default Layout;
+export default UserCompanyRoom;

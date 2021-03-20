@@ -1,16 +1,20 @@
-import React from 'react'; import { Provider } from 'react-redux';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import './index.scss';
-import App from './App';
-import { store } from './redux/store';
 
-const app = (
-  <Provider store={store}>
-    <BrowserRouter>
+import App from './components/app/App.component';
+import { GlobalStyle } from './styles/GlobalStyle'
+import { ThemeProvider } from 'styled-components';
+
+import { theme } from './styles/theme';
+
+ReactDOM.render(
+  <BrowserRouter>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
       <App />
-    </BrowserRouter>
-  </Provider>
+    </ThemeProvider>
+  </BrowserRouter>,
+  document.getElementById('root')
 );
 
-ReactDOM.render(app, document.getElementById('root'));

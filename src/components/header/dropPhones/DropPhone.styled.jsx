@@ -32,6 +32,7 @@ export const DropPhoneList = styled.ul`
 export const DropPhoneItem = styled.li``;
 
 export const DropPhoneItemInfo = styled.li`
+  font-size: 13px;
   padding: 2px 10px;
 `;
 

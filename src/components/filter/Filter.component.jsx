@@ -16,26 +16,26 @@ export const Filter = () => {
       </FilterInputPosition>
       <FilterWrapper>
         <FilterBox>
-          <FilterContainerButton variant="outlined">
+          <FilterContainerButton angle variant="outlined">
             Статус
         </FilterContainerButton>
-          <FilterContainerButton variant="outlined">
+          <FilterContainerButton angle variant="outlined">
             Регіон
         </FilterContainerButton>
-          <FilterContainerButton variant="outlined">
+          <FilterContainerButton angle variant="outlined">
             ДК 021:2015
         </FilterContainerButton>
-          <FilterContainerButton variant="outlined">
+          <FilterContainerButton angle variant="outlined">
             ДКПП
         </FilterContainerButton>
-          <FilterContainerButton variant="outlined">
+          <FilterContainerButton angle variant="outlined">
             Сума контракту
         </FilterContainerButton>
-          <FilterContainerButton variant="outlined">
+          <FilterContainerButton angle variant="outlined">
             Замовник
         </FilterContainerButton>
         </FilterBox>
-        <FilterContainerButton variant="outlined">
+        <FilterContainerButton angle variant="outlined">
           Ще фільтри
         </FilterContainerButton>
       </FilterWrapper>

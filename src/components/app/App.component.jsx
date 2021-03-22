@@ -1,32 +1,12 @@
 import React from 'react';
-import MainLayout from '../../layout/mainLayout/MainLayout.component'
-import { TabListStyled, TabsStyled, TabPanelStyled, TabStyled } from '../tab/Tab.styled';
-import Filter from '../filter/Filter.component';
+import { Switch, Route } from 'react-router-dom';
+import Home from '../../pages/home/Home.component';
 
 const App = () => {
   return (
-    <MainLayout>
-      <TabsStyled>
-        <TabListStyled>
-          <TabStyled>Title 1</TabStyled>
-          <TabStyled>Title 2</TabStyled>
-          <TabStyled>Title 1</TabStyled>
-          <TabStyled>Title 2</TabStyled>
-        </TabListStyled>
-        <TabPanelStyled>
-          <Filter />
-        </TabPanelStyled>
-        <TabPanelStyled>
-          <h2>Any content 2</h2>
-        </TabPanelStyled>
-        <TabPanelStyled>
-          <h2>Any content 1</h2>
-        </TabPanelStyled>
-        <TabPanelStyled>
-          <h2>Any content 2</h2>
-        </TabPanelStyled>
-      </TabsStyled>
-    </MainLayout>
+    <Switch>
+      <Route path='/' exact component={Home} />
+    </Switch>
   )
 }
 

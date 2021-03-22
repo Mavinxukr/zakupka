@@ -10,7 +10,7 @@ export const MainLayoutWrapper = styled.div`
 `;
 
 export const MainLayoutContent = styled.div`
-  margin-top: 30px;
+  padding: 30px 0;
   flex: 1 0 auto;
 `;
 

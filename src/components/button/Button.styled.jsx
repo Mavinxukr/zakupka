@@ -1,12 +1,13 @@
 import styled, { css } from 'styled-components';
 import { rgba, darken, lighten } from 'polished';
+import { Link } from 'react-router-dom'
 
 const sharedStyles = css`
   position: relative;
   display: ${({ fullWidth }) => (fullWidth ? 'block' : 'inline-block')};
   width: ${({ fullWidth }) => (fullWidth ? '100%' : 'auto')};
   text-align: center;
-  font-size: 0.875rem;
+  font-size: 1rem;
   line-height: 1.2;
   font-weight: 300;
   text-decoration: none;
@@ -71,6 +72,17 @@ export const OutlinedButton = styled.button`
 
 export const ButtonLink = styled.button`
   ${sharedStyles};
+  color: ${({ theme, color }) => color || theme.palette.primary};
+
+  &:hover {
+    background: ${({ theme }) => rgba(theme.palette.primary, 0.05)};
+  }
+`;
+
+
+export const ButtonLinkRoute = styled(Link)`
+  ${sharedStyles};
+  display: inline;
   color: ${({ theme, color }) => color || theme.palette.primary};
 
   &:hover {

@@ -5,6 +5,7 @@ import {
   OutlinedButton,
   Icon,
   IconWrapper,
+  ButtonLinkRoute
 } from './Button.styled'
 
 const renderIcon = ({ icon, children, ...props }) => {
@@ -38,6 +39,15 @@ const Button = ({
           </OutlinedButton>
         );
       }
+
+      case 'link-router': {
+        return (
+          <ButtonLinkRoute className={className} {...props}>
+            {icon ? renderIcon({ icon, children, ...props }) : children}
+          </ButtonLinkRoute>
+        );
+      }
+
 
       default: {
         return (

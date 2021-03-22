@@ -15,6 +15,7 @@ export const theme = {
       linkBlue: colors.blue,
       white: colors.white,
       error: colors.red,
+      excretion: colors.grey[5],
     }
   }
 };

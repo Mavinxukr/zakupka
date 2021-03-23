@@ -3,56 +3,60 @@ import {
   ButtonLink,
   ContainedButton,
   OutlinedButton,
-  Icon,
-  IconWrapper,
-  ButtonLinkRoute
+  ButtonLinkRoute,
+  ContainedButtonRoute,
+  OutlinedButtonRoute
 } from './Button.styled'
-
-const renderIcon = ({ icon, children, ...props }) => {
-  return (
-    <IconWrapper>
-      <Icon src={icon} {...props} />
-      {children}
-    </IconWrapper>
-  )
-}
 
 const Button = ({
   variant = 'link',
   children,
-  icon,
-  className,
   ...props }) => {
   const buttonRender = () => {
     switch (variant) {
       case 'contained': {
         return (
-          <ContainedButton className={className} {...props}>
-            {icon ? renderIcon({ icon, children, ...props }) : children}
+          <ContainedButton {...props}>
+            {children}
           </ContainedButton>
         );
       }
       case 'outlined': {
         return (
-          <OutlinedButton className={className} {...props}>
-            {icon ? renderIcon({ icon, children, ...props }) : children}
+          <OutlinedButton {...props}>
+            {children}
           </OutlinedButton>
         );
       }
 
-      case 'link-router': {
+      case 'linkRoute': {
         return (
-          <ButtonLinkRoute className={className} {...props}>
-            {icon ? renderIcon({ icon, children, ...props }) : children}
+          <ButtonLinkRoute {...props}>
+            {children}
           </ButtonLinkRoute>
         );
       }
 
+      case 'containedRoute': {
+        return (
+          <ContainedButtonRoute {...props}>
+            {children}
+          </ContainedButtonRoute>
+        );
+      }
+
+      case 'outlinedRoute': {
+        return (
+          <OutlinedButtonRoute {...props}>
+            {children}
+          </OutlinedButtonRoute>
+        );
+      }
 
       default: {
         return (
-          <ButtonLink className={className} {...props}>
-            {icon ? renderIcon({ icon, children, ...props }) : children}
+          <ButtonLink {...props}>
+            {children}
           </ButtonLink>
         );
       }

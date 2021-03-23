@@ -10,7 +10,7 @@ const StatePurchasesItem = () => {
   return (
     <StatePurchasesItemTr>
       <StatePurchasesItemTd>
-        <StatePurchasesItemButton variant="link-router">
+        <StatePurchasesItemButton variant="linkRoute">
           [ТЕСТУВАННЯ] Тестовий опис предмету закупівлі у заголовку тендеру (created with procedure_tools)
         </StatePurchasesItemButton>
         <StatePurchasesItemTypography>

@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+import Button from '../button/Button.component';
+
+export const HeaderLinkRoute = styled(Button)``;
+
 export const HeaderContainer = styled.header`
   background-color: ${({ theme }) => theme.palette.backgroundWhite};
   box-shadow: 0 0 3px rgb(0 0 0 / 30%);

@@ -13,6 +13,7 @@ export const TabStyled = styled(Tab)`
   &.react-tabs__tab--selected {
     position: relative;
     border-bottom: none;
+    color: ${({ theme }) => theme.palette.primary};
     &::before {
       content: '';
       position: absolute;
@@ -22,6 +23,9 @@ export const TabStyled = styled(Tab)`
       height: 1px;
       z-index: 5;
       background-color: ${({ theme }) => theme.palette.backgroundWhite};
+    }
+    svg {
+      fill: ${({ theme }) => theme.palette.primary};
     }
   }
   &:first-child {

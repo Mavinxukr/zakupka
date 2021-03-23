@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import Buttom from '../../button/Button.component';
+import Button from '../../button/Button.component';
+import { BsEnvelope } from 'react-icons/bs';
 
 export const HeaderPanelContainer = styled.div`
   display: flex;
@@ -7,8 +8,12 @@ export const HeaderPanelContainer = styled.div`
   align-items: center;
   margin-right: 30px;
 `;
-export const HeaderPanelButtom = styled(Buttom)`
+export const HeaderPanelButton = styled(Button)`
   line-height: 30px;
   margin-left: 20px;
-  color: ${({ theme }) => theme.palette.text.main}
+  color: ${({ theme }) => theme.palette.text.main};
+`;
+
+export const BsEnvelopeIcon = styled(BsEnvelope)`
+  margin-right: 7px;
 `;

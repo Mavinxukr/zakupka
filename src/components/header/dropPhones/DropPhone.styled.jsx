@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 import Button from '../../button/Button.component';
+import { AiOutlinePhone } from 'react-icons/ai';
+
+export const AiOutlinePhoneIcon = styled(AiOutlinePhone)`
+  margin-right: 5px;
+`;
 
 export const DropPhoneContainer = styled.div`
   position: relative;

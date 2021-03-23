@@ -53,4 +53,8 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0px;
     list-style-type: none;
   }
+
+  a {
+    text-decoration: none;
+  }
 `;

@@ -5,13 +5,13 @@ import {
   DropPhoneList,
   DropPhoneHead,
   DropPhoneLink,
-  DropPhoneItemInfo
+  DropPhoneItemInfo,
+  AiOutlinePhoneIcon
 } from './DropPhone.styled';
-import phone from '../../../static/svg/phone.svg';
 import { theme } from '../../../styles/theme';
 
 export const DropPhone = () => {
-  const [show, setShow] = useState(true)
+  const [show, setShow] = useState(false)
 
   return (
     <DropPhoneContainer
@@ -20,9 +20,12 @@ export const DropPhone = () => {
     >
       <DropPhoneHead
         variant="link"
-        icon={phone}
         color={theme.palette.text.main}
+        icon
       >
+        <AiOutlinePhoneIcon
+          fontSize="2rem"
+        />
         0 800 500 016
       </DropPhoneHead>
       {
@@ -39,10 +42,8 @@ export const DropPhone = () => {
                 fullWidth
                 variant="link"
                 color={theme.palette.text.main}
-                icon={phone}
-                iconWidth="15px"
-                iconHeight="15px"
               >
+                <AiOutlinePhoneIcon />
                 0 800 500 016
              </DropPhoneLink>
             </DropPhoneItem>
@@ -51,10 +52,8 @@ export const DropPhone = () => {
                 fullWidth
                 variant="link"
                 color={theme.palette.text.main}
-                icon={phone}
-                iconWidth="15px"
-                iconHeight="15px"
               >
+                <AiOutlinePhoneIcon />
                 0 800 500 016
            </DropPhoneLink>
             </DropPhoneItem>
@@ -63,10 +62,8 @@ export const DropPhone = () => {
                 fullWidth
                 variant="link"
                 color={theme.palette.text.main}
-                icon={phone}
-                iconWidth="15px"
-                iconHeight="15px"
               >
+                <AiOutlinePhoneIcon />
                 0 800 500 016
            </DropPhoneLink>
             </DropPhoneItem>

@@ -1,18 +1,24 @@
 import React from 'react';
 import DropPhones from '../dropPhones/DropPhone.component';
 import {
-  HeaderPanelButtom,
-  HeaderPanelContainer
+  HeaderPanelButton,
+  HeaderPanelContainer,
+  BsEnvelopeIcon
 } from './HeaderPanel.styled';
-import message from '../../../static/svg/mail.svg';
+
 
 const headerPanel = () => {
   return (
     <HeaderPanelContainer>
       <DropPhones />
-      <HeaderPanelButtom variant="link" icon={message}>
+      <HeaderPanelButton
+        variant="link"
+        icon>
+        <BsEnvelopeIcon
+          fontSize="2rem"
+        />
         Напишіть нам
-      </HeaderPanelButtom>
+      </HeaderPanelButton>
     </HeaderPanelContainer>
   )
 };

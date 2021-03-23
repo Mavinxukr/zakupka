@@ -10,24 +10,38 @@ const StatePurchasesItem = () => {
   return (
     <StatePurchasesItemTr>
       <StatePurchasesItemTd>
-        <StatePurchasesItemButton variant="linkRoute">
+        <StatePurchasesItemButton
+          variant="linkRoute"
+          mb="5px"
+        >
           [ТЕСТУВАННЯ] Тестовий опис предмету закупівлі у заголовку тендеру (created with procedure_tools)
         </StatePurchasesItemButton>
-        <StatePurchasesItemTypography>
+        <StatePurchasesItemTypography
+          mb="5px"
+        >
           broker
         </StatePurchasesItemTypography>
-        <StatePurchasesItemTypography>
+        <StatePurchasesItemTypography
+          mb="5px"
+        >
           О компании
         </StatePurchasesItemTypography>
-        <StatePurchasesItemTypography>
+        <StatePurchasesItemTypography
+          mb="5px"
+        >
           UA-2021-03-22-000015-b
         </StatePurchasesItemTypography>
       </StatePurchasesItemTd>
       <StatePurchasesItemTd>
-        <StatePurchasesItemTypography variant="subtitle-1">
+        <StatePurchasesItemTypography
+          variant="subtitle-1"
+          mb="5px"
+        >
           500₴
         </StatePurchasesItemTypography>
-        <StatePurchasesItemTypography>
+        <StatePurchasesItemTypography
+          mb="5px"
+        >
           c НДС
         </StatePurchasesItemTypography>
       </StatePurchasesItemTd>
@@ -37,7 +51,7 @@ const StatePurchasesItem = () => {
           Оголошено:
         </StatePurchasesItemTypography>
 
-        <StatePurchasesItemTypography variant="excretion">
+        <StatePurchasesItemTypography mb="5px" variant="excretion">
           31 серп., 11:19
         </StatePurchasesItemTypography>
 
@@ -45,7 +59,7 @@ const StatePurchasesItem = () => {
           Завершение периода уточнений:
         </StatePurchasesItemTypography>
 
-        <StatePurchasesItemTypography variant="excretion">
+        <StatePurchasesItemTypography mb="5px" variant="excretion">
           31 серп., 11:45
         </StatePurchasesItemTypography>
 
@@ -53,7 +67,7 @@ const StatePurchasesItem = () => {
           Прием предложений:
         </StatePurchasesItemTypography>
 
-        <StatePurchasesItemTypography variant="excretion">
+        <StatePurchasesItemTypography mb="5px" variant="excretion">
           31 серп., 11:19 – 31 серп., 11:55
         </StatePurchasesItemTypography>
       </StatePurchasesItemTd>

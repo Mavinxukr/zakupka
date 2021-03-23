@@ -36,12 +36,9 @@ export const TabStyled = styled(Tab)`
   }
 `;
 
-export const TabsStyled = styled(Tabs)`
-`;
+export const TabsStyled = styled(Tabs)``;
 
-export const TabListStyled = styled(TabList)`
-
-`;
+export const TabListStyled = styled(TabList)``;
 
 export const TabPanelStyled = styled(TabPanel)`
   &.react-tabs__tab-panel--selected {

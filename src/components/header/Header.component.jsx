@@ -22,7 +22,7 @@ const Header = () => {
               variant="containedRoute"
               color={theme.palette.text.white}
               to="login"
-              >
+            >
               Зареєструватись
             </HeaderLinkRoute>
           </HeaderWrapper>

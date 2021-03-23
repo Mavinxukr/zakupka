@@ -28,7 +28,7 @@ export const Subtitle2 = styled.h4`
   font-size: 0.75rem;
 `;
 
-export const Excretion = styled.span`
+export const Excretion = styled.div`
   font-size: 0.775rem;
   color: ${({ theme }) => theme.palette.text.excretion}
 `;

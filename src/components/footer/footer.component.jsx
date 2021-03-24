@@ -4,7 +4,7 @@ import {
   FooterInner,
   FooterTypography
 } from './footer.styled'
-import ContainerMain from '../containers/ContainerMain/ContainerMain.component'
+import ContainerMain from '../containers/containerMain/ContainerMain.component'
 
 const Footer = () => (
   <FooterContainer>

@@ -6,14 +6,14 @@ import {
   BsEnvelopeIcon
 } from './HeaderPanel.styled';
 
-
 const headerPanel = () => {
   return (
     <HeaderPanelContainer>
       <DropPhones />
       <HeaderPanelButton
         variant="link"
-        icon>
+        center
+        >
         <BsEnvelopeIcon
           fontSize="2rem"
         />

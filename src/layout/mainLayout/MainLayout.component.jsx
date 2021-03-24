@@ -7,7 +7,7 @@ import {
 } from './MainLayout.styled';
 import Header from '../../components/header/Header.component';
 import Footer from '../../components/footer/footer.component';
-import ContainerMain from '../../components/containers/ContainerMain/ContainerMain.component'
+import ContainerMain from '../../components/containers/containerMain/ContainerMain.component'
 
 const MainLayout = ({ children }) => {
   return (

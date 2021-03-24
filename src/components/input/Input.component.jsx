@@ -6,29 +6,40 @@ import {
   InputStyled
 } from './Input.styled'
 
-const Input = ({
+const Input = React.forwardRef(({
   error,
   label,
   errorMessage,
+  className,
+  mt,
+  mb,
+  mr,
+  ml,
   ...props
-}) => {
+}, ref) => {
   return (
-    <InputContainer >
-      <InputLabel>
-        {label}
-      </InputLabel>
+    <InputContainer
+      className={className}
+      mt={mt}
+      mb={mb}
+      mr={mr}
+      ml={ml}
+    >
+      { label ? (
+        <InputLabel>
+          {label}
+        </InputLabel>
+      ) : null}
       <InputStyled
+        error={error}
+        ref={ref}
         {...props}
       />
-      {
-        error ? (
-          <InputError>
-            {errorMessage}
-          </InputError>
-        ) : null
-      }
+      { error && errorMessage && <InputError>{errorMessage}</InputError>}
     </InputContainer>
   )
-}
+})
 
 export default Input;
+
+

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const MainLayoutContainer = styled.div`
   min-height: 100vh;
 `;
+
 export const MainLayoutWrapper = styled.div`
   display: flex;
 	flex-direction: column;
@@ -10,6 +11,7 @@ export const MainLayoutWrapper = styled.div`
 `;
 
 export const MainLayoutContent = styled.div`
+  margin-top: 40px;
   padding: 30px 0;
   flex: 1 0 auto;
 `;

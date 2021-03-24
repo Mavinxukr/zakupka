@@ -1,12 +1,15 @@
 import styled from 'styled-components';
-import Typography from '../typography/Typography.component'
+import Typography from '../typography/Typography.component';
+import { margin } from '../../styles/shared';
+
+export const InputLabel = styled(Typography)``;
+
 
 export const InputContainer = styled.div`
+  ${margin};
   display: flex;
   flex-direction: column;
 `;
-
-export const InputLabel = styled(Typography)``;
 
 export const InputStyled = styled.input`
   width: 100%;

@@ -1,33 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   StatePurchasesItemTd,
   StatePurchasesItemTr,
   StatePurchasesItemTypography,
-  StatePurchasesItemButton
+  StatePurchasesItemButton,
+  AiOutlineStarIcon,
 } from './StatePurchasesItem.styled';
 
+import { theme } from '../../../styles/theme'
+
 const StatePurchasesItem = () => {
+  const [selection, setSelection] = useState(false);
+
   return (
     <StatePurchasesItemTr>
       <StatePurchasesItemTd>
         <StatePurchasesItemButton
+          color={theme.palette.text.linkBlue}
           variant="linkRoute"
-          mb="5px"
+          to="/"
+          mb="10px"
         >
           [ТЕСТУВАННЯ] Тестовий опис предмету закупівлі у заголовку тендеру (created with procedure_tools)
         </StatePurchasesItemButton>
         <StatePurchasesItemTypography
-          mb="5px"
+          mb="10px"
         >
           broker
         </StatePurchasesItemTypography>
         <StatePurchasesItemTypography
-          mb="5px"
+          mb="10px"
         >
           О компании
         </StatePurchasesItemTypography>
         <StatePurchasesItemTypography
-          mb="5px"
+          mb="10px"
         >
           UA-2021-03-22-000015-b
         </StatePurchasesItemTypography>
@@ -35,13 +42,10 @@ const StatePurchasesItem = () => {
       <StatePurchasesItemTd>
         <StatePurchasesItemTypography
           variant="subtitle-1"
-          mb="5px"
         >
           500₴
         </StatePurchasesItemTypography>
-        <StatePurchasesItemTypography
-          mb="5px"
-        >
+        <StatePurchasesItemTypography>
           c НДС
         </StatePurchasesItemTypography>
       </StatePurchasesItemTd>
@@ -51,7 +55,7 @@ const StatePurchasesItem = () => {
           Оголошено:
         </StatePurchasesItemTypography>
 
-        <StatePurchasesItemTypography mb="5px" variant="excretion">
+        <StatePurchasesItemTypography mb="10px" variant="excretion">
           31 серп., 11:19
         </StatePurchasesItemTypography>
 
@@ -59,7 +63,7 @@ const StatePurchasesItem = () => {
           Завершение периода уточнений:
         </StatePurchasesItemTypography>
 
-        <StatePurchasesItemTypography mb="5px" variant="excretion">
+        <StatePurchasesItemTypography mb="10px" variant="excretion">
           31 серп., 11:45
         </StatePurchasesItemTypography>
 
@@ -67,7 +71,7 @@ const StatePurchasesItem = () => {
           Прием предложений:
         </StatePurchasesItemTypography>
 
-        <StatePurchasesItemTypography mb="5px" variant="excretion">
+        <StatePurchasesItemTypography mb="10px" variant="excretion">
           31 серп., 11:19 – 31 серп., 11:55
         </StatePurchasesItemTypography>
       </StatePurchasesItemTd>
@@ -76,12 +80,25 @@ const StatePurchasesItem = () => {
         <StatePurchasesItemTypography>
           Період уточнень
         </StatePurchasesItemTypography>
-        <StatePurchasesItemTypography>
-          Осталось: --
+        <StatePurchasesItemTypography mb="10px" variant="excretion">
+          Залишилось: --
         </StatePurchasesItemTypography>
-        <StatePurchasesItemTypography>
+        <StatePurchasesItemTypography mb="10px">
           Додати в обране
         </StatePurchasesItemTypography>
+        <StatePurchasesItemButton
+          variant="link"
+          onClick={() => setSelection((prev) => !prev)}
+          color={selection ? theme.palette.primary : theme.palette.text.linkBlue}
+          center
+        >
+          <AiOutlineStarIcon
+            fontSize="1.8rem"
+            color={selection ? theme.palette.primary : ''}
+          />
+          {selection ? 'Видалити з обраного' : 'Додати до обраного'}
+        </StatePurchasesItemButton>
+
 
       </StatePurchasesItemTd>
     </StatePurchasesItemTr>

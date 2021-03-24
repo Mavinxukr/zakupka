@@ -3,7 +3,6 @@ import Typography from '../typography/Typography.component';
 
 export const StatePurchasesTableTitle = styled(Typography)`
   padding-left: 15px;
-  margin-bottom: 20px;
 `;
 
 export const StatePurchasesTableTBody = styled.tbody`

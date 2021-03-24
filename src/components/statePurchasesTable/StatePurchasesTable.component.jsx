@@ -12,7 +12,10 @@ import StatePurchasesItem from './statePurchasesItem/StatePurchasesItem.componen
 const StatePurchasesList = () => {
   return (
     <>
-      <StatePurchasesTableTitle variant="headline-1">
+      <StatePurchasesTableTitle
+        mt="30px"
+        mb="30px"
+        variant="headline-1">
         Державні закупівлі
       </StatePurchasesTableTitle>
       <StatePurchasesTableStyled>

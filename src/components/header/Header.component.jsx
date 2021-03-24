@@ -6,7 +6,7 @@ import {
   HeaderLinkRoute
 } from './Header.styled';
 import Logo from '../logo/Logo.component'
-import ContainerMain from '../containers/ContainerMain/ContainerMain.component';
+import ContainerMain from '../containers/containerMain/ContainerMain.component';
 import HeaderPanel from './headerPanel/HeaderPanel.component';
 import { theme } from '../../styles/theme';
 

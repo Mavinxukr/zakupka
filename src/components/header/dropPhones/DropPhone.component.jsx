@@ -21,7 +21,7 @@ export const DropPhone = () => {
       <DropPhoneHead
         variant="link"
         color={theme.palette.text.main}
-        icon
+        center
       >
         <AiOutlinePhoneIcon
           fontSize="2rem"

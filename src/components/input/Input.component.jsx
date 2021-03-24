@@ -10,7 +10,6 @@ const Input = React.forwardRef(({
   error,
   label,
   errorMessage,
-  className,
   mt,
   mb,
   mr,
@@ -19,7 +18,6 @@ const Input = React.forwardRef(({
 }, ref) => {
   return (
     <InputContainer
-      className={className}
       mt={mt}
       mb={mb}
       mr={mr}

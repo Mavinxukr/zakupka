@@ -52,6 +52,7 @@
     "prompts": "2.4.0",
     "react": "^17.0.1",
     "react-app-polyfill": "^2.0.0",
+    "react-datepicker": "^3.6.0",
     "react-dev-utils": "^11.0.3",
     "react-dom": "^17.0.1",
     "react-icons": "^4.2.0",
@@ -151,7 +152,9 @@
     "presets": [
       "react-app"
     ],
-    "plugins": ["babel-plugin-styled-components"]
+    "plugins": [
+      "babel-plugin-styled-components"
+    ]
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.12.0"

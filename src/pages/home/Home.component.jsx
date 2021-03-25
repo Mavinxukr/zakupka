@@ -9,13 +9,16 @@ import {
   TiShoppingBagIcon
 } from './Home.styled';
 import Typography from '../../components/typography/Typography.component';
+import Menu from '../../components/menu/Menu.component';
+import Classifier from '../../components/Classifier/Classifier';
 
 const Home = () => {
   return (
     <MainLayout>
+      <Menu mt="30px" mb="30px"/>
       <TabsStyled>
         <TabListStyled>
-          <TabStyled>
+          <TabStyled tabIndex="0">
             <FaRegHandPaperIcon
               fontSize="1.2rem"
             />
@@ -23,7 +26,7 @@ const Home = () => {
               Всі закупівлі
             </Typography>
           </TabStyled>
-          <TabStyled>
+          <TabStyled tabIndex="0">
             <RiTodoLineIcon
               fontSize="1.2rem"
             />
@@ -31,7 +34,7 @@ const Home = () => {
               Плани закупівель
             </Typography>
           </TabStyled>
-          <TabStyled>
+          <TabStyled tabIndex="0">
             <TiShoppingBagIcon
               fontSize="1.2rem"
             />
@@ -51,6 +54,11 @@ const Home = () => {
           <h2>Any content 1</h2>
         </TabPanelStyled>
       </TabsStyled>
+
+
+      <Classifier />
+
+
     </MainLayout>
   )
 }

@@ -10,7 +10,8 @@ const colors = {
   black: '#333333',
   green: '#18ce0f',
   red: '#ff5062',
-  blue: '#00a1cd'
+  blue: '#00a1cd',
+  orange: '#F57C12',
   
 };
 

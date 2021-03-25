@@ -15,11 +15,11 @@ const sharedStyles = css`
   font-weight: 300;
   text-decoration: none;
   background: none;
-  opacity: ${({ disabled }) => (disabled ? 0.35 : 1)};
   border: none;
-  border-radius: ${({ angle }) => angle ? 'none' : '4px'};
+  opacity: ${({ disabled }) => (disabled ? 0.35 : 1)};
   pointer-events: ${({ disabled }) => (disabled ? 'none' : 'all')};
   cursor: ${({ disabled }) => (disabled ? 'none' : 'pointer')};
+  border-radius: ${({ angle }) => angle ? 'none' : '4px'};
   transition: .3s ease;
 `;
 

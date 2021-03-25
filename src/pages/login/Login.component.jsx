@@ -3,16 +3,16 @@ import {
   LoginInput,
   LoginTypography
 } from './Login.styled';
-import MainLayout from '../../layout/mainLayout/MainLayout.component'
+import MainLayout from '../../layout/mainLayout/MainLayout.component';
 import ContainerAuth from '../../components/containers/containerAuth/ContainerAuth.component';
 import Select from '../../components/select/Select.component';
-import Menu from '../../components/Menu/Menu.component';
-
+import Textarea from '../../components/textarea/Textarea.component';
+import InputDate from '../../components/inputDate/InputDate.component';
+import Checkbox from '../../components/checkbox/Checkbox.component'
 const Login = () => {
   return (
     <MainLayout>
       <ContainerAuth>
-        <Menu />
         <LoginTypography variant='headline-1'
           mb="30px"
         >
@@ -37,6 +37,17 @@ const Login = () => {
           ]}
           defaultValue="чоловик"
         />
+        <Textarea
+          mt="30px" 
+          mb="30px" 
+          label="fwefwefwef"
+          errorMessage="ошибка"
+          error
+        />
+        <Checkbox 
+          label="ffafa"
+        />
+        <InputDate />
       </ContainerAuth>
     </MainLayout>
   )

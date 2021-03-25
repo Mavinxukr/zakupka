@@ -7,6 +7,8 @@ export const theme = {
     backgroundGrey: colors.grey[3],
     error: colors.red,
     divided: colors.grey[4],
+    focused: colors.orange,
+    
 
     text: {
       main: colors.black,

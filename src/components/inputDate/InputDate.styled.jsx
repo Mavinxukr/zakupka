@@ -1,18 +1,7 @@
 import styled from 'styled-components';
-import Typography from '../typography/Typography.component';
-import { margin } from '../../styles/shared';
 
-export const InputLabel = styled(Typography)``;
-
-
-export const InputContainer = styled.div`
-  ${margin};
-  display: flex;
-  flex-direction: column;
-`;
-
-export const InputStyled = styled.input`
-  width: 100%;
+export const DatePickerInput = styled.input`
+  width: 240px;
   border-radius: 4px;
   height: 40px;
   font-size: 0.875rem;
@@ -21,15 +10,10 @@ export const InputStyled = styled.input`
   caret-color: ${({ theme }) => theme.palette.primary};
   border: 1px solid ${({ theme }) => theme.palette.divided};
   padding: 0 20px;
-  cursor: pointer;
   &:focus {
     border: 1px solid ${({ theme }) => theme.palette.primary};
   }
   &::placeholder {
     color: ${({ theme }) => theme.palette.text.main};
   }
-`;
-
-export const InputError = styled(Typography)`
-  color: ${({ theme }) => theme.palette.text.error};
 `;

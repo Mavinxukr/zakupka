@@ -2,26 +2,25 @@ import styled from 'styled-components';
 import Typography from '../typography/Typography.component';
 import { margin } from '../../styles/shared';
 
-export const InputLabel = styled(Typography)``;
+export const TextareaLabel = styled(Typography)``;
 
-
-export const InputContainer = styled.div`
+export const TextareaContainer = styled.div`
   ${margin};
   display: flex;
   flex-direction: column;
 `;
 
-export const InputStyled = styled.input`
+export const TextareaStyled = styled.textarea`
   width: 100%;
   border-radius: 4px;
-  height: 40px;
+  height: 200px;
   font-size: 0.875rem;
   line-height: 1;
   color: ${({ theme }) => theme.palette.text.main};
   caret-color: ${({ theme }) => theme.palette.primary};
   border: 1px solid ${({ theme }) => theme.palette.divided};
-  padding: 0 20px;
-  cursor: pointer;
+  padding: 20px;
+  resize: none;
   &:focus {
     border: 1px solid ${({ theme }) => theme.palette.primary};
   }
@@ -30,6 +29,6 @@ export const InputStyled = styled.input`
   }
 `;
 
-export const InputError = styled(Typography)`
+export const TextareaError = styled(Typography)`
   color: ${({ theme }) => theme.palette.text.error};
 `;

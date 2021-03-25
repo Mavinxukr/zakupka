@@ -1,8 +1,29 @@
 import { createGlobalStyle } from 'styled-components';
 import { normalize } from 'styled-normalize';
+import { theme } from './theme';
+import { lighten } from 'polished';
 
 export const GlobalStyle = createGlobalStyle`
   ${normalize}
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    &:focus + span {
+      &::before {
+        border: 2px solid ${() => lighten(0.05, theme.palette.focused)};
+      }
+    }
+    &:checked + span {
+      &::after {
+        display: block;
+      }
+    }
+  }
 
   html,
   body {
@@ -15,6 +36,10 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: inherit;
   }
 
+  * {
+    outline-color: ${() => lighten(0.05, theme.palette.focused)};
+  }
+
   body,
   html,
   #root {
@@ -24,7 +49,6 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font-weight: 400;
     line-height: 1.6;
-    font-size: 10px;
     font-family: 'Inter', sans-serif;
     background-color: #f5f7f9;
   }

@@ -151,7 +151,9 @@
     "presets": [
       "react-app"
     ],
-    "plugins": ["babel-plugin-styled-components"]
+    "plugins": [
+      "babel-plugin-styled-components"
+    ]
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.12.0"

@@ -12,6 +12,7 @@ import Typography from '../../components/typography/Typography.component';
 import Menu from '../../components/menu/Menu.component';
 import Classifier from '../../components/classifier/Classifier.component';
 import ProcurementPlans from '../../components/procurementPlans/ProcurementPlans.component';
+import SignedContracts from '../../components/signedContracts/SignedContracts.component';
 
 const Home = () => {
   return (
@@ -52,14 +53,10 @@ const Home = () => {
             <ProcurementPlans />
         </TabPanelStyled>
         <TabPanelStyled>
-          <h2>Any content 1</h2>
+          <SignedContracts />
         </TabPanelStyled>
       </TabsStyled>
-
-
       <Classifier />
-
-
     </MainLayout>
   )
 }

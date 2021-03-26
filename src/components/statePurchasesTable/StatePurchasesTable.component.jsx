@@ -42,7 +42,6 @@ const StatePurchasesList = () => {
         </StatePurchasesTableTBody>
       </StatePurchasesTableStyled>
     </>
-
   )
 }
 

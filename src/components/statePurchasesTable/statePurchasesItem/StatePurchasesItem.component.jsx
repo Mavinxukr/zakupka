@@ -45,7 +45,9 @@ const StatePurchasesItem = () => {
         >
           500₴
         </StatePurchasesItemTypography>
-        <StatePurchasesItemTypography>
+        <StatePurchasesItemTypography
+          variant="excretion"
+        >
           c НДС
         </StatePurchasesItemTypography>
       </StatePurchasesItemTd>
@@ -93,7 +95,7 @@ const StatePurchasesItem = () => {
           center
         >
           <AiOutlineStarIcon
-            fontSize="1.8rem"
+            fontSize="25px"
             color={selection ? theme.palette.primary : ''}
           />
           {selection ? 'Видалити з обраного' : 'Додати до обраного'}

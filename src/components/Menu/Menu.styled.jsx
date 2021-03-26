@@ -73,7 +73,7 @@ export const MenuListItem = styled.li`
     position: absolute;
     bottom: -4px;
     left: 0;
-    z-index: 10;
+    z-index: 1;
     display: block;
     width: 100%;
     height: 4px;

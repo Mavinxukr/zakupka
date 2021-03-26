@@ -10,8 +10,8 @@ const sharedStyles = css`
   display: ${({ center }) => center ? 'flex' : ''};
   align-items: ${({ center }) => center ? 'center' : ''};
   ${({ color }) => color && `color: ${color}`};
-  font-size: 1rem;
-  line-height: 1.2;
+  font-size: 0.875rem;
+  line-height: 1;
   font-weight: 300;
   text-decoration: none;
   background: none;

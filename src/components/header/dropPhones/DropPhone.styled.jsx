@@ -19,7 +19,7 @@ export const DropPhoneList = styled.ul`
   top: 50px;
   left: 0;
   z-index: 10;
-  width: 100%;
+  min-width: 100%;
   background-color: ${({ theme }) => theme.palette.backgroundWhite};
   padding: 5px 0;
   box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
@@ -37,6 +37,7 @@ export const DropPhoneList = styled.ul`
 export const DropPhoneItem = styled.li``;
 
 export const DropPhoneItemInfo = styled.li`
+  white-space: nowrap;
   font-size: 13px;
   padding: 2px 10px;
 `;

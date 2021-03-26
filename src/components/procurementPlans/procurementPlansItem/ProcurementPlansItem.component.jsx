@@ -74,7 +74,7 @@ const ProcurementPlansItem = () => {
           center
         >
           <AiOutlineStarIcon
-            fontSize="1.8rem"
+            fontSize="25px"
             color={selection ? theme.palette.primary : ''}
           />
           {selection ? 'Видалити з обраного' : 'Додати до обраного'}

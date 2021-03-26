@@ -12,8 +12,8 @@ const ProcurementPlans = () => {
   return (
     <>
       <ProcurementPlansTableTitle
-        mt="30px"
-        mb="30px"
+        mt="15px"
+        mb="15px"
         variant="headline-1"
       >
         Плани закупівель

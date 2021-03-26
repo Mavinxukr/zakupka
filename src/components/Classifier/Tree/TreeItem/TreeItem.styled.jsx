@@ -6,10 +6,12 @@ export const AiOutlineMinusSquareIcon = styled(AiOutlineMinusSquare)``;
 export const TreeItemContainer = styled.div`
   position: relative;
   padding-left: 20px;
+  margin-bottom: 5px;
+  margin-top: 5px;
 `;
 export const TreeItemButton = styled.button`
   position: absolute;
-  top: 2px;
+  top: 0px;
   left: 0;
   display: inline-flex;
   justify-content: center;
@@ -17,5 +19,6 @@ export const TreeItemButton = styled.button`
   border: none;
   padding: 0;
   background-color: transparent;
+  cursor: pointer;
 `;
 

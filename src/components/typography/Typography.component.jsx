@@ -6,7 +6,6 @@ import {
   Subtitle1,
   Subtitle2,
   Excretion,
-  Body2
 } from './Typography.styles.jsx';
 
 const Typography = ({
@@ -21,8 +20,6 @@ const Typography = ({
       return <Headline2 {...restProps}>{children}</Headline2>;
     case 'body':
       return <Body1 {...restProps}>{children}</Body1>;
-    case 'body2':
-      return <Body2 {...restProps}>{children}</Body2>;
     case 'subtitle-1':
       return <Subtitle1 {...restProps}>{children}</Subtitle1>;
     case 'subtitle-2':

@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+import { AiOutlineClose } from 'react-icons/ai'; 
+
+export const AiOutlineCloseIcon = styled(AiOutlineClose)``;
 
 export const ModalStyled = styled.div`
   position: fixed;
@@ -30,24 +33,13 @@ export const ModalClose = styled.button`
   position: absolute;
   right: 15px;
   top: 10px;
-  cursor: pointer;
-  font-size: 1.25em;
-  padding: 7px;
-  background: rgba(255, 255, 255, 0.749);
-  border: 1px solid #c3c0c0;
-  border-radius: 50%;
-  width: 42px;
-  height: 42px;
   display: flex;
-  align-items: center;
   justify-content: center;
-  z-index: 999999;
-  box-sizing: border-box;
-  display: inline-block;
-  text-align: center;
-  &:hover {
-    background: rgba(255, 255, 255, 0.989);
-  }
+  align-items: center;
+  padding: 0px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 `;
 
 export const ModalBody = styled.div`

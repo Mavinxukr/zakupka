@@ -13,8 +13,8 @@ const StatePurchasesList = () => {
   return (
     <>
       <StatePurchasesTableTitle
-        mt="30px"
-        mb="30px"
+        mt="15px"
+        mb="15px"
         variant="headline-1">
         Державні закупівлі
       </StatePurchasesTableTitle>

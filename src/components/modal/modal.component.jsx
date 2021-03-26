@@ -10,7 +10,8 @@ import {
   ModalStyled,
   ModalBody,
   ModalClose,
-  ModalOverlay
+  ModalOverlay,
+  AiOutlineCloseIcon
 } from './Modal.styled';
 
 const modalElement = document.getElementById('modal-root')
@@ -41,7 +42,10 @@ export function Modal({ children, defaultOpened = false }, ref) {
       <ModalStyled >
         <ModalOverlay className="modal-overlay" onClick={close} />
         <ModalClose role="button" aria-label="close" onClick={close}>
-          x
+          <AiOutlineCloseIcon
+            fontSize="40px"
+            color="#fff"
+          />
         </ModalClose>
         <ModalBody>{children}</ModalBody>
       </ModalStyled>

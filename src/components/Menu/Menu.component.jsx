@@ -6,40 +6,56 @@ import {
   MenuListItemLink,
   MenuDropList,
   MenuDropListItem,
-  MenuDropListItemLink
+  MenuDropListItemLink,
+  AiFillSettingIcon,
+  BsEnvelopeIcon
 } from './Menu.styled';
+
 
 const Menu = (props) => {
   return (
     <MenuContainer {...props}>
       <MenuList>
+
+        <MenuListItem>
+          <MenuListItemLink to="/">
+            Створити закупівлю (Оригінал що має вигляд)
+          </MenuListItemLink>
+        </MenuListItem>
+
+        <MenuListItem>
+          <MenuListItemLink to="/">
+            Створити закупівлю (Прототип який працює)
+          </MenuListItemLink>
+        </MenuListItem>
+
         <MenuListItem>
           <MenuListItemLink aria-haspopup="true" to="/">
-            Державні закупівлі
+            Плани закупівель
           </MenuListItemLink>
           <MenuDropList>
 
             <MenuDropListItem>
               <MenuDropListItemLink to="/">
-                Lorem ipsum dolor sit amet.
+                Створити план
               </MenuDropListItemLink>
             </MenuDropListItem>
 
             <MenuDropListItem>
               <MenuDropListItemLink to="/">
-                Lorem ipsum
+                Створити план (Оригінал що має вигляд)
               </MenuDropListItemLink>
             </MenuDropListItem>
 
             <MenuDropListItem>
               <MenuDropListItemLink to="/">
-                dolor sit amet.
+                Плани закупівель
               </MenuDropListItemLink>
             </MenuDropListItem>
 
             <MenuDropListItem>
               <MenuDropListItemLink to="/">
-                Lorem ipsum dolor sit amet.
+                Мої плани закупівель
               </MenuDropListItemLink>
             </MenuDropListItem>
 
@@ -48,31 +64,19 @@ const Menu = (props) => {
 
         <MenuListItem>
           <MenuListItemLink to="/">
-            Державні закупівлі
+            Публічні закупівлі
           </MenuListItemLink>
           <MenuDropList>
 
             <MenuDropListItem>
               <MenuDropListItemLink to="/">
-                Lorem ipsum dolor sit amet.
+                Закупівлі
               </MenuDropListItemLink>
             </MenuDropListItem>
 
             <MenuDropListItem>
               <MenuDropListItemLink to="/">
-                Lorem ipsum
-              </MenuDropListItemLink>
-            </MenuDropListItem>
-
-            <MenuDropListItem>
-              <MenuDropListItemLink to="/">
-                dolor sit amet.
-              </MenuDropListItemLink>
-            </MenuDropListItem>
-
-            <MenuDropListItem>
-              <MenuDropListItemLink to="/">
-                Lorem ipsum dolor sit amet.
+                Скарги
               </MenuDropListItemLink>
             </MenuDropListItem>
 
@@ -81,38 +85,71 @@ const Menu = (props) => {
 
         <MenuListItem>
           <MenuListItemLink to="/">
-            Державні закупівлі
+            Профіль
           </MenuListItemLink>
           <MenuDropList>
 
             <MenuDropListItem>
               <MenuDropListItemLink to="/">
-                Lorem ipsum dolor sit amet.
+                Дані про компанію
               </MenuDropListItemLink>
             </MenuDropListItem>
 
             <MenuDropListItem>
               <MenuDropListItemLink to="/">
-                Lorem ipsum
-              </MenuDropListItemLink>
-            </MenuDropListItem>
-
-            <MenuDropListItem>
-              <MenuDropListItemLink to="/">
-                dolor sit amet.
-              </MenuDropListItemLink>
-            </MenuDropListItem>
-
-            <MenuDropListItem>
-              <MenuDropListItemLink to="/">
-                Lorem ipsum dolor sit amet.
+                Дані для входу в кабінет
               </MenuDropListItemLink>
             </MenuDropListItem>
 
           </MenuDropList>
         </MenuListItem>
 
+        <MenuListItem>
+          <MenuListItemLink to="/">
+            Контакти
+          </MenuListItemLink>
 
+          <MenuDropList>
+            <MenuDropListItem>
+              <MenuDropListItemLink to="/">
+                Контакти
+              </MenuDropListItemLink>
+            </MenuDropListItem>
+          </MenuDropList>
+
+        </MenuListItem>
+
+        <MenuListItem>
+          <MenuListItemLink to="/">
+            <AiFillSettingIcon fontSize="25px" />
+          </MenuListItemLink>
+
+          <MenuDropList>
+            <MenuDropListItem>
+              <MenuDropListItemLink to="/">
+                Налаштування
+              </MenuDropListItemLink>
+            </MenuDropListItem>
+          </MenuDropList>
+
+        </MenuListItem>
+
+        <MenuListItem>
+          <MenuListItemLink to="/">
+            <BsEnvelopeIcon fontSize="25px" />
+          </MenuListItemLink>
+
+          <MenuDropList>
+            <MenuDropListItem>
+              <MenuDropListItemLink to="/">
+                Повідомлення
+              </MenuDropListItemLink>
+            </MenuDropListItem>
+          </MenuDropList>
+
+        </MenuListItem>
+
+        
 
       </MenuList>
     </MenuContainer>

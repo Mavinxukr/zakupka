@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Button from '../button/Button.component';
 
-export const FilterContainer = styled.form`
+export const FilterContainer = styled.div`
   padding: 20px 40px;
   border-radius: 4px;
   border: 1px solid ${({ theme }) => theme.palette.divided};
@@ -11,8 +11,6 @@ export const FilterContainer = styled.form`
 export const FilterInputPosition = styled.div`
   margin-bottom: 20px;
 `;
-
-
 
 export const FilterWrapper = styled.div`
   display: flex;

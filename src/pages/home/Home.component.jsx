@@ -10,12 +10,13 @@ import {
 } from './Home.styled';
 import Typography from '../../components/typography/Typography.component';
 import Menu from '../../components/menu/Menu.component';
-import Classifier from '../../components/Classifier/Classifier.component';
+import Classifier from '../../components/classifier/Classifier.component';
+import ProcurementPlans from '../../components/procurementPlans/ProcurementPlans.component';
 
 const Home = () => {
   return (
     <MainLayout>
-      <Menu mt="30px" mb="30px"/>
+      <Menu mb="30px"/>
       <TabsStyled>
         <TabListStyled>
           <TabStyled tabIndex="0">
@@ -48,7 +49,7 @@ const Home = () => {
           <StatePurchasesTable />
         </TabPanelStyled>
         <TabPanelStyled>
-          <h2>Any content 2</h2>
+            <ProcurementPlans />
         </TabPanelStyled>
         <TabPanelStyled>
           <h2>Any content 1</h2>

@@ -11,12 +11,11 @@ import {
   ModalBody,
   ModalClose,
   ModalOverlay
-} from './modal.styled';
+} from './Modal.styled';
 
 const modalElement = document.getElementById('modal-root')
 
 export function Modal({ children, defaultOpened = false }, ref) {
-
   const [isOpen, setIsOpen] = useState(defaultOpened)
 
   const close = useCallback(() => setIsOpen(false), [])

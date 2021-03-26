@@ -2,6 +2,12 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import { margin } from '../../styles/shared';
 import { darken, lighten } from 'polished';
+import { AiFillSetting } from 'react-icons/ai';
+import { BsEnvelope } from 'react-icons/bs';
+
+export const BsEnvelopeIcon = styled(BsEnvelope)``;
+
+export const AiFillSettingIcon = styled(AiFillSetting)``;
 
 export const MenuContainer = styled.nav`
   ${margin};
@@ -75,6 +81,10 @@ export const MenuListItem = styled.li`
 `
 
 export const MenuListItemLink = styled(NavLink)`
+  color: ${({ theme }) => theme.palette.text.main};
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 7px;
 `
 
@@ -90,6 +100,7 @@ export const MenuDropListItem = styled.li`
 `;
 
 export const MenuDropListItemLink = styled(NavLink)`
+  color: ${({ theme }) => theme.palette.text.main};
   display: block;
   width: 100%;
   z-index: 20;

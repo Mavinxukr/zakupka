@@ -10,7 +10,7 @@ import {
 } from './Home.styled';
 import Typography from '../../components/typography/Typography.component';
 import Menu from '../../components/menu/Menu.component';
-import Classifier from '../../components/Classifier/Classifier';
+import Classifier from '../../components/Classifier/Classifier.component';
 
 const Home = () => {
   return (

@@ -1,10 +1,9 @@
 import React from 'react';
-import Tree from './Tree/Tree';
+import Tree from './tree/Tree.component';
 import { data } from './data';
 
 const ClassifierDK = () => {
   const datastringify = JSON.stringify(data)
-  console.log();
   return <Tree data={JSON.parse(datastringify).rootNodes}/>
 };
 

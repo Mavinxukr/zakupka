@@ -1,5 +1,5 @@
 import React from 'react';
-import TreeItem from './TreeItem/TreeItem';
+import TreeItem from './treeItem/TreeItem.component';
 
 const Tree = ({ data}) => {
   return (

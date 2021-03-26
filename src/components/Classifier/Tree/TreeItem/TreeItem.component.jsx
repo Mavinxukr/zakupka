@@ -40,6 +40,7 @@ const TreeItem = ({
         label={`${code} ${name}`}
         checked={isChecked}
         disabled={disabled}
+        ml="10px"
         onChange={() => setIsChecked((prev) => !prev)}
       />
       {toggleAccordion ? (

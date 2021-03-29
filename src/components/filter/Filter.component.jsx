@@ -10,9 +10,8 @@ import FilterInput from '../filterInput/FilterInput.component'
 import Classifier from '../classifier/Classifier.component';
 
 export const Filter = () => {
-
   const controlModal = useRef();
-  console.log(123);
+  
   return (
     <>
       <FilterContainer>

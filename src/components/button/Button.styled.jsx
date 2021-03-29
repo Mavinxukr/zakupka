@@ -27,7 +27,7 @@ const ContainedShared = css`
   padding: 0.6875rem 1rem;
   min-height: 2.25rem;
   background-color: ${({ theme }) => theme.palette.primary};
-  color: ${({ theme, color }) => color || theme.palette.text.inverted};
+  color: ${({ theme, color }) => color || theme.palette.text.white};
   text-align: center;
 
   &:hover {

@@ -7,14 +7,18 @@ import { GlobalStyle } from './styles/GlobalStyle'
 import { ThemeProvider } from 'styled-components';
 
 import { theme } from './styles/theme';
+import { Provider } from 'react-redux';
+import { store } from './toolkitRedux/store/store'
 
 ReactDOM.render(
-  <BrowserRouter>
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <App />
-    </ThemeProvider>
-  </BrowserRouter>,
+  <Provider store={store}>
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <App />
+      </ThemeProvider>
+    </BrowserRouter>
+  </Provider>,
   document.getElementById('root')
 );
 

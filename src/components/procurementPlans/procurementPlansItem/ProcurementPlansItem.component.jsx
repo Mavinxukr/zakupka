@@ -7,7 +7,7 @@ import {
   ProcurementPlansItemTypography,
 } from './ProcurementPlansItem.styled';
 
-import { theme } from '../../../styles/theme'
+import { theme } from '../../../styles/theme';
 
 const ProcurementPlansItem = () => {
   const [selection, setSelection] = useState(false);

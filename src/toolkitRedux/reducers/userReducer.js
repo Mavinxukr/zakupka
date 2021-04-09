@@ -4,18 +4,19 @@ import {
 } from '@reduxjs/toolkit';
 
 const initialState = {
-  loading: false,
-  user: null,
-  error: null,
+  userLoading: false,
+  currentUser: null,
+  userError: null,
 }
 
 const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    userLoading: (state) => ({ ...state, loading: true }),
-    userError: (state, { payload }) => ({ ...state, loading: false, error: payload }),
-    setUser: (state, { payload }) => ({ ...state, user: payload, loading: false, error: null }),
+    userRequest: (state) => ({ ...state, userLoading: true }),
+    userFailure: (state, { payload }) => ({ ...state, userLoading: false, userError: payload }),
+    userFailureDelete: (state) => ({ ...state, userError: null }),
+    userSuccess: (state, { payload }) => ({ ...state, currentUser: payload, userLoading: false, userError: null }),
     logoutUser: () => ({ ...initialState }),
   }
 });
@@ -28,6 +29,12 @@ export const fetchUserToken = createAction('FETCH_USER_TOKEN');
 
 export default userSlice.reducer;
 
-export const { setUser, userError, userLoading, logoutUser } = userSlice.actions;
+export const {
+  logoutUser,
+  userRequest,
+  userFailure,
+  userSuccess,
+  userFailureDelete
+} = userSlice.actions;
 
 

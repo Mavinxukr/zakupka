@@ -1,68 +1,72 @@
 import React from 'react';
 import {
   LoginInput,
-  LoginTypography
+  LoginTypography,
+  LoginForm
 } from './Login.styled';
 import MainLayout from '../../layout/mainLayout/MainLayout.component';
 import ContainerAuth from '../../components/containers/containerAuth/ContainerAuth.component';
 import { useForm } from "react-hook-form";
 import { useDispatch } from 'react-redux'
-import { fetchUser } from '../../toolkitRedux/reducers/userReducer';
-import Button from '../../components/button/Button.component';
+import { fetchUser, userFailureDelete } from '../../toolkitRedux/reducers/userReducer';
 import { Redirect } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { alertError } from '../../utils/errorProcessing/toastError';
+import Button from '../../components/button/Button.component';
 
 const Login = () => {
-  const user = useSelector(({ user }) => user.user);
-  const error = useSelector(({ user }) => user.error);
 
   const dispatch = useDispatch();
+  const currentUser = useSelector(({ user }) => user.currentUser);
+  const userError = useSelector(({ user }) => user.userError);
+
   const { register, handleSubmit } = useForm();
-  const onSubmit = async (data) => {
+
+  const onSubmit = (data) => {
     dispatch(fetchUser(data));
   }
 
-  if (user) {
+  if (userError) {
+    alertError(userError)
+    dispatch(userFailureDelete());
+  }
+
+  if (currentUser) {
     return <Redirect to="/" />
   }
 
   return (
     <MainLayout>
       <ContainerAuth>
+        <LoginForm onSubmit={handleSubmit(onSubmit)}>
+          <LoginTypography variant='headline-1' mb="30px">
+            Вхід у систему
+          </LoginTypography>
 
-        <LoginTypography variant='headline-1' mb="30px">
-          Вход в систему
-        </LoginTypography>
+          <LoginInput
+            mb="30px"
+            fullWidth
+            name="email"
+            type="email"
+            label="Email"
+            placeholder="Введите адрес эл. почты"
+            ref={register()}
+          />
 
-        <LoginInput
-          mb="30px"
-          fullWidth
-          name="email"
-          type="email"
-          label="Email"
-          placeholder="Введите адрес эл. почты"
-          ref={register()}
-          error={!!error}
-          errorMessage={"Пароль или email не верный"}
-        />
+          <LoginInput
+            mb="30px"
+            fullWidth
+            name="password"
+            type="password"
+            label="Пароль"
+            placeholder="Введите пароль"
+            ref={register()}
+          />
 
-        <LoginInput
-          mb="30px"
-          fullWidth
-          name="password"
-          type="password"
-          label="Пароль"
-          placeholder="Введите пароль"
-          ref={register()}
-          error={!!error}
-          errorMessage={"Пароль или email не верный"}
-        />
-
-
-        <Button fullWidth variant="contained" onClick={handleSubmit(onSubmit)}>
-          Увійти
-        </Button>
-
+          <Button fullWidth variant="contained">
+            Увійти
+          </Button>
+        </LoginForm>
       </ContainerAuth>
     </MainLayout>
   )

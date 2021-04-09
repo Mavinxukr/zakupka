@@ -1,92 +1,52 @@
-import React, { useState } from 'react';
+import { Controller } from 'react-hook-form';
 import {
-  SelectStyled,
-  SelectHeadStyled,
-  SelectListItemStyled,
-  SelectListStyled,
-  SelectIconStyled,
-  SelectOverlaidStyled,
+  customStyles,
   SelectError,
   SelectLabel,
-  SelectWrapper,
-  SelectListItemButton,
-  SelectHeadInputStyled
+  SelectContainer
 } from './Select.styled';
-import arrowDown from './arrow-down.svg';
+import Select from 'react-select';
 
-const Select = React.forwardRef(({
-  error,
+const SelectController = ({
+  name,
+  control,
   label,
+  error,
   errorMessage,
   className,
   mt,
-  mb,
   mr,
+  mb,
   ml,
-  selectItems,
-  defaultValue
-}, ref) => {
-
-  const [open, setOpen] = useState(false);
-  const [value, setValue] = useState(defaultValue);
-
-  const onClickOpen = () => {
-    setOpen((prevState) => !prevState)
-  };
-
-  const onClickChangeValue = (e) => {
-    setValue(e.target.value)
-    setOpen((prevState) => !prevState)
-  };
-
+  ...props }) => {
   return (
-    <SelectWrapper
-      className={className}
-      mt={mt}
-      mb={mb}
-      mr={mr}
-      ml={ml}
-    >
-      {label ? (
-        <SelectLabel>
-          {label}
-        </SelectLabel>
-      ) : null}
-      <SelectStyled >
-        <SelectHeadStyled onClick={onClickOpen}>
-          <SelectHeadInputStyled
-            ref={ref}
-            error={error}
-            value={value}
-            type="button"
+    <Controller
+      name={name}
+      control={control}
+      defaultValue=''
+      render={({ onChange }) => (
+        <SelectContainer
+          className={className}
+          mt={mt}
+          mr={mr}
+          mb={mb}
+          ml={ml}
+        >
+          { label ? (
+            <SelectLabel>
+              {label}
+            </SelectLabel>
+          ) : null}
+          <Select
+            {...props}
+            styles={customStyles}
+            onChange={onChange}
           />
-          <SelectIconStyled src={arrowDown} />
-        </SelectHeadStyled>
-        {
-          open ? (
-            <>
-              <SelectOverlaidStyled onClick={onClickOpen} />
-              <SelectListStyled>
-                {
-                  selectItems?.map((value) => {
-                    return (
-                      <SelectListItemStyled key={value}>
-                        <SelectListItemButton
-                          type="button"
-                          defaultValue={value}
-                          onClick={onClickChangeValue} />
-                      </SelectListItemStyled>
-                    )
-                  })
-                }
-              </SelectListStyled>
-            </>
-          ) : null
-        }
-      </SelectStyled>
-      {error && errorMessage && <SelectError>{errorMessage}</SelectError>}
-    </SelectWrapper>
-  );
-})
+          { error && errorMessage && <SelectError>{errorMessage}</SelectError>}
+        </SelectContainer>
+      )}
+    />
+  )
+}
 
-export default Select;
+export default SelectController;

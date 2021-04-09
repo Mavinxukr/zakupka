@@ -1,32 +1,40 @@
 import { put, takeEvery, call } from 'redux-saga/effects';
-import { setUser, fetchUser, userError, userLoading, fetchUserToken, logoutUser } from '../reducers/userReducer';
+import {
+  fetchUser,
+  fetchUserToken,
+  logoutUser,
+  userFailure,
+  userRequest,
+  userSuccess,
+} from '../reducers/userReducer';
 import cookie from 'js-cookie';
-import { login, loginWithToken } from '../../server/user';
+import { login, loginWithToken } from '../../server/user.server';
 
 function* fetchUserWorker({ payload }) {
   try {
-    yield put(userLoading());
+    yield put(userRequest());
     const { data } = yield call(login, payload);
     cookie.set('token', data.token)
-    yield put(setUser({ ...data.user, token: data.token }));
+    yield put(userSuccess({ ...data.user, token: data.token }));
   } catch (error) {
-    yield put(userError(error));
+    if (error.response) {
+      yield put(userFailure(error.response));
+    }
   }
 }
 
-
 function* fetchUserTokenWorker() {
   try {
-    yield put(userLoading());
+    yield put(userRequest());
     const { data } = yield call(loginWithToken);
-    yield put(setUser({ ...data.user, token: data.token }));
+    yield put(userSuccess({ ...data.user, token: data.token }));
   } catch (error) {
-    yield put(userError(error));
+    yield put(userFailure(error));
   }
 }
 
 function* logoutUserWorker() {
-  yield put(userLoading(logoutUser));
+  yield put(userRequest(logoutUser));
   cookie.remove('token');
 }
 

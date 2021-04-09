@@ -27,6 +27,7 @@ export const InputStyled = styled.input`
   }
   &::placeholder {
     color: ${({ theme }) => theme.palette.text.main};
+    opacity: .8;
   }
 `;
 

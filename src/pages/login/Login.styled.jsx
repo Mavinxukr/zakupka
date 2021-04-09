@@ -4,3 +4,4 @@ import Typography from '../../components/typography/Typography.component'
 
 export const LoginInput = styled(Input)``;
 export const LoginTypography = styled(Typography)``;
+export const LoginForm = styled.form``;

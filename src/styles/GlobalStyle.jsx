@@ -4,7 +4,7 @@ import { theme } from './theme';
 import { lighten } from 'polished';
 
 export const GlobalStyle = createGlobalStyle`
-  ${normalize}
+  ${normalize};
 
   input[type="checkbox"],
   input[type="radio"] {

@@ -9,30 +9,25 @@ import ContainerAuth from '../../components/containers/containerAuth/ContainerAu
 import { useForm } from "react-hook-form";
 import { useDispatch } from 'react-redux'
 import { fetchUser, userFailureDelete } from '../../toolkitRedux/reducers/userReducer';
-import { Redirect } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { alertError } from '../../utils/errorProcessing/toastError';
 import Button from '../../components/button/Button.component';
 
 const Login = () => {
-
   const dispatch = useDispatch();
-  const currentUser = useSelector(({ user }) => user.currentUser);
+  const history = useHistory()
   const userError = useSelector(({ user }) => user.userError);
 
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
-    dispatch(fetchUser(data));
+    dispatch(fetchUser({ history, data }));
   }
 
   if (userError) {
     alertError(userError)
     dispatch(userFailureDelete());
-  }
-
-  if (currentUser) {
-    return <Redirect to="/" />
   }
 
   return (

@@ -9,13 +9,18 @@ import {
 import MainLayout from '../../layout/mainLayout/MainLayout.component';
 import ContainerAuth from '../../components/containers/containerAuth/ContainerAuth.component';
 import { useForm } from 'react-hook-form';
-import { registrationRequest, registrationFailureDelete } from '../../toolkitRedux/reducers/registrationReducer'
+import {
+  registrationRequest,
+  registrationFailureDelete,
+} from '../../toolkitRedux/reducers/registrationReducer'
 import { useDispatch, useSelector } from 'react-redux';
 import { schema } from '../../validation/registration.validate';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { alertError } from '../../utils/errorProcessing/toastError'
+import { useHistory } from 'react-router-dom';
 
 const Registration = () => {
+  const history = useHistory();
   const dispatch = useDispatch();
   const error = useSelector(({ registration }) => registration.registrationError);
 
@@ -24,8 +29,13 @@ const Registration = () => {
     resolver: yupResolver(schema),
   });
 
-  const submit = (data) => {
-    dispatch(registrationRequest({ ...data, role: data.role.value }));
+  const submit = ({ phone, role, ...data }) => {
+    const formData = {
+      ...data,
+      role: role.value,
+      phone: phone.replace(/[^0-9]/g, "")
+    }
+    dispatch(registrationRequest({ history, formData }));
   }
 
   if (error) {
@@ -83,11 +93,15 @@ const Registration = () => {
             errorMessage={errors?.email?.message}
           />
           <RegistrationInput
+            defaultValue=""
+            control={control}
+            mask="+{38}({\0}00)-000-00-00"
+            placeholder="+38(000)-000-00-00"
+            variant="imask"
             mb="30px"
             name="phone"
             type="text"
             label="Ваш телефон"
-            placeholder="Ваш телефон"
             ref={register}
             error={!!errors.phone}
             errorMessage={errors?.phone?.message}

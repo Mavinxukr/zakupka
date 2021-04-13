@@ -10,12 +10,13 @@ import {
 import cookie from 'js-cookie';
 import { login, loginWithToken } from '../../server/user.server';
 
-function* fetchUserWorker({ payload }) {
+function* fetchUserWorker({ payload: { history, formData } }) {
   try {
     yield put(userRequest());
-    const { data } = yield call(login, payload);
+    const { data } = yield call(login, formData);
     cookie.set('token', data.token)
     yield put(userSuccess({ ...data.user, token: data.token }));
+    history.push('/');
   } catch (error) {
     if (error.response) {
       yield put(userFailure(error.response));

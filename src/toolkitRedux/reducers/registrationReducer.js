@@ -5,6 +5,7 @@ import {
 
 const initialState = {
   registrationError: null,
+  isRegistration: false,
 }
 
 const registrationSlice = createSlice({
@@ -22,7 +23,7 @@ export const registrationRequest = createAction('REGISTRATION', (payload) => ({
 
 export const {
   registrationFailure,
-  registrationFailureDelete
+  registrationFailureDelete,
 } = registrationSlice.actions
 
 export default registrationSlice.reducer
